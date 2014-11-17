@@ -533,5 +533,42 @@ namespace Desktop.ViewModel
             }
         }
         #endregion
+
+        #region IDataErrorInfo
+        public string this[string columnName]
+        {
+            get
+            {
+                string Result = null;
+                if("Name" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Name)) 
+                        Result = "Bitte vorname eingeben.";
+                }
+                else if ("LastName" == columnName)
+                {
+                    if (String.IsNullOrEmpty(LastName))
+                        Result = "Bite name eingeben.";
+                }
+                else if ("Username" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Username))
+                        Result = "Bitte benutzer name eingeben.";
+                }
+                else if ("Password" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Password))
+                        Result = "Bitte passwort eingeben.";
+                }
+                else if("IsValid" == columnName)
+                {
+                    Result = true.ToString();
+                }
+
+                return Result;
+
+            }
+        }
+        #endregion
     }
 }
