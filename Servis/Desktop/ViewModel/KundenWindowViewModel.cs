@@ -1895,6 +1895,17 @@ namespace Desktop.ViewModel
             }
         }
 
+        public bool IsMin
+        {
+            get
+            {
+                if (BrojStranice == 0)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
         public string Error
         {
             get { throw new NotImplementedException(); }
