@@ -1294,7 +1294,7 @@ namespace Desktop.ViewModel
 
         public ICommand Paging2
         {
-            get { return _paging2 = new RelayCommand(param => FillGridKupcaPage2(param)); }
+            get { return _paging2 = new RelayCommand(param => FillGridKupcaPage2(param), param => this.CanNext); }
             set { _paging2 = value; }
         }
 
@@ -1302,7 +1302,7 @@ namespace Desktop.ViewModel
 
         public ICommand PagingRikverc
         {
-            get { return _pagingRikverc = new RelayCommand(param => FillGridKupcaBack(param)); }
+            get { return _pagingRikverc = new RelayCommand(param => FillGridKupcaBack(param), param => this.CanLast); }
             set { _pagingRikverc = value; }
         }
         private ICommand _prebaciNaPrvi;
@@ -1342,6 +1342,7 @@ namespace Desktop.ViewModel
                 ListaPage1 = new ObservableCollection<tbl_kupac>(x);
             }
             Broj_kupac = client.KundenNr();
+            MaxStranica();
         }
         public void Odustani(object parameter)
         {
@@ -1494,13 +1495,13 @@ namespace Desktop.ViewModel
         {
             if (ListaKupaca1!=null)
             {
-                float pozicija = ListaKupaca1.Count() / KolicinaKupaca;
+                int a = ListaKupaca1.Count();
+                double pozicija = Convert.ToDouble(a) / KolicinaKupaca;
                 if (pozicija % 1 == 0)
                     BrojStranice = Convert.ToInt32(pozicija);
-                else
-                {
+                else                
                     BrojStranice = Convert.ToInt32(pozicija - ((pozicija * 10) % 10) / 10) + 1;
-                }
+                Paginacija(BrojStranice);                
             }
 
         }
@@ -1899,16 +1900,39 @@ namespace Desktop.ViewModel
         {
             get
             {
-                if (BrojStranice == 0)
+                if (BrojStranice == 1)
                     return false;
                 else
                     return true;
             }
         }
 
+        public bool IsMax
+        {
+            get
+            {
+                if (BrojStranice == MaxStranica1)
+                    return false;
+                else 
+                    return true;
+            }
+        }
+
+        protected bool CanNext
+        {
+            get
+            {
+                return IsMax;
+            }
+        }
+
+
         protected bool CanLast
         {
-            get { return IsMin; }
+            get 
+            { 
+                return IsMin; 
+            }
         }
 
         public string Error
