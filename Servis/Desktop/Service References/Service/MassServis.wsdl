@@ -194,6 +194,12 @@
   <wsdl:message name="MassServis_KundenNr_OutputMessage">
     <wsdl:part name="parameters" element="tns:KundenNrResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_AngebotNr_InputMessage">
+    <wsdl:part name="parameters" element="tns:AngebotNr" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_AngebotNr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AngebotNrResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -318,6 +324,10 @@
     <wsdl:operation name="KundenNr">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/KundenNr" message="tns:MassServis_KundenNr_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/KundenNrResponse" message="tns:MassServis_KundenNr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AngebotNr">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/AngebotNr" message="tns:MassServis_AngebotNr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/AngebotNrResponse" message="tns:MassServis_AngebotNr_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -594,6 +604,15 @@
     </wsdl:operation>
     <wsdl:operation name="KundenNr">
       <soap:operation soapAction="http://tempuri.org/MassServis/KundenNr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AngebotNr">
+      <soap:operation soapAction="http://tempuri.org/MassServis/AngebotNr" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

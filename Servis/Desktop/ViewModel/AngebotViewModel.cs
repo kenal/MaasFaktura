@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -28,6 +29,9 @@ namespace Desktop.ViewModel
 
             timer.Start();
 
+            AngebotNr = client.AngebotNr();
+            
+
         }
 
         public DateTime Now
@@ -54,7 +58,30 @@ namespace Desktop.ViewModel
             Now = DateTime.Now;
 
         }
+
+        #endregion
+
+        #region Fields
+        private int _angebotNr;
+        MassServisClient client = new MassServisClient();
+        #endregion
+
+        #region Properties
+        public int AngebotNr
+        {
+            get
+            {
+                return _angebotNr;
+            }
+            set
+            {
+                _angebotNr = value;
+            }
+        }
         #endregion
         
+        
+        
+
     }
 }

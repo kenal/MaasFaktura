@@ -926,6 +926,19 @@ namespace Service
                     return x.broj_kupac + 1;
             }
         }
+
+        [OperationContract]
+        public int AngebotNr()
+        {
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = (from a in context.tbl_angebots select new { a.angebotnr }).ToList().LastOrDefault();
+                if (x == null)
+                    return 1000;
+                else
+                    return x.angebotnr + 1;
+            }
+        }
     }
 }
    
