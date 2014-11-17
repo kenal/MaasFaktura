@@ -75,17 +75,17 @@
         </Grid>
         <Grid Name="grdNew" Background="#C0C0C0" Grid.Column="0" Panel.ZIndex="1" Grid.Row="2" Margin="10">
             <Label Content="Vorname:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-10,10,200,0" FontSize="14" />
-            <TextBox x:Name="idName" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,10,0,0" Text="{Binding Name}" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="idName" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,10,0,0" Text="{Binding Name, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
             <Label Content="Name:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-10,50,220,0" FontSize="14" />
-            <TextBox x:Name="idLastName" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,50,0,0" Text="{Binding LastName}" TextChanged="idLastName_TextChanged"/>
+            <TextBox x:Name="idLastName" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,50,0,0" Text="{Binding LastName, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
             <Label Content="E-mail:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-10,90,220,0" FontSize="14" />
-            <TextBox x:Name="idEmail" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,90,0,0" Text="{Binding Email}" TextChanged="idEmail_TextChanged"/>
+            <TextBox x:Name="idEmail" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,90,0,0" Text="{Binding Email, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
             <Label Content="Telefon:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-10,130,215,0" FontSize="14" />
-            <TextBox x:Name="idTelefon" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,130,0,0" Text="{Binding Telefon}" TextChanged="idTelefon_TextChanged"/>
+            <TextBox x:Name="idTelefon" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,130,0,0" Text="{Binding Telefon, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
             <Label Content="Benutzer:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-10,170,210,0" FontSize="14" />
-            <TextBox x:Name="idUsername" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,170,0,0" Text="{Binding Username}" TextChanged="idUsername_TextChanged"/>
+            <TextBox x:Name="idUsername" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,170,0,0" Text="{Binding Username, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
             <Label Content="Passwort:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-5,210,210,0" FontSize="14" />
-            <TextBox x:Name="idPassword" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,210,0,0" Text="{Binding Password}" TextChanged="idPassword_TextChanged"/>
+            <TextBox x:Name="idPassword" VerticalContentAlignment="Center" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,210,0,0" Text="{Binding Password, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
             <Label Content="Benutzertype:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20,250,210,0" FontSize="14" />
             <RadioButton Content="Administrator" GroupName="radType" VerticalAlignment="Top" HorizontalAlignment="Center" IsChecked="{Binding RadAdmin}" Margin="0,259,0,0" Cursor="Hand"/>
             <RadioButton Content="Mitarbeiter" GroupName="radType" VerticalAlignment="Top" HorizontalAlignment="Center" IsChecked="{Binding RadMit}" Margin="180,259,0,0" Cursor="Hand"/>
@@ -95,7 +95,7 @@
             <Label Content="Lizenz:" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-20,300,210,0" FontSize="14" />
             <DatePicker x:Name="idLicence" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="100,300,0,0" SelectedDate="{Binding Licence}"  DisplayDateStart="1930-01-01" Cursor="Hand"/>
             <Button Content="Speichern" Height="30" Width="130" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-140,350,0,0" Background="#5bb75b" Foreground="White" FontWeight="Bold" FontSize="14" Command="{Binding Unesi}" Cursor="Hand"/>
-            <Button Content="Abbrechen" Height="30" Width="130" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="165,350,0,0" Background="#414141" Foreground="White" FontWeight="Bold" FontSize="14" Cursor="Hand"/>
+            <Button Content="Abbrechen" Height="30" Width="130" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="165,350,0,0" Background="#414141" Foreground="White" FontWeight="Bold" FontSize="14" Command="{Binding Odustani}" Cursor="Hand"/>
         </Grid>
         <Grid Name="grdBen" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
             <DataGrid x:Name="datagrid1" Grid.Column="1" SelectedItem="{Binding Path=DataContext.SelektovaniUser,ElementName=datagrid1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.RowSpan="4"  x:Uid="datagrid1" SelectionMode="Single" Background="#FFFFFF" RowHeight="40" IsReadOnly="True" ItemsSource="{Binding ListaKorisnika}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" >
