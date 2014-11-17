@@ -31,7 +31,7 @@
       <xs:element minOccurs="0" name="tbl_produktions" nillable="true" type="tns:ArrayOftbl_produktion" />
       <xs:element minOccurs="0" name="tel1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tip" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tip" type="xs:int" />
       <xs:element minOccurs="0" name="vlasnik_racuna" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="zemlja" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ziro_racun" nillable="true" type="xs:string" />
@@ -615,6 +615,7 @@
       <xs:element minOccurs="0" name="prezime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="satnica" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="sifra_radnik" type="xs:int" />
+      <xs:element minOccurs="0" name="skype" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="status" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="tbl_korisnik" nillable="true" type="tns:tbl_korisnik" />
       <xs:element minOccurs="0" name="tel1" nillable="true" type="xs:string" />
