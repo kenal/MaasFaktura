@@ -44,8 +44,8 @@
       <Association Name="tbl_angebot_tbl_pracenje_detalji" Member="tbl_pracenje_detaljis" ThisKey="idangebot" OtherKey="id_ponuda_FK" Type="tbl_pracenje_detalji" />
       <Association Name="tbl_angebot_tbl_racun_a" Member="tbl_racun_as" ThisKey="idangebot" OtherKey="angebotnr_fk" Type="tbl_racun_a" />
       <Association Name="tbl_angebot_tbl_stavke" Member="tbl_stavkes" ThisKey="idangebot" OtherKey="angebotnr_fk" Type="tbl_stavke" />
-      <Association Name="tbl_korisnik_tbl_angebot" Member="tbl_korisnik" ThisKey="iduser" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
       <Association Name="tbl_kupac_tbl_angebot" Member="tbl_kupac" ThisKey="kundenr" OtherKey="id_kupac" Type="tbl_kupac" IsForeignKey="true" />
+      <Association Name="tbl_korisnik_tbl_angebot" Member="tbl_korisnik" ThisKey="iduser" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_artikli" Member="tbl_artiklis">
@@ -166,10 +166,10 @@
       <Column Name="reklamation" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="tbl_inventar_tbl_narudzbe_ploca" Member="tbl_narudzbe_plocas" ThisKey="idinventar" OtherKey="broj_ploce_fk" Type="tbl_narudzbe_ploca" />
       <Association Name="tbl_debljina_tbl_inventar" Member="tbl_debljina" ThisKey="debljina_fk" OtherKey="id_debljina" Type="tbl_debljina" IsForeignKey="true" />
-      <Association Name="tbl_korisnik_tbl_inventar" Member="tbl_korisnik" ThisKey="user_fk" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
       <Association Name="tbl_materijal_tbl_inventar" Member="tbl_materijal" ThisKey="materijal_fk" OtherKey="idmaterijal" Type="tbl_materijal" IsForeignKey="true" />
       <Association Name="tbl_struktura_tbl_inventar" Member="tbl_struktura" ThisKey="struktura_fk" OtherKey="idstruktura" Type="tbl_struktura" IsForeignKey="true" />
       <Association Name="tbl_dobavljac_tbl_inventar" Member="tbl_dobavljac" ThisKey="dobavljac_fk" OtherKey="id_dobavljac" Type="tbl_dobavljac" IsForeignKey="true" />
+      <Association Name="tbl_korisnik_tbl_inventar" Member="tbl_korisnik" ThisKey="user_fk" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_jedinica" Member="tbl_jedinicas">
@@ -192,41 +192,6 @@
       <Column Name="id_korisnik_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="aktivan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="tbl_korisnik_tbl_kalendar" Member="tbl_korisnik" ThisKey="id_korisnik_FK" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_korisnik" Member="tbl_korisniks">
-    <Type Name="tbl_korisnik">
-      <Column Name="id_korisnik" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="prezime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="mail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="telefon" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="aktivan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="slika" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
-      <Column Name="pocetna" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="tbl_korisnik_tbl_akontacija" Member="tbl_akontacijas" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_akontacija" />
-      <Association Name="tbl_korisnik_tbl_angebot" Member="tbl_angebots" ThisKey="id_korisnik" OtherKey="iduser" Type="tbl_angebot" />
-      <Association Name="tbl_korisnik_tbl_avan" Member="tbl_avans" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_avan" />
-      <Association Name="tbl_korisnik_tbl_inventar" Member="tbl_inventars" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_inventar" />
-      <Association Name="tbl_korisnik_tbl_kalendar" Member="tbl_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_kalendar" />
-      <Association Name="tbl_korisnik_tbl_korisnik_licenca" Member="tbl_korisnik_licencas" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_korisnik_licenca" />
-      <Association Name="tbl_korisnik_tbl_mit_kalendar" Member="tbl_mit_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_mit_kalendar" />
-      <Association Name="tbl_korisnik_tbl_poruka_poslane" Member="tbl_poruka_poslanes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_poslane" />
-      <Association Name="tbl_korisnik_tbl_poruka_poslane1" Member="tbl_poruka_poslanes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_poslane" />
-      <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_poruka_primljenes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_primljene" />
-      <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_poruka_primljenes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_primljene" />
-      <Association Name="tbl_korisnik_tbl_pracenje" Member="tbl_pracenjes" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje" />
-      <Association Name="tbl_korisnik_tbl_pracenje_detalji" Member="tbl_pracenje_detaljis" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje_detalji" />
-      <Association Name="tbl_korisnik_tbl_produktion" Member="tbl_produktions" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_produktion" />
-      <Association Name="tbl_korisnik_tbl_racun_a" Member="tbl_racun_as" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_racun_a" />
-      <Association Name="tbl_korisnik_tbl_racun_b" Member="tbl_racun_bs" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_racun_b" />
-      <Association Name="tbl_korisnik_tbl_rute_kalendar" Member="tbl_rute_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_rute_kalendar" />
-      <Association Name="tbl_korisnik_tbl_greske" Member="tbl_greskes" ThisKey="id_korisnik" OtherKey="idUser" Type="tbl_greske" />
-      <Association Name="tbl_korisnik_tbl_dobavljac" Member="tbl_dobavljacs" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_dobavljac" />
-      <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_radniks" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_radnik" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_korisnik_licenca" Member="tbl_korisnik_licencas">
@@ -392,9 +357,9 @@
       <Column Name="dobavljac_fk" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="user_fk" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbl_korisnik_tbl_produktion" Member="tbl_korisnik" ThisKey="user_fk" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
       <Association Name="tbl_produkt_tbl_produktion" Member="tbl_produkt" ThisKey="proizvod_fk" OtherKey="idprodukt" Type="tbl_produkt" IsForeignKey="true" />
       <Association Name="tbl_dobavljac_tbl_produktion" Member="tbl_dobavljac" ThisKey="dobavljac_fk" OtherKey="id_dobavljac" Type="tbl_dobavljac" IsForeignKey="true" />
+      <Association Name="tbl_korisnik_tbl_produktion" Member="tbl_korisnik" ThisKey="user_fk" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_racun_a" Member="tbl_racun_as">
@@ -428,8 +393,8 @@
       <Column Name="pdf_link" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="porez" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tekst" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="tbl_korisnik_tbl_racun_b" Member="tbl_korisnik" ThisKey="user_fk" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
       <Association Name="tbl_kupac_tbl_racun_b" Member="tbl_kupac" ThisKey="kupacnr_fk" OtherKey="id_kupac" Type="tbl_kupac" IsForeignKey="true" />
+      <Association Name="tbl_korisnik_tbl_racun_b" Member="tbl_korisnik" ThisKey="user_fk" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_racun_b_pozicije" Member="tbl_racun_b_pozicijes">
@@ -687,6 +652,41 @@
       <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="skype" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_korisnik" ThisKey="id_korisnik_FK" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_korisnik" Member="tbl_korisniks">
+    <Type Name="tbl_korisnik">
+      <Column Name="id_korisnik" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="prezime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="mail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="aktivan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="slika" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="pocetna" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_korisnik_tbl_akontacija" Member="tbl_akontacijas" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_akontacija" />
+      <Association Name="tbl_korisnik_tbl_angebot" Member="tbl_angebots" ThisKey="id_korisnik" OtherKey="iduser" Type="tbl_angebot" />
+      <Association Name="tbl_korisnik_tbl_avan" Member="tbl_avans" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_avan" />
+      <Association Name="tbl_korisnik_tbl_inventar" Member="tbl_inventars" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_inventar" />
+      <Association Name="tbl_korisnik_tbl_kalendar" Member="tbl_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_kalendar" />
+      <Association Name="tbl_korisnik_tbl_korisnik_licenca" Member="tbl_korisnik_licencas" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_korisnik_licenca" />
+      <Association Name="tbl_korisnik_tbl_mit_kalendar" Member="tbl_mit_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_mit_kalendar" />
+      <Association Name="tbl_korisnik_tbl_poruka_poslane" Member="tbl_poruka_poslanes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_poslane" />
+      <Association Name="tbl_korisnik_tbl_poruka_poslane1" Member="tbl_poruka_poslanes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_poslane" />
+      <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_poruka_primljenes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_primljene" />
+      <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_poruka_primljenes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_primljene" />
+      <Association Name="tbl_korisnik_tbl_pracenje" Member="tbl_pracenjes" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje" />
+      <Association Name="tbl_korisnik_tbl_pracenje_detalji" Member="tbl_pracenje_detaljis" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje_detalji" />
+      <Association Name="tbl_korisnik_tbl_produktion" Member="tbl_produktions" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_produktion" />
+      <Association Name="tbl_korisnik_tbl_racun_a" Member="tbl_racun_as" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_racun_a" />
+      <Association Name="tbl_korisnik_tbl_racun_b" Member="tbl_racun_bs" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_racun_b" />
+      <Association Name="tbl_korisnik_tbl_rute_kalendar" Member="tbl_rute_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_rute_kalendar" />
+      <Association Name="tbl_korisnik_tbl_greske" Member="tbl_greskes" ThisKey="id_korisnik" OtherKey="idUser" Type="tbl_greske" />
+      <Association Name="tbl_korisnik_tbl_dobavljac" Member="tbl_dobavljacs" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_dobavljac" />
+      <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_radniks" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_radnik" />
     </Type>
   </Table>
   <Function Name="dbo.p_get_User_View" Method="p_get_User_View">

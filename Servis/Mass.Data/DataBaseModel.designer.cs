@@ -69,9 +69,6 @@ namespace Mass.Data
     partial void Inserttbl_kalendar(tbl_kalendar instance);
     partial void Updatetbl_kalendar(tbl_kalendar instance);
     partial void Deletetbl_kalendar(tbl_kalendar instance);
-    partial void Inserttbl_korisnik(tbl_korisnik instance);
-    partial void Updatetbl_korisnik(tbl_korisnik instance);
-    partial void Deletetbl_korisnik(tbl_korisnik instance);
     partial void Inserttbl_korisnik_licenca(tbl_korisnik_licenca instance);
     partial void Updatetbl_korisnik_licenca(tbl_korisnik_licenca instance);
     partial void Deletetbl_korisnik_licenca(tbl_korisnik_licenca instance);
@@ -156,6 +153,9 @@ namespace Mass.Data
     partial void Inserttbl_radnik(tbl_radnik instance);
     partial void Updatetbl_radnik(tbl_radnik instance);
     partial void Deletetbl_radnik(tbl_radnik instance);
+    partial void Inserttbl_korisnik(tbl_korisnik instance);
+    partial void Updatetbl_korisnik(tbl_korisnik instance);
+    partial void Deletetbl_korisnik(tbl_korisnik instance);
     #endregion
 		
 		public DataBaseModelDataContext() : 
@@ -289,14 +289,6 @@ namespace Mass.Data
 			get
 			{
 				return this.GetTable<tbl_kalendar>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_korisnik> tbl_korisniks
-		{
-			get
-			{
-				return this.GetTable<tbl_korisnik>();
 			}
 		}
 		
@@ -529,6 +521,14 @@ namespace Mass.Data
 			get
 			{
 				return this.GetTable<tbl_radnik>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_korisnik> tbl_korisniks
+		{
+			get
+			{
+				return this.GetTable<tbl_korisnik>();
 			}
 		}
 		
@@ -992,9 +992,9 @@ namespace Mass.Data
 		
 		private EntitySet<tbl_stavke> _tbl_stavkes;
 		
-		private EntityRef<tbl_korisnik> _tbl_korisnik;
-		
 		private EntityRef<tbl_kupac> _tbl_kupac;
+		
+		private EntityRef<tbl_korisnik> _tbl_korisnik;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1043,8 +1043,8 @@ namespace Mass.Data
 			this._tbl_pracenje_detaljis = new EntitySet<tbl_pracenje_detalji>(new Action<tbl_pracenje_detalji>(this.attach_tbl_pracenje_detaljis), new Action<tbl_pracenje_detalji>(this.detach_tbl_pracenje_detaljis));
 			this._tbl_racun_as = new EntitySet<tbl_racun_a>(new Action<tbl_racun_a>(this.attach_tbl_racun_as), new Action<tbl_racun_a>(this.detach_tbl_racun_as));
 			this._tbl_stavkes = new EntitySet<tbl_stavke>(new Action<tbl_stavke>(this.attach_tbl_stavkes), new Action<tbl_stavke>(this.detach_tbl_stavkes));
-			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			this._tbl_kupac = default(EntityRef<tbl_kupac>);
+			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			OnCreated();
 		}
 		
@@ -1461,40 +1461,6 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_angebot", Storage="_tbl_korisnik", ThisKey="iduser", OtherKey="id_korisnik", IsForeignKey=true)]
-		public tbl_korisnik tbl_korisnik
-		{
-			get
-			{
-				return this._tbl_korisnik.Entity;
-			}
-			set
-			{
-				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_korisnik.Entity = null;
-						previousValue.tbl_angebots.Remove(this);
-					}
-					this._tbl_korisnik.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_angebots.Add(this);
-						this._iduser = value.id_korisnik;
-					}
-					else
-					{
-						this._iduser = default(int);
-					}
-					this.SendPropertyChanged("tbl_korisnik");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_kupac_tbl_angebot", Storage="_tbl_kupac", ThisKey="kundenr", OtherKey="id_kupac", IsForeignKey=true)]
 		public tbl_kupac tbl_kupac
 		{
@@ -1525,6 +1491,40 @@ namespace Mass.Data
 						this._kundenr = default(int);
 					}
 					this.SendPropertyChanged("tbl_kupac");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_angebot", Storage="_tbl_korisnik", ThisKey="iduser", OtherKey="id_korisnik", IsForeignKey=true)]
+		public tbl_korisnik tbl_korisnik
+		{
+			get
+			{
+				return this._tbl_korisnik.Entity;
+			}
+			set
+			{
+				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_korisnik.Entity = null;
+						previousValue.tbl_angebots.Remove(this);
+					}
+					this._tbl_korisnik.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_angebots.Add(this);
+						this._iduser = value.id_korisnik;
+					}
+					else
+					{
+						this._iduser = default(int);
+					}
+					this.SendPropertyChanged("tbl_korisnik");
 				}
 			}
 		}
@@ -3720,13 +3720,13 @@ namespace Mass.Data
 		
 		private EntityRef<tbl_debljina> _tbl_debljina;
 		
-		private EntityRef<tbl_korisnik> _tbl_korisnik;
-		
 		private EntityRef<tbl_materijal> _tbl_materijal;
 		
 		private EntityRef<tbl_struktura> _tbl_struktura;
 		
 		private EntityRef<tbl_dobavljac> _tbl_dobavljac;
+		
+		private EntityRef<tbl_korisnik> _tbl_korisnik;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3776,10 +3776,10 @@ namespace Mass.Data
 		{
 			this._tbl_narudzbe_plocas = new EntitySet<tbl_narudzbe_ploca>(new Action<tbl_narudzbe_ploca>(this.attach_tbl_narudzbe_plocas), new Action<tbl_narudzbe_ploca>(this.detach_tbl_narudzbe_plocas));
 			this._tbl_debljina = default(EntityRef<tbl_debljina>);
-			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			this._tbl_materijal = default(EntityRef<tbl_materijal>);
 			this._tbl_struktura = default(EntityRef<tbl_struktura>);
 			this._tbl_dobavljac = default(EntityRef<tbl_dobavljac>);
+			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			OnCreated();
 		}
 		
@@ -4230,40 +4230,6 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_inventar", Storage="_tbl_korisnik", ThisKey="user_fk", OtherKey="id_korisnik", IsForeignKey=true)]
-		public tbl_korisnik tbl_korisnik
-		{
-			get
-			{
-				return this._tbl_korisnik.Entity;
-			}
-			set
-			{
-				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_korisnik.Entity = null;
-						previousValue.tbl_inventars.Remove(this);
-					}
-					this._tbl_korisnik.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_inventars.Add(this);
-						this._user_fk = value.id_korisnik;
-					}
-					else
-					{
-						this._user_fk = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tbl_korisnik");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_materijal_tbl_inventar", Storage="_tbl_materijal", ThisKey="materijal_fk", OtherKey="idmaterijal", IsForeignKey=true)]
 		public tbl_materijal tbl_materijal
 		{
@@ -4362,6 +4328,40 @@ namespace Mass.Data
 						this._dobavljac_fk = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("tbl_dobavljac");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_inventar", Storage="_tbl_korisnik", ThisKey="user_fk", OtherKey="id_korisnik", IsForeignKey=true)]
+		public tbl_korisnik tbl_korisnik
+		{
+			get
+			{
+				return this._tbl_korisnik.Entity;
+			}
+			set
+			{
+				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_korisnik.Entity = null;
+						previousValue.tbl_inventars.Remove(this);
+					}
+					this._tbl_korisnik.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_inventars.Add(this);
+						this._user_fk = value.id_korisnik;
+					}
+					else
+					{
+						this._user_fk = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tbl_korisnik");
 				}
 			}
 		}
@@ -4837,868 +4837,6 @@ namespace Mass.Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_korisnik")]
-	public partial class tbl_korisnik : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_korisnik;
-		
-		private string _ime;
-		
-		private string _prezime;
-		
-		private string _mail;
-		
-		private string _username;
-		
-		private string _password;
-		
-		private int _tip;
-		
-		private string _telefon;
-		
-		private bool _aktivan;
-		
-		private string _slika;
-		
-		private System.Nullable<bool> _pocetna;
-		
-		private EntitySet<tbl_akontacija> _tbl_akontacijas;
-		
-		private EntitySet<tbl_angebot> _tbl_angebots;
-		
-		private EntitySet<tbl_avan> _tbl_avans;
-		
-		private EntitySet<tbl_inventar> _tbl_inventars;
-		
-		private EntitySet<tbl_kalendar> _tbl_kalendars;
-		
-		private EntitySet<tbl_korisnik_licenca> _tbl_korisnik_licencas;
-		
-		private EntitySet<tbl_mit_kalendar> _tbl_mit_kalendars;
-		
-		private EntitySet<tbl_poruka_poslane> _tbl_poruka_poslanes;
-		
-		private EntitySet<tbl_poruka_poslane> _tbl_poruka_poslanes1;
-		
-		private EntitySet<tbl_poruka_primljene> _tbl_poruka_primljenes;
-		
-		private EntitySet<tbl_poruka_primljene> _tbl_poruka_primljenes1;
-		
-		private EntitySet<tbl_pracenje> _tbl_pracenjes;
-		
-		private EntitySet<tbl_pracenje_detalji> _tbl_pracenje_detaljis;
-		
-		private EntitySet<tbl_produktion> _tbl_produktions;
-		
-		private EntitySet<tbl_racun_a> _tbl_racun_as;
-		
-		private EntitySet<tbl_racun_b> _tbl_racun_bs;
-		
-		private EntitySet<tbl_rute_kalendar> _tbl_rute_kalendars;
-		
-		private EntitySet<tbl_greske> _tbl_greskes;
-		
-		private EntitySet<tbl_dobavljac> _tbl_dobavljacs;
-		
-		private EntitySet<tbl_radnik> _tbl_radniks;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_korisnikChanging(int value);
-    partial void Onid_korisnikChanged();
-    partial void OnimeChanging(string value);
-    partial void OnimeChanged();
-    partial void OnprezimeChanging(string value);
-    partial void OnprezimeChanged();
-    partial void OnmailChanging(string value);
-    partial void OnmailChanged();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
-    partial void OntipChanging(int value);
-    partial void OntipChanged();
-    partial void OntelefonChanging(string value);
-    partial void OntelefonChanged();
-    partial void OnaktivanChanging(bool value);
-    partial void OnaktivanChanged();
-    partial void OnslikaChanging(string value);
-    partial void OnslikaChanged();
-    partial void OnpocetnaChanging(System.Nullable<bool> value);
-    partial void OnpocetnaChanged();
-    #endregion
-		
-		public tbl_korisnik()
-		{
-			this._tbl_akontacijas = new EntitySet<tbl_akontacija>(new Action<tbl_akontacija>(this.attach_tbl_akontacijas), new Action<tbl_akontacija>(this.detach_tbl_akontacijas));
-			this._tbl_angebots = new EntitySet<tbl_angebot>(new Action<tbl_angebot>(this.attach_tbl_angebots), new Action<tbl_angebot>(this.detach_tbl_angebots));
-			this._tbl_avans = new EntitySet<tbl_avan>(new Action<tbl_avan>(this.attach_tbl_avans), new Action<tbl_avan>(this.detach_tbl_avans));
-			this._tbl_inventars = new EntitySet<tbl_inventar>(new Action<tbl_inventar>(this.attach_tbl_inventars), new Action<tbl_inventar>(this.detach_tbl_inventars));
-			this._tbl_kalendars = new EntitySet<tbl_kalendar>(new Action<tbl_kalendar>(this.attach_tbl_kalendars), new Action<tbl_kalendar>(this.detach_tbl_kalendars));
-			this._tbl_korisnik_licencas = new EntitySet<tbl_korisnik_licenca>(new Action<tbl_korisnik_licenca>(this.attach_tbl_korisnik_licencas), new Action<tbl_korisnik_licenca>(this.detach_tbl_korisnik_licencas));
-			this._tbl_mit_kalendars = new EntitySet<tbl_mit_kalendar>(new Action<tbl_mit_kalendar>(this.attach_tbl_mit_kalendars), new Action<tbl_mit_kalendar>(this.detach_tbl_mit_kalendars));
-			this._tbl_poruka_poslanes = new EntitySet<tbl_poruka_poslane>(new Action<tbl_poruka_poslane>(this.attach_tbl_poruka_poslanes), new Action<tbl_poruka_poslane>(this.detach_tbl_poruka_poslanes));
-			this._tbl_poruka_poslanes1 = new EntitySet<tbl_poruka_poslane>(new Action<tbl_poruka_poslane>(this.attach_tbl_poruka_poslanes1), new Action<tbl_poruka_poslane>(this.detach_tbl_poruka_poslanes1));
-			this._tbl_poruka_primljenes = new EntitySet<tbl_poruka_primljene>(new Action<tbl_poruka_primljene>(this.attach_tbl_poruka_primljenes), new Action<tbl_poruka_primljene>(this.detach_tbl_poruka_primljenes));
-			this._tbl_poruka_primljenes1 = new EntitySet<tbl_poruka_primljene>(new Action<tbl_poruka_primljene>(this.attach_tbl_poruka_primljenes1), new Action<tbl_poruka_primljene>(this.detach_tbl_poruka_primljenes1));
-			this._tbl_pracenjes = new EntitySet<tbl_pracenje>(new Action<tbl_pracenje>(this.attach_tbl_pracenjes), new Action<tbl_pracenje>(this.detach_tbl_pracenjes));
-			this._tbl_pracenje_detaljis = new EntitySet<tbl_pracenje_detalji>(new Action<tbl_pracenje_detalji>(this.attach_tbl_pracenje_detaljis), new Action<tbl_pracenje_detalji>(this.detach_tbl_pracenje_detaljis));
-			this._tbl_produktions = new EntitySet<tbl_produktion>(new Action<tbl_produktion>(this.attach_tbl_produktions), new Action<tbl_produktion>(this.detach_tbl_produktions));
-			this._tbl_racun_as = new EntitySet<tbl_racun_a>(new Action<tbl_racun_a>(this.attach_tbl_racun_as), new Action<tbl_racun_a>(this.detach_tbl_racun_as));
-			this._tbl_racun_bs = new EntitySet<tbl_racun_b>(new Action<tbl_racun_b>(this.attach_tbl_racun_bs), new Action<tbl_racun_b>(this.detach_tbl_racun_bs));
-			this._tbl_rute_kalendars = new EntitySet<tbl_rute_kalendar>(new Action<tbl_rute_kalendar>(this.attach_tbl_rute_kalendars), new Action<tbl_rute_kalendar>(this.detach_tbl_rute_kalendars));
-			this._tbl_greskes = new EntitySet<tbl_greske>(new Action<tbl_greske>(this.attach_tbl_greskes), new Action<tbl_greske>(this.detach_tbl_greskes));
-			this._tbl_dobavljacs = new EntitySet<tbl_dobavljac>(new Action<tbl_dobavljac>(this.attach_tbl_dobavljacs), new Action<tbl_dobavljac>(this.detach_tbl_dobavljacs));
-			this._tbl_radniks = new EntitySet<tbl_radnik>(new Action<tbl_radnik>(this.attach_tbl_radniks), new Action<tbl_radnik>(this.detach_tbl_radniks));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_korisnik", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_korisnik
-		{
-			get
-			{
-				return this._id_korisnik;
-			}
-			set
-			{
-				if ((this._id_korisnik != value))
-				{
-					this.Onid_korisnikChanging(value);
-					this.SendPropertyChanging();
-					this._id_korisnik = value;
-					this.SendPropertyChanged("id_korisnik");
-					this.Onid_korisnikChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ime", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string ime
-		{
-			get
-			{
-				return this._ime;
-			}
-			set
-			{
-				if ((this._ime != value))
-				{
-					this.OnimeChanging(value);
-					this.SendPropertyChanging();
-					this._ime = value;
-					this.SendPropertyChanged("ime");
-					this.OnimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prezime", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string prezime
-		{
-			get
-			{
-				return this._prezime;
-			}
-			set
-			{
-				if ((this._prezime != value))
-				{
-					this.OnprezimeChanging(value);
-					this.SendPropertyChanging();
-					this._prezime = value;
-					this.SendPropertyChanged("prezime");
-					this.OnprezimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string mail
-		{
-			get
-			{
-				return this._mail;
-			}
-			set
-			{
-				if ((this._mail != value))
-				{
-					this.OnmailChanging(value);
-					this.SendPropertyChanging();
-					this._mail = value;
-					this.SendPropertyChanged("mail");
-					this.OnmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this.OnusernameChanging(value);
-					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this.OnpasswordChanging(value);
-					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip", DbType="Int NOT NULL")]
-		public int tip
-		{
-			get
-			{
-				return this._tip;
-			}
-			set
-			{
-				if ((this._tip != value))
-				{
-					this.OntipChanging(value);
-					this.SendPropertyChanging();
-					this._tip = value;
-					this.SendPropertyChanged("tip");
-					this.OntipChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string telefon
-		{
-			get
-			{
-				return this._telefon;
-			}
-			set
-			{
-				if ((this._telefon != value))
-				{
-					this.OntelefonChanging(value);
-					this.SendPropertyChanging();
-					this._telefon = value;
-					this.SendPropertyChanged("telefon");
-					this.OntelefonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_aktivan", DbType="Bit NOT NULL")]
-		public bool aktivan
-		{
-			get
-			{
-				return this._aktivan;
-			}
-			set
-			{
-				if ((this._aktivan != value))
-				{
-					this.OnaktivanChanging(value);
-					this.SendPropertyChanging();
-					this._aktivan = value;
-					this.SendPropertyChanged("aktivan");
-					this.OnaktivanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slika", DbType="NVarChar(300)")]
-		public string slika
-		{
-			get
-			{
-				return this._slika;
-			}
-			set
-			{
-				if ((this._slika != value))
-				{
-					this.OnslikaChanging(value);
-					this.SendPropertyChanging();
-					this._slika = value;
-					this.SendPropertyChanged("slika");
-					this.OnslikaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pocetna", DbType="Bit")]
-		public System.Nullable<bool> pocetna
-		{
-			get
-			{
-				return this._pocetna;
-			}
-			set
-			{
-				if ((this._pocetna != value))
-				{
-					this.OnpocetnaChanging(value);
-					this.SendPropertyChanging();
-					this._pocetna = value;
-					this.SendPropertyChanged("pocetna");
-					this.OnpocetnaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_akontacija", Storage="_tbl_akontacijas", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_akontacija> tbl_akontacijas
-		{
-			get
-			{
-				return this._tbl_akontacijas;
-			}
-			set
-			{
-				this._tbl_akontacijas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_angebot", Storage="_tbl_angebots", ThisKey="id_korisnik", OtherKey="iduser")]
-		public EntitySet<tbl_angebot> tbl_angebots
-		{
-			get
-			{
-				return this._tbl_angebots;
-			}
-			set
-			{
-				this._tbl_angebots.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_avan", Storage="_tbl_avans", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_avan> tbl_avans
-		{
-			get
-			{
-				return this._tbl_avans;
-			}
-			set
-			{
-				this._tbl_avans.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_inventar", Storage="_tbl_inventars", ThisKey="id_korisnik", OtherKey="user_fk")]
-		public EntitySet<tbl_inventar> tbl_inventars
-		{
-			get
-			{
-				return this._tbl_inventars;
-			}
-			set
-			{
-				this._tbl_inventars.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_kalendar", Storage="_tbl_kalendars", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_kalendar> tbl_kalendars
-		{
-			get
-			{
-				return this._tbl_kalendars;
-			}
-			set
-			{
-				this._tbl_kalendars.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_korisnik_licenca", Storage="_tbl_korisnik_licencas", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_korisnik_licenca> tbl_korisnik_licencas
-		{
-			get
-			{
-				return this._tbl_korisnik_licencas;
-			}
-			set
-			{
-				this._tbl_korisnik_licencas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_mit_kalendar", Storage="_tbl_mit_kalendars", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_mit_kalendar> tbl_mit_kalendars
-		{
-			get
-			{
-				return this._tbl_mit_kalendars;
-			}
-			set
-			{
-				this._tbl_mit_kalendars.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_poslane", Storage="_tbl_poruka_poslanes", ThisKey="id_korisnik", OtherKey="poslao")]
-		public EntitySet<tbl_poruka_poslane> tbl_poruka_poslanes
-		{
-			get
-			{
-				return this._tbl_poruka_poslanes;
-			}
-			set
-			{
-				this._tbl_poruka_poslanes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_poslane1", Storage="_tbl_poruka_poslanes1", ThisKey="id_korisnik", OtherKey="primio")]
-		public EntitySet<tbl_poruka_poslane> tbl_poruka_poslanes1
-		{
-			get
-			{
-				return this._tbl_poruka_poslanes1;
-			}
-			set
-			{
-				this._tbl_poruka_poslanes1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_primljene", Storage="_tbl_poruka_primljenes", ThisKey="id_korisnik", OtherKey="poslao")]
-		public EntitySet<tbl_poruka_primljene> tbl_poruka_primljenes
-		{
-			get
-			{
-				return this._tbl_poruka_primljenes;
-			}
-			set
-			{
-				this._tbl_poruka_primljenes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_primljene1", Storage="_tbl_poruka_primljenes1", ThisKey="id_korisnik", OtherKey="primio")]
-		public EntitySet<tbl_poruka_primljene> tbl_poruka_primljenes1
-		{
-			get
-			{
-				return this._tbl_poruka_primljenes1;
-			}
-			set
-			{
-				this._tbl_poruka_primljenes1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_pracenje", Storage="_tbl_pracenjes", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_pracenje> tbl_pracenjes
-		{
-			get
-			{
-				return this._tbl_pracenjes;
-			}
-			set
-			{
-				this._tbl_pracenjes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_pracenje_detalji", Storage="_tbl_pracenje_detaljis", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_pracenje_detalji> tbl_pracenje_detaljis
-		{
-			get
-			{
-				return this._tbl_pracenje_detaljis;
-			}
-			set
-			{
-				this._tbl_pracenje_detaljis.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_produktion", Storage="_tbl_produktions", ThisKey="id_korisnik", OtherKey="user_fk")]
-		public EntitySet<tbl_produktion> tbl_produktions
-		{
-			get
-			{
-				return this._tbl_produktions;
-			}
-			set
-			{
-				this._tbl_produktions.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_racun_a", Storage="_tbl_racun_as", ThisKey="id_korisnik", OtherKey="user_fk")]
-		public EntitySet<tbl_racun_a> tbl_racun_as
-		{
-			get
-			{
-				return this._tbl_racun_as;
-			}
-			set
-			{
-				this._tbl_racun_as.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_racun_b", Storage="_tbl_racun_bs", ThisKey="id_korisnik", OtherKey="user_fk")]
-		public EntitySet<tbl_racun_b> tbl_racun_bs
-		{
-			get
-			{
-				return this._tbl_racun_bs;
-			}
-			set
-			{
-				this._tbl_racun_bs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_rute_kalendar", Storage="_tbl_rute_kalendars", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_rute_kalendar> tbl_rute_kalendars
-		{
-			get
-			{
-				return this._tbl_rute_kalendars;
-			}
-			set
-			{
-				this._tbl_rute_kalendars.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_greske", Storage="_tbl_greskes", ThisKey="id_korisnik", OtherKey="idUser")]
-		public EntitySet<tbl_greske> tbl_greskes
-		{
-			get
-			{
-				return this._tbl_greskes;
-			}
-			set
-			{
-				this._tbl_greskes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_dobavljac", Storage="_tbl_dobavljacs", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_dobavljac> tbl_dobavljacs
-		{
-			get
-			{
-				return this._tbl_dobavljacs;
-			}
-			set
-			{
-				this._tbl_dobavljacs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_radnik", Storage="_tbl_radniks", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
-		public EntitySet<tbl_radnik> tbl_radniks
-		{
-			get
-			{
-				return this._tbl_radniks;
-			}
-			set
-			{
-				this._tbl_radniks.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tbl_akontacijas(tbl_akontacija entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_akontacijas(tbl_akontacija entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_angebots(tbl_angebot entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_angebots(tbl_angebot entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_avans(tbl_avan entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_avans(tbl_avan entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_inventars(tbl_inventar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_inventars(tbl_inventar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_kalendars(tbl_kalendar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_kalendars(tbl_kalendar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_korisnik_licencas(tbl_korisnik_licenca entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_korisnik_licencas(tbl_korisnik_licenca entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_mit_kalendars(tbl_mit_kalendar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_mit_kalendars(tbl_mit_kalendar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_poruka_poslanes(tbl_poruka_poslane entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_poruka_poslanes(tbl_poruka_poslane entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_poruka_poslanes1(tbl_poruka_poslane entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik1 = this;
-		}
-		
-		private void detach_tbl_poruka_poslanes1(tbl_poruka_poslane entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik1 = null;
-		}
-		
-		private void attach_tbl_poruka_primljenes(tbl_poruka_primljene entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_poruka_primljenes(tbl_poruka_primljene entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_poruka_primljenes1(tbl_poruka_primljene entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik1 = this;
-		}
-		
-		private void detach_tbl_poruka_primljenes1(tbl_poruka_primljene entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik1 = null;
-		}
-		
-		private void attach_tbl_pracenjes(tbl_pracenje entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_pracenjes(tbl_pracenje entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_pracenje_detaljis(tbl_pracenje_detalji entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_pracenje_detaljis(tbl_pracenje_detalji entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_produktions(tbl_produktion entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_produktions(tbl_produktion entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_racun_as(tbl_racun_a entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_racun_as(tbl_racun_a entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_racun_bs(tbl_racun_b entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_racun_bs(tbl_racun_b entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_rute_kalendars(tbl_rute_kalendar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_rute_kalendars(tbl_rute_kalendar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_greskes(tbl_greske entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_greskes(tbl_greske entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_dobavljacs(tbl_dobavljac entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_dobavljacs(tbl_dobavljac entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
-		}
-		
-		private void attach_tbl_radniks(tbl_radnik entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = this;
-		}
-		
-		private void detach_tbl_radniks(tbl_radnik entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_korisnik = null;
 		}
 	}
 	
@@ -8783,11 +7921,11 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _user_fk;
 		
-		private EntityRef<tbl_korisnik> _tbl_korisnik;
-		
 		private EntityRef<tbl_produkt> _tbl_produkt;
 		
 		private EntityRef<tbl_dobavljac> _tbl_dobavljac;
+		
+		private EntityRef<tbl_korisnik> _tbl_korisnik;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -8827,9 +7965,9 @@ namespace Mass.Data
 		
 		public tbl_produktion()
 		{
-			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			this._tbl_produkt = default(EntityRef<tbl_produkt>);
 			this._tbl_dobavljac = default(EntityRef<tbl_dobavljac>);
+			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			OnCreated();
 		}
 		
@@ -9145,40 +8283,6 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_produktion", Storage="_tbl_korisnik", ThisKey="user_fk", OtherKey="id_korisnik", IsForeignKey=true)]
-		public tbl_korisnik tbl_korisnik
-		{
-			get
-			{
-				return this._tbl_korisnik.Entity;
-			}
-			set
-			{
-				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_korisnik.Entity = null;
-						previousValue.tbl_produktions.Remove(this);
-					}
-					this._tbl_korisnik.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_produktions.Add(this);
-						this._user_fk = value.id_korisnik;
-					}
-					else
-					{
-						this._user_fk = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tbl_korisnik");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_produkt_tbl_produktion", Storage="_tbl_produkt", ThisKey="proizvod_fk", OtherKey="idprodukt", IsForeignKey=true)]
 		public tbl_produkt tbl_produkt
 		{
@@ -9243,6 +8347,40 @@ namespace Mass.Data
 						this._dobavljac_fk = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("tbl_dobavljac");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_produktion", Storage="_tbl_korisnik", ThisKey="user_fk", OtherKey="id_korisnik", IsForeignKey=true)]
+		public tbl_korisnik tbl_korisnik
+		{
+			get
+			{
+				return this._tbl_korisnik.Entity;
+			}
+			set
+			{
+				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_korisnik.Entity = null;
+						previousValue.tbl_produktions.Remove(this);
+					}
+					this._tbl_korisnik.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_produktions.Add(this);
+						this._user_fk = value.id_korisnik;
+					}
+					else
+					{
+						this._user_fk = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tbl_korisnik");
 				}
 			}
 		}
@@ -9721,9 +8859,9 @@ namespace Mass.Data
 		
 		private string _tekst;
 		
-		private EntityRef<tbl_korisnik> _tbl_korisnik;
-		
 		private EntityRef<tbl_kupac> _tbl_kupac;
+		
+		private EntityRef<tbl_korisnik> _tbl_korisnik;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -9755,8 +8893,8 @@ namespace Mass.Data
 		
 		public tbl_racun_b()
 		{
-			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			this._tbl_kupac = default(EntityRef<tbl_kupac>);
+			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
 			OnCreated();
 		}
 		
@@ -9988,40 +9126,6 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_racun_b", Storage="_tbl_korisnik", ThisKey="user_fk", OtherKey="id_korisnik", IsForeignKey=true)]
-		public tbl_korisnik tbl_korisnik
-		{
-			get
-			{
-				return this._tbl_korisnik.Entity;
-			}
-			set
-			{
-				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_korisnik.Entity = null;
-						previousValue.tbl_racun_bs.Remove(this);
-					}
-					this._tbl_korisnik.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_racun_bs.Add(this);
-						this._user_fk = value.id_korisnik;
-					}
-					else
-					{
-						this._user_fk = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tbl_korisnik");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_kupac_tbl_racun_b", Storage="_tbl_kupac", ThisKey="kupacnr_fk", OtherKey="id_kupac", IsForeignKey=true)]
 		public tbl_kupac tbl_kupac
 		{
@@ -10052,6 +9156,40 @@ namespace Mass.Data
 						this._kupacnr_fk = default(int);
 					}
 					this.SendPropertyChanged("tbl_kupac");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_racun_b", Storage="_tbl_korisnik", ThisKey="user_fk", OtherKey="id_korisnik", IsForeignKey=true)]
+		public tbl_korisnik tbl_korisnik
+		{
+			get
+			{
+				return this._tbl_korisnik.Entity;
+			}
+			set
+			{
+				tbl_korisnik previousValue = this._tbl_korisnik.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_korisnik.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_korisnik.Entity = null;
+						previousValue.tbl_racun_bs.Remove(this);
+					}
+					this._tbl_korisnik.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_racun_bs.Add(this);
+						this._user_fk = value.id_korisnik;
+					}
+					else
+					{
+						this._user_fk = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tbl_korisnik");
 				}
 			}
 		}
@@ -15819,6 +14957,868 @@ namespace Mass.Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_korisnik")]
+	public partial class tbl_korisnik : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_korisnik;
+		
+		private string _ime;
+		
+		private string _prezime;
+		
+		private string _mail;
+		
+		private string _username;
+		
+		private string _password;
+		
+		private int _tip;
+		
+		private string _telefon;
+		
+		private bool _aktivan;
+		
+		private string _slika;
+		
+		private System.Nullable<bool> _pocetna;
+		
+		private EntitySet<tbl_akontacija> _tbl_akontacijas;
+		
+		private EntitySet<tbl_angebot> _tbl_angebots;
+		
+		private EntitySet<tbl_avan> _tbl_avans;
+		
+		private EntitySet<tbl_inventar> _tbl_inventars;
+		
+		private EntitySet<tbl_kalendar> _tbl_kalendars;
+		
+		private EntitySet<tbl_korisnik_licenca> _tbl_korisnik_licencas;
+		
+		private EntitySet<tbl_mit_kalendar> _tbl_mit_kalendars;
+		
+		private EntitySet<tbl_poruka_poslane> _tbl_poruka_poslanes;
+		
+		private EntitySet<tbl_poruka_poslane> _tbl_poruka_poslanes1;
+		
+		private EntitySet<tbl_poruka_primljene> _tbl_poruka_primljenes;
+		
+		private EntitySet<tbl_poruka_primljene> _tbl_poruka_primljenes1;
+		
+		private EntitySet<tbl_pracenje> _tbl_pracenjes;
+		
+		private EntitySet<tbl_pracenje_detalji> _tbl_pracenje_detaljis;
+		
+		private EntitySet<tbl_produktion> _tbl_produktions;
+		
+		private EntitySet<tbl_racun_a> _tbl_racun_as;
+		
+		private EntitySet<tbl_racun_b> _tbl_racun_bs;
+		
+		private EntitySet<tbl_rute_kalendar> _tbl_rute_kalendars;
+		
+		private EntitySet<tbl_greske> _tbl_greskes;
+		
+		private EntitySet<tbl_dobavljac> _tbl_dobavljacs;
+		
+		private EntitySet<tbl_radnik> _tbl_radniks;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_korisnikChanging(int value);
+    partial void Onid_korisnikChanged();
+    partial void OnimeChanging(string value);
+    partial void OnimeChanged();
+    partial void OnprezimeChanging(string value);
+    partial void OnprezimeChanged();
+    partial void OnmailChanging(string value);
+    partial void OnmailChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OntipChanging(int value);
+    partial void OntipChanged();
+    partial void OntelefonChanging(string value);
+    partial void OntelefonChanged();
+    partial void OnaktivanChanging(bool value);
+    partial void OnaktivanChanged();
+    partial void OnslikaChanging(string value);
+    partial void OnslikaChanged();
+    partial void OnpocetnaChanging(System.Nullable<bool> value);
+    partial void OnpocetnaChanged();
+    #endregion
+		
+		public tbl_korisnik()
+		{
+			this._tbl_akontacijas = new EntitySet<tbl_akontacija>(new Action<tbl_akontacija>(this.attach_tbl_akontacijas), new Action<tbl_akontacija>(this.detach_tbl_akontacijas));
+			this._tbl_angebots = new EntitySet<tbl_angebot>(new Action<tbl_angebot>(this.attach_tbl_angebots), new Action<tbl_angebot>(this.detach_tbl_angebots));
+			this._tbl_avans = new EntitySet<tbl_avan>(new Action<tbl_avan>(this.attach_tbl_avans), new Action<tbl_avan>(this.detach_tbl_avans));
+			this._tbl_inventars = new EntitySet<tbl_inventar>(new Action<tbl_inventar>(this.attach_tbl_inventars), new Action<tbl_inventar>(this.detach_tbl_inventars));
+			this._tbl_kalendars = new EntitySet<tbl_kalendar>(new Action<tbl_kalendar>(this.attach_tbl_kalendars), new Action<tbl_kalendar>(this.detach_tbl_kalendars));
+			this._tbl_korisnik_licencas = new EntitySet<tbl_korisnik_licenca>(new Action<tbl_korisnik_licenca>(this.attach_tbl_korisnik_licencas), new Action<tbl_korisnik_licenca>(this.detach_tbl_korisnik_licencas));
+			this._tbl_mit_kalendars = new EntitySet<tbl_mit_kalendar>(new Action<tbl_mit_kalendar>(this.attach_tbl_mit_kalendars), new Action<tbl_mit_kalendar>(this.detach_tbl_mit_kalendars));
+			this._tbl_poruka_poslanes = new EntitySet<tbl_poruka_poslane>(new Action<tbl_poruka_poslane>(this.attach_tbl_poruka_poslanes), new Action<tbl_poruka_poslane>(this.detach_tbl_poruka_poslanes));
+			this._tbl_poruka_poslanes1 = new EntitySet<tbl_poruka_poslane>(new Action<tbl_poruka_poslane>(this.attach_tbl_poruka_poslanes1), new Action<tbl_poruka_poslane>(this.detach_tbl_poruka_poslanes1));
+			this._tbl_poruka_primljenes = new EntitySet<tbl_poruka_primljene>(new Action<tbl_poruka_primljene>(this.attach_tbl_poruka_primljenes), new Action<tbl_poruka_primljene>(this.detach_tbl_poruka_primljenes));
+			this._tbl_poruka_primljenes1 = new EntitySet<tbl_poruka_primljene>(new Action<tbl_poruka_primljene>(this.attach_tbl_poruka_primljenes1), new Action<tbl_poruka_primljene>(this.detach_tbl_poruka_primljenes1));
+			this._tbl_pracenjes = new EntitySet<tbl_pracenje>(new Action<tbl_pracenje>(this.attach_tbl_pracenjes), new Action<tbl_pracenje>(this.detach_tbl_pracenjes));
+			this._tbl_pracenje_detaljis = new EntitySet<tbl_pracenje_detalji>(new Action<tbl_pracenje_detalji>(this.attach_tbl_pracenje_detaljis), new Action<tbl_pracenje_detalji>(this.detach_tbl_pracenje_detaljis));
+			this._tbl_produktions = new EntitySet<tbl_produktion>(new Action<tbl_produktion>(this.attach_tbl_produktions), new Action<tbl_produktion>(this.detach_tbl_produktions));
+			this._tbl_racun_as = new EntitySet<tbl_racun_a>(new Action<tbl_racun_a>(this.attach_tbl_racun_as), new Action<tbl_racun_a>(this.detach_tbl_racun_as));
+			this._tbl_racun_bs = new EntitySet<tbl_racun_b>(new Action<tbl_racun_b>(this.attach_tbl_racun_bs), new Action<tbl_racun_b>(this.detach_tbl_racun_bs));
+			this._tbl_rute_kalendars = new EntitySet<tbl_rute_kalendar>(new Action<tbl_rute_kalendar>(this.attach_tbl_rute_kalendars), new Action<tbl_rute_kalendar>(this.detach_tbl_rute_kalendars));
+			this._tbl_greskes = new EntitySet<tbl_greske>(new Action<tbl_greske>(this.attach_tbl_greskes), new Action<tbl_greske>(this.detach_tbl_greskes));
+			this._tbl_dobavljacs = new EntitySet<tbl_dobavljac>(new Action<tbl_dobavljac>(this.attach_tbl_dobavljacs), new Action<tbl_dobavljac>(this.detach_tbl_dobavljacs));
+			this._tbl_radniks = new EntitySet<tbl_radnik>(new Action<tbl_radnik>(this.attach_tbl_radniks), new Action<tbl_radnik>(this.detach_tbl_radniks));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_korisnik", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_korisnik
+		{
+			get
+			{
+				return this._id_korisnik;
+			}
+			set
+			{
+				if ((this._id_korisnik != value))
+				{
+					this.Onid_korisnikChanging(value);
+					this.SendPropertyChanging();
+					this._id_korisnik = value;
+					this.SendPropertyChanged("id_korisnik");
+					this.Onid_korisnikChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ime", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ime
+		{
+			get
+			{
+				return this._ime;
+			}
+			set
+			{
+				if ((this._ime != value))
+				{
+					this.OnimeChanging(value);
+					this.SendPropertyChanging();
+					this._ime = value;
+					this.SendPropertyChanged("ime");
+					this.OnimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prezime", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string prezime
+		{
+			get
+			{
+				return this._prezime;
+			}
+			set
+			{
+				if ((this._prezime != value))
+				{
+					this.OnprezimeChanging(value);
+					this.SendPropertyChanging();
+					this._prezime = value;
+					this.SendPropertyChanged("prezime");
+					this.OnprezimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string mail
+		{
+			get
+			{
+				return this._mail;
+			}
+			set
+			{
+				if ((this._mail != value))
+				{
+					this.OnmailChanging(value);
+					this.SendPropertyChanging();
+					this._mail = value;
+					this.SendPropertyChanged("mail");
+					this.OnmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip", DbType="Int NOT NULL")]
+		public int tip
+		{
+			get
+			{
+				return this._tip;
+			}
+			set
+			{
+				if ((this._tip != value))
+				{
+					this.OntipChanging(value);
+					this.SendPropertyChanging();
+					this._tip = value;
+					this.SendPropertyChanged("tip");
+					this.OntipChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this.OntelefonChanging(value);
+					this.SendPropertyChanging();
+					this._telefon = value;
+					this.SendPropertyChanged("telefon");
+					this.OntelefonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_aktivan", DbType="Bit NOT NULL")]
+		public bool aktivan
+		{
+			get
+			{
+				return this._aktivan;
+			}
+			set
+			{
+				if ((this._aktivan != value))
+				{
+					this.OnaktivanChanging(value);
+					this.SendPropertyChanging();
+					this._aktivan = value;
+					this.SendPropertyChanged("aktivan");
+					this.OnaktivanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slika", DbType="NVarChar(300)")]
+		public string slika
+		{
+			get
+			{
+				return this._slika;
+			}
+			set
+			{
+				if ((this._slika != value))
+				{
+					this.OnslikaChanging(value);
+					this.SendPropertyChanging();
+					this._slika = value;
+					this.SendPropertyChanged("slika");
+					this.OnslikaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pocetna", DbType="Bit")]
+		public System.Nullable<bool> pocetna
+		{
+			get
+			{
+				return this._pocetna;
+			}
+			set
+			{
+				if ((this._pocetna != value))
+				{
+					this.OnpocetnaChanging(value);
+					this.SendPropertyChanging();
+					this._pocetna = value;
+					this.SendPropertyChanged("pocetna");
+					this.OnpocetnaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_akontacija", Storage="_tbl_akontacijas", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_akontacija> tbl_akontacijas
+		{
+			get
+			{
+				return this._tbl_akontacijas;
+			}
+			set
+			{
+				this._tbl_akontacijas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_angebot", Storage="_tbl_angebots", ThisKey="id_korisnik", OtherKey="iduser")]
+		public EntitySet<tbl_angebot> tbl_angebots
+		{
+			get
+			{
+				return this._tbl_angebots;
+			}
+			set
+			{
+				this._tbl_angebots.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_avan", Storage="_tbl_avans", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_avan> tbl_avans
+		{
+			get
+			{
+				return this._tbl_avans;
+			}
+			set
+			{
+				this._tbl_avans.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_inventar", Storage="_tbl_inventars", ThisKey="id_korisnik", OtherKey="user_fk")]
+		public EntitySet<tbl_inventar> tbl_inventars
+		{
+			get
+			{
+				return this._tbl_inventars;
+			}
+			set
+			{
+				this._tbl_inventars.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_kalendar", Storage="_tbl_kalendars", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_kalendar> tbl_kalendars
+		{
+			get
+			{
+				return this._tbl_kalendars;
+			}
+			set
+			{
+				this._tbl_kalendars.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_korisnik_licenca", Storage="_tbl_korisnik_licencas", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_korisnik_licenca> tbl_korisnik_licencas
+		{
+			get
+			{
+				return this._tbl_korisnik_licencas;
+			}
+			set
+			{
+				this._tbl_korisnik_licencas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_mit_kalendar", Storage="_tbl_mit_kalendars", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_mit_kalendar> tbl_mit_kalendars
+		{
+			get
+			{
+				return this._tbl_mit_kalendars;
+			}
+			set
+			{
+				this._tbl_mit_kalendars.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_poslane", Storage="_tbl_poruka_poslanes", ThisKey="id_korisnik", OtherKey="poslao")]
+		public EntitySet<tbl_poruka_poslane> tbl_poruka_poslanes
+		{
+			get
+			{
+				return this._tbl_poruka_poslanes;
+			}
+			set
+			{
+				this._tbl_poruka_poslanes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_poslane1", Storage="_tbl_poruka_poslanes1", ThisKey="id_korisnik", OtherKey="primio")]
+		public EntitySet<tbl_poruka_poslane> tbl_poruka_poslanes1
+		{
+			get
+			{
+				return this._tbl_poruka_poslanes1;
+			}
+			set
+			{
+				this._tbl_poruka_poslanes1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_primljene", Storage="_tbl_poruka_primljenes", ThisKey="id_korisnik", OtherKey="poslao")]
+		public EntitySet<tbl_poruka_primljene> tbl_poruka_primljenes
+		{
+			get
+			{
+				return this._tbl_poruka_primljenes;
+			}
+			set
+			{
+				this._tbl_poruka_primljenes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_poruka_primljene1", Storage="_tbl_poruka_primljenes1", ThisKey="id_korisnik", OtherKey="primio")]
+		public EntitySet<tbl_poruka_primljene> tbl_poruka_primljenes1
+		{
+			get
+			{
+				return this._tbl_poruka_primljenes1;
+			}
+			set
+			{
+				this._tbl_poruka_primljenes1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_pracenje", Storage="_tbl_pracenjes", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_pracenje> tbl_pracenjes
+		{
+			get
+			{
+				return this._tbl_pracenjes;
+			}
+			set
+			{
+				this._tbl_pracenjes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_pracenje_detalji", Storage="_tbl_pracenje_detaljis", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_pracenje_detalji> tbl_pracenje_detaljis
+		{
+			get
+			{
+				return this._tbl_pracenje_detaljis;
+			}
+			set
+			{
+				this._tbl_pracenje_detaljis.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_produktion", Storage="_tbl_produktions", ThisKey="id_korisnik", OtherKey="user_fk")]
+		public EntitySet<tbl_produktion> tbl_produktions
+		{
+			get
+			{
+				return this._tbl_produktions;
+			}
+			set
+			{
+				this._tbl_produktions.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_racun_a", Storage="_tbl_racun_as", ThisKey="id_korisnik", OtherKey="user_fk")]
+		public EntitySet<tbl_racun_a> tbl_racun_as
+		{
+			get
+			{
+				return this._tbl_racun_as;
+			}
+			set
+			{
+				this._tbl_racun_as.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_racun_b", Storage="_tbl_racun_bs", ThisKey="id_korisnik", OtherKey="user_fk")]
+		public EntitySet<tbl_racun_b> tbl_racun_bs
+		{
+			get
+			{
+				return this._tbl_racun_bs;
+			}
+			set
+			{
+				this._tbl_racun_bs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_rute_kalendar", Storage="_tbl_rute_kalendars", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_rute_kalendar> tbl_rute_kalendars
+		{
+			get
+			{
+				return this._tbl_rute_kalendars;
+			}
+			set
+			{
+				this._tbl_rute_kalendars.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_greske", Storage="_tbl_greskes", ThisKey="id_korisnik", OtherKey="idUser")]
+		public EntitySet<tbl_greske> tbl_greskes
+		{
+			get
+			{
+				return this._tbl_greskes;
+			}
+			set
+			{
+				this._tbl_greskes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_dobavljac", Storage="_tbl_dobavljacs", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_dobavljac> tbl_dobavljacs
+		{
+			get
+			{
+				return this._tbl_dobavljacs;
+			}
+			set
+			{
+				this._tbl_dobavljacs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_korisnik_tbl_radnik", Storage="_tbl_radniks", ThisKey="id_korisnik", OtherKey="id_korisnik_FK")]
+		public EntitySet<tbl_radnik> tbl_radniks
+		{
+			get
+			{
+				return this._tbl_radniks;
+			}
+			set
+			{
+				this._tbl_radniks.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tbl_akontacijas(tbl_akontacija entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_akontacijas(tbl_akontacija entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_angebots(tbl_angebot entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_angebots(tbl_angebot entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_avans(tbl_avan entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_avans(tbl_avan entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_inventars(tbl_inventar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_inventars(tbl_inventar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_kalendars(tbl_kalendar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_kalendars(tbl_kalendar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_korisnik_licencas(tbl_korisnik_licenca entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_korisnik_licencas(tbl_korisnik_licenca entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_mit_kalendars(tbl_mit_kalendar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_mit_kalendars(tbl_mit_kalendar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_poruka_poslanes(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_poruka_poslanes(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_poruka_poslanes1(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik1 = this;
+		}
+		
+		private void detach_tbl_poruka_poslanes1(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik1 = null;
+		}
+		
+		private void attach_tbl_poruka_primljenes(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_poruka_primljenes(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_poruka_primljenes1(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik1 = this;
+		}
+		
+		private void detach_tbl_poruka_primljenes1(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik1 = null;
+		}
+		
+		private void attach_tbl_pracenjes(tbl_pracenje entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_pracenjes(tbl_pracenje entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_pracenje_detaljis(tbl_pracenje_detalji entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_pracenje_detaljis(tbl_pracenje_detalji entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_produktions(tbl_produktion entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_produktions(tbl_produktion entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_racun_as(tbl_racun_a entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_racun_as(tbl_racun_a entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_racun_bs(tbl_racun_b entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_racun_bs(tbl_racun_b entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_rute_kalendars(tbl_rute_kalendar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_rute_kalendars(tbl_rute_kalendar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_greskes(tbl_greske entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_greskes(tbl_greske entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_dobavljacs(tbl_dobavljac entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_dobavljacs(tbl_dobavljac entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
+		}
+		
+		private void attach_tbl_radniks(tbl_radnik entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = this;
+		}
+		
+		private void detach_tbl_radniks(tbl_radnik entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_korisnik = null;
 		}
 	}
 	

@@ -24,7 +24,7 @@ namespace Service
             using(DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
 
-            var x = (from a in context.tbl_korisniks where (a.username.Equals(username) && a.password.Equals(pass)) select new { a.id_korisnik }).SingleOrDefault();
+                var x = (from a in context.tbl_korisniks where (a.username.Equals(username) && a.password.Equals(pass)) select new { a.id_korisnik }).SingleOrDefault();
             if (x != null)
             {
                 if (x.id_korisnik != 0)
