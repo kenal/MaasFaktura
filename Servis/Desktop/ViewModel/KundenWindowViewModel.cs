@@ -1906,6 +1906,11 @@ namespace Desktop.ViewModel
             }
         }
 
+        protected bool CanLast
+        {
+            get { return IsMin; }
+        }
+
         public string Error
         {
             get { throw new NotImplementedException(); }
