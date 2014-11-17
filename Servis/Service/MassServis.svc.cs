@@ -147,7 +147,7 @@ namespace Service
    }
 
         [OperationContract]
-        public void UnesiRadnika(int broj,int titula,string ime,string prezime,string adresa,string tel1,string tel2,string mobitel,string fax,string email,float zarada,float satnica,string odmor, string odmor_na,float broj_plate,
+        public void UnesiRadnika(int broj,int titula,string ime,string prezime,string adresa,string tel1,string tel2,string mobitel,string fax,string skype,string email,float zarada,float satnica,string odmor, string odmor_na,float broj_plate,
             string bolovanje, string banka, string blz,string bic, string KtoNr, string Iban, string vlasnik, string biljeske, DateTime datum, int id)
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
@@ -165,6 +165,7 @@ namespace Service
                 r.tel2 = tel2;
                 r.mobitel = mobitel;
                 r.fax = fax;
+                r.skype=skype;
                 r.email = email;
                 r.zarada = Convert.ToDecimal(zarada);
                 r.satnica = Convert.ToDecimal(satnica);
@@ -182,6 +183,7 @@ namespace Service
                 datum = Convert.ToDateTime(datum1);
                 r.datum = datum;
                 r.id_korisnik_FK = id;
+                r.status = true;
                 context.tbl_radniks.InsertOnSubmit(r);
                 context.SubmitChanges();
             }
@@ -221,6 +223,7 @@ namespace Service
                        bic=p.bic,
                        KtoNr=p.KtoNr,
                        iban=p.iban,
+                       skype=p.skype,
                        vlasnik_racuna=p.vlasnik_racuna,
                        biljeska=p.biljeska,
                        datum=p.datum,
@@ -566,6 +569,7 @@ namespace Service
                 radnik.tel2 = r.tel2;
                 radnik.mobitel = r.mobitel;
                 radnik.fax = r.fax;
+                radnik.skype = r.skype;
                 radnik.email = r.email;
                 radnik.zarada = r.zarada;
                 radnik.satnica = r.satnica;
@@ -582,6 +586,7 @@ namespace Service
                 radnik.biljeska = r.biljeska;
                 radnik.datum = r.datum;
                 radnik.id_korisnik_FK = id;
+                r.status = true;
                 radnik.folder = r.folder;
                 radnik.status = r.status;
                
@@ -782,6 +787,23 @@ namespace Service
                 catch (Exception e)
                 {
                     throw e;
+                }
+            }
+        }
+        [OperationContract]
+        public void ChangeWorkerStatus(int idRadnika,bool status)
+        {
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                try
+                {
+                    tbl_radnik radnik = context.tbl_radniks.Single(e => e.id_radnik == idRadnika);
+                    radnik.status = status;
+                    context.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }
         }

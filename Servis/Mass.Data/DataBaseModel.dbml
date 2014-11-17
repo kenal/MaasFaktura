@@ -225,8 +225,8 @@
       <Association Name="tbl_korisnik_tbl_racun_b" Member="tbl_racun_bs" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_racun_b" />
       <Association Name="tbl_korisnik_tbl_rute_kalendar" Member="tbl_rute_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_rute_kalendar" />
       <Association Name="tbl_korisnik_tbl_greske" Member="tbl_greskes" ThisKey="id_korisnik" OtherKey="idUser" Type="tbl_greske" />
-      <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_radniks" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_radnik" />
       <Association Name="tbl_korisnik_tbl_dobavljac" Member="tbl_dobavljacs" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_dobavljac" />
+      <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_radniks" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_radnik" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_korisnik_licenca" Member="tbl_korisnik_licencas">
@@ -567,40 +567,6 @@
       <Association Name="tbl_korisnik_tbl_greske" Member="tbl_korisnik" ThisKey="idUser" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_radnik" Member="tbl_radniks">
-    <Type Name="tbl_radnik">
-      <Column Name="id_radnik" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="sifra_radnik" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="prezime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="adresa" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="tel1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="tel2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="mobitel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="zarada" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
-      <Column Name="satnica" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
-      <Column Name="odmor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="odmor_na" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="broj_plate" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
-      <Column Name="broj_nedelja" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
-      <Column Name="bolovanje" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="banka" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="blz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="bic" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="KtoNr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="iban" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="vlasnik_racuna" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="biljeska" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="datum" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="id_korisnik_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="folder" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_korisnik" ThisKey="id_korisnik_FK" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbl_kupac" Member="tbl_kupacs">
     <Type Name="tbl_kupac">
       <Column Name="id_kupac" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -686,6 +652,41 @@
       <Association Name="tbl_dobavljac_tbl_inventar" Member="tbl_inventars" ThisKey="id_dobavljac" OtherKey="dobavljac_fk" Type="tbl_inventar" />
       <Association Name="tbl_dobavljac_tbl_produktion" Member="tbl_produktions" ThisKey="id_dobavljac" OtherKey="dobavljac_fk" Type="tbl_produktion" />
       <Association Name="tbl_korisnik_tbl_dobavljac" Member="tbl_korisnik" ThisKey="id_korisnik_FK" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_radnik" Member="tbl_radniks">
+    <Type Name="tbl_radnik">
+      <Column Name="id_radnik" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sifra_radnik" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="prezime" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adresa" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="tel1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="tel2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mobitel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zarada" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="satnica" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="odmor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="odmor_na" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="broj_plate" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="broj_nedelja" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="bolovanje" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="banka" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="blz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="bic" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KtoNr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="iban" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vlasnik_racuna" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="biljeska" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="datum" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_korisnik_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="folder" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="skype" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_korisnik" ThisKey="id_korisnik_FK" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.p_get_User_View" Method="p_get_User_View">

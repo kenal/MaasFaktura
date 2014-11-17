@@ -146,6 +146,12 @@
   <wsdl:message name="MassServis_changeUserPocetnaOrAktivan_OutputMessage">
     <wsdl:part name="parameters" element="tns:changeUserPocetnaOrAktivanResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_ChangeWorkerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeWorkerStatus" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ChangeWorkerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeWorkerStatusResponse" />
+  </wsdl:message>
   <wsdl:message name="MassServis_unesiBug_InputMessage">
     <wsdl:part name="parameters" element="tns:unesiBug" />
   </wsdl:message>
@@ -280,6 +286,10 @@
     <wsdl:operation name="changeUserPocetnaOrAktivan">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/changeUserPocetnaOrAktivan" message="tns:MassServis_changeUserPocetnaOrAktivan_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/changeUserPocetnaOrAktivanResponse" message="tns:MassServis_changeUserPocetnaOrAktivan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeWorkerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ChangeWorkerStatus" message="tns:MassServis_ChangeWorkerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ChangeWorkerStatusResponse" message="tns:MassServis_ChangeWorkerStatus_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="unesiBug">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/unesiBug" message="tns:MassServis_unesiBug_InputMessage" />
@@ -512,6 +522,15 @@
     </wsdl:operation>
     <wsdl:operation name="changeUserPocetnaOrAktivan">
       <soap:operation soapAction="http://tempuri.org/MassServis/changeUserPocetnaOrAktivan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeWorkerStatus">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ChangeWorkerStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

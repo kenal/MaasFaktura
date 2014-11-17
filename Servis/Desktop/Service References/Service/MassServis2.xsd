@@ -76,6 +76,7 @@
         <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="mobitel" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="skype" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="zarada" type="xs:float" />
         <xs:element minOccurs="0" name="satnica" type="xs:float" />
@@ -342,6 +343,19 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="changeUserPocetnaOrAktivanResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeWorkerStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRadnika" type="xs:int" />
+        <xs:element minOccurs="0" name="status" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeWorkerStatusResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

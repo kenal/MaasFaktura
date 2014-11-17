@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Desktop.ViewModel
@@ -89,6 +90,9 @@ namespace Desktop.ViewModel
         private int _kolicinaRadnika = 10;
         private ObservableCollection<tbl_radnik> ListaPage = new ObservableCollection<tbl_radnik>();
         private List<int> _brojPrikazanihRadnika = new List<int>() { 10, 20, 25 };
+        private bool? status;
+
+       
 
        
    
@@ -96,6 +100,12 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Properties
+
+        public bool? Status
+        {
+            get { return status; }
+            set { status = value; OnPropertyChanged("Status"); }
+        }
         public List<int> BrojPrikazanihRadnika
         {
             get { return _brojPrikazanihRadnika; }
@@ -486,6 +496,21 @@ namespace Desktop.ViewModel
            MaxStranica();
           
        }
+
+       public void PromjeniStatus(object parameter)
+       {
+           
+           if (SelektovaniRadnik.status == true)
+           {
+               client.ChangeWorkerStatus(SelektovaniRadnik.id_radnik, false);
+           }
+           else
+               client.ChangeWorkerStatus(SelektovaniRadnik.id_radnik, true);
+           PopuniGrid(parameter);
+           Paginacija(BrojStranice);
+       }
+
+      
        public void FillGridRadnikPage(object parameter)
        {
            Paginacija(BrojStranice);
@@ -564,7 +589,7 @@ namespace Desktop.ViewModel
                Titula = 0;
            }
     
-           client.UnesiRadnika(MitarbeiterNr, Titula, Name, Vorname, Adresse, Telefon, Telefon2, Handy, Fax, Email, Gehalt, Stundenlohn, Urlaubstage, UrlaubstageDuzan, AnzahlGehalter,
+           client.UnesiRadnika(MitarbeiterNr, Titula, Name, Vorname, Adresse, Telefon, Telefon2, Handy, Fax,Skype, Email, Gehalt, Stundenlohn, Urlaubstage, UrlaubstageDuzan, AnzahlGehalter,
            Krankenheitstage, Bank, Blz, Bic, KtoNr, Iban, Kontoinhaber, Notiz, Geburstdatum, SelektovaniKorisnik.id_korisnik);
            MitarbeiterNr= client.MitarbeiterNr();
            Titula=0;
@@ -656,6 +681,7 @@ namespace Desktop.ViewModel
            Telefon2Edit= SelektovaniRadnik.tel2;
            HandyEdit= SelektovaniRadnik.mobitel;
            FaxEdit= SelektovaniRadnik.fax;
+           SkypeEdit = SelektovaniRadnik.skype;
            EmailEdit= SelektovaniRadnik.email;
            GehaltEdit= (float)SelektovaniRadnik.zarada;
            StundenlohnEdit= (float)SelektovaniRadnik.satnica;
@@ -689,6 +715,7 @@ namespace Desktop.ViewModel
            radnik.tel2 = Telefon2Edit;
            radnik.mobitel = HandyEdit;
            radnik.fax = FaxEdit;
+           radnik.skype = SkypeEdit;
            radnik.email = EmailEdit;
            radnik.zarada = Convert.ToDecimal(GehaltEdit);
            radnik.satnica = Convert.ToDecimal(StundenlohnEdit);
@@ -895,7 +922,14 @@ namespace Desktop.ViewModel
            get { return _prebaciNaZadnji = new RelayCommand(param => FillGridRadnikLast(param)); }
            set { _prebaciNaZadnji = value; }
        }
-     
+
+       private ICommand _changeStat;
+
+       public ICommand ChangeStat
+       {
+           get { return _changeStat = new RelayCommand(param => PromjeniStatus(param)); }
+           set { _changeStat = value; }
+       }
        #endregion
 
         #region INotifyProperty Members
