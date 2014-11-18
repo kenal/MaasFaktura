@@ -15,12 +15,15 @@ namespace Desktop.ViewModel
         #region Fields
         private string _imeKorisnika;
         private tbl_korisnik _logovaniKor;
+       
+      
         MassServisClient client = new MassServisClient();
 
        
         #endregion
 
         #region Properties
+       
         public tbl_korisnik LogovaniKor
         {
             get { return _logovaniKor; }
@@ -36,9 +39,9 @@ namespace Desktop.ViewModel
         #region Methods
         public void PopuniButtonKorisnikom(object parameter)
         {
-        //    int id = Sesija.id_korisnik;
-        //    LogovaniKor = client.VratiKorisnika(id);
-        //    ImeKorisnika = LogovaniKor.ime + " " + LogovaniKor.prezime;
+            int id = Sesija.Id_korisnik;
+            LogovaniKor = client.VratiKorisnika(id);
+            ImeKorisnika = LogovaniKor.ime + " " + LogovaniKor.prezime;
         }
         #endregion
 

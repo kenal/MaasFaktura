@@ -92,14 +92,33 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="{Binding ImeKorisnika,Mode=TwoWay}" FontWeight="Bold" Width="150" Height="30" Margin="3" Cursor="Hand">
-                <Button.Background>
+            <Menu FontWeight="Bold" Width="150" Height="30" Margin="3" Cursor="Hand">
+                <MenuItem Height="30" Width="150" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="ikone/IkonaProfila.png" Width="20" Height="20"/>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <TextBlock Text="{Binding ImeKorisnika,Mode=TwoWay}" VerticalAlignment="Center"/>
+                    </MenuItem.Header>
+                    <MenuItem Header="Abmelden">
+                        <MenuItem.Icon>
+                            <Image Source="ikone/IkonaOdjava.png" Width="20" Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Profil">
+                        <MenuItem.Icon>
+                            <Image Source="ikone/IkonaProfila.png" Width="20" Height="20"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <Menu.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#5A5A5A" Offset="1"/>
                         <GradientStop Color="White"/>
                     </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+                </Menu.Background>
+            </Menu>
         </StackPanel>
 
         <!--Row 02-->
