@@ -41,7 +41,7 @@
             <Label Grid.Column="0" Grid.Row="1" Content="Bild:" FontSize="14" Width="50" HorizontalAlignment="Left"  Margin="5,5,15,5"/>
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Width="250" Height="40" Margin="10,5,5,5" HorizontalAlignment="Left" Background="#FFFFFF">
                 <Label Content="Wählen Sie die Dateien" FontSize="14" Margin="5,5,15,5"/>
-                <Button Content="Foto" Foreground="Red" Height="25" Width="40" Command="{Binding Slika1}"/>
+                <Button Content="Foto" Foreground="Red" Height="25" Width="40" Command="{Binding IzborSlike}"/>
             </StackPanel>
             <Label Grid.Column="0" Grid.Row="2" Content="Vorname:" FontSize="14" Width="80" HorizontalAlignment="Left"  Margin="5,5,15,5"/>
             <TextBox Text="{Binding Vorname}" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Width="380" Background="#FFFFFF" HorizontalAlignment="Left" Margin="10,5,0,5"/>

@@ -92,12 +92,12 @@ namespace Desktop.ViewModel
             set { _Uredi = value; }
         }
 
-        private ICommand _Slika;
+        private ICommand _izborSlike;
 
-        public ICommand Slika1
+        public ICommand IzborSlike
         {
-            get { return _Slika = new RelayCommand(param => DodajSliku(param)); }
-            set { _Slika = value; }
+            get { return _izborSlike = new RelayCommand(param => DodajSliku(param)); }
+            set { _izborSlike = value; }
         }
 
        
