@@ -286,7 +286,7 @@ namespace Desktop.ViewModel
             DateTime dateNow = DateTime.Now;
             string date = dateNow.ToString("yyyy-mm-dd H:mm:ss");
 
-            int idUser = Sesija.id_korisnik;
+            int idUser = Sesija.Id_korisnik;
             client.unesiBug(bugText, idUser, false, date);
 
         }

@@ -293,6 +293,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateKorisnik">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="k" nillable="true" type="q12:tbl_korisnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateKorisnikResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="DeleteUser">
     <xs:complexType>
       <xs:sequence>
@@ -315,7 +327,7 @@
   <xs:element name="PretraziRadnikaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziRadnikaResult" nillable="true" type="q12:ArrayOftbl_radnik" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziRadnikaResult" nillable="true" type="q13:ArrayOftbl_radnik" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -329,7 +341,7 @@
   <xs:element name="PretraziDobavljacaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziDobavljacaResult" nillable="true" type="q13:ArrayOftbl_dobavljac" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziDobavljacaResult" nillable="true" type="q14:ArrayOftbl_dobavljac" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -383,7 +395,7 @@
   <xs:element name="ListaBugovaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaBugovaResult" nillable="true" type="q14:ArrayOftbl_greske" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaBugovaResult" nillable="true" type="q15:ArrayOftbl_greske" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

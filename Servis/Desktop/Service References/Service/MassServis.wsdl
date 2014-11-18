@@ -122,6 +122,12 @@
   <wsdl:message name="MassServis_EditujUsera_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditujUseraResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_UpdateKorisnik_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateKorisnik" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_UpdateKorisnik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateKorisnikResponse" />
+  </wsdl:message>
   <wsdl:message name="MassServis_DeleteUser_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUser" />
   </wsdl:message>
@@ -276,6 +282,10 @@
     <wsdl:operation name="EditujUsera">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/EditujUsera" message="tns:MassServis_EditujUsera_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/EditujUseraResponse" message="tns:MassServis_EditujUsera_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKorisnik">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/UpdateKorisnik" message="tns:MassServis_UpdateKorisnik_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/UpdateKorisnikResponse" message="tns:MassServis_UpdateKorisnik_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUser">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/DeleteUser" message="tns:MassServis_DeleteUser_InputMessage" />
@@ -496,6 +506,15 @@
     </wsdl:operation>
     <wsdl:operation name="EditujUsera">
       <soap:operation soapAction="http://tempuri.org/MassServis/EditujUsera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKorisnik">
+      <soap:operation soapAction="http://tempuri.org/MassServis/UpdateKorisnik" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

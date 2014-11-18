@@ -9,6 +9,7 @@ using System.Windows;
 using Servis.HelperClass;
 using System.Windows.Input;
 using System.Windows.Controls;
+using Desktop.ViewModel;
 
 namespace Servis.ViewModel
 {
@@ -21,6 +22,7 @@ namespace Servis.ViewModel
         private string Validacija = "Bitte loggen Sie sich mit Ihrem Benutzemamen und Passwort.";
         private string pozadina = "#4B4D4B";
         private string vidljivost = "Visible";
+        public static int id;
 
         
         #endregion
@@ -108,15 +110,17 @@ namespace Servis.ViewModel
             var password = passwordBox.Password;
             if (KorisnickoIme != null && password != null)
             {
-                int id = client.LoginValidacija(KorisnickoIme, password);
+                 id = client.LoginValidacija(KorisnickoIme, password);
                 if (id != 0)
                 {
                     Validacija1 = "Erfolgreiche Anwendungen";
                     Pozadina = "LimeGreen";
+                    Sesija.Id_korisnik = id;
                     MainWindow mw = new MainWindow();
                     mw.Show();
                     Vidljivost = "Collapsed";
-                    Sesija.id_korisnik = id;
+                   
+                   
 
                 }
                 else
