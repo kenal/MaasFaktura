@@ -116,6 +116,8 @@ namespace Desktop.ViewModel
             Password = korisnik.password;
             Slika = korisnik.slika;
         }
+
+       
         #endregion
 
         #region INotify Members
