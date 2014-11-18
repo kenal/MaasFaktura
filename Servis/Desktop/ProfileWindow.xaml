@@ -63,7 +63,7 @@
                         <TextBlock Text="Speichern" FontSize="14" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
-                <Button VerticalContentAlignment="Center" Background="#505050" HorizontalAlignment="Right" Width="120" Height="30" Margin="5,0,0,0" Cursor="Hand">
+                <Button VerticalContentAlignment="Center" Background="#505050" HorizontalAlignment="Right" Width="120" Height="30" Margin="5,0,0,0" Cursor="Hand" Command="{Binding PopuniProfil}">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="ikone/IkonaButtonOdustani.png"/>
                         <TextBlock Text="Abbrechen" FontSize="14" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
