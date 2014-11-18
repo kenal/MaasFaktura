@@ -37,6 +37,12 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Methods
+        public void OpenProfile(object parameter)
+        {
+            ProfileWindow PW = new ProfileWindow();
+            PW.Show();
+        }
+       
         public void PopuniButtonKorisnikom(object parameter)
         {
             int id = Sesija.Id_korisnik;
@@ -52,6 +58,14 @@ namespace Desktop.ViewModel
         {
             get { return loading = new RelayCommand(param=> PopuniButtonKorisnikom(param)); }
             set { loading = value; }
+        }
+
+        private ICommand _otvoriProfil;
+
+        public ICommand OtvoriProfil
+        {
+            get { return _otvoriProfil = new RelayCommand(param => OpenProfile(param)); }
+            set { _otvoriProfil = value; }
         }
         #endregion
 

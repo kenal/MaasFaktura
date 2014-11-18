@@ -647,6 +647,25 @@ namespace Service
                 }
             }
         }
+        [OperationContract]
+        public void UpdateKorisnik(tbl_korisnik k)
+        {
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                tbl_korisnik korisnik = (from a in context.tbl_korisniks where a.id_korisnik == k.id_korisnik select a).FirstOrDefault();
+                korisnik.ime=k.ime;
+                korisnik.prezime=k.prezime;
+                korisnik.mail = k.mail;
+                korisnik.username = k.username;
+                korisnik.password = k.password;
+                korisnik.tip = k.tip;
+                korisnik.telefon = k.telefon;
+                korisnik.aktivan = k.aktivan;
+                korisnik.slika = k.slika;
+                korisnik.pocetna = k.pocetna;
+                context.SubmitChanges();
+            }
+        }
 
         [OperationContract]
         public void DeleteUser(int idUser)
