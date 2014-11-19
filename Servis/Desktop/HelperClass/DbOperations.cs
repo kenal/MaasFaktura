@@ -381,5 +381,28 @@ namespace Desktop.HelperClass
             return endTime.Subtract(startTime);
         }
         #endregion Downloading
+
+        internal static byte[] VratiSliku(int idKorisnika)
+        {
+            byte[] picData = null;
+            System.Data.SqlClient.SqlConnection connection = OpenConnection();
+            
+
+
+            string query = "Select Data from Slika where IdKorisnik=@IdKorisnik";
+            
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@IdKorisnik", idKorisnika);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                picData = reader["Data"] as byte[] ?? null;
+
+            }
+            connection.Close();
+            return picData;
+
+        }
     }
 }

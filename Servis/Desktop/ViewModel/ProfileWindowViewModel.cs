@@ -13,7 +13,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-
 namespace Desktop.ViewModel
 {
     class ProfileWindowViewModel : INotifyPropertyChanged
@@ -162,8 +161,28 @@ namespace Desktop.ViewModel
 
             }
             else
-                Slika = korisnik.slika;
+                VracanjeSlike(Sesija.Id_korisnik);
         }
+
+        public void VracanjeSlike(int idKorisnik)
+        {
+            byte[] rezultat = DbOperations.VratiSliku(idKorisnik);
+            if (rezultat != null)
+            {
+                Stream StreamObj = new MemoryStream(rezultat);
+                BitmapImage BitObj = new BitmapImage();
+                BitObj.BeginInit();
+                BitObj.StreamSource = StreamObj;
+                BitObj.EndInit();
+                Slika = BitObj.ToString();
+            }
+            else
+            {
+                Slika = (new BitmapImage(new Uri("ikone/no-image.png", UriKind.Relative))).ToString();
+            }
+        }
+
+       
 
         public void DodajSliku(object parameter)
         {
