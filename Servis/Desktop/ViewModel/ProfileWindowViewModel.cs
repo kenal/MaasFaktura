@@ -1,12 +1,17 @@
 ﻿using Desktop.Service;
+using Microsoft.Win32;
 using Servis.HelperClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace Desktop.ViewModel
 {
@@ -87,6 +92,14 @@ namespace Desktop.ViewModel
             set { _Uredi = value; }
         }
 
+        private ICommand _izborSlike;
+
+        public ICommand IzborSlike
+        {
+            get { return _izborSlike = new RelayCommand(param => DodajSliku(param)); }
+            set { _izborSlike = value; }
+        }
+
        
         #endregion
 
@@ -117,7 +130,37 @@ namespace Desktop.ViewModel
             Slika = korisnik.slika;
         }
 
-       
+        public void DodajSliku(object parameter)
+        {
+             OpenFileDialog op = new OpenFileDialog();
+                string folderpath = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\images\\";
+                op.Title = "Select a picture";
+                op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+                            "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+                            "Portable Network Graphic (*.png)|*.png";
+
+                bool? myResult;
+                myResult = op.ShowDialog();
+                if (myResult != null && myResult == true)
+                {
+                    //Image.Source = new BitmapImage(new Uri(op.FileName));
+                    //if (!Directory.Exists(folderpath))
+                    //{
+                    //    Directory.CreateDirectory(folderpath);
+                    //}
+                    //string fileName = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".jpg";
+                    //string filePath = folderpath + System.IO.Path.GetFileName(fileName);
+                    //System.IO.File.Copy(op.FileName, filePath, true);
+                    //insertPict(filePath, k.IdKorisnika);
+
+                   
+                    //k.ImageToByte = File.ReadAllBytes(filePath);
+
+                    //SpremiSliku(k.IdKorisnika, k.ImageToByte);
+                    //imgUser.Visibility = Visibility.Collapsed;
+                }
+                MessageBox.Show("Uspjesno ste dodali korisnicku sliku!!!","Slika",MessageBoxButton.OK,MessageBoxImage.Information);
+        }
         #endregion
 
         #region INotify Members
