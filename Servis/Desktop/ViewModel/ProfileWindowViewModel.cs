@@ -1,4 +1,5 @@
-﻿using Desktop.Service;
+﻿using Desktop.HelperClass;
+using Desktop.Service;
 using Microsoft.Win32;
 using Servis.HelperClass;
 using System;
@@ -25,7 +26,11 @@ namespace Desktop.ViewModel
         private string _username;
         private string _password;
         private string _slika;
+        private byte[] _byteSlika;
+        private string _slikaLabel;
 
+        
+        
      
         private tbl_korisnik korisnik;
         private MassServisClient client = new MassServisClient();
@@ -74,6 +79,26 @@ namespace Desktop.ViewModel
             get { return _password; }
             set { _password = value; OnPropertyChanged("Password"); }
         }
+
+        public byte[] ByteSlika
+        {
+            get { return _byteSlika; }
+            set
+            {
+                _byteSlika = value;
+                OnPropertyChanged("ByteSlika");
+            }
+        }
+
+        public string SlikaLabel
+        {
+            get { return _slikaLabel; }
+            set
+            {
+                _slikaLabel = value;
+                OnPropertyChanged("SlikaLabel");
+            }
+        }
         #endregion
 
         #region ICommand Members
@@ -117,6 +142,9 @@ namespace Desktop.ViewModel
             k.telefon = Telefon;
             k.slika = Slika;
             client.UpdateKorisnik(k);
+            
+            DbOperations.StoreFileUsingSqlParameter(Slika, ByteSlika, DbOperations.TableType.FileStream, k.id_korisnik);
+            System.Windows.MessageBox.Show("Uspjesno!!!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         public void KorisnickiPodaci(object parameter)
         {
@@ -127,7 +155,14 @@ namespace Desktop.ViewModel
             Telefon = korisnik.telefon;
             Username = korisnik.username;
             Password = korisnik.password;
-            Slika = korisnik.slika;
+            if(korisnik.slika == null)
+            {
+                Slika = (new BitmapImage(new Uri("ikone/no-image.png", UriKind.Relative))).ToString();
+                SlikaLabel = "Wählen Sie die Dateien";
+
+            }
+            else
+                Slika = korisnik.slika;
         }
 
         public void DodajSliku(object parameter)
@@ -143,23 +178,12 @@ namespace Desktop.ViewModel
                 myResult = op.ShowDialog();
                 if (myResult != null && myResult == true)
                 {
-                    //Image.Source = new BitmapImage(new Uri(op.FileName));
-                    //if (!Directory.Exists(folderpath))
-                    //{
-                    //    Directory.CreateDirectory(folderpath);
-                    //}
-                    //string fileName = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".jpg";
-                    //string filePath = folderpath + System.IO.Path.GetFileName(fileName);
-                    //System.IO.File.Copy(op.FileName, filePath, true);
-                    //insertPict(filePath, k.IdKorisnika);
-
-                   
-                    //k.ImageToByte = File.ReadAllBytes(filePath);
-
-                    //SpremiSliku(k.IdKorisnika, k.ImageToByte);
-                    //imgUser.Visibility = Visibility.Collapsed;
+                    
+                    Slika = op.FileName;
+                    SlikaLabel = Slika;
+                    ByteSlika = File.ReadAllBytes(Slika);
                 }
-                MessageBox.Show("Uspjesno ste dodali korisnicku sliku!!!","Slika",MessageBoxButton.OK,MessageBoxImage.Information);
+                
         }
         #endregion
 
