@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="HelperClass\BackgroundConverter.cs" />
     <Compile Include="HelperClass\CountryConverter.cs" />
+    <Compile Include="HelperClass\DbOperations.cs" />
     <Compile Include="HelperClass\RelayCommand.cs" />
     <Compile Include="HelperClass\RichTextBoxHelper.cs" />
     <Compile Include="HelperClass\Sesija.cs" />
