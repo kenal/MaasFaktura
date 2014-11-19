@@ -1,4 +1,5 @@
-﻿using Desktop.Service;
+﻿using Desktop.HelperClass;
+using Desktop.Service;
 using Microsoft.Win32;
 using Servis.HelperClass;
 using System;
@@ -141,6 +142,9 @@ namespace Desktop.ViewModel
             k.telefon = Telefon;
             k.slika = Slika;
             client.UpdateKorisnik(k);
+            
+            DbOperations.StoreFileUsingSqlParameter(Slika, ByteSlika, DbOperations.TableType.FileStream, k.id_korisnik);
+            System.Windows.MessageBox.Show("Uspjesno!!!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         public void KorisnickiPodaci(object parameter)
         {
