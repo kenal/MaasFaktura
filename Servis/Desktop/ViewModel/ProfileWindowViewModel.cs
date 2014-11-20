@@ -163,6 +163,7 @@ namespace Desktop.ViewModel
             }
             else
                 VracanjeSlike(Sesija.Id_korisnik);
+            SlikaLabel = "Wählen Sie die Dateien";
         }
 
         public void VracanjeSlike(int idKorisnik)
