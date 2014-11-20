@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 namespace Desktop.ViewModel
 {
@@ -24,7 +25,7 @@ namespace Desktop.ViewModel
         private string _telefon = "-";
         private string _username;
         private string _password;
-        private string _slika;
+        private ImageSource _slika;
         private byte[] _byteSlika;
         private string _slikaLabel;
 
@@ -38,7 +39,7 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Properties
-        public string Slika
+        public ImageSource Slika
         {
             get { return _slika; }
             set { _slika = value; OnPropertyChanged("Slika"); }
@@ -139,7 +140,7 @@ namespace Desktop.ViewModel
             k.username = Username;
             k.password = Password;
             k.telefon = Telefon;
-            k.slika = Slika;
+            k.slika = Slika.ToString();
             client.UpdateKorisnik(k);
             
             DbOperations.StoreFileUsingSqlParameter(Slika, ByteSlika, DbOperations.TableType.FileStream, k.id_korisnik);
@@ -156,7 +157,7 @@ namespace Desktop.ViewModel
             Password = korisnik.password;
             if(korisnik.slika == null)
             {
-                Slika = (new BitmapImage(new Uri("ikone/no-image.png", UriKind.Relative))).ToString();
+                Slika = new BitmapImage(new Uri("ikone/no-image.png", UriKind.Relative));
                 SlikaLabel = "Wählen Sie die Dateien";
 
             }
@@ -174,11 +175,12 @@ namespace Desktop.ViewModel
                 BitObj.BeginInit();
                 BitObj.StreamSource = StreamObj;
                 BitObj.EndInit();
-                Slika = BitObj.ToString();
+                Slika = BitObj;
+                
             }
             else
             {
-                Slika = (new BitmapImage(new Uri("ikone/no-image.png", UriKind.Relative))).ToString();
+                Slika = new BitmapImage(new Uri("ikone/no-image.png", UriKind.Relative));
             }
         }
 
@@ -198,9 +200,9 @@ namespace Desktop.ViewModel
                 if (myResult != null && myResult == true)
                 {
                     
-                    Slika = op.FileName;
-                    SlikaLabel = Slika;
-                    ByteSlika = File.ReadAllBytes(Slika);
+                    Slika = new BitmapImage(new Uri(op.FileName, UriKind.RelativeOrAbsolute));
+                    SlikaLabel = op.FileName;
+                    ByteSlika = File.ReadAllBytes(op.FileName);
                 }
                 
         }

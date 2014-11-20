@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Desktop.HelperClass
 {
@@ -132,7 +133,7 @@ namespace Desktop.HelperClass
         /// <param name="repeatCount">How many times to save</param>
         /// <param name="tableType">Target table type</param>
         /// <returns>Elapsed time</returns>
-        internal static void StoreFileUsingSqlParameter(string slika, byte[] slika1, TableType tableType, int idKorisnik)
+        internal static void StoreFileUsingSqlParameter(ImageSource slika, byte[] slika1, TableType tableType, int idKorisnik)
         {
             System.Data.SqlClient.SqlConnection connection = OpenConnection();
             System.Data.SqlClient.SqlCommand command = connection.CreateCommand();
@@ -146,7 +147,7 @@ namespace Desktop.HelperClass
                 command.CommandType = System.Data.CommandType.Text;
 
                 parameter = new System.Data.SqlClient.SqlParameter("@Name", System.Data.SqlDbType.NVarChar, 100);
-                parameter.Value = slika;
+                parameter.Value = slika.ToString();
                 command.Parameters.Add(parameter);
 
                 parameter = new System.Data.SqlClient.SqlParameter("@Data", System.Data.SqlDbType.VarBinary);
