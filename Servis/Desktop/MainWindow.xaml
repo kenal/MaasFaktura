@@ -47,6 +47,14 @@
                         <GradientStop Color="White"/>
                     </LinearGradientBrush>
                 </Button.Background>
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold">Benutzer</TextBlock>
+                            <TextBlock>Benutzer optionen.</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
             </Button>
             <Button VerticalContentAlignment="Center" Width="50" Height="30" Margin="3" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
@@ -69,6 +77,14 @@
                         <GradientStop Color="White"/>
                     </LinearGradientBrush>
                 </Button.Background>
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold">Bug</TextBlock>
+                            <TextBlock>Bugs anmelden.</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
             </Button>
             <Button VerticalContentAlignment="Center" Width="50" Height="30" Margin="3" Click="Button_Click_3" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
@@ -80,6 +96,14 @@
                         <GradientStop Color="White"/>
                     </LinearGradientBrush>
                 </Button.Background>
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold">Bugs</TextBlock>
+                            <TextBlock>Bugs ansehen.</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
             </Button>
             <Button VerticalContentAlignment="Center" Width="50" Height="30" Margin="3" Cursor="Hand">
                 <StackPanel Orientation="Horizontal">
@@ -133,6 +157,7 @@
                     <GradientStop Color="White"/>
                 </LinearGradientBrush>
             </Button.Background>
+            
         </Button>
         <DataGrid x:Name="datagrid1" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,10,5,0" x:Uid="datagrid1" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" IsReadOnly="True" >
             <DataGrid.AlternatingRowBackground>
