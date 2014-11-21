@@ -62,7 +62,7 @@
                 </StackPanel>
                 <StackPanel >
                     <TextBlock>
-                            <Hyperlink NavigateUri="http://www.maag-projekt.com/">
+                            <Hyperlink NavigateUri="http://www.maag-projekt.com">
                                 <Image Source="ikone/footer2.png" Width="50" Height="40" HorizontalAlignment="Left" Margin="5,0,10,0" />
                             </Hyperlink>
                     </TextBlock>
