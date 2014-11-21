@@ -49,9 +49,23 @@ namespace Desktop.ViewModel
             LogovaniKor = client.VratiKorisnika(id);
             ImeKorisnika = LogovaniKor.ime + " " + LogovaniKor.prezime;
         }
+
+        public void OtvoriPoruke(object parameter)
+        {
+            PorukeWidnow por = new PorukeWidnow();
+            por.Show();
+        }
         #endregion
 
         #region ICommand Members
+        private ICommand _openMsg;
+
+        public ICommand OpenMsg
+        {
+            get { return _openMsg = new RelayCommand(param => OtvoriPoruke(param)); }
+            set { _openMsg = value; }
+        }
+
         private ICommand loading;
 
         public ICommand Loading
