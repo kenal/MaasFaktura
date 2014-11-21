@@ -102,11 +102,22 @@ namespace Desktop.ViewModel
         private ObservableCollection<tbl_dobavljac> ListaPage = new ObservableCollection<tbl_dobavljac>();
         private List<int> _brojPrikazanihDobavljaca = new List<int>() { 10, 20, 25 };
         private int _kolicinaDobavljaca = 10;
+        private string selektovanaZemlja;
 
         #endregion
      
 
        #region Properties
+
+        public string SelektovanaZemlja
+        {
+            get { return this.selektovanaZemlja; }
+            set
+            {
+                this.selektovanaZemlja = value;
+                this.OnPropertyChanged("SelektovanaZemlja");
+            }
+        }
 
         public int MaxStranica1
         {
