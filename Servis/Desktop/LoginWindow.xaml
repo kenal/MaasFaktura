@@ -39,18 +39,18 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="0" Margin="68,7,85,0" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image Source="ikone/IkonaProfila.png" Height="25" Width="25" HorizontalAlignment="Left"/>
-                    <TextBox Width="180" Height="25" Text="{Binding KorisnickoIme}"/>
+                    <TextBox Width="180" Height="25" Text="{Binding KorisnickoIme}" ToolTip="Benutzername"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="0" Margin="68,7,85,0" Orientation="Horizontal" HorizontalAlignment="Center" >
                     <Image Source="ikone/IkonaMaterialBestellung.png" Height="25" Width="25" HorizontalAlignment="Left"/>
-                    <PasswordBox Name="txtPassword" Width="180" Height="25">
+                    <PasswordBox Name="txtPassword" Width="180" Height="25" ToolTip="Passwort">
                         <PasswordBox.InputBindings>
                             <KeyBinding Key="Enter" Command="{Binding LoginClick}" CommandParameter="{Binding ElementName=txtPassword}"/>
                         </PasswordBox.InputBindings>
                     </PasswordBox>
                 </StackPanel>
                 <CheckBox Content="Mich erinnern" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Margin="0,5,0,0" Visibility="Hidden"/>
-                <Button Content="Anmelden" Grid.Row="4" Grid.Column="0" Width="120" Foreground="#FFFFFF" Background="#3B3B3B" Margin="0,5,0,0" Command="{Binding LoginClick}" CommandParameter="{Binding ElementName=txtPassword}" Cursor="Hand"/>
+                <Button Content="Anmelden" Grid.Row="4" Grid.Column="0" Width="120" Foreground="#FFFFFF" Background="#3B3B3B" Margin="0,5,0,0" Command="{Binding LoginClick}" CommandParameter="{Binding ElementName=txtPassword}" Cursor="Hand" />
             </Grid>
 
             <StackPanel Grid.Column="0" Grid.Row="2"  Background="#5A5A5A" Orientation="Horizontal">
@@ -61,7 +61,12 @@
                     <Image Source="ikone/footer1.png" Width="50" Height="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
                 </StackPanel>
                 <StackPanel >
-                    <Image Source="ikone/footer2.png" Width="50" Height="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                    <TextBlock>
+                            <Hyperlink NavigateUri="http://www.maag-projekt.com">
+                                <Image Source="ikone/footer2.png" Width="50" Height="40" HorizontalAlignment="Left" Margin="5,0,10,0" />
+                            </Hyperlink>
+                    </TextBlock>
+                                        
                 </StackPanel>
             </StackPanel>
         </Grid>

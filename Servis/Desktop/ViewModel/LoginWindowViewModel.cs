@@ -10,6 +10,7 @@ using Servis.HelperClass;
 using System.Windows.Input;
 using System.Windows.Controls;
 using Desktop.ViewModel;
+using System.Windows.Documents;
 
 namespace Servis.ViewModel
 {
@@ -96,6 +97,14 @@ namespace Servis.ViewModel
             set { _Closed = value; }
         }
 
+        private ICommand _link;
+
+        public ICommand Link
+        {
+            get { return _link = new RelayCommand(param => LinkNaMaag(param)); }
+            set { _link = value; }
+        }
+
         #endregion
 
         #region Methods
@@ -132,6 +141,11 @@ namespace Servis.ViewModel
             Pozadina = "#CC9999";
         }
 
+        public void LinkNaMaag(object parameter)
+        {
+            Hyperlink hlink = new Hyperlink();
+            hlink.NavigateUri = new Uri("http://www.maag-projekt.com/");
+        }
         #endregion
 
         #region INotifyPropertyChanged Members

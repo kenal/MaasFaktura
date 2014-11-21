@@ -70,7 +70,7 @@ namespace Desktop.ViewModel
         }
         #endregion     
 
-        #region propertyes
+        #region Properties
 
         public Action CloseAction { get; set; }
         public ObservableCollection<p_get_User_ViewResult> ListaKorisnika
@@ -542,7 +542,7 @@ namespace Desktop.ViewModel
         }
         #endregion
 
-        #region INoftiyPropertyChanged Members
+        #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName)
         {
