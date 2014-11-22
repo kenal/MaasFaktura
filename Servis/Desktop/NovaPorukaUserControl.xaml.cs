@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace Desktop
 {
     /// <summary>
-    /// Interaction logic for PoslanePorukeUserControl.xaml
+    /// Interaction logic for NovaPorukaUserControl.xaml
     /// </summary>
-    public partial class PoslanePorukeUserControl : UserControl
+    public partial class NovaPorukaUserControl : UserControl
     {
-        public PoslanePorukeUserControl()
+        public NovaPorukaUserControl()
         {
             InitializeComponent();
             this.DataContext = new PorukeWindowViewModel();

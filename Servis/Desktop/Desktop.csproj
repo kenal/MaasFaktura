@@ -323,6 +323,12 @@
     <None Include="Service References\Service\Desktop.Service.tbl_kupac.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_poruka_poslane.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_poruka_primljene.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Service\Desktop.Service.tbl_radnik.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

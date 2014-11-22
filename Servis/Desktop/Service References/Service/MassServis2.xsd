@@ -137,6 +137,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ComboKorisniciPoruke">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComboKorisniciPorukeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ComboKorisniciPorukeResult" nillable="true" type="q7:ArrayOftbl_korisnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListaKupaca">
     <xs:complexType>
       <xs:sequence />
@@ -145,7 +159,7 @@
   <xs:element name="ListaKupacaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaKupacaResult" nillable="true" type="q7:ArrayOftbl_kupac" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaKupacaResult" nillable="true" type="q8:ArrayOftbl_kupac" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -164,7 +178,7 @@
   <xs:element name="UpdateKupac">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="k" nillable="true" type="q8:tbl_kupac" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="k" nillable="true" type="q9:tbl_kupac" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -203,7 +217,7 @@
   <xs:element name="ListaUserViewResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaUserViewResult" nillable="true" type="q9:ArrayOfp_get_User_ViewResult" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaUserViewResult" nillable="true" type="q10:ArrayOfp_get_User_ViewResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -246,7 +260,7 @@
   <xs:element name="UpdateRadnika">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="r" nillable="true" type="q10:tbl_radnik" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="r" nillable="true" type="q11:tbl_radnik" />
         <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -266,7 +280,7 @@
   <xs:element name="VratiKorisnikaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="VratiKorisnikaResult" nillable="true" type="q11:tbl_korisnik" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="VratiKorisnikaResult" nillable="true" type="q12:tbl_korisnik" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -296,7 +310,7 @@
   <xs:element name="UpdateKorisnik">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="k" nillable="true" type="q12:tbl_korisnik" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="k" nillable="true" type="q13:tbl_korisnik" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -327,7 +341,7 @@
   <xs:element name="PretraziRadnikaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziRadnikaResult" nillable="true" type="q13:ArrayOftbl_radnik" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziRadnikaResult" nillable="true" type="q14:ArrayOftbl_radnik" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -341,7 +355,7 @@
   <xs:element name="PretraziDobavljacaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziDobavljacaResult" nillable="true" type="q14:ArrayOftbl_dobavljac" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="PretraziDobavljacaResult" nillable="true" type="q15:ArrayOftbl_dobavljac" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -395,7 +409,7 @@
   <xs:element name="ListaBugovaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaBugovaResult" nillable="true" type="q15:ArrayOftbl_greske" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaBugovaResult" nillable="true" type="q16:ArrayOftbl_greske" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -470,6 +484,49 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="AngebotNrResult" type="xs:int" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPrimljenihPoruka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPrimljenihPorukaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaPrimljenihPorukaResult" nillable="true" type="q17:ArrayOftbl_poruka_primljene" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPoslanihPoruka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaPoslanihPorukaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaPoslanihPorukaResult" nillable="true" type="q18:ArrayOftbl_poruka_poslane" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PosaljiPoruku">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="primio" type="xs:int" />
+        <xs:element minOccurs="0" name="poslao" type="xs:int" />
+        <xs:element minOccurs="0" name="predmet" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="naslov" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PosaljiPorukuResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

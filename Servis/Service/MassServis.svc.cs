@@ -274,6 +274,35 @@ namespace Service
         }
 
         [OperationContract]
+        public ObservableCollection<tbl_korisnik> ComboKorisniciPoruke(int id)
+        {
+            ObservableCollection<tbl_korisnik> Lista = new ObservableCollection<tbl_korisnik>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var query = from a in context.tbl_korisniks where a.id_korisnik != id select a;
+
+                foreach (var p in query)
+                {
+                    Lista.Add(new tbl_korisnik
+                    {
+                        id_korisnik = p.id_korisnik,
+                        ime = p.ime,
+                        prezime = p.prezime,
+                        mail = p.mail,
+                        username = p.username,
+                        password = p.password,
+                        tip = p.tip,
+                        telefon = p.telefon,
+                        aktivan = p.aktivan,
+                        slika = p.slika,
+                        pocetna = p.pocetna
+                    });
+                }
+                return Lista;
+            }
+        }
+
+        [OperationContract]
         public ObservableCollection<tbl_kupac> ListaKupaca()
         {
             ObservableCollection<tbl_kupac> Lista = new ObservableCollection<tbl_kupac>();
@@ -956,6 +985,81 @@ namespace Service
                     return 1000;
                 else
                     return x.angebotnr + 1;
+            }
+        }
+
+        [OperationContract]
+        public ObservableCollection<tbl_poruka_primljene> ListaPrimljenihPoruka(int id)
+        {
+            ObservableCollection<tbl_poruka_primljene> Lista = new ObservableCollection<tbl_poruka_primljene>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.tbl_poruka_primljenes where a.primio == id select a;
+                Lista.Clear();
+                foreach (var p in x)
+                {
+                    Lista.Add(new tbl_poruka_primljene { 
+                        id_poruka_primljene=p.id_poruka_primljene,
+                        poslao=p.poslao,
+                        primio=p.primio,
+                        datum=p.datum,
+                        procitano=p.procitano,
+                        predmet=p.predmet,
+                        naslov=p.naslov
+                    });
+                }
+            }
+            return Lista;
+        }
+
+        [OperationContract]
+        public ObservableCollection<tbl_poruka_poslane> ListaPoslanihPoruka(int id)
+        {
+            ObservableCollection<tbl_poruka_poslane> Lista = new ObservableCollection<tbl_poruka_poslane>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.tbl_poruka_poslanes where a.poslao == id select a;
+                Lista.Clear();
+                foreach(var p in x)
+                {
+                    Lista.Add(new tbl_poruka_poslane
+                    {
+                        id_poruka_poslane=p.id_poruka_poslane,
+                        poslao=p.poslao,
+                        primio=p.primio,
+                        datum=p.datum,
+                        predmet=p.predmet,
+                        naslov=p.naslov
+                    });
+                }
+            }
+            return Lista;
+        }
+
+        [OperationContract]
+        public void PosaljiPoruku(int primio, int poslao, string predmet,string naslov)
+        {
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                tbl_poruka_primljene poruka = new tbl_poruka_primljene();
+                poruka.naslov = naslov;
+                poruka.poslao = poslao;
+                poruka.predmet = predmet;
+                poruka.primio = primio;
+                poruka.procitano = false;
+                poruka.datum = DateTime.Now;
+                context.tbl_poruka_primljenes.InsertOnSubmit(poruka);
+              
+
+                tbl_poruka_poslane poslana = new tbl_poruka_poslane();
+                poslana.naslov = naslov;
+                poslana.poslao = poslao;
+                poslana.predmet = predmet;
+                poslana.datum = DateTime.Now;
+                poslana.primio = primio;
+                context.tbl_poruka_poslanes.InsertOnSubmit(poslana);
+                context.SubmitChanges();
+                
             }
         }
     }

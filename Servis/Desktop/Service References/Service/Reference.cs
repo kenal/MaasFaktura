@@ -7228,6 +7228,9 @@ namespace Desktop.Service {
         private int id_poruka_poslaneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string naslovField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int poslaoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7274,6 +7277,19 @@ namespace Desktop.Service {
                 if ((this.id_poruka_poslaneField.Equals(value) != true)) {
                     this.id_poruka_poslaneField = value;
                     this.RaisePropertyChanged("id_poruka_poslane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string naslov {
+            get {
+                return this.naslovField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.naslovField, value) != true)) {
+                    this.naslovField = value;
+                    this.RaisePropertyChanged("naslov");
                 }
             }
         }
@@ -7369,6 +7385,9 @@ namespace Desktop.Service {
         private int id_poruka_primljeneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string naslovField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int poslaoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7418,6 +7437,19 @@ namespace Desktop.Service {
                 if ((this.id_poruka_primljeneField.Equals(value) != true)) {
                     this.id_poruka_primljeneField = value;
                     this.RaisePropertyChanged("id_poruka_primljene");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string naslov {
+            get {
+                return this.naslovField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.naslovField, value) != true)) {
+                    this.naslovField = value;
+                    this.RaisePropertyChanged("naslov");
                 }
             }
         }
@@ -9353,6 +9385,12 @@ namespace Desktop.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ComboKorisnici", ReplyAction="http://tempuri.org/MassServis/ComboKorisniciResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ComboKorisniciPoruke", ReplyAction="http://tempuri.org/MassServis/ComboKorisniciPorukeResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik> ComboKorisniciPoruke(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ComboKorisniciPoruke", ReplyAction="http://tempuri.org/MassServis/ComboKorisniciPorukeResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciPorukeAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaKupaca", ReplyAction="http://tempuri.org/MassServis/ListaKupacaResponse")]
         System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac> ListaKupaca();
         
@@ -9496,6 +9534,24 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/AngebotNr", ReplyAction="http://tempuri.org/MassServis/AngebotNrResponse")]
         System.Threading.Tasks.Task<int> AngebotNrAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPrimljenihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPrimljenihPorukaResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene> ListaPrimljenihPoruka(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPrimljenihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPrimljenihPorukaResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene>> ListaPrimljenihPorukaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPoslanihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPoslanihPorukaResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane> ListaPoslanihPoruka(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPoslanihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPoslanihPorukaResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane>> ListaPoslanihPorukaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/PosaljiPoruku", ReplyAction="http://tempuri.org/MassServis/PosaljiPorukuResponse")]
+        void PosaljiPoruku(int primio, int poslao, string predmet, string naslov);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/PosaljiPoruku", ReplyAction="http://tempuri.org/MassServis/PosaljiPorukuResponse")]
+        System.Threading.Tasks.Task PosaljiPorukuAsync(int primio, int poslao, string predmet, string naslov);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9647,6 +9703,14 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciAsync() {
             return base.Channel.ComboKorisniciAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik> ComboKorisniciPoruke(int id) {
+            return base.Channel.ComboKorisniciPoruke(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciPorukeAsync(int id) {
+            return base.Channel.ComboKorisniciPorukeAsync(id);
         }
         
         public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac> ListaKupaca() {
@@ -9839,6 +9903,30 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<int> AngebotNrAsync() {
             return base.Channel.AngebotNrAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene> ListaPrimljenihPoruka(int id) {
+            return base.Channel.ListaPrimljenihPoruka(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene>> ListaPrimljenihPorukaAsync(int id) {
+            return base.Channel.ListaPrimljenihPorukaAsync(id);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane> ListaPoslanihPoruka(int id) {
+            return base.Channel.ListaPoslanihPoruka(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane>> ListaPoslanihPorukaAsync(int id) {
+            return base.Channel.ListaPoslanihPorukaAsync(id);
+        }
+        
+        public void PosaljiPoruku(int primio, int poslao, string predmet, string naslov) {
+            base.Channel.PosaljiPoruku(primio, poslao, predmet, naslov);
+        }
+        
+        public System.Threading.Tasks.Task PosaljiPorukuAsync(int primio, int poslao, string predmet, string naslov) {
+            return base.Channel.PosaljiPorukuAsync(primio, poslao, predmet, naslov);
         }
     }
 }

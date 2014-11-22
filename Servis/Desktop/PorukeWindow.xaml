@@ -1,7 +1,8 @@
 ﻿<Window x:Class="Desktop.PorukeWidnow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PorukeWidnow" Height="490.121" Width="925.805" ResizeMode="NoResize">
+        Title="PorukeWidnow" Height="490.121" Width="925.805" ResizeMode="NoResize"
+        xmlns:controls="clr-namespace:Desktop">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" MinWidth="167"/>
@@ -63,7 +64,9 @@
         </Border>
 
         <Border x:Name="root" Grid.Column="1" Grid.Row="1" BorderBrush="#DFDFDF" BorderThickness="2" CornerRadius="10" Margin="10">
-            <Canvas  Height="30" Margin="-2,8,2,134">
+            <controls:PrimljenePorukeUserControl></controls:PrimljenePorukeUserControl>
+            
+            <!--<Canvas  Height="30" Margin="-2,8,2,134">
                 <StackPanel  Orientation="Horizontal" Width="699" Margin="5" >
                     <Label Content="Es werden" Height="30"/>
                     <ComboBox Width="50" Height="20" ItemsSource="{Binding ComboPoruke}" SelectedItem="{Binding BrojPrikazanihPoruka}"/>
@@ -105,7 +108,7 @@
                         </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-            </Canvas>
+            </Canvas>-->
 
         </Border>
         <Border x:Name="visak" Grid.Column="1" Grid.Row="2" BorderBrush="#DFDFDF" BorderThickness="2" CornerRadius="10" Margin="10,29,10,42">

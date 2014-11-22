@@ -266,29 +266,6 @@
       <Association Name="tbl_pozicija_tbl_podpozicija" Member="tbl_pozicija" ThisKey="pozicija_fk" OtherKey="idpozicija" Type="tbl_pozicija" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_poruka_poslane" Member="tbl_poruka_poslanes">
-    <Type Name="tbl_poruka_poslane">
-      <Column Name="id_poruka_poslane" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="tbl_korisnik_tbl_poruka_poslane" Member="tbl_korisnik" ThisKey="poslao" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
-      <Association Name="tbl_korisnik_tbl_poruka_poslane1" Member="tbl_korisnik1" ThisKey="primio" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbl_poruka_primljene" Member="tbl_poruka_primljenes">
-    <Type Name="tbl_poruka_primljene">
-      <Column Name="id_poruka_primljene" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="procitano" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_korisnik" ThisKey="poslao" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
-      <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_korisnik1" ThisKey="primio" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbl_pozicija" Member="tbl_pozicijas">
     <Type Name="tbl_pozicija">
       <Column Name="idpozicija" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -674,10 +651,6 @@
       <Association Name="tbl_korisnik_tbl_kalendar" Member="tbl_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_kalendar" />
       <Association Name="tbl_korisnik_tbl_korisnik_licenca" Member="tbl_korisnik_licencas" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_korisnik_licenca" />
       <Association Name="tbl_korisnik_tbl_mit_kalendar" Member="tbl_mit_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_mit_kalendar" />
-      <Association Name="tbl_korisnik_tbl_poruka_poslane" Member="tbl_poruka_poslanes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_poslane" />
-      <Association Name="tbl_korisnik_tbl_poruka_poslane1" Member="tbl_poruka_poslanes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_poslane" />
-      <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_poruka_primljenes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_primljene" />
-      <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_poruka_primljenes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_primljene" />
       <Association Name="tbl_korisnik_tbl_pracenje" Member="tbl_pracenjes" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje" />
       <Association Name="tbl_korisnik_tbl_pracenje_detalji" Member="tbl_pracenje_detaljis" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje_detalji" />
       <Association Name="tbl_korisnik_tbl_produktion" Member="tbl_produktions" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_produktion" />
@@ -687,6 +660,35 @@
       <Association Name="tbl_korisnik_tbl_greske" Member="tbl_greskes" ThisKey="id_korisnik" OtherKey="idUser" Type="tbl_greske" />
       <Association Name="tbl_korisnik_tbl_dobavljac" Member="tbl_dobavljacs" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_dobavljac" />
       <Association Name="tbl_korisnik_tbl_radnik" Member="tbl_radniks" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_radnik" />
+      <Association Name="tbl_korisnik_tbl_poruka_poslane" Member="tbl_poruka_poslanes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_poslane" />
+      <Association Name="tbl_korisnik_tbl_poruka_poslane1" Member="tbl_poruka_poslanes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_poslane" />
+      <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_poruka_primljenes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_primljene" />
+      <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_poruka_primljenes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_primljene" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_poruka_poslane" Member="tbl_poruka_poslanes">
+    <Type Name="tbl_poruka_poslane">
+      <Column Name="id_poruka_poslane" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
+      <Association Name="tbl_korisnik_tbl_poruka_poslane" Member="tbl_korisnik" ThisKey="poslao" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
+      <Association Name="tbl_korisnik_tbl_poruka_poslane1" Member="tbl_korisnik1" ThisKey="primio" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_poruka_primljene" Member="tbl_poruka_primljenes">
+    <Type Name="tbl_poruka_primljene">
+      <Column Name="id_poruka_primljene" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="procitano" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
+      <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_korisnik" ThisKey="poslao" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
+      <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_korisnik1" ThisKey="primio" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.p_get_User_View" Method="p_get_User_View">

@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Desktop.Service;
+using Servis.HelperClass;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Desktop.ViewModel
 {
@@ -12,11 +16,50 @@ namespace Desktop.ViewModel
         #region Fields
         private List<int> _comboPoruke = new List<int>() { 10, 25, 50, 100 };
         private int _brojPrikazanihPoruka=10;
+        MassServisClient client = new MassServisClient();
+        private ObservableCollection<tbl_poruka_primljene> _listaPrimljenihPoruka = new ObservableCollection<tbl_poruka_primljene>();
+        private tbl_korisnik _selektovaniKorisnik;
+        private ObservableCollection<tbl_korisnik> _listaKorisnika = new ObservableCollection<tbl_korisnik>();
+        private ObservableCollection<tbl_poruka_poslane> _listaPoslanihPoruka = new ObservableCollection<tbl_poruka_poslane>();
 
-       
+     
+        private string _betreff;
+        private string _poruka;
         #endregion
 
         #region Properties
+
+        public ObservableCollection<tbl_poruka_poslane> ListaPoslanihPoruka
+        {
+            get { return _listaPoslanihPoruka; }
+            set { _listaPoslanihPoruka = value; OnPropertyChanged("ListaPoslanihPoruka"); }
+        }
+        public string Poruka
+        {
+            get { return _poruka; }
+            set { _poruka = value; OnPropertyChanged("Poruka"); }
+        }
+        public string Betreff
+        {
+            get { return _betreff; }
+            set { _betreff = value; OnPropertyChanged("Betreff"); }
+        }
+        public tbl_korisnik SelektovaniKorisnik
+        {
+            get { return _selektovaniKorisnik; }
+            set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
+        }
+
+        public ObservableCollection<tbl_poruka_primljene> ListaPrimljenihPoruka
+        {
+            get { return _listaPrimljenihPoruka; }
+            set { _listaPrimljenihPoruka = value; OnPropertyChanged("ListaPrimljenihPoruka"); }
+        }
+        public ObservableCollection<tbl_korisnik> ListaKorisnika
+        {
+            get { return _listaKorisnika; }
+            set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
+        }
         public List<int> ComboPoruke
         {
             get { return _comboPoruke; }
@@ -30,11 +73,58 @@ namespace Desktop.ViewModel
         #endregion
 
         #region ICommand Memebers
-        
+        private ICommand _popuniCombo;
+
+        public ICommand PopuniCombo
+        {
+            get { return _popuniCombo = new RelayCommand(param => FillComboKorisnicima(param)); }
+            set { _popuniCombo = value; }
+        }
+        private ICommand _popuniGridPrimljenihPor;
+
+        public ICommand PopuniGridPrimljenihPor
+        {
+            get { return _popuniGridPrimljenihPor = new RelayCommand(param => PopuniGridPrimljenihPoruka(param)); }
+            set { _popuniGridPrimljenihPor = value; }
+        }
+
+        private ICommand _sending;
+
+        public ICommand Sending
+        {
+            get { return _sending = new RelayCommand(param => Send(param)); }
+            set { _sending = value; }
+        }
+
+        private ICommand _listaPoslanihPor;
+
+        public ICommand ListaPoslanihPor
+        {
+            get { return _listaPoslanihPor = new RelayCommand(param => PopuniGridPoslanihPoruka(param)); }
+            set { _listaPoslanihPor = value; }
+        }
         #endregion
 
         #region Methods
-        
+        public void FillComboKorisnicima(object parameter)
+        {
+            ListaKorisnika = client.ComboKorisniciPoruke(Sesija.Id_korisnik);
+        }
+
+        public void PopuniGridPrimljenihPoruka(object parameter)
+        {
+            ListaPrimljenihPoruka = client.ListaPrimljenihPoruka(Sesija.Id_korisnik);
+        }
+        public void PopuniGridPoslanihPoruka(object parameter)
+        {
+            ListaPoslanihPoruka = client.ListaPoslanihPoruka(Sesija.Id_korisnik);
+        }
+        public void Send(object parameter)
+        {
+            client.PosaljiPoruku(SelektovaniKorisnik.id_korisnik, Sesija.Id_korisnik, Poruka, Betreff);
+            Poruka = null;
+            Betreff = null;
+        }
         #endregion
 
         #region INofifyPropertyChanged Members

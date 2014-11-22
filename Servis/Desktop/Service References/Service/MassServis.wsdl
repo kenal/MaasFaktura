@@ -62,6 +62,12 @@
   <wsdl:message name="MassServis_ComboKorisnici_OutputMessage">
     <wsdl:part name="parameters" element="tns:ComboKorisniciResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_ComboKorisniciPoruke_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComboKorisniciPoruke" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ComboKorisniciPoruke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComboKorisniciPorukeResponse" />
+  </wsdl:message>
   <wsdl:message name="MassServis_ListaKupaca_InputMessage">
     <wsdl:part name="parameters" element="tns:ListaKupaca" />
   </wsdl:message>
@@ -206,6 +212,24 @@
   <wsdl:message name="MassServis_AngebotNr_OutputMessage">
     <wsdl:part name="parameters" element="tns:AngebotNrResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_ListaPrimljenihPoruka_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPrimljenihPoruka" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ListaPrimljenihPoruka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPrimljenihPorukaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ListaPoslanihPoruka_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoslanihPoruka" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ListaPoslanihPoruka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaPoslanihPorukaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_PosaljiPoruku_InputMessage">
+    <wsdl:part name="parameters" element="tns:PosaljiPoruku" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_PosaljiPoruku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PosaljiPorukuResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -242,6 +266,10 @@
     <wsdl:operation name="ComboKorisnici">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ComboKorisnici" message="tns:MassServis_ComboKorisnici_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ComboKorisniciResponse" message="tns:MassServis_ComboKorisnici_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ComboKorisniciPoruke">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ComboKorisniciPoruke" message="tns:MassServis_ComboKorisniciPoruke_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ComboKorisniciPorukeResponse" message="tns:MassServis_ComboKorisniciPoruke_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListaKupaca">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaKupaca" message="tns:MassServis_ListaKupaca_InputMessage" />
@@ -339,6 +367,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/AngebotNr" message="tns:MassServis_AngebotNr_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/AngebotNrResponse" message="tns:MassServis_AngebotNr_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ListaPrimljenihPoruka">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaPrimljenihPoruka" message="tns:MassServis_ListaPrimljenihPoruka_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ListaPrimljenihPorukaResponse" message="tns:MassServis_ListaPrimljenihPoruka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoslanihPoruka">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaPoslanihPoruka" message="tns:MassServis_ListaPoslanihPoruka_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ListaPoslanihPorukaResponse" message="tns:MassServis_ListaPoslanihPoruka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PosaljiPoruku">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/PosaljiPoruku" message="tns:MassServis_PosaljiPoruku_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/PosaljiPorukuResponse" message="tns:MassServis_PosaljiPoruku_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -416,6 +456,15 @@
     </wsdl:operation>
     <wsdl:operation name="ComboKorisnici">
       <soap:operation soapAction="http://tempuri.org/MassServis/ComboKorisnici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComboKorisniciPoruke">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ComboKorisniciPoruke" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -632,6 +681,33 @@
     </wsdl:operation>
     <wsdl:operation name="AngebotNr">
       <soap:operation soapAction="http://tempuri.org/MassServis/AngebotNr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPrimljenihPoruka">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ListaPrimljenihPoruka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaPoslanihPoruka">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ListaPoslanihPoruka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosaljiPoruku">
+      <soap:operation soapAction="http://tempuri.org/MassServis/PosaljiPoruku" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
