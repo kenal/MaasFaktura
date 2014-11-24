@@ -105,8 +105,17 @@
     <Compile Include="MitarbeiterWindowEdit.xaml.cs">
       <DependentUpon>MitarbeiterWindowEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NovaPorukaUserControl.xaml.cs">
+      <DependentUpon>NovaPorukaUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PorukeWindow.xaml.cs">
       <DependentUpon>PorukeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PoslanePorukeUserControl.xaml.cs">
+      <DependentUpon>PoslanePorukeUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrimljenePorukeUserControl.xaml.cs">
+      <DependentUpon>PrimljenePorukeUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProfileWindow.xaml.cs">
       <DependentUpon>ProfileWindow.xaml</DependentUpon>
@@ -135,6 +144,7 @@
     <Compile Include="ViewModel\LoginWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\MitarbeiterWindowViewModel.cs" />
+    <Compile Include="ViewModel\PorukeWindowViewModel.cs" />
     <Compile Include="ViewModel\ProfileWindowViewModel.cs" />
     <Page Include="AddBugWindows.xaml">
       <SubType>Designer</SubType>
@@ -234,7 +244,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NovaPorukaUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PorukeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PoslanePorukeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrimljenePorukeUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -299,6 +321,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\Desktop.Service.tbl_kupac.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_poruka_poslane.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_poruka_primljene.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\Desktop.Service.tbl_radnik.datasource">
@@ -414,6 +442,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ikone\no-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ikone\IkonaNovaPor.png" />
+    <Resource Include="ikone\IkonaPostavke.png" />
+    <Resource Include="ikone\IkoneInbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ikone\IkonaPoslanaPor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

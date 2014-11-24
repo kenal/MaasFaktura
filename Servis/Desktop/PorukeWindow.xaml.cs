@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,31 @@ namespace Desktop
         public PorukeWidnow()
         {
             InitializeComponent();
+            this.DataContext = new PorukeWindowViewModel();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            PoslanePorukeUserControl ppuc = new PoslanePorukeUserControl();
+            root.Child = null;
+            root.Child = ppuc;
+            visak.Visibility = Visibility.Visible;
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            PrimljenePorukeUserControl primljenePor = new PrimljenePorukeUserControl();
+            root.Child = null;
+            root.Child = primljenePor;
+            visak.Visibility = Visibility.Visible;
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            NovaPorukaUserControl npuc = new NovaPorukaUserControl();
+            root.Child = null;
+            root.Child = npuc;
+            visak.Visibility = Visibility.Collapsed;
         }
     }
 }
