@@ -55,7 +55,10 @@
 
             <!--Row:1, Grid Neue-->
             <Label Content="Kunden Nr:" FontSize="14" Margin="-755,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            
             <TextBox Name="txtBoxKunNr" Height="25" Width="225" Margin="223,40,548,0" HorizontalAlignment="Center" VerticalAlignment="Top" />
+            
+            
 
             <Label Content="Email:" FontSize="14" Margin="540,5,390,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <TextBox Name="txtBoxEmail" Height="25" Width="222" Margin="676,5,98,0" HorizontalAlignment="Center" VerticalAlignment="Top" />
@@ -120,7 +123,7 @@
             </Grid>
             <Button x:Name="btnNewRow01" Content="Material" HorizontalAlignment="Center" Margin="0,530,160,0" VerticalAlignment="Top"  Width="75" Click="btnNewRow01_Click"/>
             <Button x:Name="btnNewRow02" Content="Bearbeiten" HorizontalAlignment="Center" Margin="0,530,0,0" VerticalAlignment="Top" Width="75" Click="btnNewRow02_Click"/>
-            <Button x:Name="btnNewRow0e" Content="Text" HorizontalAlignment="Center" Margin="160,530,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btnNewRow0e" Content="Text" HorizontalAlignment="Center" Margin="160,530,0,0" VerticalAlignment="Top" Width="75" Click="btnNewRow03_Click"/>
             <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Center" Margin="832,530,0,0" VerticalAlignment="Top" Height="30" Width="160" Click="btnSave_Click" />
         </Grid>
         <!--Row 03-->

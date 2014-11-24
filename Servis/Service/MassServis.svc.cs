@@ -1062,6 +1062,68 @@ namespace Service
                 
             }
         }
+
+        [OperationContract]
+        public ObservableCollection<tbl_kupac> ListaKupacaSearch(int broj)
+        {
+            ObservableCollection<tbl_kupac> Lista = new ObservableCollection<tbl_kupac>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var query = from a in context.tbl_kupacs where a.broj_kupac.ToString().Contains("/'"+broj+"'/")  select a;
+                Lista.Clear();
+                foreach (var p in query)
+                {
+                    Lista.Add(new tbl_kupac
+                    {
+                        id_kupac = p.id_kupac,
+                        pojam = p.pojam,
+                        ime = p.ime,
+                        prezime = p.prezime,
+                        mjesto = p.mjesto,
+                        grupa = p.grupa,
+                        slobodno_polje = p.slobodno_polje,
+                        ime2 = p.ime2,
+                        ulica = p.ulica,
+                        tel1 = p.tel1,
+                        tel2 = p.tel2,
+                        fax = p.fax,
+                        mail = p.mail,
+                        lk = p.lk,
+                        dostava_na = p.dostava_na,
+                        dostava_od = p.dostava_od,
+                        vk_cijena = p.vk_cijena,
+                        gotovina = p.gotovina,
+                        popust_gotovina = p.popust_gotovina,
+                        dnevni_popust = p.dnevni_popust,
+                        predstavnik = p.predstavnik,
+                        limit_narudzbe = p.limit_narudzbe,
+                        tip = p.tip,
+                        adresa_dostava = p.adresa_dostava,
+                        adresa_fakture = p.adresa_fakture,
+                        mail2 = p.mail2,
+                        interner = p.interner,
+                        tip_kupca = p.tip_kupca,
+                        porez = p.porez,
+                        broj = p.broj,
+                        broj_detalji = p.broj_detalji,
+                        ocjena_kupca = p.ocjena_kupca,
+                        biljeska = p.biljeska,
+                        naziv = p.naziv,
+                        zemlja = p.zemlja,
+                        placa = p.placa,
+                        rabat = p.rabat,
+                        adresa2 = p.adresa2,
+                        grad = p.grad,
+                        predmet = p.predmet,
+                        kontakt_osobe = p.kontakt_osobe,
+                        detalji_rute = p.detalji_rute,
+                        titel = p.titel,
+                        broj_kupac = p.broj_kupac
+                    });
+                }
+                return Lista;
+            }
+        }
     }
 }
    
