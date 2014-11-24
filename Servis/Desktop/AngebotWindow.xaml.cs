@@ -209,7 +209,6 @@ namespace Desktop
             Label myLabel01 = new Label();
             Button btnDown = new Button();
             Button btnUp = new Button();
-
             Button btnAddType01 = new Button();
             Button btnAddType02 = new Button();
 
@@ -307,11 +306,11 @@ namespace Desktop
             einz.Margin = new Thickness(830, vertRowPosition, 0, 0);
             stk.Margin = new Thickness(880, vertRowPosition, 0, 0);
             gpreis.Margin = new Thickness(930, vertRowPosition, 0, 0);
-            myDinamicButton01.Margin = new Thickness(820, vertRowPosition, 0, 0);
+            myDinamicButton01.Margin = new Thickness(1030, vertRowPosition, 0, 0);
             btnAddType01.Margin = new Thickness(140, topW, 0, 0);
             btnAddType02.Margin = new Thickness(240, topW, 0, 0);          
-            btnDown.Margin = new Thickness(930, vertRowPosition, 0, 0);
-            btnUp.Margin = new Thickness(970, vertRowPosition, 0, 0);
+            btnDown.Margin = new Thickness(1110, vertRowPosition, 0, 0);
+            btnUp.Margin = new Thickness(1150, vertRowPosition, 0, 0);
 
             brei.Name = "txtBoxPrva_" + rowId;
             this.RegisterName("txtBoxPrva_" + rowId, brei);
@@ -394,7 +393,17 @@ namespace Desktop
             Label myLabel01 = new Label();
             Button btnDown = new Button();
             Button btnUp = new Button();
+            //Row 2 Column content
+            ComboBox r2First = new ComboBox();
+            TextBox r2brei = new TextBox();
+            TextBox r2lng = new TextBox();
+            ComboBox r2einh = new ComboBox();
+            TextBox r2men = new TextBox();
+            TextBox r2einz = new TextBox();
+            TextBox r2stk = new TextBox();
+            TextBox r2gpreis = new TextBox();
 
+            Row2myDinamicTxtBox01.Visibility = Visibility.Hidden;
             Row2myDinamicTxtBox01.Width = 210;
             Row2myDinamicTxtBox01.Height = 25;
             Row2myDinamicButton01.Width = 70;
@@ -405,6 +414,22 @@ namespace Desktop
             btnDown.Height = 25;
             btnUp.Width = 30;
             btnUp.Height = 25;
+            r2First.Width = 440;
+            r2First.Height = 25;
+            r2brei.Width = 40;
+            r2brei.Height = 25;
+            r2lng.Width = 40;
+            r2lng.Height = 25;
+            r2einh.Width = 80;
+            r2einh.Height = 25;
+            r2men.Width = 40;
+            r2men.Height = 25;
+            r2einz.Width = 40;
+            r2einz.Height = 25;
+            r2stk.Width = 40;
+            r2stk.Height = 25;
+            r2gpreis.Width = 40;
+            r2gpreis.Height = 25;
 
             Row2myDinamicTxtBox01.HorizontalAlignment = HorizontalAlignment.Left;
             Row2myDinamicTxtBox01.VerticalAlignment = VerticalAlignment.Top;
@@ -416,11 +441,14 @@ namespace Desktop
             btnDown.VerticalAlignment = VerticalAlignment.Top;
             btnUp.HorizontalAlignment = HorizontalAlignment.Left;
             btnUp.VerticalAlignment = VerticalAlignment.Top;
+            r2First.HorizontalAlignment = HorizontalAlignment.Left;
+            r2First.VerticalAlignment = VerticalAlignment.Top;
             Row2myDinamicTxtBox01.Margin = new Thickness(30, vertRowPosition, 0, 0);
-            Row2myDinamicButton01.Margin = new Thickness(820, vertRowPosition, 0, 0);
+            r2First.Margin = new Thickness(30, vertRowPosition, 0, 0);
+            Row2myDinamicButton01.Margin = new Thickness(1030, vertRowPosition, 0, 0);
             myLabel01.Margin = new Thickness(5, vertRowPosition, 0, 0);
-            btnDown.Margin = new Thickness(930, vertRowPosition, 0, 0);
-            btnUp.Margin = new Thickness(970, vertRowPosition, 0, 0);
+            btnDown.Margin = new Thickness(1110, vertRowPosition, 0, 0);
+            btnUp.Margin = new Thickness(1150, vertRowPosition, 0, 0);
 
             Row2myDinamicTxtBox01.Name = "row2txtBox_" + rowId;
             this.RegisterName("row2txtBox_" + rowId, Row2myDinamicTxtBox01);
@@ -438,6 +466,8 @@ namespace Desktop
             btnUp.Name = "btnUp_" + rowId;
             btnUp.Content = "U";
             this.RegisterName("btnUp_" + rowId, btnUp);
+            r2First.Name = "r2First_" + rowId;
+            this.RegisterName("r2First_" + rowId, r2First);
 
             lastRowId = lastRowId + 1;
             if (lastRowId != 0) { myLabel01.Content = lastRowId; } else { myLabel01.Content = rowId; }
@@ -450,6 +480,7 @@ namespace Desktop
             grid01.Children.Add(myLabel01);
             grid01.Children.Add(btnDown);
             grid01.Children.Add(btnUp);
+            grid01.Children.Add(r2First);
 
             vertRowPosition = vertRowPosition + 30;
             scr01.ScrollToBottom();
@@ -474,10 +505,10 @@ namespace Desktop
             ComboBox Cell11 = (ComboBox)this.FindName("mat_" + btnIndex);
             ComboBox Cell12 = (ComboBox)this.FindName("gehr_" + btnIndex);
             ComboBox Cell13 = (ComboBox)this.FindName("einh_" + btnIndex);
-            ComboBox Cell14 = (ComboBox)this.FindName("men_" + btnIndex);
-            ComboBox Cell15 = (ComboBox)this.FindName("einz_" + btnIndex);
-            ComboBox Cell16 = (ComboBox)this.FindName("stk_" + btnIndex);
-            ComboBox Cell17 = (ComboBox)this.FindName("gpreis" + btnIndex);
+            TextBox Cell14 = (TextBox)this.FindName("men_" + btnIndex);
+            TextBox Cell15 = (TextBox)this.FindName("einz_" + btnIndex);
+            TextBox Cell16 = (TextBox)this.FindName("stk_" + btnIndex);
+            TextBox Cell17 = (TextBox)this.FindName("gpreis_" + btnIndex);
 
             Cell01.UnregisterName(Cell01.Name);
             Cell02.UnregisterName(Cell02.Name);
@@ -492,12 +523,10 @@ namespace Desktop
             Cell11.UnregisterName(Cell11.Name);
             Cell12.UnregisterName(Cell12.Name);
             Cell13.UnregisterName(Cell13.Name);
-
-            Cell13.UnregisterName(Cell13.Name);
-            Cell14.UnregisterName(Cell13.Name);
-            Cell15.UnregisterName(Cell13.Name);
-            Cell16.UnregisterName(Cell13.Name);
-
+            Cell14.UnregisterName(Cell14.Name);
+            Cell15.UnregisterName(Cell15.Name);
+            Cell16.UnregisterName(Cell16.Name);
+            Cell17.UnregisterName(Cell17.Name);
             grid01.Children.Remove(Cell01);
             grid01.Children.Remove(Cell02);
             grid01.Children.Remove(Cell03);
@@ -511,6 +540,10 @@ namespace Desktop
             grid01.Children.Remove(Cell11);
             grid01.Children.Remove(Cell12);
             grid01.Children.Remove(Cell13);
+            grid01.Children.Remove(Cell14);
+            grid01.Children.Remove(Cell15);
+            grid01.Children.Remove(Cell16);
+            grid01.Children.Remove(Cell17);
 
 
             for (int i = 0; i <= rowId; i++)
@@ -535,6 +568,10 @@ namespace Desktop
                         ComboBox Type01Cell0011 = (ComboBox)this.FindName("mat_" + rID);
                         ComboBox Type01Cell0012 = (ComboBox)this.FindName("gehr_" + rID);
                         ComboBox Type01Cell0013 = (ComboBox)this.FindName("einh_" + rID);
+                        TextBox Type01Cell0014 = (TextBox)this.FindName("men_" + rID);
+                        TextBox Type01Cell0015 = (TextBox)this.FindName("einz_" + rID);
+                        TextBox Type01Cell0016 = (TextBox)this.FindName("stk_" + rID);
+                        TextBox Type01Cell0017 = (TextBox)this.FindName("gpreis_" + rID);
                         //Row type 02
                         TextBox Type02Cell001 = (TextBox)this.FindName("row2txtBox_" + rID);
                         Button Type02Cell002 = (Button)this.FindName("row2Btn_" + rID);
@@ -546,11 +583,11 @@ namespace Desktop
                             int lblValue = Convert.ToInt32(Type01Cell004.Content);
                             Type01Cell001.Margin = new Thickness(730, newTopPosition, 0, 0);
                             Type01Cell002.Margin = new Thickness(680, newTopPosition, 0, 0);
-                            Type01Cell003.Margin = new Thickness(820, newTopPosition, 0, 0);
+                            Type01Cell003.Margin = new Thickness(1030, newTopPosition, 0, 0);
                             Type01Cell004.Content = lblValue - 1;
                             Type01Cell004.Margin = new Thickness(5, newTopPosition, 0, 0);
-                            Type01Cell005.Margin = new Thickness(930, newTopPosition, 0, 0);
-                            Type01Cell006.Margin = new Thickness(970, newTopPosition, 0, 0);
+                            Type01Cell005.Margin = new Thickness(1110, newTopPosition, 0, 0);
+                            Type01Cell006.Margin = new Thickness(1150, newTopPosition, 0, 0);
                             Type01Cell007.Margin = new Thickness(30, newTopPosition, 0, 0);
                             Type01Cell008.Margin = new Thickness(120, newTopPosition, 0, 0);
                             Type01Cell009.Margin = new Thickness(210, newTopPosition, 0, 0);
@@ -558,6 +595,10 @@ namespace Desktop
                             Type01Cell0011.Margin = new Thickness(390, newTopPosition, 0, 0);
                             Type01Cell0012.Margin = new Thickness(500, newTopPosition, 0, 0);
                             Type01Cell0013.Margin = new Thickness(590, newTopPosition, 0, 0);
+                            Type01Cell0014.Margin = new Thickness(780, newTopPosition, 0, 0);
+                            Type01Cell0015.Margin = new Thickness(830, newTopPosition, 0, 0);
+                            Type01Cell0016.Margin = new Thickness(880, newTopPosition, 0, 0);
+                            Type01Cell0017.Margin = new Thickness(930, newTopPosition, 0, 0);
                         }
                         else if (Type02Cell001 != null)
                         {
@@ -567,11 +608,11 @@ namespace Desktop
                             int lblValue = Convert.ToInt32(Type01Cell004.Content);
 
                             Type02Cell001.Margin = new Thickness(30, newTopPosition, 0, 0);
-                            Type02Cell002.Margin = new Thickness(820, newTopPosition, 0, 0);
+                            Type02Cell002.Margin = new Thickness(1030, newTopPosition, 0, 0);
                             Type01Cell004.Content = lblValue - 1;
                             Type01Cell004.Margin = new Thickness(5, newTopPosition, 0, 0);
-                            Type01Cell005.Margin = new Thickness(930, newTopPosition, 0, 0);
-                            Type01Cell006.Margin = new Thickness(970, newTopPosition, 0, 0);
+                            Type01Cell005.Margin = new Thickness(1110, newTopPosition, 0, 0);
+                            Type01Cell006.Margin = new Thickness(1150, newTopPosition, 0, 0);
                         }
                     }
                 }
@@ -622,6 +663,10 @@ namespace Desktop
                         ComboBox Type01Cell0011 = (ComboBox)this.FindName("mat_" + rID);
                         ComboBox Type01Cell0012 = (ComboBox)this.FindName("gehr_" + rID);
                         ComboBox Type01Cell0013 = (ComboBox)this.FindName("einh_" + rID);
+                        TextBox Type01Cell0014 = (TextBox)this.FindName("men_" + rID);
+                        TextBox Type01Cell0015 = (TextBox)this.FindName("einz_" + rID);
+                        TextBox Type01Cell0016 = (TextBox)this.FindName("stk_" + rID);
+                        TextBox Type01Cell0017 = (TextBox)this.FindName("gpreis_" + rID);
                         //Row type 02
                         TextBox Type02Cell001 = (TextBox)this.FindName("row2txtBox_" + rID);
                         Button Type02Cell002 = (Button)this.FindName("row2Btn_" + rID);
@@ -633,11 +678,11 @@ namespace Desktop
                             int lblValue = Convert.ToInt32(Type01Cell004.Content);
                             Type01Cell001.Margin = new Thickness(730, newTopPosition, 0, 0);
                             Type01Cell002.Margin = new Thickness(680, newTopPosition, 0, 0);
-                            Type01Cell003.Margin = new Thickness(820, newTopPosition, 0, 0);
+                            Type01Cell003.Margin = new Thickness(1030, newTopPosition, 0, 0);
                             Type01Cell004.Content = lblValue - 1;
                             Type01Cell004.Margin = new Thickness(5, newTopPosition, 0, 0);
-                            Type01Cell005.Margin = new Thickness(930, newTopPosition, 0, 0);
-                            Type01Cell006.Margin = new Thickness(970, newTopPosition, 0, 0);
+                            Type01Cell005.Margin = new Thickness(1110, newTopPosition, 0, 0);
+                            Type01Cell006.Margin = new Thickness(1150, newTopPosition, 0, 0);
                             Type01Cell007.Margin = new Thickness(30, newTopPosition, 0, 0);
                             Type01Cell008.Margin = new Thickness(120, newTopPosition, 0, 0);
                             Type01Cell009.Margin = new Thickness(210, newTopPosition, 0, 0);
@@ -645,6 +690,10 @@ namespace Desktop
                             Type01Cell0011.Margin = new Thickness(390, newTopPosition, 0, 0);
                             Type01Cell0012.Margin = new Thickness(500, newTopPosition, 0, 0);
                             Type01Cell0013.Margin = new Thickness(590, newTopPosition, 0, 0);
+                            Type01Cell0014.Margin = new Thickness(780, newTopPosition, 0, 0);
+                            Type01Cell0015.Margin = new Thickness(830, newTopPosition, 0, 0);
+                            Type01Cell0016.Margin = new Thickness(880, newTopPosition, 0, 0);
+                            Type01Cell0017.Margin = new Thickness(930, newTopPosition, 0, 0);
                         }
                         else if (Type02Cell001 != null)
                         {
@@ -653,11 +702,11 @@ namespace Desktop
                             var newTopPosition = currentTopPosition - 30;
                             int lblValue = Convert.ToInt32(Type01Cell004.Content);
                             Type02Cell001.Margin = new Thickness(30, newTopPosition, 0, 0);
-                            Type02Cell002.Margin = new Thickness(820, newTopPosition, 0, 0);
+                            Type02Cell002.Margin = new Thickness(1030, newTopPosition, 0, 0);
                             Type01Cell004.Content = lblValue - 1;
                             Type01Cell004.Margin = new Thickness(5, newTopPosition, 0, 0);
-                            Type01Cell005.Margin = new Thickness(930, newTopPosition, 0, 0);
-                            Type01Cell006.Margin = new Thickness(970, newTopPosition, 0, 0);
+                            Type01Cell005.Margin = new Thickness(1110, newTopPosition, 0, 0);
+                            Type01Cell006.Margin = new Thickness(1150, newTopPosition, 0, 0);
                         }
                     }
                 }
@@ -719,6 +768,11 @@ namespace Desktop
             ComboBox Type01Cell0011 = (ComboBox)this.FindName("mat_" + btnIndex);
             ComboBox Type01Cell0012 = (ComboBox)this.FindName("gehr_" + btnIndex);
             ComboBox Type01Cell0013 = (ComboBox)this.FindName("einh_" + btnIndex);
+            TextBox Type01Cell0014 = (TextBox)this.FindName("men_" + btnIndex);
+            TextBox Type01Cell0015 = (TextBox)this.FindName("einz_" + btnIndex);
+            TextBox Type01Cell0016 = (TextBox)this.FindName("stk_" + btnIndex);
+            TextBox Type01Cell0017 = (TextBox)this.FindName("gpreis_" + btnIndex);
+
             TextBox Type02Cell001 = (TextBox)this.FindName("row2txtBox_" + btnIndex);
             Button Type02Cell002 = (Button)this.FindName("row2Btn_" + btnIndex);
             var rowMargin = btn.Margin.Top + 30;
@@ -760,6 +814,10 @@ namespace Desktop
             ComboBox Type01Cell0011Below = (ComboBox)this.FindName("mat_" + btnIndexBelow);
             ComboBox Type01Cell0012Below = (ComboBox)this.FindName("gehr_" + btnIndexBelow);
             ComboBox Type01Cell0013Below = (ComboBox)this.FindName("einh_" + btnIndexBelow);
+            TextBox Type01Cell0014Below = (TextBox)this.FindName("men_" + btnIndexBelow);
+            TextBox Type01Cell0015Below = (TextBox)this.FindName("einz_" + btnIndexBelow);
+            TextBox Type01Cell0016Below = (TextBox)this.FindName("stk_" + btnIndexBelow);
+            TextBox Type01Cell0017Below = (TextBox)this.FindName("gpreis_" + btnIndexBelow);
             if (Type01Cell001 != null)
             {
                 var currentTopPosition = Type01Cell001.Margin.Top;
@@ -767,11 +825,11 @@ namespace Desktop
                 int lblValue = Convert.ToInt32(Type01Cell004.Content);
                 Type01Cell001.Margin = new Thickness(730, newTopPositionDown, 0, 0);
                 Type01Cell002.Margin = new Thickness(680, newTopPositionDown, 0, 0);
-                Type01Cell003.Margin = new Thickness(820, newTopPositionDown, 0, 0);
+                Type01Cell003.Margin = new Thickness(1030, newTopPositionDown, 0, 0);
                 Type01Cell004.Content = lblValue + 1;
                 Type01Cell004.Margin = new Thickness(5, newTopPositionDown, 0, 0);
-                Type01Cell005.Margin = new Thickness(930, newTopPositionDown, 0, 0);
-                Type01Cell006.Margin = new Thickness(970, newTopPositionDown, 0, 0);
+                Type01Cell005.Margin = new Thickness(1110, newTopPositionDown, 0, 0);
+                Type01Cell006.Margin = new Thickness(1150, newTopPositionDown, 0, 0);
                 Type01Cell007.Margin = new Thickness(30, newTopPositionDown, 0, 0);
                 Type01Cell008.Margin = new Thickness(120, newTopPositionDown, 0, 0);
                 Type01Cell009.Margin = new Thickness(210, newTopPositionDown, 0, 0);
@@ -779,6 +837,10 @@ namespace Desktop
                 Type01Cell0011.Margin = new Thickness(390, newTopPositionDown, 0, 0);
                 Type01Cell0012.Margin = new Thickness(500, newTopPositionDown, 0, 0);
                 Type01Cell0013.Margin = new Thickness(590, newTopPositionDown, 0, 0);
+                Type01Cell0014.Margin = new Thickness(780, newTopPositionDown, 0, 0);
+                Type01Cell0015.Margin = new Thickness(830, newTopPositionDown, 0, 0);
+                Type01Cell0016.Margin = new Thickness(880, newTopPositionDown, 0, 0);
+                Type01Cell0017.Margin = new Thickness(930, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -786,11 +848,11 @@ namespace Desktop
                     int lblValueBelow = Convert.ToInt32(Type01Cell004Below.Content);
                     Type01Cell001Below.Margin = new Thickness(730, newTopPositionUp, 0, 0);
                     Type01Cell002Below.Margin = new Thickness(680, newTopPositionUp, 0, 0);
-                    Type01Cell003Below.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type01Cell003Below.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow - 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                     Type01Cell007Below.Margin = new Thickness(30, newTopPositionUp, 0, 0);
                     Type01Cell008Below.Margin = new Thickness(120, newTopPositionUp, 0, 0);
                     Type01Cell009Below.Margin = new Thickness(210, newTopPositionUp, 0, 0);
@@ -798,6 +860,10 @@ namespace Desktop
                     Type01Cell0011Below.Margin = new Thickness(390, newTopPositionUp, 0, 0);
                     Type01Cell0012Below.Margin = new Thickness(500, newTopPositionUp, 0, 0);
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
+                    Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
+                    Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -805,11 +871,11 @@ namespace Desktop
                     var newTopPositionUp = currentTopPositionBelow - 30;
                     int lblValueBelow = Convert.ToInt32(Type01Cell004.Content);
                     Type02Cell001btnIndexBelow.Margin = new Thickness(30, newTopPositionUp, 0, 0);
-                    Type02Cell002btnIndexBelow.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type02Cell002btnIndexBelow.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow - 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                 }
             }
             else if (Type02Cell001 != null)
@@ -818,11 +884,11 @@ namespace Desktop
                 var newTopPositionDown = currentTopPosition + 30;
                 int lblValue = Convert.ToInt32(Type01Cell004.Content);
                 Type02Cell001.Margin = new Thickness(30, newTopPositionDown, 0, 0);
-                Type02Cell002.Margin = new Thickness(820, newTopPositionDown, 0, 0);
+                Type02Cell002.Margin = new Thickness(1030, newTopPositionDown, 0, 0);
                 Type01Cell004.Content = lblValue + 1;
                 Type01Cell004.Margin = new Thickness(5, newTopPositionDown, 0, 0);
-                Type01Cell005.Margin = new Thickness(930, newTopPositionDown, 0, 0);
-                Type01Cell006.Margin = new Thickness(970, newTopPositionDown, 0, 0);
+                Type01Cell005.Margin = new Thickness(1110, newTopPositionDown, 0, 0);
+                Type01Cell006.Margin = new Thickness(1150, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -830,11 +896,11 @@ namespace Desktop
                     int lblValueBelow = Convert.ToInt32(Type01Cell004Below.Content);
                     Type01Cell001Below.Margin = new Thickness(730, newTopPositionUp, 0, 0);
                     Type01Cell002Below.Margin = new Thickness(680, newTopPositionUp, 0, 0);
-                    Type01Cell003Below.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type01Cell003Below.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow - 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                     Type01Cell007Below.Margin = new Thickness(30, newTopPositionUp, 0, 0);
                     Type01Cell008Below.Margin = new Thickness(120, newTopPositionUp, 0, 0);
                     Type01Cell009Below.Margin = new Thickness(210, newTopPositionUp, 0, 0);
@@ -842,6 +908,10 @@ namespace Desktop
                     Type01Cell0011Below.Margin = new Thickness(390, newTopPositionUp, 0, 0);
                     Type01Cell0012Below.Margin = new Thickness(500, newTopPositionUp, 0, 0);
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
+                    Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
+                    Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -849,11 +919,11 @@ namespace Desktop
                     var newTopPositionUp = currentTopPositionBelow - 30;
                     int lblValueBelow = Convert.ToInt32(Type01Cell004.Content);
                     Type02Cell001btnIndexBelow.Margin = new Thickness(30, newTopPositionUp, 0, 0);
-                    Type02Cell002btnIndexBelow.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type02Cell002btnIndexBelow.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow - 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                 }
             }
         }
@@ -879,6 +949,11 @@ namespace Desktop
             ComboBox Type01Cell0011 = (ComboBox)this.FindName("mat_" + btnIndex);
             ComboBox Type01Cell0012 = (ComboBox)this.FindName("gehr_" + btnIndex);
             ComboBox Type01Cell0013 = (ComboBox)this.FindName("einh_" + btnIndex);
+            TextBox Type01Cell0014 = (TextBox)this.FindName("men_" + btnIndex);
+            TextBox Type01Cell0015 = (TextBox)this.FindName("einz_" + btnIndex);
+            TextBox Type01Cell0016 = (TextBox)this.FindName("stk_" + btnIndex);
+            TextBox Type01Cell0017 = (TextBox)this.FindName("gpreis_" + btnIndex);
+
             TextBox Type02Cell001 = (TextBox)this.FindName("row2txtBox_" + btnIndex);
             Button Type02Cell002 = (Button)this.FindName("row2Btn_" + btnIndex);
             var rowMargin = btn.Margin.Top - 30;
@@ -918,6 +993,10 @@ namespace Desktop
             ComboBox Type01Cell0011Below = (ComboBox)this.FindName("mat_" + btnIndexBelow);
             ComboBox Type01Cell0012Below = (ComboBox)this.FindName("gehr_" + btnIndexBelow);
             ComboBox Type01Cell0013Below = (ComboBox)this.FindName("einh_" + btnIndexBelow);
+            TextBox Type01Cell0014Below = (TextBox)this.FindName("men_" + btnIndexBelow);
+            TextBox Type01Cell0015Below = (TextBox)this.FindName("einz_" + btnIndexBelow);
+            TextBox Type01Cell0016Below = (TextBox)this.FindName("stk_" + btnIndexBelow);
+            TextBox Type01Cell0017Below = (TextBox)this.FindName("gpreis_" + btnIndexBelow);
             TextBox Type02Cell001btnIndexBelow = (TextBox)this.FindName("row2txtBox_" + btnIndexBelow);
             Button Type02Cell002btnIndexBelow = (Button)this.FindName("row2Btn_" + btnIndexBelow);
             if (Type01Cell001 != null)
@@ -927,11 +1006,11 @@ namespace Desktop
                 int lblValue = Convert.ToInt32(Type01Cell004.Content);
                 Type01Cell001.Margin = new Thickness(730, newTopPositionDown, 0, 0);
                 Type01Cell002.Margin = new Thickness(680, newTopPositionDown, 0, 0);
-                Type01Cell003.Margin = new Thickness(820, newTopPositionDown, 0, 0);
+                Type01Cell003.Margin = new Thickness(1030, newTopPositionDown, 0, 0);
                 Type01Cell004.Content = lblValue - 1;
                 Type01Cell004.Margin = new Thickness(5, newTopPositionDown, 0, 0);
-                Type01Cell005.Margin = new Thickness(930, newTopPositionDown, 0, 0);
-                Type01Cell006.Margin = new Thickness(970, newTopPositionDown, 0, 0);
+                Type01Cell005.Margin = new Thickness(1110, newTopPositionDown, 0, 0);
+                Type01Cell006.Margin = new Thickness(1150, newTopPositionDown, 0, 0);
                 Type01Cell007.Margin = new Thickness(30, newTopPositionDown, 0, 0);
                 Type01Cell008.Margin = new Thickness(120, newTopPositionDown, 0, 0);
                 Type01Cell009.Margin = new Thickness(210, newTopPositionDown, 0, 0);
@@ -939,6 +1018,10 @@ namespace Desktop
                 Type01Cell0011.Margin = new Thickness(390, newTopPositionDown, 0, 0);
                 Type01Cell0012.Margin = new Thickness(500, newTopPositionDown, 0, 0);
                 Type01Cell0013.Margin = new Thickness(590, newTopPositionDown, 0, 0);
+                Type01Cell0014.Margin = new Thickness(780, newTopPositionDown, 0, 0);
+                Type01Cell0015.Margin = new Thickness(830, newTopPositionDown, 0, 0);
+                Type01Cell0016.Margin = new Thickness(880, newTopPositionDown, 0, 0);
+                Type01Cell0017.Margin = new Thickness(930, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -946,11 +1029,11 @@ namespace Desktop
                     int lblValueBelow = Convert.ToInt32(Type01Cell004Below.Content);
                     Type01Cell001Below.Margin = new Thickness(730, newTopPositionUp, 0, 0);
                     Type01Cell002Below.Margin = new Thickness(680, newTopPositionUp, 0, 0);
-                    Type01Cell003Below.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type01Cell003Below.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow + 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                     Type01Cell007Below.Margin = new Thickness(30, newTopPositionUp, 0, 0);
                     Type01Cell008Below.Margin = new Thickness(120, newTopPositionUp, 0, 0);
                     Type01Cell009Below.Margin = new Thickness(210, newTopPositionUp, 0, 0);
@@ -958,6 +1041,10 @@ namespace Desktop
                     Type01Cell0011Below.Margin = new Thickness(390, newTopPositionUp, 0, 0);
                     Type01Cell0012Below.Margin = new Thickness(500, newTopPositionUp, 0, 0);
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
+                    Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
+                    Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -965,11 +1052,11 @@ namespace Desktop
                     var newTopPositionUp = currentTopPositionBelow + 30;
                     int lblValueBelow = Convert.ToInt32(Type01Cell004.Content);
                     Type02Cell001btnIndexBelow.Margin = new Thickness(30, newTopPositionUp, 0, 0);
-                    Type02Cell002btnIndexBelow.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type02Cell002btnIndexBelow.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow + 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                 }
             }
             else if (Type02Cell001 != null)
@@ -978,11 +1065,11 @@ namespace Desktop
                 var newTopPositionDown = currentTopPosition - 30;
                 int lblValue = Convert.ToInt32(Type01Cell004.Content);
                 Type02Cell001.Margin = new Thickness(30, newTopPositionDown, 0, 0);
-                Type02Cell002.Margin = new Thickness(820, newTopPositionDown, 0, 0);
+                Type02Cell002.Margin = new Thickness(1030, newTopPositionDown, 0, 0);
                 Type01Cell004.Content = lblValue - 1;
                 Type01Cell004.Margin = new Thickness(5, newTopPositionDown, 0, 0);
-                Type01Cell005.Margin = new Thickness(930, newTopPositionDown, 0, 0);
-                Type01Cell006.Margin = new Thickness(970, newTopPositionDown, 0, 0);
+                Type01Cell005.Margin = new Thickness(1110, newTopPositionDown, 0, 0);
+                Type01Cell006.Margin = new Thickness(1150, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -990,11 +1077,11 @@ namespace Desktop
                     int lblValueBelow = Convert.ToInt32(Type01Cell004Below.Content);
                     Type01Cell001Below.Margin = new Thickness(730, newTopPositionUp, 0, 0);
                     Type01Cell002Below.Margin = new Thickness(680, newTopPositionUp, 0, 0);
-                    Type01Cell003Below.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type01Cell003Below.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow + 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                     Type01Cell007Below.Margin = new Thickness(30, newTopPositionUp, 0, 0);
                     Type01Cell008Below.Margin = new Thickness(120, newTopPositionUp, 0, 0);
                     Type01Cell009Below.Margin = new Thickness(210, newTopPositionUp, 0, 0);
@@ -1002,6 +1089,10 @@ namespace Desktop
                     Type01Cell0011Below.Margin = new Thickness(390, newTopPositionUp, 0, 0);
                     Type01Cell0012Below.Margin = new Thickness(500, newTopPositionUp, 0, 0);
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
+                    Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
+                    Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -1009,11 +1100,11 @@ namespace Desktop
                     var newTopPositionUp = currentTopPositionBelow + 30;
                     int lblValueBelow = Convert.ToInt32(Type01Cell004.Content);
                     Type02Cell001btnIndexBelow.Margin = new Thickness(30, newTopPositionUp, 0, 0);
-                    Type02Cell002btnIndexBelow.Margin = new Thickness(820, newTopPositionUp, 0, 0);
+                    Type02Cell002btnIndexBelow.Margin = new Thickness(1030, newTopPositionUp, 0, 0);
                     Type01Cell004Below.Content = lblValueBelow + 1;
                     Type01Cell004Below.Margin = new Thickness(5, newTopPositionUp, 0, 0);
-                    Type01Cell005Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
-                    Type01Cell006Below.Margin = new Thickness(970, newTopPositionUp, 0, 0);
+                    Type01Cell005Below.Margin = new Thickness(1110, newTopPositionUp, 0, 0);
+                    Type01Cell006Below.Margin = new Thickness(1150, newTopPositionUp, 0, 0);
                 }
             }
         }
