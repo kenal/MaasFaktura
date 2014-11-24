@@ -174,7 +174,7 @@ namespace Desktop.HelperClass
                 command.CommandType = System.Data.CommandType.Text;
 
                 parameter = new System.Data.SqlClient.SqlParameter("@Name", System.Data.SqlDbType.NVarChar, 100);
-                parameter.Value = slika;
+                parameter.Value = slika.ToString();
                 command.Parameters.Add(parameter);
 
                 parameter = new System.Data.SqlClient.SqlParameter("@Data", System.Data.SqlDbType.VarBinary);
