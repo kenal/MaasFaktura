@@ -18,9 +18,9 @@ namespace Desktop
     /// <summary>
     /// Interaction logic for PorukeWidnow.xaml
     /// </summary>
-    public partial class PorukeWidnow : Window
+    public partial class PorukeWindow : Window
     {
-        public PorukeWidnow()
+        public PorukeWindow()
         {
             InitializeComponent();
             this.DataContext = new PorukeWindowViewModel();
@@ -49,5 +49,7 @@ namespace Desktop
             root.Child = npuc;
             visak.Visibility = Visibility.Collapsed;
         }
+
+        
     }
 }

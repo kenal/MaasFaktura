@@ -23,13 +23,9 @@ namespace Desktop.ViewModel
         private ObservableCollection<tbl_poruka_poslane> _listaPoslanihPoruka = new ObservableCollection<tbl_poruka_poslane>();
         private tbl_poruka_primljene _selektovanaPrimljenaPoruka;
         private tbl_poruka_poslane _selektovanaPoslanaPoruka;
-        private string _message;
+        private  string _message;
 
-        public string Message
-        {
-            get { return _message; }
-            set { _message = value; OnPropertyChanged("Message");}
-        }
+       
 
      
         private string _betreff;
@@ -37,6 +33,11 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Properties
+        public  string Message
+        {
+            get { return _message; }
+            set { _message = value; OnPropertyChanged("Message"); }
+        }
         public tbl_poruka_poslane SelektovanaPoslanaPoruka
         {
             get { return _selektovanaPoslanaPoruka; }
@@ -162,13 +163,13 @@ namespace Desktop.ViewModel
 
         public void PrikaziPoslanuPoruku(object parameter)
         {
-            Message = null;
+           
             Message = SelektovanaPoslanaPoruka.predmet;
         }
 
         public void PrikaziPrimljenuPoruku(object parameter)
         {
-            Message = null;
+            
             Message = SelektovanaPrimljenaPoruka.predmet;
         }
         #endregion

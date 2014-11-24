@@ -52,7 +52,7 @@ namespace Desktop.ViewModel
 
         public void OtvoriPoruke(object parameter)
         {
-            PorukeWidnow por = new PorukeWidnow();
+            PorukeWindow por = new PorukeWindow();
             por.Show();
         }
         #endregion
