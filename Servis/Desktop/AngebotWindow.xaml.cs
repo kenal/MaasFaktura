@@ -188,6 +188,13 @@ namespace Desktop
         }
         #endregion
 
+        #region Button Add New 03
+        private void btnNewRow03_Click(object sender, RoutedEventArgs e)
+        {
+            addRowType03();
+        }
+        #endregion
+
         #region Add Row Type 01
         private void addRowType01()
         {
@@ -533,6 +540,44 @@ namespace Desktop
             grid01.Children.Add(r2einz);
             grid01.Children.Add(r2stk);
             grid01.Children.Add(r2gpreis);
+
+            vertRowPosition = vertRowPosition + 30;
+            scr01.ScrollToBottom();
+        }
+        #endregion
+
+        #region Add Row Type 03
+        private void addRowType03() 
+        {
+            rowId = rowId + 1;
+            Label myLabel01 = new Label();
+            TextBox r3First = new TextBox();
+
+            myLabel01.Width = 30;
+            myLabel01.Height = 25;
+            r3First.Width = 940;
+            r3First.Height = 28;
+            r3First.HorizontalContentAlignment = HorizontalAlignment.Center;
+            r3First.VerticalContentAlignment = VerticalAlignment.Center;
+
+            myLabel01.HorizontalAlignment = HorizontalAlignment.Left;
+            myLabel01.VerticalAlignment = VerticalAlignment.Top;
+            r3First.HorizontalAlignment = HorizontalAlignment.Left;
+            r3First.VerticalAlignment = VerticalAlignment.Top;
+
+            myLabel01.Margin = new Thickness(5, vertRowPosition, 0, 0);
+            r3First.Margin = new Thickness(30, vertRowPosition, 0, 0);
+
+            myLabel01.Name = "rd_" + rowId;
+            this.RegisterName("rd_" + rowId, myLabel01);
+            r3First.Name = "r3First_" + rowId;
+            this.RegisterName("r3First_" + rowId, r3First);
+
+            lastRowId = lastRowId + 1;
+            if (lastRowId != 0) { myLabel01.Content = lastRowId; } else { myLabel01.Content = rowId; }
+
+            grid01.Children.Add(myLabel01);
+            grid01.Children.Add(r3First);
 
             vertRowPosition = vertRowPosition + 30;
             scr01.ScrollToBottom();
@@ -1319,7 +1364,7 @@ namespace Desktop
                 }
             }
         }
-        #endregion
+        #endregion       
         #endregion
     }
 }
