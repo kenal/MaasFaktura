@@ -230,6 +230,12 @@
   <wsdl:message name="MassServis_PosaljiPoruku_OutputMessage">
     <wsdl:part name="parameters" element="tns:PosaljiPorukuResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_ListaKupacaSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaKupacaSearch" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ListaKupacaSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaKupacaSearchResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -378,6 +384,10 @@
     <wsdl:operation name="PosaljiPoruku">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/PosaljiPoruku" message="tns:MassServis_PosaljiPoruku_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/PosaljiPorukuResponse" message="tns:MassServis_PosaljiPoruku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaKupacaSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaKupacaSearch" message="tns:MassServis_ListaKupacaSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ListaKupacaSearchResponse" message="tns:MassServis_ListaKupacaSearch_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -708,6 +718,15 @@
     </wsdl:operation>
     <wsdl:operation name="PosaljiPoruku">
       <soap:operation soapAction="http://tempuri.org/MassServis/PosaljiPoruku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaKupacaSearch">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ListaKupacaSearch" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

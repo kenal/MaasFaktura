@@ -529,4 +529,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaKupacaSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="broj" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaKupacaSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaKupacaSearchResult" nillable="true" type="q19:ArrayOftbl_kupac" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
