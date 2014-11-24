@@ -21,7 +21,13 @@
                 <TextBox Width="130" Height="20" HorizontalAlignment="Right"/>
             </StackPanel>
             <DataGrid HorizontalAlignment="Left" x:Name="datagrid1"  SelectionMode="Single" AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" 
-                	CanUserResizeColumns="True" Width="679" Height="131" Canvas.Left="20" Canvas.Top="46" HorizontalContentAlignment="Center" ItemsSource="{Binding ListaPoslanihPoruka}">
+                	CanUserResizeColumns="True" Width="679" Height="131" Canvas.Left="20" Canvas.Top="46" HorizontalContentAlignment="Center" ItemsSource="{Binding ListaPoslanihPoruka}" 
+                      SelectedItem="{Binding SelektovanaPoslanaPoruka}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Selected">
+                        <i:InvokeCommandAction Command="{Binding Path=DataContext.OutboxShow, ElementName=PoslanePoruke}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Gelesen" Width="170">

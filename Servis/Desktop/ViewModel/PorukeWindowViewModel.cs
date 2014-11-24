@@ -21,6 +21,15 @@ namespace Desktop.ViewModel
         private tbl_korisnik _selektovaniKorisnik;
         private ObservableCollection<tbl_korisnik> _listaKorisnika = new ObservableCollection<tbl_korisnik>();
         private ObservableCollection<tbl_poruka_poslane> _listaPoslanihPoruka = new ObservableCollection<tbl_poruka_poslane>();
+        private tbl_poruka_primljene _selektovanaPrimljenaPoruka;
+        private tbl_poruka_poslane _selektovanaPoslanaPoruka;
+        private string _message;
+
+        public string Message
+        {
+            get { return _message; }
+            set { _message = value; OnPropertyChanged("Message");}
+        }
 
      
         private string _betreff;
@@ -28,6 +37,16 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Properties
+        public tbl_poruka_poslane SelektovanaPoslanaPoruka
+        {
+            get { return _selektovanaPoslanaPoruka; }
+            set { _selektovanaPoslanaPoruka = value; OnPropertyChanged("SelektovanaPoslanaPoruka"); }
+        }
+        public tbl_poruka_primljene SelektovanaPrimljenaPoruka
+        {
+            get { return _selektovanaPrimljenaPoruka; }
+            set { _selektovanaPrimljenaPoruka = value; OnPropertyChanged("SelektovanaPrimljenaPoruka"); }
+        }
 
         public ObservableCollection<tbl_poruka_poslane> ListaPoslanihPoruka
         {
@@ -73,6 +92,21 @@ namespace Desktop.ViewModel
         #endregion
 
         #region ICommand Memebers
+        private ICommand _inboxShow;
+
+        public ICommand InboxShow
+        {
+            get { return _inboxShow = new RelayCommand(param => PrikaziPrimljenuPoruku(param)); }
+            set { _inboxShow = value; }
+        }
+
+        private ICommand _outboxShow;
+
+        public ICommand OutboxShow
+        {
+            get { return _outboxShow = new RelayCommand(param => PrikaziPoslanuPoruku(param)); }
+            set { _outboxShow = value; }
+        }
         private ICommand _popuniCombo;
 
         public ICommand PopuniCombo
@@ -124,6 +158,18 @@ namespace Desktop.ViewModel
             client.PosaljiPoruku(SelektovaniKorisnik.id_korisnik, Sesija.Id_korisnik, Poruka, Betreff);
             Poruka = null;
             Betreff = null;
+        }
+
+        public void PrikaziPoslanuPoruku(object parameter)
+        {
+            Message = null;
+            Message = SelektovanaPoslanaPoruka.predmet;
+        }
+
+        public void PrikaziPrimljenuPoruku(object parameter)
+        {
+            Message = null;
+            Message = SelektovanaPrimljenaPoruka.predmet;
         }
         #endregion
 

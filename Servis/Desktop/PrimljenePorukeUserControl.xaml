@@ -22,7 +22,12 @@
             </StackPanel>
             <DataGrid HorizontalAlignment="Left" x:Name="datagrid1"  SelectionMode="Single" AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" 
                 	CanUserResizeColumns="True" Width="679" Height="131" Canvas.Left="20" Canvas.Top="46" HorizontalContentAlignment="Center" 
-                    ItemsSource="{Binding ListaPrimljenihPoruka}">
+                    ItemsSource="{Binding ListaPrimljenihPoruka}" SelectedItem="{Binding SelektovanaPrimljenaPoruka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding Path=DataContext.InboxShow, ElementName=PrimljenePoruke}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Gelesen" Width="170" Binding="{Binding procitano}">
