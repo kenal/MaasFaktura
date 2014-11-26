@@ -21,10 +21,18 @@ namespace Desktop
     /// </summary>
     public partial class PrimljenePorukeUserControl : UserControl
     {
+        PorukeWindowViewModel pwvm = new PorukeWindowViewModel();
         public PrimljenePorukeUserControl()
         {
             InitializeComponent();
             this.DataContext = new PorukeWindowViewModel();
+        }
+
+        public PrimljenePorukeUserControl(PorukeWindowViewModel pw)
+        {
+            InitializeComponent();
+            this.pwvm = pw;
+            this.DataContext = pw;
         }
     }
 }

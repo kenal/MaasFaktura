@@ -19,12 +19,23 @@ namespace Desktop
     /// <summary>
     /// Interaction logic for PoslanePorukeUserControl.xaml
     /// </summary>
+    
+    
     public partial class PoslanePorukeUserControl : UserControl
     {
+        PorukeWindowViewModel pwvm = new PorukeWindowViewModel();
         public PoslanePorukeUserControl()
         {
             InitializeComponent();
             this.DataContext = new PorukeWindowViewModel();
+        }
+
+        public PoslanePorukeUserControl(PorukeWindowViewModel pw)
+        {
+            InitializeComponent();
+            this.pwvm = pw;
+            this.DataContext = pw;
+            
         }
     }
 }

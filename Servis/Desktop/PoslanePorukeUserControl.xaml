@@ -18,7 +18,7 @@
                 <ComboBox Width="50" Height="20" ItemsSource="{Binding ComboPoruke}" SelectedItem="{Binding BrojPrikazanihPoruka}"/>
                 <Label Content="Einträge per Seite angezeigt"/>
                 <Label Content="Suche:" Margin="248,0,0,0"/>
-                <TextBox Width="130" Height="20" HorizontalAlignment="Right" Text="{Binding Message,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Width="130" Height="20" HorizontalAlignment="Right" />
             </StackPanel>
             <DataGrid HorizontalAlignment="Left" x:Name="datagrid1"  SelectionMode="Single" AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" 
                 	CanUserResizeColumns="True" Width="679" Height="131" Canvas.Left="20" Canvas.Top="46" HorizontalContentAlignment="Center" ItemsSource="{Binding ListaPoslanihPoruka}" 

@@ -116,7 +116,7 @@
         </Border>
         <Border x:Name="visak" Grid.Column="1" Grid.Row="2" BorderBrush="#DFDFDF" BorderThickness="2" CornerRadius="10" Margin="10,29,10,42">
            
-            <TextBlock Text="{Binding Path=DataContext.Message,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay }"/>
+            <TextBlock Text="{Binding Path=DataContext.Message,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,ElementName=PorukeGlavni}"/>
            
         </Border>
 

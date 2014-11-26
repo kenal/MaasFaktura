@@ -163,14 +163,22 @@ namespace Desktop.ViewModel
 
         public void PrikaziPoslanuPoruku(object parameter)
         {
-           
-            Message = SelektovanaPoslanaPoruka.predmet;
+           if(SelektovanaPoslanaPoruka == null)
+           {
+               Message = "";
+           }
+           else
+               Message = SelektovanaPoslanaPoruka.predmet;
         }
 
         public void PrikaziPrimljenuPoruku(object parameter)
         {
-            
-            Message = SelektovanaPrimljenaPoruka.predmet;
+            if (SelektovanaPrimljenaPoruka == null)
+            {
+                Message = "";
+            }
+            else
+                Message = SelektovanaPrimljenaPoruka.predmet;
         }
         #endregion
 

@@ -20,15 +20,24 @@ namespace Desktop
     /// </summary>
     public partial class PorukeWindow : Window
     {
+        PorukeWindowViewModel viewModel = new PorukeWindowViewModel();
+
+        public PorukeWindowViewModel ViewModel
+        {
+            get { return viewModel; }
+            set { viewModel = value; }
+        }
+
         public PorukeWindow()
         {
             InitializeComponent();
-            this.DataContext = new PorukeWindowViewModel();
+            this.DataContext = viewModel;
+            
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            PoslanePorukeUserControl ppuc = new PoslanePorukeUserControl();
+            PoslanePorukeUserControl ppuc = new PoslanePorukeUserControl(viewModel);
             root.Child = null;
             root.Child = ppuc;
             visak.Visibility = Visibility.Visible;
@@ -36,7 +45,7 @@ namespace Desktop
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            PrimljenePorukeUserControl primljenePor = new PrimljenePorukeUserControl();
+            PrimljenePorukeUserControl primljenePor = new PrimljenePorukeUserControl(viewModel);
             root.Child = null;
             root.Child = primljenePor;
             visak.Visibility = Visibility.Visible;
