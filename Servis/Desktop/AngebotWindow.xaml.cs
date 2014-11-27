@@ -172,7 +172,6 @@ namespace Desktop
         }
         #endregion
 
-
         #region Angebot Dinamic System
         #region Button Add New 01
         private void btnNewRow01_Click(object sender, RoutedEventArgs e)
