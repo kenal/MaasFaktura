@@ -57,9 +57,6 @@ namespace Mass.Data
     partial void Inserttbl_cijena_artikla1(tbl_cijena_artikla1 instance);
     partial void Updatetbl_cijena_artikla1(tbl_cijena_artikla1 instance);
     partial void Deletetbl_cijena_artikla1(tbl_cijena_artikla1 instance);
-    partial void Inserttbl_debljina(tbl_debljina instance);
-    partial void Updatetbl_debljina(tbl_debljina instance);
-    partial void Deletetbl_debljina(tbl_debljina instance);
     partial void Inserttbl_inventar(tbl_inventar instance);
     partial void Updatetbl_inventar(tbl_inventar instance);
     partial void Deletetbl_inventar(tbl_inventar instance);
@@ -156,6 +153,12 @@ namespace Mass.Data
     partial void Inserttbl_poruka_primljene(tbl_poruka_primljene instance);
     partial void Updatetbl_poruka_primljene(tbl_poruka_primljene instance);
     partial void Deletetbl_poruka_primljene(tbl_poruka_primljene instance);
+    partial void Inserttbl_povrsina(tbl_povrsina instance);
+    partial void Updatetbl_povrsina(tbl_povrsina instance);
+    partial void Deletetbl_povrsina(tbl_povrsina instance);
+    partial void Inserttbl_debljina(tbl_debljina instance);
+    partial void Updatetbl_debljina(tbl_debljina instance);
+    partial void Deletetbl_debljina(tbl_debljina instance);
     #endregion
 		
 		public DataBaseModelDataContext() : 
@@ -257,14 +260,6 @@ namespace Mass.Data
 			get
 			{
 				return this.GetTable<tbl_cijena_artikla1>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_debljina> tbl_debljinas
-		{
-			get
-			{
-				return this.GetTable<tbl_debljina>();
 			}
 		}
 		
@@ -529,6 +524,22 @@ namespace Mass.Data
 			get
 			{
 				return this.GetTable<tbl_poruka_primljene>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_povrsina> tbl_povrsinas
+		{
+			get
+			{
+				return this.GetTable<tbl_povrsina>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_debljina> tbl_debljinas
+		{
+			get
+			{
+				return this.GetTable<tbl_debljina>();
 			}
 		}
 		
@@ -3502,176 +3513,6 @@ namespace Mass.Data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_debljina")]
-	public partial class tbl_debljina : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_debljina;
-		
-		private string _naziv;
-		
-		private EntitySet<tbl_inventar> _tbl_inventars;
-		
-		private EntitySet<tbl_stavke> _tbl_stavkes;
-		
-		private EntitySet<tbl_vrsta_cijene_1> _tbl_vrsta_cijene_1s;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_debljinaChanging(int value);
-    partial void Onid_debljinaChanged();
-    partial void OnnazivChanging(string value);
-    partial void OnnazivChanged();
-    #endregion
-		
-		public tbl_debljina()
-		{
-			this._tbl_inventars = new EntitySet<tbl_inventar>(new Action<tbl_inventar>(this.attach_tbl_inventars), new Action<tbl_inventar>(this.detach_tbl_inventars));
-			this._tbl_stavkes = new EntitySet<tbl_stavke>(new Action<tbl_stavke>(this.attach_tbl_stavkes), new Action<tbl_stavke>(this.detach_tbl_stavkes));
-			this._tbl_vrsta_cijene_1s = new EntitySet<tbl_vrsta_cijene_1>(new Action<tbl_vrsta_cijene_1>(this.attach_tbl_vrsta_cijene_1s), new Action<tbl_vrsta_cijene_1>(this.detach_tbl_vrsta_cijene_1s));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_debljina", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_debljina
-		{
-			get
-			{
-				return this._id_debljina;
-			}
-			set
-			{
-				if ((this._id_debljina != value))
-				{
-					this.Onid_debljinaChanging(value);
-					this.SendPropertyChanging();
-					this._id_debljina = value;
-					this.SendPropertyChanged("id_debljina");
-					this.Onid_debljinaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naziv", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string naziv
-		{
-			get
-			{
-				return this._naziv;
-			}
-			set
-			{
-				if ((this._naziv != value))
-				{
-					this.OnnazivChanging(value);
-					this.SendPropertyChanging();
-					this._naziv = value;
-					this.SendPropertyChanged("naziv");
-					this.OnnazivChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_inventar", Storage="_tbl_inventars", ThisKey="id_debljina", OtherKey="debljina_fk")]
-		public EntitySet<tbl_inventar> tbl_inventars
-		{
-			get
-			{
-				return this._tbl_inventars;
-			}
-			set
-			{
-				this._tbl_inventars.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_stavke", Storage="_tbl_stavkes", ThisKey="id_debljina", OtherKey="debljina_fk")]
-		public EntitySet<tbl_stavke> tbl_stavkes
-		{
-			get
-			{
-				return this._tbl_stavkes;
-			}
-			set
-			{
-				this._tbl_stavkes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_vrsta_cijene_1", Storage="_tbl_vrsta_cijene_1s", ThisKey="id_debljina", OtherKey="debljina_fk")]
-		public EntitySet<tbl_vrsta_cijene_1> tbl_vrsta_cijene_1s
-		{
-			get
-			{
-				return this._tbl_vrsta_cijene_1s;
-			}
-			set
-			{
-				this._tbl_vrsta_cijene_1s.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tbl_inventars(tbl_inventar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_debljina = this;
-		}
-		
-		private void detach_tbl_inventars(tbl_inventar entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_debljina = null;
-		}
-		
-		private void attach_tbl_stavkes(tbl_stavke entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_debljina = this;
-		}
-		
-		private void detach_tbl_stavkes(tbl_stavke entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_debljina = null;
-		}
-		
-		private void attach_tbl_vrsta_cijene_1s(tbl_vrsta_cijene_1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_debljina = this;
-		}
-		
-		private void detach_tbl_vrsta_cijene_1s(tbl_vrsta_cijene_1 entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbl_debljina = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_inventar")]
 	public partial class tbl_inventar : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3718,8 +3559,6 @@ namespace Mass.Data
 		
 		private EntitySet<tbl_narudzbe_ploca> _tbl_narudzbe_plocas;
 		
-		private EntityRef<tbl_debljina> _tbl_debljina;
-		
 		private EntityRef<tbl_materijal> _tbl_materijal;
 		
 		private EntityRef<tbl_struktura> _tbl_struktura;
@@ -3727,6 +3566,8 @@ namespace Mass.Data
 		private EntityRef<tbl_dobavljac> _tbl_dobavljac;
 		
 		private EntityRef<tbl_korisnik> _tbl_korisnik;
+		
+		private EntityRef<tbl_debljina> _tbl_debljina;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3775,11 +3616,11 @@ namespace Mass.Data
 		public tbl_inventar()
 		{
 			this._tbl_narudzbe_plocas = new EntitySet<tbl_narudzbe_ploca>(new Action<tbl_narudzbe_ploca>(this.attach_tbl_narudzbe_plocas), new Action<tbl_narudzbe_ploca>(this.detach_tbl_narudzbe_plocas));
-			this._tbl_debljina = default(EntityRef<tbl_debljina>);
 			this._tbl_materijal = default(EntityRef<tbl_materijal>);
 			this._tbl_struktura = default(EntityRef<tbl_struktura>);
 			this._tbl_dobavljac = default(EntityRef<tbl_dobavljac>);
 			this._tbl_korisnik = default(EntityRef<tbl_korisnik>);
+			this._tbl_debljina = default(EntityRef<tbl_debljina>);
 			OnCreated();
 		}
 		
@@ -4196,40 +4037,6 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_inventar", Storage="_tbl_debljina", ThisKey="debljina_fk", OtherKey="id_debljina", IsForeignKey=true)]
-		public tbl_debljina tbl_debljina
-		{
-			get
-			{
-				return this._tbl_debljina.Entity;
-			}
-			set
-			{
-				tbl_debljina previousValue = this._tbl_debljina.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_debljina.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_debljina.Entity = null;
-						previousValue.tbl_inventars.Remove(this);
-					}
-					this._tbl_debljina.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_inventars.Add(this);
-						this._debljina_fk = value.id_debljina;
-					}
-					else
-					{
-						this._debljina_fk = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tbl_debljina");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_materijal_tbl_inventar", Storage="_tbl_materijal", ThisKey="materijal_fk", OtherKey="idmaterijal", IsForeignKey=true)]
 		public tbl_materijal tbl_materijal
 		{
@@ -4362,6 +4169,40 @@ namespace Mass.Data
 						this._user_fk = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("tbl_korisnik");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_inventar", Storage="_tbl_debljina", ThisKey="debljina_fk", OtherKey="id_debljina", IsForeignKey=true)]
+		public tbl_debljina tbl_debljina
+		{
+			get
+			{
+				return this._tbl_debljina.Entity;
+			}
+			set
+			{
+				tbl_debljina previousValue = this._tbl_debljina.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_debljina.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_debljina.Entity = null;
+						previousValue.tbl_inventars.Remove(this);
+					}
+					this._tbl_debljina.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_inventars.Add(this);
+						this._debljina_fk = value.id_debljina;
+					}
+					else
+					{
+						this._debljina_fk = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tbl_debljina");
 				}
 			}
 		}
@@ -5033,6 +4874,8 @@ namespace Mass.Data
 		
 		private EntitySet<tbl_stavke> _tbl_stavkes1;
 		
+		private EntitySet<tbl_povrsina> _tbl_povrsinas;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5049,6 +4892,7 @@ namespace Mass.Data
 			this._tbl_inventars = new EntitySet<tbl_inventar>(new Action<tbl_inventar>(this.attach_tbl_inventars), new Action<tbl_inventar>(this.detach_tbl_inventars));
 			this._tbl_stavkes = new EntitySet<tbl_stavke>(new Action<tbl_stavke>(this.attach_tbl_stavkes), new Action<tbl_stavke>(this.detach_tbl_stavkes));
 			this._tbl_stavkes1 = new EntitySet<tbl_stavke>(new Action<tbl_stavke>(this.attach_tbl_stavkes1), new Action<tbl_stavke>(this.detach_tbl_stavkes1));
+			this._tbl_povrsinas = new EntitySet<tbl_povrsina>(new Action<tbl_povrsina>(this.attach_tbl_povrsinas), new Action<tbl_povrsina>(this.detach_tbl_povrsinas));
 			OnCreated();
 		}
 		
@@ -5144,6 +4988,19 @@ namespace Mass.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_materijal_tbl_povrsina", Storage="_tbl_povrsinas", ThisKey="idmaterijal", OtherKey="materijal_FK")]
+		public EntitySet<tbl_povrsina> tbl_povrsinas
+		{
+			get
+			{
+				return this._tbl_povrsinas;
+			}
+			set
+			{
+				this._tbl_povrsinas.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -5210,6 +5067,18 @@ namespace Mass.Data
 		{
 			this.SendPropertyChanging();
 			entity.tbl_materijal1 = null;
+		}
+		
+		private void attach_tbl_povrsinas(tbl_povrsina entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_materijal = this;
+		}
+		
+		private void detach_tbl_povrsinas(tbl_povrsina entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_materijal = null;
 		}
 	}
 	
@@ -7071,6 +6940,8 @@ namespace Mass.Data
 		
 		private EntitySet<tbl_reklamacija> _tbl_reklamacijas;
 		
+		private EntitySet<tbl_debljina> _tbl_debljinas;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -7085,6 +6956,7 @@ namespace Mass.Data
 		{
 			this._tbl_produktions = new EntitySet<tbl_produktion>(new Action<tbl_produktion>(this.attach_tbl_produktions), new Action<tbl_produktion>(this.detach_tbl_produktions));
 			this._tbl_reklamacijas = new EntitySet<tbl_reklamacija>(new Action<tbl_reklamacija>(this.attach_tbl_reklamacijas), new Action<tbl_reklamacija>(this.detach_tbl_reklamacijas));
+			this._tbl_debljinas = new EntitySet<tbl_debljina>(new Action<tbl_debljina>(this.attach_tbl_debljinas), new Action<tbl_debljina>(this.detach_tbl_debljinas));
 			OnCreated();
 		}
 		
@@ -7154,6 +7026,19 @@ namespace Mass.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_produkt_tbl_debljina", Storage="_tbl_debljinas", ThisKey="idprodukt", OtherKey="idProdukt_FK")]
+		public EntitySet<tbl_debljina> tbl_debljinas
+		{
+			get
+			{
+				return this._tbl_debljinas;
+			}
+			set
+			{
+				this._tbl_debljinas.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -7193,6 +7078,18 @@ namespace Mass.Data
 		}
 		
 		private void detach_tbl_reklamacijas(tbl_reklamacija entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_produkt = null;
+		}
+		
+		private void attach_tbl_debljinas(tbl_debljina entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_produkt = this;
+		}
+		
+		private void detach_tbl_debljinas(tbl_debljina entity)
 		{
 			this.SendPropertyChanging();
 			entity.tbl_produkt = null;
@@ -9685,8 +9582,6 @@ namespace Mass.Data
 		
 		private EntityRef<tbl_artikli> _tbl_artikli1;
 		
-		private EntityRef<tbl_debljina> _tbl_debljina;
-		
 		private EntityRef<tbl_jedinica> _tbl_jedinica;
 		
 		private EntityRef<tbl_materijal> _tbl_materijal;
@@ -9700,6 +9595,8 @@ namespace Mass.Data
 		private EntityRef<tbl_stavke> _tbl_stavke1;
 		
 		private EntityRef<tbl_struktura> _tbl_struktura;
+		
+		private EntityRef<tbl_debljina> _tbl_debljina;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -9756,7 +9653,6 @@ namespace Mass.Data
 			this._tbl_angebot = default(EntityRef<tbl_angebot>);
 			this._tbl_artikli = default(EntityRef<tbl_artikli>);
 			this._tbl_artikli1 = default(EntityRef<tbl_artikli>);
-			this._tbl_debljina = default(EntityRef<tbl_debljina>);
 			this._tbl_jedinica = default(EntityRef<tbl_jedinica>);
 			this._tbl_materijal = default(EntityRef<tbl_materijal>);
 			this._tbl_materijal1 = default(EntityRef<tbl_materijal>);
@@ -9764,6 +9660,7 @@ namespace Mass.Data
 			this._tbl_pozicija = default(EntityRef<tbl_pozicija>);
 			this._tbl_stavke1 = default(EntityRef<tbl_stavke>);
 			this._tbl_struktura = default(EntityRef<tbl_struktura>);
+			this._tbl_debljina = default(EntityRef<tbl_debljina>);
 			OnCreated();
 		}
 		
@@ -10367,40 +10264,6 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_stavke", Storage="_tbl_debljina", ThisKey="debljina_fk", OtherKey="id_debljina", IsForeignKey=true)]
-		public tbl_debljina tbl_debljina
-		{
-			get
-			{
-				return this._tbl_debljina.Entity;
-			}
-			set
-			{
-				tbl_debljina previousValue = this._tbl_debljina.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_debljina.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_debljina.Entity = null;
-						previousValue.tbl_stavkes.Remove(this);
-					}
-					this._tbl_debljina.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_stavkes.Add(this);
-						this._debljina_fk = value.id_debljina;
-					}
-					else
-					{
-						this._debljina_fk = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tbl_debljina");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_jedinica_tbl_stavke", Storage="_tbl_jedinica", ThisKey="jedinica_fk", OtherKey="id_jedinica", IsForeignKey=true)]
 		public tbl_jedinica tbl_jedinica
 		{
@@ -10635,6 +10498,40 @@ namespace Mass.Data
 						this._struktura_fk = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("tbl_struktura");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_stavke", Storage="_tbl_debljina", ThisKey="debljina_fk", OtherKey="id_debljina", IsForeignKey=true)]
+		public tbl_debljina tbl_debljina
+		{
+			get
+			{
+				return this._tbl_debljina.Entity;
+			}
+			set
+			{
+				tbl_debljina previousValue = this._tbl_debljina.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_debljina.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_debljina.Entity = null;
+						previousValue.tbl_stavkes.Remove(this);
+					}
+					this._tbl_debljina.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_stavkes.Add(this);
+						this._debljina_fk = value.id_debljina;
+					}
+					else
+					{
+						this._debljina_fk = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tbl_debljina");
 				}
 			}
 		}
@@ -10986,9 +10883,9 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _struktura_fk;
 		
-		private EntityRef<tbl_debljina> _tbl_debljina;
-		
 		private EntityRef<tbl_struktura> _tbl_struktura;
+		
+		private EntityRef<tbl_debljina> _tbl_debljina;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -11026,8 +10923,8 @@ namespace Mass.Data
 		
 		public tbl_vrsta_cijene_1()
 		{
-			this._tbl_debljina = default(EntityRef<tbl_debljina>);
 			this._tbl_struktura = default(EntityRef<tbl_struktura>);
+			this._tbl_debljina = default(EntityRef<tbl_debljina>);
 			OnCreated();
 		}
 		
@@ -11319,40 +11216,6 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_vrsta_cijene_1", Storage="_tbl_debljina", ThisKey="debljina_fk", OtherKey="id_debljina", IsForeignKey=true)]
-		public tbl_debljina tbl_debljina
-		{
-			get
-			{
-				return this._tbl_debljina.Entity;
-			}
-			set
-			{
-				tbl_debljina previousValue = this._tbl_debljina.Entity;
-				if (((previousValue != value) 
-							|| (this._tbl_debljina.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbl_debljina.Entity = null;
-						previousValue.tbl_vrsta_cijene_1s.Remove(this);
-					}
-					this._tbl_debljina.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_vrsta_cijene_1s.Add(this);
-						this._debljina_fk = value.id_debljina;
-					}
-					else
-					{
-						this._debljina_fk = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tbl_debljina");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_struktura_tbl_vrsta_cijene_1", Storage="_tbl_struktura", ThisKey="struktura_fk", OtherKey="idstruktura", IsForeignKey=true)]
 		public tbl_struktura tbl_struktura
 		{
@@ -11383,6 +11246,40 @@ namespace Mass.Data
 						this._struktura_fk = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("tbl_struktura");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_vrsta_cijene_1", Storage="_tbl_debljina", ThisKey="debljina_fk", OtherKey="id_debljina", IsForeignKey=true)]
+		public tbl_debljina tbl_debljina
+		{
+			get
+			{
+				return this._tbl_debljina.Entity;
+			}
+			set
+			{
+				tbl_debljina previousValue = this._tbl_debljina.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_debljina.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_debljina.Entity = null;
+						previousValue.tbl_vrsta_cijene_1s.Remove(this);
+					}
+					this._tbl_debljina.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_vrsta_cijene_1s.Add(this);
+						this._debljina_fk = value.id_debljina;
+					}
+					else
+					{
+						this._debljina_fk = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tbl_debljina");
 				}
 			}
 		}
@@ -15867,6 +15764,392 @@ namespace Mass.Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_povrsina")]
+	public partial class tbl_povrsina : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _materijal_FK;
+		
+		private string _pov;
+		
+		private EntityRef<tbl_materijal> _tbl_materijal;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onmaterijal_FKChanging(int value);
+    partial void Onmaterijal_FKChanged();
+    partial void OnpovChanging(string value);
+    partial void OnpovChanged();
+    #endregion
+		
+		public tbl_povrsina()
+		{
+			this._tbl_materijal = default(EntityRef<tbl_materijal>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_materijal_FK", DbType="Int NOT NULL")]
+		public int materijal_FK
+		{
+			get
+			{
+				return this._materijal_FK;
+			}
+			set
+			{
+				if ((this._materijal_FK != value))
+				{
+					if (this._tbl_materijal.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onmaterijal_FKChanging(value);
+					this.SendPropertyChanging();
+					this._materijal_FK = value;
+					this.SendPropertyChanged("materijal_FK");
+					this.Onmaterijal_FKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pov", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string pov
+		{
+			get
+			{
+				return this._pov;
+			}
+			set
+			{
+				if ((this._pov != value))
+				{
+					this.OnpovChanging(value);
+					this.SendPropertyChanging();
+					this._pov = value;
+					this.SendPropertyChanged("pov");
+					this.OnpovChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_materijal_tbl_povrsina", Storage="_tbl_materijal", ThisKey="materijal_FK", OtherKey="idmaterijal", IsForeignKey=true)]
+		public tbl_materijal tbl_materijal
+		{
+			get
+			{
+				return this._tbl_materijal.Entity;
+			}
+			set
+			{
+				tbl_materijal previousValue = this._tbl_materijal.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_materijal.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_materijal.Entity = null;
+						previousValue.tbl_povrsinas.Remove(this);
+					}
+					this._tbl_materijal.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_povrsinas.Add(this);
+						this._materijal_FK = value.idmaterijal;
+					}
+					else
+					{
+						this._materijal_FK = default(int);
+					}
+					this.SendPropertyChanged("tbl_materijal");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_debljina")]
+	public partial class tbl_debljina : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_debljina;
+		
+		private int _idProdukt_FK;
+		
+		private string _naziv;
+		
+		private EntitySet<tbl_inventar> _tbl_inventars;
+		
+		private EntitySet<tbl_stavke> _tbl_stavkes;
+		
+		private EntitySet<tbl_vrsta_cijene_1> _tbl_vrsta_cijene_1s;
+		
+		private EntityRef<tbl_produkt> _tbl_produkt;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_debljinaChanging(int value);
+    partial void Onid_debljinaChanged();
+    partial void OnidProdukt_FKChanging(int value);
+    partial void OnidProdukt_FKChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    #endregion
+		
+		public tbl_debljina()
+		{
+			this._tbl_inventars = new EntitySet<tbl_inventar>(new Action<tbl_inventar>(this.attach_tbl_inventars), new Action<tbl_inventar>(this.detach_tbl_inventars));
+			this._tbl_stavkes = new EntitySet<tbl_stavke>(new Action<tbl_stavke>(this.attach_tbl_stavkes), new Action<tbl_stavke>(this.detach_tbl_stavkes));
+			this._tbl_vrsta_cijene_1s = new EntitySet<tbl_vrsta_cijene_1>(new Action<tbl_vrsta_cijene_1>(this.attach_tbl_vrsta_cijene_1s), new Action<tbl_vrsta_cijene_1>(this.detach_tbl_vrsta_cijene_1s));
+			this._tbl_produkt = default(EntityRef<tbl_produkt>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_debljina", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_debljina
+		{
+			get
+			{
+				return this._id_debljina;
+			}
+			set
+			{
+				if ((this._id_debljina != value))
+				{
+					this.Onid_debljinaChanging(value);
+					this.SendPropertyChanging();
+					this._id_debljina = value;
+					this.SendPropertyChanged("id_debljina");
+					this.Onid_debljinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idProdukt_FK", DbType="Int NOT NULL")]
+		public int idProdukt_FK
+		{
+			get
+			{
+				return this._idProdukt_FK;
+			}
+			set
+			{
+				if ((this._idProdukt_FK != value))
+				{
+					if (this._tbl_produkt.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidProdukt_FKChanging(value);
+					this.SendPropertyChanging();
+					this._idProdukt_FK = value;
+					this.SendPropertyChanged("idProdukt_FK");
+					this.OnidProdukt_FKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naziv", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string naziv
+		{
+			get
+			{
+				return this._naziv;
+			}
+			set
+			{
+				if ((this._naziv != value))
+				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
+					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_inventar", Storage="_tbl_inventars", ThisKey="id_debljina", OtherKey="debljina_fk")]
+		public EntitySet<tbl_inventar> tbl_inventars
+		{
+			get
+			{
+				return this._tbl_inventars;
+			}
+			set
+			{
+				this._tbl_inventars.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_stavke", Storage="_tbl_stavkes", ThisKey="id_debljina", OtherKey="debljina_fk")]
+		public EntitySet<tbl_stavke> tbl_stavkes
+		{
+			get
+			{
+				return this._tbl_stavkes;
+			}
+			set
+			{
+				this._tbl_stavkes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_debljina_tbl_vrsta_cijene_1", Storage="_tbl_vrsta_cijene_1s", ThisKey="id_debljina", OtherKey="debljina_fk")]
+		public EntitySet<tbl_vrsta_cijene_1> tbl_vrsta_cijene_1s
+		{
+			get
+			{
+				return this._tbl_vrsta_cijene_1s;
+			}
+			set
+			{
+				this._tbl_vrsta_cijene_1s.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbl_produkt_tbl_debljina", Storage="_tbl_produkt", ThisKey="idProdukt_FK", OtherKey="idprodukt", IsForeignKey=true)]
+		public tbl_produkt tbl_produkt
+		{
+			get
+			{
+				return this._tbl_produkt.Entity;
+			}
+			set
+			{
+				tbl_produkt previousValue = this._tbl_produkt.Entity;
+				if (((previousValue != value) 
+							|| (this._tbl_produkt.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbl_produkt.Entity = null;
+						previousValue.tbl_debljinas.Remove(this);
+					}
+					this._tbl_produkt.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_debljinas.Add(this);
+						this._idProdukt_FK = value.idprodukt;
+					}
+					else
+					{
+						this._idProdukt_FK = default(int);
+					}
+					this.SendPropertyChanged("tbl_produkt");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tbl_inventars(tbl_inventar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_debljina = this;
+		}
+		
+		private void detach_tbl_inventars(tbl_inventar entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_debljina = null;
+		}
+		
+		private void attach_tbl_stavkes(tbl_stavke entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_debljina = this;
+		}
+		
+		private void detach_tbl_stavkes(tbl_stavke entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_debljina = null;
+		}
+		
+		private void attach_tbl_vrsta_cijene_1s(tbl_vrsta_cijene_1 entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_debljina = this;
+		}
+		
+		private void detach_tbl_vrsta_cijene_1s(tbl_vrsta_cijene_1 entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbl_debljina = null;
 		}
 	}
 	

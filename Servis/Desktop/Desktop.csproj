@@ -312,6 +312,9 @@
     <None Include="Service References\Service\Desktop.Service.p_get_User_ViewResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_debljina.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Service\Desktop.Service.tbl_dobavljac.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -324,10 +327,19 @@
     <None Include="Service References\Service\Desktop.Service.tbl_kupac.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_materijal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Service\Desktop.Service.tbl_poruka_poslane.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\Desktop.Service.tbl_poruka_primljene.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_povrsina.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_produkt.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\Desktop.Service.tbl_radnik.datasource">

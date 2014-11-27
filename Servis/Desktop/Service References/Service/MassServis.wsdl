@@ -236,6 +236,30 @@
   <wsdl:message name="MassServis_ListaKupacaSearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaKupacaSearchResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijal_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijal" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijalResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getProdukt_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProdukt" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getProdukt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProduktResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPovrsinaByMaterijal_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPovrsinaByMaterijal" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPovrsinaByMaterijal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPovrsinaByMaterijalResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getDebljinaByProduktId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDebljinaByProduktId" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getDebljinaByProduktId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDebljinaByProduktIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -388,6 +412,22 @@
     <wsdl:operation name="ListaKupacaSearch">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaKupacaSearch" message="tns:MassServis_ListaKupacaSearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ListaKupacaSearchResponse" message="tns:MassServis_ListaKupacaSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterijal">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterijal" message="tns:MassServis_getMaterijal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterijalResponse" message="tns:MassServis_getMaterijal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProdukt">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getProdukt" message="tns:MassServis_getProdukt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getProduktResponse" message="tns:MassServis_getProdukt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPovrsinaByMaterijal">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getPovrsinaByMaterijal" message="tns:MassServis_getPovrsinaByMaterijal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getPovrsinaByMaterijalResponse" message="tns:MassServis_getPovrsinaByMaterijal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDebljinaByProduktId">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getDebljinaByProduktId" message="tns:MassServis_getDebljinaByProduktId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getDebljinaByProduktIdResponse" message="tns:MassServis_getDebljinaByProduktId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -727,6 +767,42 @@
     </wsdl:operation>
     <wsdl:operation name="ListaKupacaSearch">
       <soap:operation soapAction="http://tempuri.org/MassServis/ListaKupacaSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterijal">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getMaterijal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProdukt">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getProdukt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPovrsinaByMaterijal">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getPovrsinaByMaterijal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDebljinaByProduktId">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getDebljinaByProduktId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

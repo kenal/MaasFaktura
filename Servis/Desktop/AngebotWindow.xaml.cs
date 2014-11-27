@@ -1,4 +1,5 @@
-﻿using Desktop.ViewModel;
+﻿using Desktop.Service;
+using Desktop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,11 +21,11 @@ namespace Desktop
     /// Interaction logic for AngebotWindow.xaml
     /// </summary>
     public partial class AngebotWindow : Window
-    {
+    {      
         public int rowId = 0;
         public int vertRowPosition = 10;
         public int lastRowId = 0;
-
+        
         public AngebotWindow()
         {
             InitializeComponent();
@@ -197,6 +198,12 @@ namespace Desktop
         #region Add Row Type 01
         private void addRowType01()
         {
+            Service.MassServisClient client = new MassServisClient();
+            var materijalList = client.getMaterijal();
+            var produktList = client.getProdukt();
+           var oberflacheList = client.getPovrsinaByMaterijal(3);
+           var starkeList = client.getDebljinaByProduktId(1);
+
             rowId = rowId + 1;
             TextBox brei = new TextBox();
             TextBox lng = new TextBox();
@@ -344,12 +351,19 @@ namespace Desktop
             this.RegisterName("btnUp_" + rowId, btnUp);
             matT.Name = "matT_" + rowId;
             this.RegisterName("matT_" + rowId, matT);
+            foreach (var p in materijalList) {matT.Items.Add(p.naziv);}
+            matT.SelectedIndex = 0;
             prod.Name = "prod_" + rowId;
             this.RegisterName("prod_" + rowId, prod);
+            foreach (var p in produktList) {prod.Items.Add(p.naziv);}
+            prod.SelectedIndex = 0;
             ober.Name = "ober_" + rowId;
             this.RegisterName("ober_" + rowId, ober);
+            foreach (var p in oberflacheList) {ober.Items.Add(p.pov);}
+            ober.SelectedIndex = 0;
             stark.Name = "stark_" + rowId;
             this.RegisterName("stark_" + rowId, stark);
+            foreach (var p in starkeList) {stark.Items.Add(p.naziv);}
             mat.Name = "mat_" + rowId;
             this.RegisterName("mat_" + rowId, mat);
             gehr.Name = "gehr_" + rowId;
@@ -361,7 +375,7 @@ namespace Desktop
             einz.Name = "einz_" + rowId;
             this.RegisterName("einz_" + rowId, einz);
             stk.Name = "stk_" + rowId;
-            this.RegisterName("stk_" + rowId, stk);
+            this.RegisterName("stk_" + rowId, stk);        
             gpreis.Name = "gpreis_" + rowId;
             this.RegisterName("gpreis_" + rowId, gpreis);
 

@@ -543,4 +543,56 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getMaterijal">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMaterijalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterijalResult" nillable="true" type="q20:ArrayOftbl_materijal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProdukt">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProduktResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getProduktResult" nillable="true" type="q21:ArrayOftbl_produkt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPovrsinaByMaterijal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPovrsinaByMaterijalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPovrsinaByMaterijalResult" nillable="true" type="q22:ArrayOftbl_povrsina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDebljinaByProduktId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="prodId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDebljinaByProduktIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getDebljinaByProduktIdResult" nillable="true" type="q23:ArrayOftbl_debljina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

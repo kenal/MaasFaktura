@@ -134,15 +134,6 @@
       <Association Name="tbl_artikli_tbl_cijena_artikla1" Member="tbl_artikli" ThisKey="artikl_fk" OtherKey="id_artikli" Type="tbl_artikli" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_debljina" Member="tbl_debljinas">
-    <Type Name="tbl_debljina">
-      <Column Name="id_debljina" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="naziv" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Association Name="tbl_debljina_tbl_inventar" Member="tbl_inventars" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_inventar" />
-      <Association Name="tbl_debljina_tbl_stavke" Member="tbl_stavkes" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_stavke" />
-      <Association Name="tbl_debljina_tbl_vrsta_cijene_1" Member="tbl_vrsta_cijene_1s" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_vrsta_cijene_1" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbl_inventar" Member="tbl_inventars">
     <Type Name="tbl_inventar">
       <Column Name="idinventar" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -165,11 +156,11 @@
       <Column Name="notiz" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="reklamation" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="tbl_inventar_tbl_narudzbe_ploca" Member="tbl_narudzbe_plocas" ThisKey="idinventar" OtherKey="broj_ploce_fk" Type="tbl_narudzbe_ploca" />
-      <Association Name="tbl_debljina_tbl_inventar" Member="tbl_debljina" ThisKey="debljina_fk" OtherKey="id_debljina" Type="tbl_debljina" IsForeignKey="true" />
       <Association Name="tbl_materijal_tbl_inventar" Member="tbl_materijal" ThisKey="materijal_fk" OtherKey="idmaterijal" Type="tbl_materijal" IsForeignKey="true" />
       <Association Name="tbl_struktura_tbl_inventar" Member="tbl_struktura" ThisKey="struktura_fk" OtherKey="idstruktura" Type="tbl_struktura" IsForeignKey="true" />
       <Association Name="tbl_dobavljac_tbl_inventar" Member="tbl_dobavljac" ThisKey="dobavljac_fk" OtherKey="id_dobavljac" Type="tbl_dobavljac" IsForeignKey="true" />
       <Association Name="tbl_korisnik_tbl_inventar" Member="tbl_korisnik" ThisKey="user_fk" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
+      <Association Name="tbl_debljina_tbl_inventar" Member="tbl_debljina" ThisKey="debljina_fk" OtherKey="id_debljina" Type="tbl_debljina" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_jedinica" Member="tbl_jedinicas">
@@ -211,6 +202,7 @@
       <Association Name="tbl_materijal_tbl_inventar" Member="tbl_inventars" ThisKey="idmaterijal" OtherKey="materijal_fk" Type="tbl_inventar" />
       <Association Name="tbl_materijal_tbl_stavke" Member="tbl_stavkes" ThisKey="idmaterijal" OtherKey="materijal_fk" Type="tbl_stavke" />
       <Association Name="tbl_materijal_tbl_stavke1" Member="tbl_stavkes1" ThisKey="idmaterijal" OtherKey="materijal2_fk" Type="tbl_stavke" />
+      <Association Name="tbl_materijal_tbl_povrsina" Member="tbl_povrsinas" ThisKey="idmaterijal" OtherKey="materijal_FK" Type="tbl_povrsina" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_mit_kalendar" Member="tbl_mit_kalendars">
@@ -305,6 +297,7 @@
       <Column Name="naziv" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Association Name="tbl_produkt_tbl_produktion" Member="tbl_produktions" ThisKey="idprodukt" OtherKey="proizvod_fk" Type="tbl_produktion" />
       <Association Name="tbl_produkt_tbl_reklamacija" Member="tbl_reklamacijas" ThisKey="idprodukt" OtherKey="id_produkt_FK" Type="tbl_reklamacija" />
+      <Association Name="tbl_produkt_tbl_debljina" Member="tbl_debljinas" ThisKey="idprodukt" OtherKey="idProdukt_FK" Type="tbl_debljina" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_produkt_seo" Member="tbl_produkt_seos">
@@ -447,7 +440,6 @@
       <Association Name="tbl_angebot_tbl_stavke" Member="tbl_angebot" ThisKey="angebotnr_fk" OtherKey="idangebot" Type="tbl_angebot" IsForeignKey="true" />
       <Association Name="tbl_artikli_tbl_stavke" Member="tbl_artikli" ThisKey="materijal2_fk" OtherKey="id_artikli" Type="tbl_artikli" IsForeignKey="true" />
       <Association Name="tbl_artikli_tbl_stavke1" Member="tbl_artikli1" ThisKey="materijal_fk" OtherKey="id_artikli" Type="tbl_artikli" IsForeignKey="true" />
-      <Association Name="tbl_debljina_tbl_stavke" Member="tbl_debljina" ThisKey="debljina_fk" OtherKey="id_debljina" Type="tbl_debljina" IsForeignKey="true" />
       <Association Name="tbl_jedinica_tbl_stavke" Member="tbl_jedinica" ThisKey="jedinica_fk" OtherKey="id_jedinica" Type="tbl_jedinica" IsForeignKey="true" />
       <Association Name="tbl_materijal_tbl_stavke" Member="tbl_materijal" ThisKey="materijal_fk" OtherKey="idmaterijal" Type="tbl_materijal" IsForeignKey="true" />
       <Association Name="tbl_materijal_tbl_stavke1" Member="tbl_materijal1" ThisKey="materijal2_fk" OtherKey="idmaterijal" Type="tbl_materijal" IsForeignKey="true" />
@@ -455,6 +447,7 @@
       <Association Name="tbl_pozicija_tbl_stavke" Member="tbl_pozicija" ThisKey="pozicija_fk" OtherKey="idpozicija" Type="tbl_pozicija" IsForeignKey="true" />
       <Association Name="tbl_stavke_tbl_stavke" Member="tbl_stavke1" ThisKey="idstavka" OtherKey="idstavka" Type="tbl_stavke" IsForeignKey="true" />
       <Association Name="tbl_struktura_tbl_stavke" Member="tbl_struktura" ThisKey="struktura_fk" OtherKey="idstruktura" Type="tbl_struktura" IsForeignKey="true" />
+      <Association Name="tbl_debljina_tbl_stavke" Member="tbl_debljina" ThisKey="debljina_fk" OtherKey="id_debljina" Type="tbl_debljina" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_stranica" Member="tbl_stranicas">
@@ -489,8 +482,8 @@
       <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="debljina_fk" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="struktura_fk" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbl_debljina_tbl_vrsta_cijene_1" Member="tbl_debljina" ThisKey="debljina_fk" OtherKey="id_debljina" Type="tbl_debljina" IsForeignKey="true" />
       <Association Name="tbl_struktura_tbl_vrsta_cijene_1" Member="tbl_struktura" ThisKey="struktura_fk" OtherKey="idstruktura" Type="tbl_struktura" IsForeignKey="true" />
+      <Association Name="tbl_debljina_tbl_vrsta_cijene_1" Member="tbl_debljina" ThisKey="debljina_fk" OtherKey="id_debljina" Type="tbl_debljina" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_web_stranice" Member="tbl_web_stranices">
@@ -689,6 +682,25 @@
       <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
       <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_korisnik" ThisKey="poslao" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
       <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_korisnik1" ThisKey="primio" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_povrsina" Member="tbl_povrsinas">
+    <Type Name="tbl_povrsina">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="materijal_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pov" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_materijal_tbl_povrsina" Member="tbl_materijal" ThisKey="materijal_FK" OtherKey="idmaterijal" Type="tbl_materijal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_debljina" Member="tbl_debljinas">
+    <Type Name="tbl_debljina">
+      <Column Name="id_debljina" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idProdukt_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="naziv" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="tbl_debljina_tbl_inventar" Member="tbl_inventars" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_inventar" />
+      <Association Name="tbl_debljina_tbl_stavke" Member="tbl_stavkes" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_stavke" />
+      <Association Name="tbl_debljina_tbl_vrsta_cijene_1" Member="tbl_vrsta_cijene_1s" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_vrsta_cijene_1" />
+      <Association Name="tbl_produkt_tbl_debljina" Member="tbl_produkt" ThisKey="idProdukt_FK" OtherKey="idprodukt" Type="tbl_produkt" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.p_get_User_View" Method="p_get_User_View">

@@ -1124,6 +1124,67 @@ namespace Service
                 return Lista;
             }
         }
+
+        [OperationContract]
+        public ObservableCollection<tbl_materijal> getMaterijal() 
+        {
+            ObservableCollection<tbl_materijal> ListaM = new ObservableCollection<tbl_materijal>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
+            {
+                var x = from a in context.tbl_materijals select a;
+                ListaM.Clear();
+                foreach (var p in x) 
+                {
+                    ListaM.Add(new tbl_materijal { idmaterijal = p.idmaterijal, naziv = p.naziv});
+                }
+            }
+            return ListaM;
+        }
+        [OperationContract]
+        public ObservableCollection<tbl_produkt> getProdukt() 
+        {
+            ObservableCollection<tbl_produkt> ListaP = new ObservableCollection<tbl_produkt>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
+            {
+                var x = from a in context.tbl_produkts select a;
+                ListaP.Clear();
+                foreach (var p in x)
+                {
+                    ListaP.Add(new tbl_produkt { idprodukt = p.idprodukt, naziv = p.naziv});
+                }
+            }
+            return ListaP;
+        }
+        [OperationContract]
+        public ObservableCollection<tbl_povrsina> getPovrsinaByMaterijal(int matId) 
+        {
+            ObservableCollection<tbl_povrsina> ListP = new ObservableCollection<tbl_povrsina>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
+            {
+                var x = from a in context.tbl_povrsinas where a.materijal_FK == matId select a;
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new tbl_povrsina{id = p.id, materijal_FK = p.materijal_FK, pov = p.pov});
+                }
+            }
+            return ListP;
+        }
+        [OperationContract]
+        public ObservableCollection<tbl_debljina> getDebljinaByProduktId(int prodId)
+        {
+            ObservableCollection<tbl_debljina> ListaD = new ObservableCollection<tbl_debljina>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
+            {
+                var x = from a in context.tbl_debljinas where a.idProdukt_FK == prodId select a;
+                ListaD.Clear();
+                foreach (var p in x) 
+                {
+                    ListaD.Add(new tbl_debljina {id_debljina = p.id_debljina, idProdukt_FK = p.idProdukt_FK, naziv = p.naziv});
+                }
+            }
+            return ListaD;
+        }
     }
 }
    
