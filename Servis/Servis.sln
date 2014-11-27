@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mass.Data", "Mass.Data\Mass
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{E4F702D7-38DE-48D6-873E-5C289723006E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScheduler", "..\..\..\..\Desktop\examples\kalendar 1.0\WpfScheduler.csproj", "{F9954C26-6234-43F5-8D96-8EC6E03C03B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScheduler", "WpfScheduler\WpfScheduler.csproj", "{F9954C26-6234-43F5-8D96-8EC6E03C03B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
