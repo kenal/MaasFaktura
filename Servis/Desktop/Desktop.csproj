@@ -84,6 +84,9 @@
     <Compile Include="HelperClass\RelayCommand.cs" />
     <Compile Include="HelperClass\RichTextBoxHelper.cs" />
     <Compile Include="HelperClass\Sesija.cs" />
+    <Compile Include="KalendarWindow.xaml.cs">
+      <DependentUpon>KalendarWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KundenWIndow.xaml.cs">
       <DependentUpon>KundenWindow.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="FertigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KalendarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -413,6 +420,10 @@
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{e4f702d7-38de-48d6-873e-5c289723006e}</Project>
       <Name>Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfScheduler\WpfScheduler.csproj">
+      <Project>{f9954c26-6234-43f5-8d96-8ec6e03c03b9}</Project>
+      <Name>WpfScheduler</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
