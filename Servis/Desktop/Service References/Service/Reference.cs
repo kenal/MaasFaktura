@@ -9739,6 +9739,24 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getDebljinaByProduktId", ReplyAction="http://tempuri.org/MassServis/getDebljinaByProduktIdResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaByProduktIdAsync(int prodId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMatIdByName", ReplyAction="http://tempuri.org/MassServis/getMatIdByNameResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal> getMatIdByName(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMatIdByName", ReplyAction="http://tempuri.org/MassServis/getMatIdByNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal>> getMatIdByNameAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProIdByName", ReplyAction="http://tempuri.org/MassServis/getProIdByNameResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt> getProIdByName(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProIdByName", ReplyAction="http://tempuri.org/MassServis/getProIdByNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt>> getProIdByNameAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getDebljinaIdByName", ReplyAction="http://tempuri.org/MassServis/getDebljinaIdByNameResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> getDebljinaIdByName(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getDebljinaIdByName", ReplyAction="http://tempuri.org/MassServis/getDebljinaIdByNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaIdByNameAsync(string value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10154,6 +10172,30 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaByProduktIdAsync(int prodId) {
             return base.Channel.getDebljinaByProduktIdAsync(prodId);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal> getMatIdByName(string value) {
+            return base.Channel.getMatIdByName(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal>> getMatIdByNameAsync(string value) {
+            return base.Channel.getMatIdByNameAsync(value);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt> getProIdByName(string value) {
+            return base.Channel.getProIdByName(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt>> getProIdByNameAsync(string value) {
+            return base.Channel.getProIdByNameAsync(value);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> getDebljinaIdByName(string value) {
+            return base.Channel.getDebljinaIdByName(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaIdByNameAsync(string value) {
+            return base.Channel.getDebljinaIdByNameAsync(value);
         }
     }
 }

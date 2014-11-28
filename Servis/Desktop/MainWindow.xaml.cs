@@ -331,6 +331,12 @@ namespace Desktop
             showBugWindow.Show();
         }
 
+        private void btnKal_Click(object sender, RoutedEventArgs e)
+        {
+            KalendarWindow KalendarWindow = new KalendarWindow();
+            KalendarWindow.Show();
+        }
+
         
     }
 }

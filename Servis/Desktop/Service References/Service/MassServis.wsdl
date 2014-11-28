@@ -260,6 +260,24 @@
   <wsdl:message name="MassServis_getDebljinaByProduktId_OutputMessage">
     <wsdl:part name="parameters" element="tns:getDebljinaByProduktIdResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getMatIdByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMatIdByName" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getMatIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMatIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getProIdByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProIdByName" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getProIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getDebljinaIdByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDebljinaIdByName" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getDebljinaIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDebljinaIdByNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -428,6 +446,18 @@
     <wsdl:operation name="getDebljinaByProduktId">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getDebljinaByProduktId" message="tns:MassServis_getDebljinaByProduktId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getDebljinaByProduktIdResponse" message="tns:MassServis_getDebljinaByProduktId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMatIdByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMatIdByName" message="tns:MassServis_getMatIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMatIdByNameResponse" message="tns:MassServis_getMatIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProIdByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getProIdByName" message="tns:MassServis_getProIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getProIdByNameResponse" message="tns:MassServis_getProIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDebljinaIdByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getDebljinaIdByName" message="tns:MassServis_getDebljinaIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getDebljinaIdByNameResponse" message="tns:MassServis_getDebljinaIdByName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -803,6 +833,33 @@
     </wsdl:operation>
     <wsdl:operation name="getDebljinaByProduktId">
       <soap:operation soapAction="http://tempuri.org/MassServis/getDebljinaByProduktId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMatIdByName">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getMatIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProIdByName">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getProIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDebljinaIdByName">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getDebljinaIdByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
