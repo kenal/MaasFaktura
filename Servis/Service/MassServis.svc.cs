@@ -1185,6 +1185,51 @@ namespace Service
             }
             return ListaD;
         }
+        [OperationContract]
+        public ObservableCollection<tbl_materijal> getMatIdByName(string value) 
+        {
+            ObservableCollection<tbl_materijal> ListaM = new ObservableCollection<tbl_materijal>();
+            using(DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.tbl_materijals where a.naziv == value select a;
+                ListaM.Clear();
+                foreach(var p in x)
+                {
+                    ListaM.Add(new tbl_materijal { idmaterijal = p.idmaterijal, naziv = p.naziv});
+                }
+                return ListaM;
+            }
+        }
+        [OperationContract]
+        public ObservableCollection<tbl_produkt> getProIdByName(string value)
+        {
+            ObservableCollection<tbl_produkt> ListP = new ObservableCollection<tbl_produkt>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.tbl_produkts where a.naziv == value select a;
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new tbl_produkt { idprodukt = p.idprodukt, naziv = p.naziv });
+                }
+            }
+            return ListP;
+        }
+        [OperationContract]
+        public ObservableCollection<tbl_debljina> getDebljinaIdByName(string value)
+        {
+            ObservableCollection<tbl_debljina> ListP = new ObservableCollection<tbl_debljina>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.tbl_debljinas where a.naziv == value select a;
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new tbl_debljina { id_debljina = p.id_debljina, idProdukt_FK = p.idProdukt_FK, naziv = p.naziv });
+                }
+            }
+            return ListP;
+        }
     }
 }
    

@@ -595,4 +595,46 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getMatIdByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatIdByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMatIdByNameResult" nillable="true" type="q24:ArrayOftbl_materijal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProIdByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProIdByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getProIdByNameResult" nillable="true" type="q25:ArrayOftbl_produkt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDebljinaIdByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDebljinaIdByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getDebljinaIdByNameResult" nillable="true" type="q26:ArrayOftbl_debljina" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
