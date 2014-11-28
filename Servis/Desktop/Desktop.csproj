@@ -143,6 +143,7 @@
     <Compile Include="ViewModel\AdminWindowViewModel.cs" />
     <Compile Include="ViewModel\AngebotViewModel.cs" />
     <Compile Include="ViewModel\BestellungWindowViewModel.cs" />
+    <Compile Include="ViewModel\KalendarWindowViewModel.cs" />
     <Compile Include="ViewModel\KundenWindowViewModel.cs" />
     <Compile Include="ViewModel\LieferantWindowViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowViewModel.cs" />
