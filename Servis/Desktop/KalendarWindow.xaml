@@ -12,6 +12,8 @@
 
             <Button Name="prevBtn" Margin="10 0 0 0" HorizontalAlignment="Left" DockPanel.Dock="Left" Content="Prev"  VerticalAlignment="Center" Click="prevBtn_Click"></Button>
             <Button Name="nextBtn" Margin="10 0 0 0" HorizontalAlignment="Left" DockPanel.Dock="Left" Content="Next"  VerticalAlignment="Center" Click="nextBtn_Click"></Button>
+            
+            <Button Name="btnAddEvenet" Margin="10 0 0 0" HorizontalAlignment="Center" DockPanel.Dock="Left" Content="Event Hinzufugen" VerticalAlignment="Center"></Button>
 
             <Button Name="modeDayBtn" Margin="0 0 10 0" HorizontalAlignment="Right" DockPanel.Dock="Right" Content="Day"  VerticalAlignment="Center" Click="modeDayBtn_Click"></Button>
             <Button Name="modeWeekBtn" Margin="0 0 10 0" HorizontalAlignment="Right" DockPanel.Dock="Right" Content="Week"  VerticalAlignment="Center" Click="modeWeekBtn_Click"></Button>
