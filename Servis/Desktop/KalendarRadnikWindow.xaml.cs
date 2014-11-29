@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,18 @@ namespace Desktop
     /// </summary>
     public partial class KalendarRadnikWindow : Window
     {
+        KalendarRadnikWindowViewModel viewModel = new KalendarRadnikWindowViewModel();
+
+        public KalendarRadnikWindowViewModel ViewModel
+        {
+            get { return viewModel; }
+            set { viewModel = value; }
+        }
         public KalendarRadnikWindow()
         {
             InitializeComponent();
             Scheduler s = new WpfScheduler.Scheduler();
+            this.DataContext = viewModel;
         }
 
         private void scheduler1_Loaded(object sender, RoutedEventArgs e)
@@ -60,7 +69,7 @@ namespace Desktop
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace Desktop
     /// </summary>
     public partial class KalendarRadnikDodajWindow : Window
     {
+        KalendarRadnikWindowViewModel krwv = new KalendarRadnikWindowViewModel();
         public KalendarRadnikDodajWindow()
         {
             InitializeComponent();
+        }
+
+        public KalendarRadnikDodajWindow(KalendarRadnikWindowViewModel krwv)
+        {
+            InitializeComponent();
+            this.krwv = krwv;
+            this.DataContext = krwv;
         }
     }
 }

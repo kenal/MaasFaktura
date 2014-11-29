@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Desktop.Service;
+using Servis.HelperClass;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Desktop.ViewModel
 {
@@ -16,7 +20,10 @@ namespace Desktop.ViewModel
         int _tip;        
         bool _odobreno;        
         bool _pogledano;        
-        string _text;        
+        string _text;
+        private MassServisClient client = new MassServisClient();
+        private ObservableCollection<tbl_korisnik> _listaKorisnika;
+        private tbl_korisnik _selektovaniKorisnik;
         #endregion
 
         #region Properties
@@ -88,15 +95,51 @@ namespace Desktop.ViewModel
                 _text = value;
                 OnPropertyChanged("Text");
             }
-        }        
+        }
+
+        public ObservableCollection<tbl_korisnik> ListaKorisnika
+        {
+            get { return _listaKorisnika; }
+            set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
+        }
+
+        public tbl_korisnik SelektovaniKorisnik
+        {
+            get { return _selektovaniKorisnik; }
+            set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
+        }
         #endregion
 
         #region ICommand
-        
+        private ICommand _otvoriDodaj;
+
+        public ICommand OtvoriDodaj
+        {
+            get { return _otvoriDodaj = new RelayCommand(param => OtvoriDodajKalendar(param)); }
+            set { _otvoriDodaj = value; }
+        }
+
+        private ICommand PopuniComboKorisnika;
+
+        public ICommand PopuniComboKorisnika1
+        {
+            get { return PopuniComboKorisnika = new RelayCommand(param => popuniCombo(param)); }
+            set { PopuniComboKorisnika = value; }
+        }
         #endregion
 
         #region Methods
-        
+        public void OtvoriDodajKalendar(object parameter)
+        {
+            KalendarRadnikDodajWindow kd = new KalendarRadnikDodajWindow(this);
+            kd.Show();
+        }
+
+        public void popuniCombo(object parameter)
+        {
+            ListaKorisnika = client.ComboKorisnici();
+            
+        }
         #endregion
 
         #region INotifyPropertyChanged Members
