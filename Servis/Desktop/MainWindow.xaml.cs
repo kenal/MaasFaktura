@@ -333,7 +333,7 @@ namespace Desktop
 
         private void btnKal_Click(object sender, RoutedEventArgs e)
         {
-            KalendarWindow KalendarWindow = new KalendarWindow();
+            KalendarRadnikWindow KalendarWindow = new KalendarRadnikWindow();
             KalendarWindow.Show();
         }
 

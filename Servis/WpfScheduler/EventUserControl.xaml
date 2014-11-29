@@ -11,5 +11,6 @@
             <TextBlock x:Name="DisplayDateText" FontSize="10" Padding="2" TextWrapping="Wrap"/>
             <TextBlock x:Name="DisplayText" Text="{Binding Subject}" FontSize="10" Padding="2" TextWrapping="Wrap"/>
         </StackPanel>
+        
     </Border>
 </UserControl>

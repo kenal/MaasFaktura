@@ -18,9 +18,9 @@ namespace Desktop
     /// <summary>
     /// Interaction logic for KalendarWindow.xaml
     /// </summary>
-    public partial class KalendarWindow : Window
+    public partial class KalendarRadnikWindow : Window
     {
-        public KalendarWindow()
+        public KalendarRadnikWindow()
         {
             InitializeComponent();
             Scheduler s = new WpfScheduler.Scheduler();

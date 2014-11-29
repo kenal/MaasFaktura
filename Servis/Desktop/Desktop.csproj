@@ -84,8 +84,11 @@
     <Compile Include="HelperClass\RelayCommand.cs" />
     <Compile Include="HelperClass\RichTextBoxHelper.cs" />
     <Compile Include="HelperClass\Sesija.cs" />
-    <Compile Include="KalendarWindow.xaml.cs">
-      <DependentUpon>KalendarWindow.xaml</DependentUpon>
+    <Compile Include="KalendarRadnikDodajWindow.xaml.cs">
+      <DependentUpon>KalendarRadnikDodajWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KalendarRadnikWindow.xaml.cs">
+      <DependentUpon>KalendarRadnikWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="KundenWIndow.xaml.cs">
       <DependentUpon>KundenWindow.xaml</DependentUpon>
@@ -183,7 +186,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KalendarWindow.xaml">
+    <Page Include="KalendarRadnikDodajWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KalendarRadnikWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

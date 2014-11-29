@@ -1,4 +1,4 @@
-﻿<Window x:Class="Desktop.KalendarWindow"
+﻿<Window x:Class="Desktop.KalendarRadnikWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="KalendarWindow" Height="600" Width="800"  xmlns:my="clr-namespace:WpfScheduler;assembly=WpfScheduler">
