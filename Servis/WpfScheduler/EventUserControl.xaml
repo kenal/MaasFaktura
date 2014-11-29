@@ -7,10 +7,28 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Border x:Name="BorderElement" CornerRadius="0" BorderBrush="Black" Background="LightGreen" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
             Opacity="0.8" Height="Auto" Margin="1">
-        <StackPanel Orientation="Vertical" Height="Auto">
-            <TextBlock x:Name="DisplayDateText" FontSize="10" Padding="2" TextWrapping="Wrap"/>
-            <TextBlock x:Name="DisplayText" Text="{Binding Subject}" FontSize="10" Padding="2" TextWrapping="Wrap"/>
-        </StackPanel>
-        
+            <StackPanel Orientation="Vertical" Height="Auto">
+                <TextBlock x:Name="DisplayDateText" FontSize="10" Padding="2" TextWrapping="Wrap"/>
+                <TextBlock x:Name="DisplayText" Text="{Binding Subject}" FontSize="10" Padding="2" TextWrapping="Wrap"/>
+            <StackPanel.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="Cut" Background="LightGray">
+                        <MenuItem.Icon>
+                            <Image Source="SchedulerIcons/CutIcon.png" Height="15" Width="15"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Command="Copy" Background="LightGray">
+                        <MenuItem.Icon>
+                            <Image Source="SchedulerIcons/CopyIcon.png" Height="15" Width="15"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Command="Paste" Background="LightGray">
+                        <MenuItem.Icon>
+                            <Image Source="SchedulerIcons/PasteIcon.png" Height="15" Width="15"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </StackPanel.ContextMenu>
+            </StackPanel>
     </Border>
 </UserControl>

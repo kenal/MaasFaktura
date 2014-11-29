@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Desktop.KalendarRadnikWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="KalendarWindow" Height="600" Width="800"  xmlns:my="clr-namespace:WpfScheduler;assembly=WpfScheduler">
+        Title="KalendarWindow" Height="600" Width="800" xmlns:my="clr-namespace:WpfScheduler;assembly=WpfScheduler">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -29,8 +29,7 @@
             OnEventDoubleClick="scheduler1_OnEventDoubleClick"
             OnScheduleDoubleClick="scheduler1_OnScheduleDoubleClick"
             Mode="Week">
-            <my:Scheduler.Events>
-                
+            <my:Scheduler.Events>                
                 <my:Event Subject="Dev meeting" Start="2013-05-29 09:30:00" End="2013-05-29 11:30:00" Color="LightGreen"></my:Event>
                 <my:Event Subject="Dev meeting" Start="2013-05-30 12:00:00" End="2013-05-30 12:30:00" Color="LightGreen"></my:Event>
                 <my:Event Subject="Mike Holidays" Start="2013-05-27" End="2013-06-09" Color="LightSalmon"></my:Event>
