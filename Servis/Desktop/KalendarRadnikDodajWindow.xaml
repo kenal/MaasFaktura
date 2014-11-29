@@ -41,16 +41,16 @@
         <StackPanel HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="484" Orientation="Horizontal" >
             <DatePicker Width="200" Cursor="Hand"/>
             <Label>H:</Label>
-            <ComboBox Width="50" Cursor="Hand"></ComboBox>
+            <ComboBox Width="50" Cursor="Hand" ItemsSource="{Binding Path=ListaSati}" SelectedIndex="0"></ComboBox>
             <Label>m:</Label>
-            <ComboBox Width="50" Cursor="Hand"></ComboBox>
+            <ComboBox Width="50" Cursor="Hand" ItemsSource="{Binding Path=ListaMinuta}" SelectedIndex="0"></ComboBox>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="479" Orientation="Horizontal">
             <DatePicker Width="200" Cursor="Hand"/>
             <Label>H:</Label>
-            <ComboBox Width="50" Cursor="Hand"></ComboBox>
+            <ComboBox Width="50" Cursor="Hand" ItemsSource="{Binding Path=ListaSati}" SelectedIndex="0"></ComboBox>
             <Label>m:</Label>
-            <ComboBox Width="50" Cursor="Hand"></ComboBox>
+            <ComboBox Width="50" Cursor="Hand" ItemsSource="{Binding Path=ListaMinuta}" SelectedIndex="0"></ComboBox>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" Grid.Row="5" Width="479" Orientation="Horizontal">
             <RadioButton Cursor="Hand">
@@ -88,6 +88,14 @@
         <Separator HorizontalAlignment="Left" Height="5" Margin="10,45,0,0" Grid.Row="6" VerticalAlignment="Top" Width="479"/>
         <Separator HorizontalAlignment="Left" Height="5" Margin="10,0,0,0" Grid.Row="7" VerticalAlignment="Top" Width="479"/>
         <Separator HorizontalAlignment="Left" Height="5" Margin="10,45,0,0" Grid.Row="0" VerticalAlignment="Top" Width="479"/>
+        <StackPanel HorizontalAlignment="Left" Height="33" Margin="10,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="479" Orientation="Horizontal">
+            <Image  Source="ikone/Boja1.png" Width="25" Height="25" />
+            <Label>Urlaub</Label>
+            <Image  Source="ikone/Boja2.png" Width="25" Height="25" />
+            <Label>Krank</Label>
+            <Image  Source="ikone/Boja3.png" Width="25" Height="25" />
+            <Label>Abwesend</Label>
+        </StackPanel>
 
     </Grid>
 </Window>

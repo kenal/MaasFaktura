@@ -24,6 +24,8 @@ namespace Desktop.ViewModel
         private MassServisClient client = new MassServisClient();
         private ObservableCollection<tbl_korisnik> _listaKorisnika;
         private tbl_korisnik _selektovaniKorisnik;
+        private List<int> _ListaSati = new List<int>() { 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };        
+        private List<int> _ListaMinuta = new List<int>() { 0, 10, 20, 30, 40, 50 };        
         #endregion
 
         #region Properties
@@ -107,6 +109,25 @@ namespace Desktop.ViewModel
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
+        }
+
+        public List<int> ListaSati
+        {
+            get { return _ListaSati; }
+            set 
+            { 
+                _ListaSati = value;
+                OnPropertyChanged("ListaSati");
+            }
+        }
+        public List<int> ListaMinuta
+        {
+            get { return _ListaMinuta; }
+            set 
+            { 
+                _ListaMinuta = value;
+                OnPropertyChanged("ListaMinuta");
+            }
         }
         #endregion
 
