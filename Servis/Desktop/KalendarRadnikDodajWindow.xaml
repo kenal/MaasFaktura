@@ -5,6 +5,7 @@
         Title="KalendarRadnikDodajWindow" Height="581" Width="507" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Thickness x:Key="tbMargin">20,0,0,0</Thickness>
+        <Thickness x:Key="tbMargin2">10,0,0,0</Thickness>
     </Window.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -95,6 +96,11 @@
             <Label>Krank</Label>
             <Image  Source="ikone/Boja3.png" Width="25" Height="25" />
             <Label>Abwesend</Label>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Image}">
+                    <Setter Property="Margin" Value="{StaticResource tbMargin2}"/>
+                </Style>
+            </StackPanel.Resources>
         </StackPanel>
 
     </Grid>
