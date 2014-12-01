@@ -58,7 +58,9 @@ namespace WpfScheduler
             // Start painting
             int currentRow = -1;
             firstDay = dt;
-            while (dt.Month <= currentMonth || dt.DayOfWeek != DayOfWeek.Monday)
+            while ((dt.Month <= currentMonth && dt.Year == CurrentMonth.Year) ||
+                (dt.Year < CurrentMonth.Year) ||
+                dt.DayOfWeek != DayOfWeek.Monday)
             {
                 if (dt.DayOfWeek == DayOfWeek.Monday)
                 {

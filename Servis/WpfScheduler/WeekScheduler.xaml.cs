@@ -209,7 +209,7 @@ namespace WpfScheduler
                 foreach (Event e in eventList)
                 {
                     int numColumn = (int)e.Start.Date.Subtract(FirstDay.Date).TotalDays + 1;
-                    if (numColumn >= 0 && numColumn < 7)
+                    if (numColumn > 0 && numColumn <= 7)
                     {
                         Canvas sp = (Canvas)this.FindName("column" + numColumn);
                         sp.Width = columnWidth;
@@ -268,12 +268,9 @@ namespace WpfScheduler
                     int numColumn = (int)e.Start.Date.Subtract(FirstDay.Date).TotalDays;
                     int numEndColumn = (int)e.End.Date.Subtract(FirstDay.Date).TotalDays + 1;
 
-                    if (numColumn >= 7 || numEndColumn <= 0) continue;
+                    if (numColumn > 7 || numEndColumn <= 0) continue;
 
-                    if (numColumn < 0) numColumn = 0;
-                    if (numEndColumn > 7) numEndColumn = 7;
-
-                    if ((numColumn >= 0 && numColumn < 7) || (numEndColumn >= 0 && numEndColumn < 7))
+                    if ((numColumn > 0 && numColumn <= 7) || (numEndColumn > 0 && numEndColumn <= 7))
                     {
                         double marginLeft = (numColumn) * columnWidth;
 
