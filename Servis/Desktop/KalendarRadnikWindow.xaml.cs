@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Desktop.ViewModel;
 
 namespace Desktop
 {
@@ -21,6 +21,45 @@ namespace Desktop
     /// </summary>
     public partial class KalendarRadnikWindow : Window
     {
-        
+        public KalendarRadnikWindow()
+        {
+            InitializeComponent();
+        }
+        private void btnPrev_Click(object sender, RoutedEventArgs e)
+        {
+            scheduleControl.PrevPage();
+        }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            scheduleControl.NextPage();
+        }
+
+        private void btnModeMonth_Click(object sender, RoutedEventArgs e)
+        {
+            scheduleControl.Mode = WpfScheduler.Mode.Month;
+        }
+
+        private void btnModeWeek_Click(object sender, RoutedEventArgs e)
+        {
+            scheduleControl.Mode = WpfScheduler.Mode.Week;
+        }
+
+        private void btnModeDay_Click(object sender, RoutedEventArgs e)
+        {
+            scheduleControl.Mode = WpfScheduler.Mode.Day;
+        }
+
+        private void WeekScheduler_OnEventDoubleClick(object sender, WpfScheduler.Event e)
+        {
+            KalendarRadnikWindowViewModel vm = grid.DataContext as KalendarRadnikWindowViewModel;
+            vm.EditEventCommand.Execute(e);
+        }
+
+        private void WeekScheduler_OnScheduleDoubleClick(object sender, DateTime date)
+        {
+            KalendarRadnikWindowViewModel vm = grid.DataContext as KalendarRadnikWindowViewModel;
+            vm.NewEventCommand.Execute(date);
+        }
     }
 }

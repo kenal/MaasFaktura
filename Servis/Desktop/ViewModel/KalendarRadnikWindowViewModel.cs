@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
+using System.Windows.Media;
+using WpfScheduler;
 namespace Desktop.ViewModel
 {
     public class KalendarRadnikWindowViewModel: INotifyPropertyChanged
@@ -25,7 +26,7 @@ namespace Desktop.ViewModel
         private ObservableCollection<tbl_korisnik> _listaKorisnika;
         private tbl_korisnik _selektovaniKorisnik;
         private List<int> _ListaSati = new List<int>() { 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };        
-        private List<int> _ListaMinuta = new List<int>() { 0, 10, 20, 30, 40, 50 };        
+        private List<int> _ListaMinuta = new List<int>() { 0, 10, 20, 30, 40, 50 };              
         #endregion
 
         #region Properties
@@ -128,7 +129,7 @@ namespace Desktop.ViewModel
                 _ListaMinuta = value;
                 OnPropertyChanged("ListaMinuta");
             }
-        }
+        }        
         #endregion
 
         #region ICommand
@@ -172,6 +173,157 @@ namespace Desktop.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+        #endregion
+
+        #region EventsRegion
+        public TimeSpan StartJourney
+        {
+            get
+            {
+                return TimeSpan.FromHours(7);
+            }
+        }
+
+        public TimeSpan EndJourney
+        {
+            get
+            {
+                return TimeSpan.FromHours(19);
+            }
+        }
+
+        private ObservableCollection<Event> _events;
+        public ObservableCollection<Event> WpfScheduleEvents
+        {
+            get
+            {
+                //if (_events == null)
+                //    _events = new ObservableCollection<Event>(DummyDatabase.GetDataBaseEvents());
+                return _events;
+            }
+            set
+            {
+                if (_events != value)
+                {
+                    _events = value;
+                    OnPropertyChanged("WpfScheduleEvents");
+                }
+
+            }
+        }
+
+        #region CurrentEvent
+        private Event _currentEvent;
+        public Event CurrentEvent
+        {
+            get { return _currentEvent; }
+            set
+            {
+                if (_currentEvent == value) return;
+                _currentEvent = value;
+                OnPropertyChanged("CurrentEvent");
+            }
+        }
+        #endregion
+
+        #region IsOpen
+        private bool _isOpen;
+
+        public bool IsOpen
+        {
+            get { return _isOpen; }
+            set 
+            {
+                if (_isOpen == value) return;
+                _isOpen = value;
+                OnPropertyChanged("IsOpen");
+            }
+        }
+        #endregion
+
+        #region Commands
+        RelayCommand _EditEventCommand;
+        public ICommand EditEventCommand
+        {
+            get
+            {
+                if (_EditEventCommand == null) _EditEventCommand = new RelayCommand(EditEvent);
+                return _EditEventCommand;
+            }
+        }
+
+        private void EditEvent(object param)
+        {
+            WpfScheduler.Event e = param as WpfScheduler.Event;
+            CurrentEvent = WpfScheduleEvents.Single(ev => ev.Id == e.Id);
+            IsOpen = true;
+        }
+        #endregion
+
+        #region NewEventCommand
+        RelayCommand _NewEventCommand;
+
+        public ICommand NewEventCommand
+        {
+            get
+            {
+                if (_NewEventCommand == null) _NewEventCommand = new RelayCommand(NewEvent);
+                return _NewEventCommand;
+            }
+        }
+
+        private void NewEvent(object param)
+        {
+            DateTime date = (DateTime) param;
+            CurrentEvent = new Event();
+            CurrentEvent.Color = Brushes.Red;
+            CurrentEvent.Start = date;
+            CurrentEvent.End = date.AddHours(1);
+            IsOpen = true;
+        }
+        #endregion
+
+        #region CancelEditCommand
+        RelayCommand _CancelEditCommand;
+        public ICommand CancelEditCommand
+        {
+            get
+            {
+                if (_CancelEditCommand == null) _CancelEditCommand = new RelayCommand(param => this.CancelEdit());
+                return _CancelEditCommand;
+            }
+        }
+
+        private void CancelEdit()
+        {
+            if (!WpfScheduleEvents.Contains(CurrentEvent))
+                CurrentEvent = null;
+            IsOpen = false;
+        }
+        #endregion
+
+        #region SaveEventCommand
+        RelayCommand _SaveEventCommand;
+        public ICommand SaveEventCommand
+        {
+            get
+            {
+                if (_SaveEventCommand == null) _SaveEventCommand = new RelayCommand(param => this.SaveEvent());
+                return _SaveEventCommand;
+            }
+        }
+
+        private void SaveEvent()
+        {
+            if (!WpfScheduleEvents.Contains(CurrentEvent))
+            {
+                WpfScheduleEvents.Add(CurrentEvent);
+            }
+
+            IsOpen = false;
+            OnPropertyChanged("WpfScheduleEvents");
+        }
+        #endregion
         #endregion
     }
 }
