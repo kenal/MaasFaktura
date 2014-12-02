@@ -274,12 +274,14 @@ namespace Desktop.ViewModel
 
         private void NewEvent(object param)
         {
-            DateTime date = (DateTime) param;
-            CurrentEvent = new Event();
-            CurrentEvent.Color = Brushes.Red;
-            CurrentEvent.Start = date;
-            CurrentEvent.End = date.AddHours(1);
-            IsOpen = true;
+            //DateTime date = (DateTime) param;
+            //CurrentEvent = new Event();
+            //CurrentEvent.Color = Brushes.Red;
+            //CurrentEvent.Start = date;
+            //CurrentEvent.End = date.AddHours(1);
+            //IsOpen = true;
+            KalendarRadnikDodajWindow krdw = new KalendarRadnikDodajWindow(this);
+            krdw.Show();
         }
         #endregion
 
