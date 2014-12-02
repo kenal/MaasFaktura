@@ -197,8 +197,8 @@ namespace Desktop.ViewModel
         {
             get
             {
-                if (_events == null)
-                    _events = new ObservableCollection<Event>(GetDatabaseEvents());
+                //if (_events == null)
+                //    _events = new ObservableCollection<Event>(DummyDatabase.GetDataBaseEvents());
                 return _events;
             }
             set
@@ -242,7 +242,6 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Commands
-        #region EditEventCommand
         RelayCommand _EditEventCommand;
         public ICommand EditEventCommand
         {
@@ -297,8 +296,8 @@ namespace Desktop.ViewModel
 
         private void CancelEdit()
         {
-            //if (!WpfScheduleEvents.Contains(CurrentEvent))
-            //    CurrentEvent = null;
+            if (!WpfScheduleEvents.Contains(CurrentEvent))
+                CurrentEvent = null;
             IsOpen = false;
         }
         #endregion
@@ -325,19 +324,6 @@ namespace Desktop.ViewModel
             OnPropertyChanged("WpfScheduleEvents");
         }
         #endregion
-        #endregion
-
-        public static List<Event> GetDatabaseEvents()
-        {
-            try
-            {
-                return new List<Event>();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
         #endregion
     }
 }
