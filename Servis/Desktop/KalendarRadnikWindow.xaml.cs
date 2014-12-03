@@ -32,6 +32,7 @@ namespace Desktop
         {
             InitializeComponent();
             this.DataContext = ViewModel;
+            scheduleControl.Mode = WpfScheduler.Mode.Month;
         }
         private void btnPrev_Click(object sender, RoutedEventArgs e)
         {

@@ -374,6 +374,9 @@
     <None Include="Service References\Service\Desktop.Service.tbl_materijal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Service\Desktop.Service.tbl_mit_kalendar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Service\Desktop.Service.tbl_poruka_poslane.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -454,6 +457,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Mass.Data\Mass.Data.csproj">
+      <Project>{fa6b8472-356b-45a3-81ec-49abedbad410}</Project>
+      <Name>Mass.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{e4f702d7-38de-48d6-873e-5c289723006e}</Project>
       <Name>Service</Name>

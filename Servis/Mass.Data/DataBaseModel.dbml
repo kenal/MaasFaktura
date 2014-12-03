@@ -205,19 +205,6 @@
       <Association Name="tbl_materijal_tbl_povrsina" Member="tbl_povrsinas" ThisKey="idmaterijal" OtherKey="materijal_FK" Type="tbl_povrsina" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_mit_kalendar" Member="tbl_mit_kalendars">
-    <Type Name="tbl_mit_kalendar">
-      <Column Name="id_kalendar" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_korisnik_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="datu1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="odobreno" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="pogledno" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="biljeska" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="tbl_korisnik_tbl_mit_kalendar" Member="tbl_korisnik" ThisKey="id_korisnik_FK" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbl_narudzbe_ploca" Member="tbl_narudzbe_plocas">
     <Type Name="tbl_narudzbe_ploca">
       <Column Name="id_narudzbe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -643,7 +630,6 @@
       <Association Name="tbl_korisnik_tbl_inventar" Member="tbl_inventars" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_inventar" />
       <Association Name="tbl_korisnik_tbl_kalendar" Member="tbl_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_kalendar" />
       <Association Name="tbl_korisnik_tbl_korisnik_licenca" Member="tbl_korisnik_licencas" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_korisnik_licenca" />
-      <Association Name="tbl_korisnik_tbl_mit_kalendar" Member="tbl_mit_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_mit_kalendar" />
       <Association Name="tbl_korisnik_tbl_pracenje" Member="tbl_pracenjes" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje" />
       <Association Name="tbl_korisnik_tbl_pracenje_detalji" Member="tbl_pracenje_detaljis" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_pracenje_detalji" />
       <Association Name="tbl_korisnik_tbl_produktion" Member="tbl_produktions" ThisKey="id_korisnik" OtherKey="user_fk" Type="tbl_produktion" />
@@ -657,6 +643,7 @@
       <Association Name="tbl_korisnik_tbl_poruka_poslane1" Member="tbl_poruka_poslanes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_poslane" />
       <Association Name="tbl_korisnik_tbl_poruka_primljene" Member="tbl_poruka_primljenes" ThisKey="id_korisnik" OtherKey="poslao" Type="tbl_poruka_primljene" />
       <Association Name="tbl_korisnik_tbl_poruka_primljene1" Member="tbl_poruka_primljenes1" ThisKey="id_korisnik" OtherKey="primio" Type="tbl_poruka_primljene" />
+      <Association Name="tbl_korisnik_tbl_mit_kalendar" Member="tbl_mit_kalendars" ThisKey="id_korisnik" OtherKey="id_korisnik_FK" Type="tbl_mit_kalendar" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_poruka_poslane" Member="tbl_poruka_poslanes">
@@ -701,6 +688,19 @@
       <Association Name="tbl_debljina_tbl_stavke" Member="tbl_stavkes" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_stavke" />
       <Association Name="tbl_debljina_tbl_vrsta_cijene_1" Member="tbl_vrsta_cijene_1s" ThisKey="id_debljina" OtherKey="debljina_fk" Type="tbl_vrsta_cijene_1" />
       <Association Name="tbl_produkt_tbl_debljina" Member="tbl_produkt" ThisKey="idProdukt_FK" OtherKey="idprodukt" Type="tbl_produkt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_mit_kalendar" Member="tbl_mit_kalendars">
+    <Type Name="tbl_mit_kalendar">
+      <Column Name="id_kalendar" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_korisnik_FK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datu1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odobreno" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pogledno" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="biljeska" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="tbl_korisnik_tbl_mit_kalendar" Member="tbl_korisnik" ThisKey="id_korisnik_FK" OtherKey="id_korisnik" Type="tbl_korisnik" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.p_get_User_View" Method="p_get_User_View">

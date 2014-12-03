@@ -1230,6 +1230,52 @@ namespace Service
             }
             return ListP;
         }
+
+        [OperationContract]
+        public ObservableCollection<tbl_mit_kalendar> ListaEventaMitarbeiter()
+        {
+            ObservableCollection<tbl_mit_kalendar> Lista = new ObservableCollection<tbl_mit_kalendar>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.tbl_mit_kalendars select a;
+                Lista.Clear();
+                foreach (var p in x)
+                {
+                    Lista.Add(new tbl_mit_kalendar
+                    {
+                        id_kalendar = p.id_kalendar,
+                        id_korisnik_FK = p.id_korisnik_FK,
+                        datum = p.datum,
+                        datu1 = p.datu1,
+                        tip = p.tip,
+                        odobreno = p.odobreno,
+                        pogledno = p.pogledno,
+                        biljeska = p.biljeska
+                    
+                    });
+                }
+
+            }
+            return Lista;
+        }
+
+        [OperationContract]
+        public void UnesiEventMitarbeiter(tbl_mit_kalendar mit_kalendar, int id)
+        {
+            tbl_mit_kalendar mk = new tbl_mit_kalendar();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                mk.id_korisnik_FK = id;
+                mk.biljeska = mit_kalendar.biljeska;
+                mk.datu1 = mit_kalendar.datu1;
+                mk.datum = mit_kalendar.datum;
+                mk.tip = mit_kalendar.tip;
+                mk.odobreno = false;
+                mk.pogledno = false;
+                context.tbl_mit_kalendars.InsertOnSubmit(mk);
+                context.SubmitChanges();
+            }
+        }
     }
 }
    

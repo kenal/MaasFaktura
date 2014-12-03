@@ -77,12 +77,12 @@
             </StackPanel.Resources>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="166" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="479" Orientation="Horizontal">
-            <TextBlock Height="167" Margin="10,0"></TextBlock>
+            <TextBox Height="146" Margin="10,10,10,0" Width="464" VerticalAlignment="Top" Text="{Binding Text}"></TextBox>
 
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="479" Orientation="Horizontal" >
-             
-            <Button FontWeight="Bold" Command="{Binding IzvrsiUnos}">Speichern</Button>
+
+            <Button FontWeight="Bold" Command="{Binding IzvrsiUnos}" Click="Button_Click_1">Speichern</Button>
             <Button Click="Button_Click" >Abbrechen</Button>
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Button}">

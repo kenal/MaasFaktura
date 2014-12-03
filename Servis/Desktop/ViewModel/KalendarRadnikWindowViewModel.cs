@@ -33,7 +33,8 @@ namespace Desktop.ViewModel
         int _minuta1;
         bool radioTip1;       
         bool radioTip2;        
-        bool radioTip3;        
+        bool radioTip3;
+        
         #endregion
 
         #region Properties
@@ -183,6 +184,7 @@ namespace Desktop.ViewModel
             set
             {
                 radioTip1 = value;
+                Tip = 1;
                 OnPropertyChanged("RadioTip1");
             }
         }
@@ -193,6 +195,7 @@ namespace Desktop.ViewModel
             set
             {
                 radioTip2 = value;
+                Tip = 2;
                 OnPropertyChanged("RadioTip2");
             }
         }
@@ -203,6 +206,7 @@ namespace Desktop.ViewModel
             set
             {
                 radioTip3 = value;
+                Tip = 3;
                 OnPropertyChanged("RadioTip3");
             }
         }
@@ -259,11 +263,28 @@ namespace Desktop.ViewModel
                 CurrentEvent.Color = Brushes.Magenta;
             else
                 CurrentEvent.Color = Brushes.Red;
+            
             CurrentEvent.Start = Datum;
             CurrentEvent.End = Datum1;
-
+            UnosUBazu();
             WpfScheduleEvents.Add(CurrentEvent);
+
             
+        }
+
+        public void UnosUBazu()
+        {
+            tbl_mit_kalendar EventKalendar = new tbl_mit_kalendar();
+            
+            TimeSpan ts = new TimeSpan(Sat, Minuta, 0);
+            TimeSpan ts1 = new TimeSpan(Sat1, Minuta1, 0);
+            Datum = Datum.Date + ts;
+            Datum1 = Datum1.Date + ts1;
+            EventKalendar.datum = Datum;
+            EventKalendar.datu1 = Datum1;
+            EventKalendar.tip = Tip;
+            EventKalendar.biljeska = Text;            
+            client.UnesiEventMitarbeiter(EventKalendar, SelektovaniKorisnik.id_korisnik);
         }
         #endregion
 
@@ -300,8 +321,8 @@ namespace Desktop.ViewModel
         {
             get
             {
-                //if (_events == null)
-                //    _events = new ObservableCollection<Event>();
+                if (_events == null)
+                    _events = PuniListu();
                 return _events;
             }
             set
@@ -313,6 +334,27 @@ namespace Desktop.ViewModel
                 }
 
             }
+        }
+
+        public ObservableCollection<Event> PuniListu()
+        {
+            ObservableCollection<Event> Lista = new ObservableCollection<Event>();
+            foreach (var p in client.ListaEventaMitarbeiter())
+            {
+                Event e = new Event();
+                e.Start = Convert.ToDateTime(p.datum);
+                e.End = Convert.ToDateTime(p.datu1);
+                e.Subject = p.biljeska;
+                e.Description = p.id_kalendar + " " + p.id_korisnik_FK;
+                if (p.tip == 1)
+                    e.Color = Brushes.Turquoise;
+                else if (p.tip == 2)
+                    e.Color = Brushes.Chocolate;
+                else if(p.tip == 3)
+                    e.Color = Brushes.Magenta;
+                Lista.Add(e);
+            }
+            return Lista;
         }
 
         #region CurrentEvent

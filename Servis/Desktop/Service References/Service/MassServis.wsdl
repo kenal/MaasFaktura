@@ -278,6 +278,18 @@
   <wsdl:message name="MassServis_getDebljinaIdByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:getDebljinaIdByNameResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_ListaEventaMitarbeiter_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEventaMitarbeiter" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ListaEventaMitarbeiter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEventaMitarbeiterResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_UnesiEventMitarbeiter_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiEventMitarbeiter" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_UnesiEventMitarbeiter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiEventMitarbeiterResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -458,6 +470,14 @@
     <wsdl:operation name="getDebljinaIdByName">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getDebljinaIdByName" message="tns:MassServis_getDebljinaIdByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getDebljinaIdByNameResponse" message="tns:MassServis_getDebljinaIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaEventaMitarbeiter">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaEventaMitarbeiter" message="tns:MassServis_ListaEventaMitarbeiter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ListaEventaMitarbeiterResponse" message="tns:MassServis_ListaEventaMitarbeiter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiEventMitarbeiter">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/UnesiEventMitarbeiter" message="tns:MassServis_UnesiEventMitarbeiter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/UnesiEventMitarbeiterResponse" message="tns:MassServis_UnesiEventMitarbeiter_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -860,6 +880,24 @@
     </wsdl:operation>
     <wsdl:operation name="getDebljinaIdByName">
       <soap:operation soapAction="http://tempuri.org/MassServis/getDebljinaIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaEventaMitarbeiter">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ListaEventaMitarbeiter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiEventMitarbeiter">
+      <soap:operation soapAction="http://tempuri.org/MassServis/UnesiEventMitarbeiter" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
