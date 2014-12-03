@@ -21,9 +21,17 @@ namespace Desktop
     /// </summary>
     public partial class KalendarRadnikWindow : Window
     {
+        KalendarRadnikWindowViewModel viewModel = new KalendarRadnikWindowViewModel();
+
+        public KalendarRadnikWindowViewModel ViewModel
+        {
+            get { return viewModel; }
+            set { viewModel = value; }
+        }
         public KalendarRadnikWindow()
         {
             InitializeComponent();
+            this.DataContext = ViewModel;
         }
         private void btnPrev_Click(object sender, RoutedEventArgs e)
         {

@@ -26,7 +26,14 @@ namespace Desktop.ViewModel
         private ObservableCollection<tbl_korisnik> _listaKorisnika;
         private tbl_korisnik _selektovaniKorisnik;
         private List<int> _ListaSati = new List<int>() { 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };        
-        private List<int> _ListaMinuta = new List<int>() { 0, 10, 20, 30, 40, 50 };              
+        private List<int> _ListaMinuta = new List<int>() { 0, 10, 20, 30, 40, 50 };
+        int _sat;        
+        int _minuta;       
+        int _sat1;        
+        int _minuta1;
+        bool radioTip1;       
+        bool radioTip2;        
+        bool radioTip3;        
         #endregion
 
         #region Properties
@@ -129,7 +136,76 @@ namespace Desktop.ViewModel
                 _ListaMinuta = value;
                 OnPropertyChanged("ListaMinuta");
             }
-        }        
+        }
+
+        public int Sat
+        {
+            get { return _sat; }
+            set
+            {
+                _sat = value;
+                OnPropertyChanged("Sat");
+            }
+        }
+
+        public int Minuta
+        {
+            get { return _minuta; }
+            set
+            {
+                _minuta = value;
+                OnPropertyChanged("Minuta");
+            }
+        }
+        public int Sat1
+        {
+            get { return _sat1; }
+            set
+            {
+                _sat1 = value;
+                OnPropertyChanged("Sat1");
+            }
+        }
+
+        public int Minuta1
+        {
+            get { return _minuta1; }
+            set
+            {
+                _minuta1 = value;
+                OnPropertyChanged("Minuta1");
+            }
+        }
+
+        public bool RadioTip1
+        {
+            get { return radioTip1; }
+            set
+            {
+                radioTip1 = value;
+                OnPropertyChanged("RadioTip1");
+            }
+        }
+
+        public bool RadioTip2
+        {
+            get { return radioTip2; }
+            set
+            {
+                radioTip2 = value;
+                OnPropertyChanged("RadioTip2");
+            }
+        }
+
+        public bool RadioTip3
+        {
+            get { return radioTip3; }
+            set
+            {
+                radioTip3 = value;
+                OnPropertyChanged("RadioTip3");
+            }
+        }
         #endregion
 
         #region ICommand
@@ -148,6 +224,14 @@ namespace Desktop.ViewModel
             get { return PopuniComboKorisnika = new RelayCommand(param => popuniCombo(param)); }
             set { PopuniComboKorisnika = value; }
         }
+
+        private ICommand _izvrsiUnos;
+
+        public ICommand IzvrsiUnos
+        {
+            get { return _izvrsiUnos = new RelayCommand(param => Unos(param)); }
+            set { _izvrsiUnos = value; }
+        }
         #endregion
 
         #region Methods
@@ -160,6 +244,25 @@ namespace Desktop.ViewModel
         public void popuniCombo(object parameter)
         {
             ListaKorisnika = client.ComboKorisnici();
+            
+        }
+
+        public void Unos(object parameter)
+        {
+            
+            CurrentEvent = new Event();
+            if (RadioTip1 == true)
+                CurrentEvent.Color = Brushes.Turquoise;
+            else if (RadioTip2 == true)
+                CurrentEvent.Color = Brushes.Chocolate;
+            else if (RadioTip3 == true)
+                CurrentEvent.Color = Brushes.Magenta;
+            else
+                CurrentEvent.Color = Brushes.Red;
+            CurrentEvent.Start = Datum;
+            CurrentEvent.End = Datum1;
+
+            WpfScheduleEvents.Add(CurrentEvent);
             
         }
         #endregion
@@ -198,7 +301,7 @@ namespace Desktop.ViewModel
             get
             {
                 //if (_events == null)
-                //    _events = new ObservableCollection<Event>(DummyDatabase.GetDataBaseEvents());
+                //    _events = new ObservableCollection<Event>();
                 return _events;
             }
             set
@@ -274,14 +377,13 @@ namespace Desktop.ViewModel
 
         private void NewEvent(object param)
         {
-            //DateTime date = (DateTime) param;
-            //CurrentEvent = new Event();
-            //CurrentEvent.Color = Brushes.Red;
-            //CurrentEvent.Start = date;
-            //CurrentEvent.End = date.AddHours(1);
-            //IsOpen = true;
+            DateTime date = (DateTime) param;
+            Datum = date;
+            Datum1 = date.AddHours(1);
+            
             KalendarRadnikDodajWindow krdw = new KalendarRadnikDodajWindow(this);
             krdw.Show();
+
         }
         #endregion
 

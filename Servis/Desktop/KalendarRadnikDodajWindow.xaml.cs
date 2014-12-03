@@ -32,5 +32,12 @@ namespace Desktop
             this.krwv = krwv;
             this.DataContext = krwv;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }
