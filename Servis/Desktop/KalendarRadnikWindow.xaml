@@ -30,7 +30,7 @@
             Mode="Week"
             StartJourney="{Binding StartJourney}"
             EndJourney="{Binding EndJourney}"
-            Events="{Binding WpfScheduleEvents}"
+            Events="{Binding WpfScheduleEvents, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
             OnEventDoubleClick="WeekScheduler_OnEventDoubleClick"
             OnScheduleDoubleClick="WeekScheduler_OnScheduleDoubleClick"/>
