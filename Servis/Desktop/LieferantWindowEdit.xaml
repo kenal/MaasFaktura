@@ -101,7 +101,7 @@
                 <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"/>
                 <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
                     <ComboBox x:Name="CountryCombo" 
-                		ItemsSource="{Binding Countries, ElementName=Window}"  SelectedValuePath="code"  SelectedValue="{Binding DataContext.LandEdit, ElementName=Window}" Margin="158,-1,50,-1" SelectedIndex="0" DropDownOpened="CountryCombo_DropDownOpened" Cursor="Hand" >
+                		ItemsSource="{Binding Countries, ElementName=Window}" SelectedValuePath="code"  SelectedValue="{Binding DataContext.LandEdit, ElementName=Window}" Margin="158,-1,50,-1" SelectedIndex="0" DropDownOpened="CountryCombo_DropDownOpened" Cursor="Hand">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">

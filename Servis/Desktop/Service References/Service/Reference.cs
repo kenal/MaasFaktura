@@ -110,7 +110,7 @@ namespace Desktop.Service {
         private string tel2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int tipField;
+        private System.Nullable<int> tipField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string vlasnik_racunaField;
@@ -509,7 +509,7 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int tip {
+        public System.Nullable<int> tip {
             get {
                 return this.tipField;
             }
@@ -1851,9 +1851,6 @@ namespace Desktop.Service {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idProdukt_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_debljinaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1861,9 +1858,6 @@ namespace Desktop.Service {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_inventar> tbl_inventarsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_produkt tbl_produktField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
@@ -1878,19 +1872,6 @@ namespace Desktop.Service {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idProdukt_FK {
-            get {
-                return this.idProdukt_FKField;
-            }
-            set {
-                if ((this.idProdukt_FKField.Equals(value) != true)) {
-                    this.idProdukt_FKField = value;
-                    this.RaisePropertyChanged("idProdukt_FK");
-                }
             }
         }
         
@@ -1929,19 +1910,6 @@ namespace Desktop.Service {
                 if ((object.ReferenceEquals(this.tbl_inventarsField, value) != true)) {
                     this.tbl_inventarsField = value;
                     this.RaisePropertyChanged("tbl_inventars");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_produkt tbl_produkt {
-            get {
-                return this.tbl_produktField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_produktField, value) != true)) {
-                    this.tbl_produktField = value;
-                    this.RaisePropertyChanged("tbl_produkt");
                 }
             }
         }
@@ -2002,9 +1970,6 @@ namespace Desktop.Service {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_inventar> tbl_inventarsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_povrsina> tbl_povrsinasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
@@ -2070,19 +2035,6 @@ namespace Desktop.Service {
                 if ((object.ReferenceEquals(this.tbl_inventarsField, value) != true)) {
                     this.tbl_inventarsField = value;
                     this.RaisePropertyChanged("tbl_inventars");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_povrsina> tbl_povrsinas {
-            get {
-                return this.tbl_povrsinasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_povrsinasField, value) != true)) {
-                    this.tbl_povrsinasField = value;
-                    this.RaisePropertyChanged("tbl_povrsinas");
                 }
             }
         }
@@ -2503,115 +2455,6 @@ namespace Desktop.Service {
                 if ((this.wocheField.Equals(value) != true)) {
                     this.wocheField = value;
                     this.RaisePropertyChanged("woche");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_produkt", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_produkt : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idproduktField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazivField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> tbl_debljinasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produktion> tbl_produktionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijasField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idprodukt {
-            get {
-                return this.idproduktField;
-            }
-            set {
-                if ((this.idproduktField.Equals(value) != true)) {
-                    this.idproduktField = value;
-                    this.RaisePropertyChanged("idprodukt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naziv {
-            get {
-                return this.nazivField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
-                    this.nazivField = value;
-                    this.RaisePropertyChanged("naziv");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> tbl_debljinas {
-            get {
-                return this.tbl_debljinasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_debljinasField, value) != true)) {
-                    this.tbl_debljinasField = value;
-                    this.RaisePropertyChanged("tbl_debljinas");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produktion> tbl_produktions {
-            get {
-                return this.tbl_produktionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_produktionsField, value) != true)) {
-                    this.tbl_produktionsField = value;
-                    this.RaisePropertyChanged("tbl_produktions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijas {
-            get {
-                return this.tbl_reklamacijasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_reklamacijasField, value) != true)) {
-                    this.tbl_reklamacijasField = value;
-                    this.RaisePropertyChanged("tbl_reklamacijas");
                 }
             }
         }
@@ -3486,352 +3329,6 @@ namespace Desktop.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_reklamacija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_reklamacija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string biljeskaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int broj_auftrage_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string folderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_produkt_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_reklamacijaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string radnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal sumaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_auftrag tbl_auftragField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_produkt tbl_produktField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string biljeska {
-            get {
-                return this.biljeskaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
-                    this.biljeskaField = value;
-                    this.RaisePropertyChanged("biljeska");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int broj_auftrage_FK {
-            get {
-                return this.broj_auftrage_FKField;
-            }
-            set {
-                if ((this.broj_auftrage_FKField.Equals(value) != true)) {
-                    this.broj_auftrage_FKField = value;
-                    this.RaisePropertyChanged("broj_auftrage_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string folder {
-            get {
-                return this.folderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.folderField, value) != true)) {
-                    this.folderField = value;
-                    this.RaisePropertyChanged("folder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_produkt_FK {
-            get {
-                return this.id_produkt_FKField;
-            }
-            set {
-                if ((this.id_produkt_FKField.Equals(value) != true)) {
-                    this.id_produkt_FKField = value;
-                    this.RaisePropertyChanged("id_produkt_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_reklamacija {
-            get {
-                return this.id_reklamacijaField;
-            }
-            set {
-                if ((this.id_reklamacijaField.Equals(value) != true)) {
-                    this.id_reklamacijaField = value;
-                    this.RaisePropertyChanged("id_reklamacija");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string radnik {
-            get {
-                return this.radnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.radnikField, value) != true)) {
-                    this.radnikField = value;
-                    this.RaisePropertyChanged("radnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal suma {
-            get {
-                return this.sumaField;
-            }
-            set {
-                if ((this.sumaField.Equals(value) != true)) {
-                    this.sumaField = value;
-                    this.RaisePropertyChanged("suma");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_auftrag tbl_auftrag {
-            get {
-                return this.tbl_auftragField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
-                    this.tbl_auftragField = value;
-                    this.RaisePropertyChanged("tbl_auftrag");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_produkt tbl_produkt {
-            get {
-                return this.tbl_produktField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_produktField, value) != true)) {
-                    this.tbl_produktField = value;
-                    this.RaisePropertyChanged("tbl_produkt");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_akontacija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_akontacija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int broj_akontacijaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int broj_auftrage_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_akontacijaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal sumaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_auftrag tbl_auftragField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int broj_akontacija {
-            get {
-                return this.broj_akontacijaField;
-            }
-            set {
-                if ((this.broj_akontacijaField.Equals(value) != true)) {
-                    this.broj_akontacijaField = value;
-                    this.RaisePropertyChanged("broj_akontacija");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int broj_auftrage_FK {
-            get {
-                return this.broj_auftrage_FKField;
-            }
-            set {
-                if ((this.broj_auftrage_FKField.Equals(value) != true)) {
-                    this.broj_auftrage_FKField = value;
-                    this.RaisePropertyChanged("broj_auftrage_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_akontacija {
-            get {
-                return this.id_akontacijaField;
-            }
-            set {
-                if ((this.id_akontacijaField.Equals(value) != true)) {
-                    this.id_akontacijaField = value;
-                    this.RaisePropertyChanged("id_akontacija");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal suma {
-            get {
-                return this.sumaField;
-            }
-            set {
-                if ((this.sumaField.Equals(value) != true)) {
-                    this.sumaField = value;
-                    this.RaisePropertyChanged("suma");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_auftrag tbl_auftrag {
-            get {
-                return this.tbl_auftragField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
-                    this.tbl_auftragField = value;
-                    this.RaisePropertyChanged("tbl_auftrag");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="tbl_angebot", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
     [System.SerializableAttribute()]
     public partial class tbl_angebot : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4245,36 +3742,66 @@ namespace Desktop.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_avan", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_artikli", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
     [System.SerializableAttribute()]
-    public partial class tbl_avan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class tbl_artikli : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int broj_auftrage_FKField;
+        private int aktivantField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datumField;
+        private int id_artikliField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_avansField;
+        private string kratki_opisField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_korisnik_FKField;
+        private string linkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nacinField;
+        private int materijal_fkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_auftrag tbl_auftragField;
+        private string nazivField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        private int podgrupa_fkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal uplatioField;
+        private string sinonimiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string slikaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int svrhaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_cijena_artikla1> tbl_cijena_artikla1sField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_materijal tbl_materijalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_podgrupa tbl_podgrupaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_zemlja_porijekla tbl_zemlja_porijeklaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int vrstaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int zemlja_porijekla_fkField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4287,105 +3814,235 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int broj_auftrage_FK {
+        public int aktivant {
             get {
-                return this.broj_auftrage_FKField;
+                return this.aktivantField;
             }
             set {
-                if ((this.broj_auftrage_FKField.Equals(value) != true)) {
-                    this.broj_auftrage_FKField = value;
-                    this.RaisePropertyChanged("broj_auftrage_FK");
+                if ((this.aktivantField.Equals(value) != true)) {
+                    this.aktivantField = value;
+                    this.RaisePropertyChanged("aktivant");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum {
+        public int id_artikli {
             get {
-                return this.datumField;
+                return this.id_artikliField;
             }
             set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
+                if ((this.id_artikliField.Equals(value) != true)) {
+                    this.id_artikliField = value;
+                    this.RaisePropertyChanged("id_artikli");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_avans {
+        public string kratki_opis {
             get {
-                return this.id_avansField;
+                return this.kratki_opisField;
             }
             set {
-                if ((this.id_avansField.Equals(value) != true)) {
-                    this.id_avansField = value;
-                    this.RaisePropertyChanged("id_avans");
+                if ((object.ReferenceEquals(this.kratki_opisField, value) != true)) {
+                    this.kratki_opisField = value;
+                    this.RaisePropertyChanged("kratki_opis");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_korisnik_FK {
+        public string link {
             get {
-                return this.id_korisnik_FKField;
+                return this.linkField;
             }
             set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
+                if ((object.ReferenceEquals(this.linkField, value) != true)) {
+                    this.linkField = value;
+                    this.RaisePropertyChanged("link");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nacin {
+        public int materijal_fk {
             get {
-                return this.nacinField;
+                return this.materijal_fkField;
             }
             set {
-                if ((object.ReferenceEquals(this.nacinField, value) != true)) {
-                    this.nacinField = value;
-                    this.RaisePropertyChanged("nacin");
+                if ((this.materijal_fkField.Equals(value) != true)) {
+                    this.materijal_fkField = value;
+                    this.RaisePropertyChanged("materijal_fk");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_auftrag tbl_auftrag {
+        public string naziv {
             get {
-                return this.tbl_auftragField;
+                return this.nazivField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
-                    this.tbl_auftragField = value;
-                    this.RaisePropertyChanged("tbl_auftrag");
+                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
+                    this.nazivField = value;
+                    this.RaisePropertyChanged("naziv");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
+        public int podgrupa_fk {
             get {
-                return this.tbl_korisnikField;
+                return this.podgrupa_fkField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
+                if ((this.podgrupa_fkField.Equals(value) != true)) {
+                    this.podgrupa_fkField = value;
+                    this.RaisePropertyChanged("podgrupa_fk");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal uplatio {
+        public string sinonimi {
             get {
-                return this.uplatioField;
+                return this.sinonimiField;
             }
             set {
-                if ((this.uplatioField.Equals(value) != true)) {
-                    this.uplatioField = value;
-                    this.RaisePropertyChanged("uplatio");
+                if ((object.ReferenceEquals(this.sinonimiField, value) != true)) {
+                    this.sinonimiField = value;
+                    this.RaisePropertyChanged("sinonimi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string slika {
+            get {
+                return this.slikaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.slikaField, value) != true)) {
+                    this.slikaField = value;
+                    this.RaisePropertyChanged("slika");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int svrha {
+            get {
+                return this.svrhaField;
+            }
+            set {
+                if ((this.svrhaField.Equals(value) != true)) {
+                    this.svrhaField = value;
+                    this.RaisePropertyChanged("svrha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_cijena_artikla1> tbl_cijena_artikla1s {
+            get {
+                return this.tbl_cijena_artikla1sField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_cijena_artikla1sField, value) != true)) {
+                    this.tbl_cijena_artikla1sField = value;
+                    this.RaisePropertyChanged("tbl_cijena_artikla1s");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_materijal tbl_materijal {
+            get {
+                return this.tbl_materijalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_materijalField, value) != true)) {
+                    this.tbl_materijalField = value;
+                    this.RaisePropertyChanged("tbl_materijal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_podgrupa tbl_podgrupa {
+            get {
+                return this.tbl_podgrupaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_podgrupaField, value) != true)) {
+                    this.tbl_podgrupaField = value;
+                    this.RaisePropertyChanged("tbl_podgrupa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
+            get {
+                return this.tbl_stavkesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
+                    this.tbl_stavkesField = value;
+                    this.RaisePropertyChanged("tbl_stavkes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes1 {
+            get {
+                return this.tbl_stavkes1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_stavkes1Field, value) != true)) {
+                    this.tbl_stavkes1Field = value;
+                    this.RaisePropertyChanged("tbl_stavkes1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_zemlja_porijekla tbl_zemlja_porijekla {
+            get {
+                return this.tbl_zemlja_porijeklaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_zemlja_porijeklaField, value) != true)) {
+                    this.tbl_zemlja_porijeklaField = value;
+                    this.RaisePropertyChanged("tbl_zemlja_porijekla");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int vrsta {
+            get {
+                return this.vrstaField;
+            }
+            set {
+                if ((this.vrstaField.Equals(value) != true)) {
+                    this.vrstaField = value;
+                    this.RaisePropertyChanged("vrsta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int zemlja_porijekla_fk {
+            get {
+                return this.zemlja_porijekla_fkField;
+            }
+            set {
+                if ((this.zemlja_porijekla_fkField.Equals(value) != true)) {
+                    this.zemlja_porijekla_fkField = value;
+                    this.RaisePropertyChanged("zemlja_porijekla_fk");
                 }
             }
         }
@@ -4402,2487 +4059,27 @@ namespace Desktop.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_greske", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_jedinica", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
     [System.SerializableAttribute()]
-    public partial class tbl_greske : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class tbl_jedinica : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string datumField;
+        private int id_jedinicaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idUserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sadrzajField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.datumField, value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idUser {
-            get {
-                return this.idUserField;
-            }
-            set {
-                if ((this.idUserField.Equals(value) != true)) {
-                    this.idUserField = value;
-                    this.RaisePropertyChanged("idUser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sadrzaj {
-            get {
-                return this.sadrzajField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sadrzajField, value) != true)) {
-                    this.sadrzajField = value;
-                    this.RaisePropertyChanged("sadrzaj");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool status {
-            get {
-                return this.statusField;
-            }
-            set {
-                if ((this.statusField.Equals(value) != true)) {
-                    this.statusField = value;
-                    this.RaisePropertyChanged("status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_kalendar", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_kalendar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> aktivanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> datum1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_kalendarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mjestoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string opisField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pozicijaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> aktivan {
-            get {
-                return this.aktivanField;
-            }
-            set {
-                if ((this.aktivanField.Equals(value) != true)) {
-                    this.aktivanField = value;
-                    this.RaisePropertyChanged("aktivan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> datum1 {
-            get {
-                return this.datum1Field;
-            }
-            set {
-                if ((this.datum1Field.Equals(value) != true)) {
-                    this.datum1Field = value;
-                    this.RaisePropertyChanged("datum1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_kalendar {
-            get {
-                return this.id_kalendarField;
-            }
-            set {
-                if ((this.id_kalendarField.Equals(value) != true)) {
-                    this.id_kalendarField = value;
-                    this.RaisePropertyChanged("id_kalendar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mjesto {
-            get {
-                return this.mjestoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mjestoField, value) != true)) {
-                    this.mjestoField = value;
-                    this.RaisePropertyChanged("mjesto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string opis {
-            get {
-                return this.opisField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.opisField, value) != true)) {
-                    this.opisField = value;
-                    this.RaisePropertyChanged("opis");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pozicija {
-            get {
-                return this.pozicijaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pozicijaField, value) != true)) {
-                    this.pozicijaField = value;
-                    this.RaisePropertyChanged("pozicija");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_korisnik_licenca", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_korisnik_licenca : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool aktivanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_licencaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool aktivan {
-            get {
-                return this.aktivanField;
-            }
-            set {
-                if ((this.aktivanField.Equals(value) != true)) {
-                    this.aktivanField = value;
-                    this.RaisePropertyChanged("aktivan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_licenca {
-            get {
-                return this.id_licencaField;
-            }
-            set {
-                if ((this.id_licencaField.Equals(value) != true)) {
-                    this.id_licencaField = value;
-                    this.RaisePropertyChanged("id_licenca");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_mit_kalendar", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_mit_kalendar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string biljeskaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> datu1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_kalendarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> odobrenoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> poglednoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> tipField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string biljeska {
-            get {
-                return this.biljeskaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
-                    this.biljeskaField = value;
-                    this.RaisePropertyChanged("biljeska");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> datu1 {
-            get {
-                return this.datu1Field;
-            }
-            set {
-                if ((this.datu1Field.Equals(value) != true)) {
-                    this.datu1Field = value;
-                    this.RaisePropertyChanged("datu1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_kalendar {
-            get {
-                return this.id_kalendarField;
-            }
-            set {
-                if ((this.id_kalendarField.Equals(value) != true)) {
-                    this.id_kalendarField = value;
-                    this.RaisePropertyChanged("id_kalendar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> odobreno {
-            get {
-                return this.odobrenoField;
-            }
-            set {
-                if ((this.odobrenoField.Equals(value) != true)) {
-                    this.odobrenoField = value;
-                    this.RaisePropertyChanged("odobreno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> pogledno {
-            get {
-                return this.poglednoField;
-            }
-            set {
-                if ((this.poglednoField.Equals(value) != true)) {
-                    this.poglednoField = value;
-                    this.RaisePropertyChanged("pogledno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> tip {
-            get {
-                return this.tipField;
-            }
-            set {
-                if ((this.tipField.Equals(value) != true)) {
-                    this.tipField = value;
-                    this.RaisePropertyChanged("tip");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_poruka_poslane", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_poruka_poslane : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_poruka_poslaneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string naslovField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int poslaoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string predmetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> primioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnik1Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_poruka_poslane {
-            get {
-                return this.id_poruka_poslaneField;
-            }
-            set {
-                if ((this.id_poruka_poslaneField.Equals(value) != true)) {
-                    this.id_poruka_poslaneField = value;
-                    this.RaisePropertyChanged("id_poruka_poslane");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naslov {
-            get {
-                return this.naslovField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.naslovField, value) != true)) {
-                    this.naslovField = value;
-                    this.RaisePropertyChanged("naslov");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int poslao {
-            get {
-                return this.poslaoField;
-            }
-            set {
-                if ((this.poslaoField.Equals(value) != true)) {
-                    this.poslaoField = value;
-                    this.RaisePropertyChanged("poslao");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string predmet {
-            get {
-                return this.predmetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.predmetField, value) != true)) {
-                    this.predmetField = value;
-                    this.RaisePropertyChanged("predmet");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> primio {
-            get {
-                return this.primioField;
-            }
-            set {
-                if ((this.primioField.Equals(value) != true)) {
-                    this.primioField = value;
-                    this.RaisePropertyChanged("primio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik1 {
-            get {
-                return this.tbl_korisnik1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnik1Field, value) != true)) {
-                    this.tbl_korisnik1Field = value;
-                    this.RaisePropertyChanged("tbl_korisnik1");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_poruka_primljene", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_poruka_primljene : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_poruka_primljeneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string naslovField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int poslaoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string predmetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> primioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool procitanoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnik1Field;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_poruka_primljene {
-            get {
-                return this.id_poruka_primljeneField;
-            }
-            set {
-                if ((this.id_poruka_primljeneField.Equals(value) != true)) {
-                    this.id_poruka_primljeneField = value;
-                    this.RaisePropertyChanged("id_poruka_primljene");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naslov {
-            get {
-                return this.naslovField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.naslovField, value) != true)) {
-                    this.naslovField = value;
-                    this.RaisePropertyChanged("naslov");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int poslao {
-            get {
-                return this.poslaoField;
-            }
-            set {
-                if ((this.poslaoField.Equals(value) != true)) {
-                    this.poslaoField = value;
-                    this.RaisePropertyChanged("poslao");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string predmet {
-            get {
-                return this.predmetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.predmetField, value) != true)) {
-                    this.predmetField = value;
-                    this.RaisePropertyChanged("predmet");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> primio {
-            get {
-                return this.primioField;
-            }
-            set {
-                if ((this.primioField.Equals(value) != true)) {
-                    this.primioField = value;
-                    this.RaisePropertyChanged("primio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool procitano {
-            get {
-                return this.procitanoField;
-            }
-            set {
-                if ((this.procitanoField.Equals(value) != true)) {
-                    this.procitanoField = value;
-                    this.RaisePropertyChanged("procitano");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik1 {
-            get {
-                return this.tbl_korisnik1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnik1Field, value) != true)) {
-                    this.tbl_korisnik1Field = value;
-                    this.RaisePropertyChanged("tbl_korisnik1");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_pracenje_detalji", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_pracenje_detalji : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string biljeskaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_ponuda_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_pracenje_detaljiField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_angebot tbl_angebotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string biljeska {
-            get {
-                return this.biljeskaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
-                    this.biljeskaField = value;
-                    this.RaisePropertyChanged("biljeska");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_ponuda_FK {
-            get {
-                return this.id_ponuda_FKField;
-            }
-            set {
-                if ((this.id_ponuda_FKField.Equals(value) != true)) {
-                    this.id_ponuda_FKField = value;
-                    this.RaisePropertyChanged("id_ponuda_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_pracenje_detalji {
-            get {
-                return this.id_pracenje_detaljiField;
-            }
-            set {
-                if ((this.id_pracenje_detaljiField.Equals(value) != true)) {
-                    this.id_pracenje_detaljiField = value;
-                    this.RaisePropertyChanged("id_pracenje_detalji");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_angebot tbl_angebot {
-            get {
-                return this.tbl_angebotField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
-                    this.tbl_angebotField = value;
-                    this.RaisePropertyChanged("tbl_angebot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_pracenje", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_pracenje : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int broj_ponuda_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> broj_slanjaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> drugo_slanjeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_pracenjeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string intervalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string interval2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> prvo_slanjeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_angebot tbl_angebotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int broj_ponuda_FK {
-            get {
-                return this.broj_ponuda_FKField;
-            }
-            set {
-                if ((this.broj_ponuda_FKField.Equals(value) != true)) {
-                    this.broj_ponuda_FKField = value;
-                    this.RaisePropertyChanged("broj_ponuda_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> broj_slanja {
-            get {
-                return this.broj_slanjaField;
-            }
-            set {
-                if ((this.broj_slanjaField.Equals(value) != true)) {
-                    this.broj_slanjaField = value;
-                    this.RaisePropertyChanged("broj_slanja");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> drugo_slanje {
-            get {
-                return this.drugo_slanjeField;
-            }
-            set {
-                if ((this.drugo_slanjeField.Equals(value) != true)) {
-                    this.drugo_slanjeField = value;
-                    this.RaisePropertyChanged("drugo_slanje");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_pracenje {
-            get {
-                return this.id_pracenjeField;
-            }
-            set {
-                if ((this.id_pracenjeField.Equals(value) != true)) {
-                    this.id_pracenjeField = value;
-                    this.RaisePropertyChanged("id_pracenje");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string interval {
-            get {
-                return this.intervalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.intervalField, value) != true)) {
-                    this.intervalField = value;
-                    this.RaisePropertyChanged("interval");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string interval2 {
-            get {
-                return this.interval2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.interval2Field, value) != true)) {
-                    this.interval2Field = value;
-                    this.RaisePropertyChanged("interval2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> prvo_slanje {
-            get {
-                return this.prvo_slanjeField;
-            }
-            set {
-                if ((this.prvo_slanjeField.Equals(value) != true)) {
-                    this.prvo_slanjeField = value;
-                    this.RaisePropertyChanged("prvo_slanje");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string status {
-            get {
-                return this.statusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.statusField, value) != true)) {
-                    this.statusField = value;
-                    this.RaisePropertyChanged("status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_angebot tbl_angebot {
-            get {
-                return this.tbl_angebotField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
-                    this.tbl_angebotField = value;
-                    this.RaisePropertyChanged("tbl_angebot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_racun_a", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_racun_a : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> akontoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> aktivanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> angebotnr_fkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> auftragenr_fkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> broj_racunField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> cijenaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_racun_aField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> kundenrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> porezField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_angebot tbl_angebotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_auftrag tbl_auftragField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> user_fkField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> akonto {
-            get {
-                return this.akontoField;
-            }
-            set {
-                if ((this.akontoField.Equals(value) != true)) {
-                    this.akontoField = value;
-                    this.RaisePropertyChanged("akonto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> aktivan {
-            get {
-                return this.aktivanField;
-            }
-            set {
-                if ((this.aktivanField.Equals(value) != true)) {
-                    this.aktivanField = value;
-                    this.RaisePropertyChanged("aktivan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> angebotnr_fk {
-            get {
-                return this.angebotnr_fkField;
-            }
-            set {
-                if ((this.angebotnr_fkField.Equals(value) != true)) {
-                    this.angebotnr_fkField = value;
-                    this.RaisePropertyChanged("angebotnr_fk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> auftragenr_fk {
-            get {
-                return this.auftragenr_fkField;
-            }
-            set {
-                if ((this.auftragenr_fkField.Equals(value) != true)) {
-                    this.auftragenr_fkField = value;
-                    this.RaisePropertyChanged("auftragenr_fk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> broj_racun {
-            get {
-                return this.broj_racunField;
-            }
-            set {
-                if ((this.broj_racunField.Equals(value) != true)) {
-                    this.broj_racunField = value;
-                    this.RaisePropertyChanged("broj_racun");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> cijena {
-            get {
-                return this.cijenaField;
-            }
-            set {
-                if ((this.cijenaField.Equals(value) != true)) {
-                    this.cijenaField = value;
-                    this.RaisePropertyChanged("cijena");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_racun_a {
-            get {
-                return this.id_racun_aField;
-            }
-            set {
-                if ((this.id_racun_aField.Equals(value) != true)) {
-                    this.id_racun_aField = value;
-                    this.RaisePropertyChanged("id_racun_a");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> kundenr {
-            get {
-                return this.kundenrField;
-            }
-            set {
-                if ((this.kundenrField.Equals(value) != true)) {
-                    this.kundenrField = value;
-                    this.RaisePropertyChanged("kundenr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> porez {
-            get {
-                return this.porezField;
-            }
-            set {
-                if ((this.porezField.Equals(value) != true)) {
-                    this.porezField = value;
-                    this.RaisePropertyChanged("porez");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_angebot tbl_angebot {
-            get {
-                return this.tbl_angebotField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
-                    this.tbl_angebotField = value;
-                    this.RaisePropertyChanged("tbl_angebot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_auftrag tbl_auftrag {
-            get {
-                return this.tbl_auftragField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
-                    this.tbl_auftragField = value;
-                    this.RaisePropertyChanged("tbl_auftrag");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> user_fk {
-            get {
-                return this.user_fkField;
-            }
-            set {
-                if ((this.user_fkField.Equals(value) != true)) {
-                    this.user_fkField = value;
-                    this.RaisePropertyChanged("user_fk");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_racun_b", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_racun_b : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> aktivanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int broj_racunaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> cijenaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idracun_bField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int kupacnr_fkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pdf_linkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> porezField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> porez_iznosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_kupac tbl_kupacField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tekstField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> user_fkField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> aktivan {
-            get {
-                return this.aktivanField;
-            }
-            set {
-                if ((this.aktivanField.Equals(value) != true)) {
-                    this.aktivanField = value;
-                    this.RaisePropertyChanged("aktivan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int broj_racuna {
-            get {
-                return this.broj_racunaField;
-            }
-            set {
-                if ((this.broj_racunaField.Equals(value) != true)) {
-                    this.broj_racunaField = value;
-                    this.RaisePropertyChanged("broj_racuna");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> cijena {
-            get {
-                return this.cijenaField;
-            }
-            set {
-                if ((this.cijenaField.Equals(value) != true)) {
-                    this.cijenaField = value;
-                    this.RaisePropertyChanged("cijena");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idracun_b {
-            get {
-                return this.idracun_bField;
-            }
-            set {
-                if ((this.idracun_bField.Equals(value) != true)) {
-                    this.idracun_bField = value;
-                    this.RaisePropertyChanged("idracun_b");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int kupacnr_fk {
-            get {
-                return this.kupacnr_fkField;
-            }
-            set {
-                if ((this.kupacnr_fkField.Equals(value) != true)) {
-                    this.kupacnr_fkField = value;
-                    this.RaisePropertyChanged("kupacnr_fk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pdf_link {
-            get {
-                return this.pdf_linkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pdf_linkField, value) != true)) {
-                    this.pdf_linkField = value;
-                    this.RaisePropertyChanged("pdf_link");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> porez {
-            get {
-                return this.porezField;
-            }
-            set {
-                if ((this.porezField.Equals(value) != true)) {
-                    this.porezField = value;
-                    this.RaisePropertyChanged("porez");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> porez_iznos {
-            get {
-                return this.porez_iznosField;
-            }
-            set {
-                if ((this.porez_iznosField.Equals(value) != true)) {
-                    this.porez_iznosField = value;
-                    this.RaisePropertyChanged("porez_iznos");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_kupac tbl_kupac {
-            get {
-                return this.tbl_kupacField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_kupacField, value) != true)) {
-                    this.tbl_kupacField = value;
-                    this.RaisePropertyChanged("tbl_kupac");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tekst {
-            get {
-                return this.tekstField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tekstField, value) != true)) {
-                    this.tekstField = value;
-                    this.RaisePropertyChanged("tekst");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> user_fk {
-            get {
-                return this.user_fkField;
-            }
-            set {
-                if ((this.user_fkField.Equals(value) != true)) {
-                    this.user_fkField = value;
-                    this.RaisePropertyChanged("user_fk");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_radnik", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_radnik : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string KtoNrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string adresaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string bankaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string bicField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string biljeskaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string blzField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string bolovanjeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> broj_nedeljaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> broj_plateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> datumField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string faxField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string folderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ibanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_radnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string imeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mobitelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string odmorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string odmor_naField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string prezimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> satnicaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int sifra_radnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string skypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tel1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tel2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int tipField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string vlasnik_racunaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> zaradaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string KtoNr {
-            get {
-                return this.KtoNrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KtoNrField, value) != true)) {
-                    this.KtoNrField = value;
-                    this.RaisePropertyChanged("KtoNr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string adresa {
-            get {
-                return this.adresaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.adresaField, value) != true)) {
-                    this.adresaField = value;
-                    this.RaisePropertyChanged("adresa");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string banka {
-            get {
-                return this.bankaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.bankaField, value) != true)) {
-                    this.bankaField = value;
-                    this.RaisePropertyChanged("banka");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string bic {
-            get {
-                return this.bicField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.bicField, value) != true)) {
-                    this.bicField = value;
-                    this.RaisePropertyChanged("bic");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string biljeska {
-            get {
-                return this.biljeskaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
-                    this.biljeskaField = value;
-                    this.RaisePropertyChanged("biljeska");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string blz {
-            get {
-                return this.blzField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.blzField, value) != true)) {
-                    this.blzField = value;
-                    this.RaisePropertyChanged("blz");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string bolovanje {
-            get {
-                return this.bolovanjeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.bolovanjeField, value) != true)) {
-                    this.bolovanjeField = value;
-                    this.RaisePropertyChanged("bolovanje");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> broj_nedelja {
-            get {
-                return this.broj_nedeljaField;
-            }
-            set {
-                if ((this.broj_nedeljaField.Equals(value) != true)) {
-                    this.broj_nedeljaField = value;
-                    this.RaisePropertyChanged("broj_nedelja");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> broj_plate {
-            get {
-                return this.broj_plateField;
-            }
-            set {
-                if ((this.broj_plateField.Equals(value) != true)) {
-                    this.broj_plateField = value;
-                    this.RaisePropertyChanged("broj_plate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> datum {
-            get {
-                return this.datumField;
-            }
-            set {
-                if ((this.datumField.Equals(value) != true)) {
-                    this.datumField = value;
-                    this.RaisePropertyChanged("datum");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fax {
-            get {
-                return this.faxField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.faxField, value) != true)) {
-                    this.faxField = value;
-                    this.RaisePropertyChanged("fax");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string folder {
-            get {
-                return this.folderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.folderField, value) != true)) {
-                    this.folderField = value;
-                    this.RaisePropertyChanged("folder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string iban {
-            get {
-                return this.ibanField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ibanField, value) != true)) {
-                    this.ibanField = value;
-                    this.RaisePropertyChanged("iban");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_radnik {
-            get {
-                return this.id_radnikField;
-            }
-            set {
-                if ((this.id_radnikField.Equals(value) != true)) {
-                    this.id_radnikField = value;
-                    this.RaisePropertyChanged("id_radnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ime {
-            get {
-                return this.imeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.imeField, value) != true)) {
-                    this.imeField = value;
-                    this.RaisePropertyChanged("ime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mobitel {
-            get {
-                return this.mobitelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mobitelField, value) != true)) {
-                    this.mobitelField = value;
-                    this.RaisePropertyChanged("mobitel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string odmor {
-            get {
-                return this.odmorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.odmorField, value) != true)) {
-                    this.odmorField = value;
-                    this.RaisePropertyChanged("odmor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string odmor_na {
-            get {
-                return this.odmor_naField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.odmor_naField, value) != true)) {
-                    this.odmor_naField = value;
-                    this.RaisePropertyChanged("odmor_na");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string prezime {
-            get {
-                return this.prezimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.prezimeField, value) != true)) {
-                    this.prezimeField = value;
-                    this.RaisePropertyChanged("prezime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> satnica {
-            get {
-                return this.satnicaField;
-            }
-            set {
-                if ((this.satnicaField.Equals(value) != true)) {
-                    this.satnicaField = value;
-                    this.RaisePropertyChanged("satnica");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int sifra_radnik {
-            get {
-                return this.sifra_radnikField;
-            }
-            set {
-                if ((this.sifra_radnikField.Equals(value) != true)) {
-                    this.sifra_radnikField = value;
-                    this.RaisePropertyChanged("sifra_radnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string skype {
-            get {
-                return this.skypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.skypeField, value) != true)) {
-                    this.skypeField = value;
-                    this.RaisePropertyChanged("skype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> status {
-            get {
-                return this.statusField;
-            }
-            set {
-                if ((this.statusField.Equals(value) != true)) {
-                    this.statusField = value;
-                    this.RaisePropertyChanged("status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tel1 {
-            get {
-                return this.tel1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tel1Field, value) != true)) {
-                    this.tel1Field = value;
-                    this.RaisePropertyChanged("tel1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tel2 {
-            get {
-                return this.tel2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tel2Field, value) != true)) {
-                    this.tel2Field = value;
-                    this.RaisePropertyChanged("tel2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int tip {
-            get {
-                return this.tipField;
-            }
-            set {
-                if ((this.tipField.Equals(value) != true)) {
-                    this.tipField = value;
-                    this.RaisePropertyChanged("tip");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string vlasnik_racuna {
-            get {
-                return this.vlasnik_racunaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.vlasnik_racunaField, value) != true)) {
-                    this.vlasnik_racunaField = value;
-                    this.RaisePropertyChanged("vlasnik_racuna");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> zarada {
-            get {
-                return this.zaradaField;
-            }
-            set {
-                if ((this.zaradaField.Equals(value) != true)) {
-                    this.zaradaField = value;
-                    this.RaisePropertyChanged("zarada");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_rute_kalendar", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_rute_kalendar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string danField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datum_krajField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime datum_pocetakField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_korisnik_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_mit_kalendarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string opisField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> sedmicaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_korisnik tbl_korisnikField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string dan {
-            get {
-                return this.danField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.danField, value) != true)) {
-                    this.danField = value;
-                    this.RaisePropertyChanged("dan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum_kraj {
-            get {
-                return this.datum_krajField;
-            }
-            set {
-                if ((this.datum_krajField.Equals(value) != true)) {
-                    this.datum_krajField = value;
-                    this.RaisePropertyChanged("datum_kraj");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime datum_pocetak {
-            get {
-                return this.datum_pocetakField;
-            }
-            set {
-                if ((this.datum_pocetakField.Equals(value) != true)) {
-                    this.datum_pocetakField = value;
-                    this.RaisePropertyChanged("datum_pocetak");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_korisnik_FK {
-            get {
-                return this.id_korisnik_FKField;
-            }
-            set {
-                if ((this.id_korisnik_FKField.Equals(value) != true)) {
-                    this.id_korisnik_FKField = value;
-                    this.RaisePropertyChanged("id_korisnik_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_mit_kalendar {
-            get {
-                return this.id_mit_kalendarField;
-            }
-            set {
-                if ((this.id_mit_kalendarField.Equals(value) != true)) {
-                    this.id_mit_kalendarField = value;
-                    this.RaisePropertyChanged("id_mit_kalendar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string opis {
-            get {
-                return this.opisField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.opisField, value) != true)) {
-                    this.opisField = value;
-                    this.RaisePropertyChanged("opis");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> sedmica {
-            get {
-                return this.sedmicaField;
-            }
-            set {
-                if ((this.sedmicaField.Equals(value) != true)) {
-                    this.sedmicaField = value;
-                    this.RaisePropertyChanged("sedmica");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_korisnik tbl_korisnik {
-            get {
-                return this.tbl_korisnikField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
-                    this.tbl_korisnikField = value;
-                    this.RaisePropertyChanged("tbl_korisnik");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_auftrag", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_auftrag : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int activeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int angebotnr_fkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int auftragenrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idauftrageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string latField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lngField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nabavkaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime napisanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal preisbField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal preisnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int printanoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int reklamacijaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_akontacija> tbl_akontacijasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_angebot tbl_angebotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_auftrag tbl_auftrag1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_auftrag tbl_auftrag2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_avan> tbl_avansField;
+        private string jedinicaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_narudzbe_ploca> tbl_narudzbe_plocasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_a> tbl_racun_asField;
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_b_pozicije> tbl_racun_b_pozicijesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal uplacenoField;
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -6895,222 +4092,27 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int active {
+        public int id_jedinica {
             get {
-                return this.activeField;
+                return this.id_jedinicaField;
             }
             set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
+                if ((this.id_jedinicaField.Equals(value) != true)) {
+                    this.id_jedinicaField = value;
+                    this.RaisePropertyChanged("id_jedinica");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int angebotnr_fk {
+        public string jedinica {
             get {
-                return this.angebotnr_fkField;
+                return this.jedinicaField;
             }
             set {
-                if ((this.angebotnr_fkField.Equals(value) != true)) {
-                    this.angebotnr_fkField = value;
-                    this.RaisePropertyChanged("angebotnr_fk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int auftragenr {
-            get {
-                return this.auftragenrField;
-            }
-            set {
-                if ((this.auftragenrField.Equals(value) != true)) {
-                    this.auftragenrField = value;
-                    this.RaisePropertyChanged("auftragenr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idauftrage {
-            get {
-                return this.idauftrageField;
-            }
-            set {
-                if ((this.idauftrageField.Equals(value) != true)) {
-                    this.idauftrageField = value;
-                    this.RaisePropertyChanged("idauftrage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string lat {
-            get {
-                return this.latField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.latField, value) != true)) {
-                    this.latField = value;
-                    this.RaisePropertyChanged("lat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string lng {
-            get {
-                return this.lngField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.lngField, value) != true)) {
-                    this.lngField = value;
-                    this.RaisePropertyChanged("lng");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string nabavka {
-            get {
-                return this.nabavkaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nabavkaField, value) != true)) {
-                    this.nabavkaField = value;
-                    this.RaisePropertyChanged("nabavka");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime napisan {
-            get {
-                return this.napisanField;
-            }
-            set {
-                if ((this.napisanField.Equals(value) != true)) {
-                    this.napisanField = value;
-                    this.RaisePropertyChanged("napisan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal preisb {
-            get {
-                return this.preisbField;
-            }
-            set {
-                if ((this.preisbField.Equals(value) != true)) {
-                    this.preisbField = value;
-                    this.RaisePropertyChanged("preisb");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal preisn {
-            get {
-                return this.preisnField;
-            }
-            set {
-                if ((this.preisnField.Equals(value) != true)) {
-                    this.preisnField = value;
-                    this.RaisePropertyChanged("preisn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int printano {
-            get {
-                return this.printanoField;
-            }
-            set {
-                if ((this.printanoField.Equals(value) != true)) {
-                    this.printanoField = value;
-                    this.RaisePropertyChanged("printano");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int reklamacija {
-            get {
-                return this.reklamacijaField;
-            }
-            set {
-                if ((this.reklamacijaField.Equals(value) != true)) {
-                    this.reklamacijaField = value;
-                    this.RaisePropertyChanged("reklamacija");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_akontacija> tbl_akontacijas {
-            get {
-                return this.tbl_akontacijasField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_akontacijasField, value) != true)) {
-                    this.tbl_akontacijasField = value;
-                    this.RaisePropertyChanged("tbl_akontacijas");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_angebot tbl_angebot {
-            get {
-                return this.tbl_angebotField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
-                    this.tbl_angebotField = value;
-                    this.RaisePropertyChanged("tbl_angebot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_auftrag tbl_auftrag1 {
-            get {
-                return this.tbl_auftrag1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_auftrag1Field, value) != true)) {
-                    this.tbl_auftrag1Field = value;
-                    this.RaisePropertyChanged("tbl_auftrag1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_auftrag tbl_auftrag2 {
-            get {
-                return this.tbl_auftrag2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_auftrag2Field, value) != true)) {
-                    this.tbl_auftrag2Field = value;
-                    this.RaisePropertyChanged("tbl_auftrag2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_avan> tbl_avans {
-            get {
-                return this.tbl_avansField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_avansField, value) != true)) {
-                    this.tbl_avansField = value;
-                    this.RaisePropertyChanged("tbl_avans");
+                if ((object.ReferenceEquals(this.jedinicaField, value) != true)) {
+                    this.jedinicaField = value;
+                    this.RaisePropertyChanged("jedinica");
                 }
             }
         }
@@ -7129,40 +4131,277 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_a> tbl_racun_as {
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_b_pozicije> tbl_racun_b_pozicijes {
             get {
-                return this.tbl_racun_asField;
+                return this.tbl_racun_b_pozicijesField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_racun_asField, value) != true)) {
-                    this.tbl_racun_asField = value;
-                    this.RaisePropertyChanged("tbl_racun_as");
+                if ((object.ReferenceEquals(this.tbl_racun_b_pozicijesField, value) != true)) {
+                    this.tbl_racun_b_pozicijesField = value;
+                    this.RaisePropertyChanged("tbl_racun_b_pozicijes");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijas {
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
             get {
-                return this.tbl_reklamacijasField;
+                return this.tbl_stavkesField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_reklamacijasField, value) != true)) {
-                    this.tbl_reklamacijasField = value;
-                    this.RaisePropertyChanged("tbl_reklamacijas");
+                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
+                    this.tbl_stavkesField = value;
+                    this.RaisePropertyChanged("tbl_stavkes");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_podpozicija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_podpozicija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> cijenaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idpodpozicijaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string jedinicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nazivField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int pozicija_fkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string standardField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_pozicija tbl_pozicijaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> cijena {
+            get {
+                return this.cijenaField;
+            }
+            set {
+                if ((this.cijenaField.Equals(value) != true)) {
+                    this.cijenaField = value;
+                    this.RaisePropertyChanged("cijena");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal uplaceno {
+        public int idpodpozicija {
             get {
-                return this.uplacenoField;
+                return this.idpodpozicijaField;
             }
             set {
-                if ((this.uplacenoField.Equals(value) != true)) {
-                    this.uplacenoField = value;
-                    this.RaisePropertyChanged("uplaceno");
+                if ((this.idpodpozicijaField.Equals(value) != true)) {
+                    this.idpodpozicijaField = value;
+                    this.RaisePropertyChanged("idpodpozicija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string jedinica {
+            get {
+                return this.jedinicaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.jedinicaField, value) != true)) {
+                    this.jedinicaField = value;
+                    this.RaisePropertyChanged("jedinica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string naziv {
+            get {
+                return this.nazivField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
+                    this.nazivField = value;
+                    this.RaisePropertyChanged("naziv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int pozicija_fk {
+            get {
+                return this.pozicija_fkField;
+            }
+            set {
+                if ((this.pozicija_fkField.Equals(value) != true)) {
+                    this.pozicija_fkField = value;
+                    this.RaisePropertyChanged("pozicija_fk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string standard {
+            get {
+                return this.standardField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.standardField, value) != true)) {
+                    this.standardField = value;
+                    this.RaisePropertyChanged("standard");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_pozicija tbl_pozicija {
+            get {
+                return this.tbl_pozicijaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_pozicijaField, value) != true)) {
+                    this.tbl_pozicijaField = value;
+                    this.RaisePropertyChanged("tbl_pozicija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
+            get {
+                return this.tbl_stavkesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
+                    this.tbl_stavkesField = value;
+                    this.RaisePropertyChanged("tbl_stavkes");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_pozicija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_pozicija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idpozicijaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nazivField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_podpozicija> tbl_podpozicijasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idpozicija {
+            get {
+                return this.idpozicijaField;
+            }
+            set {
+                if ((this.idpozicijaField.Equals(value) != true)) {
+                    this.idpozicijaField = value;
+                    this.RaisePropertyChanged("idpozicija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string naziv {
+            get {
+                return this.nazivField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
+                    this.nazivField = value;
+                    this.RaisePropertyChanged("naziv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_podpozicija> tbl_podpozicijas {
+            get {
+                return this.tbl_podpozicijasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_podpozicijasField, value) != true)) {
+                    this.tbl_podpozicijasField = value;
+                    this.RaisePropertyChanged("tbl_podpozicijas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
+            get {
+                return this.tbl_stavkesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
+                    this.tbl_stavkesField = value;
+                    this.RaisePropertyChanged("tbl_stavkes");
                 }
             }
         }
@@ -7944,344 +5183,75 @@ namespace Desktop.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_artikli", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_auftrag", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
     [System.SerializableAttribute()]
-    public partial class tbl_artikli : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class tbl_auftrag : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int aktivantField;
+        private int activeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_artikliField;
+        private int angebotnr_fkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string kratki_opisField;
+        private int auftragenrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string linkField;
+        private int idauftrageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int materijal_fkField;
+        private string latField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazivField;
+        private string lngField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int podgrupa_fkField;
+        private string nabavkaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sinonimiField;
+        private System.DateTime napisanField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string slikaField;
+        private decimal preisbField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int svrhaField;
+        private decimal preisnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_cijena_artikla1> tbl_cijena_artikla1sField;
+        private int printanoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_materijal tbl_materijalField;
+        private int reklamacijaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_podgrupa tbl_podgrupaField;
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_akontacija> tbl_akontacijasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
+        private Desktop.Service.tbl_angebot tbl_angebotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes1Field;
+        private Desktop.Service.tbl_auftrag tbl_auftrag1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_zemlja_porijekla tbl_zemlja_porijeklaField;
+        private Desktop.Service.tbl_auftrag tbl_auftrag2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int vrstaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int zemlja_porijekla_fkField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int aktivant {
-            get {
-                return this.aktivantField;
-            }
-            set {
-                if ((this.aktivantField.Equals(value) != true)) {
-                    this.aktivantField = value;
-                    this.RaisePropertyChanged("aktivant");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_artikli {
-            get {
-                return this.id_artikliField;
-            }
-            set {
-                if ((this.id_artikliField.Equals(value) != true)) {
-                    this.id_artikliField = value;
-                    this.RaisePropertyChanged("id_artikli");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string kratki_opis {
-            get {
-                return this.kratki_opisField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.kratki_opisField, value) != true)) {
-                    this.kratki_opisField = value;
-                    this.RaisePropertyChanged("kratki_opis");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string link {
-            get {
-                return this.linkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.linkField, value) != true)) {
-                    this.linkField = value;
-                    this.RaisePropertyChanged("link");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int materijal_fk {
-            get {
-                return this.materijal_fkField;
-            }
-            set {
-                if ((this.materijal_fkField.Equals(value) != true)) {
-                    this.materijal_fkField = value;
-                    this.RaisePropertyChanged("materijal_fk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naziv {
-            get {
-                return this.nazivField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
-                    this.nazivField = value;
-                    this.RaisePropertyChanged("naziv");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int podgrupa_fk {
-            get {
-                return this.podgrupa_fkField;
-            }
-            set {
-                if ((this.podgrupa_fkField.Equals(value) != true)) {
-                    this.podgrupa_fkField = value;
-                    this.RaisePropertyChanged("podgrupa_fk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sinonimi {
-            get {
-                return this.sinonimiField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sinonimiField, value) != true)) {
-                    this.sinonimiField = value;
-                    this.RaisePropertyChanged("sinonimi");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string slika {
-            get {
-                return this.slikaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.slikaField, value) != true)) {
-                    this.slikaField = value;
-                    this.RaisePropertyChanged("slika");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int svrha {
-            get {
-                return this.svrhaField;
-            }
-            set {
-                if ((this.svrhaField.Equals(value) != true)) {
-                    this.svrhaField = value;
-                    this.RaisePropertyChanged("svrha");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_cijena_artikla1> tbl_cijena_artikla1s {
-            get {
-                return this.tbl_cijena_artikla1sField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_cijena_artikla1sField, value) != true)) {
-                    this.tbl_cijena_artikla1sField = value;
-                    this.RaisePropertyChanged("tbl_cijena_artikla1s");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_materijal tbl_materijal {
-            get {
-                return this.tbl_materijalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_materijalField, value) != true)) {
-                    this.tbl_materijalField = value;
-                    this.RaisePropertyChanged("tbl_materijal");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_podgrupa tbl_podgrupa {
-            get {
-                return this.tbl_podgrupaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_podgrupaField, value) != true)) {
-                    this.tbl_podgrupaField = value;
-                    this.RaisePropertyChanged("tbl_podgrupa");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
-            get {
-                return this.tbl_stavkesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
-                    this.tbl_stavkesField = value;
-                    this.RaisePropertyChanged("tbl_stavkes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes1 {
-            get {
-                return this.tbl_stavkes1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_stavkes1Field, value) != true)) {
-                    this.tbl_stavkes1Field = value;
-                    this.RaisePropertyChanged("tbl_stavkes1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_zemlja_porijekla tbl_zemlja_porijekla {
-            get {
-                return this.tbl_zemlja_porijeklaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_zemlja_porijeklaField, value) != true)) {
-                    this.tbl_zemlja_porijeklaField = value;
-                    this.RaisePropertyChanged("tbl_zemlja_porijekla");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int vrsta {
-            get {
-                return this.vrstaField;
-            }
-            set {
-                if ((this.vrstaField.Equals(value) != true)) {
-                    this.vrstaField = value;
-                    this.RaisePropertyChanged("vrsta");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int zemlja_porijekla_fk {
-            get {
-                return this.zemlja_porijekla_fkField;
-            }
-            set {
-                if ((this.zemlja_porijekla_fkField.Equals(value) != true)) {
-                    this.zemlja_porijekla_fkField = value;
-                    this.RaisePropertyChanged("zemlja_porijekla_fk");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_jedinica", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_jedinica : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_jedinicaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string jedinicaField;
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_avan> tbl_avansField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_narudzbe_ploca> tbl_narudzbe_plocasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_b_pozicije> tbl_racun_b_pozicijesField;
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_a> tbl_racun_asField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal uplacenoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -8294,27 +5264,222 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_jedinica {
+        public int active {
             get {
-                return this.id_jedinicaField;
+                return this.activeField;
             }
             set {
-                if ((this.id_jedinicaField.Equals(value) != true)) {
-                    this.id_jedinicaField = value;
-                    this.RaisePropertyChanged("id_jedinica");
+                if ((this.activeField.Equals(value) != true)) {
+                    this.activeField = value;
+                    this.RaisePropertyChanged("active");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string jedinica {
+        public int angebotnr_fk {
             get {
-                return this.jedinicaField;
+                return this.angebotnr_fkField;
             }
             set {
-                if ((object.ReferenceEquals(this.jedinicaField, value) != true)) {
-                    this.jedinicaField = value;
-                    this.RaisePropertyChanged("jedinica");
+                if ((this.angebotnr_fkField.Equals(value) != true)) {
+                    this.angebotnr_fkField = value;
+                    this.RaisePropertyChanged("angebotnr_fk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int auftragenr {
+            get {
+                return this.auftragenrField;
+            }
+            set {
+                if ((this.auftragenrField.Equals(value) != true)) {
+                    this.auftragenrField = value;
+                    this.RaisePropertyChanged("auftragenr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idauftrage {
+            get {
+                return this.idauftrageField;
+            }
+            set {
+                if ((this.idauftrageField.Equals(value) != true)) {
+                    this.idauftrageField = value;
+                    this.RaisePropertyChanged("idauftrage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string lat {
+            get {
+                return this.latField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.latField, value) != true)) {
+                    this.latField = value;
+                    this.RaisePropertyChanged("lat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string lng {
+            get {
+                return this.lngField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lngField, value) != true)) {
+                    this.lngField = value;
+                    this.RaisePropertyChanged("lng");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nabavka {
+            get {
+                return this.nabavkaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nabavkaField, value) != true)) {
+                    this.nabavkaField = value;
+                    this.RaisePropertyChanged("nabavka");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime napisan {
+            get {
+                return this.napisanField;
+            }
+            set {
+                if ((this.napisanField.Equals(value) != true)) {
+                    this.napisanField = value;
+                    this.RaisePropertyChanged("napisan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal preisb {
+            get {
+                return this.preisbField;
+            }
+            set {
+                if ((this.preisbField.Equals(value) != true)) {
+                    this.preisbField = value;
+                    this.RaisePropertyChanged("preisb");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal preisn {
+            get {
+                return this.preisnField;
+            }
+            set {
+                if ((this.preisnField.Equals(value) != true)) {
+                    this.preisnField = value;
+                    this.RaisePropertyChanged("preisn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int printano {
+            get {
+                return this.printanoField;
+            }
+            set {
+                if ((this.printanoField.Equals(value) != true)) {
+                    this.printanoField = value;
+                    this.RaisePropertyChanged("printano");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int reklamacija {
+            get {
+                return this.reklamacijaField;
+            }
+            set {
+                if ((this.reklamacijaField.Equals(value) != true)) {
+                    this.reklamacijaField = value;
+                    this.RaisePropertyChanged("reklamacija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_akontacija> tbl_akontacijas {
+            get {
+                return this.tbl_akontacijasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_akontacijasField, value) != true)) {
+                    this.tbl_akontacijasField = value;
+                    this.RaisePropertyChanged("tbl_akontacijas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_angebot tbl_angebot {
+            get {
+                return this.tbl_angebotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
+                    this.tbl_angebotField = value;
+                    this.RaisePropertyChanged("tbl_angebot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_auftrag tbl_auftrag1 {
+            get {
+                return this.tbl_auftrag1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_auftrag1Field, value) != true)) {
+                    this.tbl_auftrag1Field = value;
+                    this.RaisePropertyChanged("tbl_auftrag1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_auftrag tbl_auftrag2 {
+            get {
+                return this.tbl_auftrag2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_auftrag2Field, value) != true)) {
+                    this.tbl_auftrag2Field = value;
+                    this.RaisePropertyChanged("tbl_auftrag2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_avan> tbl_avans {
+            get {
+                return this.tbl_avansField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_avansField, value) != true)) {
+                    this.tbl_avansField = value;
+                    this.RaisePropertyChanged("tbl_avans");
                 }
             }
         }
@@ -8333,27 +5498,40 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_b_pozicije> tbl_racun_b_pozicijes {
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_racun_a> tbl_racun_as {
             get {
-                return this.tbl_racun_b_pozicijesField;
+                return this.tbl_racun_asField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_racun_b_pozicijesField, value) != true)) {
-                    this.tbl_racun_b_pozicijesField = value;
-                    this.RaisePropertyChanged("tbl_racun_b_pozicijes");
+                if ((object.ReferenceEquals(this.tbl_racun_asField, value) != true)) {
+                    this.tbl_racun_asField = value;
+                    this.RaisePropertyChanged("tbl_racun_as");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijas {
             get {
-                return this.tbl_stavkesField;
+                return this.tbl_reklamacijasField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
-                    this.tbl_stavkesField = value;
-                    this.RaisePropertyChanged("tbl_stavkes");
+                if ((object.ReferenceEquals(this.tbl_reklamacijasField, value) != true)) {
+                    this.tbl_reklamacijasField = value;
+                    this.RaisePropertyChanged("tbl_reklamacijas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal uplaceno {
+            get {
+                return this.uplacenoField;
+            }
+            set {
+                if ((this.uplacenoField.Equals(value) != true)) {
+                    this.uplacenoField = value;
+                    this.RaisePropertyChanged("uplaceno");
                 }
             }
         }
@@ -8370,36 +5548,30 @@ namespace Desktop.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_podpozicija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_pracenje_detalji", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
     [System.SerializableAttribute()]
-    public partial class tbl_podpozicija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class tbl_pracenje_detalji : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> cijenaField;
+        private string biljeskaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idpodpozicijaField;
+        private int id_korisnik_FKField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string jedinicaField;
+        private int id_ponuda_FKField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazivField;
+        private int id_pracenje_detaljiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int pozicija_fkField;
+        private Desktop.Service.tbl_angebot tbl_angebotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string standardField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_pozicija tbl_pozicijaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -8408,6 +5580,425 @@ namespace Desktop.Service {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string biljeska {
+            get {
+                return this.biljeskaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
+                    this.biljeskaField = value;
+                    this.RaisePropertyChanged("biljeska");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_ponuda_FK {
+            get {
+                return this.id_ponuda_FKField;
+            }
+            set {
+                if ((this.id_ponuda_FKField.Equals(value) != true)) {
+                    this.id_ponuda_FKField = value;
+                    this.RaisePropertyChanged("id_ponuda_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_pracenje_detalji {
+            get {
+                return this.id_pracenje_detaljiField;
+            }
+            set {
+                if ((this.id_pracenje_detaljiField.Equals(value) != true)) {
+                    this.id_pracenje_detaljiField = value;
+                    this.RaisePropertyChanged("id_pracenje_detalji");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_angebot tbl_angebot {
+            get {
+                return this.tbl_angebotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
+                    this.tbl_angebotField = value;
+                    this.RaisePropertyChanged("tbl_angebot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_pracenje", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_pracenje : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int broj_ponuda_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> broj_slanjaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> drugo_slanjeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_pracenjeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string intervalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string interval2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> prvo_slanjeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_angebot tbl_angebotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int broj_ponuda_FK {
+            get {
+                return this.broj_ponuda_FKField;
+            }
+            set {
+                if ((this.broj_ponuda_FKField.Equals(value) != true)) {
+                    this.broj_ponuda_FKField = value;
+                    this.RaisePropertyChanged("broj_ponuda_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> broj_slanja {
+            get {
+                return this.broj_slanjaField;
+            }
+            set {
+                if ((this.broj_slanjaField.Equals(value) != true)) {
+                    this.broj_slanjaField = value;
+                    this.RaisePropertyChanged("broj_slanja");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> drugo_slanje {
+            get {
+                return this.drugo_slanjeField;
+            }
+            set {
+                if ((this.drugo_slanjeField.Equals(value) != true)) {
+                    this.drugo_slanjeField = value;
+                    this.RaisePropertyChanged("drugo_slanje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_pracenje {
+            get {
+                return this.id_pracenjeField;
+            }
+            set {
+                if ((this.id_pracenjeField.Equals(value) != true)) {
+                    this.id_pracenjeField = value;
+                    this.RaisePropertyChanged("id_pracenje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string interval {
+            get {
+                return this.intervalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.intervalField, value) != true)) {
+                    this.intervalField = value;
+                    this.RaisePropertyChanged("interval");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string interval2 {
+            get {
+                return this.interval2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.interval2Field, value) != true)) {
+                    this.interval2Field = value;
+                    this.RaisePropertyChanged("interval2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> prvo_slanje {
+            get {
+                return this.prvo_slanjeField;
+            }
+            set {
+                if ((this.prvo_slanjeField.Equals(value) != true)) {
+                    this.prvo_slanjeField = value;
+                    this.RaisePropertyChanged("prvo_slanje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.statusField, value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_angebot tbl_angebot {
+            get {
+                return this.tbl_angebotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
+                    this.tbl_angebotField = value;
+                    this.RaisePropertyChanged("tbl_angebot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_racun_a", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_racun_a : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> akontoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> aktivanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> angebotnr_fkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> auftragenr_fkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> broj_racunField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> cijenaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_racun_aField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> kundenrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> porezField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_angebot tbl_angebotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_auftrag tbl_auftragField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> user_fkField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> akonto {
+            get {
+                return this.akontoField;
+            }
+            set {
+                if ((this.akontoField.Equals(value) != true)) {
+                    this.akontoField = value;
+                    this.RaisePropertyChanged("akonto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> aktivan {
+            get {
+                return this.aktivanField;
+            }
+            set {
+                if ((this.aktivanField.Equals(value) != true)) {
+                    this.aktivanField = value;
+                    this.RaisePropertyChanged("aktivan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> angebotnr_fk {
+            get {
+                return this.angebotnr_fkField;
+            }
+            set {
+                if ((this.angebotnr_fkField.Equals(value) != true)) {
+                    this.angebotnr_fkField = value;
+                    this.RaisePropertyChanged("angebotnr_fk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> auftragenr_fk {
+            get {
+                return this.auftragenr_fkField;
+            }
+            set {
+                if ((this.auftragenr_fkField.Equals(value) != true)) {
+                    this.auftragenr_fkField = value;
+                    this.RaisePropertyChanged("auftragenr_fk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> broj_racun {
+            get {
+                return this.broj_racunField;
+            }
+            set {
+                if ((this.broj_racunField.Equals(value) != true)) {
+                    this.broj_racunField = value;
+                    this.RaisePropertyChanged("broj_racun");
+                }
             }
         }
         
@@ -8425,92 +6016,105 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idpodpozicija {
+        public System.Nullable<System.DateTime> datum {
             get {
-                return this.idpodpozicijaField;
+                return this.datumField;
             }
             set {
-                if ((this.idpodpozicijaField.Equals(value) != true)) {
-                    this.idpodpozicijaField = value;
-                    this.RaisePropertyChanged("idpodpozicija");
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string jedinica {
+        public int id_racun_a {
             get {
-                return this.jedinicaField;
+                return this.id_racun_aField;
             }
             set {
-                if ((object.ReferenceEquals(this.jedinicaField, value) != true)) {
-                    this.jedinicaField = value;
-                    this.RaisePropertyChanged("jedinica");
+                if ((this.id_racun_aField.Equals(value) != true)) {
+                    this.id_racun_aField = value;
+                    this.RaisePropertyChanged("id_racun_a");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string naziv {
+        public System.Nullable<int> kundenr {
             get {
-                return this.nazivField;
+                return this.kundenrField;
             }
             set {
-                if ((object.ReferenceEquals(this.nazivField, value) != true)) {
-                    this.nazivField = value;
-                    this.RaisePropertyChanged("naziv");
+                if ((this.kundenrField.Equals(value) != true)) {
+                    this.kundenrField = value;
+                    this.RaisePropertyChanged("kundenr");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int pozicija_fk {
+        public System.Nullable<decimal> porez {
             get {
-                return this.pozicija_fkField;
+                return this.porezField;
             }
             set {
-                if ((this.pozicija_fkField.Equals(value) != true)) {
-                    this.pozicija_fkField = value;
-                    this.RaisePropertyChanged("pozicija_fk");
+                if ((this.porezField.Equals(value) != true)) {
+                    this.porezField = value;
+                    this.RaisePropertyChanged("porez");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string standard {
+        public Desktop.Service.tbl_angebot tbl_angebot {
             get {
-                return this.standardField;
+                return this.tbl_angebotField;
             }
             set {
-                if ((object.ReferenceEquals(this.standardField, value) != true)) {
-                    this.standardField = value;
-                    this.RaisePropertyChanged("standard");
+                if ((object.ReferenceEquals(this.tbl_angebotField, value) != true)) {
+                    this.tbl_angebotField = value;
+                    this.RaisePropertyChanged("tbl_angebot");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_pozicija tbl_pozicija {
+        public Desktop.Service.tbl_auftrag tbl_auftrag {
             get {
-                return this.tbl_pozicijaField;
+                return this.tbl_auftragField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_pozicijaField, value) != true)) {
-                    this.tbl_pozicijaField = value;
-                    this.RaisePropertyChanged("tbl_pozicija");
+                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
+                    this.tbl_auftragField = value;
+                    this.RaisePropertyChanged("tbl_auftrag");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
             get {
-                return this.tbl_stavkesField;
+                return this.tbl_korisnikField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
-                    this.tbl_stavkesField = value;
-                    this.RaisePropertyChanged("tbl_stavkes");
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> user_fk {
+            get {
+                return this.user_fkField;
+            }
+            set {
+                if ((this.user_fkField.Equals(value) != true)) {
+                    this.user_fkField = value;
+                    this.RaisePropertyChanged("user_fk");
                 }
             }
         }
@@ -8527,24 +6131,36 @@ namespace Desktop.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_pozicija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_akontacija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
     [System.SerializableAttribute()]
-    public partial class tbl_pozicija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class tbl_akontacija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idpozicijaField;
+        private int broj_akontacijaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nazivField;
+        private int broj_auftrage_FKField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_podpozicija> tbl_podpozicijasField;
+        private System.DateTime datumField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkesField;
+        private int id_akontacijaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal sumaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_auftrag tbl_auftragField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -8557,14 +6173,2286 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idpozicija {
+        public int broj_akontacija {
             get {
-                return this.idpozicijaField;
+                return this.broj_akontacijaField;
             }
             set {
-                if ((this.idpozicijaField.Equals(value) != true)) {
-                    this.idpozicijaField = value;
-                    this.RaisePropertyChanged("idpozicija");
+                if ((this.broj_akontacijaField.Equals(value) != true)) {
+                    this.broj_akontacijaField = value;
+                    this.RaisePropertyChanged("broj_akontacija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int broj_auftrage_FK {
+            get {
+                return this.broj_auftrage_FKField;
+            }
+            set {
+                if ((this.broj_auftrage_FKField.Equals(value) != true)) {
+                    this.broj_auftrage_FKField = value;
+                    this.RaisePropertyChanged("broj_auftrage_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_akontacija {
+            get {
+                return this.id_akontacijaField;
+            }
+            set {
+                if ((this.id_akontacijaField.Equals(value) != true)) {
+                    this.id_akontacijaField = value;
+                    this.RaisePropertyChanged("id_akontacija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal suma {
+            get {
+                return this.sumaField;
+            }
+            set {
+                if ((this.sumaField.Equals(value) != true)) {
+                    this.sumaField = value;
+                    this.RaisePropertyChanged("suma");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_auftrag tbl_auftrag {
+            get {
+                return this.tbl_auftragField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
+                    this.tbl_auftragField = value;
+                    this.RaisePropertyChanged("tbl_auftrag");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_avan", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_avan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int broj_auftrage_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_avansField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nacinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_auftrag tbl_auftragField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal uplatioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int broj_auftrage_FK {
+            get {
+                return this.broj_auftrage_FKField;
+            }
+            set {
+                if ((this.broj_auftrage_FKField.Equals(value) != true)) {
+                    this.broj_auftrage_FKField = value;
+                    this.RaisePropertyChanged("broj_auftrage_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_avans {
+            get {
+                return this.id_avansField;
+            }
+            set {
+                if ((this.id_avansField.Equals(value) != true)) {
+                    this.id_avansField = value;
+                    this.RaisePropertyChanged("id_avans");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nacin {
+            get {
+                return this.nacinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nacinField, value) != true)) {
+                    this.nacinField = value;
+                    this.RaisePropertyChanged("nacin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_auftrag tbl_auftrag {
+            get {
+                return this.tbl_auftragField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
+                    this.tbl_auftragField = value;
+                    this.RaisePropertyChanged("tbl_auftrag");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal uplatio {
+            get {
+                return this.uplatioField;
+            }
+            set {
+                if ((this.uplatioField.Equals(value) != true)) {
+                    this.uplatioField = value;
+                    this.RaisePropertyChanged("uplatio");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_reklamacija", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_reklamacija : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string biljeskaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int broj_auftrage_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string folderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_produkt_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_reklamacijaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string radnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal sumaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_auftrag tbl_auftragField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_produkt tbl_produktField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string biljeska {
+            get {
+                return this.biljeskaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
+                    this.biljeskaField = value;
+                    this.RaisePropertyChanged("biljeska");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int broj_auftrage_FK {
+            get {
+                return this.broj_auftrage_FKField;
+            }
+            set {
+                if ((this.broj_auftrage_FKField.Equals(value) != true)) {
+                    this.broj_auftrage_FKField = value;
+                    this.RaisePropertyChanged("broj_auftrage_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string folder {
+            get {
+                return this.folderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.folderField, value) != true)) {
+                    this.folderField = value;
+                    this.RaisePropertyChanged("folder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_produkt_FK {
+            get {
+                return this.id_produkt_FKField;
+            }
+            set {
+                if ((this.id_produkt_FKField.Equals(value) != true)) {
+                    this.id_produkt_FKField = value;
+                    this.RaisePropertyChanged("id_produkt_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_reklamacija {
+            get {
+                return this.id_reklamacijaField;
+            }
+            set {
+                if ((this.id_reklamacijaField.Equals(value) != true)) {
+                    this.id_reklamacijaField = value;
+                    this.RaisePropertyChanged("id_reklamacija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string radnik {
+            get {
+                return this.radnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.radnikField, value) != true)) {
+                    this.radnikField = value;
+                    this.RaisePropertyChanged("radnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal suma {
+            get {
+                return this.sumaField;
+            }
+            set {
+                if ((this.sumaField.Equals(value) != true)) {
+                    this.sumaField = value;
+                    this.RaisePropertyChanged("suma");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_auftrag tbl_auftrag {
+            get {
+                return this.tbl_auftragField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_auftragField, value) != true)) {
+                    this.tbl_auftragField = value;
+                    this.RaisePropertyChanged("tbl_auftrag");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_produkt tbl_produkt {
+            get {
+                return this.tbl_produktField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_produktField, value) != true)) {
+                    this.tbl_produktField = value;
+                    this.RaisePropertyChanged("tbl_produkt");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_greske", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_greske : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sadrzajField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.datumField, value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idUser {
+            get {
+                return this.idUserField;
+            }
+            set {
+                if ((this.idUserField.Equals(value) != true)) {
+                    this.idUserField = value;
+                    this.RaisePropertyChanged("idUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string sadrzaj {
+            get {
+                return this.sadrzajField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sadrzajField, value) != true)) {
+                    this.sadrzajField = value;
+                    this.RaisePropertyChanged("sadrzaj");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((this.statusField.Equals(value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_kalendar", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_kalendar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> aktivanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> datum1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_kalendarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mjestoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string opisField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pozicijaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> aktivan {
+            get {
+                return this.aktivanField;
+            }
+            set {
+                if ((this.aktivanField.Equals(value) != true)) {
+                    this.aktivanField = value;
+                    this.RaisePropertyChanged("aktivan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> datum1 {
+            get {
+                return this.datum1Field;
+            }
+            set {
+                if ((this.datum1Field.Equals(value) != true)) {
+                    this.datum1Field = value;
+                    this.RaisePropertyChanged("datum1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_kalendar {
+            get {
+                return this.id_kalendarField;
+            }
+            set {
+                if ((this.id_kalendarField.Equals(value) != true)) {
+                    this.id_kalendarField = value;
+                    this.RaisePropertyChanged("id_kalendar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mjesto {
+            get {
+                return this.mjestoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mjestoField, value) != true)) {
+                    this.mjestoField = value;
+                    this.RaisePropertyChanged("mjesto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string opis {
+            get {
+                return this.opisField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.opisField, value) != true)) {
+                    this.opisField = value;
+                    this.RaisePropertyChanged("opis");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pozicija {
+            get {
+                return this.pozicijaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pozicijaField, value) != true)) {
+                    this.pozicijaField = value;
+                    this.RaisePropertyChanged("pozicija");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_korisnik_licenca", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_korisnik_licenca : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool aktivanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_licencaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool aktivan {
+            get {
+                return this.aktivanField;
+            }
+            set {
+                if ((this.aktivanField.Equals(value) != true)) {
+                    this.aktivanField = value;
+                    this.RaisePropertyChanged("aktivan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_licenca {
+            get {
+                return this.id_licencaField;
+            }
+            set {
+                if ((this.id_licencaField.Equals(value) != true)) {
+                    this.id_licencaField = value;
+                    this.RaisePropertyChanged("id_licenca");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_mit_kalendar", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_mit_kalendar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string biljeskaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> datu1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_kalendarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> odobrenoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> poglednoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> tipField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string biljeska {
+            get {
+                return this.biljeskaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
+                    this.biljeskaField = value;
+                    this.RaisePropertyChanged("biljeska");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> datu1 {
+            get {
+                return this.datu1Field;
+            }
+            set {
+                if ((this.datu1Field.Equals(value) != true)) {
+                    this.datu1Field = value;
+                    this.RaisePropertyChanged("datu1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_kalendar {
+            get {
+                return this.id_kalendarField;
+            }
+            set {
+                if ((this.id_kalendarField.Equals(value) != true)) {
+                    this.id_kalendarField = value;
+                    this.RaisePropertyChanged("id_kalendar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> odobreno {
+            get {
+                return this.odobrenoField;
+            }
+            set {
+                if ((this.odobrenoField.Equals(value) != true)) {
+                    this.odobrenoField = value;
+                    this.RaisePropertyChanged("odobreno");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> pogledno {
+            get {
+                return this.poglednoField;
+            }
+            set {
+                if ((this.poglednoField.Equals(value) != true)) {
+                    this.poglednoField = value;
+                    this.RaisePropertyChanged("pogledno");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> tip {
+            get {
+                return this.tipField;
+            }
+            set {
+                if ((this.tipField.Equals(value) != true)) {
+                    this.tipField = value;
+                    this.RaisePropertyChanged("tip");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_poruka_poslane", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_poruka_poslane : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_poruka_poslaneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int poslaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string predmetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> primioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnik1Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_poruka_poslane {
+            get {
+                return this.id_poruka_poslaneField;
+            }
+            set {
+                if ((this.id_poruka_poslaneField.Equals(value) != true)) {
+                    this.id_poruka_poslaneField = value;
+                    this.RaisePropertyChanged("id_poruka_poslane");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int poslao {
+            get {
+                return this.poslaoField;
+            }
+            set {
+                if ((this.poslaoField.Equals(value) != true)) {
+                    this.poslaoField = value;
+                    this.RaisePropertyChanged("poslao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string predmet {
+            get {
+                return this.predmetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.predmetField, value) != true)) {
+                    this.predmetField = value;
+                    this.RaisePropertyChanged("predmet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> primio {
+            get {
+                return this.primioField;
+            }
+            set {
+                if ((this.primioField.Equals(value) != true)) {
+                    this.primioField = value;
+                    this.RaisePropertyChanged("primio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik1 {
+            get {
+                return this.tbl_korisnik1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnik1Field, value) != true)) {
+                    this.tbl_korisnik1Field = value;
+                    this.RaisePropertyChanged("tbl_korisnik1");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_poruka_primljene", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_poruka_primljene : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_poruka_primljeneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int poslaoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string predmetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> primioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool procitanoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnik1Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_poruka_primljene {
+            get {
+                return this.id_poruka_primljeneField;
+            }
+            set {
+                if ((this.id_poruka_primljeneField.Equals(value) != true)) {
+                    this.id_poruka_primljeneField = value;
+                    this.RaisePropertyChanged("id_poruka_primljene");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int poslao {
+            get {
+                return this.poslaoField;
+            }
+            set {
+                if ((this.poslaoField.Equals(value) != true)) {
+                    this.poslaoField = value;
+                    this.RaisePropertyChanged("poslao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string predmet {
+            get {
+                return this.predmetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.predmetField, value) != true)) {
+                    this.predmetField = value;
+                    this.RaisePropertyChanged("predmet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> primio {
+            get {
+                return this.primioField;
+            }
+            set {
+                if ((this.primioField.Equals(value) != true)) {
+                    this.primioField = value;
+                    this.RaisePropertyChanged("primio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool procitano {
+            get {
+                return this.procitanoField;
+            }
+            set {
+                if ((this.procitanoField.Equals(value) != true)) {
+                    this.procitanoField = value;
+                    this.RaisePropertyChanged("procitano");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik1 {
+            get {
+                return this.tbl_korisnik1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnik1Field, value) != true)) {
+                    this.tbl_korisnik1Field = value;
+                    this.RaisePropertyChanged("tbl_korisnik1");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_racun_b", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_racun_b : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> aktivanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int broj_racunaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> cijenaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idracun_bField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int kupacnr_fkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pdf_linkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> porezField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> porez_iznosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_kupac tbl_kupacField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tekstField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> user_fkField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> aktivan {
+            get {
+                return this.aktivanField;
+            }
+            set {
+                if ((this.aktivanField.Equals(value) != true)) {
+                    this.aktivanField = value;
+                    this.RaisePropertyChanged("aktivan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int broj_racuna {
+            get {
+                return this.broj_racunaField;
+            }
+            set {
+                if ((this.broj_racunaField.Equals(value) != true)) {
+                    this.broj_racunaField = value;
+                    this.RaisePropertyChanged("broj_racuna");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> cijena {
+            get {
+                return this.cijenaField;
+            }
+            set {
+                if ((this.cijenaField.Equals(value) != true)) {
+                    this.cijenaField = value;
+                    this.RaisePropertyChanged("cijena");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idracun_b {
+            get {
+                return this.idracun_bField;
+            }
+            set {
+                if ((this.idracun_bField.Equals(value) != true)) {
+                    this.idracun_bField = value;
+                    this.RaisePropertyChanged("idracun_b");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int kupacnr_fk {
+            get {
+                return this.kupacnr_fkField;
+            }
+            set {
+                if ((this.kupacnr_fkField.Equals(value) != true)) {
+                    this.kupacnr_fkField = value;
+                    this.RaisePropertyChanged("kupacnr_fk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pdf_link {
+            get {
+                return this.pdf_linkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pdf_linkField, value) != true)) {
+                    this.pdf_linkField = value;
+                    this.RaisePropertyChanged("pdf_link");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> porez {
+            get {
+                return this.porezField;
+            }
+            set {
+                if ((this.porezField.Equals(value) != true)) {
+                    this.porezField = value;
+                    this.RaisePropertyChanged("porez");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> porez_iznos {
+            get {
+                return this.porez_iznosField;
+            }
+            set {
+                if ((this.porez_iznosField.Equals(value) != true)) {
+                    this.porez_iznosField = value;
+                    this.RaisePropertyChanged("porez_iznos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_kupac tbl_kupac {
+            get {
+                return this.tbl_kupacField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_kupacField, value) != true)) {
+                    this.tbl_kupacField = value;
+                    this.RaisePropertyChanged("tbl_kupac");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tekst {
+            get {
+                return this.tekstField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tekstField, value) != true)) {
+                    this.tekstField = value;
+                    this.RaisePropertyChanged("tekst");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> user_fk {
+            get {
+                return this.user_fkField;
+            }
+            set {
+                if ((this.user_fkField.Equals(value) != true)) {
+                    this.user_fkField = value;
+                    this.RaisePropertyChanged("user_fk");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_radnik", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_radnik : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KtoNrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string adresaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string bankaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string bicField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string biljeskaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string blzField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string bolovanjeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> broj_nedeljaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> broj_plateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> datumField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string emailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string faxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string folderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ibanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_radnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mobitelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string odmorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string odmor_naField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string prezimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> satnicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int sifra_radnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tel1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tel2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int tipField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string vlasnik_racunaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> zaradaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string KtoNr {
+            get {
+                return this.KtoNrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KtoNrField, value) != true)) {
+                    this.KtoNrField = value;
+                    this.RaisePropertyChanged("KtoNr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string adresa {
+            get {
+                return this.adresaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.adresaField, value) != true)) {
+                    this.adresaField = value;
+                    this.RaisePropertyChanged("adresa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string banka {
+            get {
+                return this.bankaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.bankaField, value) != true)) {
+                    this.bankaField = value;
+                    this.RaisePropertyChanged("banka");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string bic {
+            get {
+                return this.bicField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.bicField, value) != true)) {
+                    this.bicField = value;
+                    this.RaisePropertyChanged("bic");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string biljeska {
+            get {
+                return this.biljeskaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.biljeskaField, value) != true)) {
+                    this.biljeskaField = value;
+                    this.RaisePropertyChanged("biljeska");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string blz {
+            get {
+                return this.blzField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.blzField, value) != true)) {
+                    this.blzField = value;
+                    this.RaisePropertyChanged("blz");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string bolovanje {
+            get {
+                return this.bolovanjeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.bolovanjeField, value) != true)) {
+                    this.bolovanjeField = value;
+                    this.RaisePropertyChanged("bolovanje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> broj_nedelja {
+            get {
+                return this.broj_nedeljaField;
+            }
+            set {
+                if ((this.broj_nedeljaField.Equals(value) != true)) {
+                    this.broj_nedeljaField = value;
+                    this.RaisePropertyChanged("broj_nedelja");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> broj_plate {
+            get {
+                return this.broj_plateField;
+            }
+            set {
+                if ((this.broj_plateField.Equals(value) != true)) {
+                    this.broj_plateField = value;
+                    this.RaisePropertyChanged("broj_plate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> datum {
+            get {
+                return this.datumField;
+            }
+            set {
+                if ((this.datumField.Equals(value) != true)) {
+                    this.datumField = value;
+                    this.RaisePropertyChanged("datum");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fax {
+            get {
+                return this.faxField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.faxField, value) != true)) {
+                    this.faxField = value;
+                    this.RaisePropertyChanged("fax");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string folder {
+            get {
+                return this.folderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.folderField, value) != true)) {
+                    this.folderField = value;
+                    this.RaisePropertyChanged("folder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string iban {
+            get {
+                return this.ibanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ibanField, value) != true)) {
+                    this.ibanField = value;
+                    this.RaisePropertyChanged("iban");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_radnik {
+            get {
+                return this.id_radnikField;
+            }
+            set {
+                if ((this.id_radnikField.Equals(value) != true)) {
+                    this.id_radnikField = value;
+                    this.RaisePropertyChanged("id_radnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ime {
+            get {
+                return this.imeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imeField, value) != true)) {
+                    this.imeField = value;
+                    this.RaisePropertyChanged("ime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mobitel {
+            get {
+                return this.mobitelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mobitelField, value) != true)) {
+                    this.mobitelField = value;
+                    this.RaisePropertyChanged("mobitel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string odmor {
+            get {
+                return this.odmorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.odmorField, value) != true)) {
+                    this.odmorField = value;
+                    this.RaisePropertyChanged("odmor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string odmor_na {
+            get {
+                return this.odmor_naField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.odmor_naField, value) != true)) {
+                    this.odmor_naField = value;
+                    this.RaisePropertyChanged("odmor_na");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string prezime {
+            get {
+                return this.prezimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.prezimeField, value) != true)) {
+                    this.prezimeField = value;
+                    this.RaisePropertyChanged("prezime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> satnica {
+            get {
+                return this.satnicaField;
+            }
+            set {
+                if ((this.satnicaField.Equals(value) != true)) {
+                    this.satnicaField = value;
+                    this.RaisePropertyChanged("satnica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int sifra_radnik {
+            get {
+                return this.sifra_radnikField;
+            }
+            set {
+                if ((this.sifra_radnikField.Equals(value) != true)) {
+                    this.sifra_radnikField = value;
+                    this.RaisePropertyChanged("sifra_radnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((this.statusField.Equals(value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tel1 {
+            get {
+                return this.tel1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tel1Field, value) != true)) {
+                    this.tel1Field = value;
+                    this.RaisePropertyChanged("tel1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tel2 {
+            get {
+                return this.tel2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tel2Field, value) != true)) {
+                    this.tel2Field = value;
+                    this.RaisePropertyChanged("tel2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int tip {
+            get {
+                return this.tipField;
+            }
+            set {
+                if ((this.tipField.Equals(value) != true)) {
+                    this.tipField = value;
+                    this.RaisePropertyChanged("tip");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string vlasnik_racuna {
+            get {
+                return this.vlasnik_racunaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.vlasnik_racunaField, value) != true)) {
+                    this.vlasnik_racunaField = value;
+                    this.RaisePropertyChanged("vlasnik_racuna");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> zarada {
+            get {
+                return this.zaradaField;
+            }
+            set {
+                if ((this.zaradaField.Equals(value) != true)) {
+                    this.zaradaField = value;
+                    this.RaisePropertyChanged("zarada");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_rute_kalendar", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_rute_kalendar : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string danField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datum_krajField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime datum_pocetakField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_korisnik_FKField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_mit_kalendarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string opisField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> sedmicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_korisnik tbl_korisnikField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dan {
+            get {
+                return this.danField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.danField, value) != true)) {
+                    this.danField = value;
+                    this.RaisePropertyChanged("dan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum_kraj {
+            get {
+                return this.datum_krajField;
+            }
+            set {
+                if ((this.datum_krajField.Equals(value) != true)) {
+                    this.datum_krajField = value;
+                    this.RaisePropertyChanged("datum_kraj");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime datum_pocetak {
+            get {
+                return this.datum_pocetakField;
+            }
+            set {
+                if ((this.datum_pocetakField.Equals(value) != true)) {
+                    this.datum_pocetakField = value;
+                    this.RaisePropertyChanged("datum_pocetak");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_korisnik_FK {
+            get {
+                return this.id_korisnik_FKField;
+            }
+            set {
+                if ((this.id_korisnik_FKField.Equals(value) != true)) {
+                    this.id_korisnik_FKField = value;
+                    this.RaisePropertyChanged("id_korisnik_FK");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_mit_kalendar {
+            get {
+                return this.id_mit_kalendarField;
+            }
+            set {
+                if ((this.id_mit_kalendarField.Equals(value) != true)) {
+                    this.id_mit_kalendarField = value;
+                    this.RaisePropertyChanged("id_mit_kalendar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string opis {
+            get {
+                return this.opisField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.opisField, value) != true)) {
+                    this.opisField = value;
+                    this.RaisePropertyChanged("opis");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> sedmica {
+            get {
+                return this.sedmicaField;
+            }
+            set {
+                if ((this.sedmicaField.Equals(value) != true)) {
+                    this.sedmicaField = value;
+                    this.RaisePropertyChanged("sedmica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_korisnik tbl_korisnik {
+            get {
+                return this.tbl_korisnikField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_korisnikField, value) != true)) {
+                    this.tbl_korisnikField = value;
+                    this.RaisePropertyChanged("tbl_korisnik");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_produkt", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_produkt : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idproduktField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nazivField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produktion> tbl_produktionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijasField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idprodukt {
+            get {
+                return this.idproduktField;
+            }
+            set {
+                if ((this.idproduktField.Equals(value) != true)) {
+                    this.idproduktField = value;
+                    this.RaisePropertyChanged("idprodukt");
                 }
             }
         }
@@ -8583,27 +8471,200 @@ namespace Desktop.Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_podpozicija> tbl_podpozicijas {
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produktion> tbl_produktions {
             get {
-                return this.tbl_podpozicijasField;
+                return this.tbl_produktionsField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_podpozicijasField, value) != true)) {
-                    this.tbl_podpozicijasField = value;
-                    this.RaisePropertyChanged("tbl_podpozicijas");
+                if ((object.ReferenceEquals(this.tbl_produktionsField, value) != true)) {
+                    this.tbl_produktionsField = value;
+                    this.RaisePropertyChanged("tbl_produktions");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_stavke> tbl_stavkes {
+        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_reklamacija> tbl_reklamacijas {
             get {
-                return this.tbl_stavkesField;
+                return this.tbl_reklamacijasField;
             }
             set {
-                if ((object.ReferenceEquals(this.tbl_stavkesField, value) != true)) {
-                    this.tbl_stavkesField = value;
-                    this.RaisePropertyChanged("tbl_stavkes");
+                if ((object.ReferenceEquals(this.tbl_reklamacijasField, value) != true)) {
+                    this.tbl_reklamacijasField = value;
+                    this.RaisePropertyChanged("tbl_reklamacijas");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_racun_b_pozicije", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
+    [System.SerializableAttribute()]
+    public partial class tbl_racun_b_pozicije : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int broj_racunaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> cijena_jedinicnaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idrechnungbpozicijeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> mjerna_jedinica_fkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> povrsinaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> rabatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Desktop.Service.tbl_jedinica tbl_jedinicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tekstField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ukupna_cijenaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int broj_racuna {
+            get {
+                return this.broj_racunaField;
+            }
+            set {
+                if ((this.broj_racunaField.Equals(value) != true)) {
+                    this.broj_racunaField = value;
+                    this.RaisePropertyChanged("broj_racuna");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> cijena_jedinicna {
+            get {
+                return this.cijena_jedinicnaField;
+            }
+            set {
+                if ((this.cijena_jedinicnaField.Equals(value) != true)) {
+                    this.cijena_jedinicnaField = value;
+                    this.RaisePropertyChanged("cijena_jedinicna");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idrechnungbpozicije {
+            get {
+                return this.idrechnungbpozicijeField;
+            }
+            set {
+                if ((this.idrechnungbpozicijeField.Equals(value) != true)) {
+                    this.idrechnungbpozicijeField = value;
+                    this.RaisePropertyChanged("idrechnungbpozicije");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> mjerna_jedinica_fk {
+            get {
+                return this.mjerna_jedinica_fkField;
+            }
+            set {
+                if ((this.mjerna_jedinica_fkField.Equals(value) != true)) {
+                    this.mjerna_jedinica_fkField = value;
+                    this.RaisePropertyChanged("mjerna_jedinica_fk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> povrsina {
+            get {
+                return this.povrsinaField;
+            }
+            set {
+                if ((this.povrsinaField.Equals(value) != true)) {
+                    this.povrsinaField = value;
+                    this.RaisePropertyChanged("povrsina");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> rabat {
+            get {
+                return this.rabatField;
+            }
+            set {
+                if ((this.rabatField.Equals(value) != true)) {
+                    this.rabatField = value;
+                    this.RaisePropertyChanged("rabat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Desktop.Service.tbl_jedinica tbl_jedinica {
+            get {
+                return this.tbl_jedinicaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tbl_jedinicaField, value) != true)) {
+                    this.tbl_jedinicaField = value;
+                    this.RaisePropertyChanged("tbl_jedinica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tekst {
+            get {
+                return this.tekstField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tekstField, value) != true)) {
+                    this.tekstField = value;
+                    this.RaisePropertyChanged("tekst");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ukupna_cijena {
+            get {
+                return this.ukupna_cijenaField;
+            }
+            set {
+                if ((this.ukupna_cijenaField.Equals(value) != true)) {
+                    this.ukupna_cijenaField = value;
+                    this.RaisePropertyChanged("ukupna_cijena");
                 }
             }
         }
@@ -8947,272 +9008,6 @@ namespace Desktop.Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_povrsina", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_povrsina : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int materijal_FKField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string povField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_materijal tbl_materijalField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int materijal_FK {
-            get {
-                return this.materijal_FKField;
-            }
-            set {
-                if ((this.materijal_FKField.Equals(value) != true)) {
-                    this.materijal_FKField = value;
-                    this.RaisePropertyChanged("materijal_FK");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pov {
-            get {
-                return this.povField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.povField, value) != true)) {
-                    this.povField = value;
-                    this.RaisePropertyChanged("pov");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_materijal tbl_materijal {
-            get {
-                return this.tbl_materijalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_materijalField, value) != true)) {
-                    this.tbl_materijalField = value;
-                    this.RaisePropertyChanged("tbl_materijal");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbl_racun_b_pozicije", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
-    [System.SerializableAttribute()]
-    public partial class tbl_racun_b_pozicije : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int broj_racunaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> cijena_jedinicnaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idrechnungbpozicijeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> mjerna_jedinica_fkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> povrsinaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> rabatField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Desktop.Service.tbl_jedinica tbl_jedinicaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tekstField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> ukupna_cijenaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int broj_racuna {
-            get {
-                return this.broj_racunaField;
-            }
-            set {
-                if ((this.broj_racunaField.Equals(value) != true)) {
-                    this.broj_racunaField = value;
-                    this.RaisePropertyChanged("broj_racuna");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> cijena_jedinicna {
-            get {
-                return this.cijena_jedinicnaField;
-            }
-            set {
-                if ((this.cijena_jedinicnaField.Equals(value) != true)) {
-                    this.cijena_jedinicnaField = value;
-                    this.RaisePropertyChanged("cijena_jedinicna");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idrechnungbpozicije {
-            get {
-                return this.idrechnungbpozicijeField;
-            }
-            set {
-                if ((this.idrechnungbpozicijeField.Equals(value) != true)) {
-                    this.idrechnungbpozicijeField = value;
-                    this.RaisePropertyChanged("idrechnungbpozicije");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> mjerna_jedinica_fk {
-            get {
-                return this.mjerna_jedinica_fkField;
-            }
-            set {
-                if ((this.mjerna_jedinica_fkField.Equals(value) != true)) {
-                    this.mjerna_jedinica_fkField = value;
-                    this.RaisePropertyChanged("mjerna_jedinica_fk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> povrsina {
-            get {
-                return this.povrsinaField;
-            }
-            set {
-                if ((this.povrsinaField.Equals(value) != true)) {
-                    this.povrsinaField = value;
-                    this.RaisePropertyChanged("povrsina");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> rabat {
-            get {
-                return this.rabatField;
-            }
-            set {
-                if ((this.rabatField.Equals(value) != true)) {
-                    this.rabatField = value;
-                    this.RaisePropertyChanged("rabat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Desktop.Service.tbl_jedinica tbl_jedinica {
-            get {
-                return this.tbl_jedinicaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tbl_jedinicaField, value) != true)) {
-                    this.tbl_jedinicaField = value;
-                    this.RaisePropertyChanged("tbl_jedinica");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tekst {
-            get {
-                return this.tekstField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tekstField, value) != true)) {
-                    this.tekstField = value;
-                    this.RaisePropertyChanged("tekst");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> ukupna_cijena {
-            get {
-                return this.ukupna_cijenaField;
-            }
-            set {
-                if ((this.ukupna_cijenaField.Equals(value) != true)) {
-                    this.ukupna_cijenaField = value;
-                    this.RaisePropertyChanged("ukupna_cijena");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="p_get_User_ViewResult", Namespace="http://schemas.datacontract.org/2004/07/Mass.Data")]
     [System.SerializableAttribute()]
     public partial class p_get_User_ViewResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -9477,7 +9272,6 @@ namespace Desktop.Service {
                     string tel2, 
                     string mobitel, 
                     string fax, 
-                    string skype, 
                     string email, 
                     float zarada, 
                     float satnica, 
@@ -9506,7 +9300,6 @@ namespace Desktop.Service {
                     string tel2, 
                     string mobitel, 
                     string fax, 
-                    string skype, 
                     string email, 
                     float zarada, 
                     float satnica, 
@@ -9541,12 +9334,6 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ComboKorisnici", ReplyAction="http://tempuri.org/MassServis/ComboKorisniciResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ComboKorisniciPoruke", ReplyAction="http://tempuri.org/MassServis/ComboKorisniciPorukeResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik> ComboKorisniciPoruke(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ComboKorisniciPoruke", ReplyAction="http://tempuri.org/MassServis/ComboKorisniciPorukeResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciPorukeAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaKupaca", ReplyAction="http://tempuri.org/MassServis/ListaKupacaResponse")]
         System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac> ListaKupaca();
@@ -9608,12 +9395,6 @@ namespace Desktop.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/EditujUsera", ReplyAction="http://tempuri.org/MassServis/EditujUseraResponse")]
         System.Threading.Tasks.Task EditujUseraAsync(int idUser, string Name, string LastName, string Email, string Telefon, bool Aktivan, string Slika, string Username, string Password, int UserType, bool Pocetna, string Licence);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/UpdateKorisnik", ReplyAction="http://tempuri.org/MassServis/UpdateKorisnikResponse")]
-        void UpdateKorisnik(Desktop.Service.tbl_korisnik k);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/UpdateKorisnik", ReplyAction="http://tempuri.org/MassServis/UpdateKorisnikResponse")]
-        System.Threading.Tasks.Task UpdateKorisnikAsync(Desktop.Service.tbl_korisnik k);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/DeleteUser", ReplyAction="http://tempuri.org/MassServis/DeleteUserResponse")]
         void DeleteUser(int idUser);
         
@@ -9637,12 +9418,6 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/changeUserPocetnaOrAktivan", ReplyAction="http://tempuri.org/MassServis/changeUserPocetnaOrAktivanResponse")]
         System.Threading.Tasks.Task changeUserPocetnaOrAktivanAsync(int tip, int idUser, bool value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ChangeWorkerStatus", ReplyAction="http://tempuri.org/MassServis/ChangeWorkerStatusResponse")]
-        void ChangeWorkerStatus(int idRadnika, bool status);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ChangeWorkerStatus", ReplyAction="http://tempuri.org/MassServis/ChangeWorkerStatusResponse")]
-        System.Threading.Tasks.Task ChangeWorkerStatusAsync(int idRadnika, bool status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/unesiBug", ReplyAction="http://tempuri.org/MassServis/unesiBugResponse")]
         void unesiBug(string bugText, int idUser, bool status, string date);
@@ -9685,90 +9460,6 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/KundenNr", ReplyAction="http://tempuri.org/MassServis/KundenNrResponse")]
         System.Threading.Tasks.Task<int> KundenNrAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/AngebotNr", ReplyAction="http://tempuri.org/MassServis/AngebotNrResponse")]
-        int AngebotNr();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/AngebotNr", ReplyAction="http://tempuri.org/MassServis/AngebotNrResponse")]
-        System.Threading.Tasks.Task<int> AngebotNrAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPrimljenihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPrimljenihPorukaResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene> ListaPrimljenihPoruka(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPrimljenihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPrimljenihPorukaResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene>> ListaPrimljenihPorukaAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPoslanihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPoslanihPorukaResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane> ListaPoslanihPoruka(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaPoslanihPoruka", ReplyAction="http://tempuri.org/MassServis/ListaPoslanihPorukaResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane>> ListaPoslanihPorukaAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/PosaljiPoruku", ReplyAction="http://tempuri.org/MassServis/PosaljiPorukuResponse")]
-        void PosaljiPoruku(int primio, int poslao, string predmet, string naslov);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/PosaljiPoruku", ReplyAction="http://tempuri.org/MassServis/PosaljiPorukuResponse")]
-        System.Threading.Tasks.Task PosaljiPorukuAsync(int primio, int poslao, string predmet, string naslov);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaKupacaSearch", ReplyAction="http://tempuri.org/MassServis/ListaKupacaSearchResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac> ListaKupacaSearch(int broj);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaKupacaSearch", ReplyAction="http://tempuri.org/MassServis/ListaKupacaSearchResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac>> ListaKupacaSearchAsync(int broj);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterijal", ReplyAction="http://tempuri.org/MassServis/getMaterijalResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal> getMaterijal();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterijal", ReplyAction="http://tempuri.org/MassServis/getMaterijalResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal>> getMaterijalAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProdukt", ReplyAction="http://tempuri.org/MassServis/getProduktResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt> getProdukt();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProdukt", ReplyAction="http://tempuri.org/MassServis/getProduktResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt>> getProduktAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getPovrsinaByMaterijal", ReplyAction="http://tempuri.org/MassServis/getPovrsinaByMaterijalResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_povrsina> getPovrsinaByMaterijal(int matId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getPovrsinaByMaterijal", ReplyAction="http://tempuri.org/MassServis/getPovrsinaByMaterijalResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_povrsina>> getPovrsinaByMaterijalAsync(int matId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getDebljinaByProduktId", ReplyAction="http://tempuri.org/MassServis/getDebljinaByProduktIdResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> getDebljinaByProduktId(int prodId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getDebljinaByProduktId", ReplyAction="http://tempuri.org/MassServis/getDebljinaByProduktIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaByProduktIdAsync(int prodId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMatIdByName", ReplyAction="http://tempuri.org/MassServis/getMatIdByNameResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal> getMatIdByName(string value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMatIdByName", ReplyAction="http://tempuri.org/MassServis/getMatIdByNameResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal>> getMatIdByNameAsync(string value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProIdByName", ReplyAction="http://tempuri.org/MassServis/getProIdByNameResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt> getProIdByName(string value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProIdByName", ReplyAction="http://tempuri.org/MassServis/getProIdByNameResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt>> getProIdByNameAsync(string value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getDebljinaIdByName", ReplyAction="http://tempuri.org/MassServis/getDebljinaIdByNameResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> getDebljinaIdByName(string value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getDebljinaIdByName", ReplyAction="http://tempuri.org/MassServis/getDebljinaIdByNameResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaIdByNameAsync(string value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaEventaMitarbeiter", ReplyAction="http://tempuri.org/MassServis/ListaEventaMitarbeiterResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_mit_kalendar> ListaEventaMitarbeiter();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaEventaMitarbeiter", ReplyAction="http://tempuri.org/MassServis/ListaEventaMitarbeiterResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_mit_kalendar>> ListaEventaMitarbeiterAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/UnesiEventMitarbeiter", ReplyAction="http://tempuri.org/MassServis/UnesiEventMitarbeiterResponse")]
-        void UnesiEventMitarbeiter(Desktop.Service.tbl_mit_kalendar mit_kalendar, int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/UnesiEventMitarbeiter", ReplyAction="http://tempuri.org/MassServis/UnesiEventMitarbeiterResponse")]
-        System.Threading.Tasks.Task UnesiEventMitarbeiterAsync(Desktop.Service.tbl_mit_kalendar mit_kalendar, int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9848,7 +9539,6 @@ namespace Desktop.Service {
                     string tel2, 
                     string mobitel, 
                     string fax, 
-                    string skype, 
                     string email, 
                     float zarada, 
                     float satnica, 
@@ -9865,7 +9555,7 @@ namespace Desktop.Service {
                     string biljeske, 
                     System.DateTime datum, 
                     int id) {
-            base.Channel.UnesiRadnika(broj, titula, ime, prezime, adresa, tel1, tel2, mobitel, fax, skype, email, zarada, satnica, odmor, odmor_na, broj_plate, bolovanje, banka, blz, bic, KtoNr, Iban, vlasnik, biljeske, datum, id);
+            base.Channel.UnesiRadnika(broj, titula, ime, prezime, adresa, tel1, tel2, mobitel, fax, email, zarada, satnica, odmor, odmor_na, broj_plate, bolovanje, banka, blz, bic, KtoNr, Iban, vlasnik, biljeske, datum, id);
         }
         
         public System.Threading.Tasks.Task UnesiRadnikaAsync(
@@ -9878,7 +9568,6 @@ namespace Desktop.Service {
                     string tel2, 
                     string mobitel, 
                     string fax, 
-                    string skype, 
                     string email, 
                     float zarada, 
                     float satnica, 
@@ -9895,7 +9584,7 @@ namespace Desktop.Service {
                     string biljeske, 
                     System.DateTime datum, 
                     int id) {
-            return base.Channel.UnesiRadnikaAsync(broj, titula, ime, prezime, adresa, tel1, tel2, mobitel, fax, skype, email, zarada, satnica, odmor, odmor_na, broj_plate, bolovanje, banka, blz, bic, KtoNr, Iban, vlasnik, biljeske, datum, id);
+            return base.Channel.UnesiRadnikaAsync(broj, titula, ime, prezime, adresa, tel1, tel2, mobitel, fax, email, zarada, satnica, odmor, odmor_na, broj_plate, bolovanje, banka, blz, bic, KtoNr, Iban, vlasnik, biljeske, datum, id);
         }
         
         public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_radnik> ListaRadnika() {
@@ -9920,14 +9609,6 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciAsync() {
             return base.Channel.ComboKorisniciAsync();
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik> ComboKorisniciPoruke(int id) {
-            return base.Channel.ComboKorisniciPoruke(id);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_korisnik>> ComboKorisniciPorukeAsync(int id) {
-            return base.Channel.ComboKorisniciPorukeAsync(id);
         }
         
         public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac> ListaKupaca() {
@@ -10010,14 +9691,6 @@ namespace Desktop.Service {
             return base.Channel.EditujUseraAsync(idUser, Name, LastName, Email, Telefon, Aktivan, Slika, Username, Password, UserType, Pocetna, Licence);
         }
         
-        public void UpdateKorisnik(Desktop.Service.tbl_korisnik k) {
-            base.Channel.UpdateKorisnik(k);
-        }
-        
-        public System.Threading.Tasks.Task UpdateKorisnikAsync(Desktop.Service.tbl_korisnik k) {
-            return base.Channel.UpdateKorisnikAsync(k);
-        }
-        
         public void DeleteUser(int idUser) {
             base.Channel.DeleteUser(idUser);
         }
@@ -10048,14 +9721,6 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task changeUserPocetnaOrAktivanAsync(int tip, int idUser, bool value) {
             return base.Channel.changeUserPocetnaOrAktivanAsync(tip, idUser, value);
-        }
-        
-        public void ChangeWorkerStatus(int idRadnika, bool status) {
-            base.Channel.ChangeWorkerStatus(idRadnika, status);
-        }
-        
-        public System.Threading.Tasks.Task ChangeWorkerStatusAsync(int idRadnika, bool status) {
-            return base.Channel.ChangeWorkerStatusAsync(idRadnika, status);
         }
         
         public void unesiBug(string bugText, int idUser, bool status, string date) {
@@ -10112,118 +9777,6 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<int> KundenNrAsync() {
             return base.Channel.KundenNrAsync();
-        }
-        
-        public int AngebotNr() {
-            return base.Channel.AngebotNr();
-        }
-        
-        public System.Threading.Tasks.Task<int> AngebotNrAsync() {
-            return base.Channel.AngebotNrAsync();
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene> ListaPrimljenihPoruka(int id) {
-            return base.Channel.ListaPrimljenihPoruka(id);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_primljene>> ListaPrimljenihPorukaAsync(int id) {
-            return base.Channel.ListaPrimljenihPorukaAsync(id);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane> ListaPoslanihPoruka(int id) {
-            return base.Channel.ListaPoslanihPoruka(id);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_poruka_poslane>> ListaPoslanihPorukaAsync(int id) {
-            return base.Channel.ListaPoslanihPorukaAsync(id);
-        }
-        
-        public void PosaljiPoruku(int primio, int poslao, string predmet, string naslov) {
-            base.Channel.PosaljiPoruku(primio, poslao, predmet, naslov);
-        }
-        
-        public System.Threading.Tasks.Task PosaljiPorukuAsync(int primio, int poslao, string predmet, string naslov) {
-            return base.Channel.PosaljiPorukuAsync(primio, poslao, predmet, naslov);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac> ListaKupacaSearch(int broj) {
-            return base.Channel.ListaKupacaSearch(broj);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_kupac>> ListaKupacaSearchAsync(int broj) {
-            return base.Channel.ListaKupacaSearchAsync(broj);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal> getMaterijal() {
-            return base.Channel.getMaterijal();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal>> getMaterijalAsync() {
-            return base.Channel.getMaterijalAsync();
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt> getProdukt() {
-            return base.Channel.getProdukt();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt>> getProduktAsync() {
-            return base.Channel.getProduktAsync();
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_povrsina> getPovrsinaByMaterijal(int matId) {
-            return base.Channel.getPovrsinaByMaterijal(matId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_povrsina>> getPovrsinaByMaterijalAsync(int matId) {
-            return base.Channel.getPovrsinaByMaterijalAsync(matId);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> getDebljinaByProduktId(int prodId) {
-            return base.Channel.getDebljinaByProduktId(prodId);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaByProduktIdAsync(int prodId) {
-            return base.Channel.getDebljinaByProduktIdAsync(prodId);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal> getMatIdByName(string value) {
-            return base.Channel.getMatIdByName(value);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_materijal>> getMatIdByNameAsync(string value) {
-            return base.Channel.getMatIdByNameAsync(value);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt> getProIdByName(string value) {
-            return base.Channel.getProIdByName(value);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_produkt>> getProIdByNameAsync(string value) {
-            return base.Channel.getProIdByNameAsync(value);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina> getDebljinaIdByName(string value) {
-            return base.Channel.getDebljinaIdByName(value);
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_debljina>> getDebljinaIdByNameAsync(string value) {
-            return base.Channel.getDebljinaIdByNameAsync(value);
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_mit_kalendar> ListaEventaMitarbeiter() {
-            return base.Channel.ListaEventaMitarbeiter();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Desktop.Service.tbl_mit_kalendar>> ListaEventaMitarbeiterAsync() {
-            return base.Channel.ListaEventaMitarbeiterAsync();
-        }
-        
-        public void UnesiEventMitarbeiter(Desktop.Service.tbl_mit_kalendar mit_kalendar, int id) {
-            base.Channel.UnesiEventMitarbeiter(mit_kalendar, id);
-        }
-        
-        public System.Threading.Tasks.Task UnesiEventMitarbeiterAsync(Desktop.Service.tbl_mit_kalendar mit_kalendar, int id) {
-            return base.Channel.UnesiEventMitarbeiterAsync(mit_kalendar, id);
         }
     }
 }

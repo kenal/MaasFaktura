@@ -13,16 +13,10 @@ namespace Desktop.HelperClass
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             //return value != null && (int)value == 1 ;
-            if(value != null)
-            {
-                var intValue = (bool)value;
-                if (intValue == true)
+            var intValue = (bool)value;
+            if (intValue == true)
                 return Brushes.LimeGreen;
-                else return Brushes.Red;
-            }
-            else
-                return Brushes.White;
-            
+            else return Brushes.Red;
 
         }
 
