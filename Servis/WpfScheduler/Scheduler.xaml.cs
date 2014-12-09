@@ -185,7 +185,7 @@ namespace WpfScheduler
         public Scheduler()
         {
             InitializeComponent();
-            Mode = WpfScheduler.Mode.Month;
+            Mode = WpfScheduler.Mode.Week;
             Events = new ObservableCollection<Event>();
             SelectedDate = DateTime.Now;
 
@@ -201,7 +201,6 @@ namespace WpfScheduler
         void InnerScheduler_OnScheduleDoubleClick(object sender, DateTime e)
         {
             if (OnScheduleDoubleClick != null) OnScheduleDoubleClick(sender, e);
-            InitializeComponent();
         }
 
         void InnerScheduler_OnEventDoubleClick(object sender, Event e)
