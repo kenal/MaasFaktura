@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\
 Desktop
 none
 false
 DEBUG;TRACE
-C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\App.xaml
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\App.xaml
 22438658669
 
-431595672828
-29992848201
+43-1827498449
+29-2083630215
 AddBugWindows.xaml;AdminEditWindow.xaml;AdminWindow.xaml;AngebotWindow.xaml;AuftrageWindow.xaml;AuftragsSucheWindow.xaml;BestellungWindow.xaml;FertigWindow.xaml;KundenWindow.xaml;KundenWindowEdit.xaml;LieferantWindow.xaml;LieferantWindowEdit.xaml;LoginWindow.xaml;MainWindow.xaml;MaterialbestandWindow.xaml;MaterialienWindow.xaml;MitarbeiterWindow.xaml;MitarbeiterWindowEdit.xaml;RechBaustellen.xaml;RechNaturstein.xaml;showBugWindow.xaml;TechnikerWindow.xaml;
 
-True
+False
 
