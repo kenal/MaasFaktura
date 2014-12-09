@@ -201,6 +201,7 @@ namespace WpfScheduler
         void InnerScheduler_OnScheduleDoubleClick(object sender, DateTime e)
         {
             if (OnScheduleDoubleClick != null) OnScheduleDoubleClick(sender, e);
+            InitializeComponent();
         }
 
         void InnerScheduler_OnEventDoubleClick(object sender, Event e)

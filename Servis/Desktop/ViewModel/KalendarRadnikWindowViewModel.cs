@@ -12,6 +12,7 @@ using System.Windows.Media;
 using WpfScheduler;
 namespace Desktop.ViewModel
 {
+    //[TypeDescriptionProvider(typeof(KalendarRadnikWindowViewModelTypeDescriptionProvider))]
     public class KalendarRadnikWindowViewModel: INotifyPropertyChanged
     {
         #region Fields
@@ -36,6 +37,11 @@ namespace Desktop.ViewModel
         bool radioTip3;
         
         #endregion
+
+        public KalendarRadnikWindowViewModel()
+        {
+            _events = PuniListu();
+        }
 
         #region Properties
         public int IdKorisnik
@@ -426,6 +432,7 @@ namespace Desktop.ViewModel
             KalendarRadnikDodajWindow krdw = new KalendarRadnikDodajWindow(this);
             krdw.Show();
             
+            
 
         }
         #endregion
@@ -470,7 +477,33 @@ namespace Desktop.ViewModel
             IsOpen = false;
             OnPropertyChanged("WpfScheduleEvents");
         }
+
+        
         #endregion
+
+        //#region ViewModelRefresh
+        //private static string ErrorViewModelTypeHasToMatch = "The type of the new View Model has to match that of the old View Model.";
+
+        //private Func<object> creatorMethod;
+
+        //public KalendarRadnikWindowViewModel(object innerViewModel, Func<object> creatorMethod = null)
+        //{
+        //    this.InnerViewModel = innerViewModel;
+        //    this.creatorMethod = creatorMethod;
+        //}
+
+        //public KalendarRadnikWindowViewModel(Func<object> creatorMethod)
+        //{
+        //    this.InnerViewModel = (this.creatorMethod = creatorMethod)();            
+        //}
+
+        //public KalendarRadnikWindowViewModel(Type innerViewModelType)
+        //{
+        //    this.InnerViewModel = Activator.CreateInstance(innerViewModelType);
+        //}
+
+        //internal object InnerViewModel { get; private set; }
+        //#endregion
         #endregion
     }
 }
