@@ -185,7 +185,7 @@ namespace WpfScheduler
         public Scheduler()
         {
             InitializeComponent();
-            Mode = WpfScheduler.Mode.Month;
+            Mode = WpfScheduler.Mode.Week;
             Events = new ObservableCollection<Event>();
             SelectedDate = DateTime.Now;
 
