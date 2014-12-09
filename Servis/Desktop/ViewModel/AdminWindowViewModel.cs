@@ -10,10 +10,11 @@ using Servis.HelperClass;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Windows;
+using Mass.Data;
 
 namespace Desktop.ViewModel
 {
-    public class AdminWindowViewModel : INotifyPropertyChanged
+    public class AdminWindowViewModel : INotifyPropertyChanged, IDataErrorInfo
     {
 
         #region private fields
@@ -70,7 +71,7 @@ namespace Desktop.ViewModel
         }
         #endregion     
 
-        #region propertyes
+        #region Properties
 
         public Action CloseAction { get; set; }
         public ObservableCollection<p_get_User_ViewResult> ListaKorisnika
@@ -286,7 +287,7 @@ namespace Desktop.ViewModel
             DateTime dateNow = DateTime.Now;
             string date = dateNow.ToString("yyyy-mm-dd H:mm:ss");
 
-            int idUser = Sesija.id_korisnik;
+            int idUser = Sesija.Id_korisnik;
             client.unesiBug(bugText, idUser, false, date);
 
         }
@@ -423,6 +424,17 @@ namespace Desktop.ViewModel
         {
             ListaBugova = client.ListaBugova();
         }
+
+        public void OdustaniUnos(object parameter)
+        {
+            Name = null;
+            LastName = null;
+            Email = null;
+            Telefon = null;
+            Username = null;
+            Password = null;
+
+        }
         #endregion
 
         #region ICommand User
@@ -471,7 +483,7 @@ namespace Desktop.ViewModel
 
         public ICommand Unesi
         {
-            get { return _Unesi = new RelayCommand(param => InsertUser(param)); }
+            get { return _Unesi = new RelayCommand(param => InsertUser(param), param => this.CanSave); }
             set { _Unesi = value; }
         }
 
@@ -495,7 +507,7 @@ namespace Desktop.ViewModel
 
         public ICommand UnesiEdit
         {
-            get { return _UnesiEdit = new RelayCommand(param => InsertUserEdit(param)); }
+            get { return _UnesiEdit = new RelayCommand(param => InsertUserEdit(param), param => this.CanSaveEdit); }
             set { _UnesiEdit = value; }
         }
 
@@ -521,9 +533,17 @@ namespace Desktop.ViewModel
             get { return _obrisiBug = new RelayCommand(param => BrisanjeBuga(param)); }
             set { _obrisiBug = value; }
         }
+
+        private ICommand _odustani;
+
+        public ICommand Odustani
+        {
+            get { return _odustani = new RelayCommand(param => OdustaniUnos(param)); }
+            set { _odustani = value; }
+        }
         #endregion
 
-        #region INoftiyPropertyChanged Members
+        #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName)
         {
@@ -531,6 +551,223 @@ namespace Desktop.ViewModel
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+        #endregion
+
+        #region IDataErrorInfo
+        public string this[string columnName]
+        {
+            get
+            {
+                string Result = null;
+                if("Name" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Name)) 
+                        Result = "Bitte vorname eingeben.";
+                }
+                else if ("LastName" == columnName)
+                {
+                    if (String.IsNullOrEmpty(LastName))
+                        Result = "Bite name eingeben.";
+                }
+                else if ("Username" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Username))
+                        Result = "Bitte benutzer name eingeben.";
+                }
+                else if ("Password" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Password))
+                        Result = "Bitte passwort eingeben.";
+                }
+                else if("Email" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Email))
+                        Result = "Bitte mail eingeben.";
+                }
+                else if ("Telefon" == columnName)
+                {
+                    if (String.IsNullOrEmpty(Telefon))
+                        Result = "Bitte telefon eingeben.";
+                }
+
+                else if("IsValid" == columnName)
+                {
+                    Result = true.ToString();
+                }
+
+                if ("NameEdit" == columnName)
+                {
+                    if (String.IsNullOrEmpty(NameEdit))
+                        Result = "Bitte vorname eingeben.";
+                }
+                else if ("LastNameEdit" == columnName)
+                {
+                    if (String.IsNullOrEmpty(LastNameEdit))
+                        Result = "Bite name eingeben.";
+                }
+                else if ("UsernameEdit" == columnName)
+                {
+                    if (String.IsNullOrEmpty(UsernameEdit))
+                        Result = "Bitte benutzer name eingeben.";
+                }
+                else if ("PasswordEdit" == columnName)
+                {
+                    if (String.IsNullOrEmpty(PasswordEdit))
+                        Result = "Bitte passwort eingeben.";
+                }
+                else if ("EmailEdit" == columnName)
+                {
+                    if (String.IsNullOrEmpty(EmailEdit))
+                        Result = "Bitte mail eingeben.";
+                }
+                else if ("TelefonEdit" == columnName)
+                {
+                    if (String.IsNullOrEmpty(TelefonEdit))
+                        Result = "Bitte telefon eingeben.";
+                }
+
+                else if ("IsValidEdit" == columnName)
+                {
+                    Result = true.ToString();
+                }
+
+                return Result;
+            }
+        }
+
+        static readonly string[] ValidatedProperties = 
+        {
+            "Name",
+            "LastName",
+            "Username",
+            "Password",
+            "Email",
+            "Telefon"
+        };
+
+        public bool IsValid
+        {
+            get
+            {
+                foreach (string property in ValidatedProperties)
+                {
+                    if (GetValidationError(property) != null)
+                        return false;
+                }
+                return true;
+            }
+
+            set
+            {
+                IsValid = value;
+            }
+        }
+
+        private string GetValidationError(string propertyName)
+        {
+            string error = null;
+            switch(propertyName)
+            {
+                case "Name":
+                    error = this["Name"];
+                    break;
+                case "LastName":
+                    error = this["LastName"];
+                    break;
+                case "Username":
+                    error = this["Username"];
+                    break;
+                case "Password":
+                    error = this["Password"];
+                    break;
+                case "Email":
+                    error = this["Email"];
+                    break;
+                case "Telefon":
+                    error = this["Telefon"];
+                    break;
+                default:
+                    error = null;
+                    throw new Exception("Unexpected property being validated on Service");
+            }
+            return error;
+        }
+
+        protected bool CanSave
+        {
+            get
+            {
+                return IsValid;
+            }
+        }
+
+        static readonly string[] ValidatedPropertiesEdit = 
+        {
+            "NameEdit",
+            "LastNameEdit",
+            "UsernameEdit",
+            "PasswordEdit",
+            "EmailEdit",
+            "TelefonEdit"
+        };
+
+        public bool IsValidEdit
+        {
+            get
+            {
+                foreach (string property in ValidatedPropertiesEdit)
+                {
+                    if (GetValidationErrorEdit(property) != null)
+                        return false;
+                }
+                return true;
+            }
+        }
+
+        private string GetValidationErrorEdit(string propertyName)
+        {
+            string error = null;
+            switch (propertyName)
+            {
+                case "NameEdit":
+                    error = this["NameEdit"];
+                    break;
+                case "LastNameEdit":
+                    error = this["LastNameEdit"];
+                    break;
+                case "UsernameEdit":
+                    error = this["UsernameEdit"];
+                    break;
+                case "PasswordEdit":
+                    error = this["PasswordEdit"];
+                    break;
+                case "EmailEdit":
+                    error = this["EmailEdit"];
+                    break;
+                case "TelefonEdit":
+                    error = this["TelefonEdit"];
+                    break;
+                default:
+                    error = null;
+                    throw new Exception("Unexpected property being validated on Service");
+            }
+            return error;
+        }
+
+        protected bool CanSaveEdit
+        {
+            get
+            {
+                return IsValidEdit;
+            }
+        }
+
+        
+
+        public string Error
+        {
+            get { throw new NotImplementedException(); }
         }
         #endregion
     }

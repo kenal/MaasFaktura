@@ -60,6 +60,8 @@ C:\Users\home\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\WpfSc
 C:\Users\home\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\WpfScheduler.csproj.GenerateResource.Cache
 C:\Users\home\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\WpfScheduler.dll
 C:\Users\home\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\WpfScheduler.pdb
+<<<<<<< HEAD
+=======
 C:\Users\Maasgmbh\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\bin\Debug\WpfScheduler.dll
 C:\Users\Maasgmbh\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\bin\Debug\WpfScheduler.pdb
 C:\Users\Maasgmbh\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\MonthDay.baml
@@ -83,3 +85,4 @@ C:\Users\Maasgmbh\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\W
 C:\Users\Maasgmbh\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\WpfScheduler.csproj.GenerateResource.Cache
 C:\Users\Maasgmbh\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\WpfScheduler.dll
 C:\Users\Maasgmbh\Documents\GitHub\MaasFakturav2\Servis\WpfScheduler\obj\Debug\WpfScheduler.pdb
+>>>>>>> a07db39a271c2dd9a612323dce1bd6cfd4170232

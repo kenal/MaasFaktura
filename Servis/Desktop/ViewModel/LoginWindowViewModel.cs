@@ -9,6 +9,8 @@ using System.Windows;
 using Servis.HelperClass;
 using System.Windows.Input;
 using System.Windows.Controls;
+using Desktop.ViewModel;
+using System.Windows.Documents;
 
 namespace Servis.ViewModel
 {
@@ -21,6 +23,7 @@ namespace Servis.ViewModel
         private string Validacija = "Bitte loggen Sie sich mit Ihrem Benutzemamen und Passwort.";
         private string pozadina = "#4B4D4B";
         private string vidljivost = "Visible";
+        public static int id;
 
         
         #endregion
@@ -94,6 +97,14 @@ namespace Servis.ViewModel
             set { _Closed = value; }
         }
 
+        private ICommand _link;
+
+        public ICommand Link
+        {
+            get { return _link = new RelayCommand(param => LinkNaMaag(param)); }
+            set { _link = value; }
+        }
+
         #endregion
 
         #region Methods
@@ -108,15 +119,17 @@ namespace Servis.ViewModel
             var password = passwordBox.Password;
             if (KorisnickoIme != null && password != null)
             {
-                int id = client.LoginValidacija(KorisnickoIme, password);
+                 id = client.LoginValidacija(KorisnickoIme, password);
                 if (id != 0)
                 {
                     Validacija1 = "Erfolgreiche Anwendungen";
                     Pozadina = "LimeGreen";
+                    Sesija.Id_korisnik = id;
                     MainWindow mw = new MainWindow();
                     mw.Show();
                     Vidljivost = "Collapsed";
-                    Sesija.id_korisnik = id;
+                   
+                   
 
                 }
                 else
@@ -128,6 +141,11 @@ namespace Servis.ViewModel
             Pozadina = "#CC9999";
         }
 
+        public void LinkNaMaag(object parameter)
+        {
+            Hyperlink hlink = new Hyperlink();
+            hlink.NavigateUri = new Uri("http://www.maag-projekt.com/");
+        }
         #endregion
 
         #region INotifyPropertyChanged Members

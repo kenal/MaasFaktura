@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,7 +21,7 @@ namespace MassProject
 		public BestellungWindow()
 		{
 			this.InitializeComponent();
-			
+            this.DataContext = new BestellungWindowViewModel();
 			// Insert code required on object creation below this point.
 		}
 

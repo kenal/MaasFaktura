@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MassProject;
+using Desktop.ViewModel;
 
 namespace Desktop
 {
@@ -25,6 +26,7 @@ namespace Desktop
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
 
             DataTable myDataTable = new DataTable();
             DataTable myDataTable1 = new DataTable();
@@ -327,6 +329,12 @@ namespace Desktop
             //Show bug list
             showBugWindow showBugWindow = new showBugWindow();
             showBugWindow.Show();
+        }
+
+        private void btnKal_Click(object sender, RoutedEventArgs e)
+        {
+            KalendarRadnikWindow KalendarWindow = new KalendarRadnikWindow();
+            KalendarWindow.Show();
         }
 
         

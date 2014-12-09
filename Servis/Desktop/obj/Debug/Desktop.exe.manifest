@@ -97,14 +97,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="931752">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="819112">
       <assemblyIdentity name="Desktop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H4AYWd6TWjc7/tkexRKJhxv/DnC4Je1EQMK/0Agze8w=</dsig:DigestValue>
+        <dsig:DigestValue>1zFDyeX8p/MhQDp89QALD7ysupsht/D0dKvXeAjo6O0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -116,7 +116,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>B7+we7ZpJK20k08pkbnBssSGfpOgWU6+Lhi1K1R58+g=</dsig:DigestValue>
+        <dsig:DigestValue>BRv5lfi2Rp5J7nkuu18u+F5A7SKf68tQL0obodUmTHI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -140,7 +140,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1g+Cey3ob7YohOat5gv19mjiz92wnuUAQVMKnbuTyQg=</dsig:DigestValue>
+        <dsig:DigestValue>tA6E2tofyQUQstiHy4oSBi9whyTFT1AXnStuq6Q9h7U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -277,14 +277,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WpfScheduler.dll" size="63488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WpfScheduler.dll" size="62464">
       <assemblyIdentity name="WpfScheduler" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ep3yNB6kwCQ+9oVJPL4W21aQl2KHnRBofhjYELEhYPc=</dsig:DigestValue>
+        <dsig:DigestValue>CgjeYgklWNbnbXppsd10Vaj6BUk5Xlu8RCzXqDvf/hc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

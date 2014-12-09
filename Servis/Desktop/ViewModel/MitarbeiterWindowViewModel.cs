@@ -1,4 +1,5 @@
 ﻿using Desktop.Service;
+using Mass.Data;
 using Servis.HelperClass;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Desktop.ViewModel
@@ -89,6 +91,9 @@ namespace Desktop.ViewModel
         private int _kolicinaRadnika = 10;
         private ObservableCollection<tbl_radnik> ListaPage = new ObservableCollection<tbl_radnik>();
         private List<int> _brojPrikazanihRadnika = new List<int>() { 10, 20, 25 };
+        private bool? status;
+
+       
 
        
    
@@ -96,6 +101,12 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Properties
+
+        public bool? Status
+        {
+            get { return status; }
+            set { status = value; OnPropertyChanged("Status"); }
+        }
         public List<int> BrojPrikazanihRadnika
         {
             get { return _brojPrikazanihRadnika; }
@@ -463,439 +474,463 @@ namespace Desktop.ViewModel
        }
        #endregion
 
-       #region Methods
-       public void Paginacija(int stranica)
-       {
-           int neUzimati = 0;
-
-           if (ListaRadnika != null)
+        #region Methods
+           public void Paginacija(int stranica)
            {
-               int brojPrikaza = stranica * KolicinaRadnika;
-               if (brojPrikaza > ListaRadnika.Count())
-                   brojPrikaza = ListaRadnika.Count();
-               int ostatak = brojPrikaza % KolicinaRadnika;
-               if (ostatak != 0)
-                   neUzimati = brojPrikaza - ostatak;
-               else
-                   neUzimati = brojPrikaza - KolicinaRadnika;
-               var x = ListaRadnika.Skip(neUzimati).Take(KolicinaRadnika);
-               ListaPage1.Clear();
-               ListaPage1 = new ObservableCollection<tbl_radnik>(x);
+               int neUzimati = 0;
 
-           }
-           MaxStranica();
-          
-       }
-       public void FillGridRadnikPage(object parameter)
-       {
-           Paginacija(BrojStranice);
-
-       }
-       public void FillGridRadnikPage2(object parameter)
-       {
-           BrojStranice++;
-           Paginacija(BrojStranice);
-
-       }
-
-       public void FillGridRadnikBack(object parameter)
-       {
-           BrojStranice--;
-           Paginacija(BrojStranice);
-       }
-
-       public void FillGridRadnikFirst(object parameter)
-       {
-           BrojStranice = 1;
-           Paginacija(BrojStranice);
-       }
-
-       public void FillGridRadnikLast(object parameter)
-       {
-           if (ListaRadnika != null)
-           {
-               double pozicija = Convert.ToDouble(ListaRadnika.Count()) / KolicinaRadnika;
-               if (pozicija % 1 == 0)
-                   BrojStranice = Convert.ToInt32(pozicija);
-               else
+               if (ListaRadnika != null)
                {
-                   BrojStranice = Convert.ToInt32(pozicija - ((pozicija * 10) % 10)/10) + 1;
+                   int brojPrikaza = stranica * KolicinaRadnika;
+                   if (brojPrikaza > ListaRadnika.Count())
+                       brojPrikaza = ListaRadnika.Count();
+                   int ostatak = brojPrikaza % KolicinaRadnika;
+                   if (ostatak != 0)
+                       neUzimati = brojPrikaza - ostatak;
+                   else
+                       neUzimati = brojPrikaza - KolicinaRadnika;
+                   var x = ListaRadnika.Skip(neUzimati).Take(KolicinaRadnika);
+                   ListaPage1.Clear();
+                   ListaPage1 = new ObservableCollection<tbl_radnik>(x);
+
                }
-                   
+               MaxStranica();
+          
+           }
+
+           public void PromjeniStatus(object parameter)
+           {
+           
+               if (SelektovaniRadnik.status == true)
+               {
+                   client.ChangeWorkerStatus(SelektovaniRadnik.id_radnik, false);
+               }
+               else
+                   client.ChangeWorkerStatus(SelektovaniRadnik.id_radnik, true);
+               PopuniGrid(parameter);
                Paginacija(BrojStranice);
            }
 
-       }
-
-       public void MaxStranica()
-       {
-           if (ListaRadnika != null)
+      
+           public void FillGridRadnikPage(object parameter)
            {
-               int a = ListaRadnika.Count();
-               double pozicija = Convert.ToDouble(a) / KolicinaRadnika;
-               if (pozicija % 1 == 0)
-                   MaxStranica1 = Convert.ToInt32(pozicija);
-               else
-               {
-                   MaxStranica1 = Convert.ToInt32(pozicija - ((pozicija * 10) % 10) / 10) + 1;
-               }                 
-               
+               Paginacija(BrojStranice);
+
            }
-       }
+           public void FillGridRadnikPage2(object parameter)
+           {
+               BrojStranice++;
+               Paginacija(BrojStranice);
+
+           }
+
+           public void FillGridRadnikBack(object parameter)
+           {
+               BrojStranice--;
+               Paginacija(BrojStranice);
+           }
+
+           public void FillGridRadnikFirst(object parameter)
+           {
+               BrojStranice = 1;
+               Paginacija(BrojStranice);
+           }
+
+           public void FillGridRadnikLast(object parameter)
+           {
+               if (ListaRadnika != null)
+               {
+                   double pozicija = Convert.ToDouble(ListaRadnika.Count()) / KolicinaRadnika;
+                   if (pozicija % 1 == 0)
+                       BrojStranice = Convert.ToInt32(pozicija);
+                   else
+                   {
+                       BrojStranice = Convert.ToInt32(pozicija - ((pozicija * 10) % 10)/10) + 1;
+                   }
+                   
+                   Paginacija(BrojStranice);
+               }
+
+           }
+
+           public void MaxStranica()
+           {
+               if (ListaRadnika != null)
+               {
+                   int a = ListaRadnika.Count();
+                   double pozicija = Convert.ToDouble(a) / KolicinaRadnika;
+                   if (pozicija % 1 == 0)
+                       MaxStranica1 = Convert.ToInt32(pozicija);
+                   else
+                   {
+                       MaxStranica1 = Convert.ToInt32(pozicija - ((pozicija * 10) % 10) / 10) + 1;
+                   }                 
+               
+               }
+           }
 
      
-       public void TraziRadnika(object parameter)
-       {
-           ListaRadnika = client.PretraziRadnika(Pretraga);
-       }
-       public void Close()
-       {
-           CloseAction();
+           public void TraziRadnika(object parameter)
+           {
+               ListaRadnika = client.PretraziRadnika(Pretraga);
+           }
+           public void Close()
+           {
+               CloseAction();
           
-       }
-       public void Unesi(object parameter)
-       {
-           if (RadioFrau == true)
-           {
-               Titula =1;
            }
-           if (RadioHerr == true)
+           public void Unesi(object parameter)
            {
-               Titula = 0;
-           }
+               if (RadioFrau == true)
+               {
+                   Titula =1;
+               }
+               if (RadioHerr == true)
+               {
+                   Titula = 0;
+               }
     
-           client.UnesiRadnika(MitarbeiterNr, Titula, Name, Vorname, Adresse, Telefon, Telefon2, Handy, Fax, Email, Gehalt, Stundenlohn, Urlaubstage, UrlaubstageDuzan, AnzahlGehalter,
-           Krankenheitstage, Bank, Blz, Bic, KtoNr, Iban, Kontoinhaber, Notiz, Geburstdatum, SelektovaniKorisnik.id_korisnik);
-           MitarbeiterNr= client.MitarbeiterNr();
-           Titula=0;
-           Vorname=null; 
-           Name=null;
-           //Geburstdatum=;
-           Adresse=null;
-           Telefon=null; 
-           Telefon2=null; 
-           Handy=null;
-           Skype=null; 
-           Fax=null; 
-           Email=null;
-           Gehalt=0;
-           Stundenlohn=0;
-           Urlaubstage=null;
-           UrlaubstageDuzan=null;
-           AnzahlGehalter=0;
-           Wochenstunden=0;
-           Krankenheitstage=null; 
-           Bank=null;
-           Blz=null;
-           KtoNr=null;
-           Bic=null;
-           Iban=null;
-           Kontoinhaber=null;
-           Notiz = null;
-           PopuniGrid(parameter);
-           Paginacija(BrojStranice);
+               client.UnesiRadnika(MitarbeiterNr, Titula, Name, Vorname, Adresse, Telefon, Telefon2, Handy, Fax,Skype, Email, Gehalt, Stundenlohn, Urlaubstage, UrlaubstageDuzan, AnzahlGehalter,
+               Krankenheitstage, Bank, Blz, Bic, KtoNr, Iban, Kontoinhaber, Notiz, Geburstdatum, SelektovaniKorisnik.id_korisnik);
+               MitarbeiterNr= client.MitarbeiterNr();
+               Titula=0;
+               Vorname=null; 
+               Name=null;
+               //Geburstdatum=;
+               Adresse=null;
+               Telefon=null; 
+               Telefon2=null; 
+               Handy=null;
+               Skype=null; 
+               Fax=null; 
+               Email=null;
+               Gehalt=0;
+               Stundenlohn=0;
+               Urlaubstage=null;
+               UrlaubstageDuzan=null;
+               AnzahlGehalter=0;
+               Wochenstunden=0;
+               Krankenheitstage=null; 
+               Bank=null;
+               Blz=null;
+               KtoNr=null;
+               Bic=null;
+               Iban=null;
+               Kontoinhaber=null;
+               Notiz = null;
+               PopuniGrid(parameter);
+               Paginacija(BrojStranice);
 
-       }
-       public void PopuniGrid(object parameter)
-       {
-           ListaRadnika = client.ListaRadnika();
-           MitarbeiterNr = client.MitarbeiterNr();
-       }
-       public void Odustani(object parameter)
-       {
-           MitarbeiterNr = 0;
-           Titula = 0;
-           Vorname = null;
-           Name = null;
-           //Geburstdatum=;
-           Adresse = null;
-           RadioFrau = false;
-           RadioHerr = false;
-           Telefon = null;
-           Telefon2 = null;
-           Handy = null;
-           Skype = null;
-           Fax = null;
-           Email = null;
-           Gehalt = 0;
-           Stundenlohn = 0;
-           Urlaubstage = null;
-           UrlaubstageDuzan = null;
-           AnzahlGehalter = 0;
-           Wochenstunden = 0;
-           Krankenheitstage = null;
-           Bank = null;
-           Blz = null;
-           KtoNr = null;
-           Bic = null;
-           Iban = null;
-           Kontoinhaber = null;
-           Notiz = null;
-       }
-       public void popuniCombo(object parameter)
-       {
-           ListaKorisnika = client.ComboKorisnici();
-       }
+           }
+           public void PopuniGrid(object parameter)
+           {
+               ListaRadnika = client.ListaRadnika();
+               MitarbeiterNr = client.MitarbeiterNr();
+           }
+           public void Odustani(object parameter)
+           {
+               MitarbeiterNr = 0;
+               Titula = 0;
+               Vorname = null;
+               Name = null;
+               //Geburstdatum=;
+               Adresse = null;
+               RadioFrau = false;
+               RadioHerr = false;
+               Telefon = null;
+               Telefon2 = null;
+               Handy = null;
+               Skype = null;
+               Fax = null;
+               Email = null;
+               Gehalt = 0;
+               Stundenlohn = 0;
+               Urlaubstage = null;
+               UrlaubstageDuzan = null;
+               AnzahlGehalter = 0;
+               Wochenstunden = 0;
+               Krankenheitstage = null;
+               Bank = null;
+               Blz = null;
+               KtoNr = null;
+               Bic = null;
+               Iban = null;
+               Kontoinhaber = null;
+               Notiz = null;
+           }
+           public void popuniCombo(object parameter)
+           {
+               ListaKorisnika = client.ComboKorisnici();
+           }
 
-       public void PopuniEditRadnik(object parameter)
-       {
-           MitarbeiterNrEdit = Convert.ToInt32(SelektovaniRadnik.sifra_radnik);
-           Titula = SelektovaniRadnik.tip;
-           if (Titula == 0)
+           public void PopuniEditRadnik(object parameter)
            {
-               RadioHerrEdit = true;
+               MitarbeiterNrEdit = Convert.ToInt32(SelektovaniRadnik.sifra_radnik);
+               Titula = SelektovaniRadnik.tip;
+               if (Titula == 0)
+               {
+                   RadioHerrEdit = true;
+               }
+               if (Titula == 1)
+               {
+                   RadioFrauEdit = true;
+               }
+               NameEdit= SelektovaniRadnik.ime;
+               VornameEdit= SelektovaniRadnik.prezime;
+               AdresseEdit= SelektovaniRadnik.adresa;
+               TelefonEdit= SelektovaniRadnik.tel1;
+               Telefon2Edit= SelektovaniRadnik.tel2;
+               HandyEdit= SelektovaniRadnik.mobitel;
+               FaxEdit= SelektovaniRadnik.fax;
+               SkypeEdit = SelektovaniRadnik.skype;
+               EmailEdit= SelektovaniRadnik.email;
+               GehaltEdit= (float)SelektovaniRadnik.zarada;
+               StundenlohnEdit= (float)SelektovaniRadnik.satnica;
+               UrlaubstageEdit= SelektovaniRadnik.odmor;
+               UrlaubstageDuzanEdit= SelektovaniRadnik.odmor_na;
+               AnzahlGehalterEdit = (float)SelektovaniRadnik.broj_plate;
+               KrankenheitstageEdit= SelektovaniRadnik.bolovanje;
+               BankEdit= SelektovaniRadnik.banka;
+               BlzEdit= SelektovaniRadnik.blz;
+               BicEdit= SelektovaniRadnik.bic;
+               KtoNrEdit= SelektovaniRadnik.KtoNr;
+               IbanEdit= SelektovaniRadnik.iban;
+               KontoinhaberEdit= SelektovaniRadnik.vlasnik_racuna;
+               NotizEdit= SelektovaniRadnik.biljeska;
+               if (SelektovaniRadnik.datum != null)
+                   GeburstdatumEdit = Convert.ToDateTime(SelektovaniRadnik.datum);
+               else
+                   GeburstdatumEdit = DateTime.Now;
            }
-           if (Titula == 1)
+           public void RadnikEdit(object parameter)
            {
-               RadioFrauEdit = true;
-           }
-           NameEdit= SelektovaniRadnik.ime;
-           VornameEdit= SelektovaniRadnik.prezime;
-           AdresseEdit= SelektovaniRadnik.adresa;
-           TelefonEdit= SelektovaniRadnik.tel1;
-           Telefon2Edit= SelektovaniRadnik.tel2;
-           HandyEdit= SelektovaniRadnik.mobitel;
-           FaxEdit= SelektovaniRadnik.fax;
-           EmailEdit= SelektovaniRadnik.email;
-           GehaltEdit= (float)SelektovaniRadnik.zarada;
-           StundenlohnEdit= (float)SelektovaniRadnik.satnica;
-           UrlaubstageEdit= SelektovaniRadnik.odmor;
-           UrlaubstageDuzanEdit= SelektovaniRadnik.odmor_na;
-           AnzahlGehalterEdit = (float)SelektovaniRadnik.broj_plate;
-           KrankenheitstageEdit= SelektovaniRadnik.bolovanje;
-           BankEdit= SelektovaniRadnik.banka;
-           BlzEdit= SelektovaniRadnik.blz;
-           BicEdit= SelektovaniRadnik.bic;
-           KtoNrEdit= SelektovaniRadnik.KtoNr;
-           IbanEdit= SelektovaniRadnik.iban;
-           KontoinhaberEdit= SelektovaniRadnik.vlasnik_racuna;
-           NotizEdit= SelektovaniRadnik.biljeska;
-           if (SelektovaniRadnik.datum != null)
-               GeburstdatumEdit = Convert.ToDateTime(SelektovaniRadnik.datum);
-           else
-               GeburstdatumEdit = DateTime.Now;
-       }
-       public void RadnikEdit(object parameter)
-       {
            
-           tbl_radnik radnik = new tbl_radnik();
-           radnik.id_radnik = SelektovaniRadnik.id_radnik;
-           radnik.sifra_radnik = MitarbeiterNrEdit;
-           radnik.tip = TitulaEdit;
-           radnik.ime = NameEdit;
-           radnik.prezime = VornameEdit;
-           radnik.adresa = AdresseEdit;
-           radnik.tel1 = TelefonEdit;
-           radnik.tel2 = Telefon2Edit;
-           radnik.mobitel = HandyEdit;
-           radnik.fax = FaxEdit;
-           radnik.email = EmailEdit;
-           radnik.zarada = Convert.ToDecimal(GehaltEdit);
-           radnik.satnica = Convert.ToDecimal(StundenlohnEdit);
-           radnik.odmor = UrlaubstageEdit;
-           radnik.odmor_na = UrlaubstageDuzanEdit;
-           radnik.broj_plate = Convert.ToDecimal(AnzahlGehalterEdit);
-           radnik.bolovanje = KrankenheitstageEdit;
-           radnik.banka = BankEdit;
-           radnik.blz = BlzEdit;
-           radnik.bic = BicEdit;
-           radnik.KtoNr = KtoNrEdit;
-           radnik.iban = IbanEdit;
-           radnik.vlasnik_racuna = KontoinhaberEdit;
-           radnik.biljeska = NotizEdit;
-           radnik.datum = GeburstdatumEdit;
+               tbl_radnik radnik = new tbl_radnik();
+               radnik.id_radnik = SelektovaniRadnik.id_radnik;
+               radnik.sifra_radnik = MitarbeiterNrEdit;
+               radnik.tip = TitulaEdit;
+               radnik.ime = NameEdit;
+               radnik.prezime = VornameEdit;
+               radnik.adresa = AdresseEdit;
+               radnik.tel1 = TelefonEdit;
+               radnik.tel2 = Telefon2Edit;
+               radnik.mobitel = HandyEdit;
+               radnik.fax = FaxEdit;
+               radnik.skype = SkypeEdit;
+               radnik.email = EmailEdit;
+               radnik.zarada = Convert.ToDecimal(GehaltEdit);
+               radnik.satnica = Convert.ToDecimal(StundenlohnEdit);
+               radnik.odmor = UrlaubstageEdit;
+               radnik.odmor_na = UrlaubstageDuzanEdit;
+               radnik.broj_plate = Convert.ToDecimal(AnzahlGehalterEdit);
+               radnik.bolovanje = KrankenheitstageEdit;
+               radnik.banka = BankEdit;
+               radnik.blz = BlzEdit;
+               radnik.bic = BicEdit;
+               radnik.KtoNr = KtoNrEdit;
+               radnik.iban = IbanEdit;
+               radnik.vlasnik_racuna = KontoinhaberEdit;
+               radnik.biljeska = NotizEdit;
+               radnik.datum = GeburstdatumEdit;
          
-           client.UpdateRadnika(radnik,Convert.ToInt32(ComboKorisnik.id_korisnik));
-           PopuniGrid(parameter);
-           Paginacija(BrojStranice);
-           ZatvoriWindow.Execute(this);
-           SelektovaniRadnik = null;
+               client.UpdateRadnika(radnik,Convert.ToInt32(ComboKorisnik.id_korisnik));
+               PopuniGrid(parameter);
+               Paginacija(BrojStranice);
+               ZatvoriWindow.Execute(this);
+               SelektovaniRadnik = null;
 
-       }
-       public void OtvoriEditRadnik(object parameter)
-       {
-           MitarbeiterWindowEdit MWE = new MitarbeiterWindowEdit(this);
-           MWE.Show();
-       }
-       public void BrisanjeRadnika(object parameter)
-       {
+           }
+           public void OtvoriEditRadnik(object parameter)
+           {
+               MitarbeiterWindowEdit MWE = new MitarbeiterWindowEdit(this);
+               MWE.Show();
+           }
+           public void BrisanjeRadnika(object parameter)
+           {
 
-           int sifraRadnik = SelektovaniRadnik.sifra_radnik;
-           client.DeleteRadnik(sifraRadnik);
-           PopuniGrid(parameter);
-           Paginacija(BrojStranice);
+               int sifraRadnik = SelektovaniRadnik.sifra_radnik;
+               client.DeleteRadnik(sifraRadnik);
+               PopuniGrid(parameter);
+               Paginacija(BrojStranice);
 
        
-       }
-
-       public void OdaberiSelektovanogKorisnika(object parameter)
-       {
-           SelektovaniKorisnikEdit = client.VratiKorisnika(SelektovaniRadnik.id_korisnik_FK);
-       }
-       public void SelektovaniIndex(object parameter)
-       {
-      
-           for (int i = 0; i < ListaKorisnika.Count(); i++)
-           {
-               if (ListaKorisnika[i].id_korisnik == SelektovaniKorisnikEdit.id_korisnik)
-               {
-                   ComboKorisnik = ListaKorisnika[i];
-                   break;
-               }
-              
            }
+
+           public void OdaberiSelektovanogKorisnika(object parameter)
+           {
+               SelektovaniKorisnikEdit = client.VratiKorisnika(SelektovaniRadnik.id_korisnik_FK);
+           }
+           public void SelektovaniIndex(object parameter)
+           {
+      
+               for (int i = 0; i < ListaKorisnika.Count(); i++)
+               {
+                   if (ListaKorisnika[i].id_korisnik == SelektovaniKorisnikEdit.id_korisnik)
+                   {
+                       ComboKorisnik = ListaKorisnika[i];
+                       break;
+                   }
+              
+               }
            
-       }
-       public void ZatvoriEditRadnik(object parameter)
-       {
-           ZatvoriWindow.Execute(this);
-       }
+           }
+           public void ZatvoriEditRadnik(object parameter)
+           {
+               ZatvoriWindow.Execute(this);
+           }
 
      
-       #endregion
+         #endregion
 
 
-       #region ICommand Members
-       private ICommand _search;
+        #region ICommand Members
+           private ICommand _search;
 
-       public ICommand Search
-       {
-           get { return _search = new RelayCommand(param =>TraziRadnika(param)); }
-           set { _search = value; }
-       }
-       private ICommand _closeEditRadnik;
+           public ICommand Search
+           {
+               get { return _search = new RelayCommand(param =>TraziRadnika(param)); }
+               set { _search = value; }
+           }
+           private ICommand _closeEditRadnik;
 
-       public ICommand CloseEditRadnik
-       {
-           get { return _closeEditRadnik = new RelayCommand(param => ZatvoriEditRadnik(param)); }
-           set { _closeEditRadnik = value; }
-       }
+           public ICommand CloseEditRadnik
+           {
+               get { return _closeEditRadnik = new RelayCommand(param => ZatvoriEditRadnik(param)); }
+               set { _closeEditRadnik = value; }
+           }
 
-       private ICommand _cancel;
-       public ICommand Cancel
-       {
-           get { return _cancel = new RelayCommand(param=> Odustani(param)); }
-           set { _cancel = value; }
-       }
+           private ICommand _cancel;
+           public ICommand Cancel
+           {
+               get { return _cancel = new RelayCommand(param=> Odustani(param)); }
+               set { _cancel = value; }
+           }
 
-       private ICommand _selektuj;
+           private ICommand _selektuj;
 
-       public ICommand Selektuj
-       {
-           get { return _selektuj = new RelayCommand(param => SelektovaniIndex(param)); }
-           set { _selektuj = value; }
-       }
+           public ICommand Selektuj
+           {
+               get { return _selektuj = new RelayCommand(param => SelektovaniIndex(param)); }
+               set { _selektuj = value; }
+           }
 
-       private ICommand _comboSelektovan;
+           private ICommand _comboSelektovan;
 
-       public ICommand ComboSelektovan
-       {
-           get { return _comboSelektovan = new RelayCommand(param => OdaberiSelektovanogKorisnika(param)); }
-           set { _comboSelektovan = value; }
-       }
+           public ICommand ComboSelektovan
+           {
+               get { return _comboSelektovan = new RelayCommand(param => OdaberiSelektovanogKorisnika(param)); }
+               set { _comboSelektovan = value; }
+           }
 
-       private ICommand _otvoriEditRadnik;
+           private ICommand _otvoriEditRadnik;
 
-       public ICommand OtvoriEditRadnik1
-       {
-           get { return _otvoriEditRadnik = new RelayCommand(param =>OtvoriEditRadnik(param)); }
-           set { _otvoriEditRadnik = value; }
-       }
+           public ICommand OtvoriEditRadnik1
+           {
+               get { return _otvoriEditRadnik = new RelayCommand(param =>OtvoriEditRadnik(param)); }
+               set { _otvoriEditRadnik = value; }
+           }
 
-       private ICommand _popuniEditWindow;
+           private ICommand _popuniEditWindow;
 
-       public ICommand PopuniEditWindow
-       {
-           get { return _popuniEditWindow = new RelayCommand(param => PopuniEditRadnik(param)); }
-           set { _popuniEditWindow = value;  }
-       }
+           public ICommand PopuniEditWindow
+           {
+               get { return _popuniEditWindow = new RelayCommand(param => PopuniEditRadnik(param)); }
+               set { _popuniEditWindow = value;  }
+           }
 
-       private ICommand zatvoriWindow;
+           private ICommand zatvoriWindow;
 
-       public ICommand ZatvoriWindow
-       {
-           get { return zatvoriWindow = new RelayCommand(param => Close()); }
-           set { zatvoriWindow = value; }
-       }
+           public ICommand ZatvoriWindow
+           {
+               get { return zatvoriWindow = new RelayCommand(param => Close()); }
+               set { zatvoriWindow = value; }
+           }
 
-       private ICommand _obrisiRadnika;
+           private ICommand _obrisiRadnika;
 
-       public ICommand ObrisiRadnika
-       {
-           get { return _obrisiRadnika = new RelayCommand(param => BrisanjeRadnika(param)); }
-           set { _obrisiRadnika = value; }
-       }
+           public ICommand ObrisiRadnika
+           {
+               get { return _obrisiRadnika = new RelayCommand(param => BrisanjeRadnika(param)); }
+               set { _obrisiRadnika = value; }
+           }
 
-       private ICommand _urediRadnika;
+           private ICommand _urediRadnika;
 
-       public ICommand UrediRadnika
-       {
-           get { return _urediRadnika = new RelayCommand(param => RadnikEdit(param), param => this.CanSaveEdit); }
-           set { _urediRadnika = value; }
-       }
+           public ICommand UrediRadnika
+           {
+               get { return _urediRadnika = new RelayCommand(param => RadnikEdit(param), param => this.CanSaveEdit); }
+               set { _urediRadnika = value; }
+           }
 
-       private ICommand PopuniComboKorisnika;
+           private ICommand PopuniComboKorisnika;
 
-       public ICommand PopuniComboKorisnika1
-       {
-           get { return PopuniComboKorisnika= new RelayCommand(param=> popuniCombo(param)); }
-           set { PopuniComboKorisnika = value; }
-       }
+           public ICommand PopuniComboKorisnika1
+           {
+               get { return PopuniComboKorisnika= new RelayCommand(param=> popuniCombo(param)); }
+               set { PopuniComboKorisnika = value; }
+           }
 
-       private ICommand _popuniGridListomRadnika;
+           private ICommand _popuniGridListomRadnika;
 
-       public ICommand PopuniGridListomRadnika
-       {
-           get { return _popuniGridListomRadnika = new RelayCommand(param=> PopuniGrid(param)); }
-           set { _popuniGridListomRadnika = value; }
-       }
+           public ICommand PopuniGridListomRadnika
+           {
+               get { return _popuniGridListomRadnika = new RelayCommand(param=> PopuniGrid(param)); }
+               set { _popuniGridListomRadnika = value; }
+           }
 
-       private ICommand _dodajRadnika;
+           private ICommand _dodajRadnika;
 
-       public ICommand DodajRadnika
-       {
-           get { return _dodajRadnika = new RelayCommand(param=> Unesi(param), param=> this.CanSave); }
-           set { _dodajRadnika = value; }
-       }
+           public ICommand DodajRadnika
+           {
+               get { return _dodajRadnika = new RelayCommand(param=> Unesi(param), param=> this.CanSave); }
+               set { _dodajRadnika = value; }
+           }
 
-       private ICommand _paging;
+           private ICommand _paging;
 
-       public ICommand Paging
-       {
-           get { return _paging = new RelayCommand(param => FillGridRadnikPage(param)); }
-           set { _paging = value; }
-       }
-       private ICommand _paging2;
+           public ICommand Paging
+           {
+               get { return _paging = new RelayCommand(param => FillGridRadnikPage(param)); }
+               set { _paging = value; }
+           }
+           private ICommand _paging2;
 
-       public ICommand Paging2
-       {
-           get { return _paging2 = new RelayCommand(param => FillGridRadnikPage2(param),param => this.CanNext); }
-           set { _paging2 = value; }
-       }
+           public ICommand Paging2
+           {
+               get { return _paging2 = new RelayCommand(param => FillGridRadnikPage2(param),param => this.CanNext); }
+               set { _paging2 = value; }
+           }
 
-       private ICommand _pagingRikverc;
+           private ICommand _pagingRikverc;
 
-       public ICommand PagingRikverc
-       {
-           get { return _pagingRikverc = new RelayCommand(param => FillGridRadnikBack(param), param=> this.CanLast); }
-           set { _pagingRikverc = value; }
-       }
-       private ICommand _prebaciNaPrvi;
+           public ICommand PagingRikverc
+           {
+               get { return _pagingRikverc = new RelayCommand(param => FillGridRadnikBack(param), param=> this.CanLast); }
+               set { _pagingRikverc = value; }
+           }
+           private ICommand _prebaciNaPrvi;
 
-       public ICommand PrebaciNaPrvi
-       {
-           get { return _prebaciNaPrvi = new RelayCommand(param => FillGridRadnikFirst(param)); }
-           set { _prebaciNaPrvi = value; }
-       }
+           public ICommand PrebaciNaPrvi
+           {
+               get { return _prebaciNaPrvi = new RelayCommand(param => FillGridRadnikFirst(param)); }
+               set { _prebaciNaPrvi = value; }
+           }
 
-       private ICommand _prebaciNaZadnji;
+           private ICommand _prebaciNaZadnji;
 
-       public ICommand PrebaciNaZadnji
-       {
-           get { return _prebaciNaZadnji = new RelayCommand(param => FillGridRadnikLast(param)); }
-           set { _prebaciNaZadnji = value; }
-       }
-     
+           public ICommand PrebaciNaZadnji
+           {
+               get { return _prebaciNaZadnji = new RelayCommand(param => FillGridRadnikLast(param)); }
+               set { _prebaciNaZadnji = value; }
+           }
+
+           private ICommand _changeStat;
+
+           public ICommand ChangeStat
+           {
+               get { return _changeStat = new RelayCommand(param => PromjeniStatus(param)); }
+               set { _changeStat = value; }
+           }
        #endregion
 
         #region INotifyProperty Members
