@@ -33,7 +33,7 @@ namespace Desktop.ViewModel
         
         
      
-        private tbl_korisnik korisnik;
+        private user korisnik;
         private MassServisClient client = new MassServisClient();
 
        
@@ -45,7 +45,7 @@ namespace Desktop.ViewModel
             get { return _slika; }
             set { _slika = value; OnPropertyChanged("Slika"); }
         }
-        public tbl_korisnik Korisnik
+        public user Korisnik
         {
             get { return korisnik; }
             set { korisnik = value; OnPropertyChanged("Korisnik"); }
@@ -133,7 +133,7 @@ namespace Desktop.ViewModel
 
         public void UrediKorisnickePodatke(object parameter)
         {
-            tbl_korisnik k = new tbl_korisnik();
+            user k = new user();
             k.id_korisnik = Sesija.Id_korisnik;
             k.ime = Vorname;
             k.prezime = Nachname;

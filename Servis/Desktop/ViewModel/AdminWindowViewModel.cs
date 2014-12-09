@@ -47,7 +47,7 @@ namespace Desktop.ViewModel
         private bool _radTechnikerEdit;
         private bool _radWerksEdit;
         private string _pozadinaPocetna;
-        ObservableCollection<tbl_greske> _listaBugova;  
+        ObservableCollection<bug> _listaBugova;  
         private p_get_User_ViewResult _selektovaniUser;
         //private ObservableCollection<tbl_korisnik> _listaKorisnika;
         private ObservableCollection<p_get_User_ViewResult> _listaKorisnika;
@@ -58,9 +58,9 @@ namespace Desktop.ViewModel
         private string _sadrzajBug;
         private bool _statusBug;
         private string _datumBug;
-        tbl_greske _selektovaniBug = new tbl_greske();
+        bug _selektovaniBug = new bug();
 
-        public tbl_greske SelektovaniBug
+        public bug SelektovaniBug
         {
             get { return _selektovaniBug; }
             set 
@@ -79,7 +79,7 @@ namespace Desktop.ViewModel
             get { return _listaKorisnika; }
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
         }
-        public ObservableCollection<tbl_greske> ListaBugova
+        public ObservableCollection<bug> ListaBugova
         {
             get { return _listaBugova; }
             set
