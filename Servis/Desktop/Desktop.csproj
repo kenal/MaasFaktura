@@ -13,22 +13,6 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\home\Desktop\maasfakturaWPF\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,18 +32,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>5BB9A0F11531C54819AA3355C34277ED189CA082</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>Desktop_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.TeamFoundation.Client, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -108,16 +80,9 @@
     </Compile>
     <Compile Include="HelperClass\BackgroundConverter.cs" />
     <Compile Include="HelperClass\CountryConverter.cs" />
-    <Compile Include="HelperClass\DbOperations.cs" />
     <Compile Include="HelperClass\RelayCommand.cs" />
     <Compile Include="HelperClass\RichTextBoxHelper.cs" />
     <Compile Include="HelperClass\Sesija.cs" />
-    <Compile Include="KalendarRadnikDodajWindow.xaml.cs">
-      <DependentUpon>KalendarRadnikDodajWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="KalendarRadnikWindow.xaml.cs">
-      <DependentUpon>KalendarRadnikWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="KundenWIndow.xaml.cs">
       <DependentUpon>KundenWindow.xaml</DependentUpon>
     </Compile>
@@ -139,21 +104,6 @@
     <Compile Include="MitarbeiterWindowEdit.xaml.cs">
       <DependentUpon>MitarbeiterWindowEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NovaPorukaUserControl.xaml.cs">
-      <DependentUpon>NovaPorukaUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PorukeWindow.xaml.cs">
-      <DependentUpon>PorukeWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PoslanePorukeUserControl.xaml.cs">
-      <DependentUpon>PoslanePorukeUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PrimljenePorukeUserControl.xaml.cs">
-      <DependentUpon>PrimljenePorukeUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ProfileWindow.xaml.cs">
-      <DependentUpon>ProfileWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RechBaustellen.xaml.cs">
       <DependentUpon>RechBaustellen.xaml</DependentUpon>
     </Compile>
@@ -173,15 +123,11 @@
     </Compile>
     <Compile Include="ViewModel\AdminWindowViewModel.cs" />
     <Compile Include="ViewModel\AngebotViewModel.cs" />
-    <Compile Include="ViewModel\BestellungWindowViewModel.cs" />
-    <Compile Include="ViewModel\KalendarRadnikWindowViewModel.cs" />
     <Compile Include="ViewModel\KundenWindowViewModel.cs" />
     <Compile Include="ViewModel\LieferantWindowViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\MitarbeiterWindowViewModel.cs" />
-    <Compile Include="ViewModel\PorukeWindowViewModel.cs" />
-    <Compile Include="ViewModel\ProfileWindowViewModel.cs" />
     <Page Include="AddBugWindows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,14 +157,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="FertigWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="KalendarRadnikDodajWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="KalendarRadnikWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -288,26 +226,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NovaPorukaUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PorukeWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PoslanePorukeUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PrimljenePorukeUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ProfileWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="RechBaustellen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -346,7 +264,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Desktop_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -354,9 +271,6 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Service References\Service\Desktop.Service.p_get_User_ViewResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Service\Desktop.Service.tbl_debljina.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\Desktop.Service.tbl_dobavljac.datasource">
@@ -369,24 +283,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\Desktop.Service.tbl_kupac.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Service\Desktop.Service.tbl_materijal.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Service\Desktop.Service.tbl_mit_kalendar.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Service\Desktop.Service.tbl_poruka_poslane.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Service\Desktop.Service.tbl_poruka_primljene.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Service\Desktop.Service.tbl_povrsina.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Service\Desktop.Service.tbl_produkt.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Service\Desktop.Service.tbl_radnik.datasource">
@@ -457,17 +353,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mass.Data\Mass.Data.csproj">
-      <Project>{fa6b8472-356b-45a3-81ec-49abedbad410}</Project>
-      <Name>Mass.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{e4f702d7-38de-48d6-873e-5c289723006e}</Project>
       <Name>Service</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfScheduler\WpfScheduler.csproj">
-      <Project>{f9954c26-6234-43f5-8d96-8ec6e03c03b9}</Project>
-      <Name>WpfScheduler</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -504,42 +392,6 @@
     <Resource Include="ikone\IkonaBoxGreenP.png" />
     <Resource Include="ikone\IkonaBoxOrangeP.png" />
     <Resource Include="ikone\IkonaBoxRedP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ikone\IkonaOdjava.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ikone\no-image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ikone\IkonaNovaPor.png" />
-    <Resource Include="ikone\IkonaPostavke.png" />
-    <Resource Include="ikone\IkoneInbox.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ikone\IkonaPoslanaPor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ikone\Boja1.png" />
-    <Resource Include="ikone\Boja2.png" />
-    <Resource Include="ikone\Boja3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

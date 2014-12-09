@@ -3,12 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"  
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-      
        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
-         xmlns:local="clr-namespace:Desktop.HelperClass"
         x:Name="Window"
         Title="MainWindow" Height="952" MinWidth="1024" Width="1310.269" SizeToContent="WidthAndHeight" SizeChanged="Window_SizeChanged" WindowStartupLocation="CenterScreen">
-   
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Path=DataContext.PopuniGridListomRadnika, ElementName=Window}"/>
@@ -19,7 +16,6 @@
     </i:Interaction.Triggers>
 
     <Window.Resources>
-        <local:BackgroundConverter x:Key="BackgroundConverter"/>
         <Style x:Key="DatePickerTextBoxStyle1" TargetType="{x:Type DatePickerTextBox}">
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
@@ -480,7 +476,7 @@
                             </i:Interaction.Triggers>
                         </TextBox>
                     </StackPanel>
-                    <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0" SelectionMode="Single" ItemsSource="{Binding ListaPage1,Mode=TwoWay,NotifyOnTargetUpdated=True}" Height="450"
+                    <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0" SelectionMode="Single" ItemsSource="{Binding ListaPage1}" Height="450"
 						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True" Margin="10,98,16,-422" SelectedItem="{Binding SelektovaniRadnik, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Mitarbeiter Nr." IsReadOnly="True" x:Name="col1_1" Binding="{Binding sifra_radnik}"/>
@@ -489,16 +485,8 @@
                             <DataGridTextColumn Header="Adresse" x:Name="col1_4" Binding="{Binding adresa}"/>
                             <DataGridTextColumn Header="Telefon/Handy" x:Name="col1_5" Binding="{Binding mobitel}"/>
                             <DataGridTextColumn Header="Fax" x:Name="col1_6" Binding="{Binding fax}"/>
-                            <DataGridTextColumn Header="Skype" x:Name="col1_7" Binding="{Binding skype,NotifyOnSourceUpdated=True}"/>
-                            <DataGridTemplateColumn Header="Status" x:Name="col1_8">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
-                                            <Button Margin="5" Width="35" Height="25" Background="{Binding status,Mode=TwoWay,NotifyOnSourceUpdated=True, Converter={StaticResource BackgroundConverter}}" Command="{Binding Path=DataContext.ChangeStat,Mode=TwoWay, ElementName=datagrid1}"></Button>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Skype" x:Name="col1_7" Binding="{Binding skype}"/>
+                            <DataGridTextColumn Header="Status" x:Name="col1_8" Binding="{Binding status}"/>
                             <DataGridTemplateColumn Header="Aktionen" x:Name="col1_9" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

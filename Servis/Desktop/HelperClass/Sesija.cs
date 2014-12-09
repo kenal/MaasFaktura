@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Servis.HelperClass
 {
-     class Sesija
+    public class Sesija
     {
-        public static int Id_korisnik;
-
-       
+        public static int id_korisnik;
     }
 }
