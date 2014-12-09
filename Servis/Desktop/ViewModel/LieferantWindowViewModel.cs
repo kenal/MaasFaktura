@@ -52,8 +52,8 @@ namespace Desktop.ViewModel
         private bool radioSteuer2;
         private bool radioSteuer3;
         private List<string> nacinPlacanja = new List<string>() { "Barverkauf", "Bankeinzug", "Kreditkarte", "Nachnahme", "Rechnung","Scheck","Vorkasse" };
-        private ObservableCollection<lieferant> ListaDobavljaca;
-        private lieferant selektovaniDobavljac = new lieferant();
+        private ObservableCollection<tbl_dobavljac> ListaDobavljaca;
+        private tbl_dobavljac selektovaniDobavljac = new tbl_dobavljac();
         private string _pretraga;
         private int _maxStranica;     
      
@@ -100,7 +100,7 @@ namespace Desktop.ViewModel
         private bool radioSteuer3Edit;
 
         private int _brojStranice=1;
-        private ObservableCollection<lieferant> ListaPage = new ObservableCollection<lieferant>();
+        private ObservableCollection<tbl_dobavljac> ListaPage = new ObservableCollection<tbl_dobavljac>();
         private List<int> _brojPrikazanihDobavljaca = new List<int>() { 10, 20, 25 };
         private int _kolicinaDobavljaca = 10;
         private string selektovanaZemlja;
@@ -140,7 +140,7 @@ namespace Desktop.ViewModel
             set { _brojPrikazanihDobavljaca = value; OnPropertyChanged("BrojPrikazanihDobavljaca"); }
         }
 
-        public ObservableCollection<lieferant> ListaPage1
+        public ObservableCollection<tbl_dobavljac> ListaPage1
         {
             get { return ListaPage; }
             set { ListaPage = value; OnPropertyChanged("ListaPage1"); }
@@ -343,8 +343,8 @@ namespace Desktop.ViewModel
             get { return _NameEdit; }
             set { _NameEdit = value; OnPropertyChanged("NameEdit"); }
         }
-
-        public lieferant SelektovaniDobavljac
+      
+        public tbl_dobavljac SelektovaniDobavljac
         {
             get { return selektovaniDobavljac; }
             set {
@@ -353,8 +353,8 @@ namespace Desktop.ViewModel
             }
         }
 
-
-        public ObservableCollection<lieferant> ListaDobavljaca1
+       
+        public ObservableCollection<tbl_dobavljac> ListaDobavljaca1
         {
             get { return ListaDobavljaca; }
             set { ListaDobavljaca = value; OnPropertyChanged("ListaDobavljaca1"); }
@@ -776,7 +776,7 @@ namespace Desktop.ViewModel
                    neUzimati = brojPrikaza - KolicinaDobavljaca;
                var x = ListaDobavljaca1.Skip(neUzimati).Take(KolicinaDobavljaca);
                ListaPage1.Clear();
-               ListaPage1 = new ObservableCollection<lieferant>(x);
+               ListaPage1 = new ObservableCollection<tbl_dobavljac>(x);
 
            }
            LieferantNr = client.LieferantNr();
@@ -901,7 +901,7 @@ namespace Desktop.ViewModel
            }
 
 
-           lieferant dobavljac = new lieferant();
+           tbl_dobavljac dobavljac = new tbl_dobavljac();
            dobavljac.broj_dobavljaca = LieferantNr;
            dobavljac.tip = Titula;
            dobavljac.prezime = Vorname; ;
@@ -1048,7 +1048,7 @@ namespace Desktop.ViewModel
        }
        public void IzvrsiUpdate(object parameter)
        {
-           lieferant dobavljac = new lieferant();
+           tbl_dobavljac dobavljac = new tbl_dobavljac();
            dobavljac.id_dobavljac = SelektovaniDobavljac.id_dobavljac;
            dobavljac.broj_dobavljaca =LieferantNrEdit;
 

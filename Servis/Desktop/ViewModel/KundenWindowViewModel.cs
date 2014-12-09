@@ -62,8 +62,8 @@ namespace Desktop.ViewModel
         string _detalji_rute;
         MassServisClient client = new MassServisClient();
         private List<string> nacinPlacanja = new List<string>() { "Barverkauf", "Bankeinzug", "Kreditkarte", "Nachnahme", "Rechnung", "Scheck", "Vorkasse" };
-        ObservableCollection<kunden> ListaKupaca;
-        kunden selektovaniKupac = new kunden();
+        ObservableCollection<tbl_kupac> ListaKupaca;       
+        tbl_kupac selektovaniKupac = new tbl_kupac();
         bool radioHer;
         bool radioFrau;
         bool radioFirma;
@@ -123,7 +123,7 @@ namespace Desktop.ViewModel
         bool radioSteuer1Edit;
         bool radioSteuer2Edit;
         bool radioSteuer3Edit;
-        ObservableCollection<kunden> ListaPage = new ObservableCollection<kunden>();
+        ObservableCollection<tbl_kupac> ListaPage= new ObservableCollection<tbl_kupac>();
         int brojStranice =1;
 
         private int _kolicinaKupaca = 10;
@@ -606,7 +606,7 @@ namespace Desktop.ViewModel
             }
         }
 
-        public ObservableCollection<kunden> ListaKupaca1
+        public ObservableCollection<tbl_kupac> ListaKupaca1
         {
             get { return ListaKupaca; }
             set 
@@ -616,7 +616,7 @@ namespace Desktop.ViewModel
             }
         }
 
-        public ObservableCollection<kunden> ListaPage1
+        public ObservableCollection<tbl_kupac> ListaPage1
         {
             get { return ListaPage; }
             set 
@@ -626,7 +626,7 @@ namespace Desktop.ViewModel
             }
         }
 
-        public kunden SelektovaniKupac
+        public tbl_kupac SelektovaniKupac
         {
             get { return selektovaniKupac; }
             set 
@@ -1340,7 +1340,7 @@ namespace Desktop.ViewModel
                     neUzimati = brojPrikaza - KolicinaKupaca;
                 var x= ListaKupaca1.Skip(neUzimati).Take(brojPrikaza);
                 ListaPage1.Clear();
-                ListaPage1 = new ObservableCollection<kunden>(x);
+                ListaPage1 = new ObservableCollection<tbl_kupac>(x);
             }
             Broj_kupac = client.KundenNr();
             MaxStranica();
@@ -1394,7 +1394,7 @@ namespace Desktop.ViewModel
             else if (RadioSteuer3 == true)
                 Porez = 2;
 
-            kunden kupac = new kunden();
+            tbl_kupac kupac = new tbl_kupac();
             kupac.adresa_dostava = Adresa_dostava;
             kupac.adresa_fakture = Adresa_fakture;
             kupac.adresa2 = Adresa2;

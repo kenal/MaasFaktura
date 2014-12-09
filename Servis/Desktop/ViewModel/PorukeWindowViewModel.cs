@@ -65,7 +65,7 @@ namespace Desktop.ViewModel
             get { return _betreff; }
             set { _betreff = value; OnPropertyChanged("Betreff"); }
         }
-        public user SelektovaniKorisnik
+        public tbl_korisnik SelektovaniKorisnik
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
@@ -76,7 +76,7 @@ namespace Desktop.ViewModel
             get { return _listaPrimljenihPoruka; }
             set { _listaPrimljenihPoruka = value; OnPropertyChanged("ListaPrimljenihPoruka"); }
         }
-        public ObservableCollection<user> ListaKorisnika
+        public ObservableCollection<tbl_korisnik> ListaKorisnika
         {
             get { return _listaKorisnika; }
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }

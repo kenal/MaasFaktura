@@ -15,7 +15,7 @@ namespace Desktop.ViewModel
     {
         #region Fields
         private string _imeKorisnika;
-        private user _logovaniKor;
+        private tbl_korisnik _logovaniKor;
        
       
         MassServisClient client = new MassServisClient();
@@ -24,8 +24,8 @@ namespace Desktop.ViewModel
         #endregion
 
         #region Properties
-
-        public user LogovaniKor
+       
+        public tbl_korisnik LogovaniKor
         {
             get { return _logovaniKor; }
             set { _logovaniKor = value; OnPropertyChanged("LogovaniKor"); }

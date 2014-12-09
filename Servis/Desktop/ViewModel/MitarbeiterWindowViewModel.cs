@@ -29,8 +29,8 @@ namespace Desktop.ViewModel
         private string _skype = null;
         private string _fax = null;
         private string _email = null;
-        private ObservableCollection<mitarbeiter> _listaRadnika;
-        private ObservableCollection<user> _listaKorisnika;
+        private ObservableCollection<tbl_radnik> _listaRadnika;
+        private ObservableCollection<tbl_korisnik> _listaKorisnika;
         private float _gehalt = 0;
         private float _stundenlohn = 0;
         private string _urlaubstage = null;
@@ -48,8 +48,8 @@ namespace Desktop.ViewModel
         private MassServisClient client = new MassServisClient();
         private bool _radioHerr;
         private bool _radioFrau;
-        private user _selektovaniKorisnik;
-        private mitarbeiter _selektovaniRadnik;
+        private tbl_korisnik _selektovaniKorisnik;
+        private tbl_radnik _selektovaniRadnik;
         private string _pretraga;
         
 
@@ -81,15 +81,15 @@ namespace Desktop.ViewModel
         private string _notizEdit = null;
         private bool _radioHerrEdit;
         private bool _radioFrauEdit;
-        private user _selektovaniKorisnikEdit=null;
-        private user _comboKorisnik = null;
+        private tbl_korisnik _selektovaniKorisnikEdit=null;
+        private tbl_korisnik _comboKorisnik = null;
         private int _maxStranica;
         private int _selektovaniIndex;
 
         private int _brojStranice=1;
 
         private int _kolicinaRadnika = 10;
-        private ObservableCollection<mitarbeiter> ListaPage = new ObservableCollection<mitarbeiter>();
+        private ObservableCollection<tbl_radnik> ListaPage = new ObservableCollection<tbl_radnik>();
         private List<int> _brojPrikazanihRadnika = new List<int>() { 10, 20, 25 };
         private bool? status;
 
@@ -128,7 +128,7 @@ namespace Desktop.ViewModel
             get { return _brojStranice; }
             set { _brojStranice = value; OnPropertyChanged("BrojStranice"); }
         }
-        public ObservableCollection<mitarbeiter> ListaPage1
+        public ObservableCollection<tbl_radnik> ListaPage1
         {
             get { return ListaPage; }
             set { ListaPage = value; OnPropertyChanged("ListaPage1"); }
@@ -145,7 +145,7 @@ namespace Desktop.ViewModel
             set { _pretraga = value; OnPropertyChanged("Pretraga"); }
         }
 
-        public user ComboKorisnik
+        public tbl_korisnik ComboKorisnik
         {
             get { return _comboKorisnik; }
             set { _comboKorisnik = value; OnPropertyChanged("ComboKorisnik"); }
@@ -155,7 +155,7 @@ namespace Desktop.ViewModel
             get { return _selektovaniIndex; }
             set { _selektovaniIndex = value; OnPropertyChanged("SelektovaniIndex"); }
         }
-        public user SelektovaniKorisnikEdit
+        public tbl_korisnik SelektovaniKorisnikEdit
         {
             get { return _selektovaniKorisnikEdit; }
             set { _selektovaniKorisnikEdit = value; OnPropertyChanged("SelektovaniKorisnikEdit"); }
@@ -302,18 +302,18 @@ namespace Desktop.ViewModel
             get { return _mitarbeiterNrEdit; }
             set { _mitarbeiterNrEdit = value; OnPropertyChanged("MitarbeuterNrEdit"); }
         }
-        public mitarbeiter SelektovaniRadnik
+        public tbl_radnik SelektovaniRadnik
         {
             get { return _selektovaniRadnik; }
             set { _selektovaniRadnik = value; OnPropertyChanged("SelektovaniRadnik"); }
         }
 
-        public mitarbeiter SelektovaniKorisnik
+        public tbl_korisnik SelektovaniKorisnik
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
         }
-        public ObservableCollection<user> ListaKorisnika
+        public ObservableCollection<tbl_korisnik> ListaKorisnika
         {
             get { return _listaKorisnika; }
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
@@ -386,7 +386,7 @@ namespace Desktop.ViewModel
            get { return _email; }
            set { _email = value; OnPropertyChanged("Email"); }
        }
-       public ObservableCollection<mitarbeiter> ListaRadnika
+       public ObservableCollection<tbl_radnik> ListaRadnika
        {
            get { return _listaRadnika; }
            set { _listaRadnika = value; OnPropertyChanged("ListaRadnika"); }
@@ -491,7 +491,7 @@ namespace Desktop.ViewModel
                        neUzimati = brojPrikaza - KolicinaRadnika;
                    var x = ListaRadnika.Skip(neUzimati).Take(KolicinaRadnika);
                    ListaPage1.Clear();
-                   ListaPage1 = new ObservableCollection<mitarbeiter>(x);
+                   ListaPage1 = new ObservableCollection<tbl_radnik>(x);
 
                }
                MaxStranica();
@@ -704,8 +704,8 @@ namespace Desktop.ViewModel
            }
            public void RadnikEdit(object parameter)
            {
-
-               mitarbeiter radnik = new mitarbeiter();
+           
+               tbl_radnik radnik = new tbl_radnik();
                radnik.id_radnik = SelektovaniRadnik.id_radnik;
                radnik.sifra_radnik = MitarbeiterNrEdit;
                radnik.tip = TitulaEdit;
@@ -781,6 +781,7 @@ namespace Desktop.ViewModel
 
      
          #endregion
+
 
         #region ICommand Members
            private ICommand _search;
