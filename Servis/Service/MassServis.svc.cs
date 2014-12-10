@@ -1273,6 +1273,26 @@ namespace Service
                 context.SubmitChanges();
             }
         }
+        [OperationContract]
+        public ObservableCollection<artikl> getMaterijalByID(int value)
+        {
+            ObservableCollection<artikl> ListP = new ObservableCollection<artikl>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.artikls where a.materijal == value && a.aktivan == 1 orderby a.naziv ascending select a;
+                if (value != 4)
+                {
+                    x = null;
+                    x = from a in context.artikls where a.materijal == 7 || a.materijal == 8 || a.materijal == 9 || a.materijal == 10 || a.materijal == value && a.aktivan == 1 orderby a.naziv ascending select a;
+                }
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new artikl { id = p.id, naziv = p.naziv});
+                }
+            }
+            return ListP;
+        }
     }
 }
    

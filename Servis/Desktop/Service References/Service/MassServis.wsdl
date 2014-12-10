@@ -290,6 +290,12 @@
   <wsdl:message name="MassServis_UnesiEventMitarbeiter_OutputMessage">
     <wsdl:part name="parameters" element="tns:UnesiEventMitarbeiterResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijalByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijalByID" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijalByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijalByIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -478,6 +484,10 @@
     <wsdl:operation name="UnesiEventMitarbeiter">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/UnesiEventMitarbeiter" message="tns:MassServis_UnesiEventMitarbeiter_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/UnesiEventMitarbeiterResponse" message="tns:MassServis_UnesiEventMitarbeiter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterijalByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterijalByID" message="tns:MassServis_getMaterijalByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterijalByIDResponse" message="tns:MassServis_getMaterijalByID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -898,6 +908,15 @@
     </wsdl:operation>
     <wsdl:operation name="UnesiEventMitarbeiter">
       <soap:operation soapAction="http://tempuri.org/MassServis/UnesiEventMitarbeiter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterijalByID">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getMaterijalByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

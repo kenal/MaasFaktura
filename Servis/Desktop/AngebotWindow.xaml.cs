@@ -1937,16 +1937,21 @@ namespace Desktop
             Cell01.Items.Clear();
             foreach (var p in oberflacheList) { Cell01.Items.Add(p.pov); }
             Cell01.SelectedIndex = 0;
+            var materijalList = client.getMaterijalByID(matVal01);
+            ComboBox Cell02 = (ComboBox)this.FindName("mat_" + rowId);
+            Cell02.Items.Clear();
+            foreach (var p in materijalList) { Cell02.Items.Add(p.naziv); }
+            Cell02.SelectedIndex = 0;
         }
         #endregion
 
         #region Produkt Changed
         private void prod_SelectionChanged(object sender, SelectionChangedEventArgs arg)
         {
+            Service.MassServisClient client = new MassServisClient();
             var obj = sender as ComboBox;
             int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
-            string value = obj.SelectedValue.ToString();
-            Service.MassServisClient client = new MassServisClient();
+            string value = obj.SelectedValue.ToString();           
             var proId = client.getProIdByName(value);
             int prodVal01 = Convert.ToInt32(proId[0].idprodukt);
             var starkeList = client.getDebljinaByProduktId(prodVal01);
