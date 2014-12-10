@@ -25,8 +25,8 @@ namespace Desktop.ViewModel
         bool _pogledano;        
         string _text;
         private MassServisClient client = new MassServisClient();
-        private ObservableCollection<tbl_korisnik> _listaKorisnika;
-        private tbl_korisnik _selektovaniKorisnik;
+        private ObservableCollection<mit_kalendar> _listaKorisnika;
+        private mit_kalendar _selektovaniKorisnik;
         private List<int> _ListaSati = new List<int>() { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 };        
         private List<int> _ListaMinuta = new List<int>() { 0, 10, 20, 30, 40, 50 };
         int _sat;        
@@ -115,13 +115,13 @@ namespace Desktop.ViewModel
             }
         }
 
-        public ObservableCollection<tbl_korisnik> ListaKorisnika
+        public ObservableCollection<mit_kalendar> ListaKorisnika
         {
             get { return _listaKorisnika; }
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
         }
 
-        public tbl_korisnik SelektovaniKorisnik
+        public mit_kalendar SelektovaniKorisnik
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
@@ -281,16 +281,16 @@ namespace Desktop.ViewModel
 
         public void UnosUBazu()
         {
-            tbl_mit_kalendar EventKalendar = new tbl_mit_kalendar();
+            mit_kalendar EventKalendar = new mit_kalendar();
             
             TimeSpan ts = new TimeSpan(Sat, Minuta, 0);
             TimeSpan ts1 = new TimeSpan(Sat1, Minuta1, 0);
             Datum = Datum.Date + ts;
             Datum1 = Datum1.Date + ts1;
             EventKalendar.datum = Datum;
-            EventKalendar.datu1 = Datum1;
+            EventKalendar.datum1 = Datum1;
             EventKalendar.tip = Tip;
-            EventKalendar.biljeska = Text;            
+            EventKalendar.notiz = Text;            
             client.UnesiEventMitarbeiter(EventKalendar, SelektovaniKorisnik.id_korisnik);
         }
         #endregion
@@ -350,9 +350,9 @@ namespace Desktop.ViewModel
             {
                 Event e = new Event();
                 e.Start = Convert.ToDateTime(p.datum);
-                e.End = Convert.ToDateTime(p.datu1);
-                e.Subject = p.biljeska;
-                e.Description = p.id_kalendar + " " + p.id_korisnik_FK;
+                e.End = Convert.ToDateTime(p.datum1);
+                e.Subject = p.notiz;
+                e.Description = p.id + " " + p.idUser;
                 if (p.tip == 1)
                     e.Color = Brushes.Turquoise;
                 else if (p.tip == 2)
