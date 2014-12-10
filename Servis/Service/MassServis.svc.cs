@@ -258,8 +258,8 @@ namespace Service
                 {
                     Lista.Add(new user{
                     idUser= p.idUser,
-                    firstName=p.firstName,
-                    lastName=p.lastName,
+                    firstName=p.firstName.Trim(),
+                    lastName=p.lastName.Trim(),
                     mail=p.mail,
                     username=p.username,
                     password=p.password,
@@ -629,22 +629,53 @@ namespace Service
             using(DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
                 user korisnik = new user();
-                var query = (from a in context.users where a.idUser == id select a).Single();
-                korisnik.idUser = query.idUser;
-                korisnik.firstName = query.firstName;
-                korisnik.lastName = query.lastName;
-                korisnik.mail = query.mail;
-                korisnik.username = query.username;
-                korisnik.password = query.password;
-                korisnik.userType = query.userType;
-                korisnik.telefon = query.telefon;
-                korisnik.active = query.active;
-                korisnik.slika = query.slika;
-                korisnik.startseit = query.startseit;
-                return korisnik;
+                //if (ProvjeriKorisnika(id)!=true)
+                //{
+
+                    var query = (from a in context.users where a.idUser == id select a).Single();
+                    korisnik.idUser = query.idUser;
+                    korisnik.firstName = query.firstName;
+                    korisnik.lastName = query.lastName;
+                    korisnik.mail = query.mail;
+                    korisnik.username = query.username;
+                    korisnik.password = query.password;
+                    korisnik.userType = query.userType;
+                    korisnik.telefon = query.telefon;
+                    korisnik.active = query.active;
+                    korisnik.slika = query.slika;
+                    korisnik.startseit = query.startseit;
+                //}
+                //else
+                //{
+                //    korisnik.idUser = 0;
+                //    korisnik.firstName = "-Leer";
+                //    korisnik.lastName = null;
+                //    korisnik.mail = null;
+                //    korisnik.username = null;
+                //    korisnik.password = null;
+                //    korisnik.userType = null;
+                //    korisnik.telefon = null;
+                //    korisnik.active = null;
+                //    korisnik.slika = null;
+                //    korisnik.startseit = null;
+                //}
                 
+                return korisnik;               
             }
         }
+
+        //[OperationContract]
+        //public bool ProvjeriKorisnika(int id)
+        //{
+        //    using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+        //    {
+        //        var query = (from a in context.users where a.idUser == id select a).Any();
+        //        if (query.Equals(null))
+        //            return true;
+        //        else
+        //            return false;
+        //    }
+        //}
 
         [OperationContract]
         public void EditujUsera(int idUser, string Name, string LastName, string Email, string Telefon, bool Aktivan, string Slika, string Username, string Password, int UserType, bool Pocetna, string Licence)

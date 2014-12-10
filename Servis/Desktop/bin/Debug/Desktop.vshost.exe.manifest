@@ -104,7 +104,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0rQkJa913LdIRz5b7O32TuC7ZP/n3x3C3FHciPfSWkg=</dsig:DigestValue>
+        <dsig:DigestValue>3ifbKg0T1dOL1GVjpdIwZ4GRJtKq5MPRbIgQne8BKVo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,14 +133,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="51712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="53248">
       <assemblyIdentity name="Service" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5LTL4EJKvZzecu4gr3Ke404omWvfD/PkA8JaPpugDxw=</dsig:DigestValue>
+        <dsig:DigestValue>1CL5+OfFCIa5q9Z1SYMHHsUVYaTkawQhZwqlmuoC8yM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -288,13 +288,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Desktop.exe.config" size="700">
+  <file name="Desktop.exe.config" size="734">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>LnXdmIYOPY5ssQQxCW9RSJScsjt832jgzwmS2hEfFV8=</dsig:DigestValue>
+      <dsig:DigestValue>zhzql83Wgyrb31JS0t6WW7mTS4jdp7qGg3A17ej0ioY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
