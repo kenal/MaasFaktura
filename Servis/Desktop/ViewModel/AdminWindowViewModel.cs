@@ -285,7 +285,7 @@ namespace Desktop.ViewModel
         {
             string bugText = SendBugValue;
             DateTime dateNow = DateTime.Now;
-            string date = dateNow.ToString("yyyy-mm-dd H:mm:ss");
+            string date = dateNow.ToString("yyyy-dd-mm H:mm:ss");
 
             int idUser = Sesija.Id_korisnik;
             client.unesiBug(bugText, idUser, false, date);

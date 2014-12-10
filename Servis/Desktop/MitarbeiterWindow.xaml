@@ -400,8 +400,8 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock>
-                                     <Run Text="{Binding ime}" />
-                                     <Run Text="{Binding prezime}" />
+                                     <Run Text="{Binding firstName}" />
+                                     <Run Text="{Binding lastName}" />
                                     </TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -494,7 +494,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
-                                            <Button Margin="5" Width="35" Height="25" Background="{Binding status,Mode=TwoWay,NotifyOnSourceUpdated=True, Converter={StaticResource BackgroundConverter}}" Command="{Binding Path=DataContext.ChangeStat,Mode=TwoWay, ElementName=datagrid1}"></Button>
+                                            <Button Margin="5" Width="35" Height="25" Background="{Binding status,Mode=TwoWay,NotifyOnSourceUpdated=True, Converter={StaticResource BackgroundConverter}}" Command="{Binding Path=DataContext.ChangeStat,Mode=TwoWay, ElementName=datagrid1}" Cursor="Hand"></Button>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -503,14 +503,14 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
-                                            <Button Margin="5" Width="35" Height="25"  Command="{Binding Path=DataContext.OtvoriEditRadnik1, ElementName=datagrid1}">
+                                            <Button Margin="5" Width="35" Height="25"  Command="{Binding Path=DataContext.OtvoriEditRadnik1, ElementName=datagrid1}" Cursor="Hand">
                                                 <Image Source="ikone/IkonaUredi.png"/>
                                             </Button>
-                                            <Button Margin="5" Width="35" Height="25" Command="{Binding Path=DataContext.ObrisiRadnika, ElementName=datagrid1}">
+                                            <Button Margin="5" Width="35" Height="25" Command="{Binding Path=DataContext.ObrisiRadnika, ElementName=datagrid1}" Cursor="Hand">
                                                 <Image Source="ikone/IkonaObrisi.png" />
                                             </Button>
 
-                                            <Button Margin="5" Width="35" Height="25">
+                                            <Button Margin="5" Width="35" Height="25" Cursor="Hand">
                                                 <Image Source="ikone/IkonaFileManager.png" />
                                             </Button>
                                         </StackPanel>
