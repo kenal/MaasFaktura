@@ -66,7 +66,7 @@ namespace Service
                    tel2=p.tel2,
                    handy=p.handy,
                    skype=p.skype,
-                   fax=p.skype,
+                   fax=p.fax,
                    email=p.email,
                    bank=p.bank,
                    BLZ=p.BLZ,
