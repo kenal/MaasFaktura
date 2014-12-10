@@ -88,7 +88,7 @@
                             <ColumnDefinition Width="50" SharedSizeGroup="C"/>
                         </Grid.ColumnDefinitions>
                         <Label Content="Kunden Nr.:" FontSize="14" Grid.Column="0" Grid.Row="0"/>
-                        <TextBox x:Name="txtKundenNr" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="0" Height="25" Margin="10,5,0,10" Text="{Binding Broj_kupac}" IsEnabled="False"/>
+                        <TextBox x:Name="txtKundenNr" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="0" Height="25" Margin="10,5,0,10" Text="{Binding KundeNr}" IsEnabled="False"/>
                         <Label Content="Anredan/Titel:" FontSize="14" Grid.Column="0" Grid.Row="1"/>
                         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Width="190">
                             <RadioButton x:Name="rbtnHerr" Content="Herr" VerticalAlignment="Center" Margin="0,12" Cursor="Hand"/>
@@ -99,14 +99,14 @@
                         <Label Content="Titel:" FontSize="14" Grid.Column="0" Grid.Row="2"/>
                         <TextBox x:Name="txtTitel" Grid.Column="1" Grid.Row="2" Height="25" Margin="10,5,0,10" Text="{Binding Titel}" />
                         <Label Content="Vorname:" FontSize="14" Grid.Column="0" Grid.Row="3"/>
-                        <TextBox x:Name="txtVorname" Grid.Column="1" Grid.Row="3" Height="25" Margin="10,5,0,10" Text="{Binding Ime, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox x:Name="txtVorname" Grid.Column="1" Grid.Row="3" Height="25" Margin="10,5,0,10" Text="{Binding Vorname, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
                         <Label Content="Name:" FontSize="14" Grid.Column="0" Grid.Row="4"/>
-                        <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="4" Height="25" Margin="10,5,0,10" Text="{Binding Prezime, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="4" Height="25" Margin="10,5,0,10" Text="{Binding Name, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
                         <Label Content="Name2/Firma:" FontSize="14" Grid.Column="0" Grid.Row="5"/>
                         <TextBox x:Name="txtName2" Grid.Column="1" Grid.Row="5" Height="25" Margin="10,5,0,10" Text="{Binding Ime2}" />
                         <Label Content="Land:" FontSize="14" Grid.Column="0" Grid.Row="6"/>
                         <ComboBox Name="CountryCombo" 
-    ItemsSource="{Binding ElementName=Window, Path=Countries}" SelectedValuePath="code"  SelectedValue="{Binding ElementName=Window, Path=DataContext.Zemlja}" Grid.Column="1" Grid.Row="6" Margin="10,0,0,0" SelectedIndex="0" DropDownOpened="CountryCombo_DropDownOpened" Cursor="Hand">
+    ItemsSource="{Binding ElementName=Window, Path=Countries}" SelectedValuePath="code"  SelectedValue="{Binding ElementName=Window, Path=DataContext.Land}" Grid.Column="1" Grid.Row="6" Margin="10,0,0,0" SelectedIndex="0" DropDownOpened="CountryCombo_DropDownOpened" Cursor="Hand">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -117,13 +117,13 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                         <Label Content="Stadt:" FontSize="14" Grid.Column="0" Grid.Row="7"/>
-                        <TextBox x:Name="txtStadt" Grid.Column="1" Grid.Row="7" Height="25" Margin="10,5,0,10" Text="{Binding Grad}" />
+                        <TextBox x:Name="txtStadt" Grid.Column="1" Grid.Row="7" Height="25" Margin="10,5,0,10" Text="{Binding Stadt}" />
                         <Label Content="Lieferungsadresse:" FontSize="14" Grid.Column="0" Grid.Row="8"/>
-                        <TextBox x:Name="txtLieferungsadresse" Grid.Column="1" Grid.Row="8" Height="25" Margin="10,5,0,10" Text="{Binding Adresa_dostava, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox x:Name="txtLieferungsadresse" Grid.Column="1" Grid.Row="8" Height="25" Margin="10,5,0,10" Text="{Binding Lieferadresse, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Content="Rechnungsadresse:" FontSize="14" Grid.Column="0" Grid.Row="9"/>
-                        <TextBox x:Name="txtRechnungsadresse" Grid.Column="1" Grid.Row="9" Height="25" Margin="10,5,0,10" Text="{Binding Adresa_fakture, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox x:Name="txtRechnungsadresse" Grid.Column="1" Grid.Row="9" Height="25" Margin="10,5,0,10" Text="{Binding Rechnungsadresse, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Content="Adresse 2:" FontSize="14" Grid.Column="0" Grid.Row="10"/>
-                        <TextBox x:Name="txtAdresse2" Grid.Column="1" Grid.Row="10" Height="25" Margin="10,5,0,10" Text="{Binding Adresa2}"/>
+                        <TextBox x:Name="txtAdresse2" Grid.Column="1" Grid.Row="10" Height="25" Margin="10,5,0,10" Text="{Binding Adresse2}"/>
                         <Label Content="Telefon:" FontSize="14" Grid.Column="0" Grid.Row="11"/>
                         <TextBox x:Name="txtTelefon" Grid.Column="1" Grid.Row="11" Height="25" Margin="10,5,0,10" Text="{Binding Tel1, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Content="Handy:" FontSize="14" Grid.Column="0" Grid.Row="12"/>
@@ -180,13 +180,13 @@
                         <TextBox x:Name="txtInternet" Grid.Column="1" Grid.Row="1" Height="25" Margin="0,7.5,135,7.5"  Text="{Binding Internet}"/>
                         <Label Content="Skonto:" FontSize="14" Grid.Column="0" Grid.Row="2"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
-                            <TextBox x:Name="txtSkonto" Height="25" Width="50" Text="{Binding Popust_gotovina}"/>
+                            <TextBox x:Name="txtSkonto" Height="25" Width="50" Text="{Binding Skonto}"/>
                             <Label Content=" Tage: " FontSize="14" VerticalAlignment="Center"/>
-                            <TextBox x:Name="txtSkonto1" Height="25" Width="50" Text="{Binding Dnevni_popust}"/>
+                            <TextBox x:Name="txtSkonto1" Height="25" Width="50" Text="{Binding Skontotage}"/>
                         </StackPanel>
                         <Label Content="Zahlbar in" FontSize="14" Grid.Column="0" Grid.Row="3"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3">
-                            <TextBox x:Name="txtZahlbar1" Height="25" Width="50" Text="{Binding Placa}"/>
+                            <TextBox x:Name="txtZahlbar1" Height="25" Width="50" Text="{Binding Zahlbar}"/>
                             <Label Content=" Tagen " FontSize="14" VerticalAlignment="Center"/>
                         </StackPanel>
                         <Label Content="Rabatt" FontSize="14" Grid.Column="0" Grid.Row="4"/>
@@ -215,7 +215,7 @@
                         </RichTextBox>
 
                         <Label Content="Notiz:" Grid.Column="0" Grid.Row="9"/>
-                        <RichTextBox x:Name="rtbxNotiz" Grid.Column="1" Grid.Row="9" Width="180" Height="85" local:RichTextBoxHelper.DocumentXaml="{Binding Biljeska}"/>
+                        <RichTextBox x:Name="rtbxNotiz" Grid.Column="1" Grid.Row="9" Width="180" Height="85" local:RichTextBoxHelper.DocumentXaml="{Binding Notiz}"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" HorizontalAlignment="Center">
                             <Button VerticalContentAlignment="Center" Background="#FF51A351" HorizontalAlignment="Left" Width="120" Height="30" Margin="0,0,5,0" Command="{Binding Unesi}" Cursor="Hand">
                                 <StackPanel Orientation="Horizontal">
@@ -255,16 +255,16 @@
                     <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0"  SelectionMode="Single" ItemsSource="{Binding ListaPage1}"
 						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"  VerticalAlignment="Top" Margin="10,76,10,0" Height="513" SelectedItem="{Binding SelektovaniKupac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Kunde Nr." x:Name="col1_1" Binding="{Binding broj_kupac}"/>
-                            <DataGridTextColumn Header="Geschrieben" x:Name="col1_2" Binding="{Binding ime2}"/>
-                            <DataGridTextColumn Header="Kunde" x:Name="col1_3" Binding="{Binding ime}"/>
-                            <DataGridTextColumn Header="Kbg." x:Name="col1_4" Binding="{Binding ocjena_kupca}"/>
-                            <DataGridTextColumn Header="Lieferadresse" x:Name="col1_5" Binding="{Binding adresa_dostava}"/>
-                            <DataGridTextColumn Header="Rechnungsadresse" x:Name="col1_6" Binding="{Binding adresa_fakture}"/>
-                            <DataGridTextColumn Header="Adresse 2" x:Name="col1_7" Binding="{Binding adresa2}"/>
+                            <DataGridTextColumn Header="Kunde Nr." x:Name="col1_1" Binding="{Binding kundeNr}"/>
+                            <DataGridTextColumn Header="Geschrieben" x:Name="col1_2" Binding="{Binding name2}"/>
+                            <DataGridTextColumn Header="Kunde" x:Name="col1_3" Binding="{Binding vorname}"/>
+                            <DataGridTextColumn Header="Kbg." x:Name="col1_4" Binding="{Binding kundenbewertung}"/>
+                            <DataGridTextColumn Header="Lieferadresse" x:Name="col1_5" Binding="{Binding lieferadresse}"/>
+                            <DataGridTextColumn Header="Rechnungsadresse" x:Name="col1_6" Binding="{Binding rechnungsadresse}"/>
+                            <DataGridTextColumn Header="Adresse 2" x:Name="col1_7" Binding="{Binding adresse2}"/>
                             <DataGridTextColumn Header="Privat/Handy" x:Name="col1_8" Binding="{Binding tel1}"/>
                             <DataGridTextColumn Header="Email" x:Name="col1_9" Binding="{Binding mail}"/>
-                            <DataGridTextColumn Header="Umsatz" x:Name="col1_10" Binding="{Binding placa}"/>
+                            <DataGridTextColumn Header="Umsatz" x:Name="col1_10" Binding="{Binding zahlbar}"/>
                             <DataGridTemplateColumn Header="Aktionen" x:Name="col1_11">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
