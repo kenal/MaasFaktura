@@ -16,24 +16,24 @@ namespace Desktop.ViewModel
     public class KundenWindowViewModel: INotifyPropertyChanged, IDataErrorInfo
     {
         #region Fields
-        int _id_kupac;
-        int _broj_kupac;
-        string _pojam;        
-        string _ime;        
-        string _prezime;
-        string _titel;
-        string _mjesto;        
-        string _grupa;        
-        string _slobodno_polje;        
-        string _ime2;                
-        string _ulica;        
+        int _idKunde;
+        int _kundeNr;
+        string _suchbegriff;        
+        string _vorname;        
+        string _name;
+        string _anreden;
+        string _l_plz_ort;        
+        string _gruppe;        
+        string _freifeld1;        
+        string _name2;                
+        string _strasse;        
         string _tel1;        
         string _tel2;        
         string _fax;        
         string _mail;       
         string _lk;        
-        string _dostava_na;        
-        string _dostava_od;        
+        string _vorlage_am;        
+        string _vorlage_anlass;        
         string _vk_cijena;        
         string _gotovina;        
         string _popust_gotovina;        
@@ -167,40 +167,40 @@ namespace Desktop.ViewModel
 
         public int Broj_kupac
         {
-            get { return _broj_kupac; }
+            get { return _kundeNr; }
             set 
             { 
-                _broj_kupac = value;
+                _kundeNr = value;
                 OnPropertyChanged("Broj_kupac");
             }
         }
 
         public string Pojam
         {
-            get { return _pojam; }
+            get { return _suchbegriff; }
             set 
             { 
-                _pojam = value;
+                _suchbegriff = value;
                 OnPropertyChanged("Pojam"); 
             }
         }        
 
         public string Ime
         {
-            get { return _ime; }
+            get { return _vorname; }
             set 
             { 
-                _ime = value;
+                _vorname = value;
                 OnPropertyChanged("Ime");
             }
         }
 
         public string Prezime
         {
-            get { return _prezime; }
+            get { return _name; }
             set 
             { 
-                _prezime = value;
+                _name = value;
                 OnPropertyChanged("Prezime");
             }
         }
@@ -208,60 +208,60 @@ namespace Desktop.ViewModel
         
         public string Titel
         {
-            get { return _titel; }
+            get { return _anreden; }
             set 
             { 
-                _titel = value;
+                _anreden = value;
                 OnPropertyChanged("Titel");
             }
         }
 
         public string Mjesto
         {
-            get { return _mjesto; }
+            get { return _l_plz_ort; }
             set 
             { 
-                _mjesto = value;
+                _l_plz_ort = value;
                 OnPropertyChanged("Mjesto");
             }
         }
 
         public string Grupa
         {
-            get { return _grupa; }
+            get { return _gruppe; }
             set 
             { 
-                _grupa = value;
+                _gruppe = value;
                 OnPropertyChanged("Grupa");
             }
         }
 
         public string Slobodno_polje
         {
-            get { return _slobodno_polje; }
+            get { return _freifeld1; }
             set 
             { 
-                _slobodno_polje = value;
+                _freifeld1 = value;
                 OnPropertyChanged("Slobodno_polje");
             }
         }
 
         public string Ime2
         {
-            get { return _ime2; }
+            get { return _name2; }
             set 
             { 
-                _ime2 = value;
+                _name2 = value;
                 OnPropertyChanged("Ime2");
             }
         }
 
         public string Ulica
         {
-            get { return _ulica; }
+            get { return _strasse; }
             set 
             { 
-                _ulica = value;
+                _strasse = value;
                 OnPropertyChanged("Ulica");
             }
         }
@@ -318,20 +318,20 @@ namespace Desktop.ViewModel
 
         public string Dostava_na
         {
-            get { return _dostava_na; }
+            get { return _vorlage_am; }
             set 
             { 
-                _dostava_na = value;
+                _vorlage_am = value;
                 OnPropertyChanged("Dostava_na");
             }
         }
 
         public string Dostava_od
         {
-            get { return _dostava_od; }
+            get { return _vorlage_anlass; }
             set 
             { 
-                _dostava_od = value;
+                _vorlage_anlass = value;
                 OnPropertyChanged("Dostava_od");
             }
         }
