@@ -19,8 +19,8 @@ namespace Desktop.ViewModel
         private int _brojPrikazanihPoruka=10;
         MassServisClient client = new MassServisClient();
         private ObservableCollection<tbl_poruka_primljene> _listaPrimljenihPoruka = new ObservableCollection<tbl_poruka_primljene>();
-        private tbl_korisnik _selektovaniKorisnik;
-        private ObservableCollection<tbl_korisnik> _listaKorisnika = new ObservableCollection<tbl_korisnik>();
+        private user _selektovaniKorisnik;
+        private ObservableCollection<user> _listaKorisnika = new ObservableCollection<user>();
         private ObservableCollection<tbl_poruka_poslane> _listaPoslanihPoruka = new ObservableCollection<tbl_poruka_poslane>();
         private tbl_poruka_primljene _selektovanaPrimljenaPoruka;
         private tbl_poruka_poslane _selektovanaPoslanaPoruka;
@@ -65,7 +65,7 @@ namespace Desktop.ViewModel
             get { return _betreff; }
             set { _betreff = value; OnPropertyChanged("Betreff"); }
         }
-        public tbl_korisnik SelektovaniKorisnik
+        public user SelektovaniKorisnik
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
@@ -76,7 +76,7 @@ namespace Desktop.ViewModel
             get { return _listaPrimljenihPoruka; }
             set { _listaPrimljenihPoruka = value; OnPropertyChanged("ListaPrimljenihPoruka"); }
         }
-        public ObservableCollection<tbl_korisnik> ListaKorisnika
+        public ObservableCollection<user> ListaKorisnika
         {
             get { return _listaKorisnika; }
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
@@ -157,7 +157,7 @@ namespace Desktop.ViewModel
         }
         public void Send(object parameter)
         {
-            client.PosaljiPoruku(SelektovaniKorisnik.id_korisnik, Sesija.Id_korisnik, Poruka, Betreff);
+            client.PosaljiPoruku(SelektovaniKorisnik.idUser, Sesija.Id_korisnik, Poruka, Betreff);
             Poruka = null;
             Betreff = null;
         }
