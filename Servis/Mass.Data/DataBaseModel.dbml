@@ -2,7 +2,7 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=MAAG\SQLEXPRESS;Initial Catalog=maas_faktura;Persist Security Info=True;User ID=test" SettingsObjectName="Mass.Data.Properties.Settings" SettingsPropertyName="maas_fakturaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.akonto" Member="akontos">
     <Type Name="akonto">
-      <Column Name="idakonto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idakonto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ab" Type="System.String" DbType="NChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="iduser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="vrijeme" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -12,14 +12,14 @@
   </Table>
   <Table Name="dbo.zemlja_porijekla_inv" Member="zemlja_porijekla_invs">
     <Type Name="zemlja_porijekla_inv">
-      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="naziv" Type="System.String" DbType="NChar(450)" CanBeNull="true" />
       <Column Name="slika" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.angebot" Member="angebots">
     <Type Name="angebot">
-      <Column Name="idangebot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idangebot" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="iduser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="angebotnr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="kundenr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -44,7 +44,7 @@
   </Table>
   <Table Name="dbo.anzahlungen" Member="anzahlungens">
     <Type Name="anzahlungen">
-      <Column Name="idplacanje" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idplacanje" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ab" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="uplatio" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
@@ -54,7 +54,7 @@
   </Table>
   <Table Name="dbo.artikl" Member="artikls">
     <Type Name="artikl">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="materijal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="naziv" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
       <Column Name="slika" Type="System.String" DbType="NChar(250)" CanBeNull="true" />
@@ -71,7 +71,7 @@
   </Table>
   <Table Name="dbo.auftrage" Member="auftrages">
     <Type Name="auftrage">
-      <Column Name="ab" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ab" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="kundenr" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="kunde" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="ort" Type="System.String" DbType="NChar(25)" CanBeNull="true" />
@@ -94,7 +94,7 @@
   </Table>
   <Table Name="dbo.beschtelung" Member="beschtelungs">
     <Type Name="beschtelung">
-      <Column Name="idbeschtelung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idbeschtelung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ab" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idproizvod" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="qm" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
@@ -110,13 +110,13 @@
   </Table>
   <Table Name="dbo.brojevi_racuna" Member="brojevi_racunas">
     <Type Name="brojevi_racuna">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="brojR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.bug" Member="bugs">
     <Type Name="bug">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="bug" Member="bug1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -125,7 +125,7 @@
   </Table>
   <Table Name="dbo.ca_produkt" Member="ca_produkts">
     <Type Name="ca_produkt">
-      <Column Name="iproizvod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iproizvod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="fertigung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="anlieferung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="abholung" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -135,7 +135,7 @@
   </Table>
   <Table Name="dbo.cijena_artikl_inv" Member="cijena_artikl_invs">
     <Type Name="cijena_artikl_inv">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_artikl" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="vrsta_cijene" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="iznos" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
@@ -144,13 +144,13 @@
   </Table>
   <Table Name="dbo.einheit" Member="einheits">
     <Type Name="einheit">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="jedinica" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.kalendar" Member="kalendars">
     <Type Name="kalendar">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ort" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="opis" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
@@ -162,7 +162,7 @@
   </Table>
   <Table Name="dbo.kunden" Member="kundens">
     <Type Name="kunden">
-      <Column Name="idKunde" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idKunde" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="kundeNr" Type="System.String" DbType="NChar(60)" CanBeNull="true" />
       <Column Name="suchbegriff" Type="System.String" DbType="NChar(60)" CanBeNull="true" />
       <Column Name="vorname" Type="System.String" DbType="NChar(60)" CanBeNull="true" />
@@ -209,7 +209,7 @@
   </Table>
   <Table Name="dbo.lieferant" Member="lieferants">
     <Type Name="lieferant">
-      <Column Name="idLief" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idLief" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="lieferantNr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="anrede" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="vorname" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
@@ -219,7 +219,7 @@
       <Column Name="tel2" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
       <Column Name="handy" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
       <Column Name="skype" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
-      <Column Name="fax" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
       <Column Name="bank" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="BLZ" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
@@ -243,7 +243,7 @@
   </Table>
   <Table Name="dbo.material_inventar" Member="material_inventars">
     <Type Name="material_inventar">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="sifra_materiala" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="vrsta_materiala" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="debljina" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
@@ -267,13 +267,13 @@
   </Table>
   <Table Name="dbo.materijal" Member="materijals">
     <Type Name="materijal">
-      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="naziv" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.mit_kalendar" Member="mit_kalendars">
     <Type Name="mit_kalendar">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="idUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="datum1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -285,7 +285,7 @@
   </Table>
   <Table Name="dbo.mitarbeiter" Member="mitarbeiters">
     <Type Name="mitarbeiter">
-      <Column Name="idMit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idMit" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="mitarbeiterNr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="anrede" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="vorname" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
@@ -319,7 +319,7 @@
   </Table>
   <Table Name="dbo.nach_details" Member="nach_details">
     <Type Name="nach_detail">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="idangebot" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="angebotnr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="kundenr" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -328,7 +328,7 @@
   </Table>
   <Table Name="dbo.nachverfolgung" Member="nachverfolgungs">
     <Type Name="nachverfolgung">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="angebotnr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="kundenr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="interval" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -342,28 +342,28 @@
   </Table>
   <Table Name="dbo.oberflache" Member="oberflaches">
     <Type Name="oberflache">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="materijal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="pov" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.pages" Member="pages">
     <Type Name="page">
-      <Column Name="idPage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPage" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="domena" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.podgrupa_inv" Member="podgrupa_invs">
     <Type Name="podgrupa_inv">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="naziv" Type="System.String" DbType="NChar(200)" CanBeNull="true" />
       <Column Name="opis" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.podpozicija" Member="podpozicijas">
     <Type Name="podpozicija">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="id_p" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="naziv" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="jedinica" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
@@ -373,19 +373,19 @@
   </Table>
   <Table Name="dbo.pozicija" Member="pozicijas">
     <Type Name="pozicija">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="naziv" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.produkt" Member="produkts">
     <Type Name="produkt">
-      <Column Name="idprodukt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idprodukt" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="naziv" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.produkt_SEO_inv" Member="produkt_SEO_invs">
     <Type Name="produkt_SEO_inv">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="primjena" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="web_stranica" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="head" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
@@ -395,7 +395,7 @@
   </Table>
   <Table Name="dbo.produktion" Member="produktions">
     <Type Name="produktion">
-      <Column Name="idproduktion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idproduktion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="idproizvod" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="zeichnung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="anlieferung" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
@@ -414,7 +414,7 @@
   </Table>
   <Table Name="dbo.proizvod" Member="proizvods">
     <Type Name="proizvod">
-      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="angebotnr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="materijal" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -438,7 +438,7 @@
   </Table>
   <Table Name="dbo.rechnung_a" Member="rechnung_as">
     <Type Name="rechnung_a">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ab" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="angebotnr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="kundenr" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -454,7 +454,7 @@
   </Table>
   <Table Name="dbo.rechnung_b" Member="rechnung_bs">
     <Type Name="rechnung_b">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="rechnr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="kundennr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -469,7 +469,7 @@
   </Table>
   <Table Name="dbo.rechnung_b_pozicije" Member="rechnung_b_pozicijes">
     <Type Name="rechnung_b_pozicije">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="rechnr" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="bezeichnung" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="einheit" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -481,7 +481,7 @@
   </Table>
   <Table Name="dbo.reklamation" Member="reklamations">
     <Type Name="reklamation">
-      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ab" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="idprodukt" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -493,7 +493,7 @@
   </Table>
   <Table Name="dbo.route_kalendar" Member="route_kalendars">
     <Type Name="route_kalendar">
-      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="iduser" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="dan" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
       <Column Name="datum_pocetka" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -504,64 +504,15 @@
   </Table>
   <Table Name="dbo.RouteTech" Member="RouteTeches">
     <Type Name="RouteTech">
-      <Column Name="idProduktion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idProduktion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="idTech" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.starke" Member="starkes">
     <Type Name="starke">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="idprodukt" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="starke" Member="starke1" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.user_licence" Member="user_licences">
-    <Type Name="user_licence">
-      <Column Name="id_licence" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="idUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vrsta_cijene_inv" Member="vrsta_cijene_invs">
-    <Type Name="vrsta_cijene_inv">
-      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="naziv" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
-      <Column Name="debljina" Type="System.String" DbType="NChar(45)" CanBeNull="true" />
-      <Column Name="mjerna_jedinica" Type="System.String" DbType="NChar(45)" CanBeNull="true" />
-      <Column Name="koeficijent1" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
-      <Column Name="koeficijent2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="napomena_porez" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
-      <Column Name="prikazati_na" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="angebot_koeficijent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="opis" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
-      <Column Name="napomena" Type="System.String" DbType="NChar(600)" CanBeNull="true" />
-      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="starke" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="oberflache" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.web_stranice_inv" Member="web_stranice_invs">
-    <Type Name="web_stranice_inv">
-      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="naziv" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.p_get_User_ViewResult" Member="p_get_User_ViewResults">
-    <Type Name="p_get_User_ViewResult">
-      <Column Name="idUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="firstName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="lastName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="mail" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="sessionId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
-      <Column Name="userType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="telefon" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="slika" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
-      <Column Name="startseit" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbl_poruka_poslane" Member="tbl_poruka_poslanes">
@@ -574,6 +525,19 @@
       <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
       <Association Name="user_tbl_poruka_poslane" Member="user" ThisKey="poslao" OtherKey="idUser" Type="user" IsForeignKey="true" />
       <Association Name="user_tbl_poruka_poslane1" Member="user1" ThisKey="primio" OtherKey="idUser" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_poruka_primljene" Member="tbl_poruka_primljenes">
+    <Type Name="tbl_poruka_primljene">
+      <Column Name="id_poruka_primljene" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="procitano" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
+      <Association Name="user_tbl_poruka_primljene" Member="user" ThisKey="poslao" OtherKey="idUser" Type="user" IsForeignKey="true" />
+      <Association Name="user_tbl_poruka_primljene1" Member="user1" ThisKey="primio" OtherKey="idUser" Type="user" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.[user]" Member="users">
@@ -596,17 +560,53 @@
       <Association Name="user_tbl_poruka_primljene1" Member="tbl_poruka_primljenes1" ThisKey="idUser" OtherKey="primio" Type="tbl_poruka_primljene" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_poruka_primljene" Member="tbl_poruka_primljenes">
-    <Type Name="tbl_poruka_primljene">
-      <Column Name="id_poruka_primljene" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="procitano" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
-      <Association Name="user_tbl_poruka_primljene" Member="user" ThisKey="poslao" OtherKey="idUser" Type="user" IsForeignKey="true" />
-      <Association Name="user_tbl_poruka_primljene1" Member="user1" ThisKey="primio" OtherKey="idUser" Type="user" IsForeignKey="true" />
+  <Table Name="dbo.user_licence" Member="user_licences">
+    <Type Name="user_licence">
+      <Column Name="id_licence" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vrsta_cijene_inv" Member="vrsta_cijene_invs">
+    <Type Name="vrsta_cijene_inv">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="naziv" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="debljina" Type="System.String" DbType="NChar(45)" CanBeNull="true" />
+      <Column Name="mjerna_jedinica" Type="System.String" DbType="NChar(45)" CanBeNull="true" />
+      <Column Name="koeficijent1" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
+      <Column Name="koeficijent2" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="napomena_porez" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
+      <Column Name="prikazati_na" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="angebot_koeficijent" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="opis" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
+      <Column Name="napomena" Type="System.String" DbType="NChar(600)" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="starke" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="oberflache" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.web_stranice_inv" Member="web_stranice_invs">
+    <Type Name="web_stranice_inv">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="naziv" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.p_get_User_ViewResult" Member="p_get_User_ViewResults">
+    <Type Name="p_get_User_ViewResult">
+      <Column Name="idUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="mail" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="sessionId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="userType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slika" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="startseit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

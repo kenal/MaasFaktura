@@ -42,8 +42,8 @@
                 </DataGrid.AlternatingRowBackground>
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding datum}" Header="Geschrieben" x:Name="col1_1"/>
-                <DataGridTextColumn Binding="{Binding idUser}" Header="Benutzer" x:Name="col1_2"/>
-                    <DataGridTextColumn Binding="{Binding sadrzaj}"  Header="Bug" x:Name="col1_3"/>
+                <DataGridTextColumn Binding="{Binding user_id}" Header="Benutzer" x:Name="col1_2"/>
+                    <DataGridTextColumn Binding="{Binding bug1}"  Header="Bug" x:Name="col1_3"/>
                     <!--<DataGridTextColumn x:Name="col1_3" Header="Bug" IsReadOnly="True" Binding="{Binding sadrzaj}">
                         <DataGridTextColumn.ElementStyle>
                             <Style>
