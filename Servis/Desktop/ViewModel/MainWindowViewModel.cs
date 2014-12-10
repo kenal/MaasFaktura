@@ -48,7 +48,7 @@ namespace Desktop.ViewModel
         {
             int id = Sesija.Id_korisnik;
             LogovaniKor = client.VratiKorisnika(id);
-            ImeKorisnika = LogovaniKor.ime + " " + LogovaniKor.prezime;
+            ImeKorisnika = LogovaniKor.firstName + " " + LogovaniKor.lastName;
         }
 
         public void OtvoriPoruke(object parameter)

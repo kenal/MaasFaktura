@@ -294,7 +294,7 @@ namespace Desktop.ViewModel
 
         public void InsertUserEdit(object parameter) 
         {
-            int Uid = SelektovaniUser.id_korisnik;
+            int Uid = Convert.ToInt32(SelektovaniUser.idUser);
             if (RadAdminEdit == true) { UserTypeEdit = 0; }
             else if (RadMitEdit == true) { UserTypeEdit = 1; }
             else if (RadSekEdit == true) { UserTypeEdit = 2; }
@@ -312,18 +312,18 @@ namespace Desktop.ViewModel
 
         public void PopuniEditUser(object parameter)
         {
-            NameEdit = SelektovaniUser.ime;
-            LastNameEdit = SelektovaniUser.prezime;
+            NameEdit = SelektovaniUser.firstName;
+            LastNameEdit = SelektovaniUser.lastName;
             EmailEdit = SelektovaniUser.mail;
             TelefonEdit = SelektovaniUser.telefon;
             UsernameEdit = SelektovaniUser.username;
             PasswordEdit = SelektovaniUser.password;
-            if(SelektovaniUser.tip == 0){RadAdminEdit = true;}
-            else if (SelektovaniUser.tip == 1) { RadMitEdit = true; }
-            else if (SelektovaniUser.tip == 2) { RadSekEdit = true; }
-            else if (SelektovaniUser.tip == 3) { RadTechEdit = true; }
-            else if (SelektovaniUser.tip == 4) { RadWerkEdit = true; }
-            LicenceEdit = SelektovaniUser.datum;
+            if(SelektovaniUser.userType == 0){RadAdminEdit = true;}
+            else if (SelektovaniUser.userType == 1) { RadMitEdit = true; }
+            else if (SelektovaniUser.userType == 2) { RadSekEdit = true; }
+            else if (SelektovaniUser.userType == 3) { RadTechEdit = true; }
+            else if (SelektovaniUser.userType == 4) { RadWerkEdit = true; }
+            LicenceEdit = Convert.ToDateTime(SelektovaniUser.datum);
         }
 
         public void BrisanjeUsera(object parameter)
@@ -331,7 +331,7 @@ namespace Desktop.ViewModel
 
             if (MessageBox.Show("Sind sie sicher?", "Benutzer Löschen", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                int idU = SelektovaniUser.id_korisnik;
+                int idU = Convert.ToInt32(SelektovaniUser.idUser);
                 client.DeleteUser(idU);
                 ListaKorisnika = client.ListaUserView();
             }
@@ -362,16 +362,16 @@ namespace Desktop.ViewModel
         {
             if (MessageBox.Show("Sind sie sicher?", "Benutzer ändern", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                if (SelektovaniUser.pocetna == true)
+                if (SelektovaniUser.startseit == 1)
                 {
                     //Prvi parametar određuje tip metode. Jer je metoda napravljena da mjenja ili aktivan ili početna u zavisnosti od potrebe
-                    client.changeUserPocetnaOrAktivan(1, SelektovaniUser.id_korisnik, false);
+                    client.changeUserPocetnaOrAktivan(1, Convert.ToInt32(SelektovaniUser.idUser), false);
 
                 }
-                else if (SelektovaniUser.pocetna == false)
+                else if (SelektovaniUser.startseit == 0)
                 {
                     //Prvi parametar određuje tip metode. Jer je metoda napravljena da mjenja ili aktivan ili početna u zavisnosti od potrebe
-                    client.changeUserPocetnaOrAktivan(1, SelektovaniUser.id_korisnik, true);
+                    client.changeUserPocetnaOrAktivan(1, Convert.ToInt32(SelektovaniUser.idUser), true);
 
                 }
                 PopuniGridKorisnika(parameter);
@@ -402,13 +402,13 @@ namespace Desktop.ViewModel
         {
             if (MessageBox.Show("Sind sie sicher?", "Benutzer ändern", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                if (SelektovaniUser.aktivan == true)
+                if (SelektovaniUser.active == 1)
                 {
-                    client.changeUserPocetnaOrAktivan(2, SelektovaniUser.id_korisnik, false);
+                    client.changeUserPocetnaOrAktivan(2, Convert.ToInt32(SelektovaniUser.idUser), false);
                 }
-                else if (SelektovaniUser.aktivan == false)
+                else if (SelektovaniUser.active == 0)
                 {
-                    client.changeUserPocetnaOrAktivan(2, SelektovaniUser.id_korisnik, true);
+                    client.changeUserPocetnaOrAktivan(2, Convert.ToInt32(SelektovaniUser.idUser), true);
                 }
                 PopuniGridKorisnika(parameter);
             }
