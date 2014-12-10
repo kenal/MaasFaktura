@@ -275,9 +275,9 @@
                     <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0"  SelectionMode="Single" ItemsSource="{Binding ListaPage1 , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
 						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"  VerticalAlignment="Top" Margin="10,92,10,-366" SelectedItem="{Binding SelektovaniDobavljac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="366" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Lieferant Nr." x:Name="col1_1" Binding="{Binding broj_dobavljaca}"/>
-                            <DataGridTextColumn Header="Lieferant" x:Name="col1_2" Binding="{Binding ime}"/>
-                            <DataGridTextColumn Header="Adresse" x:Name="col1_3" Binding="{Binding adresa}"/>
+                            <DataGridTextColumn Header="Lieferant Nr." x:Name="col1_1" Binding="{Binding lieferantNr}"/>
+                            <DataGridTextColumn Header="Lieferant" x:Name="col1_2" Binding="{Binding name}"/>
+                            <DataGridTextColumn Header="Adresse" x:Name="col1_3" Binding="{Binding adresse}"/>
                             <DataGridTextColumn Header="Telefon/Handy" x:Name="col1_4" Binding="{Binding tel1}"/>
                             <DataGridTextColumn Header="Fax" x:Name="col1_5" Binding="{Binding fax}"/>
                             <DataGridTextColumn Header="Skype" x:Name="col1_6" Binding="{Binding skype}" />

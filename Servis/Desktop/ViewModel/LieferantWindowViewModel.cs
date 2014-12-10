@@ -1012,15 +1012,15 @@ namespace Desktop.ViewModel
            MailEdit = SelektovaniDobavljac.email;
            BrancheEdit = SelektovaniDobavljac.branche;
            SkontoEdit = SelektovaniDobavljac.skonto;
-           TageEdit = (float)SelektovaniDobavljac.tage;
-           RabattEdit = (float)SelektovaniDobavljac.rabat;
+           if (SelektovaniDobavljac.tage == null) { TageEdit = 0; } else { TageEdit = (float)SelektovaniDobavljac.tage; }
+           if (SelektovaniDobavljac.rabat == null) { RabattEdit = 0; } else { RabattEdit = (float)SelektovaniDobavljac.rabat; }
            BankEdit = SelektovaniDobavljac.bank;
            BLZEdit = SelektovaniDobavljac.BLZ;
            KtoNrEdit = SelektovaniDobavljac.KtoNr;
            BICEdit = SelektovaniDobavljac.BIC;
            IBANEdit = SelektovaniDobavljac.IBAN;
            KontoinhaberEdit = SelektovaniDobavljac.kontoinhaber;
-           UmsatzEdit = (float)SelektovaniDobavljac.umsatz;
+           if (SelektovaniDobavljac.umsatz == null) { UmsatzEdit = 0; } else { UmsatzEdit = (float)SelektovaniDobavljac.umsatz; }
            ZahlweiseEdit = SelektovaniDobavljac.zahlweise;
            NotizEdit = SelektovaniDobavljac.notiz;
            if (Convert.ToInt32(SelektovaniDobavljac.anrede) == 0)
