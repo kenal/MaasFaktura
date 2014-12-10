@@ -19,8 +19,8 @@ namespace Desktop.ViewModel
         private int _brojPrikazanihPoruka=10;
         MassServisClient client = new MassServisClient();
         private ObservableCollection<tbl_poruka_primljene> _listaPrimljenihPoruka = new ObservableCollection<tbl_poruka_primljene>();
-        private tbl_korisnik _selektovaniKorisnik;
-        private ObservableCollection<tbl_korisnik> _listaKorisnika = new ObservableCollection<tbl_korisnik>();
+        private user _selektovaniKorisnik;
+        private ObservableCollection<user> _listaKorisnika = new ObservableCollection<user>();
         private ObservableCollection<tbl_poruka_poslane> _listaPoslanihPoruka = new ObservableCollection<tbl_poruka_poslane>();
         private tbl_poruka_primljene _selektovanaPrimljenaPoruka;
         private tbl_poruka_poslane _selektovanaPoslanaPoruka;

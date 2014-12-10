@@ -21,7 +21,6 @@ namespace Desktop.ViewModel
         string _suchbegriff;        
         string _vorname;        
         string _name;
-        string _anreden;
         string _l_plz_ort;        
         string _gruppe;        
         string _freifeld1;        
@@ -34,36 +33,36 @@ namespace Desktop.ViewModel
         string _lk;        
         string _vorlage_am;        
         string _vorlage_anlass;        
-        string _vk_cijena;        
-        string _gotovina;        
-        string _popust_gotovina;        
-        string _dnevni_popust;        
-        string _predstavnik;        
-        string _limit_narudzbe;        
-        int _tip;        
-        string _adresa_dostava;        
-        string _adresa_fakture;        
-        string _mail2;        
+        string _VKPreisgr;        
+        string _zahlungin;        
+        string _skonto;        
+        string _skontotage;        
+        string _vertreter;        
+        string _ufragssperre;        
+        int _anreden;        
+        string _lieferadresse;        
+        string _rechnungsadresse;        
+        string _email2;        
         string _internet;        
-        int? _tip_kupca;        
-        int? _porez;        
-        int _broj;        
-        string _broj_detalji;        
-        int _ocjena_kupca;       
-        string _biljeska;        
-        string _naziv;        
-        string _zemlja;
-        string _placa;        
+        int? _kundetype;        
+        int? _steuer;        
+        int _zahlweise;        
+        string _zahl_beding;        
+        int _kundenbewertung;       
+        string _notiz;
+        string _titel;
+        string _land;
+        string _zahlbar;        
         string _rabat;        
-        string _adresa2;        
-        string _grad;        
-        string _predmet;        
-        string _kontakt_osobe;        
-        string _detalji_rute;
+        string _adresse2;        
+        string _stadt;        
+        string _anredeans;        
+        string _anssprechepartner;        
+        string _notiz_route;
         MassServisClient client = new MassServisClient();
         private List<string> nacinPlacanja = new List<string>() { "Barverkauf", "Bankeinzug", "Kreditkarte", "Nachnahme", "Rechnung", "Scheck", "Vorkasse" };
-        ObservableCollection<tbl_kupac> ListaKupaca;       
-        tbl_kupac selektovaniKupac = new tbl_kupac();
+        ObservableCollection<kunden> ListaKupaca;       
+        kunden selektovaniKupac = new kunden();
         bool radioHer;
         bool radioFrau;
         bool radioFirma;
@@ -72,50 +71,49 @@ namespace Desktop.ViewModel
         bool radioSteuer2;
         bool radioSteuer3;
 
-        int _id_kupacEdit;
-        int _broj_kupacEdit;       
-        string _pojamEdit;        
-        string _imeEdit;        
-        string _prezimeEdit;        
+        int _idKundeEdit;
+        int _kundeNrEdit;       
+        string _suchbegriffEdit;        
+        string _vornameEdit;        
+        string _nameEdit;        
         string _titelEdit;        
-        string _mjestoEdit;        
-        string _grupaEdit;
-        string _slobodno_poljeEdit;        
-        string _ime2Edit;        
-        string _ulicaEdit;
+        string _l_plz_ortEdit;        
+        string _gruppeEdit;
+        string _freifeld1Edit;        
+        string _name2Edit;        
+        string _strasseEdit;
         string _tel1Edit;
         string _tel2Edit;
         string _faxEdit;
         string _mailEdit;
         string _lkEdit;
-        string _dostava_naEdit;
-        string _dostava_odEdit;
-        string _vk_cijenaEdit;
-        string _gotovinaEdit;
-        string _popust_gotovinaEdit;
-        string _dnevni_popustEdit;
-        string _predstavnikEdit;
-        string _limit_narudzbeEdit;
-        int _tipEdit;
-        string _adresa_dostavaEdit;
-        string _adresa_faktureEdit;
-        string _mail2Edit;
+        string _vorlage_amEdit;
+        string _vorlage_anlassEdit;
+        string _VKPreisgrEdit;
+        string _zahlunginEdit;
+        string _skontoEdit;
+        string _skontotageEdit;
+        string _vertreterEdit;
+        string _ufragssperreEdit;
+        int _anredenEdit;
+        string _lieferadresseEdit;
+        string _rechnungsadresseEdit;
+        string _email2Edit;
         string _internetEdit;
-        int? _tip_kupcaEdit;
-        int? _porezEdit;
-        int _brojEdit;
-        string _broj_detaljiEdit;
-        int _ocjena_kupcaEdit;        
-        string _biljeskaEdit;
-        string _nazivEdit;
-        string _zemljaEdit;
-        string _placaEdit;
+        int? _kundetypeEdit;
+        int? _steuerEdit;
+        int _zahlweiseEdit;
+        string _zahl_bedingEdit;
+        int _kundenbewertungEdit;        
+        string _notizEdit;        
+        string _landEdit;
+        string _zahlbarEdit;
         string _rabatEdit;
-        string _adresa2Edit;
-        string _gradEdit;
-        string _predmetEdit;
-        string _kontakt_osobeEdit;
-        string _detalji_ruteEdit;
+        string _adresse2Edit;
+        string _stadtEdit;
+        string _anredeansEdit;
+        string _anssprechepartnerEdit;
+        string _notiz_routeEdit;
         bool radioHerEdit;
         bool radioFrauEdit;
         bool radioFirmaEdit;
@@ -123,7 +121,7 @@ namespace Desktop.ViewModel
         bool radioSteuer1Edit;
         bool radioSteuer2Edit;
         bool radioSteuer3Edit;
-        ObservableCollection<tbl_kupac> ListaPage= new ObservableCollection<tbl_kupac>();
+        ObservableCollection<kunden> ListaPage= new ObservableCollection<kunden>();
         int brojStranice =1;
 
         private int _kolicinaKupaca = 10;
@@ -155,114 +153,114 @@ namespace Desktop.ViewModel
             set { _kolicinaKupaca = value; OnPropertyChanged("KolicinaKupaca"); }
         }
         public Action CloseAction { get; set; }
-        public int Id_kupac
+        public int IdKunde
         {
-            get { return _id_kupac; }
+            get { return _idKunde; }
             set 
             {
-                _id_kupac = value;
-                OnPropertyChanged("Id_kupac");
+                _idKunde = value;
+                OnPropertyChanged("IdKunde");
             }
         }
 
-        public int Broj_kupac
+        public int KundeNr
         {
             get { return _kundeNr; }
             set 
             { 
                 _kundeNr = value;
-                OnPropertyChanged("Broj_kupac");
+                OnPropertyChanged("KundeNr");
             }
         }
 
-        public string Pojam
+        public string Suchbegriff
         {
             get { return _suchbegriff; }
             set 
             { 
                 _suchbegriff = value;
-                OnPropertyChanged("Pojam"); 
+                OnPropertyChanged("Suchbegriff"); 
             }
         }        
 
-        public string Ime
+        public string Vorname
         {
             get { return _vorname; }
             set 
             { 
                 _vorname = value;
-                OnPropertyChanged("Ime");
+                OnPropertyChanged("Vorname");
             }
         }
 
-        public string Prezime
+        public string Name
         {
             get { return _name; }
             set 
             { 
                 _name = value;
-                OnPropertyChanged("Prezime");
+                OnPropertyChanged("Name");
             }
         }
 
         
         public string Titel
         {
-            get { return _anreden; }
+            get { return _titel; }
             set 
             { 
-                _anreden = value;
+                _titel = value;
                 OnPropertyChanged("Titel");
             }
         }
 
-        public string Mjesto
+        public string L_plz_ort
         {
             get { return _l_plz_ort; }
             set 
             { 
                 _l_plz_ort = value;
-                OnPropertyChanged("Mjesto");
+                OnPropertyChanged("L_plz_ort");
             }
         }
 
-        public string Grupa
+        public string Gruppe
         {
             get { return _gruppe; }
             set 
             { 
                 _gruppe = value;
-                OnPropertyChanged("Grupa");
+                OnPropertyChanged("Gruppe");
             }
         }
 
-        public string Slobodno_polje
+        public string Freifeld1
         {
             get { return _freifeld1; }
             set 
             { 
                 _freifeld1 = value;
-                OnPropertyChanged("Slobodno_polje");
+                OnPropertyChanged("Freifeld1");
             }
         }
 
-        public string Ime2
+        public string Name2
         {
             get { return _name2; }
             set 
             { 
                 _name2 = value;
-                OnPropertyChanged("Ime2");
+                OnPropertyChanged("Name2");
             }
         }
 
-        public string Ulica
+        public string Strasse
         {
             get { return _strasse; }
             set 
             { 
                 _strasse = value;
-                OnPropertyChanged("Ulica");
+                OnPropertyChanged("Strasse");
             }
         }
 
@@ -316,123 +314,123 @@ namespace Desktop.ViewModel
             }
         }
 
-        public string Dostava_na
+        public string Vorlage_am
         {
             get { return _vorlage_am; }
             set 
             { 
                 _vorlage_am = value;
-                OnPropertyChanged("Dostava_na");
+                OnPropertyChanged("Vorlage_am");
             }
         }
 
-        public string Dostava_od
+        public string Vorlage_anlass
         {
             get { return _vorlage_anlass; }
             set 
             { 
                 _vorlage_anlass = value;
-                OnPropertyChanged("Dostava_od");
+                OnPropertyChanged("Vorlage_anlass");
             }
         }
 
-        public string Vk_cijena
+        public string VKPreisgr
         {
-            get { return _vk_cijena; }
+            get { return _VKPreisgr; }
             set 
             { 
-                _vk_cijena = value;
-                OnPropertyChanged("Vk_cijena");
+                _VKPreisgr = value;
+                OnPropertyChanged("VKPreisgr");
             }
         }
 
-        public string Gotovina
+        public string Zahlungin
         {
-            get { return _gotovina; }
+            get { return _zahlungin; }
             set 
             { 
-                _gotovina = value;
-                OnPropertyChanged("Gotovina");
+                _zahlungin = value;
+                OnPropertyChanged("Zahlungin");
             }
         }
 
-        public string Popust_gotovina
+        public string Skonto
         {
-            get { return _popust_gotovina; }
+            get { return _skonto; }
             set 
             { 
-                _popust_gotovina = value;
-                OnPropertyChanged("Popust_gotovina");
+                _skonto = value;
+                OnPropertyChanged("Skonto");
             }
         }
 
-        public string Dnevni_popust
+        public string Skontotage
         {
-            get { return _dnevni_popust; }
+            get { return _skontotage; }
             set 
             { 
-                _dnevni_popust = value;
-                OnPropertyChanged("Dnevni_popust");
+                _skontotage = value;
+                OnPropertyChanged("Skontotage");
             }
         }
 
-        public string Predstavnik
+        public string Vertreter
         {
-            get { return _predstavnik; }
+            get { return _vertreter; }
             set
             {
-                _predstavnik = value;
-                OnPropertyChanged("Predstavnik");
+                _vertreter = value;
+                OnPropertyChanged("Vertreter");
             }
         }
 
-        public string Limit_narudzbe
+        public string Ufragssperre
         {
-            get { return _limit_narudzbe; }
+            get { return _ufragssperre; }
             set 
             { 
-                _limit_narudzbe = value;
-                OnPropertyChanged("Limit_narudzbe");
+                _ufragssperre = value;
+                OnPropertyChanged("Ufragssperre");
             }
         }
 
-        public int Tip
+        public int Anreden
         {
-            get { return _tip; }
+            get { return _anreden; }
             set 
             { 
-                _tip = value;
-                OnPropertyChanged("Tip");
+                _anreden = value;
+                OnPropertyChanged("Anreden");
             }
         }
 
-        public string Adresa_dostava
+        public string Lieferadresse
         {
-            get { return _adresa_dostava; }
+            get { return _lieferadresse; }
             set 
             { 
-                _adresa_dostava = value;
-                OnPropertyChanged("Adresa_dostava");
+                _lieferadresse = value;
+                OnPropertyChanged("Lieferadresse");
             }
         }
 
-        public string Adresa_fakture
+        public string Rechnungsadresse
         {
-            get { return _adresa_fakture; }
+            get { return _rechnungsadresse; }
             set 
             { 
-                _adresa_fakture = value;
-                OnPropertyChanged("Adresa_fakture");
+                _rechnungsadresse = value;
+                OnPropertyChanged("Rechnungsadresse");
             }
         }
 
-        public string Mail2
+        public string Email2
         {
-            get { return _mail2; }
+            get { return _email2; }
             set 
             { 
-                _mail2 = value;
-                OnPropertyChanged("Mail2");
+                _email2 = value;
+                OnPropertyChanged("Email2");
             }
         }
 
@@ -446,93 +444,85 @@ namespace Desktop.ViewModel
             }
         }
 
-        public int? Tip_kupca
+        public int? Kundetype
         {
-            get { return _tip_kupca; }
+            get { return _kundetype; }
             set 
             { 
-                _tip_kupca = value;
-                OnPropertyChanged("Tip_kupca");
+                _kundetype = value;
+                OnPropertyChanged("Kundetype");
             }
         }
 
-        public int? Porez
+        public int? Steuer
         {
-            get { return _porez; }
+            get { return _steuer; }
             set 
             { 
-                _porez = value;
-                OnPropertyChanged("Porez");
+                _steuer = value;
+                OnPropertyChanged("Steuer");
             }
         }
 
-        public int Broj
+        public int Zahlweise
         {
-            get { return _broj; }
+            get { return _zahlweise; }
             set 
             { 
-                _broj = value;
-                OnPropertyChanged("Broj");
+                _zahlweise = value;
+                OnPropertyChanged("Zahlweise");
             }
         }
 
-        public string Broj_detalji
+        public string Zahl_beding
         {
-            get { return _broj_detalji; }
+            get { return _zahl_beding; }
             set 
             { 
-                _broj_detalji = value;
-                OnPropertyChanged("Broj_detalji");
+                _zahl_beding = value;
+                OnPropertyChanged("Zahl_beding");
             }
         }
 
-        public int Ocjena_kupca
+        public int Kundenbewertung
         {
-            get { return _ocjena_kupca; }
+            get { return _kundenbewertung; }
             set 
             { 
-                _ocjena_kupca = value;
-                OnPropertyChanged("Ocjena_kupca");
+                _kundenbewertung = value;
+                OnPropertyChanged("Kundenbewertung");
             }
         }
 
-        public string Biljeska
+        public string Notiz
         {
-            get { return _biljeska; }
+            get { return _notiz; }
             set 
             { 
-                _biljeska = value;
-                OnPropertyChanged("Biljeska");
+                _notiz = value;
+                OnPropertyChanged("Notiz");
             }
         }
 
-        public string Naziv
-        {
-            get { return _naziv; }
-            set 
-            { 
-                _naziv = value;
-                OnPropertyChanged("Naziv");
-            }
-        }
+        
 
-        public string Zemlja
+        public string Land
         {
-            get { return _zemlja; }
+            get { return _land; }
             set 
             {
-                _zemlja = value;
-                OnPropertyChanged("Zemlja");
+                _land = value;
+                OnPropertyChanged("Land");
             }
         }
 
-        public string Placa
+        public string Zahlbar
         {
-            get { return _placa; }
+            get { return _zahlbar; }
             set 
             { 
-                _placa = value;
-                OnPropertyChanged("Placa");
+                _zahlbar = value;
+                OnPropertyChanged("Zahlbar");
             }
         }
 
@@ -546,53 +536,53 @@ namespace Desktop.ViewModel
             }
         }
 
-        public string Adresa2
+        public string Adresse2
         {
-            get { return _adresa2; }
+            get { return _adresse2; }
             set 
             { 
-                _adresa2 = value;
-                OnPropertyChanged("Adresa2");
+                _adresse2 = value;
+                OnPropertyChanged("Adresse2");
             }
         }
 
-        public string Grad
+        public string Stadt
         {
-            get { return _grad; }
+            get { return _stadt; }
             set 
             { 
-                _grad = value;
-                OnPropertyChanged("Grad");
+                _stadt = value;
+                OnPropertyChanged("Stadt");
             }
         }
 
-        public string Predmet
+        public string Anredeans
         {
-            get { return _predmet; }
+            get { return _anredeans; }
             set 
             { 
-                _predmet = value;
-                OnPropertyChanged("Predmet");
+                _anredeans = value;
+                OnPropertyChanged("Anredeans");
             }
         }
 
-        public string Kontakt_osobe
+        public string Anssprechepartner
         {
-            get { return _kontakt_osobe; }
+            get { return _anssprechepartner; }
             set 
             { 
-                _kontakt_osobe = value;
-                OnPropertyChanged("Kontakt_osobe");
+                _anssprechepartner = value;
+                OnPropertyChanged("Anssprechepartner");
             }
         }
 
-        public string Detalji_rute
+        public string Notiz_route
         {
-            get { return _detalji_rute; }
+            get { return _notiz_route; }
             set 
             { 
-                _detalji_rute = value;
-                OnPropertyChanged("Detalji_rute");
+                _notiz_route = value;
+                OnPropertyChanged("Notiz_route");
             }
         }
 
@@ -606,7 +596,7 @@ namespace Desktop.ViewModel
             }
         }
 
-        public ObservableCollection<tbl_kupac> ListaKupaca1
+        public ObservableCollection<kunden> ListaKupaca1
         {
             get { return ListaKupaca; }
             set 
@@ -616,7 +606,7 @@ namespace Desktop.ViewModel
             }
         }
 
-        public ObservableCollection<tbl_kupac> ListaPage1
+        public ObservableCollection<kunden> ListaPage1
         {
             get { return ListaPage; }
             set 
@@ -626,7 +616,7 @@ namespace Desktop.ViewModel
             }
         }
 
-        public tbl_kupac SelektovaniKupac
+        public kunden SelektovaniKupac
         {
             get { return selektovaniKupac; }
             set 
@@ -706,53 +696,53 @@ namespace Desktop.ViewModel
             }
         }
 
-        public int Id_kupacEdit
+        public int IdKundeEdit
         {
-            get { return _id_kupacEdit; }
+            get { return _idKundeEdit; }
             set 
             { 
-                _id_kupacEdit = value;
-                OnPropertyChanged("Id_kupacEdit");
+                _idKundeEdit = value;
+                OnPropertyChanged("IdKundeEdit");
             }
         }
 
-        public int Broj_kupacEdit
+        public int KundeNrEdit
         {
-            get { return _broj_kupacEdit; }
+            get { return _kundeNrEdit; }
             set 
             { 
-                _broj_kupacEdit = value;
-                OnPropertyChanged("Broj_kupacEdit");
+                _kundeNrEdit = value;
+                OnPropertyChanged("KundeNrEdit");
             }
         }
 
-        public string PojamEdit
+        public string SuchbegriffEdit
         {
-            get { return _pojamEdit; }
+            get { return _suchbegriffEdit; }
             set 
             { 
-                _pojamEdit = value;
-                OnPropertyChanged("PojamEdit");
+                _suchbegriffEdit = value;
+                OnPropertyChanged("SuchbegriffEdit");
             }
         }
 
-        public string ImeEdit
+        public string VornameEdit
         {
-            get { return _imeEdit; }
+            get { return _vornameEdit; }
             set 
             { 
-                _imeEdit = value;
-                OnPropertyChanged("ImeEdit");
+                _vornameEdit = value;
+                OnPropertyChanged("VornameEdit");
             }
         }
 
-        public string PrezimeEdit
+        public string NameEdit
         {
-            get { return _prezimeEdit; }
+            get { return _nameEdit; }
             set 
             { 
-                _prezimeEdit = value;
-                OnPropertyChanged("PrezimeEdit");
+                _nameEdit = value;
+                OnPropertyChanged("NameEdit");
             }
         }
 
@@ -766,53 +756,53 @@ namespace Desktop.ViewModel
             }
         }
 
-        public string MjestoEdit
+        public string L_plz_ortEdit
         {
-            get { return _mjestoEdit; }
+            get { return _l_plz_ortEdit; }
             set 
             { 
-                _mjestoEdit = value;
-                OnPropertyChanged("MjestoEdit");
+                _l_plz_ortEdit = value;
+                OnPropertyChanged("L_plz_ortEdit");
             }
         }
 
-        public string GrupaEdit
+        public string GruppeEdit
         {
-            get { return _grupaEdit; }
+            get { return _gruppeEdit; }
             set 
             { 
-                _grupaEdit = value;
-                OnPropertyChanged("GrupaEdit");
+                _gruppeEdit = value;
+                OnPropertyChanged("GruppeEdit");
             }
         }
 
-        public string Slobodno_poljeEdit
+        public string Freifeld1Edit
         {
-            get { return _slobodno_poljeEdit; }
+            get { return _freifeld1Edit; }
             set 
             { 
-                _slobodno_poljeEdit = value;
-                OnPropertyChanged("Slobodno_poljeEdit");
+                _freifeld1Edit = value;
+                OnPropertyChanged("Freifeld1Edit");
             }
         }
 
-        public string Ime2Edit
+        public string Name2Edit
         {
-            get { return _ime2Edit; }
+            get { return _name2Edit; }
             set 
             { 
-                _ime2Edit = value;
-                OnPropertyChanged("Ime2Edit");
+                _name2Edit = value;
+                OnPropertyChanged("Name2Edit");
             }
         }
 
-        public string UlicaEdit
+        public string StrasseEdit
         {
-            get { return _ulicaEdit; }
+            get { return _strasseEdit; }
             set 
             { 
-                _ulicaEdit = value;
-                OnPropertyChanged("UlicaEdit");
+                _strasseEdit = value;
+                OnPropertyChanged("StrasseEdit");
             }
         }
 
@@ -866,123 +856,123 @@ namespace Desktop.ViewModel
             }
         }
 
-        public string Dostava_naEdit
+        public string Vorlage_amEdit
         {
-            get { return _dostava_naEdit; }
+            get { return _vorlage_amEdit; }
             set 
             { 
-                _dostava_naEdit = value;
-                OnPropertyChanged("Dostava_naEdit");
+                _vorlage_amEdit = value;
+                OnPropertyChanged("Vorlage_amEdit");
             }
         }
 
-        public string Dostava_odEdit
+        public string Vorlage_anlassEdit
         {
-            get { return _dostava_odEdit; }
+            get { return _vorlage_anlassEdit; }
             set 
             {
-                _dostava_odEdit = value;
-                OnPropertyChanged("Dostava_odEdit");
+                _vorlage_anlassEdit = value;
+                OnPropertyChanged("Vorlage_anlassEdit");
             }
         }
 
-        public string Vk_cijenaEdit
+        public string VKPreisgrEdit
         {
-            get { return _vk_cijenaEdit; }
+            get { return _VKPreisgrEdit; }
             set 
             { 
-                _vk_cijenaEdit = value;
-                OnPropertyChanged("Vk_cijenaEdit");
+                _VKPreisgrEdit = value;
+                OnPropertyChanged("VKPreisgrEdit");
             }
         }
 
-        public string GotovinaEdit
+        public string ZahlunginEdit
         {
-            get { return _gotovinaEdit; }
+            get { return _zahlunginEdit; }
             set 
             { 
-                _gotovinaEdit = value;
-                OnPropertyChanged("GotovinaEdit");
+                _zahlunginEdit = value;
+                OnPropertyChanged("ZahlunginEdit");
             }
         }
 
-        public string Popust_gotovinaEdit
+        public string SkontoEdit
         {
-            get { return _popust_gotovinaEdit; }
+            get { return _skontoEdit; }
             set 
             { 
-                _popust_gotovinaEdit = value;
-                OnPropertyChanged("Popust_gotovinaEdit");
+                _skontoEdit = value;
+                OnPropertyChanged("SkontoEdit");
             }
         }
 
-        public string Dnevni_popustEdit
+        public string SkontotageEdit
         {
-            get { return _dnevni_popustEdit; }
+            get { return _skontotageEdit; }
             set 
             { 
-                _dnevni_popustEdit = value;
-                OnPropertyChanged("Dnevni_popustEdit");
+                _skontotageEdit = value;
+                OnPropertyChanged("SkontotageEdit");
             }
         }
 
-        public string PredstavnikEdit
+        public string VertreterEdit
         {
-            get { return _predstavnikEdit; }
+            get { return _vertreterEdit; }
             set 
             { 
-                _predstavnikEdit = value;
-                OnPropertyChanged("PredstavnikEdit");
+                _vertreterEdit = value;
+                OnPropertyChanged("VertreterEdit");
             }
         }
 
-        public string Limit_narudzbeEdit
+        public string UfragssperreEdit
         {
-            get { return _limit_narudzbeEdit; }
+            get { return _ufragssperreEdit; }
             set 
             { 
-                _limit_narudzbeEdit = value;
-                OnPropertyChanged("Limit_narudzbeEdit");
+                _ufragssperreEdit = value;
+                OnPropertyChanged("UfragssperreEdit");
             }
         }
 
-        public int TipEdit
+        public int AnredenEdit
         {
-            get { return _tipEdit; }
+            get { return _anredenEdit; }
             set 
             { 
-                _tipEdit = value;
-                OnPropertyChanged("TipEdit");
+                _anredenEdit = value;
+                OnPropertyChanged("AnredenEdit");
             }
         }
 
-        public string Adresa_dostavaEdit
+        public string LieferadresseEdit
         {
-            get { return _adresa_dostavaEdit; }
+            get { return _lieferadresseEdit; }
             set 
             { 
-                _adresa_dostavaEdit = value;
-                OnPropertyChanged("Adresa_dostavaEdit");
+                _lieferadresseEdit = value;
+                OnPropertyChanged("LieferadresseEdit");
             }
         }
 
-        public string Adresa_faktureEdit
+        public string RechnungsadresseEdit
         {
-            get { return _adresa_faktureEdit; }
+            get { return _rechnungsadresseEdit; }
             set 
             { 
-                _adresa_faktureEdit = value;
-                OnPropertyChanged("Adresa_faktureEdit");
+                _rechnungsadresseEdit = value;
+                OnPropertyChanged("RechnungsadresseEdit");
             }
         }
 
-        public string Mail2Edit
+        public string Email2Edit
         {
-            get { return _mail2Edit; }
+            get { return _email2Edit; }
             set 
             { 
-                _mail2Edit = value;
-                OnPropertyChanged("Mail2Edit");
+                _email2Edit = value;
+                OnPropertyChanged("Email2Edit");
             }
         }
 
@@ -996,93 +986,83 @@ namespace Desktop.ViewModel
             }
         }
 
-        public int? Tip_kupcaEdit
+        public int? KundetypeEdit
         {
-            get { return _tip_kupcaEdit; }
+            get { return _kundetypeEdit; }
             set 
             { 
-                _tip_kupcaEdit = value;
-                OnPropertyChanged("Tip_kupcaEdit");
+                _kundetypeEdit = value;
+                OnPropertyChanged("KundetypeEdit");
             }
         }
 
-        public int? PorezEdit
+        public int? SteuerEdit
         {
-            get { return _porezEdit; }
+            get { return _steuerEdit; }
             set 
             { 
-                _porezEdit = value;
-                OnPropertyChanged("PorezEdit");
+                _steuerEdit = value;
+                OnPropertyChanged("SteuerEdit");
             }
         }
 
-        public int BrojEdit
+        public int ZahlweiseEdit
         {
-            get { return _brojEdit; }
+            get { return _zahlweiseEdit; }
             set 
             { 
-                _brojEdit = value;
-                OnPropertyChanged("BrojEdit");
+                _zahlweiseEdit = value;
+                OnPropertyChanged("ZahlweiseEdit");
             }
         }
 
-        public string Broj_detaljiEdit
+        public string Zahl_bedingEdit
         {
-            get { return _broj_detaljiEdit; }
+            get { return _zahl_bedingEdit; }
             set 
             { 
-                _broj_detaljiEdit = value;
-                OnPropertyChanged("Broj_detaljiEdit");
+                _zahl_bedingEdit = value;
+                OnPropertyChanged("Zahl_bedingEdit");
             }
         }
 
-        public int Ocjena_kupcaEdit
+        public int KundenbewertungEdit
         {
-            get { return _ocjena_kupcaEdit; }
+            get { return _kundenbewertungEdit; }
             set 
             { 
-                _ocjena_kupcaEdit = value;
-                OnPropertyChanged("Ocjena_kupcaEdit");
+                _kundenbewertungEdit = value;
+                OnPropertyChanged("KundenbewertungEdit");
             }
         }
 
-        public string BiljeskaEdit
+        public string NotizEdit
         {
-            get { return _biljeskaEdit; }
+            get { return _notizEdit; }
             set 
             { 
-                _biljeskaEdit = value;
-                OnPropertyChanged("BiljeskaEdit");
+                _notizEdit = value;
+                OnPropertyChanged("NotizEdit");
             }
         }
 
-        public string NazivEdit
+        public string LandEdit
         {
-            get { return _nazivEdit; }
+            get { return _landEdit; }
             set 
             { 
-                _nazivEdit = value;
-                OnPropertyChanged("NazivEdit");
+                _landEdit = value;
+                OnPropertyChanged("LandEdit");
             }
         }
 
-        public string ZemljaEdit
+        public string ZahlbarEdit
         {
-            get { return _zemljaEdit; }
+            get { return _zahlbarEdit; }
             set 
             { 
-                _zemljaEdit = value;
-                OnPropertyChanged("ZemljaEdit");
-            }
-        }
-
-        public string PlacaEdit
-        {
-            get { return _placaEdit; }
-            set 
-            { 
-                _placaEdit = value;
-                OnPropertyChanged("PlacaEdit");
+                _zahlbarEdit = value;
+                OnPropertyChanged("ZahlbarEdit");
             }
         }
 
@@ -1096,53 +1076,53 @@ namespace Desktop.ViewModel
             }
         }
 
-        public string Adresa2Edit
+        public string Adresse2Edit
         {
-            get { return _adresa2Edit; }
+            get { return _adresse2Edit; }
             set 
             { 
-                _adresa2Edit = value;
-                OnPropertyChanged("Adresa2Edit");
+                _adresse2Edit = value;
+                OnPropertyChanged("Adresse2Edit");
             }
         }
 
-        public string GradEdit
+        public string StadtEdit
         {
-            get { return _gradEdit; }
+            get { return _stadtEdit; }
             set 
             { 
-                _gradEdit = value;
-                OnPropertyChanged("GradEdit");
+                _stadtEdit = value;
+                OnPropertyChanged("StadtEdit");
             }
         }
 
-        public string PredmetEdit
+        public string AnredeansEdit
         {
-            get { return _predmetEdit; }
+            get { return _anredeansEdit; }
             set 
             { 
-                _predmetEdit = value;
-                OnPropertyChanged("PredmetEdit");
+                _anredeansEdit = value;
+                OnPropertyChanged("AnredeansEdit");
             }
         }
 
-        public string Kontakt_osobeEdit
+        public string AnssprechepartnerEdit
         {
-            get { return _kontakt_osobeEdit; }
+            get { return _anssprechepartnerEdit; }
             set 
             { 
-                _kontakt_osobeEdit = value;
-                OnPropertyChanged("Kontakt_osobeEdit");
+                _anssprechepartnerEdit = value;
+                OnPropertyChanged("AnssprechepartnerEdit");
             }
         }
 
-        public string Detalji_ruteEdit
+        public string Notiz_routeEdit
         {
-            get { return _detalji_ruteEdit; }
+            get { return _notiz_routeEdit; }
             set 
             { 
-                _detalji_ruteEdit = value;
-                OnPropertyChanged("Detalji_ruteEdit");
+                _notiz_routeEdit = value;
+                OnPropertyChanged("Notiz_routeEdit");
             }
         }
 
@@ -1340,127 +1320,127 @@ namespace Desktop.ViewModel
                     neUzimati = brojPrikaza - KolicinaKupaca;
                 var x= ListaKupaca1.Skip(neUzimati).Take(brojPrikaza);
                 ListaPage1.Clear();
-                ListaPage1 = new ObservableCollection<tbl_kupac>(x);
+                ListaPage1 = new ObservableCollection<kunden>(x);
             }
-            Broj_kupac = client.KundenNr();
+            KundeNr = client.KundenNr();
             MaxStranica();
         }
         public void Odustani(object parameter)
         {
-            Broj = 0;
+            Zahlweise = 0;
             
-            Tip_kupca = 0;
-            Ime = null;
-            Prezime = null;
+            Kundetype = 0;
+            Vorname = null;
+            Name = null;
             Titel = null;
-            Ime2 = null;
-            Grad = null;
-            Adresa_dostava = null;
-            Adresa_fakture = null;
-            Adresa2 = null;
+            Name2 = null;
+            Stadt = null;
+            Lieferadresse = null;
+            Rechnungsadresse = null;
+            Adresse2 = null;
             Tel1 = null;
             Tel2 = null;
             Fax = null;
             Mail = null;
             Internet = null;
-            Popust_gotovina = null;
-            Dnevni_popust = null;
-            Placa = null;
+            Skonto = null;
+            Skontotage = null;
+            Zahlbar = null;
             Rabat = null;
-            Biljeska = null;
+            Notiz = null;
 
         }
 
         public void InsertKupac(object parameter)
         {
-            Pojam = Prezime;
+            Suchbegriff = Name;
             if (RadioHer == true)
-                Tip_kupca = 0;
+                Kundetype = 0;
             else if (RadioFrau == true)
-                Tip_kupca = 1;
+                Kundetype = 1;
             else if (RadioFirma == true)
             {
-                Tip_kupca = 2;
-                Pojam = Ime2;
+                Kundetype = 2;
+                Suchbegriff = Name2;
             }
                 
             else if (RadioFam == true)
-                Tip_kupca = 3;
+                Kundetype = 3;
 
             if (RadioSteuer1 == true)
-                Porez = 0;
+                Steuer = 0;
             else if (RadioSteuer2 == true)
-                Porez = 1;
+                Steuer = 1;
             else if (RadioSteuer3 == true)
-                Porez = 2;
+                Steuer = 2;
 
-            tbl_kupac kupac = new tbl_kupac();
-            kupac.adresa_dostava = Adresa_dostava;
-            kupac.adresa_fakture = Adresa_fakture;
-            kupac.adresa2 = Adresa2;
-            kupac.biljeska = Biljeska;
-            kupac.broj = Broj;
-            kupac.broj_detalji = Broj_detalji;
-            kupac.detalji_rute = Detalji_rute;
-            kupac.dnevni_popust = Dnevni_popust;
-            kupac.dostava_na = Dostava_na;
-            kupac.dostava_od = Dostava_od;
+            kunden kupac = new kunden();
+            kupac.lieferadresse = Lieferadresse;
+            kupac.rechnungsadresse = Rechnungsadresse;
+            kupac.adresse2 = Adresse2;
+            kupac.notiz = Notiz;
+            kupac.zahlweise = Zahlweise.ToString();
+            kupac.zahl_beding = Zahl_beding;
+            kupac.notiz_route = Notiz_route;
+            kupac.skontotage = Skontotage;
+            kupac.vorlage_am = Vorlage_am;
+            kupac.vorlage_anlass = Vorlage_anlass;
             kupac.fax = Fax;
-            kupac.gotovina = Gotovina;
-            kupac.grad = Grad;
-            kupac.grupa = Grupa;
-            kupac.ime = Ime;
-            kupac.ime2 = Ime2;
-            kupac.interner = Internet;
-            kupac.kontakt_osobe = Kontakt_osobe;
-            kupac.limit_narudzbe = Limit_narudzbe;
+            kupac.zahlungin = Zahlungin;
+            kupac.stadt = Stadt;
+            kupac.gruppe = Gruppe;
+            kupac.vorname = Vorname;
+            kupac.name2 = Name2;
+            kupac.internet = Internet;
+            kupac.anssprechepartner = Anssprechepartner;
+            kupac.ufragssperre = Ufragssperre;
             kupac.lk = Lk;
             kupac.mail = Mail;
-            kupac.mail2 = Mail2;
-            kupac.mjesto = Mjesto;
-            kupac.naziv = Naziv;
-            kupac.ocjena_kupca = Ocjena_kupca;
-            kupac.placa = Placa;
-            kupac.pojam = Pojam;
-            kupac.popust_gotovina = Popust_gotovina;
-            kupac.porez = Porez;
-            kupac.predmet = Predmet;
-            kupac.predstavnik = Predstavnik;
-            kupac.prezime = Prezime;
+            kupac.email2 = Email2;
+            kupac.l_plz_ort = L_plz_ort;
+            
+            kupac.kundenbewertung = Kundenbewertung;
+            kupac.zahlbar = Zahlbar;
+            kupac.suchbegriff = Suchbegriff;
+            kupac.skonto = Skonto;
+            kupac.steuer = Steuer;
+            kupac.anredeans = Anredeans;
+            kupac.vertreter = Vertreter;
+            kupac.name = Name;
             kupac.rabat = Rabat;
-            kupac.slobodno_polje = Slobodno_polje;
+            kupac.freifeld1 = Freifeld1;
             kupac.tel1 = Tel1;
             kupac.tel2 = Tel2;
-            kupac.tip = Tip;
-            kupac.tip_kupca = Tip_kupca;
-            kupac.vk_cijena = Vk_cijena;
-            kupac.zemlja = Zemlja;
-            kupac.broj_kupac = Broj_kupac;
-            kupac.pojam = Pojam;
+            kupac.anreden = Anreden;
+            kupac.kundetype = Kundetype;
+            kupac.VKPreisgr = VKPreisgr;
+            kupac.land = Land;
+            kupac.kundeNr = KundeNr.ToString();
+            
             client.UnesiKupca(kupac);
             FillGridKupca(parameter);
             Paginacija(BrojStranice);
 
-            Broj = 0;
-            Tip_kupca = 0;
-            Ime = null;
-            Prezime = null;
+            Zahlweise = 0;
+            Kundetype = 0;
+            Vorname = null;
+            Name = null;
             Titel = null;
-            Ime2 = null;
-            Grad = null;
-            Adresa_dostava = null;
-            Adresa_fakture = null;
-            Adresa2 = null;
+            Name2 = null;
+            Stadt = null;
+            Lieferadresse = null;
+            Rechnungsadresse = null;
+            Adresse2 = null;
             Tel1 = null;
             Tel2 = null;
             Fax = null;
             Mail = null;
             Internet = null;
-            Popust_gotovina = null;
-            Dnevni_popust = null;
-            Placa = null;
+            Skonto = null;
+            Skontotage = null;
+            Zahlbar = null;
             Rabat = null;
-            Biljeska = null;
+            Notiz = null;
         }
 
         public void FillGridKupca(object parameter)
@@ -1525,7 +1505,7 @@ namespace Desktop.ViewModel
         
         public void ObrisiKupac(object parameter)
         {
-            int br = Convert.ToInt32(SelektovaniKupac.broj_kupac);
+            int br = Convert.ToInt32(SelektovaniKupac.kundeNr);
             client.ObrisiKupca(br);
             FillGridKupca(parameter);
             Paginacija(BrojStranice);
@@ -1544,136 +1524,136 @@ namespace Desktop.ViewModel
         }
         public void PopuniUpdate(object parameter)
         {
-            Id_kupacEdit = selektovaniKupac.id_kupac;
-            Broj_kupacEdit = Convert.ToInt32(selektovaniKupac.broj_kupac);
-            Adresa_dostavaEdit = selektovaniKupac.adresa_dostava;
-            Adresa_faktureEdit = selektovaniKupac.adresa_fakture;
-            Adresa2Edit = selektovaniKupac.adresa2;
-            PojamEdit = selektovaniKupac.pojam;
-            ImeEdit = selektovaniKupac.ime;
-            PrezimeEdit = selektovaniKupac.prezime;
-            MjestoEdit = selektovaniKupac.mjesto;
-            GrupaEdit = selektovaniKupac.grupa;
-            Slobodno_poljeEdit = selektovaniKupac.slobodno_polje;
-            Ime2Edit = selektovaniKupac.ime2;
-            UlicaEdit = selektovaniKupac.ulica;
+            IdKundeEdit = Convert.ToInt32(selektovaniKupac.idKunde);
+            KundeNrEdit = Convert.ToInt32(selektovaniKupac.kundeNr);
+            LieferadresseEdit = selektovaniKupac.lieferadresse;
+            RechnungsadresseEdit = selektovaniKupac.rechnungsadresse;
+            Adresse2Edit = selektovaniKupac.adresse2;
+            SuchbegriffEdit = selektovaniKupac.suchbegriff;
+            VornameEdit = selektovaniKupac.vorname;
+            NameEdit = selektovaniKupac.name;
+            L_plz_ortEdit = selektovaniKupac.l_plz_ort;
+            GruppeEdit = selektovaniKupac.gruppe;
+            Freifeld1Edit = selektovaniKupac.freifeld1;
+            Name2Edit = selektovaniKupac.name2;
+            StrasseEdit = selektovaniKupac.strasse;
             Tel1Edit = selektovaniKupac.tel1;
             Tel2Edit = selektovaniKupac.tel2;
             FaxEdit = selektovaniKupac.fax;
             MailEdit = selektovaniKupac.mail;
             LkEdit = selektovaniKupac.lk;
-            Dostava_naEdit = selektovaniKupac.dostava_na;
-            Dostava_odEdit = selektovaniKupac.dostava_od;
-            Vk_cijenaEdit = selektovaniKupac.vk_cijena;
-            GotovinaEdit = selektovaniKupac.gotovina;
-            Popust_gotovinaEdit = selektovaniKupac.popust_gotovina;
-            Dnevni_popustEdit = selektovaniKupac.dnevni_popust;
-            PredstavnikEdit = selektovaniKupac.predstavnik;
-            Limit_narudzbeEdit = selektovaniKupac.limit_narudzbe;
-            TipEdit = Convert.ToInt32(selektovaniKupac.tip);
-            Mail2Edit = selektovaniKupac.mail2;
-            InternetEdit = selektovaniKupac.interner;
-            Tip_kupcaEdit = Convert.ToInt32(selektovaniKupac.tip_kupca);
-            PorezEdit = Convert.ToInt32(selektovaniKupac.porez);
-            BrojEdit = Convert.ToInt32(selektovaniKupac.broj);
-            Broj_detaljiEdit = selektovaniKupac.broj_detalji;
-            Ocjena_kupcaEdit = Convert.ToInt32(selektovaniKupac.ocjena_kupca);
-            BiljeskaEdit = selektovaniKupac.biljeska;
-            NazivEdit = selektovaniKupac.naziv;
-            ZemljaEdit = selektovaniKupac.zemlja;
-            PlacaEdit = selektovaniKupac.placa;
+            Vorlage_amEdit = selektovaniKupac.vorlage_am;
+            Vorlage_anlassEdit = selektovaniKupac.vorlage_anlass;
+            VKPreisgrEdit = selektovaniKupac.VKPreisgr;
+            ZahlunginEdit = selektovaniKupac.zahlungin;
+            SkontoEdit = selektovaniKupac.skonto;
+            SkontotageEdit = selektovaniKupac.skontotage;
+            VertreterEdit = selektovaniKupac.vertreter;
+            UfragssperreEdit = selektovaniKupac.ufragssperre;
+            AnredenEdit = Convert.ToInt32(selektovaniKupac.anreden);
+            Email2Edit = selektovaniKupac.email2;
+            InternetEdit = selektovaniKupac.internet;
+            KundetypeEdit = Convert.ToInt32(selektovaniKupac.kundetype);
+            SteuerEdit = Convert.ToInt32(selektovaniKupac.steuer);
+            ZahlweiseEdit = Convert.ToInt32(selektovaniKupac.zahlweise);
+            Zahl_bedingEdit = selektovaniKupac.zahl_beding;
+            KundenbewertungEdit = Convert.ToInt32(selektovaniKupac.kundenbewertung);
+            NotizEdit = selektovaniKupac.notiz;
+            
+            LandEdit = selektovaniKupac.land;
+            ZahlbarEdit = selektovaniKupac.zahlbar;
             RabatEdit = selektovaniKupac.rabat;
-            GradEdit = selektovaniKupac.grad;
-            PredmetEdit = selektovaniKupac.predmet;
-            Kontakt_osobeEdit = selektovaniKupac.kontakt_osobe;
-            Detalji_ruteEdit = selektovaniKupac.detalji_rute;
+            StadtEdit = selektovaniKupac.stadt;
+            AnredeansEdit = selektovaniKupac.anredeans;
+            AnssprechepartnerEdit = selektovaniKupac.anssprechepartner;
+            Notiz_routeEdit = selektovaniKupac.notiz_route;
             TitelEdit = selektovaniKupac.titel;
 
-            if (selektovaniKupac.tip_kupca == 0)
+            if (selektovaniKupac.kundetype == 0)
                 RadioHerEdit = true;
-            else if (selektovaniKupac.tip_kupca == 1)
+            else if (selektovaniKupac.kundetype == 1)
                 RadioFrauEdit = true;
-            else if (selektovaniKupac.tip_kupca == 2)
+            else if (selektovaniKupac.kundetype == 2)
                 RadioFirmaEdit = true;
-            else if (selektovaniKupac.tip_kupca == 3)
+            else if (selektovaniKupac.kundetype == 3)
                 RadioFamEdit = true;
 
-            if (selektovaniKupac.porez == 0)
+            if (selektovaniKupac.steuer == 0)
                 RadioSteuer1Edit = true;
-            else if (selektovaniKupac.porez == 1)
+            else if (selektovaniKupac.steuer == 1)
                 RadioSteuer2Edit = true;
-            else if (selektovaniKupac.porez == 2)
+            else if (selektovaniKupac.steuer == 2)
                 RadioSteuer3Edit = true;
 
             
         }
         public void IzvrsiUpdate(object parameter)
         {
-            tbl_kupac kupac = new tbl_kupac();
-            kupac.id_kupac = selektovaniKupac.id_kupac;
-            kupac.adresa_dostava = Adresa_dostavaEdit;
-            kupac.adresa_fakture = Adresa_faktureEdit;
-            kupac.adresa2 = Adresa2Edit;
-            kupac.biljeska = BiljeskaEdit;
-            kupac.broj = BrojEdit;
-            kupac.broj_detalji = Broj_detaljiEdit;
-            kupac.broj_kupac = Broj_kupacEdit;
-            kupac.detalji_rute = Detalji_ruteEdit;
-            kupac.dnevni_popust = Dnevni_popustEdit;
-            kupac.dostava_na = Dostava_naEdit;
-            kupac.dostava_od = Dostava_odEdit;
+            kunden kupac = new kunden();
+            kupac.idKunde = selektovaniKupac.idKunde;
+            kupac.lieferadresse = LieferadresseEdit;
+            kupac.rechnungsadresse = RechnungsadresseEdit;
+            kupac.adresse2 = Adresse2Edit;
+            kupac.notiz = NotizEdit;
+            kupac.zahlweise = ZahlweiseEdit.ToString();
+            kupac.zahl_beding = Zahl_bedingEdit;
+            kupac.kundeNr = KundeNrEdit.ToString();
+            kupac.notiz_route = Notiz_routeEdit;
+            kupac.skontotage = SkontotageEdit;
+            kupac.vorlage_am = Vorlage_amEdit;
+            kupac.vorlage_anlass = Vorlage_anlassEdit;
             kupac.fax = FaxEdit;
-            kupac.gotovina = GotovinaEdit;
-            kupac.grad = GradEdit;
-            kupac.grupa = GrupaEdit;
-            kupac.ime = ImeEdit;
-            kupac.interner = InternetEdit;
-            kupac.kontakt_osobe = Kontakt_osobeEdit;
-            kupac.limit_narudzbe = Limit_narudzbeEdit;
+            kupac.zahl_beding = ZahlunginEdit;
+            kupac.stadt = StadtEdit;
+            kupac.gruppe = GruppeEdit;
+            kupac.vorname = VornameEdit;
+            kupac.internet = InternetEdit;
+            kupac.anssprechepartner = AnssprechepartnerEdit;
+            kupac.ufragssperre = UfragssperreEdit;
             kupac.lk = LkEdit;
             kupac.mail = MailEdit;
-            kupac.mail2 = Mail2Edit;
-            kupac.mjesto = MjestoEdit;
-            kupac.naziv = NazivEdit;
-            kupac.ocjena_kupca = Ocjena_kupcaEdit;
-            kupac.placa = PlacaEdit;
-            kupac.popust_gotovina = Popust_gotovinaEdit;
-            kupac.predmet = PredmetEdit;
-            kupac.predstavnik = PredstavnikEdit;
-            kupac.prezime = PrezimeEdit;
+            kupac.email2 = Email2Edit;
+            kupac.l_plz_ort = L_plz_ortEdit;
+            
+            kupac.kundenbewertung = KundenbewertungEdit;
+            kupac.zahlbar = ZahlbarEdit;
+            kupac.skonto = SkontoEdit;
+            kupac.anredeans = AnredeansEdit;
+            kupac.vertreter = VertreterEdit;
+            kupac.name = NameEdit;
             kupac.rabat = RabatEdit;
-            kupac.slobodno_polje = Slobodno_poljeEdit;
+            kupac.freifeld1 = Freifeld1Edit;
             kupac.tel1 = Tel1Edit;
             kupac.tel2 = Tel2Edit;
-            kupac.tip = TipEdit;
+            kupac.anreden = AnredenEdit;
             kupac.titel = TitelEdit;
-            kupac.ulica = UlicaEdit;
-            kupac.vk_cijena = Vk_cijenaEdit;
-            kupac.zemlja = ZemljaEdit;
+            kupac.strasse = StrasseEdit;
+            kupac.VKPreisgr = VKPreisgrEdit;
+            kupac.land = LandEdit;
 
-            PojamEdit = PrezimeEdit;
+            SuchbegriffEdit = NameEdit;
             if (RadioHerEdit == true)
-                kupac.tip_kupca = 0;
+                kupac.kundetype = 0;
             else if (RadioFrauEdit == true)
-                kupac.tip_kupca = 1;
+                kupac.kundetype = 1;
             else if (RadioFirmaEdit == true)
             {
-                kupac.tip_kupca = 2;
-                PojamEdit = Ime2Edit;
+                kupac.kundetype = 2;
+                SuchbegriffEdit = Name2Edit;
             }
             else if (RadioFamEdit == true)
-                kupac.tip_kupca = 3;
+                kupac.kundetype = 3;
 
             if (RadioSteuer1Edit == true)
-                PorezEdit = 0;
+                SteuerEdit = 0;
             else if (RadioSteuer2Edit == true)
-                PorezEdit = 1;
+                SteuerEdit = 1;
             else if (RadioSteuer3Edit == true)
-                PorezEdit = 2;
+                SteuerEdit = 2;
             else
-                PorezEdit = null;
-            kupac.pojam = PojamEdit;
-            kupac.porez = PorezEdit;
+                SteuerEdit = null;
+            kupac.suchbegriff = SuchbegriffEdit;
+            kupac.steuer = SteuerEdit;
             client.UpdateKupac(kupac);
             FillGridKupca(parameter);
             ZatvoriWindow.Execute(this);
@@ -1699,24 +1679,24 @@ namespace Desktop.ViewModel
             get
             {
                 string Result = null;
-                if ("Ime" == columnName)
+                if ("Vorname" == columnName)
                 {
-                    if (String.IsNullOrEmpty(Ime))
+                    if (String.IsNullOrEmpty(Vorname))
                         Result = "Unesite ime.";
                 }
-                else if("Prezime" == columnName)
+                else if ("Name" == columnName)
                 {
-                    if (String.IsNullOrEmpty(Prezime))
+                    if (String.IsNullOrEmpty(Name))
                         Result = "Unesite prezime.";
                 }
-                else if ("Adresa_dostava" == columnName)
+                else if ("Lieferadresse" == columnName)
                 {
-                    if (String.IsNullOrEmpty(Adresa_dostava))
+                    if (String.IsNullOrEmpty(Lieferadresse))
                         Result = "Unesite adresu dostave.";
                 }
-                else if ("Adresa_fakture" == columnName)
+                else if ("Rechnungsadresse" == columnName)
                 {
-                    if (String.IsNullOrEmpty(Adresa_fakture))
+                    if (String.IsNullOrEmpty(Rechnungsadresse))
                         Result = "Unesite adresu racuna.";
                 }
                 else if ("Tel1" == columnName)
@@ -1735,24 +1715,24 @@ namespace Desktop.ViewModel
                     Result = true.ToString();
                 }
 
-                if ("ImeEdit" == columnName)
+                if ("VornameEdit" == columnName)
                 {
-                    if (String.IsNullOrEmpty(ImeEdit))
+                    if (String.IsNullOrEmpty(VornameEdit))
                         Result = "Unesite ime.";
                 }
-                else if ("PrezimeEdit" == columnName)
+                else if ("NameEdit" == columnName)
                 {
-                    if (String.IsNullOrEmpty(PrezimeEdit))
+                    if (String.IsNullOrEmpty(NameEdit))
                         Result = "Unesite prezime.";
                 }
-                else if ("Adresa_dostavaEdit" == columnName)
+                else if ("LieferadresseEdit" == columnName)
                 {
-                    if (String.IsNullOrEmpty(Adresa_dostavaEdit))
+                    if (String.IsNullOrEmpty(LieferadresseEdit))
                         Result = "Unesite adresu dostave.";
                 }
-                else if ("Adresa_faktureEdit" == columnName)
+                else if ("RechnungsadresseEdit" == columnName)
                 {
-                    if (String.IsNullOrEmpty(Adresa_faktureEdit))
+                    if (String.IsNullOrEmpty(RechnungsadresseEdit))
                         Result = "Unesite adresu racuna.";
                 }
                 else if ("Tel1Edit" == columnName)
@@ -1777,10 +1757,10 @@ namespace Desktop.ViewModel
 
         static readonly string[] ValidatedProperties = 
         {
-            "Ime",
-            "Prezime",
-            "Adresa_dostava",
-            "Adresa_fakture",
+            "Vorname",
+            "Name",
+            "Lieferadresse",
+            "Rechnungsadresse",
             "Tel1",
             "Mail"
         };
@@ -1803,17 +1783,17 @@ namespace Desktop.ViewModel
             string error = null;
             switch (propertyName)
             {
-                case "Ime":
-                    error = this["Ime"];
+                case "Vorname":
+                    error = this["Vorname"];
                     break;
-                case "Prezime":
-                    error = this["Prezime"];
+                case "Name":
+                    error = this["Name"];
                     break;
-                case "Adresa_dostava":
-                    error = this["Adresa_dostava"];
+                case "Lieferadresse":
+                    error = this["Lieferadresse"];
                     break;
-                case "Adresa_fakture":
-                    error = this["Adresa_fakture"];
+                case "Rechnungsadresse":
+                    error = this["Rechnungsadresse"];
                     break;
                 case "Tel1":
                     error = this["Tel1"];
@@ -1838,10 +1818,10 @@ namespace Desktop.ViewModel
 
         static readonly string[] ValidatedPropertiesEdit = 
         {
-            "ImeEdit",
-            "PrezimeEdit",
-            "Adresa_dostavaEdit",
-            "Adresa_faktureEdit",
+            "VornameEdit",
+            "NameEdit",
+            "LieferadresseEdit",
+            "RechnungsadresseEdit",
             "Tel1Edit",
             "MailEdit"
         };
@@ -1864,17 +1844,17 @@ namespace Desktop.ViewModel
             string error = null;
             switch (propertyName)
             {
-                case "ImeEdit":
-                    error = this["ImeEdit"];
+                case "VornameEdit":
+                    error = this["VornameEdit"];
                     break;
-                case "PrezimeEdit":
-                    error = this["PrezimeEdit"];
+                case "NameEdit":
+                    error = this["NameEdit"];
                     break;
-                case "Adresa_dostavaEdit":
-                    error = this["Adresa_dostavaEdit"];
+                case "LieferadresseEdit":
+                    error = this["LieferadresseEdit"];
                     break;
-                case "Adresa_faktureEdit":
-                    error = this["Adresa_faktureEdit"];
+                case "RechnungsadresseEdit":
+                    error = this["RechnungsadresseEdit"];
                     break;
                 case "Tel1Edit":
                     error = this["Tel1Edit"];
