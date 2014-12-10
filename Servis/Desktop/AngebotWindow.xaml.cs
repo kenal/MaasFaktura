@@ -397,7 +397,7 @@ namespace Desktop
             ober.SelectedIndex = 0;
             stark.Name = "stark_" + rowId;
             this.RegisterName("stark_" + rowId, stark);
-            foreach (var p in starkeList) { stark.Items.Add(p.naziv); }
+            foreach (var p in starkeList) { stark.Items.Add(p.starke1); }
             stark.SelectedIndex = 0;
             mat.Name = "mat_" + rowId;
             this.RegisterName("mat_" + rowId, mat);
@@ -1931,7 +1931,7 @@ namespace Desktop
             string value = obj.SelectedValue.ToString();
             Service.MassServisClient client = new MassServisClient();
             var matId = client.getMatIdByName(value);
-            int matVal01 = matId[0].idmaterijal;
+            int matVal01 = Convert.ToInt32(matId[0].id);
             var oberflacheList = client.getPovrsinaByMaterijal(matVal01);
             ComboBox Cell01 = (ComboBox)this.FindName("ober_" + rowId);
             Cell01.Items.Clear();
@@ -1948,11 +1948,11 @@ namespace Desktop
             string value = obj.SelectedValue.ToString();
             Service.MassServisClient client = new MassServisClient();
             var proId = client.getProIdByName(value);
-            int prodVal01 = proId[0].idprodukt;
+            int prodVal01 = Convert.ToInt32(proId[0].idprodukt);
             var starkeList = client.getDebljinaByProduktId(prodVal01);
             ComboBox Cell01 = (ComboBox)this.FindName("stark_" + rowId);
             Cell01.Items.Clear();
-            foreach (var p in starkeList) { Cell01.Items.Add(p.naziv); };
+            foreach (var p in starkeList) { Cell01.Items.Add(p.starke1); };
             Cell01.SelectedIndex = 0;
         }
         #endregion
