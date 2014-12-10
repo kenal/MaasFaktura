@@ -29,8 +29,8 @@ namespace Desktop.ViewModel
         private string _skype = null;
         private string _fax = null;
         private string _email = null;
-        private ObservableCollection<tbl_radnik> _listaRadnika;
-        private ObservableCollection<tbl_korisnik> _listaKorisnika;
+        private ObservableCollection<mitarbeiter> _listaRadnika;
+        private ObservableCollection<user> _listaKorisnika;
         private float _gehalt = 0;
         private float _stundenlohn = 0;
         private string _urlaubstage = null;
@@ -48,8 +48,8 @@ namespace Desktop.ViewModel
         private MassServisClient client = new MassServisClient();
         private bool _radioHerr;
         private bool _radioFrau;
-        private tbl_korisnik _selektovaniKorisnik;
-        private tbl_radnik _selektovaniRadnik;
+        private user _selektovaniKorisnik;
+        private mitarbeiter _selektovaniRadnik;
         private string _pretraga;
         
 
@@ -81,15 +81,15 @@ namespace Desktop.ViewModel
         private string _notizEdit = null;
         private bool _radioHerrEdit;
         private bool _radioFrauEdit;
-        private tbl_korisnik _selektovaniKorisnikEdit=null;
-        private tbl_korisnik _comboKorisnik = null;
+        private user _selektovaniKorisnikEdit=null;
+        private user _comboKorisnik = null;
         private int _maxStranica;
         private int _selektovaniIndex;
 
         private int _brojStranice=1;
 
         private int _kolicinaRadnika = 10;
-        private ObservableCollection<tbl_radnik> ListaPage = new ObservableCollection<tbl_radnik>();
+        private ObservableCollection<mitarbeiter> ListaPage = new ObservableCollection<mitarbeiter>();
         private List<int> _brojPrikazanihRadnika = new List<int>() { 10, 20, 25 };
         private bool? status;
 
@@ -128,7 +128,7 @@ namespace Desktop.ViewModel
             get { return _brojStranice; }
             set { _brojStranice = value; OnPropertyChanged("BrojStranice"); }
         }
-        public ObservableCollection<tbl_radnik> ListaPage1
+        public ObservableCollection<mitarbeiter> ListaPage1
         {
             get { return ListaPage; }
             set { ListaPage = value; OnPropertyChanged("ListaPage1"); }
@@ -145,7 +145,7 @@ namespace Desktop.ViewModel
             set { _pretraga = value; OnPropertyChanged("Pretraga"); }
         }
 
-        public tbl_korisnik ComboKorisnik
+        public user ComboKorisnik
         {
             get { return _comboKorisnik; }
             set { _comboKorisnik = value; OnPropertyChanged("ComboKorisnik"); }
@@ -155,7 +155,7 @@ namespace Desktop.ViewModel
             get { return _selektovaniIndex; }
             set { _selektovaniIndex = value; OnPropertyChanged("SelektovaniIndex"); }
         }
-        public tbl_korisnik SelektovaniKorisnikEdit
+        public user SelektovaniKorisnikEdit
         {
             get { return _selektovaniKorisnikEdit; }
             set { _selektovaniKorisnikEdit = value; OnPropertyChanged("SelektovaniKorisnikEdit"); }
@@ -302,18 +302,18 @@ namespace Desktop.ViewModel
             get { return _mitarbeiterNrEdit; }
             set { _mitarbeiterNrEdit = value; OnPropertyChanged("MitarbeuterNrEdit"); }
         }
-        public tbl_radnik SelektovaniRadnik
+        public mitarbeiter SelektovaniRadnik
         {
             get { return _selektovaniRadnik; }
             set { _selektovaniRadnik = value; OnPropertyChanged("SelektovaniRadnik"); }
         }
 
-        public tbl_korisnik SelektovaniKorisnik
+        public user SelektovaniKorisnik
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
         }
-        public ObservableCollection<tbl_korisnik> ListaKorisnika
+        public ObservableCollection<user> ListaKorisnika
         {
             get { return _listaKorisnika; }
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
@@ -386,7 +386,7 @@ namespace Desktop.ViewModel
            get { return _email; }
            set { _email = value; OnPropertyChanged("Email"); }
        }
-       public ObservableCollection<tbl_radnik> ListaRadnika
+       public ObservableCollection<mitarbeiter> ListaRadnika
        {
            get { return _listaRadnika; }
            set { _listaRadnika = value; OnPropertyChanged("ListaRadnika"); }
@@ -491,7 +491,7 @@ namespace Desktop.ViewModel
                        neUzimati = brojPrikaza - KolicinaRadnika;
                    var x = ListaRadnika.Skip(neUzimati).Take(KolicinaRadnika);
                    ListaPage1.Clear();
-                   ListaPage1 = new ObservableCollection<tbl_radnik>(x);
+                   ListaPage1 = new ObservableCollection<mitarbeiter>(x);
 
                }
                MaxStranica();
@@ -501,12 +501,12 @@ namespace Desktop.ViewModel
            public void PromjeniStatus(object parameter)
            {
            
-               if (SelektovaniRadnik.status == true)
+               if (SelektovaniRadnik.anrede == 1)
                {
-                   client.ChangeWorkerStatus(SelektovaniRadnik.id_radnik, false);
+                   client.ChangeWorkerStatus(SelektovaniRadnik.idMit, false);
                }
                else
-                   client.ChangeWorkerStatus(SelektovaniRadnik.id_radnik, true);
+                   client.ChangeWorkerStatus(SelektovaniRadnik.idMit, true);
                PopuniGrid(parameter);
                Paginacija(BrojStranice);
            }
@@ -665,8 +665,8 @@ namespace Desktop.ViewModel
 
            public void PopuniEditRadnik(object parameter)
            {
-               MitarbeiterNrEdit = Convert.ToInt32(SelektovaniRadnik.sifra_radnik);
-               Titula = SelektovaniRadnik.tip;
+               MitarbeiterNrEdit = Convert.ToInt32(SelektovaniRadnik.mitarbeiterNr);
+               Titula = Convert.ToInt32(SelektovaniRadnik.anrede);
                if (Titula == 0)
                {
                    RadioHerrEdit = true;
@@ -675,28 +675,28 @@ namespace Desktop.ViewModel
                {
                    RadioFrauEdit = true;
                }
-               NameEdit= SelektovaniRadnik.ime;
-               VornameEdit= SelektovaniRadnik.prezime;
-               AdresseEdit= SelektovaniRadnik.adresa;
+               NameEdit= SelektovaniRadnik.vorname;
+               VornameEdit= SelektovaniRadnik.name;
+               AdresseEdit= SelektovaniRadnik.adresse;
                TelefonEdit= SelektovaniRadnik.tel1;
                Telefon2Edit= SelektovaniRadnik.tel2;
-               HandyEdit= SelektovaniRadnik.mobitel;
+               HandyEdit= SelektovaniRadnik.tel1;
                FaxEdit= SelektovaniRadnik.fax;
                SkypeEdit = SelektovaniRadnik.skype;
                EmailEdit= SelektovaniRadnik.email;
-               GehaltEdit= (float)SelektovaniRadnik.zarada;
-               StundenlohnEdit= (float)SelektovaniRadnik.satnica;
-               UrlaubstageEdit= SelektovaniRadnik.odmor;
-               UrlaubstageDuzanEdit= SelektovaniRadnik.odmor_na;
-               AnzahlGehalterEdit = (float)SelektovaniRadnik.broj_plate;
-               KrankenheitstageEdit= SelektovaniRadnik.bolovanje;
-               BankEdit= SelektovaniRadnik.banka;
-               BlzEdit= SelektovaniRadnik.blz;
-               BicEdit= SelektovaniRadnik.bic;
+               GehaltEdit= (float)SelektovaniRadnik.gehalt;
+               StundenlohnEdit= (float)SelektovaniRadnik.stundenlohn;
+               UrlaubstageEdit= SelektovaniRadnik.urlaub_ist;
+               UrlaubstageDuzanEdit= SelektovaniRadnik.urlaub_soll;
+               AnzahlGehalterEdit = (float)SelektovaniRadnik.anzahl_gehalter;
+               KrankenheitstageEdit= SelektovaniRadnik.krankheit;
+               BankEdit= SelektovaniRadnik.bank;
+               BlzEdit= SelektovaniRadnik.BLZ;
+               BicEdit= SelektovaniRadnik.BIC;
                KtoNrEdit= SelektovaniRadnik.KtoNr;
-               IbanEdit= SelektovaniRadnik.iban;
-               KontoinhaberEdit= SelektovaniRadnik.vlasnik_racuna;
-               NotizEdit= SelektovaniRadnik.biljeska;
+               IbanEdit= SelektovaniRadnik.IBAN;
+               KontoinhaberEdit= SelektovaniRadnik.kontoinhaber;
+               NotizEdit= SelektovaniRadnik.notiz;
                if (SelektovaniRadnik.datum != null)
                    GeburstdatumEdit = Convert.ToDateTime(SelektovaniRadnik.datum);
                else
@@ -705,35 +705,35 @@ namespace Desktop.ViewModel
            public void RadnikEdit(object parameter)
            {
            
-               tbl_radnik radnik = new tbl_radnik();
-               radnik.id_radnik = SelektovaniRadnik.id_radnik;
-               radnik.sifra_radnik = MitarbeiterNrEdit;
-               radnik.tip = TitulaEdit;
-               radnik.ime = NameEdit;
-               radnik.prezime = VornameEdit;
-               radnik.adresa = AdresseEdit;
+               mitarbeiter radnik = new mitarbeiter();
+               radnik.idMit = SelektovaniRadnik.idMit;
+               radnik.mitarbeiterNr = MitarbeiterNrEdit;
+               radnik.anrede = TitulaEdit;
+               radnik.vorname = NameEdit;
+               radnik.vorname = VornameEdit;
+               radnik.adresse = AdresseEdit;
                radnik.tel1 = TelefonEdit;
                radnik.tel2 = Telefon2Edit;
-               radnik.mobitel = HandyEdit;
+               radnik.handy = HandyEdit;
                radnik.fax = FaxEdit;
                radnik.skype = SkypeEdit;
                radnik.email = EmailEdit;
-               radnik.zarada = Convert.ToDecimal(GehaltEdit);
-               radnik.satnica = Convert.ToDecimal(StundenlohnEdit);
-               radnik.odmor = UrlaubstageEdit;
-               radnik.odmor_na = UrlaubstageDuzanEdit;
-               radnik.broj_plate = Convert.ToDecimal(AnzahlGehalterEdit);
-               radnik.bolovanje = KrankenheitstageEdit;
-               radnik.banka = BankEdit;
-               radnik.blz = BlzEdit;
-               radnik.bic = BicEdit;
+               radnik.gehalt = Convert.ToDecimal(GehaltEdit);
+               radnik.stundenlohn = Convert.ToDecimal(StundenlohnEdit);
+               radnik.urlaub_ist = UrlaubstageEdit;
+               radnik.urlaub_soll = UrlaubstageDuzanEdit;
+               radnik.anzahl_gehalter = Convert.ToDecimal(AnzahlGehalterEdit);
+               radnik.krankheit = KrankenheitstageEdit;
+               radnik.bank = BankEdit;
+               radnik.BLZ = BlzEdit;
+               radnik.BIC = BicEdit;
                radnik.KtoNr = KtoNrEdit;
-               radnik.iban = IbanEdit;
-               radnik.vlasnik_racuna = KontoinhaberEdit;
-               radnik.biljeska = NotizEdit;
+               radnik.IBAN = IbanEdit;
+               radnik.kontoinhaber = KontoinhaberEdit;
+               radnik.notiz = NotizEdit;
                radnik.datum = GeburstdatumEdit;
          
-               client.UpdateRadnika(radnik,Convert.ToInt32(ComboKorisnik.id_korisnik));
+               client.UpdateRadnika(radnik,Convert.ToInt32(ComboKorisnik.idUser));
                PopuniGrid(parameter);
                Paginacija(BrojStranice);
                ZatvoriWindow.Execute(this);
@@ -748,7 +748,7 @@ namespace Desktop.ViewModel
            public void BrisanjeRadnika(object parameter)
            {
 
-               int sifraRadnik = SelektovaniRadnik.sifra_radnik;
+               int sifraRadnik = Convert.ToInt32(SelektovaniRadnik.mitarbeiterNr);
                client.DeleteRadnik(sifraRadnik);
                PopuniGrid(parameter);
                Paginacija(BrojStranice);
@@ -758,14 +758,14 @@ namespace Desktop.ViewModel
 
            public void OdaberiSelektovanogKorisnika(object parameter)
            {
-               SelektovaniKorisnikEdit = client.VratiKorisnika(SelektovaniRadnik.id_korisnik_FK);
+               SelektovaniKorisnikEdit = client.VratiKorisnika(SelektovaniRadnik.idUser);
            }
            public void SelektovaniIndex(object parameter)
            {
       
                for (int i = 0; i < ListaKorisnika.Count(); i++)
                {
-                   if (ListaKorisnika[i].id_korisnik == SelektovaniKorisnikEdit.id_korisnik)
+                   if (ListaKorisnika[i].idUser == SelektovaniKorisnikEdit.idUser)
                    {
                        ComboKorisnik = ListaKorisnika[i];
                        break;
@@ -781,7 +781,6 @@ namespace Desktop.ViewModel
 
      
          #endregion
-
 
         #region ICommand Members
            private ICommand _search;

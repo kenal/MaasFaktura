@@ -52,8 +52,8 @@ namespace Desktop.ViewModel
         private bool radioSteuer2;
         private bool radioSteuer3;
         private List<string> nacinPlacanja = new List<string>() { "Barverkauf", "Bankeinzug", "Kreditkarte", "Nachnahme", "Rechnung","Scheck","Vorkasse" };
-        private ObservableCollection<tbl_dobavljac> ListaDobavljaca;
-        private tbl_dobavljac selektovaniDobavljac = new tbl_dobavljac();
+        private ObservableCollection<lieferant> ListaDobavljaca;
+        private lieferant selektovaniDobavljac = new lieferant();
         private string _pretraga;
         private int _maxStranica;     
      
@@ -100,13 +100,12 @@ namespace Desktop.ViewModel
         private bool radioSteuer3Edit;
 
         private int _brojStranice=1;
-        private ObservableCollection<tbl_dobavljac> ListaPage = new ObservableCollection<tbl_dobavljac>();
+        private ObservableCollection<lieferant> ListaPage = new ObservableCollection<lieferant>();
         private List<int> _brojPrikazanihDobavljaca = new List<int>() { 10, 20, 25 };
         private int _kolicinaDobavljaca = 10;
         private string selektovanaZemlja;
 
-        #endregion
-     
+        #endregion 
 
        #region Properties
 
@@ -140,7 +139,7 @@ namespace Desktop.ViewModel
             set { _brojPrikazanihDobavljaca = value; OnPropertyChanged("BrojPrikazanihDobavljaca"); }
         }
 
-        public ObservableCollection<tbl_dobavljac> ListaPage1
+        public ObservableCollection<lieferant> ListaPage1
         {
             get { return ListaPage; }
             set { ListaPage = value; OnPropertyChanged("ListaPage1"); }
@@ -343,8 +342,8 @@ namespace Desktop.ViewModel
             get { return _NameEdit; }
             set { _NameEdit = value; OnPropertyChanged("NameEdit"); }
         }
-      
-        public tbl_dobavljac SelektovaniDobavljac
+
+        public lieferant SelektovaniDobavljac
         {
             get { return selektovaniDobavljac; }
             set {
@@ -353,8 +352,8 @@ namespace Desktop.ViewModel
             }
         }
 
-       
-        public ObservableCollection<tbl_dobavljac> ListaDobavljaca1
+
+        public ObservableCollection<lieferant> ListaDobavljaca1
         {
             get { return ListaDobavljaca; }
             set { ListaDobavljaca = value; OnPropertyChanged("ListaDobavljaca1"); }
@@ -776,7 +775,7 @@ namespace Desktop.ViewModel
                    neUzimati = brojPrikaza - KolicinaDobavljaca;
                var x = ListaDobavljaca1.Skip(neUzimati).Take(KolicinaDobavljaca);
                ListaPage1.Clear();
-               ListaPage1 = new ObservableCollection<tbl_dobavljac>(x);
+               ListaPage1 = new ObservableCollection<lieferant>(x);
 
            }
            LieferantNr = client.LieferantNr();
@@ -901,34 +900,34 @@ namespace Desktop.ViewModel
            }
 
 
-           tbl_dobavljac dobavljac = new tbl_dobavljac();
-           dobavljac.broj_dobavljaca = LieferantNr;
-           dobavljac.tip = Titula;
-           dobavljac.prezime = Vorname; ;
-           dobavljac.ime = Name;
-           dobavljac.zemlja = Land;
-           dobavljac.adresa = Adresse;
+           lieferant dobavljac = new lieferant();
+           dobavljac.lieferantNr = LieferantNr;
+           dobavljac.anrede = Titula;
+           dobavljac.name = Vorname;
+           dobavljac.vorname = Name;
+           dobavljac.land = Land;
+           dobavljac.adresse = Adresse;
            dobavljac.tel1 = Telefon;
            dobavljac.tel2 = Telefon2;
-           dobavljac.mobitel = Handy;
+           dobavljac.handy = Handy;
            dobavljac.skype = Skype;
            dobavljac.fax = Fax;
            dobavljac.email = Mail;
-           dobavljac.poslovanje = Branche;
-           dobavljac.popust = Skonto;
-           dobavljac.broj_dana = Convert.ToDecimal(Tage);
+           dobavljac.branche = Branche;
+           dobavljac.skonto = Skonto;
+           dobavljac.tage = Convert.ToDecimal(Tage);
            dobavljac.rabat = Convert.ToDecimal(Rabatt);
-           dobavljac.banka = Bank;
-           dobavljac.blz = BLZ;
+           dobavljac.bank = Bank;
+           dobavljac.BLZ = BLZ;
            dobavljac.KtoNr = KtoNr;
-           dobavljac.bic = BIC;
-           dobavljac.iban = IBAN;
-           dobavljac.vlasnik_racuna = Kontoinhaber;
-           dobavljac.promet = Convert.ToDecimal(Umsatz);
-           dobavljac.nacin_placanja = Zahlweise;
-           dobavljac.biljeska = Notiz;
-           dobavljac.porez = porez;
-           dobavljac.id_korisnik_FK = LogovaniKorisnik;
+           dobavljac.BIC = BIC;
+           dobavljac.IBAN = IBAN;
+           dobavljac.kontoinhaber = Kontoinhaber;
+           dobavljac.umsatz = Convert.ToDecimal(Umsatz);
+           dobavljac.zahlweise = Zahlweise;
+           dobavljac.notiz = Notiz;
+           dobavljac.stauer = porez;
+           dobavljac.idUser = LogovaniKorisnik;
 
 
 
@@ -977,7 +976,7 @@ namespace Desktop.ViewModel
 
        public void ObrisiDobavljac(object parameter)
        {
-           int br = Convert.ToInt32(SelektovaniDobavljac.broj_dobavljaca);
+           int br = Convert.ToInt32(SelektovaniDobavljac.lieferantNr);
            client.ObrisiDobavljaca(br);
            FillGridDobavljaca(parameter);
            Paginacija(BrojStranice);
@@ -1000,94 +999,94 @@ namespace Desktop.ViewModel
        {
  
   
-           VornameEdit = selektovaniDobavljac.prezime;
-           NameEdit = SelektovaniDobavljac.ime;
-           LandEdit = SelektovaniDobavljac.zemlja;
-           AdresseEdit = SelektovaniDobavljac.adresa;
+           VornameEdit = selektovaniDobavljac.vorname;
+           NameEdit = SelektovaniDobavljac.name;
+           LandEdit = SelektovaniDobavljac.land;
+           AdresseEdit = SelektovaniDobavljac.adresse;
            TelefonEdit = SelektovaniDobavljac.tel1;
            Telefon2Edit = SelektovaniDobavljac.tel2;
-           HandyEdit = SelektovaniDobavljac.mobitel;
-           LieferantNrEdit = Convert.ToInt32(SelektovaniDobavljac.broj_dobavljaca);
+           HandyEdit = SelektovaniDobavljac.handy;
+           LieferantNrEdit = Convert.ToInt32(SelektovaniDobavljac.lieferantNr);
            SkypeEdit = SelektovaniDobavljac.skype;
            FaxEdit = SelektovaniDobavljac.fax;
            MailEdit = SelektovaniDobavljac.email;
-           BrancheEdit = SelektovaniDobavljac.poslovanje;
-           SkontoEdit = SelektovaniDobavljac.popust;
-           TageEdit = (float)SelektovaniDobavljac.broj_dana;
+           BrancheEdit = SelektovaniDobavljac.branche;
+           SkontoEdit = SelektovaniDobavljac.skonto;
+           TageEdit = (float)SelektovaniDobavljac.tage;
            RabattEdit = (float)SelektovaniDobavljac.rabat;
-           BankEdit = SelektovaniDobavljac.banka;
-           BLZEdit = SelektovaniDobavljac.blz;
+           BankEdit = SelektovaniDobavljac.bank;
+           BLZEdit = SelektovaniDobavljac.BLZ;
            KtoNrEdit = SelektovaniDobavljac.KtoNr;
-           BICEdit = SelektovaniDobavljac.bic;
-           IBANEdit = SelektovaniDobavljac.iban;
-           KontoinhaberEdit = SelektovaniDobavljac.vlasnik_racuna;
-           UmsatzEdit = (float)SelektovaniDobavljac.promet;
-           ZahlweiseEdit = SelektovaniDobavljac.nacin_placanja;
-           NotizEdit = SelektovaniDobavljac.biljeska;
-           if (Convert.ToInt32(SelektovaniDobavljac.tip) == 0)
+           BICEdit = SelektovaniDobavljac.BIC;
+           IBANEdit = SelektovaniDobavljac.IBAN;
+           KontoinhaberEdit = SelektovaniDobavljac.kontoinhaber;
+           UmsatzEdit = (float)SelektovaniDobavljac.umsatz;
+           ZahlweiseEdit = SelektovaniDobavljac.zahlweise;
+           NotizEdit = SelektovaniDobavljac.notiz;
+           if (Convert.ToInt32(SelektovaniDobavljac.anrede) == 0)
            {
                RadioHerEdit = true;
            }
-           else if (Convert.ToInt32(SelektovaniDobavljac.tip) == 1)
+           else if (Convert.ToInt32(SelektovaniDobavljac.anrede) == 1)
                RadioFrauEdit = true;
-           else if (Convert.ToInt32(SelektovaniDobavljac.tip) == 2)
+           else if (Convert.ToInt32(SelektovaniDobavljac.anrede) == 2)
            {
                RadioFirmaEdit = true;
            }
 
-           if (Convert.ToInt32(SelektovaniDobavljac.porez) == 0)
+           if (Convert.ToInt32(SelektovaniDobavljac.stauer) == 0)
            {
                RadioSteuer1Edit = true;
            }
-           else if (Convert.ToInt32(SelektovaniDobavljac.porez) == 1)
+           else if (Convert.ToInt32(SelektovaniDobavljac.stauer) == 1)
                RadioSteuer2Edit = true;
-           else if (Convert.ToInt32(SelektovaniDobavljac.porez) == 2)
+           else if (Convert.ToInt32(SelektovaniDobavljac.stauer) == 2)
            {
                RadioSteuer3Edit = true;
            }
        }
        public void IzvrsiUpdate(object parameter)
        {
-           tbl_dobavljac dobavljac = new tbl_dobavljac();
-           dobavljac.id_dobavljac = SelektovaniDobavljac.id_dobavljac;
-           dobavljac.broj_dobavljaca =LieferantNrEdit;
+           lieferant dobavljac = new lieferant();
+           dobavljac.idLief = SelektovaniDobavljac.idLief;
+           dobavljac.lieferantNr =LieferantNrEdit;
 
            //dobavljac.tip = TitulaEdit;
 
-           dobavljac.prezime = VornameEdit;
-           dobavljac.ime = NameEdit;
-           dobavljac.zemlja = LandEdit;
-           dobavljac.adresa = AdresseEdit;
+           dobavljac.vorname = VornameEdit;
+           dobavljac.name = NameEdit;
+           dobavljac.land = LandEdit;
+           dobavljac.adresse = AdresseEdit;
            dobavljac.tel1 = TelefonEdit;
            dobavljac.tel2 = Telefon2Edit;
-           dobavljac.mobitel = HandyEdit;
+           dobavljac.handy = HandyEdit;
            dobavljac.skype = SkypeEdit;
            dobavljac.fax = FaxEdit;
            dobavljac.email = MailEdit;
-           dobavljac.poslovanje = BrancheEdit;
-           dobavljac.popust = SkontoEdit;
-           dobavljac.broj_dana = Convert.ToDecimal(TageEdit);
+           dobavljac.branche = BrancheEdit;
+           dobavljac.skonto = SkontoEdit;
+           dobavljac.tage = Convert.ToDecimal(TageEdit);
            dobavljac.rabat = Convert.ToDecimal(RabattEdit);
-           dobavljac.banka = BankEdit;
-           dobavljac.blz = BLZEdit;
+           dobavljac.bank = BankEdit;
+           dobavljac.BLZ = BLZEdit;
            dobavljac.KtoNr = KtoNrEdit;
-           dobavljac.bic = BICEdit;
-           dobavljac.iban = IBANEdit;
-           dobavljac.vlasnik_racuna = KontoinhaberEdit;
-           dobavljac.promet = Convert.ToDecimal(UmsatzEdit);
-           dobavljac.nacin_placanja = ZahlweiseEdit;
-           dobavljac.biljeska = NotizEdit;
+           dobavljac.BIC = BICEdit;
+           dobavljac.IBAN = IBANEdit;
+           dobavljac.kontoinhaber = KontoinhaberEdit;
+           dobavljac.umsatz = Convert.ToDecimal(UmsatzEdit);
+           dobavljac.zahlweise = ZahlweiseEdit;
+           dobavljac.notiz = NotizEdit;
            if (RadioSteuer1Edit == true)
            {
-               dobavljac.porez = 0;
+               dobavljac.stauer = 0;
            }
            else if (RadioSteuer2Edit == true)
            {
-               dobavljac.porez = 1;
+               dobavljac.stauer = 1;
            }
            else if (RadioSteuer3Edit == true)
            {
-               dobavljac.porez = 2;
+               dobavljac.stauer = 2;
            }
            client.UpdateDobavljac(dobavljac);
            FillGridDobavljaca(parameter);

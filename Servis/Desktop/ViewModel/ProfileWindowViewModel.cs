@@ -33,7 +33,7 @@ namespace Desktop.ViewModel
         
         
      
-        private tbl_korisnik korisnik;
+        private user korisnik;
         private MassServisClient client = new MassServisClient();
 
        
@@ -45,7 +45,7 @@ namespace Desktop.ViewModel
             get { return _slika; }
             set { _slika = value; OnPropertyChanged("Slika"); }
         }
-        public tbl_korisnik Korisnik
+        public user Korisnik
         {
             get { return korisnik; }
             set { korisnik = value; OnPropertyChanged("Korisnik"); }
@@ -133,10 +133,10 @@ namespace Desktop.ViewModel
 
         public void UrediKorisnickePodatke(object parameter)
         {
-            tbl_korisnik k = new tbl_korisnik();
-            k.id_korisnik = Sesija.Id_korisnik;
-            k.ime = Vorname;
-            k.prezime = Nachname;
+            user k = new user();
+            k.idUser = Sesija.Id_korisnik;
+            k.firstName = Vorname;
+            k.lastName = Nachname;
             k.mail = Email;
             k.username = Username;
             k.password = Password;
@@ -144,14 +144,14 @@ namespace Desktop.ViewModel
             k.slika = Slika.ToString();
             client.UpdateKorisnik(k);
             
-            DbOperations.StoreFileUsingSqlParameter(Slika, ByteSlika, DbOperations.TableType.FileStream, k.id_korisnik);
+            DbOperations.StoreFileUsingSqlParameter(Slika, ByteSlika, DbOperations.TableType.FileStream, k.idUser);
             System.Windows.MessageBox.Show("Uspjesno!!!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         public void KorisnickiPodaci(object parameter)
         {
             korisnik = client.VratiKorisnika(Sesija.Id_korisnik);
-            Vorname = korisnik.ime;
-            Nachname = korisnik.prezime;
+            Vorname = korisnik.firstName;
+            Nachname = korisnik.lastName;
             Email = korisnik.mail;
             Telefon = korisnik.telefon;
             Username = korisnik.username;

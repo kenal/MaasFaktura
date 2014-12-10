@@ -16,12 +16,12 @@ namespace Desktop.ViewModel
     {
         #region Fields
         MassServisClient client = new MassServisClient();
-        ObservableCollection<tbl_dobavljac> ListaDobavljaca;
-        tbl_dobavljac _selektovaniDobavljac;
+        ObservableCollection<lieferant> ListaDobavljaca;
+        lieferant _selektovaniDobavljac;
         #endregion
 
         #region Properties
-        public ObservableCollection<tbl_dobavljac> ListaDobavljaca1
+        public ObservableCollection<lieferant> ListaDobavljaca1
         {
             get { return ListaDobavljaca; }
             set 
@@ -31,7 +31,7 @@ namespace Desktop.ViewModel
             }
         }
 
-        public tbl_dobavljac SelektovaniDobavljac
+        public lieferant SelektovaniDobavljac
         {
             get { return _selektovaniDobavljac; }
             set 
