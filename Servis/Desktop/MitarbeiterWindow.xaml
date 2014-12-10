@@ -483,11 +483,11 @@
                     <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0" SelectionMode="Single" ItemsSource="{Binding ListaPage1,Mode=TwoWay,NotifyOnTargetUpdated=True}" Height="450"
 						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True" Margin="10,98,16,-422" SelectedItem="{Binding SelektovaniRadnik, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Mitarbeiter Nr." IsReadOnly="True" x:Name="col1_1" Binding="{Binding sifra_radnik}"/>
-                            <DataGridTextColumn Header="Mitarbeiter" x:Name="col1_2" Binding="{Binding ime}"/>
+                            <DataGridTextColumn Header="Mitarbeiter Nr." IsReadOnly="True" x:Name="col1_1" Binding="{Binding mitarbeiterNr}"/>
+                            <DataGridTextColumn Header="Mitarbeiter" x:Name="col1_2" Binding="{Binding vorname}"/>
                             <DataGridTextColumn Header="Datum" x:Name="col1_3" Binding="{Binding datum}"/>
-                            <DataGridTextColumn Header="Adresse" x:Name="col1_4" Binding="{Binding adresa}"/>
-                            <DataGridTextColumn Header="Telefon/Handy" x:Name="col1_5" Binding="{Binding mobitel}"/>
+                            <DataGridTextColumn Header="Adresse" x:Name="col1_4" Binding="{Binding adresse}"/>
+                            <DataGridTextColumn Header="Telefon/Handy" x:Name="col1_5" Binding="{Binding handy}"/>
                             <DataGridTextColumn Header="Fax" x:Name="col1_6" Binding="{Binding fax}"/>
                             <DataGridTextColumn Header="Skype" x:Name="col1_7" Binding="{Binding skype,NotifyOnSourceUpdated=True}"/>
                             <DataGridTemplateColumn Header="Status" x:Name="col1_8">

@@ -97,14 +97,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="818088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="819112">
       <assemblyIdentity name="Desktop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uk8vXSKp22/6WmbNmyOcEiCmbHpgEZ3Yh58sPyoX/H8=</dsig:DigestValue>
+        <dsig:DigestValue>szC7r/usQLkOInRQJFqnFszR2csJqdxs7QWY6AHYywA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
