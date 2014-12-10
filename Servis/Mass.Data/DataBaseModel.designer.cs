@@ -30,15 +30,135 @@ namespace Mass.Data
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Insertakonto(akonto instance);
+    partial void Updateakonto(akonto instance);
+    partial void Deleteakonto(akonto instance);
+    partial void Insertzemlja_porijekla_inv(zemlja_porijekla_inv instance);
+    partial void Updatezemlja_porijekla_inv(zemlja_porijekla_inv instance);
+    partial void Deletezemlja_porijekla_inv(zemlja_porijekla_inv instance);
+    partial void Insertangebot(angebot instance);
+    partial void Updateangebot(angebot instance);
+    partial void Deleteangebot(angebot instance);
+    partial void Insertanzahlungen(anzahlungen instance);
+    partial void Updateanzahlungen(anzahlungen instance);
+    partial void Deleteanzahlungen(anzahlungen instance);
+    partial void Insertartikl(artikl instance);
+    partial void Updateartikl(artikl instance);
+    partial void Deleteartikl(artikl instance);
+    partial void Insertauftrage(auftrage instance);
+    partial void Updateauftrage(auftrage instance);
+    partial void Deleteauftrage(auftrage instance);
+    partial void Insertbeschtelung(beschtelung instance);
+    partial void Updatebeschtelung(beschtelung instance);
+    partial void Deletebeschtelung(beschtelung instance);
+    partial void Insertbrojevi_racuna(brojevi_racuna instance);
+    partial void Updatebrojevi_racuna(brojevi_racuna instance);
+    partial void Deletebrojevi_racuna(brojevi_racuna instance);
+    partial void Insertbug(bug instance);
+    partial void Updatebug(bug instance);
+    partial void Deletebug(bug instance);
+    partial void Insertca_produkt(ca_produkt instance);
+    partial void Updateca_produkt(ca_produkt instance);
+    partial void Deleteca_produkt(ca_produkt instance);
+    partial void Insertcijena_artikl_inv(cijena_artikl_inv instance);
+    partial void Updatecijena_artikl_inv(cijena_artikl_inv instance);
+    partial void Deletecijena_artikl_inv(cijena_artikl_inv instance);
+    partial void Inserteinheit(einheit instance);
+    partial void Updateeinheit(einheit instance);
+    partial void Deleteeinheit(einheit instance);
+    partial void Insertkalendar(kalendar instance);
+    partial void Updatekalendar(kalendar instance);
+    partial void Deletekalendar(kalendar instance);
+    partial void Insertkunden(kunden instance);
+    partial void Updatekunden(kunden instance);
+    partial void Deletekunden(kunden instance);
+    partial void Insertlieferant(lieferant instance);
+    partial void Updatelieferant(lieferant instance);
+    partial void Deletelieferant(lieferant instance);
+    partial void Insertmaterial_inventar(material_inventar instance);
+    partial void Updatematerial_inventar(material_inventar instance);
+    partial void Deletematerial_inventar(material_inventar instance);
+    partial void Insertmaterijal(materijal instance);
+    partial void Updatematerijal(materijal instance);
+    partial void Deletematerijal(materijal instance);
+    partial void Insertmit_kalendar(mit_kalendar instance);
+    partial void Updatemit_kalendar(mit_kalendar instance);
+    partial void Deletemit_kalendar(mit_kalendar instance);
+    partial void Insertmitarbeiter(mitarbeiter instance);
+    partial void Updatemitarbeiter(mitarbeiter instance);
+    partial void Deletemitarbeiter(mitarbeiter instance);
+    partial void Insertnach_detail(nach_detail instance);
+    partial void Updatenach_detail(nach_detail instance);
+    partial void Deletenach_detail(nach_detail instance);
+    partial void Insertnachverfolgung(nachverfolgung instance);
+    partial void Updatenachverfolgung(nachverfolgung instance);
+    partial void Deletenachverfolgung(nachverfolgung instance);
+    partial void Insertoberflache(oberflache instance);
+    partial void Updateoberflache(oberflache instance);
+    partial void Deleteoberflache(oberflache instance);
+    partial void Insertpage(page instance);
+    partial void Updatepage(page instance);
+    partial void Deletepage(page instance);
+    partial void Insertpodgrupa_inv(podgrupa_inv instance);
+    partial void Updatepodgrupa_inv(podgrupa_inv instance);
+    partial void Deletepodgrupa_inv(podgrupa_inv instance);
+    partial void Insertpodpozicija(podpozicija instance);
+    partial void Updatepodpozicija(podpozicija instance);
+    partial void Deletepodpozicija(podpozicija instance);
+    partial void Insertpozicija(pozicija instance);
+    partial void Updatepozicija(pozicija instance);
+    partial void Deletepozicija(pozicija instance);
+    partial void Insertprodukt(produkt instance);
+    partial void Updateprodukt(produkt instance);
+    partial void Deleteprodukt(produkt instance);
+    partial void Insertprodukt_SEO_inv(produkt_SEO_inv instance);
+    partial void Updateprodukt_SEO_inv(produkt_SEO_inv instance);
+    partial void Deleteprodukt_SEO_inv(produkt_SEO_inv instance);
+    partial void Insertproduktion(produktion instance);
+    partial void Updateproduktion(produktion instance);
+    partial void Deleteproduktion(produktion instance);
+    partial void Insertproizvod(proizvod instance);
+    partial void Updateproizvod(proizvod instance);
+    partial void Deleteproizvod(proizvod instance);
+    partial void Insertrechnung_a(rechnung_a instance);
+    partial void Updaterechnung_a(rechnung_a instance);
+    partial void Deleterechnung_a(rechnung_a instance);
+    partial void Insertrechnung_b(rechnung_b instance);
+    partial void Updaterechnung_b(rechnung_b instance);
+    partial void Deleterechnung_b(rechnung_b instance);
+    partial void Insertrechnung_b_pozicije(rechnung_b_pozicije instance);
+    partial void Updaterechnung_b_pozicije(rechnung_b_pozicije instance);
+    partial void Deleterechnung_b_pozicije(rechnung_b_pozicije instance);
+    partial void Insertreklamation(reklamation instance);
+    partial void Updatereklamation(reklamation instance);
+    partial void Deletereklamation(reklamation instance);
+    partial void Insertroute_kalendar(route_kalendar instance);
+    partial void Updateroute_kalendar(route_kalendar instance);
+    partial void Deleteroute_kalendar(route_kalendar instance);
+    partial void InsertRouteTech(RouteTech instance);
+    partial void UpdateRouteTech(RouteTech instance);
+    partial void DeleteRouteTech(RouteTech instance);
+    partial void Insertstarke(starke instance);
+    partial void Updatestarke(starke instance);
+    partial void Deletestarke(starke instance);
     partial void Inserttbl_poruka_poslane(tbl_poruka_poslane instance);
     partial void Updatetbl_poruka_poslane(tbl_poruka_poslane instance);
     partial void Deletetbl_poruka_poslane(tbl_poruka_poslane instance);
-    partial void Insertuser(user instance);
-    partial void Updateuser(user instance);
-    partial void Deleteuser(user instance);
     partial void Inserttbl_poruka_primljene(tbl_poruka_primljene instance);
     partial void Updatetbl_poruka_primljene(tbl_poruka_primljene instance);
     partial void Deletetbl_poruka_primljene(tbl_poruka_primljene instance);
+    partial void Insertuser(user instance);
+    partial void Updateuser(user instance);
+    partial void Deleteuser(user instance);
+    partial void Insertuser_licence(user_licence instance);
+    partial void Updateuser_licence(user_licence instance);
+    partial void Deleteuser_licence(user_licence instance);
+    partial void Insertvrsta_cijene_inv(vrsta_cijene_inv instance);
+    partial void Updatevrsta_cijene_inv(vrsta_cijene_inv instance);
+    partial void Deletevrsta_cijene_inv(vrsta_cijene_inv instance);
+    partial void Insertweb_stranice_inv(web_stranice_inv instance);
+    partial void Updateweb_stranice_inv(web_stranice_inv instance);
+    partial void Deleteweb_stranice_inv(web_stranice_inv instance);
     #endregion
 		
 		public DataBaseModelDataContext() : 
@@ -367,6 +487,30 @@ namespace Mass.Data
 			}
 		}
 		
+		public System.Data.Linq.Table<tbl_poruka_poslane> tbl_poruka_poslanes
+		{
+			get
+			{
+				return this.GetTable<tbl_poruka_poslane>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_poruka_primljene> tbl_poruka_primljenes
+		{
+			get
+			{
+				return this.GetTable<tbl_poruka_primljene>();
+			}
+		}
+		
+		public System.Data.Linq.Table<user> users
+		{
+			get
+			{
+				return this.GetTable<user>();
+			}
+		}
+		
 		public System.Data.Linq.Table<user_licence> user_licences
 		{
 			get
@@ -398,35 +542,13 @@ namespace Mass.Data
 				return this.GetTable<p_get_User_ViewResult>();
 			}
 		}
-		
-		public System.Data.Linq.Table<tbl_poruka_poslane> tbl_poruka_poslanes
-		{
-			get
-			{
-				return this.GetTable<tbl_poruka_poslane>();
-			}
-		}
-		
-		public System.Data.Linq.Table<user> users
-		{
-			get
-			{
-				return this.GetTable<user>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_poruka_primljene> tbl_poruka_primljenes
-		{
-			get
-			{
-				return this.GetTable<tbl_poruka_primljene>();
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.akonto")]
-	public partial class akonto
+	public partial class akonto : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idakonto;
 		
@@ -440,11 +562,30 @@ namespace Mass.Data
 		
 		private int _akontonr;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidakontoChanging(int value);
+    partial void OnidakontoChanged();
+    partial void OnabChanging(string value);
+    partial void OnabChanged();
+    partial void OniduserChanging(int value);
+    partial void OniduserChanged();
+    partial void OnvrijemeChanging(System.Nullable<System.DateTime> value);
+    partial void OnvrijemeChanged();
+    partial void OnsumaChanging(System.Nullable<decimal> value);
+    partial void OnsumaChanged();
+    partial void OnakontonrChanging(int value);
+    partial void OnakontonrChanged();
+    #endregion
+		
 		public akonto()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idakonto", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idakonto", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int idakonto
 		{
 			get
@@ -455,7 +596,11 @@ namespace Mass.Data
 			{
 				if ((this._idakonto != value))
 				{
+					this.OnidakontoChanging(value);
+					this.SendPropertyChanging();
 					this._idakonto = value;
+					this.SendPropertyChanged("idakonto");
+					this.OnidakontoChanged();
 				}
 			}
 		}
@@ -471,7 +616,11 @@ namespace Mass.Data
 			{
 				if ((this._ab != value))
 				{
+					this.OnabChanging(value);
+					this.SendPropertyChanging();
 					this._ab = value;
+					this.SendPropertyChanged("ab");
+					this.OnabChanged();
 				}
 			}
 		}
@@ -487,7 +636,11 @@ namespace Mass.Data
 			{
 				if ((this._iduser != value))
 				{
+					this.OniduserChanging(value);
+					this.SendPropertyChanging();
 					this._iduser = value;
+					this.SendPropertyChanged("iduser");
+					this.OniduserChanged();
 				}
 			}
 		}
@@ -503,7 +656,11 @@ namespace Mass.Data
 			{
 				if ((this._vrijeme != value))
 				{
+					this.OnvrijemeChanging(value);
+					this.SendPropertyChanging();
 					this._vrijeme = value;
+					this.SendPropertyChanged("vrijeme");
+					this.OnvrijemeChanged();
 				}
 			}
 		}
@@ -519,7 +676,11 @@ namespace Mass.Data
 			{
 				if ((this._suma != value))
 				{
+					this.OnsumaChanging(value);
+					this.SendPropertyChanging();
 					this._suma = value;
+					this.SendPropertyChanged("suma");
+					this.OnsumaChanged();
 				}
 			}
 		}
@@ -535,28 +696,67 @@ namespace Mass.Data
 			{
 				if ((this._akontonr != value))
 				{
+					this.OnakontonrChanging(value);
+					this.SendPropertyChanging();
 					this._akontonr = value;
+					this.SendPropertyChanged("akontonr");
+					this.OnakontonrChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.zemlja_porijekla_inv")]
-	public partial class zemlja_porijekla_inv
+	public partial class zemlja_porijekla_inv : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private string _naziv;
 		
 		private string _slika;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    partial void OnslikaChanging(string value);
+    partial void OnslikaChanged();
+    #endregion
+		
 		public zemlja_porijekla_inv()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
 		{
 			get
 			{
@@ -566,7 +766,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -582,7 +786,11 @@ namespace Mass.Data
 			{
 				if ((this._naziv != value))
 				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
 					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
 				}
 			}
 		}
@@ -598,15 +806,41 @@ namespace Mass.Data
 			{
 				if ((this._slika != value))
 				{
+					this.OnslikaChanging(value);
+					this.SendPropertyChanging();
 					this._slika = value;
+					this.SendPropertyChanged("slika");
+					this.OnslikaChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.angebot")]
-	public partial class angebot
+	public partial class angebot : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idangebot;
 		
@@ -650,11 +884,60 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _porez;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidangebotChanging(int value);
+    partial void OnidangebotChanged();
+    partial void OniduserChanging(int value);
+    partial void OniduserChanged();
+    partial void OnangebotnrChanging(int value);
+    partial void OnangebotnrChanged();
+    partial void OnkundenrChanging(int value);
+    partial void OnkundenrChanged();
+    partial void OnkundeChanging(string value);
+    partial void OnkundeChanged();
+    partial void OnanfragenChanging(string value);
+    partial void OnanfragenChanged();
+    partial void OnangefragtChanging(System.Nullable<System.DateTime> value);
+    partial void OnangefragtChanged();
+    partial void OnpreisnChanging(System.Nullable<decimal> value);
+    partial void OnpreisnChanged();
+    partial void OnpreisbChanging(System.Nullable<decimal> value);
+    partial void OnpreisbChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    partial void OnresonanzChanging(string value);
+    partial void OnresonanzChanged();
+    partial void OnnachgefragtChanging(System.Nullable<System.DateTime> value);
+    partial void OnnachgefragtChanged();
+    partial void Onresonanz1Changing(string value);
+    partial void Onresonanz1Changed();
+    partial void OngeschriebenChanging(System.Nullable<System.DateTime> value);
+    partial void OngeschriebenChanged();
+    partial void OnfolderChanging(string value);
+    partial void OnfolderChanged();
+    partial void OnactiveChanging(System.Nullable<int> value);
+    partial void OnactiveChanged();
+    partial void OnzeichnungChanging(System.Nullable<int> value);
+    partial void OnzeichnungChanged();
+    partial void OnprivatChanging(string value);
+    partial void OnprivatChanged();
+    partial void OnhandyChanging(string value);
+    partial void OnhandyChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnporezChanging(System.Nullable<int> value);
+    partial void OnporezChanged();
+    #endregion
+		
 		public angebot()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idangebot", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idangebot", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int idangebot
 		{
 			get
@@ -665,7 +948,11 @@ namespace Mass.Data
 			{
 				if ((this._idangebot != value))
 				{
+					this.OnidangebotChanging(value);
+					this.SendPropertyChanging();
 					this._idangebot = value;
+					this.SendPropertyChanged("idangebot");
+					this.OnidangebotChanged();
 				}
 			}
 		}
@@ -681,7 +968,11 @@ namespace Mass.Data
 			{
 				if ((this._iduser != value))
 				{
+					this.OniduserChanging(value);
+					this.SendPropertyChanging();
 					this._iduser = value;
+					this.SendPropertyChanged("iduser");
+					this.OniduserChanged();
 				}
 			}
 		}
@@ -697,7 +988,11 @@ namespace Mass.Data
 			{
 				if ((this._angebotnr != value))
 				{
+					this.OnangebotnrChanging(value);
+					this.SendPropertyChanging();
 					this._angebotnr = value;
+					this.SendPropertyChanged("angebotnr");
+					this.OnangebotnrChanged();
 				}
 			}
 		}
@@ -713,7 +1008,11 @@ namespace Mass.Data
 			{
 				if ((this._kundenr != value))
 				{
+					this.OnkundenrChanging(value);
+					this.SendPropertyChanging();
 					this._kundenr = value;
+					this.SendPropertyChanged("kundenr");
+					this.OnkundenrChanged();
 				}
 			}
 		}
@@ -729,7 +1028,11 @@ namespace Mass.Data
 			{
 				if ((this._kunde != value))
 				{
+					this.OnkundeChanging(value);
+					this.SendPropertyChanging();
 					this._kunde = value;
+					this.SendPropertyChanged("kunde");
+					this.OnkundeChanged();
 				}
 			}
 		}
@@ -745,7 +1048,11 @@ namespace Mass.Data
 			{
 				if ((this._anfragen != value))
 				{
+					this.OnanfragenChanging(value);
+					this.SendPropertyChanging();
 					this._anfragen = value;
+					this.SendPropertyChanged("anfragen");
+					this.OnanfragenChanged();
 				}
 			}
 		}
@@ -761,7 +1068,11 @@ namespace Mass.Data
 			{
 				if ((this._angefragt != value))
 				{
+					this.OnangefragtChanging(value);
+					this.SendPropertyChanging();
 					this._angefragt = value;
+					this.SendPropertyChanged("angefragt");
+					this.OnangefragtChanged();
 				}
 			}
 		}
@@ -777,7 +1088,11 @@ namespace Mass.Data
 			{
 				if ((this._preisn != value))
 				{
+					this.OnpreisnChanging(value);
+					this.SendPropertyChanging();
 					this._preisn = value;
+					this.SendPropertyChanged("preisn");
+					this.OnpreisnChanged();
 				}
 			}
 		}
@@ -793,7 +1108,11 @@ namespace Mass.Data
 			{
 				if ((this._preisb != value))
 				{
+					this.OnpreisbChanging(value);
+					this.SendPropertyChanging();
 					this._preisb = value;
+					this.SendPropertyChanged("preisb");
+					this.OnpreisbChanged();
 				}
 			}
 		}
@@ -809,7 +1128,11 @@ namespace Mass.Data
 			{
 				if ((this._status != value))
 				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
 					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
 			}
 		}
@@ -825,7 +1148,11 @@ namespace Mass.Data
 			{
 				if ((this._resonanz != value))
 				{
+					this.OnresonanzChanging(value);
+					this.SendPropertyChanging();
 					this._resonanz = value;
+					this.SendPropertyChanged("resonanz");
+					this.OnresonanzChanged();
 				}
 			}
 		}
@@ -841,7 +1168,11 @@ namespace Mass.Data
 			{
 				if ((this._nachgefragt != value))
 				{
+					this.OnnachgefragtChanging(value);
+					this.SendPropertyChanging();
 					this._nachgefragt = value;
+					this.SendPropertyChanged("nachgefragt");
+					this.OnnachgefragtChanged();
 				}
 			}
 		}
@@ -857,7 +1188,11 @@ namespace Mass.Data
 			{
 				if ((this._resonanz1 != value))
 				{
+					this.Onresonanz1Changing(value);
+					this.SendPropertyChanging();
 					this._resonanz1 = value;
+					this.SendPropertyChanged("resonanz1");
+					this.Onresonanz1Changed();
 				}
 			}
 		}
@@ -873,7 +1208,11 @@ namespace Mass.Data
 			{
 				if ((this._geschrieben != value))
 				{
+					this.OngeschriebenChanging(value);
+					this.SendPropertyChanging();
 					this._geschrieben = value;
+					this.SendPropertyChanged("geschrieben");
+					this.OngeschriebenChanged();
 				}
 			}
 		}
@@ -889,7 +1228,11 @@ namespace Mass.Data
 			{
 				if ((this._folder != value))
 				{
+					this.OnfolderChanging(value);
+					this.SendPropertyChanging();
 					this._folder = value;
+					this.SendPropertyChanged("folder");
+					this.OnfolderChanged();
 				}
 			}
 		}
@@ -905,7 +1248,11 @@ namespace Mass.Data
 			{
 				if ((this._active != value))
 				{
+					this.OnactiveChanging(value);
+					this.SendPropertyChanging();
 					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
 				}
 			}
 		}
@@ -921,7 +1268,11 @@ namespace Mass.Data
 			{
 				if ((this._zeichnung != value))
 				{
+					this.OnzeichnungChanging(value);
+					this.SendPropertyChanging();
 					this._zeichnung = value;
+					this.SendPropertyChanged("zeichnung");
+					this.OnzeichnungChanged();
 				}
 			}
 		}
@@ -937,7 +1288,11 @@ namespace Mass.Data
 			{
 				if ((this._privat != value))
 				{
+					this.OnprivatChanging(value);
+					this.SendPropertyChanging();
 					this._privat = value;
+					this.SendPropertyChanged("privat");
+					this.OnprivatChanged();
 				}
 			}
 		}
@@ -953,7 +1308,11 @@ namespace Mass.Data
 			{
 				if ((this._handy != value))
 				{
+					this.OnhandyChanging(value);
+					this.SendPropertyChanging();
 					this._handy = value;
+					this.SendPropertyChanged("handy");
+					this.OnhandyChanged();
 				}
 			}
 		}
@@ -969,7 +1328,11 @@ namespace Mass.Data
 			{
 				if ((this._email != value))
 				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
 					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
 				}
 			}
 		}
@@ -985,15 +1348,41 @@ namespace Mass.Data
 			{
 				if ((this._porez != value))
 				{
+					this.OnporezChanging(value);
+					this.SendPropertyChanging();
 					this._porez = value;
+					this.SendPropertyChanged("porez");
+					this.OnporezChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.anzahlungen")]
-	public partial class anzahlungen
+	public partial class anzahlungen : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idplacanje;
 		
@@ -1007,11 +1396,30 @@ namespace Mass.Data
 		
 		private int _iduser;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidplacanjeChanging(int value);
+    partial void OnidplacanjeChanged();
+    partial void OnabChanging(int value);
+    partial void OnabChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void OnuplatioChanging(System.Nullable<decimal> value);
+    partial void OnuplatioChanged();
+    partial void OnnacinChanging(string value);
+    partial void OnnacinChanged();
+    partial void OniduserChanging(int value);
+    partial void OniduserChanged();
+    #endregion
+		
 		public anzahlungen()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idplacanje", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idplacanje", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int idplacanje
 		{
 			get
@@ -1022,7 +1430,11 @@ namespace Mass.Data
 			{
 				if ((this._idplacanje != value))
 				{
+					this.OnidplacanjeChanging(value);
+					this.SendPropertyChanging();
 					this._idplacanje = value;
+					this.SendPropertyChanged("idplacanje");
+					this.OnidplacanjeChanged();
 				}
 			}
 		}
@@ -1038,7 +1450,11 @@ namespace Mass.Data
 			{
 				if ((this._ab != value))
 				{
+					this.OnabChanging(value);
+					this.SendPropertyChanging();
 					this._ab = value;
+					this.SendPropertyChanged("ab");
+					this.OnabChanged();
 				}
 			}
 		}
@@ -1054,7 +1470,11 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
 			}
 		}
@@ -1070,7 +1490,11 @@ namespace Mass.Data
 			{
 				if ((this._uplatio != value))
 				{
+					this.OnuplatioChanging(value);
+					this.SendPropertyChanging();
 					this._uplatio = value;
+					this.SendPropertyChanged("uplatio");
+					this.OnuplatioChanged();
 				}
 			}
 		}
@@ -1086,7 +1510,11 @@ namespace Mass.Data
 			{
 				if ((this._nacin != value))
 				{
+					this.OnnacinChanging(value);
+					this.SendPropertyChanging();
 					this._nacin = value;
+					this.SendPropertyChanged("nacin");
+					this.OnnacinChanged();
 				}
 			}
 		}
@@ -1102,15 +1530,41 @@ namespace Mass.Data
 			{
 				if ((this._iduser != value))
 				{
+					this.OniduserChanging(value);
+					this.SendPropertyChanging();
 					this._iduser = value;
+					this.SendPropertyChanged("iduser");
+					this.OniduserChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.artikl")]
-	public partial class artikl
+	public partial class artikl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -1138,11 +1592,44 @@ namespace Mass.Data
 		
 		private System.Nullable<byte> _aktivan;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnmaterijalChanging(int value);
+    partial void OnmaterijalChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    partial void OnslikaChanging(string value);
+    partial void OnslikaChanged();
+    partial void OnsvrhaChanging(System.Nullable<int> value);
+    partial void OnsvrhaChanged();
+    partial void Onzemlja_porijeklaChanging(int value);
+    partial void Onzemlja_porijeklaChanged();
+    partial void OnvrstaChanging(int value);
+    partial void OnvrstaChanged();
+    partial void OnsinonimiChanging(string value);
+    partial void OnsinonimiChanged();
+    partial void OnlinkChanging(string value);
+    partial void OnlinkChanged();
+    partial void Onkratki_opisChanging(string value);
+    partial void Onkratki_opisChanged();
+    partial void Ontehnicki_detaljiChanging(string value);
+    partial void Ontehnicki_detaljiChanged();
+    partial void OnpodgrupaChanging(System.Nullable<int> value);
+    partial void OnpodgrupaChanged();
+    partial void OnaktivanChanging(System.Nullable<byte> value);
+    partial void OnaktivanChanged();
+    #endregion
+		
 		public artikl()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -1153,7 +1640,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -1169,7 +1660,11 @@ namespace Mass.Data
 			{
 				if ((this._materijal != value))
 				{
+					this.OnmaterijalChanging(value);
+					this.SendPropertyChanging();
 					this._materijal = value;
+					this.SendPropertyChanged("materijal");
+					this.OnmaterijalChanged();
 				}
 			}
 		}
@@ -1185,7 +1680,11 @@ namespace Mass.Data
 			{
 				if ((this._naziv != value))
 				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
 					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
 				}
 			}
 		}
@@ -1201,7 +1700,11 @@ namespace Mass.Data
 			{
 				if ((this._slika != value))
 				{
+					this.OnslikaChanging(value);
+					this.SendPropertyChanging();
 					this._slika = value;
+					this.SendPropertyChanged("slika");
+					this.OnslikaChanged();
 				}
 			}
 		}
@@ -1217,7 +1720,11 @@ namespace Mass.Data
 			{
 				if ((this._svrha != value))
 				{
+					this.OnsvrhaChanging(value);
+					this.SendPropertyChanging();
 					this._svrha = value;
+					this.SendPropertyChanged("svrha");
+					this.OnsvrhaChanged();
 				}
 			}
 		}
@@ -1233,7 +1740,11 @@ namespace Mass.Data
 			{
 				if ((this._zemlja_porijekla != value))
 				{
+					this.Onzemlja_porijeklaChanging(value);
+					this.SendPropertyChanging();
 					this._zemlja_porijekla = value;
+					this.SendPropertyChanged("zemlja_porijekla");
+					this.Onzemlja_porijeklaChanged();
 				}
 			}
 		}
@@ -1249,7 +1760,11 @@ namespace Mass.Data
 			{
 				if ((this._vrsta != value))
 				{
+					this.OnvrstaChanging(value);
+					this.SendPropertyChanging();
 					this._vrsta = value;
+					this.SendPropertyChanged("vrsta");
+					this.OnvrstaChanged();
 				}
 			}
 		}
@@ -1265,7 +1780,11 @@ namespace Mass.Data
 			{
 				if ((this._sinonimi != value))
 				{
+					this.OnsinonimiChanging(value);
+					this.SendPropertyChanging();
 					this._sinonimi = value;
+					this.SendPropertyChanged("sinonimi");
+					this.OnsinonimiChanged();
 				}
 			}
 		}
@@ -1281,7 +1800,11 @@ namespace Mass.Data
 			{
 				if ((this._link != value))
 				{
+					this.OnlinkChanging(value);
+					this.SendPropertyChanging();
 					this._link = value;
+					this.SendPropertyChanged("link");
+					this.OnlinkChanged();
 				}
 			}
 		}
@@ -1297,7 +1820,11 @@ namespace Mass.Data
 			{
 				if ((this._kratki_opis != value))
 				{
+					this.Onkratki_opisChanging(value);
+					this.SendPropertyChanging();
 					this._kratki_opis = value;
+					this.SendPropertyChanged("kratki_opis");
+					this.Onkratki_opisChanged();
 				}
 			}
 		}
@@ -1313,7 +1840,11 @@ namespace Mass.Data
 			{
 				if ((this._tehnicki_detalji != value))
 				{
+					this.Ontehnicki_detaljiChanging(value);
+					this.SendPropertyChanging();
 					this._tehnicki_detalji = value;
+					this.SendPropertyChanged("tehnicki_detalji");
+					this.Ontehnicki_detaljiChanged();
 				}
 			}
 		}
@@ -1329,7 +1860,11 @@ namespace Mass.Data
 			{
 				if ((this._podgrupa != value))
 				{
+					this.OnpodgrupaChanging(value);
+					this.SendPropertyChanging();
 					this._podgrupa = value;
+					this.SendPropertyChanged("podgrupa");
+					this.OnpodgrupaChanged();
 				}
 			}
 		}
@@ -1345,15 +1880,41 @@ namespace Mass.Data
 			{
 				if ((this._aktivan != value))
 				{
+					this.OnaktivanChanging(value);
+					this.SendPropertyChanging();
 					this._aktivan = value;
+					this.SendPropertyChanged("aktivan");
+					this.OnaktivanChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.auftrage")]
-	public partial class auftrage
+	public partial class auftrage : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ab;
 		
@@ -1393,11 +1954,56 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _anzahlungbei;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnabChanging(int value);
+    partial void OnabChanged();
+    partial void OnkundenrChanging(string value);
+    partial void OnkundenrChanged();
+    partial void OnkundeChanging(string value);
+    partial void OnkundeChanged();
+    partial void OnortChanging(string value);
+    partial void OnortChanged();
+    partial void OnanzahlungChanging(System.Nullable<decimal> value);
+    partial void OnanzahlungChanged();
+    partial void OnpreisbChanging(System.Nullable<decimal> value);
+    partial void OnpreisbChanged();
+    partial void OnpreisnChanging(System.Nullable<decimal> value);
+    partial void OnpreisnChanged();
+    partial void OnangebotnrChanging(System.Nullable<int> value);
+    partial void OnangebotnrChanged();
+    partial void OngeschriebenChanging(System.Nullable<System.DateTime> value);
+    partial void OngeschriebenChanged();
+    partial void OnactiveChanging(System.Nullable<int> value);
+    partial void OnactiveChanged();
+    partial void OnlatChanging(System.Nullable<decimal> value);
+    partial void OnlatChanged();
+    partial void OnlngChanging(System.Nullable<decimal> value);
+    partial void OnlngChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    partial void OnreklamationChanging(System.Nullable<int> value);
+    partial void OnreklamationChanged();
+    partial void OnanztimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnanztimeChanged();
+    partial void Onort1Changing(string value);
+    partial void Onort1Changed();
+    partial void OnprintChanging(System.Nullable<int> value);
+    partial void OnprintChanged();
+    partial void OnnabavkaChanging(string value);
+    partial void OnnabavkaChanged();
+    partial void OnanzahlungbeiChanging(System.Nullable<int> value);
+    partial void OnanzahlungbeiChanged();
+    #endregion
+		
 		public auftrage()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ab", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ab", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int ab
 		{
 			get
@@ -1408,7 +2014,11 @@ namespace Mass.Data
 			{
 				if ((this._ab != value))
 				{
+					this.OnabChanging(value);
+					this.SendPropertyChanging();
 					this._ab = value;
+					this.SendPropertyChanged("ab");
+					this.OnabChanged();
 				}
 			}
 		}
@@ -1424,7 +2034,11 @@ namespace Mass.Data
 			{
 				if ((this._kundenr != value))
 				{
+					this.OnkundenrChanging(value);
+					this.SendPropertyChanging();
 					this._kundenr = value;
+					this.SendPropertyChanged("kundenr");
+					this.OnkundenrChanged();
 				}
 			}
 		}
@@ -1440,7 +2054,11 @@ namespace Mass.Data
 			{
 				if ((this._kunde != value))
 				{
+					this.OnkundeChanging(value);
+					this.SendPropertyChanging();
 					this._kunde = value;
+					this.SendPropertyChanged("kunde");
+					this.OnkundeChanged();
 				}
 			}
 		}
@@ -1456,7 +2074,11 @@ namespace Mass.Data
 			{
 				if ((this._ort != value))
 				{
+					this.OnortChanging(value);
+					this.SendPropertyChanging();
 					this._ort = value;
+					this.SendPropertyChanged("ort");
+					this.OnortChanged();
 				}
 			}
 		}
@@ -1472,7 +2094,11 @@ namespace Mass.Data
 			{
 				if ((this._anzahlung != value))
 				{
+					this.OnanzahlungChanging(value);
+					this.SendPropertyChanging();
 					this._anzahlung = value;
+					this.SendPropertyChanged("anzahlung");
+					this.OnanzahlungChanged();
 				}
 			}
 		}
@@ -1488,7 +2114,11 @@ namespace Mass.Data
 			{
 				if ((this._preisb != value))
 				{
+					this.OnpreisbChanging(value);
+					this.SendPropertyChanging();
 					this._preisb = value;
+					this.SendPropertyChanged("preisb");
+					this.OnpreisbChanged();
 				}
 			}
 		}
@@ -1504,7 +2134,11 @@ namespace Mass.Data
 			{
 				if ((this._preisn != value))
 				{
+					this.OnpreisnChanging(value);
+					this.SendPropertyChanging();
 					this._preisn = value;
+					this.SendPropertyChanged("preisn");
+					this.OnpreisnChanged();
 				}
 			}
 		}
@@ -1520,7 +2154,11 @@ namespace Mass.Data
 			{
 				if ((this._angebotnr != value))
 				{
+					this.OnangebotnrChanging(value);
+					this.SendPropertyChanging();
 					this._angebotnr = value;
+					this.SendPropertyChanged("angebotnr");
+					this.OnangebotnrChanged();
 				}
 			}
 		}
@@ -1536,7 +2174,11 @@ namespace Mass.Data
 			{
 				if ((this._geschrieben != value))
 				{
+					this.OngeschriebenChanging(value);
+					this.SendPropertyChanging();
 					this._geschrieben = value;
+					this.SendPropertyChanged("geschrieben");
+					this.OngeschriebenChanged();
 				}
 			}
 		}
@@ -1552,7 +2194,11 @@ namespace Mass.Data
 			{
 				if ((this._active != value))
 				{
+					this.OnactiveChanging(value);
+					this.SendPropertyChanging();
 					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
 				}
 			}
 		}
@@ -1568,7 +2214,11 @@ namespace Mass.Data
 			{
 				if ((this._lat != value))
 				{
+					this.OnlatChanging(value);
+					this.SendPropertyChanging();
 					this._lat = value;
+					this.SendPropertyChanged("lat");
+					this.OnlatChanged();
 				}
 			}
 		}
@@ -1584,7 +2234,11 @@ namespace Mass.Data
 			{
 				if ((this._lng != value))
 				{
+					this.OnlngChanging(value);
+					this.SendPropertyChanging();
 					this._lng = value;
+					this.SendPropertyChanged("lng");
+					this.OnlngChanged();
 				}
 			}
 		}
@@ -1600,7 +2254,11 @@ namespace Mass.Data
 			{
 				if ((this._status != value))
 				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
 					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
 			}
 		}
@@ -1616,7 +2274,11 @@ namespace Mass.Data
 			{
 				if ((this._reklamation != value))
 				{
+					this.OnreklamationChanging(value);
+					this.SendPropertyChanging();
 					this._reklamation = value;
+					this.SendPropertyChanged("reklamation");
+					this.OnreklamationChanged();
 				}
 			}
 		}
@@ -1632,7 +2294,11 @@ namespace Mass.Data
 			{
 				if ((this._anztime != value))
 				{
+					this.OnanztimeChanging(value);
+					this.SendPropertyChanging();
 					this._anztime = value;
+					this.SendPropertyChanged("anztime");
+					this.OnanztimeChanged();
 				}
 			}
 		}
@@ -1648,7 +2314,11 @@ namespace Mass.Data
 			{
 				if ((this._ort1 != value))
 				{
+					this.Onort1Changing(value);
+					this.SendPropertyChanging();
 					this._ort1 = value;
+					this.SendPropertyChanged("ort1");
+					this.Onort1Changed();
 				}
 			}
 		}
@@ -1664,7 +2334,11 @@ namespace Mass.Data
 			{
 				if ((this._print != value))
 				{
+					this.OnprintChanging(value);
+					this.SendPropertyChanging();
 					this._print = value;
+					this.SendPropertyChanged("print");
+					this.OnprintChanged();
 				}
 			}
 		}
@@ -1680,7 +2354,11 @@ namespace Mass.Data
 			{
 				if ((this._nabavka != value))
 				{
+					this.OnnabavkaChanging(value);
+					this.SendPropertyChanging();
 					this._nabavka = value;
+					this.SendPropertyChanged("nabavka");
+					this.OnnabavkaChanged();
 				}
 			}
 		}
@@ -1696,15 +2374,41 @@ namespace Mass.Data
 			{
 				if ((this._anzahlungbei != value))
 				{
+					this.OnanzahlungbeiChanging(value);
+					this.SendPropertyChanging();
 					this._anzahlungbei = value;
+					this.SendPropertyChanged("anzahlungbei");
+					this.OnanzahlungbeiChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.beschtelung")]
-	public partial class beschtelung
+	public partial class beschtelung : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idbeschtelung;
 		
@@ -1730,11 +2434,42 @@ namespace Mass.Data
 		
 		private string _broj_ploce;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidbeschtelungChanging(int value);
+    partial void OnidbeschtelungChanged();
+    partial void OnabChanging(int value);
+    partial void OnabChanged();
+    partial void OnidproizvodChanging(System.Nullable<int> value);
+    partial void OnidproizvodChanged();
+    partial void OnqmChanging(string value);
+    partial void OnqmChanged();
+    partial void OnlieferantChanging(System.Nullable<int> value);
+    partial void OnlieferantChanged();
+    partial void OnwocheChanging(System.Nullable<int> value);
+    partial void OnwocheChanged();
+    partial void OncijenaChanging(System.Nullable<decimal> value);
+    partial void OncijenaChanged();
+    partial void OnnarucenoChanging(System.Nullable<int> value);
+    partial void OnnarucenoChanged();
+    partial void OneinheitChanging(System.Nullable<int> value);
+    partial void OneinheitChanged();
+    partial void OnlangeChanging(string value);
+    partial void OnlangeChanged();
+    partial void OnbreitChanging(string value);
+    partial void OnbreitChanged();
+    partial void Onbroj_ploceChanging(string value);
+    partial void Onbroj_ploceChanged();
+    #endregion
+		
 		public beschtelung()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idbeschtelung", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idbeschtelung", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int idbeschtelung
 		{
 			get
@@ -1745,7 +2480,11 @@ namespace Mass.Data
 			{
 				if ((this._idbeschtelung != value))
 				{
+					this.OnidbeschtelungChanging(value);
+					this.SendPropertyChanging();
 					this._idbeschtelung = value;
+					this.SendPropertyChanged("idbeschtelung");
+					this.OnidbeschtelungChanged();
 				}
 			}
 		}
@@ -1761,7 +2500,11 @@ namespace Mass.Data
 			{
 				if ((this._ab != value))
 				{
+					this.OnabChanging(value);
+					this.SendPropertyChanging();
 					this._ab = value;
+					this.SendPropertyChanged("ab");
+					this.OnabChanged();
 				}
 			}
 		}
@@ -1777,7 +2520,11 @@ namespace Mass.Data
 			{
 				if ((this._idproizvod != value))
 				{
+					this.OnidproizvodChanging(value);
+					this.SendPropertyChanging();
 					this._idproizvod = value;
+					this.SendPropertyChanged("idproizvod");
+					this.OnidproizvodChanged();
 				}
 			}
 		}
@@ -1793,7 +2540,11 @@ namespace Mass.Data
 			{
 				if ((this._qm != value))
 				{
+					this.OnqmChanging(value);
+					this.SendPropertyChanging();
 					this._qm = value;
+					this.SendPropertyChanged("qm");
+					this.OnqmChanged();
 				}
 			}
 		}
@@ -1809,7 +2560,11 @@ namespace Mass.Data
 			{
 				if ((this._lieferant != value))
 				{
+					this.OnlieferantChanging(value);
+					this.SendPropertyChanging();
 					this._lieferant = value;
+					this.SendPropertyChanged("lieferant");
+					this.OnlieferantChanged();
 				}
 			}
 		}
@@ -1825,7 +2580,11 @@ namespace Mass.Data
 			{
 				if ((this._woche != value))
 				{
+					this.OnwocheChanging(value);
+					this.SendPropertyChanging();
 					this._woche = value;
+					this.SendPropertyChanged("woche");
+					this.OnwocheChanged();
 				}
 			}
 		}
@@ -1841,7 +2600,11 @@ namespace Mass.Data
 			{
 				if ((this._cijena != value))
 				{
+					this.OncijenaChanging(value);
+					this.SendPropertyChanging();
 					this._cijena = value;
+					this.SendPropertyChanged("cijena");
+					this.OncijenaChanged();
 				}
 			}
 		}
@@ -1857,7 +2620,11 @@ namespace Mass.Data
 			{
 				if ((this._naruceno != value))
 				{
+					this.OnnarucenoChanging(value);
+					this.SendPropertyChanging();
 					this._naruceno = value;
+					this.SendPropertyChanged("naruceno");
+					this.OnnarucenoChanged();
 				}
 			}
 		}
@@ -1873,7 +2640,11 @@ namespace Mass.Data
 			{
 				if ((this._einheit != value))
 				{
+					this.OneinheitChanging(value);
+					this.SendPropertyChanging();
 					this._einheit = value;
+					this.SendPropertyChanged("einheit");
+					this.OneinheitChanged();
 				}
 			}
 		}
@@ -1889,7 +2660,11 @@ namespace Mass.Data
 			{
 				if ((this._lange != value))
 				{
+					this.OnlangeChanging(value);
+					this.SendPropertyChanging();
 					this._lange = value;
+					this.SendPropertyChanged("lange");
+					this.OnlangeChanged();
 				}
 			}
 		}
@@ -1905,7 +2680,11 @@ namespace Mass.Data
 			{
 				if ((this._breit != value))
 				{
+					this.OnbreitChanging(value);
+					this.SendPropertyChanging();
 					this._breit = value;
+					this.SendPropertyChanged("breit");
+					this.OnbreitChanged();
 				}
 			}
 		}
@@ -1921,25 +2700,62 @@ namespace Mass.Data
 			{
 				if ((this._broj_ploce != value))
 				{
+					this.Onbroj_ploceChanging(value);
+					this.SendPropertyChanging();
 					this._broj_ploce = value;
+					this.SendPropertyChanged("broj_ploce");
+					this.Onbroj_ploceChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.brojevi_racuna")]
-	public partial class brojevi_racuna
+	public partial class brojevi_racuna : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
 		private int _brojR;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnbrojRChanging(int value);
+    partial void OnbrojRChanged();
+    #endregion
+		
 		public brojevi_racuna()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -1950,7 +2766,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -1966,15 +2786,41 @@ namespace Mass.Data
 			{
 				if ((this._brojR != value))
 				{
+					this.OnbrojRChanging(value);
+					this.SendPropertyChanging();
 					this._brojR = value;
+					this.SendPropertyChanged("brojR");
+					this.OnbrojRChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bug")]
-	public partial class bug
+	public partial class bug : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -1986,11 +2832,28 @@ namespace Mass.Data
 		
 		private System.Nullable<System.DateTime> _datum;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onuser_idChanging(int value);
+    partial void Onuser_idChanged();
+    partial void Onbug1Changing(string value);
+    partial void Onbug1Changed();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    #endregion
+		
 		public bug()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -2001,7 +2864,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -2017,7 +2884,11 @@ namespace Mass.Data
 			{
 				if ((this._user_id != value))
 				{
+					this.Onuser_idChanging(value);
+					this.SendPropertyChanging();
 					this._user_id = value;
+					this.SendPropertyChanged("user_id");
+					this.Onuser_idChanged();
 				}
 			}
 		}
@@ -2033,7 +2904,11 @@ namespace Mass.Data
 			{
 				if ((this._bug1 != value))
 				{
+					this.Onbug1Changing(value);
+					this.SendPropertyChanging();
 					this._bug1 = value;
+					this.SendPropertyChanged("bug1");
+					this.Onbug1Changed();
 				}
 			}
 		}
@@ -2049,7 +2924,11 @@ namespace Mass.Data
 			{
 				if ((this._status != value))
 				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
 					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
 			}
 		}
@@ -2065,15 +2944,41 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_produkt")]
-	public partial class ca_produkt
+	public partial class ca_produkt : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _iproizvod;
 		
@@ -2087,11 +2992,30 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _montage;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniproizvodChanging(int value);
+    partial void OniproizvodChanged();
+    partial void OnfertigungChanging(System.Nullable<int> value);
+    partial void OnfertigungChanged();
+    partial void OnanlieferungChanging(System.Nullable<int> value);
+    partial void OnanlieferungChanged();
+    partial void OnabholungChanging(System.Nullable<int> value);
+    partial void OnabholungChanged();
+    partial void OnaufmasChanging(System.Nullable<int> value);
+    partial void OnaufmasChanged();
+    partial void OnmontageChanging(System.Nullable<int> value);
+    partial void OnmontageChanged();
+    #endregion
+		
 		public ca_produkt()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iproizvod", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iproizvod", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int iproizvod
 		{
 			get
@@ -2102,7 +3026,11 @@ namespace Mass.Data
 			{
 				if ((this._iproizvod != value))
 				{
+					this.OniproizvodChanging(value);
+					this.SendPropertyChanging();
 					this._iproizvod = value;
+					this.SendPropertyChanged("iproizvod");
+					this.OniproizvodChanged();
 				}
 			}
 		}
@@ -2118,7 +3046,11 @@ namespace Mass.Data
 			{
 				if ((this._fertigung != value))
 				{
+					this.OnfertigungChanging(value);
+					this.SendPropertyChanging();
 					this._fertigung = value;
+					this.SendPropertyChanged("fertigung");
+					this.OnfertigungChanged();
 				}
 			}
 		}
@@ -2134,7 +3066,11 @@ namespace Mass.Data
 			{
 				if ((this._anlieferung != value))
 				{
+					this.OnanlieferungChanging(value);
+					this.SendPropertyChanging();
 					this._anlieferung = value;
+					this.SendPropertyChanged("anlieferung");
+					this.OnanlieferungChanged();
 				}
 			}
 		}
@@ -2150,7 +3086,11 @@ namespace Mass.Data
 			{
 				if ((this._abholung != value))
 				{
+					this.OnabholungChanging(value);
+					this.SendPropertyChanging();
 					this._abholung = value;
+					this.SendPropertyChanged("abholung");
+					this.OnabholungChanged();
 				}
 			}
 		}
@@ -2166,7 +3106,11 @@ namespace Mass.Data
 			{
 				if ((this._aufmas != value))
 				{
+					this.OnaufmasChanging(value);
+					this.SendPropertyChanging();
 					this._aufmas = value;
+					this.SendPropertyChanged("aufmas");
+					this.OnaufmasChanged();
 				}
 			}
 		}
@@ -2182,15 +3126,41 @@ namespace Mass.Data
 			{
 				if ((this._montage != value))
 				{
+					this.OnmontageChanging(value);
+					this.SendPropertyChanging();
 					this._montage = value;
+					this.SendPropertyChanged("montage");
+					this.OnmontageChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cijena_artikl_inv")]
-	public partial class cijena_artikl_inv
+	public partial class cijena_artikl_inv : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -2202,11 +3172,28 @@ namespace Mass.Data
 		
 		private string _napomena;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_artiklChanging(int value);
+    partial void Onid_artiklChanged();
+    partial void Onvrsta_cijeneChanging(System.Nullable<int> value);
+    partial void Onvrsta_cijeneChanged();
+    partial void OniznosChanging(System.Nullable<decimal> value);
+    partial void OniznosChanged();
+    partial void OnnapomenaChanging(string value);
+    partial void OnnapomenaChanged();
+    #endregion
+		
 		public cijena_artikl_inv()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -2217,7 +3204,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -2233,7 +3224,11 @@ namespace Mass.Data
 			{
 				if ((this._id_artikl != value))
 				{
+					this.Onid_artiklChanging(value);
+					this.SendPropertyChanging();
 					this._id_artikl = value;
+					this.SendPropertyChanged("id_artikl");
+					this.Onid_artiklChanged();
 				}
 			}
 		}
@@ -2249,7 +3244,11 @@ namespace Mass.Data
 			{
 				if ((this._vrsta_cijene != value))
 				{
+					this.Onvrsta_cijeneChanging(value);
+					this.SendPropertyChanging();
 					this._vrsta_cijene = value;
+					this.SendPropertyChanged("vrsta_cijene");
+					this.Onvrsta_cijeneChanged();
 				}
 			}
 		}
@@ -2265,7 +3264,11 @@ namespace Mass.Data
 			{
 				if ((this._iznos != value))
 				{
+					this.OniznosChanging(value);
+					this.SendPropertyChanging();
 					this._iznos = value;
+					this.SendPropertyChanged("iznos");
+					this.OniznosChanged();
 				}
 			}
 		}
@@ -2281,25 +3284,62 @@ namespace Mass.Data
 			{
 				if ((this._napomena != value))
 				{
+					this.OnnapomenaChanging(value);
+					this.SendPropertyChanging();
 					this._napomena = value;
+					this.SendPropertyChanged("napomena");
+					this.OnnapomenaChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.einheit")]
-	public partial class einheit
+	public partial class einheit : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
 		private string _jedinica;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnjedinicaChanging(string value);
+    partial void OnjedinicaChanged();
+    #endregion
+		
 		public einheit()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -2310,7 +3350,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -2326,15 +3370,41 @@ namespace Mass.Data
 			{
 				if ((this._jedinica != value))
 				{
+					this.OnjedinicaChanging(value);
+					this.SendPropertyChanging();
 					this._jedinica = value;
+					this.SendPropertyChanged("jedinica");
+					this.OnjedinicaChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.kalendar")]
-	public partial class kalendar
+	public partial class kalendar : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -2352,11 +3422,34 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _aktiv;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void OnortChanging(string value);
+    partial void OnortChanged();
+    partial void OnopisChanging(string value);
+    partial void OnopisChanged();
+    partial void Ondatum1Changing(System.Nullable<System.DateTime> value);
+    partial void Ondatum1Changed();
+    partial void OnpositionChanging(string value);
+    partial void OnpositionChanged();
+    partial void OnidUserChanging(int value);
+    partial void OnidUserChanged();
+    partial void OnaktivChanging(System.Nullable<int> value);
+    partial void OnaktivChanged();
+    #endregion
+		
 		public kalendar()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -2367,7 +3460,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -2383,7 +3480,11 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
 			}
 		}
@@ -2399,7 +3500,11 @@ namespace Mass.Data
 			{
 				if ((this._ort != value))
 				{
+					this.OnortChanging(value);
+					this.SendPropertyChanging();
 					this._ort = value;
+					this.SendPropertyChanged("ort");
+					this.OnortChanged();
 				}
 			}
 		}
@@ -2415,7 +3520,11 @@ namespace Mass.Data
 			{
 				if ((this._opis != value))
 				{
+					this.OnopisChanging(value);
+					this.SendPropertyChanging();
 					this._opis = value;
+					this.SendPropertyChanged("opis");
+					this.OnopisChanged();
 				}
 			}
 		}
@@ -2431,7 +3540,11 @@ namespace Mass.Data
 			{
 				if ((this._datum1 != value))
 				{
+					this.Ondatum1Changing(value);
+					this.SendPropertyChanging();
 					this._datum1 = value;
+					this.SendPropertyChanged("datum1");
+					this.Ondatum1Changed();
 				}
 			}
 		}
@@ -2447,7 +3560,11 @@ namespace Mass.Data
 			{
 				if ((this._position != value))
 				{
+					this.OnpositionChanging(value);
+					this.SendPropertyChanging();
 					this._position = value;
+					this.SendPropertyChanged("position");
+					this.OnpositionChanged();
 				}
 			}
 		}
@@ -2463,7 +3580,11 @@ namespace Mass.Data
 			{
 				if ((this._idUser != value))
 				{
+					this.OnidUserChanging(value);
+					this.SendPropertyChanging();
 					this._idUser = value;
+					this.SendPropertyChanged("idUser");
+					this.OnidUserChanged();
 				}
 			}
 		}
@@ -2479,17 +3600,43 @@ namespace Mass.Data
 			{
 				if ((this._aktiv != value))
 				{
+					this.OnaktivChanging(value);
+					this.SendPropertyChanging();
 					this._aktiv = value;
+					this.SendPropertyChanged("aktiv");
+					this.OnaktivChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.kunden")]
-	public partial class kunden
+	public partial class kunden : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _idKunde;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idKunde;
 		
 		private string _kundeNr;
 		
@@ -2575,12 +3722,105 @@ namespace Mass.Data
 		
 		private string _notiz_route;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidKundeChanging(int value);
+    partial void OnidKundeChanged();
+    partial void OnkundeNrChanging(string value);
+    partial void OnkundeNrChanged();
+    partial void OnsuchbegriffChanging(string value);
+    partial void OnsuchbegriffChanged();
+    partial void OnvornameChanging(string value);
+    partial void OnvornameChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void Onl_plz_ortChanging(string value);
+    partial void Onl_plz_ortChanged();
+    partial void OngruppeChanging(string value);
+    partial void OngruppeChanged();
+    partial void Onfreifeld1Changing(string value);
+    partial void Onfreifeld1Changed();
+    partial void Onname2Changing(string value);
+    partial void Onname2Changed();
+    partial void OnstrasseChanging(string value);
+    partial void OnstrasseChanged();
+    partial void Ontel1Changing(string value);
+    partial void Ontel1Changed();
+    partial void Ontel2Changing(string value);
+    partial void Ontel2Changed();
+    partial void OnfaxChanging(string value);
+    partial void OnfaxChanged();
+    partial void OnmailChanging(string value);
+    partial void OnmailChanged();
+    partial void OnlkChanging(string value);
+    partial void OnlkChanged();
+    partial void Onvorlage_amChanging(string value);
+    partial void Onvorlage_amChanged();
+    partial void Onvorlage_anlassChanging(string value);
+    partial void Onvorlage_anlassChanged();
+    partial void OnVKPreisgrChanging(string value);
+    partial void OnVKPreisgrChanged();
+    partial void OnzahlunginChanging(string value);
+    partial void OnzahlunginChanged();
+    partial void OnskontoChanging(string value);
+    partial void OnskontoChanged();
+    partial void OnskontotageChanging(string value);
+    partial void OnskontotageChanged();
+    partial void OnvertreterChanging(string value);
+    partial void OnvertreterChanged();
+    partial void OnufragssperreChanging(string value);
+    partial void OnufragssperreChanged();
+    partial void OnanredenChanging(System.Nullable<int> value);
+    partial void OnanredenChanged();
+    partial void OnlieferadresseChanging(string value);
+    partial void OnlieferadresseChanged();
+    partial void OnrechnungsadresseChanging(string value);
+    partial void OnrechnungsadresseChanged();
+    partial void Onemail2Changing(string value);
+    partial void Onemail2Changed();
+    partial void OninternetChanging(string value);
+    partial void OninternetChanged();
+    partial void OnkundetypeChanging(System.Nullable<int> value);
+    partial void OnkundetypeChanged();
+    partial void OnsteuerChanging(System.Nullable<int> value);
+    partial void OnsteuerChanged();
+    partial void OnzahlweiseChanging(string value);
+    partial void OnzahlweiseChanged();
+    partial void Onzahl_bedingChanging(string value);
+    partial void Onzahl_bedingChanged();
+    partial void OnkundenbewertungChanging(System.Nullable<int> value);
+    partial void OnkundenbewertungChanged();
+    partial void OnnotizChanging(string value);
+    partial void OnnotizChanged();
+    partial void OntitelChanging(string value);
+    partial void OntitelChanged();
+    partial void OnlandChanging(string value);
+    partial void OnlandChanged();
+    partial void OnzahlbarChanging(string value);
+    partial void OnzahlbarChanged();
+    partial void OnrabatChanging(string value);
+    partial void OnrabatChanged();
+    partial void Onadresse2Changing(string value);
+    partial void Onadresse2Changed();
+    partial void OnstadtChanging(string value);
+    partial void OnstadtChanged();
+    partial void OnanredeansChanging(string value);
+    partial void OnanredeansChanged();
+    partial void OnanssprechepartnerChanging(string value);
+    partial void OnanssprechepartnerChanged();
+    partial void Onnotiz_routeChanging(string value);
+    partial void Onnotiz_routeChanged();
+    #endregion
+		
 		public kunden()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idKunde", DbType="Int")]
-		public System.Nullable<int> idKunde
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idKunde", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idKunde
 		{
 			get
 			{
@@ -2590,7 +3830,11 @@ namespace Mass.Data
 			{
 				if ((this._idKunde != value))
 				{
+					this.OnidKundeChanging(value);
+					this.SendPropertyChanging();
 					this._idKunde = value;
+					this.SendPropertyChanged("idKunde");
+					this.OnidKundeChanged();
 				}
 			}
 		}
@@ -2606,7 +3850,11 @@ namespace Mass.Data
 			{
 				if ((this._kundeNr != value))
 				{
+					this.OnkundeNrChanging(value);
+					this.SendPropertyChanging();
 					this._kundeNr = value;
+					this.SendPropertyChanged("kundeNr");
+					this.OnkundeNrChanged();
 				}
 			}
 		}
@@ -2622,7 +3870,11 @@ namespace Mass.Data
 			{
 				if ((this._suchbegriff != value))
 				{
+					this.OnsuchbegriffChanging(value);
+					this.SendPropertyChanging();
 					this._suchbegriff = value;
+					this.SendPropertyChanged("suchbegriff");
+					this.OnsuchbegriffChanged();
 				}
 			}
 		}
@@ -2638,7 +3890,11 @@ namespace Mass.Data
 			{
 				if ((this._vorname != value))
 				{
+					this.OnvornameChanging(value);
+					this.SendPropertyChanging();
 					this._vorname = value;
+					this.SendPropertyChanged("vorname");
+					this.OnvornameChanged();
 				}
 			}
 		}
@@ -2654,7 +3910,11 @@ namespace Mass.Data
 			{
 				if ((this._name != value))
 				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
 					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
 				}
 			}
 		}
@@ -2670,7 +3930,11 @@ namespace Mass.Data
 			{
 				if ((this._l_plz_ort != value))
 				{
+					this.Onl_plz_ortChanging(value);
+					this.SendPropertyChanging();
 					this._l_plz_ort = value;
+					this.SendPropertyChanged("l_plz_ort");
+					this.Onl_plz_ortChanged();
 				}
 			}
 		}
@@ -2686,7 +3950,11 @@ namespace Mass.Data
 			{
 				if ((this._gruppe != value))
 				{
+					this.OngruppeChanging(value);
+					this.SendPropertyChanging();
 					this._gruppe = value;
+					this.SendPropertyChanged("gruppe");
+					this.OngruppeChanged();
 				}
 			}
 		}
@@ -2702,7 +3970,11 @@ namespace Mass.Data
 			{
 				if ((this._freifeld1 != value))
 				{
+					this.Onfreifeld1Changing(value);
+					this.SendPropertyChanging();
 					this._freifeld1 = value;
+					this.SendPropertyChanged("freifeld1");
+					this.Onfreifeld1Changed();
 				}
 			}
 		}
@@ -2718,7 +3990,11 @@ namespace Mass.Data
 			{
 				if ((this._name2 != value))
 				{
+					this.Onname2Changing(value);
+					this.SendPropertyChanging();
 					this._name2 = value;
+					this.SendPropertyChanged("name2");
+					this.Onname2Changed();
 				}
 			}
 		}
@@ -2734,7 +4010,11 @@ namespace Mass.Data
 			{
 				if ((this._strasse != value))
 				{
+					this.OnstrasseChanging(value);
+					this.SendPropertyChanging();
 					this._strasse = value;
+					this.SendPropertyChanged("strasse");
+					this.OnstrasseChanged();
 				}
 			}
 		}
@@ -2750,7 +4030,11 @@ namespace Mass.Data
 			{
 				if ((this._tel1 != value))
 				{
+					this.Ontel1Changing(value);
+					this.SendPropertyChanging();
 					this._tel1 = value;
+					this.SendPropertyChanged("tel1");
+					this.Ontel1Changed();
 				}
 			}
 		}
@@ -2766,7 +4050,11 @@ namespace Mass.Data
 			{
 				if ((this._tel2 != value))
 				{
+					this.Ontel2Changing(value);
+					this.SendPropertyChanging();
 					this._tel2 = value;
+					this.SendPropertyChanged("tel2");
+					this.Ontel2Changed();
 				}
 			}
 		}
@@ -2782,7 +4070,11 @@ namespace Mass.Data
 			{
 				if ((this._fax != value))
 				{
+					this.OnfaxChanging(value);
+					this.SendPropertyChanging();
 					this._fax = value;
+					this.SendPropertyChanged("fax");
+					this.OnfaxChanged();
 				}
 			}
 		}
@@ -2798,7 +4090,11 @@ namespace Mass.Data
 			{
 				if ((this._mail != value))
 				{
+					this.OnmailChanging(value);
+					this.SendPropertyChanging();
 					this._mail = value;
+					this.SendPropertyChanged("mail");
+					this.OnmailChanged();
 				}
 			}
 		}
@@ -2814,7 +4110,11 @@ namespace Mass.Data
 			{
 				if ((this._lk != value))
 				{
+					this.OnlkChanging(value);
+					this.SendPropertyChanging();
 					this._lk = value;
+					this.SendPropertyChanged("lk");
+					this.OnlkChanged();
 				}
 			}
 		}
@@ -2830,7 +4130,11 @@ namespace Mass.Data
 			{
 				if ((this._vorlage_am != value))
 				{
+					this.Onvorlage_amChanging(value);
+					this.SendPropertyChanging();
 					this._vorlage_am = value;
+					this.SendPropertyChanged("vorlage_am");
+					this.Onvorlage_amChanged();
 				}
 			}
 		}
@@ -2846,7 +4150,11 @@ namespace Mass.Data
 			{
 				if ((this._vorlage_anlass != value))
 				{
+					this.Onvorlage_anlassChanging(value);
+					this.SendPropertyChanging();
 					this._vorlage_anlass = value;
+					this.SendPropertyChanged("vorlage_anlass");
+					this.Onvorlage_anlassChanged();
 				}
 			}
 		}
@@ -2862,7 +4170,11 @@ namespace Mass.Data
 			{
 				if ((this._VKPreisgr != value))
 				{
+					this.OnVKPreisgrChanging(value);
+					this.SendPropertyChanging();
 					this._VKPreisgr = value;
+					this.SendPropertyChanged("VKPreisgr");
+					this.OnVKPreisgrChanged();
 				}
 			}
 		}
@@ -2878,7 +4190,11 @@ namespace Mass.Data
 			{
 				if ((this._zahlungin != value))
 				{
+					this.OnzahlunginChanging(value);
+					this.SendPropertyChanging();
 					this._zahlungin = value;
+					this.SendPropertyChanged("zahlungin");
+					this.OnzahlunginChanged();
 				}
 			}
 		}
@@ -2894,7 +4210,11 @@ namespace Mass.Data
 			{
 				if ((this._skonto != value))
 				{
+					this.OnskontoChanging(value);
+					this.SendPropertyChanging();
 					this._skonto = value;
+					this.SendPropertyChanged("skonto");
+					this.OnskontoChanged();
 				}
 			}
 		}
@@ -2910,7 +4230,11 @@ namespace Mass.Data
 			{
 				if ((this._skontotage != value))
 				{
+					this.OnskontotageChanging(value);
+					this.SendPropertyChanging();
 					this._skontotage = value;
+					this.SendPropertyChanged("skontotage");
+					this.OnskontotageChanged();
 				}
 			}
 		}
@@ -2926,7 +4250,11 @@ namespace Mass.Data
 			{
 				if ((this._vertreter != value))
 				{
+					this.OnvertreterChanging(value);
+					this.SendPropertyChanging();
 					this._vertreter = value;
+					this.SendPropertyChanged("vertreter");
+					this.OnvertreterChanged();
 				}
 			}
 		}
@@ -2942,7 +4270,11 @@ namespace Mass.Data
 			{
 				if ((this._ufragssperre != value))
 				{
+					this.OnufragssperreChanging(value);
+					this.SendPropertyChanging();
 					this._ufragssperre = value;
+					this.SendPropertyChanged("ufragssperre");
+					this.OnufragssperreChanged();
 				}
 			}
 		}
@@ -2958,7 +4290,11 @@ namespace Mass.Data
 			{
 				if ((this._anreden != value))
 				{
+					this.OnanredenChanging(value);
+					this.SendPropertyChanging();
 					this._anreden = value;
+					this.SendPropertyChanged("anreden");
+					this.OnanredenChanged();
 				}
 			}
 		}
@@ -2974,7 +4310,11 @@ namespace Mass.Data
 			{
 				if ((this._lieferadresse != value))
 				{
+					this.OnlieferadresseChanging(value);
+					this.SendPropertyChanging();
 					this._lieferadresse = value;
+					this.SendPropertyChanged("lieferadresse");
+					this.OnlieferadresseChanged();
 				}
 			}
 		}
@@ -2990,7 +4330,11 @@ namespace Mass.Data
 			{
 				if ((this._rechnungsadresse != value))
 				{
+					this.OnrechnungsadresseChanging(value);
+					this.SendPropertyChanging();
 					this._rechnungsadresse = value;
+					this.SendPropertyChanged("rechnungsadresse");
+					this.OnrechnungsadresseChanged();
 				}
 			}
 		}
@@ -3006,7 +4350,11 @@ namespace Mass.Data
 			{
 				if ((this._email2 != value))
 				{
+					this.Onemail2Changing(value);
+					this.SendPropertyChanging();
 					this._email2 = value;
+					this.SendPropertyChanged("email2");
+					this.Onemail2Changed();
 				}
 			}
 		}
@@ -3022,7 +4370,11 @@ namespace Mass.Data
 			{
 				if ((this._internet != value))
 				{
+					this.OninternetChanging(value);
+					this.SendPropertyChanging();
 					this._internet = value;
+					this.SendPropertyChanged("internet");
+					this.OninternetChanged();
 				}
 			}
 		}
@@ -3038,7 +4390,11 @@ namespace Mass.Data
 			{
 				if ((this._kundetype != value))
 				{
+					this.OnkundetypeChanging(value);
+					this.SendPropertyChanging();
 					this._kundetype = value;
+					this.SendPropertyChanged("kundetype");
+					this.OnkundetypeChanged();
 				}
 			}
 		}
@@ -3054,7 +4410,11 @@ namespace Mass.Data
 			{
 				if ((this._steuer != value))
 				{
+					this.OnsteuerChanging(value);
+					this.SendPropertyChanging();
 					this._steuer = value;
+					this.SendPropertyChanged("steuer");
+					this.OnsteuerChanged();
 				}
 			}
 		}
@@ -3070,7 +4430,11 @@ namespace Mass.Data
 			{
 				if ((this._zahlweise != value))
 				{
+					this.OnzahlweiseChanging(value);
+					this.SendPropertyChanging();
 					this._zahlweise = value;
+					this.SendPropertyChanged("zahlweise");
+					this.OnzahlweiseChanged();
 				}
 			}
 		}
@@ -3086,7 +4450,11 @@ namespace Mass.Data
 			{
 				if ((this._zahl_beding != value))
 				{
+					this.Onzahl_bedingChanging(value);
+					this.SendPropertyChanging();
 					this._zahl_beding = value;
+					this.SendPropertyChanged("zahl_beding");
+					this.Onzahl_bedingChanged();
 				}
 			}
 		}
@@ -3102,7 +4470,11 @@ namespace Mass.Data
 			{
 				if ((this._kundenbewertung != value))
 				{
+					this.OnkundenbewertungChanging(value);
+					this.SendPropertyChanging();
 					this._kundenbewertung = value;
+					this.SendPropertyChanged("kundenbewertung");
+					this.OnkundenbewertungChanged();
 				}
 			}
 		}
@@ -3118,7 +4490,11 @@ namespace Mass.Data
 			{
 				if ((this._notiz != value))
 				{
+					this.OnnotizChanging(value);
+					this.SendPropertyChanging();
 					this._notiz = value;
+					this.SendPropertyChanged("notiz");
+					this.OnnotizChanged();
 				}
 			}
 		}
@@ -3134,7 +4510,11 @@ namespace Mass.Data
 			{
 				if ((this._titel != value))
 				{
+					this.OntitelChanging(value);
+					this.SendPropertyChanging();
 					this._titel = value;
+					this.SendPropertyChanged("titel");
+					this.OntitelChanged();
 				}
 			}
 		}
@@ -3150,7 +4530,11 @@ namespace Mass.Data
 			{
 				if ((this._land != value))
 				{
+					this.OnlandChanging(value);
+					this.SendPropertyChanging();
 					this._land = value;
+					this.SendPropertyChanged("land");
+					this.OnlandChanged();
 				}
 			}
 		}
@@ -3166,7 +4550,11 @@ namespace Mass.Data
 			{
 				if ((this._zahlbar != value))
 				{
+					this.OnzahlbarChanging(value);
+					this.SendPropertyChanging();
 					this._zahlbar = value;
+					this.SendPropertyChanged("zahlbar");
+					this.OnzahlbarChanged();
 				}
 			}
 		}
@@ -3182,7 +4570,11 @@ namespace Mass.Data
 			{
 				if ((this._rabat != value))
 				{
+					this.OnrabatChanging(value);
+					this.SendPropertyChanging();
 					this._rabat = value;
+					this.SendPropertyChanged("rabat");
+					this.OnrabatChanged();
 				}
 			}
 		}
@@ -3198,7 +4590,11 @@ namespace Mass.Data
 			{
 				if ((this._adresse2 != value))
 				{
+					this.Onadresse2Changing(value);
+					this.SendPropertyChanging();
 					this._adresse2 = value;
+					this.SendPropertyChanged("adresse2");
+					this.Onadresse2Changed();
 				}
 			}
 		}
@@ -3214,7 +4610,11 @@ namespace Mass.Data
 			{
 				if ((this._stadt != value))
 				{
+					this.OnstadtChanging(value);
+					this.SendPropertyChanging();
 					this._stadt = value;
+					this.SendPropertyChanged("stadt");
+					this.OnstadtChanged();
 				}
 			}
 		}
@@ -3230,7 +4630,11 @@ namespace Mass.Data
 			{
 				if ((this._anredeans != value))
 				{
+					this.OnanredeansChanging(value);
+					this.SendPropertyChanging();
 					this._anredeans = value;
+					this.SendPropertyChanged("anredeans");
+					this.OnanredeansChanged();
 				}
 			}
 		}
@@ -3246,7 +4650,11 @@ namespace Mass.Data
 			{
 				if ((this._anssprechepartner != value))
 				{
+					this.OnanssprechepartnerChanging(value);
+					this.SendPropertyChanging();
 					this._anssprechepartner = value;
+					this.SendPropertyChanged("anssprechepartner");
+					this.OnanssprechepartnerChanged();
 				}
 			}
 		}
@@ -3262,15 +4670,41 @@ namespace Mass.Data
 			{
 				if ((this._notiz_route != value))
 				{
+					this.Onnotiz_routeChanging(value);
+					this.SendPropertyChanging();
 					this._notiz_route = value;
+					this.SendPropertyChanged("notiz_route");
+					this.Onnotiz_routeChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.lieferant")]
-	public partial class lieferant
+	public partial class lieferant : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idLief;
 		
@@ -3332,11 +4766,78 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _stauer;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidLiefChanging(int value);
+    partial void OnidLiefChanged();
+    partial void OnlieferantNrChanging(int value);
+    partial void OnlieferantNrChanged();
+    partial void OnanredeChanging(System.Nullable<int> value);
+    partial void OnanredeChanged();
+    partial void OnvornameChanging(string value);
+    partial void OnvornameChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnadresseChanging(string value);
+    partial void OnadresseChanged();
+    partial void Ontel1Changing(string value);
+    partial void Ontel1Changed();
+    partial void Ontel2Changing(string value);
+    partial void Ontel2Changed();
+    partial void OnhandyChanging(string value);
+    partial void OnhandyChanged();
+    partial void OnskypeChanging(string value);
+    partial void OnskypeChanged();
+    partial void OnfaxChanging(string value);
+    partial void OnfaxChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnbankChanging(string value);
+    partial void OnbankChanged();
+    partial void OnBLZChanging(string value);
+    partial void OnBLZChanged();
+    partial void OnKtoNrChanging(string value);
+    partial void OnKtoNrChanged();
+    partial void OnBICChanging(string value);
+    partial void OnBICChanged();
+    partial void OnIBANChanging(string value);
+    partial void OnIBANChanged();
+    partial void OnkontoinhaberChanging(string value);
+    partial void OnkontoinhaberChanged();
+    partial void OnnotizChanging(string value);
+    partial void OnnotizChanged();
+    partial void OnidUserChanging(System.Nullable<int> value);
+    partial void OnidUserChanged();
+    partial void OnumsatzChanging(System.Nullable<decimal> value);
+    partial void OnumsatzChanged();
+    partial void OnzahlweiseChanging(string value);
+    partial void OnzahlweiseChanged();
+    partial void OnlandChanging(string value);
+    partial void OnlandChanged();
+    partial void OnbrancheChanging(string value);
+    partial void OnbrancheChanged();
+    partial void OnskontoChanging(string value);
+    partial void OnskontoChanged();
+    partial void OntageChanging(System.Nullable<decimal> value);
+    partial void OntageChanged();
+    partial void OnzahlbarChanging(string value);
+    partial void OnzahlbarChanged();
+    partial void OnrabatChanging(System.Nullable<decimal> value);
+    partial void OnrabatChanged();
+    partial void OnbankeinzugChanging(System.Nullable<int> value);
+    partial void OnbankeinzugChanged();
+    partial void OnstauerChanging(System.Nullable<int> value);
+    partial void OnstauerChanged();
+    #endregion
+		
 		public lieferant()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idLief", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idLief", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int idLief
 		{
 			get
@@ -3347,7 +4848,11 @@ namespace Mass.Data
 			{
 				if ((this._idLief != value))
 				{
+					this.OnidLiefChanging(value);
+					this.SendPropertyChanging();
 					this._idLief = value;
+					this.SendPropertyChanged("idLief");
+					this.OnidLiefChanged();
 				}
 			}
 		}
@@ -3363,7 +4868,11 @@ namespace Mass.Data
 			{
 				if ((this._lieferantNr != value))
 				{
+					this.OnlieferantNrChanging(value);
+					this.SendPropertyChanging();
 					this._lieferantNr = value;
+					this.SendPropertyChanged("lieferantNr");
+					this.OnlieferantNrChanged();
 				}
 			}
 		}
@@ -3379,7 +4888,11 @@ namespace Mass.Data
 			{
 				if ((this._anrede != value))
 				{
+					this.OnanredeChanging(value);
+					this.SendPropertyChanging();
 					this._anrede = value;
+					this.SendPropertyChanged("anrede");
+					this.OnanredeChanged();
 				}
 			}
 		}
@@ -3395,7 +4908,11 @@ namespace Mass.Data
 			{
 				if ((this._vorname != value))
 				{
+					this.OnvornameChanging(value);
+					this.SendPropertyChanging();
 					this._vorname = value;
+					this.SendPropertyChanged("vorname");
+					this.OnvornameChanged();
 				}
 			}
 		}
@@ -3411,7 +4928,11 @@ namespace Mass.Data
 			{
 				if ((this._name != value))
 				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
 					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
 				}
 			}
 		}
@@ -3427,7 +4948,11 @@ namespace Mass.Data
 			{
 				if ((this._adresse != value))
 				{
+					this.OnadresseChanging(value);
+					this.SendPropertyChanging();
 					this._adresse = value;
+					this.SendPropertyChanged("adresse");
+					this.OnadresseChanged();
 				}
 			}
 		}
@@ -3443,7 +4968,11 @@ namespace Mass.Data
 			{
 				if ((this._tel1 != value))
 				{
+					this.Ontel1Changing(value);
+					this.SendPropertyChanging();
 					this._tel1 = value;
+					this.SendPropertyChanged("tel1");
+					this.Ontel1Changed();
 				}
 			}
 		}
@@ -3459,7 +4988,11 @@ namespace Mass.Data
 			{
 				if ((this._tel2 != value))
 				{
+					this.Ontel2Changing(value);
+					this.SendPropertyChanging();
 					this._tel2 = value;
+					this.SendPropertyChanged("tel2");
+					this.Ontel2Changed();
 				}
 			}
 		}
@@ -3475,7 +5008,11 @@ namespace Mass.Data
 			{
 				if ((this._handy != value))
 				{
+					this.OnhandyChanging(value);
+					this.SendPropertyChanging();
 					this._handy = value;
+					this.SendPropertyChanged("handy");
+					this.OnhandyChanged();
 				}
 			}
 		}
@@ -3491,12 +5028,16 @@ namespace Mass.Data
 			{
 				if ((this._skype != value))
 				{
+					this.OnskypeChanging(value);
+					this.SendPropertyChanging();
 					this._skype = value;
+					this.SendPropertyChanged("skype");
+					this.OnskypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fax", DbType="NChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fax", DbType="NChar(50)")]
 		public string fax
 		{
 			get
@@ -3507,7 +5048,11 @@ namespace Mass.Data
 			{
 				if ((this._fax != value))
 				{
+					this.OnfaxChanging(value);
+					this.SendPropertyChanging();
 					this._fax = value;
+					this.SendPropertyChanged("fax");
+					this.OnfaxChanged();
 				}
 			}
 		}
@@ -3523,7 +5068,11 @@ namespace Mass.Data
 			{
 				if ((this._email != value))
 				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
 					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
 				}
 			}
 		}
@@ -3539,7 +5088,11 @@ namespace Mass.Data
 			{
 				if ((this._bank != value))
 				{
+					this.OnbankChanging(value);
+					this.SendPropertyChanging();
 					this._bank = value;
+					this.SendPropertyChanged("bank");
+					this.OnbankChanged();
 				}
 			}
 		}
@@ -3555,7 +5108,11 @@ namespace Mass.Data
 			{
 				if ((this._BLZ != value))
 				{
+					this.OnBLZChanging(value);
+					this.SendPropertyChanging();
 					this._BLZ = value;
+					this.SendPropertyChanged("BLZ");
+					this.OnBLZChanged();
 				}
 			}
 		}
@@ -3571,7 +5128,11 @@ namespace Mass.Data
 			{
 				if ((this._KtoNr != value))
 				{
+					this.OnKtoNrChanging(value);
+					this.SendPropertyChanging();
 					this._KtoNr = value;
+					this.SendPropertyChanged("KtoNr");
+					this.OnKtoNrChanged();
 				}
 			}
 		}
@@ -3587,7 +5148,11 @@ namespace Mass.Data
 			{
 				if ((this._BIC != value))
 				{
+					this.OnBICChanging(value);
+					this.SendPropertyChanging();
 					this._BIC = value;
+					this.SendPropertyChanged("BIC");
+					this.OnBICChanged();
 				}
 			}
 		}
@@ -3603,7 +5168,11 @@ namespace Mass.Data
 			{
 				if ((this._IBAN != value))
 				{
+					this.OnIBANChanging(value);
+					this.SendPropertyChanging();
 					this._IBAN = value;
+					this.SendPropertyChanged("IBAN");
+					this.OnIBANChanged();
 				}
 			}
 		}
@@ -3619,7 +5188,11 @@ namespace Mass.Data
 			{
 				if ((this._kontoinhaber != value))
 				{
+					this.OnkontoinhaberChanging(value);
+					this.SendPropertyChanging();
 					this._kontoinhaber = value;
+					this.SendPropertyChanged("kontoinhaber");
+					this.OnkontoinhaberChanged();
 				}
 			}
 		}
@@ -3635,7 +5208,11 @@ namespace Mass.Data
 			{
 				if ((this._notiz != value))
 				{
+					this.OnnotizChanging(value);
+					this.SendPropertyChanging();
 					this._notiz = value;
+					this.SendPropertyChanged("notiz");
+					this.OnnotizChanged();
 				}
 			}
 		}
@@ -3651,7 +5228,11 @@ namespace Mass.Data
 			{
 				if ((this._idUser != value))
 				{
+					this.OnidUserChanging(value);
+					this.SendPropertyChanging();
 					this._idUser = value;
+					this.SendPropertyChanged("idUser");
+					this.OnidUserChanged();
 				}
 			}
 		}
@@ -3667,7 +5248,11 @@ namespace Mass.Data
 			{
 				if ((this._umsatz != value))
 				{
+					this.OnumsatzChanging(value);
+					this.SendPropertyChanging();
 					this._umsatz = value;
+					this.SendPropertyChanged("umsatz");
+					this.OnumsatzChanged();
 				}
 			}
 		}
@@ -3683,7 +5268,11 @@ namespace Mass.Data
 			{
 				if ((this._zahlweise != value))
 				{
+					this.OnzahlweiseChanging(value);
+					this.SendPropertyChanging();
 					this._zahlweise = value;
+					this.SendPropertyChanged("zahlweise");
+					this.OnzahlweiseChanged();
 				}
 			}
 		}
@@ -3699,7 +5288,11 @@ namespace Mass.Data
 			{
 				if ((this._land != value))
 				{
+					this.OnlandChanging(value);
+					this.SendPropertyChanging();
 					this._land = value;
+					this.SendPropertyChanged("land");
+					this.OnlandChanged();
 				}
 			}
 		}
@@ -3715,7 +5308,11 @@ namespace Mass.Data
 			{
 				if ((this._branche != value))
 				{
+					this.OnbrancheChanging(value);
+					this.SendPropertyChanging();
 					this._branche = value;
+					this.SendPropertyChanged("branche");
+					this.OnbrancheChanged();
 				}
 			}
 		}
@@ -3731,7 +5328,11 @@ namespace Mass.Data
 			{
 				if ((this._skonto != value))
 				{
+					this.OnskontoChanging(value);
+					this.SendPropertyChanging();
 					this._skonto = value;
+					this.SendPropertyChanged("skonto");
+					this.OnskontoChanged();
 				}
 			}
 		}
@@ -3747,7 +5348,11 @@ namespace Mass.Data
 			{
 				if ((this._tage != value))
 				{
+					this.OntageChanging(value);
+					this.SendPropertyChanging();
 					this._tage = value;
+					this.SendPropertyChanged("tage");
+					this.OntageChanged();
 				}
 			}
 		}
@@ -3763,7 +5368,11 @@ namespace Mass.Data
 			{
 				if ((this._zahlbar != value))
 				{
+					this.OnzahlbarChanging(value);
+					this.SendPropertyChanging();
 					this._zahlbar = value;
+					this.SendPropertyChanged("zahlbar");
+					this.OnzahlbarChanged();
 				}
 			}
 		}
@@ -3779,7 +5388,11 @@ namespace Mass.Data
 			{
 				if ((this._rabat != value))
 				{
+					this.OnrabatChanging(value);
+					this.SendPropertyChanging();
 					this._rabat = value;
+					this.SendPropertyChanged("rabat");
+					this.OnrabatChanged();
 				}
 			}
 		}
@@ -3795,7 +5408,11 @@ namespace Mass.Data
 			{
 				if ((this._bankeinzug != value))
 				{
+					this.OnbankeinzugChanging(value);
+					this.SendPropertyChanging();
 					this._bankeinzug = value;
+					this.SendPropertyChanged("bankeinzug");
+					this.OnbankeinzugChanged();
 				}
 			}
 		}
@@ -3811,15 +5428,41 @@ namespace Mass.Data
 			{
 				if ((this._stauer != value))
 				{
+					this.OnstauerChanging(value);
+					this.SendPropertyChanging();
 					this._stauer = value;
+					this.SendPropertyChanged("stauer");
+					this.OnstauerChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.material_inventar")]
-	public partial class material_inventar
+	public partial class material_inventar : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -3861,11 +5504,58 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _reklamation;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onsifra_materialaChanging(string value);
+    partial void Onsifra_materialaChanged();
+    partial void Onvrsta_materialaChanging(System.Nullable<int> value);
+    partial void Onvrsta_materialaChanged();
+    partial void OndebljinaChanging(string value);
+    partial void OndebljinaChanged();
+    partial void OnstrukturaChanging(string value);
+    partial void OnstrukturaChanged();
+    partial void OnnamjenaChanging(string value);
+    partial void OnnamjenaChanged();
+    partial void OndobavljacChanging(System.Nullable<int> value);
+    partial void OndobavljacChanged();
+    partial void OnkolicinaChanging(System.Nullable<int> value);
+    partial void OnkolicinaChanged();
+    partial void OndefektChanging(string value);
+    partial void OndefektChanged();
+    partial void OnslikaChanging(string value);
+    partial void OnslikaChanged();
+    partial void OnsektorChanging(string value);
+    partial void OnsektorChanged();
+    partial void OnuserChanging(System.Nullable<int> value);
+    partial void OnuserChanged();
+    partial void OnactiveChanging(System.Nullable<int> value);
+    partial void OnactiveChanged();
+    partial void OngeschriebenChanging(System.Nullable<System.DateTime> value);
+    partial void OngeschriebenChanged();
+    partial void Onmaterial_nameChanging(System.Nullable<int> value);
+    partial void Onmaterial_nameChanged();
+    partial void OnwidthChanging(System.Nullable<decimal> value);
+    partial void OnwidthChanged();
+    partial void OnheightChanging(System.Nullable<decimal> value);
+    partial void OnheightChanged();
+    partial void OnlagerChanging(string value);
+    partial void OnlagerChanged();
+    partial void OnnotizChanging(string value);
+    partial void OnnotizChanged();
+    partial void OnreklamationChanging(System.Nullable<int> value);
+    partial void OnreklamationChanged();
+    #endregion
+		
 		public material_inventar()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -3876,7 +5566,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -3892,7 +5586,11 @@ namespace Mass.Data
 			{
 				if ((this._sifra_materiala != value))
 				{
+					this.Onsifra_materialaChanging(value);
+					this.SendPropertyChanging();
 					this._sifra_materiala = value;
+					this.SendPropertyChanged("sifra_materiala");
+					this.Onsifra_materialaChanged();
 				}
 			}
 		}
@@ -3908,7 +5606,11 @@ namespace Mass.Data
 			{
 				if ((this._vrsta_materiala != value))
 				{
+					this.Onvrsta_materialaChanging(value);
+					this.SendPropertyChanging();
 					this._vrsta_materiala = value;
+					this.SendPropertyChanged("vrsta_materiala");
+					this.Onvrsta_materialaChanged();
 				}
 			}
 		}
@@ -3924,7 +5626,11 @@ namespace Mass.Data
 			{
 				if ((this._debljina != value))
 				{
+					this.OndebljinaChanging(value);
+					this.SendPropertyChanging();
 					this._debljina = value;
+					this.SendPropertyChanged("debljina");
+					this.OndebljinaChanged();
 				}
 			}
 		}
@@ -3940,7 +5646,11 @@ namespace Mass.Data
 			{
 				if ((this._struktura != value))
 				{
+					this.OnstrukturaChanging(value);
+					this.SendPropertyChanging();
 					this._struktura = value;
+					this.SendPropertyChanged("struktura");
+					this.OnstrukturaChanged();
 				}
 			}
 		}
@@ -3956,7 +5666,11 @@ namespace Mass.Data
 			{
 				if ((this._namjena != value))
 				{
+					this.OnnamjenaChanging(value);
+					this.SendPropertyChanging();
 					this._namjena = value;
+					this.SendPropertyChanged("namjena");
+					this.OnnamjenaChanged();
 				}
 			}
 		}
@@ -3972,7 +5686,11 @@ namespace Mass.Data
 			{
 				if ((this._dobavljac != value))
 				{
+					this.OndobavljacChanging(value);
+					this.SendPropertyChanging();
 					this._dobavljac = value;
+					this.SendPropertyChanged("dobavljac");
+					this.OndobavljacChanged();
 				}
 			}
 		}
@@ -3988,7 +5706,11 @@ namespace Mass.Data
 			{
 				if ((this._kolicina != value))
 				{
+					this.OnkolicinaChanging(value);
+					this.SendPropertyChanging();
 					this._kolicina = value;
+					this.SendPropertyChanged("kolicina");
+					this.OnkolicinaChanged();
 				}
 			}
 		}
@@ -4004,7 +5726,11 @@ namespace Mass.Data
 			{
 				if ((this._defekt != value))
 				{
+					this.OndefektChanging(value);
+					this.SendPropertyChanging();
 					this._defekt = value;
+					this.SendPropertyChanged("defekt");
+					this.OndefektChanged();
 				}
 			}
 		}
@@ -4020,7 +5746,11 @@ namespace Mass.Data
 			{
 				if ((this._slika != value))
 				{
+					this.OnslikaChanging(value);
+					this.SendPropertyChanging();
 					this._slika = value;
+					this.SendPropertyChanged("slika");
+					this.OnslikaChanged();
 				}
 			}
 		}
@@ -4036,7 +5766,11 @@ namespace Mass.Data
 			{
 				if ((this._sektor != value))
 				{
+					this.OnsektorChanging(value);
+					this.SendPropertyChanging();
 					this._sektor = value;
+					this.SendPropertyChanged("sektor");
+					this.OnsektorChanged();
 				}
 			}
 		}
@@ -4052,7 +5786,11 @@ namespace Mass.Data
 			{
 				if ((this._user != value))
 				{
+					this.OnuserChanging(value);
+					this.SendPropertyChanging();
 					this._user = value;
+					this.SendPropertyChanged("user");
+					this.OnuserChanged();
 				}
 			}
 		}
@@ -4068,7 +5806,11 @@ namespace Mass.Data
 			{
 				if ((this._active != value))
 				{
+					this.OnactiveChanging(value);
+					this.SendPropertyChanging();
 					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
 				}
 			}
 		}
@@ -4084,7 +5826,11 @@ namespace Mass.Data
 			{
 				if ((this._geschrieben != value))
 				{
+					this.OngeschriebenChanging(value);
+					this.SendPropertyChanging();
 					this._geschrieben = value;
+					this.SendPropertyChanged("geschrieben");
+					this.OngeschriebenChanged();
 				}
 			}
 		}
@@ -4100,7 +5846,11 @@ namespace Mass.Data
 			{
 				if ((this._material_name != value))
 				{
+					this.Onmaterial_nameChanging(value);
+					this.SendPropertyChanging();
 					this._material_name = value;
+					this.SendPropertyChanged("material_name");
+					this.Onmaterial_nameChanged();
 				}
 			}
 		}
@@ -4116,7 +5866,11 @@ namespace Mass.Data
 			{
 				if ((this._width != value))
 				{
+					this.OnwidthChanging(value);
+					this.SendPropertyChanging();
 					this._width = value;
+					this.SendPropertyChanged("width");
+					this.OnwidthChanged();
 				}
 			}
 		}
@@ -4132,7 +5886,11 @@ namespace Mass.Data
 			{
 				if ((this._height != value))
 				{
+					this.OnheightChanging(value);
+					this.SendPropertyChanging();
 					this._height = value;
+					this.SendPropertyChanged("height");
+					this.OnheightChanged();
 				}
 			}
 		}
@@ -4148,7 +5906,11 @@ namespace Mass.Data
 			{
 				if ((this._lager != value))
 				{
+					this.OnlagerChanging(value);
+					this.SendPropertyChanging();
 					this._lager = value;
+					this.SendPropertyChanged("lager");
+					this.OnlagerChanged();
 				}
 			}
 		}
@@ -4164,7 +5926,11 @@ namespace Mass.Data
 			{
 				if ((this._notiz != value))
 				{
+					this.OnnotizChanging(value);
+					this.SendPropertyChanging();
 					this._notiz = value;
+					this.SendPropertyChanged("notiz");
+					this.OnnotizChanged();
 				}
 			}
 		}
@@ -4180,26 +5946,63 @@ namespace Mass.Data
 			{
 				if ((this._reklamation != value))
 				{
+					this.OnreklamationChanging(value);
+					this.SendPropertyChanging();
 					this._reklamation = value;
+					this.SendPropertyChanged("reklamation");
+					this.OnreklamationChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.materijal")]
-	public partial class materijal
+	public partial class materijal : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private string _naziv;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    #endregion
+		
 		public materijal()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
 		{
 			get
 			{
@@ -4209,7 +6012,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -4225,15 +6032,41 @@ namespace Mass.Data
 			{
 				if ((this._naziv != value))
 				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
 					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mit_kalendar")]
-	public partial class mit_kalendar
+	public partial class mit_kalendar : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -4251,11 +6084,34 @@ namespace Mass.Data
 		
 		private string _notiz;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnidUserChanging(int value);
+    partial void OnidUserChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void Ondatum1Changing(System.Nullable<System.DateTime> value);
+    partial void Ondatum1Changed();
+    partial void OntipChanging(System.Nullable<int> value);
+    partial void OntipChanged();
+    partial void OnodobrenoChanging(System.Nullable<int> value);
+    partial void OnodobrenoChanged();
+    partial void OnpogledanoChanging(System.Nullable<int> value);
+    partial void OnpogledanoChanged();
+    partial void OnnotizChanging(string value);
+    partial void OnnotizChanged();
+    #endregion
+		
 		public mit_kalendar()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -4266,7 +6122,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -4282,7 +6142,11 @@ namespace Mass.Data
 			{
 				if ((this._idUser != value))
 				{
+					this.OnidUserChanging(value);
+					this.SendPropertyChanging();
 					this._idUser = value;
+					this.SendPropertyChanged("idUser");
+					this.OnidUserChanged();
 				}
 			}
 		}
@@ -4298,7 +6162,11 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
 			}
 		}
@@ -4314,7 +6182,11 @@ namespace Mass.Data
 			{
 				if ((this._datum1 != value))
 				{
+					this.Ondatum1Changing(value);
+					this.SendPropertyChanging();
 					this._datum1 = value;
+					this.SendPropertyChanged("datum1");
+					this.Ondatum1Changed();
 				}
 			}
 		}
@@ -4330,7 +6202,11 @@ namespace Mass.Data
 			{
 				if ((this._tip != value))
 				{
+					this.OntipChanging(value);
+					this.SendPropertyChanging();
 					this._tip = value;
+					this.SendPropertyChanged("tip");
+					this.OntipChanged();
 				}
 			}
 		}
@@ -4346,7 +6222,11 @@ namespace Mass.Data
 			{
 				if ((this._odobreno != value))
 				{
+					this.OnodobrenoChanging(value);
+					this.SendPropertyChanging();
 					this._odobreno = value;
+					this.SendPropertyChanged("odobreno");
+					this.OnodobrenoChanged();
 				}
 			}
 		}
@@ -4362,7 +6242,11 @@ namespace Mass.Data
 			{
 				if ((this._pogledano != value))
 				{
+					this.OnpogledanoChanging(value);
+					this.SendPropertyChanging();
 					this._pogledano = value;
+					this.SendPropertyChanged("pogledano");
+					this.OnpogledanoChanged();
 				}
 			}
 		}
@@ -4378,15 +6262,41 @@ namespace Mass.Data
 			{
 				if ((this._notiz != value))
 				{
+					this.OnnotizChanging(value);
+					this.SendPropertyChanging();
 					this._notiz = value;
+					this.SendPropertyChanged("notiz");
+					this.OnnotizChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mitarbeiter")]
-	public partial class mitarbeiter
+	public partial class mitarbeiter : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idMit;
 		
@@ -4448,11 +6358,78 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _status;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidMitChanging(int value);
+    partial void OnidMitChanged();
+    partial void OnmitarbeiterNrChanging(System.Nullable<int> value);
+    partial void OnmitarbeiterNrChanged();
+    partial void OnanredeChanging(System.Nullable<int> value);
+    partial void OnanredeChanged();
+    partial void OnvornameChanging(string value);
+    partial void OnvornameChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnadresseChanging(string value);
+    partial void OnadresseChanged();
+    partial void Ontel1Changing(string value);
+    partial void Ontel1Changed();
+    partial void Ontel2Changing(string value);
+    partial void Ontel2Changed();
+    partial void OnhandyChanging(string value);
+    partial void OnhandyChanged();
+    partial void OnskypeChanging(string value);
+    partial void OnskypeChanged();
+    partial void OnfaxChanging(string value);
+    partial void OnfaxChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OngehaltChanging(System.Nullable<decimal> value);
+    partial void OngehaltChanged();
+    partial void OnstundenlohnChanging(System.Nullable<decimal> value);
+    partial void OnstundenlohnChanged();
+    partial void Onurlaub_istChanging(string value);
+    partial void Onurlaub_istChanged();
+    partial void Onurlaub_sollChanging(string value);
+    partial void Onurlaub_sollChanged();
+    partial void Onanzahl_gehalterChanging(System.Nullable<decimal> value);
+    partial void Onanzahl_gehalterChanged();
+    partial void Onwochen_stdChanging(string value);
+    partial void Onwochen_stdChanged();
+    partial void OnkrankheitChanging(string value);
+    partial void OnkrankheitChanged();
+    partial void OnbankChanging(string value);
+    partial void OnbankChanged();
+    partial void OnBLZChanging(string value);
+    partial void OnBLZChanged();
+    partial void OnKtoNrChanging(string value);
+    partial void OnKtoNrChanged();
+    partial void OnBICChanging(string value);
+    partial void OnBICChanged();
+    partial void OnIBANChanging(string value);
+    partial void OnIBANChanged();
+    partial void OnkontoinhaberChanging(string value);
+    partial void OnkontoinhaberChanged();
+    partial void OnnotizChanging(string value);
+    partial void OnnotizChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void OnidUserChanging(System.Nullable<int> value);
+    partial void OnidUserChanged();
+    partial void OnfolderChanging(string value);
+    partial void OnfolderChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    #endregion
+		
 		public mitarbeiter()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idMit", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idMit", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int idMit
 		{
 			get
@@ -4463,7 +6440,11 @@ namespace Mass.Data
 			{
 				if ((this._idMit != value))
 				{
+					this.OnidMitChanging(value);
+					this.SendPropertyChanging();
 					this._idMit = value;
+					this.SendPropertyChanged("idMit");
+					this.OnidMitChanged();
 				}
 			}
 		}
@@ -4479,7 +6460,11 @@ namespace Mass.Data
 			{
 				if ((this._mitarbeiterNr != value))
 				{
+					this.OnmitarbeiterNrChanging(value);
+					this.SendPropertyChanging();
 					this._mitarbeiterNr = value;
+					this.SendPropertyChanged("mitarbeiterNr");
+					this.OnmitarbeiterNrChanged();
 				}
 			}
 		}
@@ -4495,7 +6480,11 @@ namespace Mass.Data
 			{
 				if ((this._anrede != value))
 				{
+					this.OnanredeChanging(value);
+					this.SendPropertyChanging();
 					this._anrede = value;
+					this.SendPropertyChanged("anrede");
+					this.OnanredeChanged();
 				}
 			}
 		}
@@ -4511,7 +6500,11 @@ namespace Mass.Data
 			{
 				if ((this._vorname != value))
 				{
+					this.OnvornameChanging(value);
+					this.SendPropertyChanging();
 					this._vorname = value;
+					this.SendPropertyChanged("vorname");
+					this.OnvornameChanged();
 				}
 			}
 		}
@@ -4527,7 +6520,11 @@ namespace Mass.Data
 			{
 				if ((this._name != value))
 				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
 					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
 				}
 			}
 		}
@@ -4543,7 +6540,11 @@ namespace Mass.Data
 			{
 				if ((this._adresse != value))
 				{
+					this.OnadresseChanging(value);
+					this.SendPropertyChanging();
 					this._adresse = value;
+					this.SendPropertyChanged("adresse");
+					this.OnadresseChanged();
 				}
 			}
 		}
@@ -4559,7 +6560,11 @@ namespace Mass.Data
 			{
 				if ((this._tel1 != value))
 				{
+					this.Ontel1Changing(value);
+					this.SendPropertyChanging();
 					this._tel1 = value;
+					this.SendPropertyChanged("tel1");
+					this.Ontel1Changed();
 				}
 			}
 		}
@@ -4575,7 +6580,11 @@ namespace Mass.Data
 			{
 				if ((this._tel2 != value))
 				{
+					this.Ontel2Changing(value);
+					this.SendPropertyChanging();
 					this._tel2 = value;
+					this.SendPropertyChanged("tel2");
+					this.Ontel2Changed();
 				}
 			}
 		}
@@ -4591,7 +6600,11 @@ namespace Mass.Data
 			{
 				if ((this._handy != value))
 				{
+					this.OnhandyChanging(value);
+					this.SendPropertyChanging();
 					this._handy = value;
+					this.SendPropertyChanged("handy");
+					this.OnhandyChanged();
 				}
 			}
 		}
@@ -4607,7 +6620,11 @@ namespace Mass.Data
 			{
 				if ((this._skype != value))
 				{
+					this.OnskypeChanging(value);
+					this.SendPropertyChanging();
 					this._skype = value;
+					this.SendPropertyChanged("skype");
+					this.OnskypeChanged();
 				}
 			}
 		}
@@ -4623,7 +6640,11 @@ namespace Mass.Data
 			{
 				if ((this._fax != value))
 				{
+					this.OnfaxChanging(value);
+					this.SendPropertyChanging();
 					this._fax = value;
+					this.SendPropertyChanged("fax");
+					this.OnfaxChanged();
 				}
 			}
 		}
@@ -4639,7 +6660,11 @@ namespace Mass.Data
 			{
 				if ((this._email != value))
 				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
 					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
 				}
 			}
 		}
@@ -4655,7 +6680,11 @@ namespace Mass.Data
 			{
 				if ((this._gehalt != value))
 				{
+					this.OngehaltChanging(value);
+					this.SendPropertyChanging();
 					this._gehalt = value;
+					this.SendPropertyChanged("gehalt");
+					this.OngehaltChanged();
 				}
 			}
 		}
@@ -4671,7 +6700,11 @@ namespace Mass.Data
 			{
 				if ((this._stundenlohn != value))
 				{
+					this.OnstundenlohnChanging(value);
+					this.SendPropertyChanging();
 					this._stundenlohn = value;
+					this.SendPropertyChanged("stundenlohn");
+					this.OnstundenlohnChanged();
 				}
 			}
 		}
@@ -4687,7 +6720,11 @@ namespace Mass.Data
 			{
 				if ((this._urlaub_ist != value))
 				{
+					this.Onurlaub_istChanging(value);
+					this.SendPropertyChanging();
 					this._urlaub_ist = value;
+					this.SendPropertyChanged("urlaub_ist");
+					this.Onurlaub_istChanged();
 				}
 			}
 		}
@@ -4703,7 +6740,11 @@ namespace Mass.Data
 			{
 				if ((this._urlaub_soll != value))
 				{
+					this.Onurlaub_sollChanging(value);
+					this.SendPropertyChanging();
 					this._urlaub_soll = value;
+					this.SendPropertyChanged("urlaub_soll");
+					this.Onurlaub_sollChanged();
 				}
 			}
 		}
@@ -4719,7 +6760,11 @@ namespace Mass.Data
 			{
 				if ((this._anzahl_gehalter != value))
 				{
+					this.Onanzahl_gehalterChanging(value);
+					this.SendPropertyChanging();
 					this._anzahl_gehalter = value;
+					this.SendPropertyChanged("anzahl_gehalter");
+					this.Onanzahl_gehalterChanged();
 				}
 			}
 		}
@@ -4735,7 +6780,11 @@ namespace Mass.Data
 			{
 				if ((this._wochen_std != value))
 				{
+					this.Onwochen_stdChanging(value);
+					this.SendPropertyChanging();
 					this._wochen_std = value;
+					this.SendPropertyChanged("wochen_std");
+					this.Onwochen_stdChanged();
 				}
 			}
 		}
@@ -4751,7 +6800,11 @@ namespace Mass.Data
 			{
 				if ((this._krankheit != value))
 				{
+					this.OnkrankheitChanging(value);
+					this.SendPropertyChanging();
 					this._krankheit = value;
+					this.SendPropertyChanged("krankheit");
+					this.OnkrankheitChanged();
 				}
 			}
 		}
@@ -4767,7 +6820,11 @@ namespace Mass.Data
 			{
 				if ((this._bank != value))
 				{
+					this.OnbankChanging(value);
+					this.SendPropertyChanging();
 					this._bank = value;
+					this.SendPropertyChanged("bank");
+					this.OnbankChanged();
 				}
 			}
 		}
@@ -4783,7 +6840,11 @@ namespace Mass.Data
 			{
 				if ((this._BLZ != value))
 				{
+					this.OnBLZChanging(value);
+					this.SendPropertyChanging();
 					this._BLZ = value;
+					this.SendPropertyChanged("BLZ");
+					this.OnBLZChanged();
 				}
 			}
 		}
@@ -4799,7 +6860,11 @@ namespace Mass.Data
 			{
 				if ((this._KtoNr != value))
 				{
+					this.OnKtoNrChanging(value);
+					this.SendPropertyChanging();
 					this._KtoNr = value;
+					this.SendPropertyChanged("KtoNr");
+					this.OnKtoNrChanged();
 				}
 			}
 		}
@@ -4815,7 +6880,11 @@ namespace Mass.Data
 			{
 				if ((this._BIC != value))
 				{
+					this.OnBICChanging(value);
+					this.SendPropertyChanging();
 					this._BIC = value;
+					this.SendPropertyChanged("BIC");
+					this.OnBICChanged();
 				}
 			}
 		}
@@ -4831,7 +6900,11 @@ namespace Mass.Data
 			{
 				if ((this._IBAN != value))
 				{
+					this.OnIBANChanging(value);
+					this.SendPropertyChanging();
 					this._IBAN = value;
+					this.SendPropertyChanged("IBAN");
+					this.OnIBANChanged();
 				}
 			}
 		}
@@ -4847,7 +6920,11 @@ namespace Mass.Data
 			{
 				if ((this._kontoinhaber != value))
 				{
+					this.OnkontoinhaberChanging(value);
+					this.SendPropertyChanging();
 					this._kontoinhaber = value;
+					this.SendPropertyChanged("kontoinhaber");
+					this.OnkontoinhaberChanged();
 				}
 			}
 		}
@@ -4863,7 +6940,11 @@ namespace Mass.Data
 			{
 				if ((this._notiz != value))
 				{
+					this.OnnotizChanging(value);
+					this.SendPropertyChanging();
 					this._notiz = value;
+					this.SendPropertyChanged("notiz");
+					this.OnnotizChanged();
 				}
 			}
 		}
@@ -4879,7 +6960,11 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
 			}
 		}
@@ -4895,7 +6980,11 @@ namespace Mass.Data
 			{
 				if ((this._idUser != value))
 				{
+					this.OnidUserChanging(value);
+					this.SendPropertyChanging();
 					this._idUser = value;
+					this.SendPropertyChanged("idUser");
+					this.OnidUserChanged();
 				}
 			}
 		}
@@ -4911,7 +7000,11 @@ namespace Mass.Data
 			{
 				if ((this._folder != value))
 				{
+					this.OnfolderChanging(value);
+					this.SendPropertyChanging();
 					this._folder = value;
+					this.SendPropertyChanged("folder");
+					this.OnfolderChanged();
 				}
 			}
 		}
@@ -4927,15 +7020,41 @@ namespace Mass.Data
 			{
 				if ((this._status != value))
 				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
 					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.nach_details")]
-	public partial class nach_detail
+	public partial class nach_detail : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -4947,11 +7066,28 @@ namespace Mass.Data
 		
 		private string _notiz;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnidangebotChanging(System.Nullable<int> value);
+    partial void OnidangebotChanged();
+    partial void OnangebotnrChanging(System.Nullable<int> value);
+    partial void OnangebotnrChanged();
+    partial void OnkundenrChanging(System.Nullable<int> value);
+    partial void OnkundenrChanged();
+    partial void OnnotizChanging(string value);
+    partial void OnnotizChanged();
+    #endregion
+		
 		public nach_detail()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -4962,7 +7098,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -4978,7 +7118,11 @@ namespace Mass.Data
 			{
 				if ((this._idangebot != value))
 				{
+					this.OnidangebotChanging(value);
+					this.SendPropertyChanging();
 					this._idangebot = value;
+					this.SendPropertyChanged("idangebot");
+					this.OnidangebotChanged();
 				}
 			}
 		}
@@ -4994,7 +7138,11 @@ namespace Mass.Data
 			{
 				if ((this._angebotnr != value))
 				{
+					this.OnangebotnrChanging(value);
+					this.SendPropertyChanging();
 					this._angebotnr = value;
+					this.SendPropertyChanged("angebotnr");
+					this.OnangebotnrChanged();
 				}
 			}
 		}
@@ -5010,7 +7158,11 @@ namespace Mass.Data
 			{
 				if ((this._kundenr != value))
 				{
+					this.OnkundenrChanging(value);
+					this.SendPropertyChanging();
 					this._kundenr = value;
+					this.SendPropertyChanged("kundenr");
+					this.OnkundenrChanged();
 				}
 			}
 		}
@@ -5026,15 +7178,41 @@ namespace Mass.Data
 			{
 				if ((this._notiz != value))
 				{
+					this.OnnotizChanging(value);
+					this.SendPropertyChanging();
 					this._notiz = value;
+					this.SendPropertyChanged("notiz");
+					this.OnnotizChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.nachverfolgung")]
-	public partial class nachverfolgung
+	public partial class nachverfolgung : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -5056,11 +7234,38 @@ namespace Mass.Data
 		
 		private string _interval2;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnangebotnrChanging(int value);
+    partial void OnangebotnrChanged();
+    partial void OnkundenrChanging(System.Nullable<int> value);
+    partial void OnkundenrChanged();
+    partial void OnintervalChanging(System.Nullable<int> value);
+    partial void OnintervalChanged();
+    partial void OniduserChanging(System.Nullable<int> value);
+    partial void OniduserChanged();
+    partial void OnstatusChanging(string value);
+    partial void OnstatusChanged();
+    partial void Onbroj_slanjaChanging(string value);
+    partial void Onbroj_slanjaChanged();
+    partial void Ondatum_prvog_slanjaChanging(System.Nullable<System.DateTime> value);
+    partial void Ondatum_prvog_slanjaChanged();
+    partial void Ondatum_drugog_slanjaChanging(System.Nullable<System.DateTime> value);
+    partial void Ondatum_drugog_slanjaChanged();
+    partial void Oninterval2Changing(string value);
+    partial void Oninterval2Changed();
+    #endregion
+		
 		public nachverfolgung()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -5071,7 +7276,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -5087,7 +7296,11 @@ namespace Mass.Data
 			{
 				if ((this._angebotnr != value))
 				{
+					this.OnangebotnrChanging(value);
+					this.SendPropertyChanging();
 					this._angebotnr = value;
+					this.SendPropertyChanged("angebotnr");
+					this.OnangebotnrChanged();
 				}
 			}
 		}
@@ -5103,7 +7316,11 @@ namespace Mass.Data
 			{
 				if ((this._kundenr != value))
 				{
+					this.OnkundenrChanging(value);
+					this.SendPropertyChanging();
 					this._kundenr = value;
+					this.SendPropertyChanged("kundenr");
+					this.OnkundenrChanged();
 				}
 			}
 		}
@@ -5119,7 +7336,11 @@ namespace Mass.Data
 			{
 				if ((this._interval != value))
 				{
+					this.OnintervalChanging(value);
+					this.SendPropertyChanging();
 					this._interval = value;
+					this.SendPropertyChanged("interval");
+					this.OnintervalChanged();
 				}
 			}
 		}
@@ -5135,7 +7356,11 @@ namespace Mass.Data
 			{
 				if ((this._iduser != value))
 				{
+					this.OniduserChanging(value);
+					this.SendPropertyChanging();
 					this._iduser = value;
+					this.SendPropertyChanged("iduser");
+					this.OniduserChanged();
 				}
 			}
 		}
@@ -5151,7 +7376,11 @@ namespace Mass.Data
 			{
 				if ((this._status != value))
 				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
 					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
 			}
 		}
@@ -5167,7 +7396,11 @@ namespace Mass.Data
 			{
 				if ((this._broj_slanja != value))
 				{
+					this.Onbroj_slanjaChanging(value);
+					this.SendPropertyChanging();
 					this._broj_slanja = value;
+					this.SendPropertyChanged("broj_slanja");
+					this.Onbroj_slanjaChanged();
 				}
 			}
 		}
@@ -5183,7 +7416,11 @@ namespace Mass.Data
 			{
 				if ((this._datum_prvog_slanja != value))
 				{
+					this.Ondatum_prvog_slanjaChanging(value);
+					this.SendPropertyChanging();
 					this._datum_prvog_slanja = value;
+					this.SendPropertyChanged("datum_prvog_slanja");
+					this.Ondatum_prvog_slanjaChanged();
 				}
 			}
 		}
@@ -5199,7 +7436,11 @@ namespace Mass.Data
 			{
 				if ((this._datum_drugog_slanja != value))
 				{
+					this.Ondatum_drugog_slanjaChanging(value);
+					this.SendPropertyChanging();
 					this._datum_drugog_slanja = value;
+					this.SendPropertyChanged("datum_drugog_slanja");
+					this.Ondatum_drugog_slanjaChanged();
 				}
 			}
 		}
@@ -5215,15 +7456,41 @@ namespace Mass.Data
 			{
 				if ((this._interval2 != value))
 				{
+					this.Oninterval2Changing(value);
+					this.SendPropertyChanging();
 					this._interval2 = value;
+					this.SendPropertyChanged("interval2");
+					this.Oninterval2Changed();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.oberflache")]
-	public partial class oberflache
+	public partial class oberflache : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -5231,11 +7498,24 @@ namespace Mass.Data
 		
 		private string _pov;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnmaterijalChanging(int value);
+    partial void OnmaterijalChanged();
+    partial void OnpovChanging(string value);
+    partial void OnpovChanged();
+    #endregion
+		
 		public oberflache()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -5246,7 +7526,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -5262,7 +7546,11 @@ namespace Mass.Data
 			{
 				if ((this._materijal != value))
 				{
+					this.OnmaterijalChanging(value);
+					this.SendPropertyChanging();
 					this._materijal = value;
+					this.SendPropertyChanged("materijal");
+					this.OnmaterijalChanged();
 				}
 			}
 		}
@@ -5278,28 +7566,67 @@ namespace Mass.Data
 			{
 				if ((this._pov != value))
 				{
+					this.OnpovChanging(value);
+					this.SendPropertyChanging();
 					this._pov = value;
+					this.SendPropertyChanged("pov");
+					this.OnpovChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.pages")]
-	public partial class page
+	public partial class page : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _idPage;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPage;
 		
 		private string _name;
 		
 		private string _domena;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPageChanging(int value);
+    partial void OnidPageChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OndomenaChanging(string value);
+    partial void OndomenaChanged();
+    #endregion
+		
 		public page()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPage", DbType="Int")]
-		public System.Nullable<int> idPage
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPage", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idPage
 		{
 			get
 			{
@@ -5309,7 +7636,11 @@ namespace Mass.Data
 			{
 				if ((this._idPage != value))
 				{
+					this.OnidPageChanging(value);
+					this.SendPropertyChanging();
 					this._idPage = value;
+					this.SendPropertyChanged("idPage");
+					this.OnidPageChanged();
 				}
 			}
 		}
@@ -5325,7 +7656,11 @@ namespace Mass.Data
 			{
 				if ((this._name != value))
 				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
 					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
 				}
 			}
 		}
@@ -5341,15 +7676,41 @@ namespace Mass.Data
 			{
 				if ((this._domena != value))
 				{
+					this.OndomenaChanging(value);
+					this.SendPropertyChanging();
 					this._domena = value;
+					this.SendPropertyChanged("domena");
+					this.OndomenaChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.podgrupa_inv")]
-	public partial class podgrupa_inv
+	public partial class podgrupa_inv : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -5357,11 +7718,24 @@ namespace Mass.Data
 		
 		private string _opis;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    partial void OnopisChanging(string value);
+    partial void OnopisChanged();
+    #endregion
+		
 		public podgrupa_inv()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -5372,7 +7746,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -5388,7 +7766,11 @@ namespace Mass.Data
 			{
 				if ((this._naziv != value))
 				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
 					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
 				}
 			}
 		}
@@ -5404,15 +7786,41 @@ namespace Mass.Data
 			{
 				if ((this._opis != value))
 				{
+					this.OnopisChanging(value);
+					this.SendPropertyChanging();
 					this._opis = value;
+					this.SendPropertyChanged("opis");
+					this.OnopisChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.podpozicija")]
-	public partial class podpozicija
+	public partial class podpozicija : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -5426,11 +7834,30 @@ namespace Mass.Data
 		
 		private string _standard;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_pChanging(int value);
+    partial void Onid_pChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    partial void OnjedinicaChanging(string value);
+    partial void OnjedinicaChanged();
+    partial void OncijenaChanging(System.Nullable<decimal> value);
+    partial void OncijenaChanged();
+    partial void OnstandardChanging(string value);
+    partial void OnstandardChanged();
+    #endregion
+		
 		public podpozicija()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -5441,7 +7868,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -5457,7 +7888,11 @@ namespace Mass.Data
 			{
 				if ((this._id_p != value))
 				{
+					this.Onid_pChanging(value);
+					this.SendPropertyChanging();
 					this._id_p = value;
+					this.SendPropertyChanged("id_p");
+					this.Onid_pChanged();
 				}
 			}
 		}
@@ -5473,7 +7908,11 @@ namespace Mass.Data
 			{
 				if ((this._naziv != value))
 				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
 					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
 				}
 			}
 		}
@@ -5489,7 +7928,11 @@ namespace Mass.Data
 			{
 				if ((this._jedinica != value))
 				{
+					this.OnjedinicaChanging(value);
+					this.SendPropertyChanging();
 					this._jedinica = value;
+					this.SendPropertyChanged("jedinica");
+					this.OnjedinicaChanged();
 				}
 			}
 		}
@@ -5505,7 +7948,11 @@ namespace Mass.Data
 			{
 				if ((this._cijena != value))
 				{
+					this.OncijenaChanging(value);
+					this.SendPropertyChanging();
 					this._cijena = value;
+					this.SendPropertyChanged("cijena");
+					this.OncijenaChanged();
 				}
 			}
 		}
@@ -5521,25 +7968,62 @@ namespace Mass.Data
 			{
 				if ((this._standard != value))
 				{
+					this.OnstandardChanging(value);
+					this.SendPropertyChanging();
 					this._standard = value;
+					this.SendPropertyChanged("standard");
+					this.OnstandardChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.pozicija")]
-	public partial class pozicija
+	public partial class pozicija : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
 		private string _naziv;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    #endregion
+		
 		public pozicija()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -5550,7 +8034,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -5566,26 +8054,63 @@ namespace Mass.Data
 			{
 				if ((this._naziv != value))
 				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
 					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.produkt")]
-	public partial class produkt
+	public partial class produkt : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _idprodukt;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idprodukt;
 		
 		private string _naziv;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidproduktChanging(int value);
+    partial void OnidproduktChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    #endregion
+		
 		public produkt()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idprodukt", DbType="Int")]
-		public System.Nullable<int> idprodukt
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idprodukt", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idprodukt
 		{
 			get
 			{
@@ -5595,7 +8120,11 @@ namespace Mass.Data
 			{
 				if ((this._idprodukt != value))
 				{
+					this.OnidproduktChanging(value);
+					this.SendPropertyChanging();
 					this._idprodukt = value;
+					this.SendPropertyChanged("idprodukt");
+					this.OnidproduktChanged();
 				}
 			}
 		}
@@ -5611,15 +8140,41 @@ namespace Mass.Data
 			{
 				if ((this._naziv != value))
 				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
 					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.produkt_SEO_inv")]
-	public partial class produkt_SEO_inv
+	public partial class produkt_SEO_inv : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -5633,11 +8188,30 @@ namespace Mass.Data
 		
 		private string _rw_desc;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnprimjenaChanging(System.Nullable<int> value);
+    partial void OnprimjenaChanged();
+    partial void Onweb_stranicaChanging(System.Nullable<int> value);
+    partial void Onweb_stranicaChanged();
+    partial void OnheadChanging(string value);
+    partial void OnheadChanged();
+    partial void Onrs_descChanging(string value);
+    partial void Onrs_descChanged();
+    partial void Onrw_descChanging(string value);
+    partial void Onrw_descChanged();
+    #endregion
+		
 		public produkt_SEO_inv()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -5648,7 +8222,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -5664,7 +8242,11 @@ namespace Mass.Data
 			{
 				if ((this._primjena != value))
 				{
+					this.OnprimjenaChanging(value);
+					this.SendPropertyChanging();
 					this._primjena = value;
+					this.SendPropertyChanged("primjena");
+					this.OnprimjenaChanged();
 				}
 			}
 		}
@@ -5680,7 +8262,11 @@ namespace Mass.Data
 			{
 				if ((this._web_stranica != value))
 				{
+					this.Onweb_stranicaChanging(value);
+					this.SendPropertyChanging();
 					this._web_stranica = value;
+					this.SendPropertyChanged("web_stranica");
+					this.Onweb_stranicaChanged();
 				}
 			}
 		}
@@ -5696,7 +8282,11 @@ namespace Mass.Data
 			{
 				if ((this._head != value))
 				{
+					this.OnheadChanging(value);
+					this.SendPropertyChanging();
 					this._head = value;
+					this.SendPropertyChanged("head");
+					this.OnheadChanged();
 				}
 			}
 		}
@@ -5712,7 +8302,11 @@ namespace Mass.Data
 			{
 				if ((this._rs_desc != value))
 				{
+					this.Onrs_descChanging(value);
+					this.SendPropertyChanging();
 					this._rs_desc = value;
+					this.SendPropertyChanged("rs_desc");
+					this.Onrs_descChanged();
 				}
 			}
 		}
@@ -5728,15 +8322,41 @@ namespace Mass.Data
 			{
 				if ((this._rw_desc != value))
 				{
+					this.Onrw_descChanging(value);
+					this.SendPropertyChanging();
 					this._rw_desc = value;
+					this.SendPropertyChanged("rw_desc");
+					this.Onrw_descChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.produktion")]
-	public partial class produktion
+	public partial class produktion : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _idproduktion;
 		
@@ -5768,11 +8388,48 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _user_id;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidproduktionChanging(int value);
+    partial void OnidproduktionChanged();
+    partial void OnidproizvodChanging(System.Nullable<int> value);
+    partial void OnidproizvodChanged();
+    partial void OnzeichnungChanging(System.Nullable<int> value);
+    partial void OnzeichnungChanged();
+    partial void OnanlieferungChanging(string value);
+    partial void OnanlieferungChanged();
+    partial void OnabholungChanging(string value);
+    partial void OnabholungChanged();
+    partial void OnaufmasChanging(string value);
+    partial void OnaufmasChanged();
+    partial void OnmontageChanging(string value);
+    partial void OnmontageChanged();
+    partial void OnactiveChanging(System.Nullable<int> value);
+    partial void OnactiveChanged();
+    partial void OnzeichOChanging(System.Nullable<int> value);
+    partial void OnzeichOChanged();
+    partial void OnaufmasOChanging(System.Nullable<int> value);
+    partial void OnaufmasOChanged();
+    partial void OnpostversandChanging(System.Nullable<int> value);
+    partial void OnpostversandChanged();
+    partial void OnfertigungChanging(string value);
+    partial void OnfertigungChanged();
+    partial void OnmaterialbeschafungChanging(string value);
+    partial void OnmaterialbeschafungChanged();
+    partial void OnstatusChanging(System.Nullable<int> value);
+    partial void OnstatusChanged();
+    partial void Onuser_idChanging(System.Nullable<int> value);
+    partial void Onuser_idChanged();
+    #endregion
+		
 		public produktion()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idproduktion", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idproduktion", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int idproduktion
 		{
 			get
@@ -5783,7 +8440,11 @@ namespace Mass.Data
 			{
 				if ((this._idproduktion != value))
 				{
+					this.OnidproduktionChanging(value);
+					this.SendPropertyChanging();
 					this._idproduktion = value;
+					this.SendPropertyChanged("idproduktion");
+					this.OnidproduktionChanged();
 				}
 			}
 		}
@@ -5799,7 +8460,11 @@ namespace Mass.Data
 			{
 				if ((this._idproizvod != value))
 				{
+					this.OnidproizvodChanging(value);
+					this.SendPropertyChanging();
 					this._idproizvod = value;
+					this.SendPropertyChanged("idproizvod");
+					this.OnidproizvodChanged();
 				}
 			}
 		}
@@ -5815,7 +8480,11 @@ namespace Mass.Data
 			{
 				if ((this._zeichnung != value))
 				{
+					this.OnzeichnungChanging(value);
+					this.SendPropertyChanging();
 					this._zeichnung = value;
+					this.SendPropertyChanged("zeichnung");
+					this.OnzeichnungChanged();
 				}
 			}
 		}
@@ -5831,7 +8500,11 @@ namespace Mass.Data
 			{
 				if ((this._anlieferung != value))
 				{
+					this.OnanlieferungChanging(value);
+					this.SendPropertyChanging();
 					this._anlieferung = value;
+					this.SendPropertyChanged("anlieferung");
+					this.OnanlieferungChanged();
 				}
 			}
 		}
@@ -5847,7 +8520,11 @@ namespace Mass.Data
 			{
 				if ((this._abholung != value))
 				{
+					this.OnabholungChanging(value);
+					this.SendPropertyChanging();
 					this._abholung = value;
+					this.SendPropertyChanged("abholung");
+					this.OnabholungChanged();
 				}
 			}
 		}
@@ -5863,7 +8540,11 @@ namespace Mass.Data
 			{
 				if ((this._aufmas != value))
 				{
+					this.OnaufmasChanging(value);
+					this.SendPropertyChanging();
 					this._aufmas = value;
+					this.SendPropertyChanged("aufmas");
+					this.OnaufmasChanged();
 				}
 			}
 		}
@@ -5879,7 +8560,11 @@ namespace Mass.Data
 			{
 				if ((this._montage != value))
 				{
+					this.OnmontageChanging(value);
+					this.SendPropertyChanging();
 					this._montage = value;
+					this.SendPropertyChanged("montage");
+					this.OnmontageChanged();
 				}
 			}
 		}
@@ -5895,7 +8580,11 @@ namespace Mass.Data
 			{
 				if ((this._active != value))
 				{
+					this.OnactiveChanging(value);
+					this.SendPropertyChanging();
 					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
 				}
 			}
 		}
@@ -5911,7 +8600,11 @@ namespace Mass.Data
 			{
 				if ((this._zeichO != value))
 				{
+					this.OnzeichOChanging(value);
+					this.SendPropertyChanging();
 					this._zeichO = value;
+					this.SendPropertyChanged("zeichO");
+					this.OnzeichOChanged();
 				}
 			}
 		}
@@ -5927,7 +8620,11 @@ namespace Mass.Data
 			{
 				if ((this._aufmasO != value))
 				{
+					this.OnaufmasOChanging(value);
+					this.SendPropertyChanging();
 					this._aufmasO = value;
+					this.SendPropertyChanged("aufmasO");
+					this.OnaufmasOChanged();
 				}
 			}
 		}
@@ -5943,7 +8640,11 @@ namespace Mass.Data
 			{
 				if ((this._postversand != value))
 				{
+					this.OnpostversandChanging(value);
+					this.SendPropertyChanging();
 					this._postversand = value;
+					this.SendPropertyChanged("postversand");
+					this.OnpostversandChanged();
 				}
 			}
 		}
@@ -5959,7 +8660,11 @@ namespace Mass.Data
 			{
 				if ((this._fertigung != value))
 				{
+					this.OnfertigungChanging(value);
+					this.SendPropertyChanging();
 					this._fertigung = value;
+					this.SendPropertyChanged("fertigung");
+					this.OnfertigungChanged();
 				}
 			}
 		}
@@ -5975,7 +8680,11 @@ namespace Mass.Data
 			{
 				if ((this._materialbeschafung != value))
 				{
+					this.OnmaterialbeschafungChanging(value);
+					this.SendPropertyChanging();
 					this._materialbeschafung = value;
+					this.SendPropertyChanged("materialbeschafung");
+					this.OnmaterialbeschafungChanged();
 				}
 			}
 		}
@@ -5991,7 +8700,11 @@ namespace Mass.Data
 			{
 				if ((this._status != value))
 				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
 					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
 			}
 		}
@@ -6007,17 +8720,43 @@ namespace Mass.Data
 			{
 				if ((this._user_id != value))
 				{
+					this.Onuser_idChanging(value);
+					this.SendPropertyChanging();
 					this._user_id = value;
+					this.SendPropertyChanged("user_id");
+					this.Onuser_idChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.proizvod")]
-	public partial class proizvod
+	public partial class proizvod : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private System.Nullable<int> _angebotnr;
 		
@@ -6057,12 +8796,59 @@ namespace Mass.Data
 		
 		private System.Nullable<decimal> _stuck;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnangebotnrChanging(System.Nullable<int> value);
+    partial void OnangebotnrChanged();
+    partial void OntipChanging(System.Nullable<int> value);
+    partial void OntipChanged();
+    partial void OnmaterijalChanging(System.Nullable<int> value);
+    partial void OnmaterijalChanged();
+    partial void OnmaterijaltypeChanging(System.Nullable<int> value);
+    partial void OnmaterijaltypeChanged();
+    partial void OnoberflacheChanging(System.Nullable<int> value);
+    partial void OnoberflacheChanged();
+    partial void Onmaterijal2Changing(System.Nullable<int> value);
+    partial void Onmaterijal2Changed();
+    partial void Onmaterijaltype2Changing(System.Nullable<int> value);
+    partial void Onmaterijaltype2Changed();
+    partial void Onoberflache2Changing(System.Nullable<int> value);
+    partial void Onoberflache2Changed();
+    partial void OnstarkeChanging(string value);
+    partial void OnstarkeChanged();
+    partial void OngehrungChanging(string value);
+    partial void OngehrungChanged();
+    partial void OneinhChanging(System.Nullable<int> value);
+    partial void OneinhChanged();
+    partial void OnmengeChanging(System.Nullable<decimal> value);
+    partial void OnmengeChanged();
+    partial void OneinhpreisChanging(System.Nullable<decimal> value);
+    partial void OneinhpreisChanged();
+    partial void OnrabattChanging(System.Nullable<decimal> value);
+    partial void OnrabattChanged();
+    partial void OnalternativeChanging(System.Nullable<int> value);
+    partial void OnalternativeChanged();
+    partial void OnlangeChanging(System.Nullable<decimal> value);
+    partial void OnlangeChanged();
+    partial void OnbreitChanging(System.Nullable<decimal> value);
+    partial void OnbreitChanged();
+    partial void OnpreisChanging(System.Nullable<decimal> value);
+    partial void OnpreisChanged();
+    partial void OnstuckChanging(System.Nullable<decimal> value);
+    partial void OnstuckChanged();
+    #endregion
+		
 		public proizvod()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
 		{
 			get
 			{
@@ -6072,7 +8858,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -6088,7 +8878,11 @@ namespace Mass.Data
 			{
 				if ((this._angebotnr != value))
 				{
+					this.OnangebotnrChanging(value);
+					this.SendPropertyChanging();
 					this._angebotnr = value;
+					this.SendPropertyChanged("angebotnr");
+					this.OnangebotnrChanged();
 				}
 			}
 		}
@@ -6104,7 +8898,11 @@ namespace Mass.Data
 			{
 				if ((this._tip != value))
 				{
+					this.OntipChanging(value);
+					this.SendPropertyChanging();
 					this._tip = value;
+					this.SendPropertyChanged("tip");
+					this.OntipChanged();
 				}
 			}
 		}
@@ -6120,7 +8918,11 @@ namespace Mass.Data
 			{
 				if ((this._materijal != value))
 				{
+					this.OnmaterijalChanging(value);
+					this.SendPropertyChanging();
 					this._materijal = value;
+					this.SendPropertyChanged("materijal");
+					this.OnmaterijalChanged();
 				}
 			}
 		}
@@ -6136,7 +8938,11 @@ namespace Mass.Data
 			{
 				if ((this._materijaltype != value))
 				{
+					this.OnmaterijaltypeChanging(value);
+					this.SendPropertyChanging();
 					this._materijaltype = value;
+					this.SendPropertyChanged("materijaltype");
+					this.OnmaterijaltypeChanged();
 				}
 			}
 		}
@@ -6152,7 +8958,11 @@ namespace Mass.Data
 			{
 				if ((this._oberflache != value))
 				{
+					this.OnoberflacheChanging(value);
+					this.SendPropertyChanging();
 					this._oberflache = value;
+					this.SendPropertyChanged("oberflache");
+					this.OnoberflacheChanged();
 				}
 			}
 		}
@@ -6168,7 +8978,11 @@ namespace Mass.Data
 			{
 				if ((this._materijal2 != value))
 				{
+					this.Onmaterijal2Changing(value);
+					this.SendPropertyChanging();
 					this._materijal2 = value;
+					this.SendPropertyChanged("materijal2");
+					this.Onmaterijal2Changed();
 				}
 			}
 		}
@@ -6184,7 +8998,11 @@ namespace Mass.Data
 			{
 				if ((this._materijaltype2 != value))
 				{
+					this.Onmaterijaltype2Changing(value);
+					this.SendPropertyChanging();
 					this._materijaltype2 = value;
+					this.SendPropertyChanged("materijaltype2");
+					this.Onmaterijaltype2Changed();
 				}
 			}
 		}
@@ -6200,7 +9018,11 @@ namespace Mass.Data
 			{
 				if ((this._oberflache2 != value))
 				{
+					this.Onoberflache2Changing(value);
+					this.SendPropertyChanging();
 					this._oberflache2 = value;
+					this.SendPropertyChanged("oberflache2");
+					this.Onoberflache2Changed();
 				}
 			}
 		}
@@ -6216,7 +9038,11 @@ namespace Mass.Data
 			{
 				if ((this._starke != value))
 				{
+					this.OnstarkeChanging(value);
+					this.SendPropertyChanging();
 					this._starke = value;
+					this.SendPropertyChanged("starke");
+					this.OnstarkeChanged();
 				}
 			}
 		}
@@ -6232,7 +9058,11 @@ namespace Mass.Data
 			{
 				if ((this._gehrung != value))
 				{
+					this.OngehrungChanging(value);
+					this.SendPropertyChanging();
 					this._gehrung = value;
+					this.SendPropertyChanged("gehrung");
+					this.OngehrungChanged();
 				}
 			}
 		}
@@ -6248,7 +9078,11 @@ namespace Mass.Data
 			{
 				if ((this._einh != value))
 				{
+					this.OneinhChanging(value);
+					this.SendPropertyChanging();
 					this._einh = value;
+					this.SendPropertyChanged("einh");
+					this.OneinhChanged();
 				}
 			}
 		}
@@ -6264,7 +9098,11 @@ namespace Mass.Data
 			{
 				if ((this._menge != value))
 				{
+					this.OnmengeChanging(value);
+					this.SendPropertyChanging();
 					this._menge = value;
+					this.SendPropertyChanged("menge");
+					this.OnmengeChanged();
 				}
 			}
 		}
@@ -6280,7 +9118,11 @@ namespace Mass.Data
 			{
 				if ((this._einhpreis != value))
 				{
+					this.OneinhpreisChanging(value);
+					this.SendPropertyChanging();
 					this._einhpreis = value;
+					this.SendPropertyChanged("einhpreis");
+					this.OneinhpreisChanged();
 				}
 			}
 		}
@@ -6296,7 +9138,11 @@ namespace Mass.Data
 			{
 				if ((this._rabatt != value))
 				{
+					this.OnrabattChanging(value);
+					this.SendPropertyChanging();
 					this._rabatt = value;
+					this.SendPropertyChanged("rabatt");
+					this.OnrabattChanged();
 				}
 			}
 		}
@@ -6312,7 +9158,11 @@ namespace Mass.Data
 			{
 				if ((this._alternative != value))
 				{
+					this.OnalternativeChanging(value);
+					this.SendPropertyChanging();
 					this._alternative = value;
+					this.SendPropertyChanged("alternative");
+					this.OnalternativeChanged();
 				}
 			}
 		}
@@ -6328,7 +9178,11 @@ namespace Mass.Data
 			{
 				if ((this._lange != value))
 				{
+					this.OnlangeChanging(value);
+					this.SendPropertyChanging();
 					this._lange = value;
+					this.SendPropertyChanged("lange");
+					this.OnlangeChanged();
 				}
 			}
 		}
@@ -6344,7 +9198,11 @@ namespace Mass.Data
 			{
 				if ((this._breit != value))
 				{
+					this.OnbreitChanging(value);
+					this.SendPropertyChanging();
 					this._breit = value;
+					this.SendPropertyChanged("breit");
+					this.OnbreitChanged();
 				}
 			}
 		}
@@ -6360,7 +9218,11 @@ namespace Mass.Data
 			{
 				if ((this._preis != value))
 				{
+					this.OnpreisChanging(value);
+					this.SendPropertyChanging();
 					this._preis = value;
+					this.SendPropertyChanged("preis");
+					this.OnpreisChanged();
 				}
 			}
 		}
@@ -6376,15 +9238,41 @@ namespace Mass.Data
 			{
 				if ((this._stuck != value))
 				{
+					this.OnstuckChanging(value);
+					this.SendPropertyChanging();
 					this._stuck = value;
+					this.SendPropertyChanged("stuck");
+					this.OnstuckChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.rechnung_a")]
-	public partial class rechnung_a
+	public partial class rechnung_a : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -6410,11 +9298,42 @@ namespace Mass.Data
 		
 		private string _akonto;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnabChanging(System.Nullable<int> value);
+    partial void OnabChanged();
+    partial void OnangebotnrChanging(System.Nullable<int> value);
+    partial void OnangebotnrChanged();
+    partial void OnkundenrChanging(System.Nullable<int> value);
+    partial void OnkundenrChanged();
+    partial void OnkundeChanging(string value);
+    partial void OnkundeChanged();
+    partial void OnpreisChanging(System.Nullable<decimal> value);
+    partial void OnpreisChanged();
+    partial void OnmwstChanging(System.Nullable<decimal> value);
+    partial void OnmwstChanged();
+    partial void OnuserChanging(System.Nullable<int> value);
+    partial void OnuserChanged();
+    partial void OnaktivanChanging(System.Nullable<int> value);
+    partial void OnaktivanChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void OnrechNrChanging(System.Nullable<int> value);
+    partial void OnrechNrChanged();
+    partial void OnakontoChanging(string value);
+    partial void OnakontoChanged();
+    #endregion
+		
 		public rechnung_a()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -6425,7 +9344,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -6441,7 +9364,11 @@ namespace Mass.Data
 			{
 				if ((this._ab != value))
 				{
+					this.OnabChanging(value);
+					this.SendPropertyChanging();
 					this._ab = value;
+					this.SendPropertyChanged("ab");
+					this.OnabChanged();
 				}
 			}
 		}
@@ -6457,7 +9384,11 @@ namespace Mass.Data
 			{
 				if ((this._angebotnr != value))
 				{
+					this.OnangebotnrChanging(value);
+					this.SendPropertyChanging();
 					this._angebotnr = value;
+					this.SendPropertyChanged("angebotnr");
+					this.OnangebotnrChanged();
 				}
 			}
 		}
@@ -6473,7 +9404,11 @@ namespace Mass.Data
 			{
 				if ((this._kundenr != value))
 				{
+					this.OnkundenrChanging(value);
+					this.SendPropertyChanging();
 					this._kundenr = value;
+					this.SendPropertyChanged("kundenr");
+					this.OnkundenrChanged();
 				}
 			}
 		}
@@ -6489,7 +9424,11 @@ namespace Mass.Data
 			{
 				if ((this._kunde != value))
 				{
+					this.OnkundeChanging(value);
+					this.SendPropertyChanging();
 					this._kunde = value;
+					this.SendPropertyChanged("kunde");
+					this.OnkundeChanged();
 				}
 			}
 		}
@@ -6505,7 +9444,11 @@ namespace Mass.Data
 			{
 				if ((this._preis != value))
 				{
+					this.OnpreisChanging(value);
+					this.SendPropertyChanging();
 					this._preis = value;
+					this.SendPropertyChanged("preis");
+					this.OnpreisChanged();
 				}
 			}
 		}
@@ -6521,7 +9464,11 @@ namespace Mass.Data
 			{
 				if ((this._mwst != value))
 				{
+					this.OnmwstChanging(value);
+					this.SendPropertyChanging();
 					this._mwst = value;
+					this.SendPropertyChanged("mwst");
+					this.OnmwstChanged();
 				}
 			}
 		}
@@ -6537,7 +9484,11 @@ namespace Mass.Data
 			{
 				if ((this._user != value))
 				{
+					this.OnuserChanging(value);
+					this.SendPropertyChanging();
 					this._user = value;
+					this.SendPropertyChanged("user");
+					this.OnuserChanged();
 				}
 			}
 		}
@@ -6553,7 +9504,11 @@ namespace Mass.Data
 			{
 				if ((this._aktivan != value))
 				{
+					this.OnaktivanChanging(value);
+					this.SendPropertyChanging();
 					this._aktivan = value;
+					this.SendPropertyChanged("aktivan");
+					this.OnaktivanChanged();
 				}
 			}
 		}
@@ -6569,7 +9524,11 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
 			}
 		}
@@ -6585,7 +9544,11 @@ namespace Mass.Data
 			{
 				if ((this._rechNr != value))
 				{
+					this.OnrechNrChanging(value);
+					this.SendPropertyChanging();
 					this._rechNr = value;
+					this.SendPropertyChanged("rechNr");
+					this.OnrechNrChanged();
 				}
 			}
 		}
@@ -6601,15 +9564,41 @@ namespace Mass.Data
 			{
 				if ((this._akonto != value))
 				{
+					this.OnakontoChanging(value);
+					this.SendPropertyChanging();
 					this._akonto = value;
+					this.SendPropertyChanged("akonto");
+					this.OnakontoChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.rechnung_b")]
-	public partial class rechnung_b
+	public partial class rechnung_b : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -6633,11 +9622,40 @@ namespace Mass.Data
 		
 		private string _text;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnrechnrChanging(System.Nullable<int> value);
+    partial void OnrechnrChanged();
+    partial void OnkundennrChanging(System.Nullable<int> value);
+    partial void OnkundennrChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void OnmwstChanging(System.Nullable<decimal> value);
+    partial void OnmwstChanged();
+    partial void OnbetragChanging(System.Nullable<decimal> value);
+    partial void OnbetragChanged();
+    partial void OnuserChanging(System.Nullable<int> value);
+    partial void OnuserChanged();
+    partial void OnaktivanChanging(System.Nullable<int> value);
+    partial void OnaktivanChanged();
+    partial void OnpdfChanging(string value);
+    partial void OnpdfChanged();
+    partial void OnsteuerChanging(System.Nullable<int> value);
+    partial void OnsteuerChanged();
+    partial void OntextChanging(string value);
+    partial void OntextChanged();
+    #endregion
+		
 		public rechnung_b()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -6648,7 +9666,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -6664,7 +9686,11 @@ namespace Mass.Data
 			{
 				if ((this._rechnr != value))
 				{
+					this.OnrechnrChanging(value);
+					this.SendPropertyChanging();
 					this._rechnr = value;
+					this.SendPropertyChanged("rechnr");
+					this.OnrechnrChanged();
 				}
 			}
 		}
@@ -6680,7 +9706,11 @@ namespace Mass.Data
 			{
 				if ((this._kundennr != value))
 				{
+					this.OnkundennrChanging(value);
+					this.SendPropertyChanging();
 					this._kundennr = value;
+					this.SendPropertyChanged("kundennr");
+					this.OnkundennrChanged();
 				}
 			}
 		}
@@ -6696,7 +9726,11 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
 			}
 		}
@@ -6712,7 +9746,11 @@ namespace Mass.Data
 			{
 				if ((this._mwst != value))
 				{
+					this.OnmwstChanging(value);
+					this.SendPropertyChanging();
 					this._mwst = value;
+					this.SendPropertyChanged("mwst");
+					this.OnmwstChanged();
 				}
 			}
 		}
@@ -6728,7 +9766,11 @@ namespace Mass.Data
 			{
 				if ((this._betrag != value))
 				{
+					this.OnbetragChanging(value);
+					this.SendPropertyChanging();
 					this._betrag = value;
+					this.SendPropertyChanged("betrag");
+					this.OnbetragChanged();
 				}
 			}
 		}
@@ -6744,7 +9786,11 @@ namespace Mass.Data
 			{
 				if ((this._user != value))
 				{
+					this.OnuserChanging(value);
+					this.SendPropertyChanging();
 					this._user = value;
+					this.SendPropertyChanged("user");
+					this.OnuserChanged();
 				}
 			}
 		}
@@ -6760,7 +9806,11 @@ namespace Mass.Data
 			{
 				if ((this._aktivan != value))
 				{
+					this.OnaktivanChanging(value);
+					this.SendPropertyChanging();
 					this._aktivan = value;
+					this.SendPropertyChanged("aktivan");
+					this.OnaktivanChanged();
 				}
 			}
 		}
@@ -6776,7 +9826,11 @@ namespace Mass.Data
 			{
 				if ((this._pdf != value))
 				{
+					this.OnpdfChanging(value);
+					this.SendPropertyChanging();
 					this._pdf = value;
+					this.SendPropertyChanged("pdf");
+					this.OnpdfChanged();
 				}
 			}
 		}
@@ -6792,7 +9846,11 @@ namespace Mass.Data
 			{
 				if ((this._steuer != value))
 				{
+					this.OnsteuerChanging(value);
+					this.SendPropertyChanging();
 					this._steuer = value;
+					this.SendPropertyChanged("steuer");
+					this.OnsteuerChanged();
 				}
 			}
 		}
@@ -6808,15 +9866,41 @@ namespace Mass.Data
 			{
 				if ((this._text != value))
 				{
+					this.OntextChanging(value);
+					this.SendPropertyChanging();
 					this._text = value;
+					this.SendPropertyChanged("text");
+					this.OntextChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.rechnung_b_pozicije")]
-	public partial class rechnung_b_pozicije
+	public partial class rechnung_b_pozicije : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -6834,11 +9918,34 @@ namespace Mass.Data
 		
 		private System.Nullable<decimal> _gesamtpreis;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnrechnrChanging(System.Nullable<int> value);
+    partial void OnrechnrChanged();
+    partial void OnbezeichnungChanging(string value);
+    partial void OnbezeichnungChanged();
+    partial void OneinheitChanging(System.Nullable<int> value);
+    partial void OneinheitChanged();
+    partial void OnmengeChanging(System.Nullable<decimal> value);
+    partial void OnmengeChanged();
+    partial void OneinzelpreisChanging(System.Nullable<decimal> value);
+    partial void OneinzelpreisChanged();
+    partial void OnrabattChanging(System.Nullable<decimal> value);
+    partial void OnrabattChanged();
+    partial void OngesamtpreisChanging(System.Nullable<decimal> value);
+    partial void OngesamtpreisChanged();
+    #endregion
+		
 		public rechnung_b_pozicije()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -6849,7 +9956,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -6865,7 +9976,11 @@ namespace Mass.Data
 			{
 				if ((this._rechnr != value))
 				{
+					this.OnrechnrChanging(value);
+					this.SendPropertyChanging();
 					this._rechnr = value;
+					this.SendPropertyChanged("rechnr");
+					this.OnrechnrChanged();
 				}
 			}
 		}
@@ -6881,7 +9996,11 @@ namespace Mass.Data
 			{
 				if ((this._bezeichnung != value))
 				{
+					this.OnbezeichnungChanging(value);
+					this.SendPropertyChanging();
 					this._bezeichnung = value;
+					this.SendPropertyChanged("bezeichnung");
+					this.OnbezeichnungChanged();
 				}
 			}
 		}
@@ -6897,7 +10016,11 @@ namespace Mass.Data
 			{
 				if ((this._einheit != value))
 				{
+					this.OneinheitChanging(value);
+					this.SendPropertyChanging();
 					this._einheit = value;
+					this.SendPropertyChanged("einheit");
+					this.OneinheitChanged();
 				}
 			}
 		}
@@ -6913,7 +10036,11 @@ namespace Mass.Data
 			{
 				if ((this._menge != value))
 				{
+					this.OnmengeChanging(value);
+					this.SendPropertyChanging();
 					this._menge = value;
+					this.SendPropertyChanged("menge");
+					this.OnmengeChanged();
 				}
 			}
 		}
@@ -6929,7 +10056,11 @@ namespace Mass.Data
 			{
 				if ((this._einzelpreis != value))
 				{
+					this.OneinzelpreisChanging(value);
+					this.SendPropertyChanging();
 					this._einzelpreis = value;
+					this.SendPropertyChanged("einzelpreis");
+					this.OneinzelpreisChanged();
 				}
 			}
 		}
@@ -6945,7 +10076,11 @@ namespace Mass.Data
 			{
 				if ((this._rabatt != value))
 				{
+					this.OnrabattChanging(value);
+					this.SendPropertyChanging();
 					this._rabatt = value;
+					this.SendPropertyChanged("rabatt");
+					this.OnrabattChanged();
 				}
 			}
 		}
@@ -6961,17 +10096,43 @@ namespace Mass.Data
 			{
 				if ((this._gesamtpreis != value))
 				{
+					this.OngesamtpreisChanging(value);
+					this.SendPropertyChanging();
 					this._gesamtpreis = value;
+					this.SendPropertyChanged("gesamtpreis");
+					this.OngesamtpreisChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.reklamation")]
-	public partial class reklamation
+	public partial class reklamation : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private System.Nullable<int> _ab;
 		
@@ -6987,12 +10148,35 @@ namespace Mass.Data
 		
 		private string _file;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnabChanging(System.Nullable<int> value);
+    partial void OnabChanged();
+    partial void OnidproduktChanging(System.Nullable<int> value);
+    partial void OnidproduktChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void OnsumaChanging(System.Nullable<decimal> value);
+    partial void OnsumaChanged();
+    partial void OnradnikChanging(string value);
+    partial void OnradnikChanged();
+    partial void OnnoticeChanging(string value);
+    partial void OnnoticeChanged();
+    partial void OnfileChanging(string value);
+    partial void OnfileChanged();
+    #endregion
+		
 		public reklamation()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
 		{
 			get
 			{
@@ -7002,7 +10186,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -7018,7 +10206,11 @@ namespace Mass.Data
 			{
 				if ((this._ab != value))
 				{
+					this.OnabChanging(value);
+					this.SendPropertyChanging();
 					this._ab = value;
+					this.SendPropertyChanged("ab");
+					this.OnabChanged();
 				}
 			}
 		}
@@ -7034,7 +10226,11 @@ namespace Mass.Data
 			{
 				if ((this._idprodukt != value))
 				{
+					this.OnidproduktChanging(value);
+					this.SendPropertyChanging();
 					this._idprodukt = value;
+					this.SendPropertyChanged("idprodukt");
+					this.OnidproduktChanged();
 				}
 			}
 		}
@@ -7050,7 +10246,11 @@ namespace Mass.Data
 			{
 				if ((this._datum != value))
 				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
 					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
 				}
 			}
 		}
@@ -7066,7 +10266,11 @@ namespace Mass.Data
 			{
 				if ((this._suma != value))
 				{
+					this.OnsumaChanging(value);
+					this.SendPropertyChanging();
 					this._suma = value;
+					this.SendPropertyChanged("suma");
+					this.OnsumaChanged();
 				}
 			}
 		}
@@ -7082,7 +10286,11 @@ namespace Mass.Data
 			{
 				if ((this._radnik != value))
 				{
+					this.OnradnikChanging(value);
+					this.SendPropertyChanging();
 					this._radnik = value;
+					this.SendPropertyChanged("radnik");
+					this.OnradnikChanged();
 				}
 			}
 		}
@@ -7098,7 +10306,11 @@ namespace Mass.Data
 			{
 				if ((this._notice != value))
 				{
+					this.OnnoticeChanging(value);
+					this.SendPropertyChanging();
 					this._notice = value;
+					this.SendPropertyChanged("notice");
+					this.OnnoticeChanged();
 				}
 			}
 		}
@@ -7114,17 +10326,43 @@ namespace Mass.Data
 			{
 				if ((this._file != value))
 				{
+					this.OnfileChanging(value);
+					this.SendPropertyChanging();
 					this._file = value;
+					this.SendPropertyChanged("file");
+					this.OnfileChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.route_kalendar")]
-	public partial class route_kalendar
+	public partial class route_kalendar : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private System.Nullable<int> _iduser;
 		
@@ -7138,12 +10376,33 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _woche;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OniduserChanging(System.Nullable<int> value);
+    partial void OniduserChanged();
+    partial void OndanChanging(string value);
+    partial void OndanChanged();
+    partial void Ondatum_pocetkaChanging(System.Nullable<System.DateTime> value);
+    partial void Ondatum_pocetkaChanged();
+    partial void Ondatum_krajaChanging(System.Nullable<System.DateTime> value);
+    partial void Ondatum_krajaChanged();
+    partial void OnopisChanging(string value);
+    partial void OnopisChanged();
+    partial void OnwocheChanging(System.Nullable<int> value);
+    partial void OnwocheChanged();
+    #endregion
+		
 		public route_kalendar()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
 		{
 			get
 			{
@@ -7153,7 +10412,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -7169,7 +10432,11 @@ namespace Mass.Data
 			{
 				if ((this._iduser != value))
 				{
+					this.OniduserChanging(value);
+					this.SendPropertyChanging();
 					this._iduser = value;
+					this.SendPropertyChanged("iduser");
+					this.OniduserChanged();
 				}
 			}
 		}
@@ -7185,7 +10452,11 @@ namespace Mass.Data
 			{
 				if ((this._dan != value))
 				{
+					this.OndanChanging(value);
+					this.SendPropertyChanging();
 					this._dan = value;
+					this.SendPropertyChanged("dan");
+					this.OndanChanged();
 				}
 			}
 		}
@@ -7201,7 +10472,11 @@ namespace Mass.Data
 			{
 				if ((this._datum_pocetka != value))
 				{
+					this.Ondatum_pocetkaChanging(value);
+					this.SendPropertyChanging();
 					this._datum_pocetka = value;
+					this.SendPropertyChanged("datum_pocetka");
+					this.Ondatum_pocetkaChanged();
 				}
 			}
 		}
@@ -7217,7 +10492,11 @@ namespace Mass.Data
 			{
 				if ((this._datum_kraja != value))
 				{
+					this.Ondatum_krajaChanging(value);
+					this.SendPropertyChanging();
 					this._datum_kraja = value;
+					this.SendPropertyChanged("datum_kraja");
+					this.Ondatum_krajaChanged();
 				}
 			}
 		}
@@ -7233,7 +10512,11 @@ namespace Mass.Data
 			{
 				if ((this._opis != value))
 				{
+					this.OnopisChanging(value);
+					this.SendPropertyChanging();
 					this._opis = value;
+					this.SendPropertyChanged("opis");
+					this.OnopisChanged();
 				}
 			}
 		}
@@ -7249,26 +10532,63 @@ namespace Mass.Data
 			{
 				if ((this._woche != value))
 				{
+					this.OnwocheChanging(value);
+					this.SendPropertyChanging();
 					this._woche = value;
+					this.SendPropertyChanged("woche");
+					this.OnwocheChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RouteTech")]
-	public partial class RouteTech
+	public partial class RouteTech : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _idProduktion;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idProduktion;
 		
 		private System.Nullable<int> _idTech;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidProduktionChanging(int value);
+    partial void OnidProduktionChanged();
+    partial void OnidTechChanging(System.Nullable<int> value);
+    partial void OnidTechChanged();
+    #endregion
+		
 		public RouteTech()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idProduktion", DbType="Int")]
-		public System.Nullable<int> idProduktion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idProduktion", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idProduktion
 		{
 			get
 			{
@@ -7278,7 +10598,11 @@ namespace Mass.Data
 			{
 				if ((this._idProduktion != value))
 				{
+					this.OnidProduktionChanging(value);
+					this.SendPropertyChanging();
 					this._idProduktion = value;
+					this.SendPropertyChanged("idProduktion");
+					this.OnidProduktionChanged();
 				}
 			}
 		}
@@ -7294,15 +10618,41 @@ namespace Mass.Data
 			{
 				if ((this._idTech != value))
 				{
+					this.OnidTechChanging(value);
+					this.SendPropertyChanging();
 					this._idTech = value;
+					this.SendPropertyChanged("idTech");
+					this.OnidTechChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.starke")]
-	public partial class starke
+	public partial class starke : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -7310,11 +10660,24 @@ namespace Mass.Data
 		
 		private string _starke1;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnidproduktChanging(int value);
+    partial void OnidproduktChanged();
+    partial void Onstarke1Changing(string value);
+    partial void Onstarke1Changed();
+    #endregion
+		
 		public starke()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int id
 		{
 			get
@@ -7325,7 +10688,11 @@ namespace Mass.Data
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -7341,7 +10708,11 @@ namespace Mass.Data
 			{
 				if ((this._idprodukt != value))
 				{
+					this.OnidproduktChanging(value);
+					this.SendPropertyChanging();
 					this._idprodukt = value;
+					this.SendPropertyChanged("idprodukt");
+					this.OnidproduktChanged();
 				}
 			}
 		}
@@ -7357,638 +10728,32 @@ namespace Mass.Data
 			{
 				if ((this._starke1 != value))
 				{
+					this.Onstarke1Changing(value);
+					this.SendPropertyChanging();
 					this._starke1 = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.user_licence")]
-	public partial class user_licence
-	{
-		
-		private System.Nullable<int> _id_licence;
-		
-		private System.Nullable<int> _idUser;
-		
-		private System.Nullable<System.DateTime> _datum;
-		
-		private System.Nullable<int> _active;
-		
-		public user_licence()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_licence", DbType="Int")]
-		public System.Nullable<int> id_licence
-		{
-			get
-			{
-				return this._id_licence;
-			}
-			set
-			{
-				if ((this._id_licence != value))
-				{
-					this._id_licence = value;
+					this.SendPropertyChanged("starke1");
+					this.Onstarke1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int")]
-		public System.Nullable<int> idUser
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
-			get
+			if ((this.PropertyChanging != null))
 			{
-				return this._idUser;
-			}
-			set
-			{
-				if ((this._idUser != value))
-				{
-					this._idUser = value;
-				}
+				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
-		public System.Nullable<System.DateTime> datum
+		protected virtual void SendPropertyChanged(String propertyName)
 		{
-			get
+			if ((this.PropertyChanged != null))
 			{
-				return this._datum;
-			}
-			set
-			{
-				if ((this._datum != value))
-				{
-					this._datum = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
-		public System.Nullable<int> active
-		{
-			get
-			{
-				return this._active;
-			}
-			set
-			{
-				if ((this._active != value))
-				{
-					this._active = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vrsta_cijene_inv")]
-	public partial class vrsta_cijene_inv
-	{
-		
-		private System.Nullable<int> _id;
-		
-		private string _naziv;
-		
-		private string _debljina;
-		
-		private string _mjerna_jedinica;
-		
-		private string _koeficijent1;
-		
-		private System.Nullable<decimal> _koeficijent2;
-		
-		private string _napomena_porez;
-		
-		private System.Nullable<int> _prikazati_na;
-		
-		private System.Nullable<decimal> _angebot_koeficijent;
-		
-		private string _opis;
-		
-		private string _napomena;
-		
-		private System.Nullable<int> _active;
-		
-		private System.Nullable<int> _starke;
-		
-		private System.Nullable<int> _oberflache;
-		
-		public vrsta_cijene_inv()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naziv", DbType="NChar(150)")]
-		public string naziv
-		{
-			get
-			{
-				return this._naziv;
-			}
-			set
-			{
-				if ((this._naziv != value))
-				{
-					this._naziv = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_debljina", DbType="NChar(45)")]
-		public string debljina
-		{
-			get
-			{
-				return this._debljina;
-			}
-			set
-			{
-				if ((this._debljina != value))
-				{
-					this._debljina = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mjerna_jedinica", DbType="NChar(45)")]
-		public string mjerna_jedinica
-		{
-			get
-			{
-				return this._mjerna_jedinica;
-			}
-			set
-			{
-				if ((this._mjerna_jedinica != value))
-				{
-					this._mjerna_jedinica = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_koeficijent1", DbType="NChar(500)")]
-		public string koeficijent1
-		{
-			get
-			{
-				return this._koeficijent1;
-			}
-			set
-			{
-				if ((this._koeficijent1 != value))
-				{
-					this._koeficijent1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_koeficijent2", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> koeficijent2
-		{
-			get
-			{
-				return this._koeficijent2;
-			}
-			set
-			{
-				if ((this._koeficijent2 != value))
-				{
-					this._koeficijent2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_napomena_porez", DbType="NChar(500)")]
-		public string napomena_porez
-		{
-			get
-			{
-				return this._napomena_porez;
-			}
-			set
-			{
-				if ((this._napomena_porez != value))
-				{
-					this._napomena_porez = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prikazati_na", DbType="Int")]
-		public System.Nullable<int> prikazati_na
-		{
-			get
-			{
-				return this._prikazati_na;
-			}
-			set
-			{
-				if ((this._prikazati_na != value))
-				{
-					this._prikazati_na = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_angebot_koeficijent", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> angebot_koeficijent
-		{
-			get
-			{
-				return this._angebot_koeficijent;
-			}
-			set
-			{
-				if ((this._angebot_koeficijent != value))
-				{
-					this._angebot_koeficijent = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opis", DbType="NChar(500)")]
-		public string opis
-		{
-			get
-			{
-				return this._opis;
-			}
-			set
-			{
-				if ((this._opis != value))
-				{
-					this._opis = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_napomena", DbType="NChar(600)")]
-		public string napomena
-		{
-			get
-			{
-				return this._napomena;
-			}
-			set
-			{
-				if ((this._napomena != value))
-				{
-					this._napomena = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
-		public System.Nullable<int> active
-		{
-			get
-			{
-				return this._active;
-			}
-			set
-			{
-				if ((this._active != value))
-				{
-					this._active = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_starke", DbType="Int")]
-		public System.Nullable<int> starke
-		{
-			get
-			{
-				return this._starke;
-			}
-			set
-			{
-				if ((this._starke != value))
-				{
-					this._starke = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_oberflache", DbType="Int")]
-		public System.Nullable<int> oberflache
-		{
-			get
-			{
-				return this._oberflache;
-			}
-			set
-			{
-				if ((this._oberflache != value))
-				{
-					this._oberflache = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.web_stranice_inv")]
-	public partial class web_stranice_inv
-	{
-		
-		private System.Nullable<int> _id;
-		
-		private string _naziv;
-		
-		public web_stranice_inv()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naziv", DbType="NChar(500)")]
-		public string naziv
-		{
-			get
-			{
-				return this._naziv;
-			}
-			set
-			{
-				if ((this._naziv != value))
-				{
-					this._naziv = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.p_get_User_ViewResult")]
-	public partial class p_get_User_ViewResult
-	{
-		
-		private System.Nullable<int> _idUser;
-		
-		private string _firstName;
-		
-		private string _lastName;
-		
-		private string _mail;
-		
-		private string _sessionId;
-		
-		private System.Nullable<int> _userType;
-		
-		private string _username;
-		
-		private string _password;
-		
-		private string _telefon;
-		
-		private System.Nullable<int> _active;
-		
-		private string _slika;
-		
-		private System.Nullable<int> _startseit;
-		
-		private System.Nullable<System.DateTime> _datum;
-		
-		public p_get_User_ViewResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int")]
-		public System.Nullable<int> idUser
-		{
-			get
-			{
-				return this._idUser;
-			}
-			set
-			{
-				if ((this._idUser != value))
-				{
-					this._idUser = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NChar(50)")]
-		public string firstName
-		{
-			get
-			{
-				return this._firstName;
-			}
-			set
-			{
-				if ((this._firstName != value))
-				{
-					this._firstName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NChar(50)")]
-		public string lastName
-		{
-			get
-			{
-				return this._lastName;
-			}
-			set
-			{
-				if ((this._lastName != value))
-				{
-					this._lastName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NChar(50)")]
-		public string mail
-		{
-			get
-			{
-				return this._mail;
-			}
-			set
-			{
-				if ((this._mail != value))
-				{
-					this._mail = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sessionId", DbType="NChar(100)")]
-		public string sessionId
-		{
-			get
-			{
-				return this._sessionId;
-			}
-			set
-			{
-				if ((this._sessionId != value))
-				{
-					this._sessionId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userType", DbType="Int")]
-		public System.Nullable<int> userType
-		{
-			get
-			{
-				return this._userType;
-			}
-			set
-			{
-				if ((this._userType != value))
-				{
-					this._userType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(50)")]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this._username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(50)")]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this._password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(50)")]
-		public string telefon
-		{
-			get
-			{
-				return this._telefon;
-			}
-			set
-			{
-				if ((this._telefon != value))
-				{
-					this._telefon = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
-		public System.Nullable<int> active
-		{
-			get
-			{
-				return this._active;
-			}
-			set
-			{
-				if ((this._active != value))
-				{
-					this._active = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slika", DbType="NChar(150)")]
-		public string slika
-		{
-			get
-			{
-				return this._slika;
-			}
-			set
-			{
-				if ((this._slika != value))
-				{
-					this._slika = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startseit", DbType="Int")]
-		public System.Nullable<int> startseit
-		{
-			get
-			{
-				return this._startseit;
-			}
-			set
-			{
-				if ((this._startseit != value))
-				{
-					this._startseit = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
-		public System.Nullable<System.DateTime> datum
-		{
-			get
-			{
-				return this._datum;
-			}
-			set
-			{
-				if ((this._datum != value))
-				{
-					this._datum = value;
-				}
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -8225,6 +10990,294 @@ namespace Mass.Data
 					if ((value != null))
 					{
 						value.tbl_poruka_poslanes1.Add(this);
+						this._primio = value.idUser;
+					}
+					else
+					{
+						this._primio = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("user1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_poruka_primljene")]
+	public partial class tbl_poruka_primljene : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_poruka_primljene;
+		
+		private int _poslao;
+		
+		private System.Nullable<int> _primio;
+		
+		private System.DateTime _datum;
+		
+		private bool _procitano;
+		
+		private string _predmet;
+		
+		private string _naslov;
+		
+		private EntityRef<user> _user;
+		
+		private EntityRef<user> _user1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_poruka_primljeneChanging(int value);
+    partial void Onid_poruka_primljeneChanged();
+    partial void OnposlaoChanging(int value);
+    partial void OnposlaoChanged();
+    partial void OnprimioChanging(System.Nullable<int> value);
+    partial void OnprimioChanged();
+    partial void OndatumChanging(System.DateTime value);
+    partial void OndatumChanged();
+    partial void OnprocitanoChanging(bool value);
+    partial void OnprocitanoChanged();
+    partial void OnpredmetChanging(string value);
+    partial void OnpredmetChanged();
+    partial void OnnaslovChanging(string value);
+    partial void OnnaslovChanged();
+    #endregion
+		
+		public tbl_poruka_primljene()
+		{
+			this._user = default(EntityRef<user>);
+			this._user1 = default(EntityRef<user>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_poruka_primljene", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_poruka_primljene
+		{
+			get
+			{
+				return this._id_poruka_primljene;
+			}
+			set
+			{
+				if ((this._id_poruka_primljene != value))
+				{
+					this.Onid_poruka_primljeneChanging(value);
+					this.SendPropertyChanging();
+					this._id_poruka_primljene = value;
+					this.SendPropertyChanged("id_poruka_primljene");
+					this.Onid_poruka_primljeneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_poslao", DbType="Int NOT NULL")]
+		public int poslao
+		{
+			get
+			{
+				return this._poslao;
+			}
+			set
+			{
+				if ((this._poslao != value))
+				{
+					if (this._user.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnposlaoChanging(value);
+					this.SendPropertyChanging();
+					this._poslao = value;
+					this.SendPropertyChanged("poslao");
+					this.OnposlaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primio", DbType="Int")]
+		public System.Nullable<int> primio
+		{
+			get
+			{
+				return this._primio;
+			}
+			set
+			{
+				if ((this._primio != value))
+				{
+					if (this._user1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnprimioChanging(value);
+					this.SendPropertyChanging();
+					this._primio = value;
+					this.SendPropertyChanged("primio");
+					this.OnprimioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime NOT NULL")]
+		public System.DateTime datum
+		{
+			get
+			{
+				return this._datum;
+			}
+			set
+			{
+				if ((this._datum != value))
+				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
+					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_procitano", DbType="Bit NOT NULL")]
+		public bool procitano
+		{
+			get
+			{
+				return this._procitano;
+			}
+			set
+			{
+				if ((this._procitano != value))
+				{
+					this.OnprocitanoChanging(value);
+					this.SendPropertyChanging();
+					this._procitano = value;
+					this.SendPropertyChanged("procitano");
+					this.OnprocitanoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_predmet", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string predmet
+		{
+			get
+			{
+				return this._predmet;
+			}
+			set
+			{
+				if ((this._predmet != value))
+				{
+					this.OnpredmetChanging(value);
+					this.SendPropertyChanging();
+					this._predmet = value;
+					this.SendPropertyChanged("predmet");
+					this.OnpredmetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naslov", DbType="NChar(75)")]
+		public string naslov
+		{
+			get
+			{
+				return this._naslov;
+			}
+			set
+			{
+				if ((this._naslov != value))
+				{
+					this.OnnaslovChanging(value);
+					this.SendPropertyChanging();
+					this._naslov = value;
+					this.SendPropertyChanged("naslov");
+					this.OnnaslovChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene", Storage="_user", ThisKey="poslao", OtherKey="idUser", IsForeignKey=true)]
+		public user user
+		{
+			get
+			{
+				return this._user.Entity;
+			}
+			set
+			{
+				user previousValue = this._user.Entity;
+				if (((previousValue != value) 
+							|| (this._user.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._user.Entity = null;
+						previousValue.tbl_poruka_primljenes.Remove(this);
+					}
+					this._user.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_poruka_primljenes.Add(this);
+						this._poslao = value.idUser;
+					}
+					else
+					{
+						this._poslao = default(int);
+					}
+					this.SendPropertyChanged("user");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene1", Storage="_user1", ThisKey="primio", OtherKey="idUser", IsForeignKey=true)]
+		public user user1
+		{
+			get
+			{
+				return this._user1.Entity;
+			}
+			set
+			{
+				user previousValue = this._user1.Entity;
+				if (((previousValue != value) 
+							|| (this._user1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._user1.Entity = null;
+						previousValue.tbl_poruka_primljenes1.Remove(this);
+					}
+					this._user1.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_poruka_primljenes1.Add(this);
 						this._primio = value.idUser;
 					}
 					else
@@ -8695,127 +11748,81 @@ namespace Mass.Data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_poruka_primljene")]
-	public partial class tbl_poruka_primljene : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.user_licence")]
+	public partial class user_licence : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id_poruka_primljene;
+		private int _id_licence;
 		
-		private int _poslao;
+		private System.Nullable<int> _idUser;
 		
-		private System.Nullable<int> _primio;
+		private System.Nullable<System.DateTime> _datum;
 		
-		private System.DateTime _datum;
-		
-		private bool _procitano;
-		
-		private string _predmet;
-		
-		private string _naslov;
-		
-		private EntityRef<user> _user;
-		
-		private EntityRef<user> _user1;
+		private System.Nullable<int> _active;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onid_poruka_primljeneChanging(int value);
-    partial void Onid_poruka_primljeneChanged();
-    partial void OnposlaoChanging(int value);
-    partial void OnposlaoChanged();
-    partial void OnprimioChanging(System.Nullable<int> value);
-    partial void OnprimioChanged();
-    partial void OndatumChanging(System.DateTime value);
+    partial void Onid_licenceChanging(int value);
+    partial void Onid_licenceChanged();
+    partial void OnidUserChanging(System.Nullable<int> value);
+    partial void OnidUserChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
     partial void OndatumChanged();
-    partial void OnprocitanoChanging(bool value);
-    partial void OnprocitanoChanged();
-    partial void OnpredmetChanging(string value);
-    partial void OnpredmetChanged();
-    partial void OnnaslovChanging(string value);
-    partial void OnnaslovChanged();
+    partial void OnactiveChanging(System.Nullable<int> value);
+    partial void OnactiveChanged();
     #endregion
 		
-		public tbl_poruka_primljene()
+		public user_licence()
 		{
-			this._user = default(EntityRef<user>);
-			this._user1 = default(EntityRef<user>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_poruka_primljene", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_poruka_primljene
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_licence", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_licence
 		{
 			get
 			{
-				return this._id_poruka_primljene;
+				return this._id_licence;
 			}
 			set
 			{
-				if ((this._id_poruka_primljene != value))
+				if ((this._id_licence != value))
 				{
-					this.Onid_poruka_primljeneChanging(value);
+					this.Onid_licenceChanging(value);
 					this.SendPropertyChanging();
-					this._id_poruka_primljene = value;
-					this.SendPropertyChanged("id_poruka_primljene");
-					this.Onid_poruka_primljeneChanged();
+					this._id_licence = value;
+					this.SendPropertyChanged("id_licence");
+					this.Onid_licenceChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_poslao", DbType="Int NOT NULL")]
-		public int poslao
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int")]
+		public System.Nullable<int> idUser
 		{
 			get
 			{
-				return this._poslao;
+				return this._idUser;
 			}
 			set
 			{
-				if ((this._poslao != value))
+				if ((this._idUser != value))
 				{
-					if (this._user.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnposlaoChanging(value);
+					this.OnidUserChanging(value);
 					this.SendPropertyChanging();
-					this._poslao = value;
-					this.SendPropertyChanged("poslao");
-					this.OnposlaoChanged();
+					this._idUser = value;
+					this.SendPropertyChanged("idUser");
+					this.OnidUserChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primio", DbType="Int")]
-		public System.Nullable<int> primio
-		{
-			get
-			{
-				return this._primio;
-			}
-			set
-			{
-				if ((this._primio != value))
-				{
-					if (this._user1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnprimioChanging(value);
-					this.SendPropertyChanging();
-					this._primio = value;
-					this.SendPropertyChanged("primio");
-					this.OnprimioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime NOT NULL")]
-		public System.DateTime datum
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datum
 		{
 			get
 			{
@@ -8834,130 +11841,22 @@ namespace Mass.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_procitano", DbType="Bit NOT NULL")]
-		public bool procitano
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
+		public System.Nullable<int> active
 		{
 			get
 			{
-				return this._procitano;
+				return this._active;
 			}
 			set
 			{
-				if ((this._procitano != value))
+				if ((this._active != value))
 				{
-					this.OnprocitanoChanging(value);
+					this.OnactiveChanging(value);
 					this.SendPropertyChanging();
-					this._procitano = value;
-					this.SendPropertyChanged("procitano");
-					this.OnprocitanoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_predmet", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string predmet
-		{
-			get
-			{
-				return this._predmet;
-			}
-			set
-			{
-				if ((this._predmet != value))
-				{
-					this.OnpredmetChanging(value);
-					this.SendPropertyChanging();
-					this._predmet = value;
-					this.SendPropertyChanged("predmet");
-					this.OnpredmetChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naslov", DbType="NChar(75)")]
-		public string naslov
-		{
-			get
-			{
-				return this._naslov;
-			}
-			set
-			{
-				if ((this._naslov != value))
-				{
-					this.OnnaslovChanging(value);
-					this.SendPropertyChanging();
-					this._naslov = value;
-					this.SendPropertyChanged("naslov");
-					this.OnnaslovChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene", Storage="_user", ThisKey="poslao", OtherKey="idUser", IsForeignKey=true)]
-		public user user
-		{
-			get
-			{
-				return this._user.Entity;
-			}
-			set
-			{
-				user previousValue = this._user.Entity;
-				if (((previousValue != value) 
-							|| (this._user.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._user.Entity = null;
-						previousValue.tbl_poruka_primljenes.Remove(this);
-					}
-					this._user.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_poruka_primljenes.Add(this);
-						this._poslao = value.idUser;
-					}
-					else
-					{
-						this._poslao = default(int);
-					}
-					this.SendPropertyChanged("user");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene1", Storage="_user1", ThisKey="primio", OtherKey="idUser", IsForeignKey=true)]
-		public user user1
-		{
-			get
-			{
-				return this._user1.Entity;
-			}
-			set
-			{
-				user previousValue = this._user1.Entity;
-				if (((previousValue != value) 
-							|| (this._user1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._user1.Entity = null;
-						previousValue.tbl_poruka_primljenes1.Remove(this);
-					}
-					this._user1.Entity = value;
-					if ((value != null))
-					{
-						value.tbl_poruka_primljenes1.Add(this);
-						this._primio = value.idUser;
-					}
-					else
-					{
-						this._primio = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("user1");
+					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
 				}
 			}
 		}
@@ -8979,6 +11878,709 @@ namespace Mass.Data
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vrsta_cijene_inv")]
+	public partial class vrsta_cijene_inv : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _naziv;
+		
+		private string _debljina;
+		
+		private string _mjerna_jedinica;
+		
+		private string _koeficijent1;
+		
+		private System.Nullable<decimal> _koeficijent2;
+		
+		private string _napomena_porez;
+		
+		private System.Nullable<int> _prikazati_na;
+		
+		private System.Nullable<decimal> _angebot_koeficijent;
+		
+		private string _opis;
+		
+		private string _napomena;
+		
+		private System.Nullable<int> _active;
+		
+		private System.Nullable<int> _starke;
+		
+		private System.Nullable<int> _oberflache;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    partial void OndebljinaChanging(string value);
+    partial void OndebljinaChanged();
+    partial void Onmjerna_jedinicaChanging(string value);
+    partial void Onmjerna_jedinicaChanged();
+    partial void Onkoeficijent1Changing(string value);
+    partial void Onkoeficijent1Changed();
+    partial void Onkoeficijent2Changing(System.Nullable<decimal> value);
+    partial void Onkoeficijent2Changed();
+    partial void Onnapomena_porezChanging(string value);
+    partial void Onnapomena_porezChanged();
+    partial void Onprikazati_naChanging(System.Nullable<int> value);
+    partial void Onprikazati_naChanged();
+    partial void Onangebot_koeficijentChanging(System.Nullable<decimal> value);
+    partial void Onangebot_koeficijentChanged();
+    partial void OnopisChanging(string value);
+    partial void OnopisChanged();
+    partial void OnnapomenaChanging(string value);
+    partial void OnnapomenaChanged();
+    partial void OnactiveChanging(System.Nullable<int> value);
+    partial void OnactiveChanged();
+    partial void OnstarkeChanging(System.Nullable<int> value);
+    partial void OnstarkeChanged();
+    partial void OnoberflacheChanging(System.Nullable<int> value);
+    partial void OnoberflacheChanged();
+    #endregion
+		
+		public vrsta_cijene_inv()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naziv", DbType="NChar(150)")]
+		public string naziv
+		{
+			get
+			{
+				return this._naziv;
+			}
+			set
+			{
+				if ((this._naziv != value))
+				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
+					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_debljina", DbType="NChar(45)")]
+		public string debljina
+		{
+			get
+			{
+				return this._debljina;
+			}
+			set
+			{
+				if ((this._debljina != value))
+				{
+					this.OndebljinaChanging(value);
+					this.SendPropertyChanging();
+					this._debljina = value;
+					this.SendPropertyChanged("debljina");
+					this.OndebljinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mjerna_jedinica", DbType="NChar(45)")]
+		public string mjerna_jedinica
+		{
+			get
+			{
+				return this._mjerna_jedinica;
+			}
+			set
+			{
+				if ((this._mjerna_jedinica != value))
+				{
+					this.Onmjerna_jedinicaChanging(value);
+					this.SendPropertyChanging();
+					this._mjerna_jedinica = value;
+					this.SendPropertyChanged("mjerna_jedinica");
+					this.Onmjerna_jedinicaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_koeficijent1", DbType="NChar(500)")]
+		public string koeficijent1
+		{
+			get
+			{
+				return this._koeficijent1;
+			}
+			set
+			{
+				if ((this._koeficijent1 != value))
+				{
+					this.Onkoeficijent1Changing(value);
+					this.SendPropertyChanging();
+					this._koeficijent1 = value;
+					this.SendPropertyChanged("koeficijent1");
+					this.Onkoeficijent1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_koeficijent2", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> koeficijent2
+		{
+			get
+			{
+				return this._koeficijent2;
+			}
+			set
+			{
+				if ((this._koeficijent2 != value))
+				{
+					this.Onkoeficijent2Changing(value);
+					this.SendPropertyChanging();
+					this._koeficijent2 = value;
+					this.SendPropertyChanged("koeficijent2");
+					this.Onkoeficijent2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_napomena_porez", DbType="NChar(500)")]
+		public string napomena_porez
+		{
+			get
+			{
+				return this._napomena_porez;
+			}
+			set
+			{
+				if ((this._napomena_porez != value))
+				{
+					this.Onnapomena_porezChanging(value);
+					this.SendPropertyChanging();
+					this._napomena_porez = value;
+					this.SendPropertyChanged("napomena_porez");
+					this.Onnapomena_porezChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prikazati_na", DbType="Int")]
+		public System.Nullable<int> prikazati_na
+		{
+			get
+			{
+				return this._prikazati_na;
+			}
+			set
+			{
+				if ((this._prikazati_na != value))
+				{
+					this.Onprikazati_naChanging(value);
+					this.SendPropertyChanging();
+					this._prikazati_na = value;
+					this.SendPropertyChanged("prikazati_na");
+					this.Onprikazati_naChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_angebot_koeficijent", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> angebot_koeficijent
+		{
+			get
+			{
+				return this._angebot_koeficijent;
+			}
+			set
+			{
+				if ((this._angebot_koeficijent != value))
+				{
+					this.Onangebot_koeficijentChanging(value);
+					this.SendPropertyChanging();
+					this._angebot_koeficijent = value;
+					this.SendPropertyChanged("angebot_koeficijent");
+					this.Onangebot_koeficijentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opis", DbType="NChar(500)")]
+		public string opis
+		{
+			get
+			{
+				return this._opis;
+			}
+			set
+			{
+				if ((this._opis != value))
+				{
+					this.OnopisChanging(value);
+					this.SendPropertyChanging();
+					this._opis = value;
+					this.SendPropertyChanged("opis");
+					this.OnopisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_napomena", DbType="NChar(600)")]
+		public string napomena
+		{
+			get
+			{
+				return this._napomena;
+			}
+			set
+			{
+				if ((this._napomena != value))
+				{
+					this.OnnapomenaChanging(value);
+					this.SendPropertyChanging();
+					this._napomena = value;
+					this.SendPropertyChanged("napomena");
+					this.OnnapomenaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
+		public System.Nullable<int> active
+		{
+			get
+			{
+				return this._active;
+			}
+			set
+			{
+				if ((this._active != value))
+				{
+					this.OnactiveChanging(value);
+					this.SendPropertyChanging();
+					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_starke", DbType="Int")]
+		public System.Nullable<int> starke
+		{
+			get
+			{
+				return this._starke;
+			}
+			set
+			{
+				if ((this._starke != value))
+				{
+					this.OnstarkeChanging(value);
+					this.SendPropertyChanging();
+					this._starke = value;
+					this.SendPropertyChanged("starke");
+					this.OnstarkeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_oberflache", DbType="Int")]
+		public System.Nullable<int> oberflache
+		{
+			get
+			{
+				return this._oberflache;
+			}
+			set
+			{
+				if ((this._oberflache != value))
+				{
+					this.OnoberflacheChanging(value);
+					this.SendPropertyChanging();
+					this._oberflache = value;
+					this.SendPropertyChanged("oberflache");
+					this.OnoberflacheChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.web_stranice_inv")]
+	public partial class web_stranice_inv : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _naziv;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnazivChanging(string value);
+    partial void OnnazivChanged();
+    #endregion
+		
+		public web_stranice_inv()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naziv", DbType="NChar(500)")]
+		public string naziv
+		{
+			get
+			{
+				return this._naziv;
+			}
+			set
+			{
+				if ((this._naziv != value))
+				{
+					this.OnnazivChanging(value);
+					this.SendPropertyChanging();
+					this._naziv = value;
+					this.SendPropertyChanged("naziv");
+					this.OnnazivChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.p_get_User_ViewResult")]
+	public partial class p_get_User_ViewResult
+	{
+		
+		private System.Nullable<int> _idUser;
+		
+		private string _firstName;
+		
+		private string _lastName;
+		
+		private string _mail;
+		
+		private string _sessionId;
+		
+		private System.Nullable<int> _userType;
+		
+		private string _username;
+		
+		private string _password;
+		
+		private string _telefon;
+		
+		private System.Nullable<int> _active;
+		
+		private string _slika;
+		
+		private System.Nullable<int> _startseit;
+		
+		private System.Nullable<System.DateTime> _datum;
+		
+		public p_get_User_ViewResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int")]
+		public System.Nullable<int> idUser
+		{
+			get
+			{
+				return this._idUser;
+			}
+			set
+			{
+				if ((this._idUser != value))
+				{
+					this._idUser = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NChar(50)")]
+		public string firstName
+		{
+			get
+			{
+				return this._firstName;
+			}
+			set
+			{
+				if ((this._firstName != value))
+				{
+					this._firstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NChar(50)")]
+		public string lastName
+		{
+			get
+			{
+				return this._lastName;
+			}
+			set
+			{
+				if ((this._lastName != value))
+				{
+					this._lastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NChar(50)")]
+		public string mail
+		{
+			get
+			{
+				return this._mail;
+			}
+			set
+			{
+				if ((this._mail != value))
+				{
+					this._mail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sessionId", DbType="NChar(100)")]
+		public string sessionId
+		{
+			get
+			{
+				return this._sessionId;
+			}
+			set
+			{
+				if ((this._sessionId != value))
+				{
+					this._sessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userType", DbType="Int")]
+		public System.Nullable<int> userType
+		{
+			get
+			{
+				return this._userType;
+			}
+			set
+			{
+				if ((this._userType != value))
+				{
+					this._userType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(50)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this._password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(50)")]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
+		public System.Nullable<int> active
+		{
+			get
+			{
+				return this._active;
+			}
+			set
+			{
+				if ((this._active != value))
+				{
+					this._active = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slika", DbType="NChar(150)")]
+		public string slika
+		{
+			get
+			{
+				return this._slika;
+			}
+			set
+			{
+				if ((this._slika != value))
+				{
+					this._slika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startseit", DbType="Int")]
+		public System.Nullable<int> startseit
+		{
+			get
+			{
+				return this._startseit;
+			}
+			set
+			{
+				if ((this._startseit != value))
+				{
+					this._startseit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datum
+		{
+			get
+			{
+				return this._datum;
+			}
+			set
+			{
+				if ((this._datum != value))
+				{
+					this._datum = value;
+				}
 			}
 		}
 	}

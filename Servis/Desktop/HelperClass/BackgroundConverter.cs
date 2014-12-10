@@ -15,7 +15,7 @@ namespace Desktop.HelperClass
             //return value != null && (int)value == 1 ;
             if(value != null)
             {
-                var intValue = (bool)value;
+                var intValue = System.Convert.ToBoolean(value);
                 if (intValue == true)
                 return Brushes.LimeGreen;
                 else return Brushes.Red;
