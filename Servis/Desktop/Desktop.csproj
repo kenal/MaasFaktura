@@ -347,7 +347,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Desktop_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\Mass.Data.bug.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.kunden.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.lieferant.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.materijal.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.mitarbeiter.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.mit_kalendar.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.oberflache.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.produkt.datasource" />
     <None Include="Properties\DataSources\Mass.Data.p_get_User_ViewResult.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.starke.datasource" />
     <None Include="Properties\DataSources\Mass.Data.tbl_debljina.datasource" />
     <None Include="Properties\DataSources\Mass.Data.tbl_dobavljac.datasource" />
     <None Include="Properties\DataSources\Mass.Data.tbl_greske.datasource" />
@@ -360,6 +369,7 @@
     <None Include="Properties\DataSources\Mass.Data.tbl_povrsina.datasource" />
     <None Include="Properties\DataSources\Mass.Data.tbl_produkt.datasource" />
     <None Include="Properties\DataSources\Mass.Data.tbl_radnik.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.user.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

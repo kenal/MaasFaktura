@@ -158,7 +158,7 @@ namespace Service
 
                 mitarbeiter r = new mitarbeiter();
                 r.mitarbeiterNr = broj;
-                r.tip = titula;
+                r.anrede = titula;
                 r.vorname = ime;
                 r.name = prezime;
                 r.adresse = adresa;
@@ -168,11 +168,11 @@ namespace Service
                 r.fax = fax;
                 r.skype=skype;
                 r.email = email;
-                r.zarada = Convert.ToDecimal(zarada);
-                r.satnica = Convert.ToDecimal(satnica);
+                r.gehalt = Convert.ToDecimal(zarada);
+                r.stundenlohn = Convert.ToDecimal(satnica);
                 r.urlaub_ist = odmor;
                 r.urlaub_soll = odmor_na;
-                r.broj_plate = Convert.ToDecimal(broj_plate);
+                r.anzahl_gehalter = Convert.ToDecimal(broj_plate);
                 r.krankheit = bolovanje;
                 r.bank = banka;
                 r.BLZ = blz;
@@ -203,7 +203,7 @@ namespace Service
                     {
                        idMit=p.idMit,
                        mitarbeiterNr=p.mitarbeiterNr,
-                       tip=p.tip,
+                       anrede=p.anrede,
                        vorname=p.vorname,
                        name=p.name,
                        adresse=p.adresse,
@@ -212,11 +212,11 @@ namespace Service
                        handy=p.handy,
                        fax=p.fax,
                        email=p.email,
-                       zarada=p.zarada,
-                       satnica=p.satnica,
+                       gehalt=p.gehalt,
+                       stundenlohn=p.stundenlohn,
                        urlaub_ist=p.urlaub_ist,
                        urlaub_soll=p.urlaub_soll,
-                       broj_plate=p.broj_plate,
+                       anzahl_gehalter=p.anzahl_gehalter,
                        wochen_std=p.wochen_std,
                        krankheit=p.krankheit,
                        bank=p.bank,
@@ -329,35 +329,34 @@ namespace Service
                         fax = p.fax,
                         mail = p.mail,
                         lk = p.lk,
-                        dostava_na = p.dostava_na,
-                        dostava_od = p.dostava_od,
+                        vorlage_am = p.vorlage_am,
+                        vorlage_anlass = p.vorlage_anlass,
                         VKPreisgr = p.VKPreisgr,
-                        gotovina = p.gotovina,
-                        popust_gotovina = p.popust_gotovina,
-                        dnevni_popust = p.dnevni_popust,
+                        zahlungin = p.zahlungin,
+                        skonto = p.skonto,
+                        skontotage = p.skontotage,
                         vertreter = p.vertreter,
-                        limit_narudzbe = p.limit_narudzbe,
-                        tip = p.tip,
+                        ufragssperre = p.ufragssperre,
+                        anreden = p.anreden,
                         lieferadresse = p.lieferadresse,
                         rechnungsadresse = p.rechnungsadresse,
                         email2 = p.email2,
                         internet = p.internet,
                         kundetype = p.kundetype,
                         steuer = p.steuer,
-                        broj  = p.broj,
-                        broj_detalji = p.broj_detalji,
+                        zahlweise  = p.zahlweise,
+                        zahl_beding = p.zahl_beding,
                         kundenbewertung = p.kundenbewertung,
                         notiz = p.notiz,
-                        naziv = p.naziv,
+                        titel = p.titel,
                         land = p.land,
-                        placa = p.placa,
+                        zahlbar = p.zahlbar,
                         rabat = p.rabat,
                         adresse2 = p.adresse2,
                         stadt = p.stadt,
-                        predmet = p.predmet,
+                        anredeans = p.anredeans,
                         anssprechepartner = p.anssprechepartner,
-                        notiz_route = p.notiz_route,
-                        titel = p.titel,
+                        notiz_route = p.notiz_route,                        
                         kundeNr = p.kundeNr
                     });
                 }
@@ -386,49 +385,48 @@ namespace Service
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
                 kunden kupac = (from a in context.kundens where a.idKunde == k.idKunde select a).FirstOrDefault();
-                kupac.gotovina = k.gotovina;
-                kupac.lieferadresse = k.lieferadresse;
-                kupac.rechnungsadresse = k.rechnungsadresse;
-                kupac.adresse2 = k.adresse2;
-                kupac.notiz = k.notiz;
-                kupac.broj = k.broj;
-                kupac.broj_detalji = k.broj_detalji;
                 kupac.kundeNr = k.kundeNr;
-                kupac.notiz_route = k.notiz_route;
-                kupac.dnevni_popust = k.dnevni_popust;
-                kupac.dostava_na = k.dostava_na;
-                kupac.dostava_od = k.dostava_od;
-                kupac.fax = k.fax;
-                kupac.stadt = k.stadt;
-                kupac.gruppe = k.gruppe;
-                kupac.vorname = k.vorname;
-                kupac.name2 = k.name2;
-                kupac.internet = k.internet;
-                kupac.anssprechepartner = k.anssprechepartner;
-                kupac.limit_narudzbe = k.limit_narudzbe;
-                kupac.lk = k.lk;
-                kupac.mail = k.mail;
-                kupac.email2 = k.email2;
-                kupac.l_plz_ort = k.l_plz_ort;
-                kupac.naziv = k.naziv;
-                kupac.kundenbewertung = k.kundenbewertung;
-                kupac.placa = k.placa;
                 kupac.suchbegriff = k.suchbegriff;
-                kupac.popust_gotovina = k.popust_gotovina;
-                kupac.steuer = k.steuer;
-                kupac.predmet = k.predmet;
-                kupac.vertreter = k.vertreter;
+                kupac.vorname = k.vorname;
                 kupac.name = k.name;
-                kupac.rabat = k.rabat;
+                kupac.l_plz_ort = k.l_plz_ort;
+                kupac.gruppe = k.gruppe;
                 kupac.freifeld1 = k.freifeld1;
+                kupac.name2 = k.name2;
+                kupac.strasse = k.strasse;
                 kupac.tel1 = k.tel1;
                 kupac.tel2 = k.tel2;
-                kupac.tip = k.tip;
-                kupac.kundetype = k.kundetype;
-                kupac.titel = k.titel;
-                kupac.strasse = k.strasse;
+                kupac.fax = k.fax;
+                kupac.mail = k.mail;
+                kupac.lk = k.lk;
+                kupac.vorlage_am = k.vorlage_am;
+                kupac.vorlage_anlass = k.vorlage_anlass;
                 kupac.VKPreisgr = k.VKPreisgr;
+                kupac.zahlungin = k.zahlungin;
+                kupac.skonto = k.skonto;
+                kupac.skontotage = k.skontotage;
+                kupac.vertreter = k.vertreter;
+                kupac.ufragssperre = k.ufragssperre;
+                kupac.anreden = k.anreden;
+                kupac.lieferadresse = k.lieferadresse;
+                kupac.rechnungsadresse = k.rechnungsadresse;
+                kupac.email2 = k.email2;
+                kupac.internet = k.internet;
+                kupac.kundetype = k.kundetype;
+                kupac.steuer = k.steuer;
+                kupac.zahlweise = k.zahlweise;
+                kupac.zahl_beding = k.zahl_beding;
+                kupac.kundenbewertung = k.kundenbewertung;
+                kupac.notiz = k.notiz;
+                kupac.titel = k.titel;
                 kupac.land = k.land;
+                kupac.zahlbar = k.zahlbar;
+                kupac.rabat = k.rabat;
+                kupac.adresse2 = k.adresse2;
+                kupac.stadt = k.stadt;
+                kupac.anredeans = k.anredeans;
+                kupac.anssprechepartner = k.anssprechepartner;
+                kupac.notiz_route = k.notiz_route;
                 context.SubmitChanges();
             }
         }
@@ -521,44 +519,44 @@ namespace Service
         public  DataSet getUsersView()
         {
             DataSet ds = new DataSet();
-            DataTable dt = new DataTable("tblKorisnik");
-            dt.Columns.Add(new DataColumn("id_korisnik", typeof(int)));
-            dt.Columns.Add(new DataColumn("ime", typeof(string)));
-            dt.Columns.Add(new DataColumn("prezime", typeof(string)));
+            DataTable dt = new DataTable("user");
+            dt.Columns.Add(new DataColumn("idUser", typeof(int)));
+            dt.Columns.Add(new DataColumn("firstName", typeof(string)));
+            dt.Columns.Add(new DataColumn("lastName", typeof(string)));
             dt.Columns.Add(new DataColumn("mail", typeof(string)));
-            dt.Columns.Add(new DataColumn("tip", typeof(string)));
+            dt.Columns.Add(new DataColumn("userType", typeof(string)));
             dt.Columns.Add(new DataColumn("username", typeof(string)));
             dt.Columns.Add(new DataColumn("password", typeof(string)));
             dt.Columns.Add(new DataColumn("telefon", typeof(string)));
             dt.Columns.Add(new DataColumn("datum", typeof(DateTime)));
-            dt.Columns.Add(new DataColumn("pocetna", typeof(bool)));
-            dt.Columns.Add(new DataColumn("aktivan", typeof(bool)));
+            dt.Columns.Add(new DataColumn("startseit", typeof(bool)));
+            dt.Columns.Add(new DataColumn("active", typeof(bool)));
             dt.Columns.Add(new DataColumn("slika", typeof(string)));
             //DataRow dr = dt.NewRow();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = (from t1 in context.tbl_korisniks
-                            join t2 in context.tbl_korisnik_licencas on t1.id_korisnik equals t2.id_korisnik_FK
-                            select new { t1.id_korisnik, t1.ime, t1.prezime, t1.mail, t1.tip, t1.username, t1.password, t1.telefon, t2.datum, t1.pocetna, t1.aktivan, t1.slika}).ToList();
+                var query = (from t1 in context.users
+                            join t2 in context.user_licences on t1.idUser equals t2.idUser
+                            select new { t1.idUser, t1.firstName, t1.lastName, t1.mail, t1.userType, t1.username, t1.password, t1.telefon, t2.datum, t1.startseit, t1.active, t1.slika}).ToList();
                 dt.Clear();
                 foreach(var g in query)
             {
                     DataRow dr = dt.NewRow();
-                dr["id_korisnik"] = g.id_korisnik;
-                dr["ime"] = g.ime;
-                dr["prezime"] = g.prezime;
+                dr["idUser"] = g.idUser;
+                dr["firstName"] = g.firstName;
+                dr["lastName"] = g.lastName;
                 dr["mail"] = g.mail;
-                if (g.tip == 0) {dr["tip"] = "Administrator";}
-                else if (g.tip == 1) { dr["tip"] = "Mitarbeiter"; }
-                else if (g.tip == 2) { dr["tip"] = "Sekretarin"; }
-                else if (g.tip == 3) { dr["tip"] = "Techniker"; }
-                else if (g.tip == 4) { dr["tip"] = "Werkstattleiter"; }
+                if (g.userType == 0) { dr["userType"] = "Administrator"; }
+                else if (g.userType == 1) { dr["userType"] = "Mitarbeiter"; }
+                else if (g.userType == 2) { dr["userType"] = "Sekretarin"; }
+                else if (g.userType == 3) { dr["userType"] = "Techniker"; }
+                else if (g.userType == 4) { dr["userType"] = "Werkstattleiter"; }
                 dr["username"] = g.username;
                 dr["password"] = g.password;
                 dr["telefon"] = g.telefon;
                 dr["datum"] = g.datum;
-                dr["pocetna"] = g.pocetna;
-                dr["aktivan"] = g.aktivan;
+                dr["startseit"] = g.startseit;
+                dr["active"] = g.active;
                 dr["slika"] = g.slika;
                 //dr["mail"] = g.mail;
                 dt.Rows.Add(dr);
@@ -591,7 +589,7 @@ namespace Service
             {
                 mitarbeiter radnik = (from a in context.mitarbeiters where a.idMit == r.idMit select a).FirstOrDefault();
                 radnik.mitarbeiterNr = r.mitarbeiterNr;
-                radnik.tip = r.tip;
+                radnik.anrede = r.anrede;
                 radnik.vorname = r.vorname;
                 radnik.name = r.name;
                 radnik.adresse = r.adresse;
@@ -601,11 +599,12 @@ namespace Service
                 radnik.fax = r.fax;
                 radnik.skype = r.skype;
                 radnik.email = r.email;
-                radnik.zarada = r.zarada;
-                radnik.satnica = r.satnica;
+                radnik.gehalt = r.gehalt;
+                radnik.stundenlohn = r.stundenlohn;
                 radnik.urlaub_ist = r.urlaub_ist;
                 radnik.urlaub_soll = r.urlaub_soll;
-                radnik.broj_plate = r.broj_plate;
+                radnik.anzahl_gehalter = r.anzahl_gehalter;
+                radnik.wochen_std = r.wochen_std;
                 radnik.krankheit = r.krankheit;
                 radnik.bank = r.bank;
                 radnik.BLZ = r.BLZ;
@@ -731,7 +730,7 @@ namespace Service
                     {
                         idMit=p.idMit,
                         mitarbeiterNr=p.mitarbeiterNr,
-                        tip=p.tip,
+                        anrede=p.anrede,
                         vorname=p.vorname,
                         name=p.name,
                         adresse=p.adresse,
@@ -740,11 +739,11 @@ namespace Service
                         handy=p.handy,
                         fax=p.fax,
                         email=p.email,
-                        zarada=p.zarada,
-                        satnica=p.satnica,
+                        gehalt=p.gehalt,
+                        stundenlohn=p.stundenlohn,
                         urlaub_ist=p.urlaub_ist,
                         urlaub_soll=p.urlaub_soll,
-                        broj_plate=p.broj_plate,
+                        anzahl_gehalter=p.anzahl_gehalter,
                         wochen_std=p.wochen_std,
                         krankheit=p.krankheit,
                         bank=p.bank,
@@ -780,7 +779,7 @@ namespace Service
                          new lieferant { 
                         idLief=p.idLief,
                         lieferantNr=p.lieferantNr,
-                        tip=p.tip,
+                        anrede=p.anrede,
                         vorname=p.vorname,
                         name=p.name,
                         adresse=p.adresse,
@@ -798,18 +797,17 @@ namespace Service
                         kontoinhaber=p.kontoinhaber,
                         notiz=p.notiz,
                         idUser=p.idUser,
-                        promet=p.promet,
+                        umsatz=p.umsatz,
                         zahlweise=p.zahlweise,
                         land=p.land,
-                        poslovanje=p.poslovanje,
+                        branche=p.branche,
+                        skonto = p.skonto,
+                        tage = p.tage,
+                        zahlbar = p.zahlbar,
                         rabat=p.rabat,
-                        tage=p.tage,
-                        zahlbar=p.zahlbar,                        
-                        
+                        bankeinzug = p.bankeinzug,
                         stauer=p.stauer
-
-                    
-                        });
+                  });
 
                 }
                 return ListaTrazenihDobavljaca;
@@ -826,9 +824,9 @@ namespace Service
                     user korisnik = context.users.Single(e => e.idUser == idUser);
 
                     if (tip == 1)
-                    { korisnik.startseit = value; }
+                    { korisnik.startseit = Convert.ToInt32(value); }
                     else if (tip == 2)
-                    { korisnik.active = value; }
+                    { korisnik.active = Convert.ToInt32(value); }
 
                     context.SubmitChanges();
                 }
@@ -846,7 +844,7 @@ namespace Service
                 try
                 {
                     mitarbeiter radnik = context.mitarbeiters.Single(e => e.idMit == idRadnika);
-                    radnik.status = status;
+                    radnik.status = Convert.ToInt32(status);
                     context.SubmitChanges();
                 }
                 catch (Exception ex)
@@ -867,10 +865,10 @@ namespace Service
                 bug greske = new bug();
                 greske.user_id = idUser;
                 greske.bug1 = bugText;
-                greske.status = status;
-                greske.datum =date;
+                greske.status = Convert.ToInt32(status);
+                greske.datum = Convert.ToDateTime(date);
 
-                context.tbl_greskes.InsertOnSubmit(greske);
+                context.bugs.InsertOnSubmit(greske);
                 context.SubmitChanges();
             }
                 catch(Exception e)
@@ -910,8 +908,8 @@ namespace Service
             {
                 try
                 {
-                    bug greske = context.bugs.Single(e => e.datum == datum);                
-                    greske.status = statusValue;
+                    bug greske = context.bugs.Single(e => e.datum == Convert.ToDateTime(datum));                
+                    greske.status = Convert.ToInt32(statusValue);
                     context.SubmitChanges();
                 }
                 catch (Exception e)
@@ -926,7 +924,7 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.bugs where a.datum == datum select a;
+                var query = from a in context.bugs where a.datum == Convert.ToDateTime(datum) select a;
 
                 foreach (var p in query)
                 {
@@ -945,7 +943,7 @@ namespace Service
                 if (x == null)
                     return 1000;
                 else
-                    return x.mitarbeiterNr + 1;
+                    return Convert.ToInt32(x.mitarbeiterNr + 1);
             }
         }
 
@@ -971,7 +969,7 @@ namespace Service
                 if (x == null)
                     return 1000;
                 else
-                    return x.kundeNr + 1;
+                    return Convert.ToInt32(x.kundeNr) + 1;
             }
         }
 
@@ -1089,35 +1087,34 @@ namespace Service
                         fax = p.fax,
                         mail = p.mail,
                         lk = p.lk,
-                        dostava_na = p.dostava_na,
-                        dostava_od = p.dostava_od,
+                        vorlage_am = p.vorlage_am,
+                        vorlage_anlass = p.vorlage_anlass,
                         VKPreisgr = p.VKPreisgr,
-                        gotovina = p.gotovina,
-                        popust_gotovina = p.popust_gotovina,
-                        dnevni_popust = p.dnevni_popust,
+                        zahlungin = p.zahlungin,
+                        skonto = p.skonto,
+                        skontotage = p.skontotage,
                         vertreter = p.vertreter,
-                        limit_narudzbe = p.limit_narudzbe,
-                        tip = p.tip,
+                        ufragssperre = p.ufragssperre,
+                        anreden = p.anreden,
                         lieferadresse = p.lieferadresse,
                         rechnungsadresse = p.rechnungsadresse,
                         email2 = p.email2,
                         internet = p.internet,
                         kundetype = p.kundetype,
                         steuer = p.steuer,
-                        broj = p.broj,
-                        broj_detalji = p.broj_detalji,
+                        zahlweise = p.zahlweise,
+                        zahl_beding = p.zahl_beding,
                         kundenbewertung = p.kundenbewertung,
                         notiz = p.notiz,
-                        naziv = p.naziv,
+                        titel = p.titel,
                         land = p.land,
-                        placa = p.placa,
+                        zahlbar = p.zahlbar,
                         rabat = p.rabat,
                         adresse2 = p.adresse2,
                         stadt = p.stadt,
-                        predmet = p.predmet,
+                        anredeans = p.anredeans,
                         anssprechepartner = p.anssprechepartner,
                         notiz_route = p.notiz_route,
-                        titel = p.titel,
                         kundeNr = p.kundeNr
                     });
                 }
@@ -1246,7 +1243,7 @@ namespace Service
                         id = p.id,
                         idUser = p.idUser,
                         datum = p.datum,
-                        datum1 = p.datum1datu1,
+                        datum1 = p.datum1,
                         tip = p.tip,
                         odobreno = p.odobreno,
                         pogledano = p.pogledano,
@@ -1270,8 +1267,8 @@ namespace Service
                 mk.datum1 = mit_kalendar.datum1;
                 mk.datum = mit_kalendar.datum;
                 mk.tip = mit_kalendar.tip;
-                mk.odobreno = false;
-                mk.pogledano = false;
+                mk.odobreno = Convert.ToInt32(false);
+                mk.pogledano = Convert.ToInt32(false);
                 context.mit_kalendars.InsertOnSubmit(mk);
                 context.SubmitChanges();
             }

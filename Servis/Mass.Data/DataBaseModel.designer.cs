@@ -30,6 +30,15 @@ namespace Mass.Data
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Inserttbl_poruka_poslane(tbl_poruka_poslane instance);
+    partial void Updatetbl_poruka_poslane(tbl_poruka_poslane instance);
+    partial void Deletetbl_poruka_poslane(tbl_poruka_poslane instance);
+    partial void Insertuser(user instance);
+    partial void Updateuser(user instance);
+    partial void Deleteuser(user instance);
+    partial void Inserttbl_poruka_primljene(tbl_poruka_primljene instance);
+    partial void Updatetbl_poruka_primljene(tbl_poruka_primljene instance);
+    partial void Deletetbl_poruka_primljene(tbl_poruka_primljene instance);
     #endregion
 		
 		public DataBaseModelDataContext() : 
@@ -358,14 +367,6 @@ namespace Mass.Data
 			}
 		}
 		
-		public System.Data.Linq.Table<user> users
-		{
-			get
-			{
-				return this.GetTable<user>();
-			}
-		}
-		
 		public System.Data.Linq.Table<user_licence> user_licences
 		{
 			get
@@ -395,6 +396,30 @@ namespace Mass.Data
 			get
 			{
 				return this.GetTable<p_get_User_ViewResult>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_poruka_poslane> tbl_poruka_poslanes
+		{
+			get
+			{
+				return this.GetTable<tbl_poruka_poslane>();
+			}
+		}
+		
+		public System.Data.Linq.Table<user> users
+		{
+			get
+			{
+				return this.GetTable<user>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_poruka_primljene> tbl_poruka_primljenes
+		{
+			get
+			{
+				return this.GetTable<tbl_poruka_primljene>();
 			}
 		}
 	}
@@ -7338,231 +7363,6 @@ namespace Mass.Data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[user]")]
-	public partial class user
-	{
-		
-		private System.Nullable<int> _idUser;
-		
-		private string _firstName;
-		
-		private string _lastName;
-		
-		private string _mail;
-		
-		private string _username;
-		
-		private string _password;
-		
-		private string _sessionId;
-		
-		private System.Nullable<int> _userType;
-		
-		private string _telefon;
-		
-		private System.Nullable<int> _active;
-		
-		private string _slika;
-		
-		private System.Nullable<int> _startseit;
-		
-		public user()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int")]
-		public System.Nullable<int> idUser
-		{
-			get
-			{
-				return this._idUser;
-			}
-			set
-			{
-				if ((this._idUser != value))
-				{
-					this._idUser = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NChar(50)")]
-		public string firstName
-		{
-			get
-			{
-				return this._firstName;
-			}
-			set
-			{
-				if ((this._firstName != value))
-				{
-					this._firstName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NChar(50)")]
-		public string lastName
-		{
-			get
-			{
-				return this._lastName;
-			}
-			set
-			{
-				if ((this._lastName != value))
-				{
-					this._lastName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NChar(50)")]
-		public string mail
-		{
-			get
-			{
-				return this._mail;
-			}
-			set
-			{
-				if ((this._mail != value))
-				{
-					this._mail = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(50)")]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this._username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(50)")]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this._password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sessionId", DbType="NChar(100)")]
-		public string sessionId
-		{
-			get
-			{
-				return this._sessionId;
-			}
-			set
-			{
-				if ((this._sessionId != value))
-				{
-					this._sessionId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userType", DbType="Int")]
-		public System.Nullable<int> userType
-		{
-			get
-			{
-				return this._userType;
-			}
-			set
-			{
-				if ((this._userType != value))
-				{
-					this._userType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(50)")]
-		public string telefon
-		{
-			get
-			{
-				return this._telefon;
-			}
-			set
-			{
-				if ((this._telefon != value))
-				{
-					this._telefon = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
-		public System.Nullable<int> active
-		{
-			get
-			{
-				return this._active;
-			}
-			set
-			{
-				if ((this._active != value))
-				{
-					this._active = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slika", DbType="NChar(150)")]
-		public string slika
-		{
-			get
-			{
-				return this._slika;
-			}
-			set
-			{
-				if ((this._slika != value))
-				{
-					this._slika = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startseit", DbType="Int")]
-		public System.Nullable<int> startseit
-		{
-			get
-			{
-				return this._startseit;
-			}
-			set
-			{
-				if ((this._startseit != value))
-				{
-					this._startseit = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.user_licence")]
 	public partial class user_licence
 	{
@@ -8189,6 +7989,996 @@ namespace Mass.Data
 				{
 					this._datum = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_poruka_poslane")]
+	public partial class tbl_poruka_poslane : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_poruka_poslane;
+		
+		private int _poslao;
+		
+		private System.Nullable<int> _primio;
+		
+		private System.DateTime _datum;
+		
+		private string _predmet;
+		
+		private string _naslov;
+		
+		private EntityRef<user> _user;
+		
+		private EntityRef<user> _user1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_poruka_poslaneChanging(int value);
+    partial void Onid_poruka_poslaneChanged();
+    partial void OnposlaoChanging(int value);
+    partial void OnposlaoChanged();
+    partial void OnprimioChanging(System.Nullable<int> value);
+    partial void OnprimioChanged();
+    partial void OndatumChanging(System.DateTime value);
+    partial void OndatumChanged();
+    partial void OnpredmetChanging(string value);
+    partial void OnpredmetChanged();
+    partial void OnnaslovChanging(string value);
+    partial void OnnaslovChanged();
+    #endregion
+		
+		public tbl_poruka_poslane()
+		{
+			this._user = default(EntityRef<user>);
+			this._user1 = default(EntityRef<user>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_poruka_poslane", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_poruka_poslane
+		{
+			get
+			{
+				return this._id_poruka_poslane;
+			}
+			set
+			{
+				if ((this._id_poruka_poslane != value))
+				{
+					this.Onid_poruka_poslaneChanging(value);
+					this.SendPropertyChanging();
+					this._id_poruka_poslane = value;
+					this.SendPropertyChanged("id_poruka_poslane");
+					this.Onid_poruka_poslaneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_poslao", DbType="Int NOT NULL")]
+		public int poslao
+		{
+			get
+			{
+				return this._poslao;
+			}
+			set
+			{
+				if ((this._poslao != value))
+				{
+					if (this._user.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnposlaoChanging(value);
+					this.SendPropertyChanging();
+					this._poslao = value;
+					this.SendPropertyChanged("poslao");
+					this.OnposlaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primio", DbType="Int")]
+		public System.Nullable<int> primio
+		{
+			get
+			{
+				return this._primio;
+			}
+			set
+			{
+				if ((this._primio != value))
+				{
+					if (this._user1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnprimioChanging(value);
+					this.SendPropertyChanging();
+					this._primio = value;
+					this.SendPropertyChanged("primio");
+					this.OnprimioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime NOT NULL")]
+		public System.DateTime datum
+		{
+			get
+			{
+				return this._datum;
+			}
+			set
+			{
+				if ((this._datum != value))
+				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
+					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_predmet", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string predmet
+		{
+			get
+			{
+				return this._predmet;
+			}
+			set
+			{
+				if ((this._predmet != value))
+				{
+					this.OnpredmetChanging(value);
+					this.SendPropertyChanging();
+					this._predmet = value;
+					this.SendPropertyChanged("predmet");
+					this.OnpredmetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naslov", DbType="NChar(75)")]
+		public string naslov
+		{
+			get
+			{
+				return this._naslov;
+			}
+			set
+			{
+				if ((this._naslov != value))
+				{
+					this.OnnaslovChanging(value);
+					this.SendPropertyChanging();
+					this._naslov = value;
+					this.SendPropertyChanged("naslov");
+					this.OnnaslovChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_poslane", Storage="_user", ThisKey="poslao", OtherKey="idUser", IsForeignKey=true)]
+		public user user
+		{
+			get
+			{
+				return this._user.Entity;
+			}
+			set
+			{
+				user previousValue = this._user.Entity;
+				if (((previousValue != value) 
+							|| (this._user.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._user.Entity = null;
+						previousValue.tbl_poruka_poslanes.Remove(this);
+					}
+					this._user.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_poruka_poslanes.Add(this);
+						this._poslao = value.idUser;
+					}
+					else
+					{
+						this._poslao = default(int);
+					}
+					this.SendPropertyChanged("user");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_poslane1", Storage="_user1", ThisKey="primio", OtherKey="idUser", IsForeignKey=true)]
+		public user user1
+		{
+			get
+			{
+				return this._user1.Entity;
+			}
+			set
+			{
+				user previousValue = this._user1.Entity;
+				if (((previousValue != value) 
+							|| (this._user1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._user1.Entity = null;
+						previousValue.tbl_poruka_poslanes1.Remove(this);
+					}
+					this._user1.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_poruka_poslanes1.Add(this);
+						this._primio = value.idUser;
+					}
+					else
+					{
+						this._primio = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("user1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[user]")]
+	public partial class user : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idUser;
+		
+		private string _firstName;
+		
+		private string _lastName;
+		
+		private string _mail;
+		
+		private string _username;
+		
+		private string _password;
+		
+		private string _sessionId;
+		
+		private System.Nullable<int> _userType;
+		
+		private string _telefon;
+		
+		private System.Nullable<int> _active;
+		
+		private string _slika;
+		
+		private System.Nullable<int> _startseit;
+		
+		private EntitySet<tbl_poruka_poslane> _tbl_poruka_poslanes;
+		
+		private EntitySet<tbl_poruka_poslane> _tbl_poruka_poslanes1;
+		
+		private EntitySet<tbl_poruka_primljene> _tbl_poruka_primljenes;
+		
+		private EntitySet<tbl_poruka_primljene> _tbl_poruka_primljenes1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidUserChanging(int value);
+    partial void OnidUserChanged();
+    partial void OnfirstNameChanging(string value);
+    partial void OnfirstNameChanged();
+    partial void OnlastNameChanging(string value);
+    partial void OnlastNameChanged();
+    partial void OnmailChanging(string value);
+    partial void OnmailChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnsessionIdChanging(string value);
+    partial void OnsessionIdChanged();
+    partial void OnuserTypeChanging(System.Nullable<int> value);
+    partial void OnuserTypeChanged();
+    partial void OntelefonChanging(string value);
+    partial void OntelefonChanged();
+    partial void OnactiveChanging(System.Nullable<int> value);
+    partial void OnactiveChanged();
+    partial void OnslikaChanging(string value);
+    partial void OnslikaChanged();
+    partial void OnstartseitChanging(System.Nullable<int> value);
+    partial void OnstartseitChanged();
+    #endregion
+		
+		public user()
+		{
+			this._tbl_poruka_poslanes = new EntitySet<tbl_poruka_poslane>(new Action<tbl_poruka_poslane>(this.attach_tbl_poruka_poslanes), new Action<tbl_poruka_poslane>(this.detach_tbl_poruka_poslanes));
+			this._tbl_poruka_poslanes1 = new EntitySet<tbl_poruka_poslane>(new Action<tbl_poruka_poslane>(this.attach_tbl_poruka_poslanes1), new Action<tbl_poruka_poslane>(this.detach_tbl_poruka_poslanes1));
+			this._tbl_poruka_primljenes = new EntitySet<tbl_poruka_primljene>(new Action<tbl_poruka_primljene>(this.attach_tbl_poruka_primljenes), new Action<tbl_poruka_primljene>(this.detach_tbl_poruka_primljenes));
+			this._tbl_poruka_primljenes1 = new EntitySet<tbl_poruka_primljene>(new Action<tbl_poruka_primljene>(this.attach_tbl_poruka_primljenes1), new Action<tbl_poruka_primljene>(this.detach_tbl_poruka_primljenes1));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idUser
+		{
+			get
+			{
+				return this._idUser;
+			}
+			set
+			{
+				if ((this._idUser != value))
+				{
+					this.OnidUserChanging(value);
+					this.SendPropertyChanging();
+					this._idUser = value;
+					this.SendPropertyChanged("idUser");
+					this.OnidUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NChar(50)")]
+		public string firstName
+		{
+			get
+			{
+				return this._firstName;
+			}
+			set
+			{
+				if ((this._firstName != value))
+				{
+					this.OnfirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._firstName = value;
+					this.SendPropertyChanged("firstName");
+					this.OnfirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NChar(50)")]
+		public string lastName
+		{
+			get
+			{
+				return this._lastName;
+			}
+			set
+			{
+				if ((this._lastName != value))
+				{
+					this.OnlastNameChanging(value);
+					this.SendPropertyChanging();
+					this._lastName = value;
+					this.SendPropertyChanged("lastName");
+					this.OnlastNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NChar(50)")]
+		public string mail
+		{
+			get
+			{
+				return this._mail;
+			}
+			set
+			{
+				if ((this._mail != value))
+				{
+					this.OnmailChanging(value);
+					this.SendPropertyChanging();
+					this._mail = value;
+					this.SendPropertyChanged("mail");
+					this.OnmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(50)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sessionId", DbType="NChar(100)")]
+		public string sessionId
+		{
+			get
+			{
+				return this._sessionId;
+			}
+			set
+			{
+				if ((this._sessionId != value))
+				{
+					this.OnsessionIdChanging(value);
+					this.SendPropertyChanging();
+					this._sessionId = value;
+					this.SendPropertyChanged("sessionId");
+					this.OnsessionIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userType", DbType="Int")]
+		public System.Nullable<int> userType
+		{
+			get
+			{
+				return this._userType;
+			}
+			set
+			{
+				if ((this._userType != value))
+				{
+					this.OnuserTypeChanging(value);
+					this.SendPropertyChanging();
+					this._userType = value;
+					this.SendPropertyChanged("userType");
+					this.OnuserTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(50)")]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this.OntelefonChanging(value);
+					this.SendPropertyChanging();
+					this._telefon = value;
+					this.SendPropertyChanged("telefon");
+					this.OntelefonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
+		public System.Nullable<int> active
+		{
+			get
+			{
+				return this._active;
+			}
+			set
+			{
+				if ((this._active != value))
+				{
+					this.OnactiveChanging(value);
+					this.SendPropertyChanging();
+					this._active = value;
+					this.SendPropertyChanged("active");
+					this.OnactiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slika", DbType="NChar(150)")]
+		public string slika
+		{
+			get
+			{
+				return this._slika;
+			}
+			set
+			{
+				if ((this._slika != value))
+				{
+					this.OnslikaChanging(value);
+					this.SendPropertyChanging();
+					this._slika = value;
+					this.SendPropertyChanged("slika");
+					this.OnslikaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startseit", DbType="Int")]
+		public System.Nullable<int> startseit
+		{
+			get
+			{
+				return this._startseit;
+			}
+			set
+			{
+				if ((this._startseit != value))
+				{
+					this.OnstartseitChanging(value);
+					this.SendPropertyChanging();
+					this._startseit = value;
+					this.SendPropertyChanged("startseit");
+					this.OnstartseitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_poslane", Storage="_tbl_poruka_poslanes", ThisKey="idUser", OtherKey="poslao")]
+		public EntitySet<tbl_poruka_poslane> tbl_poruka_poslanes
+		{
+			get
+			{
+				return this._tbl_poruka_poslanes;
+			}
+			set
+			{
+				this._tbl_poruka_poslanes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_poslane1", Storage="_tbl_poruka_poslanes1", ThisKey="idUser", OtherKey="primio")]
+		public EntitySet<tbl_poruka_poslane> tbl_poruka_poslanes1
+		{
+			get
+			{
+				return this._tbl_poruka_poslanes1;
+			}
+			set
+			{
+				this._tbl_poruka_poslanes1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene", Storage="_tbl_poruka_primljenes", ThisKey="idUser", OtherKey="poslao")]
+		public EntitySet<tbl_poruka_primljene> tbl_poruka_primljenes
+		{
+			get
+			{
+				return this._tbl_poruka_primljenes;
+			}
+			set
+			{
+				this._tbl_poruka_primljenes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene1", Storage="_tbl_poruka_primljenes1", ThisKey="idUser", OtherKey="primio")]
+		public EntitySet<tbl_poruka_primljene> tbl_poruka_primljenes1
+		{
+			get
+			{
+				return this._tbl_poruka_primljenes1;
+			}
+			set
+			{
+				this._tbl_poruka_primljenes1.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tbl_poruka_poslanes(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.user = this;
+		}
+		
+		private void detach_tbl_poruka_poslanes(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.user = null;
+		}
+		
+		private void attach_tbl_poruka_poslanes1(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.user1 = this;
+		}
+		
+		private void detach_tbl_poruka_poslanes1(tbl_poruka_poslane entity)
+		{
+			this.SendPropertyChanging();
+			entity.user1 = null;
+		}
+		
+		private void attach_tbl_poruka_primljenes(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.user = this;
+		}
+		
+		private void detach_tbl_poruka_primljenes(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.user = null;
+		}
+		
+		private void attach_tbl_poruka_primljenes1(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.user1 = this;
+		}
+		
+		private void detach_tbl_poruka_primljenes1(tbl_poruka_primljene entity)
+		{
+			this.SendPropertyChanging();
+			entity.user1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_poruka_primljene")]
+	public partial class tbl_poruka_primljene : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_poruka_primljene;
+		
+		private int _poslao;
+		
+		private System.Nullable<int> _primio;
+		
+		private System.DateTime _datum;
+		
+		private bool _procitano;
+		
+		private string _predmet;
+		
+		private string _naslov;
+		
+		private EntityRef<user> _user;
+		
+		private EntityRef<user> _user1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_poruka_primljeneChanging(int value);
+    partial void Onid_poruka_primljeneChanged();
+    partial void OnposlaoChanging(int value);
+    partial void OnposlaoChanged();
+    partial void OnprimioChanging(System.Nullable<int> value);
+    partial void OnprimioChanged();
+    partial void OndatumChanging(System.DateTime value);
+    partial void OndatumChanged();
+    partial void OnprocitanoChanging(bool value);
+    partial void OnprocitanoChanged();
+    partial void OnpredmetChanging(string value);
+    partial void OnpredmetChanged();
+    partial void OnnaslovChanging(string value);
+    partial void OnnaslovChanged();
+    #endregion
+		
+		public tbl_poruka_primljene()
+		{
+			this._user = default(EntityRef<user>);
+			this._user1 = default(EntityRef<user>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_poruka_primljene", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_poruka_primljene
+		{
+			get
+			{
+				return this._id_poruka_primljene;
+			}
+			set
+			{
+				if ((this._id_poruka_primljene != value))
+				{
+					this.Onid_poruka_primljeneChanging(value);
+					this.SendPropertyChanging();
+					this._id_poruka_primljene = value;
+					this.SendPropertyChanged("id_poruka_primljene");
+					this.Onid_poruka_primljeneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_poslao", DbType="Int NOT NULL")]
+		public int poslao
+		{
+			get
+			{
+				return this._poslao;
+			}
+			set
+			{
+				if ((this._poslao != value))
+				{
+					if (this._user.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnposlaoChanging(value);
+					this.SendPropertyChanging();
+					this._poslao = value;
+					this.SendPropertyChanged("poslao");
+					this.OnposlaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primio", DbType="Int")]
+		public System.Nullable<int> primio
+		{
+			get
+			{
+				return this._primio;
+			}
+			set
+			{
+				if ((this._primio != value))
+				{
+					if (this._user1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnprimioChanging(value);
+					this.SendPropertyChanging();
+					this._primio = value;
+					this.SendPropertyChanged("primio");
+					this.OnprimioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime NOT NULL")]
+		public System.DateTime datum
+		{
+			get
+			{
+				return this._datum;
+			}
+			set
+			{
+				if ((this._datum != value))
+				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
+					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_procitano", DbType="Bit NOT NULL")]
+		public bool procitano
+		{
+			get
+			{
+				return this._procitano;
+			}
+			set
+			{
+				if ((this._procitano != value))
+				{
+					this.OnprocitanoChanging(value);
+					this.SendPropertyChanging();
+					this._procitano = value;
+					this.SendPropertyChanged("procitano");
+					this.OnprocitanoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_predmet", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string predmet
+		{
+			get
+			{
+				return this._predmet;
+			}
+			set
+			{
+				if ((this._predmet != value))
+				{
+					this.OnpredmetChanging(value);
+					this.SendPropertyChanging();
+					this._predmet = value;
+					this.SendPropertyChanged("predmet");
+					this.OnpredmetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_naslov", DbType="NChar(75)")]
+		public string naslov
+		{
+			get
+			{
+				return this._naslov;
+			}
+			set
+			{
+				if ((this._naslov != value))
+				{
+					this.OnnaslovChanging(value);
+					this.SendPropertyChanging();
+					this._naslov = value;
+					this.SendPropertyChanged("naslov");
+					this.OnnaslovChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene", Storage="_user", ThisKey="poslao", OtherKey="idUser", IsForeignKey=true)]
+		public user user
+		{
+			get
+			{
+				return this._user.Entity;
+			}
+			set
+			{
+				user previousValue = this._user.Entity;
+				if (((previousValue != value) 
+							|| (this._user.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._user.Entity = null;
+						previousValue.tbl_poruka_primljenes.Remove(this);
+					}
+					this._user.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_poruka_primljenes.Add(this);
+						this._poslao = value.idUser;
+					}
+					else
+					{
+						this._poslao = default(int);
+					}
+					this.SendPropertyChanged("user");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_tbl_poruka_primljene1", Storage="_user1", ThisKey="primio", OtherKey="idUser", IsForeignKey=true)]
+		public user user1
+		{
+			get
+			{
+				return this._user1.Entity;
+			}
+			set
+			{
+				user previousValue = this._user1.Entity;
+				if (((previousValue != value) 
+							|| (this._user1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._user1.Entity = null;
+						previousValue.tbl_poruka_primljenes1.Remove(this);
+					}
+					this._user1.Entity = value;
+					if ((value != null))
+					{
+						value.tbl_poruka_primljenes1.Add(this);
+						this._primio = value.idUser;
+					}
+					else
+					{
+						this._primio = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("user1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
