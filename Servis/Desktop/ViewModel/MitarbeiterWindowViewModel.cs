@@ -591,7 +591,7 @@ namespace Desktop.ViewModel
                }
     
                client.UnesiRadnika(MitarbeiterNr, Titula, Name, Vorname, Adresse, Telefon, Telefon2, Handy, Fax,Skype, Email, Gehalt, Stundenlohn, Urlaubstage, UrlaubstageDuzan, AnzahlGehalter,
-               Krankenheitstage, Bank, Blz, Bic, KtoNr, Iban, Kontoinhaber, Notiz, Geburstdatum, SelektovaniKorisnik.id_korisnik);
+               Krankenheitstage, Bank, Blz, Bic, KtoNr, Iban, Kontoinhaber, Notiz, Geburstdatum, SelektovaniKorisnik.idUser);
                MitarbeiterNr= client.MitarbeiterNr();
                Titula=0;
                Vorname=null; 
@@ -758,7 +758,7 @@ namespace Desktop.ViewModel
 
            public void OdaberiSelektovanogKorisnika(object parameter)
            {
-               SelektovaniKorisnikEdit = client.VratiKorisnika(SelektovaniRadnik.idUser);
+               SelektovaniKorisnikEdit = client.VratiKorisnika(Convert.ToInt32(SelektovaniRadnik.idUser));
            }
            public void SelektovaniIndex(object parameter)
            {

@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using Desktop.HelperClass;
+using Desktop.ViewModel;
 using Servis.HelperClass;
 using System;
 using System.Diagnostics;
@@ -33,6 +34,7 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using WpfScheduler;
 
 
 namespace MassProject {
