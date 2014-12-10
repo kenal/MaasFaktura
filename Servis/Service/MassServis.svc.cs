@@ -24,11 +24,11 @@ namespace Service
             using(DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
 
-                var x = (from a in context.tbl_korisniks where (a.username.Equals(username) && a.password.Equals(pass)) select new { a.id_korisnik }).SingleOrDefault();
+                var x = (from a in context.users where (a.username.Equals(username) && a.password.Equals(pass)) select new { a.idUser }).SingleOrDefault();
             if (x != null)
             {
-                if (x.id_korisnik != 0)
-                    return x.id_korisnik;
+                if (x.idUser != 0)
+                    return Convert.ToInt32(x.idUser);
                 else return 0;
             }
 
@@ -37,54 +37,55 @@ namespace Service
             }   
         }
        [OperationContract]
-       public void UnesiDobavljaca(tbl_dobavljac dobavljac)
+       public void UnesiDobavljaca(lieferant dobavljac)
        {
            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
            {
-               context.tbl_dobavljacs.InsertOnSubmit(dobavljac);
+               context.lieferants.InsertOnSubmit(dobavljac);
                context.SubmitChanges();
            }
        }
        [OperationContract]
-       public ObservableCollection<tbl_dobavljac> ListaDobavljaca()
+       public ObservableCollection<lieferant> ListaDobavljaca()
        {
-           ObservableCollection<tbl_dobavljac> Lista = new ObservableCollection<tbl_dobavljac>();
+           ObservableCollection<lieferant> Lista = new ObservableCollection<lieferant>();
            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
            {
-               var x = from a in context.tbl_dobavljacs select a;
+               var x = from a in context.lieferants select a;
                Lista.Clear();
                foreach (var p in x)
                {
-                   Lista.Add(new tbl_dobavljac { 
-                   id_dobavljac=p.id_dobavljac,
-                   broj_dobavljaca=p.broj_dobavljaca,
-                   ime=p.ime,
-                   tip=p.tip,
-                   prezime=p.prezime,
-                   adresa=p.adresa,
+                   Lista.Add(new lieferant { 
+                   idLief=p.idLief,
+                   lieferantNr=p.lieferantNr,
+                   vorname=p.vorname,
+                   anrede=p.anrede,
+                   name=p.name,
+                   adresse=p.adresse,
                    tel1=p.tel1,
                    tel2=p.tel2,
-                   mobitel=p.mobitel,
+                   handy=p.handy,
                    skype=p.skype,
                    fax=p.skype,
                    email=p.email,
-                   banka=p.banka,
-                   blz=p.blz,
+                   bank=p.bank,
+                   BLZ=p.BLZ,
                    KtoNr=p.KtoNr,
-                   bic=p.bic,
-                   iban=p.iban,
-                   vlasnik_racuna=p.vlasnik_racuna,
-                   biljeska=p.biljeska,
-                   id_korisnik_FK=p.id_korisnik_FK,
-                   promet=p.promet,
-                   nacin_placanja=p.nacin_placanja,
-                   zemlja=p.zemlja,
-                   popust=p.popust,
-                   broj_dana=p.broj_dana,
-                   gotovina=p.gotovina,
+                   BIC=p.BIC,
+                   IBAN=p.IBAN,
+                   kontoinhaber=p.kontoinhaber,
+                   notiz=p.notiz,
+                   idUser=p.idUser,
+                   umsatz = p.umsatz,
+                   zahlweise=p.zahlweise,
+                   land=p.land,
+                   branche = p.branche,
+                   skonto = p.skonto,
+                   tage=p.tage,
+                   zahlbar = p.zahlbar,
                    rabat=p.rabat,
-                   ziro_racun=p.ziro_racun,
-                   porez=p.porez
+                   bankeinzug = p.bankeinzug,
+                   stauer=p.stauer
                    });
                }
              
@@ -97,51 +98,51 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_dobavljacs where a.broj_dobavljaca == brDobavljaca select a;
+                var query = from a in context.lieferants where a.lieferantNr == brDobavljaca select a;
 
                 foreach (var p in query)
                 {
-                    context.tbl_dobavljacs.DeleteOnSubmit(p);
+                    context.lieferants.DeleteOnSubmit(p);
                     context.SubmitChanges();
                 }
             }
         }
 
         [OperationContract]
-   public void UpdateDobavljac(tbl_dobavljac d)
+   public void UpdateDobavljac(lieferant d)
    {
        using(DataBaseModelDataContext context = new DataBaseModelDataContext())
        {
-           tbl_dobavljac dobavljac = (from a in context.tbl_dobavljacs where a.id_dobavljac == d.id_dobavljac select a).FirstOrDefault();
-           dobavljac.broj_dobavljaca = d.broj_dobavljaca;
-           dobavljac.tip = d.tip;
-           dobavljac.ime = d.ime;
-           dobavljac.prezime = d.prezime;
-           dobavljac.adresa = d.adresa;
+           lieferant dobavljac = (from a in context.lieferants where a.idLief == d.idLief select a).FirstOrDefault();
+           dobavljac.lieferantNr = d.lieferantNr;
+           dobavljac.anrede = d.anrede;
+           dobavljac.vorname = d.vorname;
+           dobavljac.name = d.name;
+           dobavljac.adresse = d.adresse;
            dobavljac.tel1 = d.tel1;
            dobavljac.tel2 = d.tel2;
-           dobavljac.mobitel = d.mobitel;
+           dobavljac.handy = d.handy;
            dobavljac.skype = d.skype;
            dobavljac.fax = d.fax;
            dobavljac.email = d.email;
-           dobavljac.banka = d.banka;
-           dobavljac.blz = d.blz;
+           dobavljac.bank = d.bank;
+           dobavljac.BLZ = d.BLZ;
            dobavljac.KtoNr = d.KtoNr;
-           dobavljac.bic = d.bic;
-           dobavljac.iban = d.iban;
-           dobavljac.vlasnik_racuna = d.vlasnik_racuna;
-           dobavljac.biljeska = d.biljeska;
-           dobavljac.id_korisnik_FK = d.id_korisnik_FK;
-           dobavljac.promet = d.promet;
-           dobavljac.nacin_placanja = d.nacin_placanja;
-           dobavljac.zemlja = d.zemlja;
-           dobavljac.poslovanje = d.poslovanje;
-           dobavljac.popust = d.popust;
-           dobavljac.broj_dana = d.broj_dana;
-           dobavljac.gotovina = d.gotovina;
+           dobavljac.BIC = d.BIC;
+           dobavljac.IBAN = d.IBAN;
+           dobavljac.kontoinhaber = d.kontoinhaber;
+           dobavljac.notiz = d.notiz;
+           dobavljac.idUser = d.idUser;
+           dobavljac.umsatz = d.umsatz;
+           dobavljac.zahlweise = d.zahlweise;
+           dobavljac.land = d.land;
+           dobavljac.branche = d.branche;
+           dobavljac.skonto = d.skonto;
+           dobavljac.tage = d.tage;
+           dobavljac.zahlbar = d.zahlbar;
            dobavljac.rabat = d.rabat;
-           dobavljac.ziro_racun = d.ziro_racun;
-           dobavljac.porez = d.porez;
+           dobavljac.bankeinzug = d.bankeinzug;
+           dobavljac.stauer = d.stauer;
            context.SubmitChanges();
        }
    }
@@ -155,79 +156,79 @@ namespace Service
                 string datum1;
                 datum1 = datum.ToString("yyyy-MM-dd");
 
-                tbl_radnik r = new tbl_radnik();
-                r.sifra_radnik = broj;
-                r.tip = titula;
-                r.ime = ime;
-                r.prezime = prezime;
-                r.adresa = adresa;
+                mitarbeiter r = new mitarbeiter();
+                r.mitarbeiterNr = broj;
+                r.anrede = titula;
+                r.vorname = ime;
+                r.name = prezime;
+                r.adresse = adresa;
                 r.tel1 = tel1;
                 r.tel2 = tel2;
-                r.mobitel = mobitel;
+                r.handy = mobitel;
                 r.fax = fax;
                 r.skype=skype;
                 r.email = email;
-                r.zarada = Convert.ToDecimal(zarada);
-                r.satnica = Convert.ToDecimal(satnica);
-                r.odmor = odmor;
-                r.odmor_na = odmor_na;
-                r.broj_plate = Convert.ToDecimal(broj_plate);
-                r.bolovanje = bolovanje;
-                r.banka = banka;
-                r.blz = blz;
-                r.bic = bic;
+                r.gehalt = Convert.ToDecimal(zarada);
+                r.stundenlohn = Convert.ToDecimal(satnica);
+                r.urlaub_ist = odmor;
+                r.urlaub_soll = odmor_na;
+                r.anzahl_gehalter = Convert.ToDecimal(broj_plate);
+                r.krankheit = bolovanje;
+                r.bank = banka;
+                r.BLZ = blz;
+                r.BIC = bic;
                 r.KtoNr = KtoNr;
-                r.iban = Iban;
-                r.vlasnik_racuna = vlasnik;
-                r.biljeska = biljeske;
+                r.IBAN = Iban;
+                r.kontoinhaber = vlasnik;
+                r.notiz = biljeske;
                 datum = Convert.ToDateTime(datum1);
                 r.datum = datum;
-                r.id_korisnik_FK = id;
-                r.status = true;
-                context.tbl_radniks.InsertOnSubmit(r);
+                r.idUser = id;
+                r.status = 1;
+                context.mitarbeiters.InsertOnSubmit(r);
                 context.SubmitChanges();
             }
         }
         [OperationContract]
-        public ObservableCollection<tbl_radnik> ListaRadnika()
+        public ObservableCollection<mitarbeiter> ListaRadnika()
         {
-            ObservableCollection<tbl_radnik> Lista = new ObservableCollection<tbl_radnik>();
+            ObservableCollection<mitarbeiter> Lista = new ObservableCollection<mitarbeiter>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_radniks select a;
+                var query = from a in context.mitarbeiters select a;
                 Lista.Clear();
                 foreach (var p in query)
                 {
-                    Lista.Add(new tbl_radnik
+                    Lista.Add(new mitarbeiter
                     {
-                       id_radnik=p.id_radnik,
-                       sifra_radnik=p.sifra_radnik,
-                       tip=p.tip,
-                       ime=p.ime,
-                       prezime=p.prezime,
-                       adresa=p.adresa,
+                       idMit=p.idMit,
+                       mitarbeiterNr=p.mitarbeiterNr,
+                       anrede=p.anrede,
+                       vorname=p.vorname,
+                       name=p.name,
+                       adresse=p.adresse,
                        tel1=p.tel1,
                        tel2=p.tel2,
-                       mobitel=p.mobitel,
+                       handy=p.handy,
                        fax=p.fax,
                        email=p.email,
-                       zarada=p.zarada,
-                       satnica=p.satnica,
-                       odmor=p.odmor,
-                       odmor_na=p.odmor_na,
-                       broj_plate=p.broj_plate,
-                       broj_nedelja=p.broj_nedelja,
-                       bolovanje=p.bolovanje,
-                       banka=p.banka,
-                       blz=p.blz,
-                       bic=p.bic,
+                       gehalt=p.gehalt,
+                       stundenlohn=p.stundenlohn,
+                       urlaub_ist=p.urlaub_ist,
+                       urlaub_soll=p.urlaub_soll,
+                       anzahl_gehalter=p.anzahl_gehalter,
+                       wochen_std=p.wochen_std,
+                       krankheit=p.krankheit,
+                       bank=p.bank,
+                       BLZ=p.BLZ,
+                       BIC=p.BIC,
                        KtoNr=p.KtoNr,
-                       iban=p.iban,
+                       IBAN=p.IBAN,
                        skype=p.skype,
-                       vlasnik_racuna=p.vlasnik_racuna,
-                       biljeska=p.biljeska,
+                       kontoinhaber=p.kontoinhaber,
+                       notiz=p.notiz,
                        datum=p.datum,
-                       id_korisnik_FK=p.id_korisnik_FK,
+                       idUser=p.idUser,
                        folder=p.folder,
                        status=p.status
                     });
@@ -237,36 +238,36 @@ namespace Service
         }
 
         [OperationContract]
-        public void UnesiKupca(tbl_kupac kupac)
+        public void UnesiKupca(kunden kupac)
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                context.tbl_kupacs.InsertOnSubmit(kupac);
+                context.kundens.InsertOnSubmit(kupac);
                 context.SubmitChanges();
             }
         }
         [OperationContract]
-        public ObservableCollection<tbl_korisnik> ComboKorisnici()
+        public ObservableCollection<user> ComboKorisnici()
         {
-            ObservableCollection<tbl_korisnik> Lista = new ObservableCollection<tbl_korisnik>();
+            ObservableCollection<user> Lista = new ObservableCollection<user>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_korisniks select a;
+                var query = from a in context.users select a;
 
                 foreach (var p in query)
                 {
-                    Lista.Add(new tbl_korisnik{
-                    id_korisnik= p.id_korisnik,
-                    ime=p.ime,
-                    prezime=p.prezime,
+                    Lista.Add(new user{
+                    idUser= p.idUser,
+                    firstName=p.firstName,
+                    lastName=p.lastName,
                     mail=p.mail,
                     username=p.username,
                     password=p.password,
-                    tip=p.tip,
+                    userType=p.userType,
                     telefon=p.telefon,
-                    aktivan=p.aktivan,
+                    active=p.active,
                     slika=p.slika,
-                    pocetna=p.pocetna
+                    startseit=p.startseit
                     });
                 }
                 return Lista;
@@ -274,28 +275,28 @@ namespace Service
         }
 
         [OperationContract]
-        public ObservableCollection<tbl_korisnik> ComboKorisniciPoruke(int id)
+        public ObservableCollection<user> ComboKorisniciPoruke(int id)
         {
-            ObservableCollection<tbl_korisnik> Lista = new ObservableCollection<tbl_korisnik>();
+            ObservableCollection<user> Lista = new ObservableCollection<user>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_korisniks where a.id_korisnik != id select a;
+                var query = from a in context.users where a.idUser != id select a;
 
                 foreach (var p in query)
                 {
-                    Lista.Add(new tbl_korisnik
+                    Lista.Add(new user
                     {
-                        id_korisnik = p.id_korisnik,
-                        ime = p.ime,
-                        prezime = p.prezime,
+                        idUser = p.idUser,
+                        firstName = p.firstName,
+                        lastName = p.lastName,
                         mail = p.mail,
                         username = p.username,
                         password = p.password,
-                        tip = p.tip,
+                        userType = p.userType,
                         telefon = p.telefon,
-                        aktivan = p.aktivan,
+                        active = p.active,
                         slika = p.slika,
-                        pocetna = p.pocetna
+                        startseit = p.startseit
                     });
                 }
                 return Lista;
@@ -303,61 +304,60 @@ namespace Service
         }
 
         [OperationContract]
-        public ObservableCollection<tbl_kupac> ListaKupaca()
+        public ObservableCollection<kunden> ListaKupaca()
         {
-            ObservableCollection<tbl_kupac> Lista = new ObservableCollection<tbl_kupac>();
+            ObservableCollection<kunden> Lista = new ObservableCollection<kunden>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_kupacs select a;
+                var query = from a in context.kundens select a;
                 Lista.Clear();
                 foreach (var p in query)
                 {
-                    Lista.Add(new tbl_kupac
+                    Lista.Add(new kunden
                     {
-                        id_kupac = p.id_kupac,
-                        pojam = p.pojam,
-                        ime = p.ime,
-                        prezime = p.prezime,
-                        mjesto = p.mjesto,
-                        grupa = p.grupa,
-                        slobodno_polje = p.slobodno_polje,
-                        ime2 = p.ime2,
-                        ulica = p.ulica,
+                        idKunde = p.idKunde,
+                        suchbegriff = p.suchbegriff,
+                        vorname = p.vorname,
+                        name = p.name,
+                        l_plz_ort = p.l_plz_ort,
+                        gruppe = p.gruppe,
+                        freifeld1 = p.freifeld1,
+                        name2 = p.name2,
+                        strasse = p.strasse,
                         tel1 = p.tel1,
                         tel2 = p.tel2,
                         fax = p.fax,
                         mail = p.mail,
                         lk = p.lk,
-                        dostava_na = p.dostava_na,
-                        dostava_od = p.dostava_od,
-                        vk_cijena = p.vk_cijena,
-                        gotovina = p.gotovina,
-                        popust_gotovina = p.popust_gotovina,
-                        dnevni_popust = p.dnevni_popust,
-                        predstavnik = p.predstavnik,
-                        limit_narudzbe = p.limit_narudzbe,
-                        tip = p.tip,
-                        adresa_dostava = p.adresa_dostava,
-                        adresa_fakture = p.adresa_fakture,
-                        mail2 = p.mail2,
-                        interner = p.interner,
-                        tip_kupca = p.tip_kupca,
-                        porez = p.porez,
-                        broj  = p.broj,
-                        broj_detalji = p.broj_detalji,
-                        ocjena_kupca = p.ocjena_kupca,
-                        biljeska = p.biljeska,
-                        naziv = p.naziv,
-                        zemlja = p.zemlja,
-                        placa = p.placa,
-                        rabat = p.rabat,
-                        adresa2 = p.adresa2,
-                        grad = p.grad,
-                        predmet = p.predmet,
-                        kontakt_osobe = p.kontakt_osobe,
-                        detalji_rute = p.detalji_rute,
+                        vorlage_am = p.vorlage_am,
+                        vorlage_anlass = p.vorlage_anlass,
+                        VKPreisgr = p.VKPreisgr,
+                        zahlungin = p.zahlungin,
+                        skonto = p.skonto,
+                        skontotage = p.skontotage,
+                        vertreter = p.vertreter,
+                        ufragssperre = p.ufragssperre,
+                        anreden = p.anreden,
+                        lieferadresse = p.lieferadresse,
+                        rechnungsadresse = p.rechnungsadresse,
+                        email2 = p.email2,
+                        internet = p.internet,
+                        kundetype = p.kundetype,
+                        steuer = p.steuer,
+                        zahlweise  = p.zahlweise,
+                        zahl_beding = p.zahl_beding,
+                        kundenbewertung = p.kundenbewertung,
+                        notiz = p.notiz,
                         titel = p.titel,
-                        broj_kupac = p.broj_kupac
+                        land = p.land,
+                        zahlbar = p.zahlbar,
+                        rabat = p.rabat,
+                        adresse2 = p.adresse2,
+                        stadt = p.stadt,
+                        anredeans = p.anredeans,
+                        anssprechepartner = p.anssprechepartner,
+                        notiz_route = p.notiz_route,                        
+                        kundeNr = p.kundeNr
                     });
                 }
                 return Lista;
@@ -369,65 +369,64 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_kupacs where a.broj_kupac == brKupca select a;
+                var query = from a in context.kundens where a.kundeNr == brKupca.ToString() select a;
 
                 foreach (var p in query)
                 {
-                    context.tbl_kupacs.DeleteOnSubmit(p);
+                    context.kundens.DeleteOnSubmit(p);
                     context.SubmitChanges();
                 }
             }
         }
 
         [OperationContract]
-        public void UpdateKupac(tbl_kupac k)
+        public void UpdateKupac(kunden k)
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                tbl_kupac kupac = (from a in context.tbl_kupacs where a.id_kupac == k.id_kupac select a).FirstOrDefault();
-                kupac.gotovina = k.gotovina;
-                kupac.adresa_dostava = k.adresa_dostava;
-                kupac.adresa_fakture = k.adresa_fakture;
-                kupac.adresa2 = k.adresa2;
-                kupac.biljeska = k.biljeska;
-                kupac.broj = k.broj;
-                kupac.broj_detalji = k.broj_detalji;
-                kupac.broj_kupac = k.broj_kupac;
-                kupac.detalji_rute = k.detalji_rute;
-                kupac.dnevni_popust = k.dnevni_popust;
-                kupac.dostava_na = k.dostava_na;
-                kupac.dostava_od = k.dostava_od;
-                kupac.fax = k.fax;
-                kupac.grad = k.grad;
-                kupac.grupa = k.grupa;
-                kupac.ime = k.ime;
-                kupac.ime2 = k.ime2;
-                kupac.interner = k.interner;
-                kupac.kontakt_osobe = k.kontakt_osobe;
-                kupac.limit_narudzbe = k.limit_narudzbe;
-                kupac.lk = k.lk;
-                kupac.mail = k.mail;
-                kupac.mail2 = k.mail2;
-                kupac.mjesto = k.mjesto;
-                kupac.naziv = k.naziv;
-                kupac.ocjena_kupca = k.ocjena_kupca;
-                kupac.placa = k.placa;
-                kupac.pojam = k.pojam;
-                kupac.popust_gotovina = k.popust_gotovina;
-                kupac.porez = k.porez;
-                kupac.predmet = k.predmet;
-                kupac.predstavnik = k.predstavnik;
-                kupac.prezime = k.prezime;
-                kupac.rabat = k.rabat;
-                kupac.slobodno_polje = k.slobodno_polje;
+                kunden kupac = (from a in context.kundens where a.idKunde == k.idKunde select a).FirstOrDefault();
+                kupac.kundeNr = k.kundeNr;
+                kupac.suchbegriff = k.suchbegriff;
+                kupac.vorname = k.vorname;
+                kupac.name = k.name;
+                kupac.l_plz_ort = k.l_plz_ort;
+                kupac.gruppe = k.gruppe;
+                kupac.freifeld1 = k.freifeld1;
+                kupac.name2 = k.name2;
+                kupac.strasse = k.strasse;
                 kupac.tel1 = k.tel1;
                 kupac.tel2 = k.tel2;
-                kupac.tip = k.tip;
-                kupac.tip_kupca = k.tip_kupca;
+                kupac.fax = k.fax;
+                kupac.mail = k.mail;
+                kupac.lk = k.lk;
+                kupac.vorlage_am = k.vorlage_am;
+                kupac.vorlage_anlass = k.vorlage_anlass;
+                kupac.VKPreisgr = k.VKPreisgr;
+                kupac.zahlungin = k.zahlungin;
+                kupac.skonto = k.skonto;
+                kupac.skontotage = k.skontotage;
+                kupac.vertreter = k.vertreter;
+                kupac.ufragssperre = k.ufragssperre;
+                kupac.anreden = k.anreden;
+                kupac.lieferadresse = k.lieferadresse;
+                kupac.rechnungsadresse = k.rechnungsadresse;
+                kupac.email2 = k.email2;
+                kupac.internet = k.internet;
+                kupac.kundetype = k.kundetype;
+                kupac.steuer = k.steuer;
+                kupac.zahlweise = k.zahlweise;
+                kupac.zahl_beding = k.zahl_beding;
+                kupac.kundenbewertung = k.kundenbewertung;
+                kupac.notiz = k.notiz;
                 kupac.titel = k.titel;
-                kupac.ulica = k.ulica;
-                kupac.vk_cijena = k.vk_cijena;
-                kupac.zemlja = k.zemlja;
+                kupac.land = k.land;
+                kupac.zahlbar = k.zahlbar;
+                kupac.rabat = k.rabat;
+                kupac.adresse2 = k.adresse2;
+                kupac.stadt = k.stadt;
+                kupac.anredeans = k.anredeans;
+                kupac.anssprechepartner = k.anssprechepartner;
+                kupac.notiz_route = k.notiz_route;
                 context.SubmitChanges();
             }
         }
@@ -437,30 +436,30 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                int lastIdOld = (from l in context.tbl_korisniks orderby l.id_korisnik descending select l.id_korisnik).First();
+                int lastIdOld = (from l in context.users orderby l.idUser descending select Convert.ToInt32(l.idUser)).First();
                 try
                 {
-                    tbl_korisnik korisnik = new tbl_korisnik();
-                    korisnik.ime = Name;
-                    korisnik.prezime = LastName;
+                    user korisnik = new user();
+                    korisnik.firstName = Name;
+                    korisnik.lastName = LastName;
                     korisnik.mail = Email;
                     korisnik.username = Username;
                     korisnik.password = Password;
-                    korisnik.tip = UserType;
+                    korisnik.userType = UserType;
                     korisnik.telefon = Telefon;
-                    korisnik.aktivan = Aktivan;
+                    korisnik.active = Convert.ToInt32(Aktivan);
                     korisnik.slika = Slika;
-                    korisnik.pocetna = Pocetna;
-                    context.tbl_korisniks.InsertOnSubmit(korisnik);
+                    korisnik.startseit = Convert.ToInt32(Pocetna);
+                    context.users.InsertOnSubmit(korisnik);
                     context.SubmitChanges();
-                    int lastIdNew = (from l in context.tbl_korisniks orderby l.id_korisnik descending select l.id_korisnik).First();
+                    int lastIdNew = (from l in context.users orderby l.idUser descending select Convert.ToInt32(l.idUser)).First();
                     if (lastIdNew > lastIdOld)
                     {
-                        tbl_korisnik_licenca korLicenca = new tbl_korisnik_licenca();
-                        korLicenca.id_korisnik_FK = lastIdNew;
+                        user_licence korLicenca = new user_licence();
+                        korLicenca.idUser = lastIdNew;
                         korLicenca.datum = Convert.ToDateTime(Licence);
-                        korLicenca.aktivan = Aktivan;
-                        context.tbl_korisnik_licencas.InsertOnSubmit(korLicenca);
+                        korLicenca.active = Convert.ToInt32(Aktivan);
+                        context.user_licences.InsertOnSubmit(korLicenca);
                         context.SubmitChanges();
                     }
                 }
@@ -478,25 +477,25 @@ namespace Service
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
                // var query = from a in context.tbl_kupacs select a;
-                var query = from t1 in context.tbl_korisniks
-                            join t2 in context.tbl_korisnik_licencas on t1.id_korisnik equals t2.id_korisnik_FK
-                            select new {t1.id_korisnik, t1.ime, t1.prezime, t1.mail, t1.tip, t1.username, t1.password, t1.telefon, t2.datum, t1.pocetna, t1.aktivan, t1.slika };
+                var query = from t1 in context.users
+                            join t2 in context.user_licences on t1.idUser equals t2.idUser
+                            select new {t1.idUser, t1.firstName, t1.lastName, t1.mail, t1.userType, t1.username, t1.password, t1.telefon, t2.datum, t1.startseit, t1.active, t1.slika };
                 Lista.Clear();
                 foreach (var p in query)
                 {
                     Lista.Add(new p_get_User_ViewResult
                     {
-                        id_korisnik = p.id_korisnik,
-                        ime = p.ime,
-                        prezime = p.prezime,
+                        idUser = p.idUser,
+                        firstName = p.firstName,
+                        lastName = p.lastName,
                         mail = p.mail,
-                        tip = p.tip,
+                        userType = p.userType,
                         username = p.username,
                         password = p.password,
                         telefon = p.telefon,
                         datum = p.datum,
-                        pocetna = p.pocetna,
-                        aktivan = p.aktivan,
+                        startseit = p.startseit,
+                        active = p.active,
                         slika = p.slika
                     });
                 }
@@ -520,44 +519,44 @@ namespace Service
         public  DataSet getUsersView()
         {
             DataSet ds = new DataSet();
-            DataTable dt = new DataTable("tblKorisnik");
-            dt.Columns.Add(new DataColumn("id_korisnik", typeof(int)));
-            dt.Columns.Add(new DataColumn("ime", typeof(string)));
-            dt.Columns.Add(new DataColumn("prezime", typeof(string)));
+            DataTable dt = new DataTable("user");
+            dt.Columns.Add(new DataColumn("idUser", typeof(int)));
+            dt.Columns.Add(new DataColumn("firstName", typeof(string)));
+            dt.Columns.Add(new DataColumn("lastName", typeof(string)));
             dt.Columns.Add(new DataColumn("mail", typeof(string)));
-            dt.Columns.Add(new DataColumn("tip", typeof(string)));
+            dt.Columns.Add(new DataColumn("userType", typeof(string)));
             dt.Columns.Add(new DataColumn("username", typeof(string)));
             dt.Columns.Add(new DataColumn("password", typeof(string)));
             dt.Columns.Add(new DataColumn("telefon", typeof(string)));
             dt.Columns.Add(new DataColumn("datum", typeof(DateTime)));
-            dt.Columns.Add(new DataColumn("pocetna", typeof(bool)));
-            dt.Columns.Add(new DataColumn("aktivan", typeof(bool)));
+            dt.Columns.Add(new DataColumn("startseit", typeof(bool)));
+            dt.Columns.Add(new DataColumn("active", typeof(bool)));
             dt.Columns.Add(new DataColumn("slika", typeof(string)));
             //DataRow dr = dt.NewRow();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = (from t1 in context.tbl_korisniks
-                            join t2 in context.tbl_korisnik_licencas on t1.id_korisnik equals t2.id_korisnik_FK
-                            select new { t1.id_korisnik, t1.ime, t1.prezime, t1.mail, t1.tip, t1.username, t1.password, t1.telefon, t2.datum, t1.pocetna, t1.aktivan, t1.slika}).ToList();
+                var query = (from t1 in context.users
+                            join t2 in context.user_licences on t1.idUser equals t2.idUser
+                            select new { t1.idUser, t1.firstName, t1.lastName, t1.mail, t1.userType, t1.username, t1.password, t1.telefon, t2.datum, t1.startseit, t1.active, t1.slika}).ToList();
                 dt.Clear();
                 foreach(var g in query)
             {
                     DataRow dr = dt.NewRow();
-                dr["id_korisnik"] = g.id_korisnik;
-                dr["ime"] = g.ime;
-                dr["prezime"] = g.prezime;
+                dr["idUser"] = g.idUser;
+                dr["firstName"] = g.firstName;
+                dr["lastName"] = g.lastName;
                 dr["mail"] = g.mail;
-                if (g.tip == 0) {dr["tip"] = "Administrator";}
-                else if (g.tip == 1) { dr["tip"] = "Mitarbeiter"; }
-                else if (g.tip == 2) { dr["tip"] = "Sekretarin"; }
-                else if (g.tip == 3) { dr["tip"] = "Techniker"; }
-                else if (g.tip == 4) { dr["tip"] = "Werkstattleiter"; }
+                if (g.userType == 0) { dr["userType"] = "Administrator"; }
+                else if (g.userType == 1) { dr["userType"] = "Mitarbeiter"; }
+                else if (g.userType == 2) { dr["userType"] = "Sekretarin"; }
+                else if (g.userType == 3) { dr["userType"] = "Techniker"; }
+                else if (g.userType == 4) { dr["userType"] = "Werkstattleiter"; }
                 dr["username"] = g.username;
                 dr["password"] = g.password;
                 dr["telefon"] = g.telefon;
                 dr["datum"] = g.datum;
-                dr["pocetna"] = g.pocetna;
-                dr["aktivan"] = g.aktivan;
+                dr["startseit"] = g.startseit;
+                dr["active"] = g.active;
                 dr["slika"] = g.slika;
                 //dr["mail"] = g.mail;
                 dt.Rows.Add(dr);
@@ -573,49 +572,50 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_radniks where a.sifra_radnik == sifraRadnik select a;
+                var query = from a in context.mitarbeiters where a.mitarbeiterNr == sifraRadnik select a;
 
                 foreach (var p in query)
                 {
-                    context.tbl_radniks.DeleteOnSubmit(p);
+                    context.mitarbeiters.DeleteOnSubmit(p);
                     context.SubmitChanges();
                 }
             }
         }
 
         [OperationContract]
-        public void UpdateRadnika(tbl_radnik r, int id)
+        public void UpdateRadnika(mitarbeiter r, int id)
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                tbl_radnik radnik = (from a in context.tbl_radniks where a.id_radnik == r.id_radnik select a).FirstOrDefault();
-                radnik.sifra_radnik = r.sifra_radnik;
-                radnik.tip = r.tip;
-                radnik.ime = r.ime;
-                radnik.prezime = r.prezime;
-                radnik.adresa = r.adresa;
+                mitarbeiter radnik = (from a in context.mitarbeiters where a.idMit == r.idMit select a).FirstOrDefault();
+                radnik.mitarbeiterNr = r.mitarbeiterNr;
+                radnik.anrede = r.anrede;
+                radnik.vorname = r.vorname;
+                radnik.name = r.name;
+                radnik.adresse = r.adresse;
                 radnik.tel1 = r.tel1;
                 radnik.tel2 = r.tel2;
-                radnik.mobitel = r.mobitel;
+                radnik.handy = r.handy;
                 radnik.fax = r.fax;
                 radnik.skype = r.skype;
                 radnik.email = r.email;
-                radnik.zarada = r.zarada;
-                radnik.satnica = r.satnica;
-                radnik.odmor = r.odmor;
-                radnik.odmor_na = r.odmor_na;
-                radnik.broj_plate = r.broj_plate;
-                radnik.bolovanje = r.bolovanje;
-                radnik.banka = r.banka;
-                radnik.blz = r.blz;
-                radnik.bic = r.bic;
+                radnik.gehalt = r.gehalt;
+                radnik.stundenlohn = r.stundenlohn;
+                radnik.urlaub_ist = r.urlaub_ist;
+                radnik.urlaub_soll = r.urlaub_soll;
+                radnik.anzahl_gehalter = r.anzahl_gehalter;
+                radnik.wochen_std = r.wochen_std;
+                radnik.krankheit = r.krankheit;
+                radnik.bank = r.bank;
+                radnik.BLZ = r.BLZ;
+                radnik.BIC = r.BIC;
                 radnik.KtoNr = r.KtoNr;
-                radnik.iban = r.iban;
-                radnik.vlasnik_racuna = r.vlasnik_racuna;
-                radnik.biljeska = r.biljeska;
+                radnik.IBAN = r.IBAN;
+                radnik.kontoinhaber = r.kontoinhaber;
+                radnik.notiz = r.notiz;
                 radnik.datum = r.datum;
-                radnik.id_korisnik_FK = id;
-                r.status = true;
+                radnik.idUser = id;
+                r.status = 1;
                 radnik.folder = r.folder;
                 radnik.status = r.status;
                
@@ -624,23 +624,23 @@ namespace Service
         }
 
         [OperationContract]
-        public tbl_korisnik VratiKorisnika(int id)
+        public user VratiKorisnika(int id)
         {
             using(DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                tbl_korisnik korisnik = new tbl_korisnik();
-                var query = (from a in context.tbl_korisniks where a.id_korisnik == id select a).Single();
-                korisnik.id_korisnik = query.id_korisnik;
-                korisnik.ime = query.ime;
-                korisnik.prezime = query.prezime;
+                user korisnik = new user();
+                var query = (from a in context.users where a.idUser == id select a).Single();
+                korisnik.idUser = query.idUser;
+                korisnik.firstName = query.firstName;
+                korisnik.lastName = query.lastName;
                 korisnik.mail = query.mail;
                 korisnik.username = query.username;
                 korisnik.password = query.password;
-                korisnik.tip = query.tip;
+                korisnik.userType = query.userType;
                 korisnik.telefon = query.telefon;
-                korisnik.aktivan = query.aktivan;
+                korisnik.active = query.active;
                 korisnik.slika = query.slika;
-                korisnik.pocetna = query.pocetna;
+                korisnik.startseit = query.startseit;
                 return korisnik;
                 
             }
@@ -653,21 +653,21 @@ namespace Service
             {
                 try
                 {
-                    tbl_korisnik_licenca korLIcenca = context.tbl_korisnik_licencas.Single(p => p.id_korisnik_FK == idUser);
+                    user_licence korLIcenca = context.user_licences.Single(p => p.idUser == idUser);
                     korLIcenca.datum = Convert.ToDateTime(Licence);
                     context.SubmitChanges();
 
-                    tbl_korisnik korisnik = context.tbl_korisniks.Single(e => e.id_korisnik == idUser);
-                    korisnik.ime = Name;
-                    korisnik.prezime = LastName;
+                    user korisnik = context.users.Single(e => e.idUser == idUser);
+                    korisnik.firstName = Name;
+                    korisnik.lastName = LastName;
                     korisnik.mail = Email;
                     korisnik.username = Username;
                     korisnik.password = Password;
-                    korisnik.tip = UserType;
+                    korisnik.userType = UserType;
                     korisnik.telefon = Telefon;
-                    korisnik.aktivan = Aktivan;
+                    korisnik.active = Convert.ToInt32(Aktivan);
                     korisnik.slika = Slika;
-                    korisnik.pocetna = Pocetna;
+                    korisnik.startseit = Convert.ToInt32(Pocetna);
                     context.SubmitChanges();                  
                 }
                 catch (Exception e)
@@ -677,21 +677,21 @@ namespace Service
             }
         }
         [OperationContract]
-        public void UpdateKorisnik(tbl_korisnik k)
+        public void UpdateKorisnik(user k)
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                tbl_korisnik korisnik = (from a in context.tbl_korisniks where a.id_korisnik == k.id_korisnik select a).FirstOrDefault();
-                korisnik.ime=k.ime;
-                korisnik.prezime=k.prezime;
+                user korisnik = (from a in context.users where a.idUser == k.idUser select a).FirstOrDefault();
+                korisnik.firstName=k.firstName;
+                korisnik.lastName=k.lastName;
                 korisnik.mail = k.mail;
                 korisnik.username = k.username;
                 korisnik.password = k.password;
-                korisnik.tip = k.tip;
+                korisnik.userType = k.userType;
                 korisnik.telefon = k.telefon;
-                korisnik.aktivan = k.aktivan;
+                korisnik.active = k.active;
                 korisnik.slika = k.slika;
-                korisnik.pocetna = k.pocetna;
+                korisnik.startseit = k.startseit;
                 context.SubmitChanges();
             }
         }
@@ -701,60 +701,60 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var queryKor = from a in context.tbl_korisniks where a.id_korisnik == idUser select a;
-                var queryLic = from a in context.tbl_korisnik_licencas where a.id_korisnik_FK == idUser select a;
+                var queryKor = from a in context.users where a.idUser == idUser select a;
+                var queryLic = from a in context.user_licences where a.idUser == idUser select a;
 
                 foreach (var u in queryLic)
                 {
-                    context.tbl_korisnik_licencas.DeleteOnSubmit(u);
+                    context.user_licences.DeleteOnSubmit(u);
                     context.SubmitChanges();
                 }
                 foreach (var p in queryKor)
                 {
-                    context.tbl_korisniks.DeleteOnSubmit(p);
+                    context.users.DeleteOnSubmit(p);
                     context.SubmitChanges();
                 }
             }
         }
 
         [OperationContract]
-        public ObservableCollection<tbl_radnik> PretraziRadnika(string ime)
+        public ObservableCollection<mitarbeiter> PretraziRadnika(string ime)
         {
-            ObservableCollection<tbl_radnik> ListaTrazenihRadnika = new ObservableCollection<tbl_radnik>();
+            ObservableCollection<mitarbeiter> ListaTrazenihRadnika = new ObservableCollection<mitarbeiter>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_radniks where SqlMethods.Like(a.ime, "%"+ime+"%") select a;
+                var query = from a in context.mitarbeiters where SqlMethods.Like(a.vorname, "%"+ime+"%") select a;
                 foreach (var p in query)
                 {
-                    ListaTrazenihRadnika.Add(new tbl_radnik
+                    ListaTrazenihRadnika.Add(new mitarbeiter
                     {
-                        id_radnik=p.id_radnik,
-                        sifra_radnik=p.sifra_radnik,
-                        tip=p.tip,
-                        ime=p.ime,
-                        prezime=p.prezime,
-                        adresa=p.adresa,
+                        idMit=p.idMit,
+                        mitarbeiterNr=p.mitarbeiterNr,
+                        anrede=p.anrede,
+                        vorname=p.vorname,
+                        name=p.name,
+                        adresse=p.adresse,
                         tel1=p.tel1,
                         tel2=p.tel2,
-                        mobitel=p.mobitel,
+                        handy=p.handy,
                         fax=p.fax,
                         email=p.email,
-                        zarada=p.zarada,
-                        satnica=p.satnica,
-                        odmor=p.odmor,
-                        odmor_na=p.odmor_na,
-                        broj_plate=p.broj_plate,
-                        broj_nedelja=p.broj_nedelja,
-                        bolovanje=p.bolovanje,
-                        banka=p.banka,
-                        blz=p.blz,
-                        bic=p.bic,
+                        gehalt=p.gehalt,
+                        stundenlohn=p.stundenlohn,
+                        urlaub_ist=p.urlaub_ist,
+                        urlaub_soll=p.urlaub_soll,
+                        anzahl_gehalter=p.anzahl_gehalter,
+                        wochen_std=p.wochen_std,
+                        krankheit=p.krankheit,
+                        bank=p.bank,
+                        BLZ=p.BLZ,
+                        BIC=p.BIC,
                         KtoNr=p.KtoNr,
-                        iban=p.iban,
-                        vlasnik_racuna=p.vlasnik_racuna,
-                        biljeska=p.biljeska,
+                        IBAN=p.IBAN,
+                        kontoinhaber=p.kontoinhaber,
+                        notiz=p.notiz,
                         datum=p.datum,
-                        id_korisnik_FK=p.id_korisnik_FK,
+                        idUser=p.idUser,
                         folder=p.folder,
                         status=p.status
 
@@ -766,50 +766,48 @@ namespace Service
             }
         }
         [OperationContract]
-        public ObservableCollection<tbl_dobavljac> PretraziDobavljaca(string ime)
+        public ObservableCollection<lieferant> PretraziDobavljaca(string ime)
         {
-            ObservableCollection<tbl_dobavljac> ListaTrazenihDobavljaca = new ObservableCollection<tbl_dobavljac>();
+            ObservableCollection<lieferant> ListaTrazenihDobavljaca = new ObservableCollection<lieferant>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_dobavljacs where SqlMethods.Like(a.ime, "%" + ime + "%") select a;
+                var query = from a in context.lieferants where SqlMethods.Like(a.vorname, "%" + ime + "%") select a;
 
                 foreach (var p in query)
                 {
                     ListaTrazenihDobavljaca.Add(
-                         new tbl_dobavljac { 
-                        id_dobavljac=p.id_dobavljac,
-                        broj_dobavljaca=p.broj_dobavljaca,
-                        tip=p.tip,
-                        ime=p.ime,
-                        prezime=p.prezime,
-                        adresa=p.adresa,
+                         new lieferant { 
+                        idLief=p.idLief,
+                        lieferantNr=p.lieferantNr,
+                        anrede=p.anrede,
+                        vorname=p.vorname,
+                        name=p.name,
+                        adresse=p.adresse,
                         tel1=p.tel1,
                         tel2=p.tel2,
-                        mobitel=p.mobitel,
+                        handy=p.handy,
                         skype=p.skype,
                         fax=p.fax,
                         email=p.email,
-                        banka=p.banka,
-                        blz=p.blz,
+                        bank=p.bank,
+                        BLZ=p.BLZ,
                         KtoNr=p.KtoNr,
-                        bic=p.bic,
-                        iban=p.iban,
-                        vlasnik_racuna=p.vlasnik_racuna,
-                        biljeska=p.biljeska,
-                        id_korisnik_FK=p.id_korisnik_FK,
-                        promet=p.promet,
-                        nacin_placanja=p.nacin_placanja,
-                        zemlja=p.zemlja,
-                        poslovanje=p.poslovanje,
-                        popust=p.popust,
-                        broj_dana=p.broj_dana,
-                        gotovina=p.gotovina,
+                        BIC=p.BIC,
+                        IBAN=p.IBAN,
+                        kontoinhaber=p.kontoinhaber,
+                        notiz=p.notiz,
+                        idUser=p.idUser,
+                        umsatz=p.umsatz,
+                        zahlweise=p.zahlweise,
+                        land=p.land,
+                        branche=p.branche,
+                        skonto = p.skonto,
+                        tage = p.tage,
+                        zahlbar = p.zahlbar,
                         rabat=p.rabat,
-                        ziro_racun=p.ziro_racun,
-                        porez=p.porez
-
-                    
-                        });
+                        bankeinzug = p.bankeinzug,
+                        stauer=p.stauer
+                  });
 
                 }
                 return ListaTrazenihDobavljaca;
@@ -823,12 +821,12 @@ namespace Service
             {
                 try
                 {
-                    tbl_korisnik korisnik = context.tbl_korisniks.Single(e => e.id_korisnik == idUser);
+                    user korisnik = context.users.Single(e => e.idUser == idUser);
 
                     if (tip == 1)
-                    { korisnik.pocetna = value; }
+                    { korisnik.startseit = Convert.ToInt32(value); }
                     else if (tip == 2)
-                    { korisnik.aktivan = value; }
+                    { korisnik.active = Convert.ToInt32(value); }
 
                     context.SubmitChanges();
                 }
@@ -845,8 +843,8 @@ namespace Service
             {
                 try
                 {
-                    tbl_radnik radnik = context.tbl_radniks.Single(e => e.id_radnik == idRadnika);
-                    radnik.status = status;
+                    mitarbeiter radnik = context.mitarbeiters.Single(e => e.idMit == idRadnika);
+                    radnik.status = Convert.ToInt32(status);
                     context.SubmitChanges();
                 }
                 catch (Exception ex)
@@ -864,13 +862,13 @@ namespace Service
             { 
             try
             {
-                tbl_greske greske = new tbl_greske();
-                greske.idUser = idUser;
-                greske.sadrzaj = bugText;
-                greske.status = status;
-                greske.datum =date;
+                bug greske = new bug();
+                greske.user_id = idUser;
+                greske.bug1 = bugText;
+                greske.status = Convert.ToInt32(status);
+                greske.datum = Convert.ToDateTime(date);
 
-                context.tbl_greskes.InsertOnSubmit(greske);
+                context.bugs.InsertOnSubmit(greske);
                 context.SubmitChanges();
             }
                 catch(Exception e)
@@ -881,19 +879,19 @@ namespace Service
         }
 
         [OperationContract]
-        public ObservableCollection<tbl_greske> ListaBugova()
+        public ObservableCollection<bug> ListaBugova()
         {
-            ObservableCollection<tbl_greske> Lista = new ObservableCollection<tbl_greske>();
+            ObservableCollection<bug> Lista = new ObservableCollection<bug>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = from a in context.tbl_greskes select a;
+                var x = from a in context.bugs select a;
                 Lista.Clear();
                 foreach (var p in x)
                 {
-                    Lista.Add(new tbl_greske
+                    Lista.Add(new bug
                     {
-                        idUser = p.idUser,
-                        sadrzaj = p.sadrzaj,
+                        user_id = p.user_id,
+                        bug1 = p.bug1,
                         status = p.status,
                         datum = p.datum
                     });
@@ -910,8 +908,8 @@ namespace Service
             {
                 try
                 {
-                    tbl_greske greske = context.tbl_greskes.Single(e => e.datum == datum);                
-                    greske.status = statusValue;
+                    bug greske = context.bugs.Single(e => e.datum == Convert.ToDateTime(datum));                
+                    greske.status = Convert.ToInt32(statusValue);
                     context.SubmitChanges();
                 }
                 catch (Exception e)
@@ -926,11 +924,11 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_greskes where a.datum == datum select a;
+                var query = from a in context.bugs where a.datum == Convert.ToDateTime(datum) select a;
 
                 foreach (var p in query)
                 {
-                    context.tbl_greskes.DeleteOnSubmit(p);
+                    context.bugs.DeleteOnSubmit(p);
                     context.SubmitChanges();
                 }
             }
@@ -941,11 +939,11 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.tbl_radniks select new { a.sifra_radnik }).ToList().LastOrDefault();
+                var x = (from a in context.mitarbeiters select new { a.mitarbeiterNr }).ToList().LastOrDefault();
                 if (x == null)
                     return 1000;
                 else
-                    return x.sifra_radnik + 1;
+                    return Convert.ToInt32(x.mitarbeiterNr + 1);
             }
         }
 
@@ -954,11 +952,11 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.tbl_dobavljacs select new { a.broj_dobavljaca }).ToList().LastOrDefault();
+                var x = (from a in context.lieferants select new { a.lieferantNr }).ToList().LastOrDefault();
                 if (x == null)
                     return 1000;
                 else
-                    return x.broj_dobavljaca + 1;
+                    return x.lieferantNr + 1;
             }
         }
 
@@ -967,11 +965,11 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.tbl_kupacs select new { a.broj_kupac }).ToList().LastOrDefault();
+                var x = (from a in context.kundens select new { a.kundeNr }).ToList().LastOrDefault();
                 if (x == null)
                     return 1000;
                 else
-                    return x.broj_kupac + 1;
+                    return Convert.ToInt32(x.kundeNr) + 1;
             }
         }
 
@@ -980,7 +978,7 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.tbl_angebots select new { a.angebotnr }).ToList().LastOrDefault();
+                var x = (from a in context.angebots select new { a.angebotnr }).ToList().LastOrDefault();
                 if (x == null)
                     return 1000;
                 else
@@ -1064,61 +1062,60 @@ namespace Service
         }
 
         [OperationContract]
-        public ObservableCollection<tbl_kupac> ListaKupacaSearch(int broj)
+        public ObservableCollection<kunden> ListaKupacaSearch(int broj)
         {
-            ObservableCollection<tbl_kupac> Lista = new ObservableCollection<tbl_kupac>();
+            ObservableCollection<kunden> Lista = new ObservableCollection<kunden>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var query = from a in context.tbl_kupacs where a.broj_kupac.ToString().Contains("/'"+broj+"'/")  select a;
+                var query = from a in context.kundens where a.kundeNr.ToString().Contains("/'"+broj+"'/")  select a;
                 Lista.Clear();
                 foreach (var p in query)
                 {
-                    Lista.Add(new tbl_kupac
+                    Lista.Add(new kunden
                     {
-                        id_kupac = p.id_kupac,
-                        pojam = p.pojam,
-                        ime = p.ime,
-                        prezime = p.prezime,
-                        mjesto = p.mjesto,
-                        grupa = p.grupa,
-                        slobodno_polje = p.slobodno_polje,
-                        ime2 = p.ime2,
-                        ulica = p.ulica,
+                        idKunde = p.idKunde,
+                        suchbegriff = p.suchbegriff,
+                        vorname = p.vorname,
+                        name = p.name,
+                        l_plz_ort = p.l_plz_ort,
+                        gruppe = p.gruppe,
+                        freifeld1 = p.freifeld1,
+                        name2 = p.name2,
+                        strasse = p.strasse,
                         tel1 = p.tel1,
                         tel2 = p.tel2,
                         fax = p.fax,
                         mail = p.mail,
                         lk = p.lk,
-                        dostava_na = p.dostava_na,
-                        dostava_od = p.dostava_od,
-                        vk_cijena = p.vk_cijena,
-                        gotovina = p.gotovina,
-                        popust_gotovina = p.popust_gotovina,
-                        dnevni_popust = p.dnevni_popust,
-                        predstavnik = p.predstavnik,
-                        limit_narudzbe = p.limit_narudzbe,
-                        tip = p.tip,
-                        adresa_dostava = p.adresa_dostava,
-                        adresa_fakture = p.adresa_fakture,
-                        mail2 = p.mail2,
-                        interner = p.interner,
-                        tip_kupca = p.tip_kupca,
-                        porez = p.porez,
-                        broj = p.broj,
-                        broj_detalji = p.broj_detalji,
-                        ocjena_kupca = p.ocjena_kupca,
-                        biljeska = p.biljeska,
-                        naziv = p.naziv,
-                        zemlja = p.zemlja,
-                        placa = p.placa,
-                        rabat = p.rabat,
-                        adresa2 = p.adresa2,
-                        grad = p.grad,
-                        predmet = p.predmet,
-                        kontakt_osobe = p.kontakt_osobe,
-                        detalji_rute = p.detalji_rute,
+                        vorlage_am = p.vorlage_am,
+                        vorlage_anlass = p.vorlage_anlass,
+                        VKPreisgr = p.VKPreisgr,
+                        zahlungin = p.zahlungin,
+                        skonto = p.skonto,
+                        skontotage = p.skontotage,
+                        vertreter = p.vertreter,
+                        ufragssperre = p.ufragssperre,
+                        anreden = p.anreden,
+                        lieferadresse = p.lieferadresse,
+                        rechnungsadresse = p.rechnungsadresse,
+                        email2 = p.email2,
+                        internet = p.internet,
+                        kundetype = p.kundetype,
+                        steuer = p.steuer,
+                        zahlweise = p.zahlweise,
+                        zahl_beding = p.zahl_beding,
+                        kundenbewertung = p.kundenbewertung,
+                        notiz = p.notiz,
                         titel = p.titel,
-                        broj_kupac = p.broj_kupac
+                        land = p.land,
+                        zahlbar = p.zahlbar,
+                        rabat = p.rabat,
+                        adresse2 = p.adresse2,
+                        stadt = p.stadt,
+                        anredeans = p.anredeans,
+                        anssprechepartner = p.anssprechepartner,
+                        notiz_route = p.notiz_route,
+                        kundeNr = p.kundeNr
                     });
                 }
                 return Lista;
@@ -1126,131 +1123,131 @@ namespace Service
         }
 
         [OperationContract]
-        public ObservableCollection<tbl_materijal> getMaterijal() 
+        public ObservableCollection<materijal> getMaterijal() 
         {
-            ObservableCollection<tbl_materijal> ListaM = new ObservableCollection<tbl_materijal>();
+            ObservableCollection<materijal> ListaM = new ObservableCollection<materijal>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
             {
-                var x = from a in context.tbl_materijals select a;
+                var x = from a in context.materijals select a;
                 ListaM.Clear();
                 foreach (var p in x) 
                 {
-                    ListaM.Add(new tbl_materijal { idmaterijal = p.idmaterijal, naziv = p.naziv});
+                    ListaM.Add(new materijal { id = p.id, naziv = p.naziv});
                 }
             }
             return ListaM;
         }
         [OperationContract]
-        public ObservableCollection<tbl_produkt> getProdukt() 
+        public ObservableCollection<produkt> getProdukt() 
         {
-            ObservableCollection<tbl_produkt> ListaP = new ObservableCollection<tbl_produkt>();
+            ObservableCollection<produkt> ListaP = new ObservableCollection<produkt>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
             {
-                var x = from a in context.tbl_produkts select a;
+                var x = from a in context.produkts select a;
                 ListaP.Clear();
                 foreach (var p in x)
                 {
-                    ListaP.Add(new tbl_produkt { idprodukt = p.idprodukt, naziv = p.naziv});
+                    ListaP.Add(new produkt { idprodukt = p.idprodukt, naziv = p.naziv});
                 }
             }
             return ListaP;
         }
         [OperationContract]
-        public ObservableCollection<tbl_povrsina> getPovrsinaByMaterijal(int matId) 
+        public ObservableCollection<oberflache> getPovrsinaByMaterijal(int matId) 
         {
-            ObservableCollection<tbl_povrsina> ListP = new ObservableCollection<tbl_povrsina>();
+            ObservableCollection<oberflache> ListP = new ObservableCollection<oberflache>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
             {
-                var x = from a in context.tbl_povrsinas where a.materijal_FK == matId select a;
+                var x = from a in context.oberflaches where a.materijal == matId select a;
                 ListP.Clear();
                 foreach (var p in x)
                 {
-                    ListP.Add(new tbl_povrsina{id = p.id, materijal_FK = p.materijal_FK, pov = p.pov});
+                    ListP.Add(new oberflache{id = p.id, materijal = p.materijal, pov = p.pov});
                 }
             }
             return ListP;
         }
         [OperationContract]
-        public ObservableCollection<tbl_debljina> getDebljinaByProduktId(int prodId)
+        public ObservableCollection<starke> getDebljinaByProduktId(int prodId)
         {
-            ObservableCollection<tbl_debljina> ListaD = new ObservableCollection<tbl_debljina>();
+            ObservableCollection<starke> ListaD = new ObservableCollection<starke>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
             {
-                var x = from a in context.tbl_debljinas where a.idProdukt_FK == prodId select a;
+                var x = from a in context.starkes where a.idprodukt == prodId select a;
                 ListaD.Clear();
                 foreach (var p in x) 
                 {
-                    ListaD.Add(new tbl_debljina {id_debljina = p.id_debljina, idProdukt_FK = p.idProdukt_FK, naziv = p.naziv});
+                    ListaD.Add(new starke {id = p.id, idprodukt = p.idprodukt, starke1 = p.starke1});
                 }
             }
             return ListaD;
         }
         [OperationContract]
-        public ObservableCollection<tbl_materijal> getMatIdByName(string value) 
+        public ObservableCollection<materijal> getMatIdByName(string value) 
         {
-            ObservableCollection<tbl_materijal> ListaM = new ObservableCollection<tbl_materijal>();
+            ObservableCollection<materijal> ListaM = new ObservableCollection<materijal>();
             using(DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = from a in context.tbl_materijals where a.naziv == value select a;
+                var x = from a in context.materijals where a.naziv == value select a;
                 ListaM.Clear();
                 foreach(var p in x)
                 {
-                    ListaM.Add(new tbl_materijal { idmaterijal = p.idmaterijal, naziv = p.naziv});
+                    ListaM.Add(new materijal { id = p.id, naziv = p.naziv});
                 }
                 return ListaM;
             }
         }
         [OperationContract]
-        public ObservableCollection<tbl_produkt> getProIdByName(string value)
+        public ObservableCollection<produkt> getProIdByName(string value)
         {
-            ObservableCollection<tbl_produkt> ListP = new ObservableCollection<tbl_produkt>();
+            ObservableCollection<produkt> ListP = new ObservableCollection<produkt>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = from a in context.tbl_produkts where a.naziv == value select a;
+                var x = from a in context.produkts where a.naziv == value select a;
                 ListP.Clear();
                 foreach (var p in x)
                 {
-                    ListP.Add(new tbl_produkt { idprodukt = p.idprodukt, naziv = p.naziv });
+                    ListP.Add(new produkt { idprodukt = p.idprodukt, naziv = p.naziv });
                 }
             }
             return ListP;
         }
         [OperationContract]
-        public ObservableCollection<tbl_debljina> getDebljinaIdByName(string value)
+        public ObservableCollection<starke> getDebljinaIdByName(string value)
         {
-            ObservableCollection<tbl_debljina> ListP = new ObservableCollection<tbl_debljina>();
+            ObservableCollection<starke> ListP = new ObservableCollection<starke>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = from a in context.tbl_debljinas where a.naziv == value select a;
+                var x = from a in context.starkes where a.starke1 == value select a;
                 ListP.Clear();
                 foreach (var p in x)
                 {
-                    ListP.Add(new tbl_debljina { id_debljina = p.id_debljina, idProdukt_FK = p.idProdukt_FK, naziv = p.naziv });
+                    ListP.Add(new starke { id = p.id, idprodukt = p.idprodukt, starke1 = p.starke1 });
                 }
             }
             return ListP;
         }
 
         [OperationContract]
-        public ObservableCollection<tbl_mit_kalendar> ListaEventaMitarbeiter()
+        public ObservableCollection<mit_kalendar> ListaEventaMitarbeiter()
         {
-            ObservableCollection<tbl_mit_kalendar> Lista = new ObservableCollection<tbl_mit_kalendar>();
+            ObservableCollection<mit_kalendar> Lista = new ObservableCollection<mit_kalendar>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = from a in context.tbl_mit_kalendars select a;
+                var x = from a in context.mit_kalendars select a;
                 Lista.Clear();
                 foreach (var p in x)
                 {
-                    Lista.Add(new tbl_mit_kalendar
+                    Lista.Add(new mit_kalendar
                     {
-                        id_kalendar = p.id_kalendar,
-                        id_korisnik_FK = p.id_korisnik_FK,
+                        id = p.id,
+                        idUser = p.idUser,
                         datum = p.datum,
-                        datu1 = p.datu1,
+                        datum1 = p.datum1,
                         tip = p.tip,
                         odobreno = p.odobreno,
-                        pogledno = p.pogledno,
-                        biljeska = p.biljeska
+                        pogledano = p.pogledano,
+                        notiz = p.notiz
                     
                     });
                 }
@@ -1260,19 +1257,19 @@ namespace Service
         }
 
         [OperationContract]
-        public void UnesiEventMitarbeiter(tbl_mit_kalendar mit_kalendar, int id)
+        public void UnesiEventMitarbeiter(mit_kalendar mit_kalendar, int id)
         {
-            tbl_mit_kalendar mk = new tbl_mit_kalendar();
+            mit_kalendar mk = new mit_kalendar();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                mk.id_korisnik_FK = id;
-                mk.biljeska = mit_kalendar.biljeska;
-                mk.datu1 = mit_kalendar.datu1;
+                mk.idUser = id;
+                mk.notiz = mit_kalendar.notiz;
+                mk.datum1 = mit_kalendar.datum1;
                 mk.datum = mit_kalendar.datum;
                 mk.tip = mit_kalendar.tip;
-                mk.odobreno = false;
-                mk.pogledno = false;
-                context.tbl_mit_kalendars.InsertOnSubmit(mk);
+                mk.odobreno = Convert.ToInt32(false);
+                mk.pogledano = Convert.ToInt32(false);
+                context.mit_kalendars.InsertOnSubmit(mk);
                 context.SubmitChanges();
             }
         }

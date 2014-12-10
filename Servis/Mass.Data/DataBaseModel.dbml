@@ -515,22 +515,6 @@
       <Column Name="starke" Member="starke1" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[user]" Member="users">
-    <Type Name="user">
-      <Column Name="idUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="firstName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="lastName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="mail" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="sessionId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
-      <Column Name="userType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="telefon" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="slika" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
-      <Column Name="startseit" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.user_licence" Member="user_licences">
     <Type Name="user_licence">
       <Column Name="id_licence" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -561,6 +545,68 @@
     <Type Name="web_stranice_inv">
       <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="naziv" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.p_get_User_ViewResult" Member="p_get_User_ViewResults">
+    <Type Name="p_get_User_ViewResult">
+      <Column Name="idUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="mail" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="sessionId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="userType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slika" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="startseit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_poruka_poslane" Member="tbl_poruka_poslanes">
+    <Type Name="tbl_poruka_poslane">
+      <Column Name="id_poruka_poslane" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
+      <Association Name="user_tbl_poruka_poslane" Member="user" ThisKey="poslao" OtherKey="idUser" Type="user" IsForeignKey="true" />
+      <Association Name="user_tbl_poruka_poslane1" Member="user1" ThisKey="primio" OtherKey="idUser" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="users">
+    <Type Name="user">
+      <Column Name="idUser" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="mail" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="sessionId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="userType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slika" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
+      <Column Name="startseit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="user_tbl_poruka_poslane" Member="tbl_poruka_poslanes" ThisKey="idUser" OtherKey="poslao" Type="tbl_poruka_poslane" />
+      <Association Name="user_tbl_poruka_poslane1" Member="tbl_poruka_poslanes1" ThisKey="idUser" OtherKey="primio" Type="tbl_poruka_poslane" />
+      <Association Name="user_tbl_poruka_primljene" Member="tbl_poruka_primljenes" ThisKey="idUser" OtherKey="poslao" Type="tbl_poruka_primljene" />
+      <Association Name="user_tbl_poruka_primljene1" Member="tbl_poruka_primljenes1" ThisKey="idUser" OtherKey="primio" Type="tbl_poruka_primljene" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_poruka_primljene" Member="tbl_poruka_primljenes">
+    <Type Name="tbl_poruka_primljene">
+      <Column Name="id_poruka_primljene" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="poslao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="primio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="procitano" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="predmet" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="naslov" Type="System.String" DbType="NChar(75)" CanBeNull="true" />
+      <Association Name="user_tbl_poruka_primljene" Member="user" ThisKey="poslao" OtherKey="idUser" Type="user" IsForeignKey="true" />
+      <Association Name="user_tbl_poruka_primljene1" Member="user1" ThisKey="primio" OtherKey="idUser" Type="user" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
