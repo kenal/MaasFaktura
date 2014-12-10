@@ -65,7 +65,7 @@ namespace Desktop.ViewModel
             get { return _betreff; }
             set { _betreff = value; OnPropertyChanged("Betreff"); }
         }
-        public tbl_korisnik SelektovaniKorisnik
+        public user SelektovaniKorisnik
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
@@ -76,7 +76,7 @@ namespace Desktop.ViewModel
             get { return _listaPrimljenihPoruka; }
             set { _listaPrimljenihPoruka = value; OnPropertyChanged("ListaPrimljenihPoruka"); }
         }
-        public ObservableCollection<tbl_korisnik> ListaKorisnika
+        public ObservableCollection<user> ListaKorisnika
         {
             get { return _listaKorisnika; }
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
@@ -157,7 +157,7 @@ namespace Desktop.ViewModel
         }
         public void Send(object parameter)
         {
-            client.PosaljiPoruku(SelektovaniKorisnik.id_korisnik, Sesija.Id_korisnik, Poruka, Betreff);
+            client.PosaljiPoruku(SelektovaniKorisnik.idUser, Sesija.Id_korisnik, Poruka, Betreff);
             Poruka = null;
             Betreff = null;
         }
