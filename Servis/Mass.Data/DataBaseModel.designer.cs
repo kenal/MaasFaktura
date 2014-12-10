@@ -389,6 +389,14 @@ namespace Mass.Data
 				return this.GetTable<web_stranice_inv>();
 			}
 		}
+		
+		public System.Data.Linq.Table<p_get_User_ViewResult> p_get_User_ViewResults
+		{
+			get
+			{
+				return this.GetTable<p_get_User_ViewResult>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.akonto")]
@@ -7937,6 +7945,249 @@ namespace Mass.Data
 				if ((this._naziv != value))
 				{
 					this._naziv = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.p_get_User_ViewResult")]
+	public partial class p_get_User_ViewResult
+	{
+		
+		private System.Nullable<int> _idUser;
+		
+		private string _firstName;
+		
+		private string _lastName;
+		
+		private string _mail;
+		
+		private string _sessionId;
+		
+		private System.Nullable<int> _userType;
+		
+		private string _username;
+		
+		private string _password;
+		
+		private string _telefon;
+		
+		private System.Nullable<int> _active;
+		
+		private string _slika;
+		
+		private System.Nullable<int> _startseit;
+		
+		private System.Nullable<System.DateTime> _datum;
+		
+		public p_get_User_ViewResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int")]
+		public System.Nullable<int> idUser
+		{
+			get
+			{
+				return this._idUser;
+			}
+			set
+			{
+				if ((this._idUser != value))
+				{
+					this._idUser = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NChar(50)")]
+		public string firstName
+		{
+			get
+			{
+				return this._firstName;
+			}
+			set
+			{
+				if ((this._firstName != value))
+				{
+					this._firstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NChar(50)")]
+		public string lastName
+		{
+			get
+			{
+				return this._lastName;
+			}
+			set
+			{
+				if ((this._lastName != value))
+				{
+					this._lastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NChar(50)")]
+		public string mail
+		{
+			get
+			{
+				return this._mail;
+			}
+			set
+			{
+				if ((this._mail != value))
+				{
+					this._mail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sessionId", DbType="NChar(100)")]
+		public string sessionId
+		{
+			get
+			{
+				return this._sessionId;
+			}
+			set
+			{
+				if ((this._sessionId != value))
+				{
+					this._sessionId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userType", DbType="Int")]
+		public System.Nullable<int> userType
+		{
+			get
+			{
+				return this._userType;
+			}
+			set
+			{
+				if ((this._userType != value))
+				{
+					this._userType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(50)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this._password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(50)")]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
+		public System.Nullable<int> active
+		{
+			get
+			{
+				return this._active;
+			}
+			set
+			{
+				if ((this._active != value))
+				{
+					this._active = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slika", DbType="NChar(150)")]
+		public string slika
+		{
+			get
+			{
+				return this._slika;
+			}
+			set
+			{
+				if ((this._slika != value))
+				{
+					this._slika = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_startseit", DbType="Int")]
+		public System.Nullable<int> startseit
+		{
+			get
+			{
+				return this._startseit;
+			}
+			set
+			{
+				if ((this._startseit != value))
+				{
+					this._startseit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datum
+		{
+			get
+			{
+				return this._datum;
+			}
+			set
+			{
+				if ((this._datum != value))
+				{
+					this._datum = value;
 				}
 			}
 		}
