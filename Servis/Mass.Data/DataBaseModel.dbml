@@ -618,6 +618,8 @@
       <Column Name="debljina" Type="System.String" DbType="NChar(45)" CanBeNull="true" />
       <Column Name="opis" Type="System.String" DbType="NChar(500)" CanBeNull="true" />
       <Column Name="iznos" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="materijal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
