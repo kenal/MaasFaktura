@@ -26,7 +26,7 @@ namespace Desktop.ViewModel
         string _text;
         private MassServisClient client = new MassServisClient();
         private ObservableCollection<user> _listaKorisnika;
-        private mit_kalendar _selektovaniKorisnik;
+        private user _selektovaniKorisnik;
         private List<int> _ListaSati = new List<int>() { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 };        
         private List<int> _ListaMinuta = new List<int>() { 0, 10, 20, 30, 40, 50 };
         int _sat;        
@@ -121,7 +121,7 @@ namespace Desktop.ViewModel
             set { _listaKorisnika = value; OnPropertyChanged("ListaKorisnika"); }
         }
 
-        public mit_kalendar SelektovaniKorisnik
+        public user SelektovaniKorisnik
         {
             get { return _selektovaniKorisnik; }
             set { _selektovaniKorisnik = value; OnPropertyChanged("SelektovaniKorisnik"); }
@@ -290,6 +290,7 @@ namespace Desktop.ViewModel
             EventKalendar.datum = Datum;
             EventKalendar.datum1 = Datum1;
             EventKalendar.tip = Tip;
+            //int a = SelektovaniKorisnik.idUser;
             EventKalendar.notiz = Text;            
             client.UnesiEventMitarbeiter(EventKalendar, SelektovaniKorisnik.idUser);
         }

@@ -107,7 +107,7 @@
                     </LinearGradientBrush>
                 </DataGrid.AlternatingRowBackground>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding tip}"  Header="Benutzertype" x:Name="col1_1" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding userType}"  Header="Benutzertype" x:Name="col1_1" IsReadOnly="True"/>
                     <DataGridTemplateColumn Header="Name Und Vorname" x:Name="col1_2">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -117,9 +117,9 @@
                                         <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding ime}"/>
+                                    <TextBlock Grid.Column="0" Text="{Binding firstName}"/>
                                     <TextBlock Grid.Column="1" Text=" "/>
-                                    <TextBlock Grid.Column="2" Text="{Binding prezime}"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding lastName}"/>
                                 </Grid>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
