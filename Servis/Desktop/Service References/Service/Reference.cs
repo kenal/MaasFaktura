@@ -354,6 +354,12 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterijalByID", ReplyAction="http://tempuri.org/MassServis/getMaterijalByIDResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getMaterijalByIDAsync(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterialPrice", ReplyAction="http://tempuri.org/MassServis/getMaterialPriceResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_price_ViewResult> getMaterialPrice(int idMat, int idArt, string valStark, string valOber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterialPrice", ReplyAction="http://tempuri.org/MassServis/getMaterialPriceResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_price_ViewResult>> getMaterialPriceAsync(int idMat, int idArt, string valStark, string valOber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -817,6 +823,14 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getMaterijalByIDAsync(int value) {
             return base.Channel.getMaterijalByIDAsync(value);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_price_ViewResult> getMaterialPrice(int idMat, int idArt, string valStark, string valOber) {
+            return base.Channel.getMaterialPrice(idMat, idArt, valStark, valOber);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_price_ViewResult>> getMaterialPriceAsync(int idMat, int idArt, string valStark, string valOber) {
+            return base.Channel.getMaterialPriceAsync(idMat, idArt, valStark, valOber);
         }
     }
 }

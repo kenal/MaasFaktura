@@ -339,4 +339,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="artikl" nillable="true" type="tns:artikl" />
+  <xs:complexType name="ArrayOfp_get_price_ViewResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="p_get_price_ViewResult" nillable="true" type="tns:p_get_price_ViewResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfp_get_price_ViewResult" nillable="true" type="tns:ArrayOfp_get_price_ViewResult" />
+  <xs:complexType name="p_get_price_ViewResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="art" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="debljina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idArtikl" type="xs:int" />
+      <xs:element minOccurs="0" name="idCijene" type="xs:int" />
+      <xs:element minOccurs="0" name="iznos" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="mat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="materijal" type="xs:int" />
+      <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="p_get_price_ViewResult" nillable="true" type="tns:p_get_price_ViewResult" />
 </xs:schema>

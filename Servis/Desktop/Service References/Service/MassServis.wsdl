@@ -296,6 +296,12 @@
   <wsdl:message name="MassServis_getMaterijalByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:getMaterijalByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getMaterialPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterialPrice" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getMaterialPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterialPriceResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -488,6 +494,10 @@
     <wsdl:operation name="getMaterijalByID">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterijalByID" message="tns:MassServis_getMaterijalByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterijalByIDResponse" message="tns:MassServis_getMaterijalByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterialPrice" message="tns:MassServis_getMaterialPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterialPriceResponse" message="tns:MassServis_getMaterialPrice_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -917,6 +927,15 @@
     </wsdl:operation>
     <wsdl:operation name="getMaterijalByID">
       <soap:operation soapAction="http://tempuri.org/MassServis/getMaterijalByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialPrice">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getMaterialPrice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

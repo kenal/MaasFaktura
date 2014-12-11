@@ -676,4 +676,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getMaterialPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idMat" type="xs:int" />
+        <xs:element minOccurs="0" name="idArt" type="xs:int" />
+        <xs:element minOccurs="0" name="valStark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="valOber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMaterialPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterialPriceResult" nillable="true" type="q30:ArrayOfp_get_price_ViewResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

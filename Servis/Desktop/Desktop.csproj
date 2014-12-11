@@ -356,6 +356,7 @@
     <None Include="Properties\DataSources\Mass.Data.mit_kalendar.datasource" />
     <None Include="Properties\DataSources\Mass.Data.oberflache.datasource" />
     <None Include="Properties\DataSources\Mass.Data.produkt.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.p_get_price_ViewResult.datasource" />
     <None Include="Properties\DataSources\Mass.Data.p_get_User_ViewResult.datasource" />
     <None Include="Properties\DataSources\Mass.Data.starke.datasource" />
     <None Include="Properties\DataSources\Mass.Data.tbl_debljina.datasource" />
