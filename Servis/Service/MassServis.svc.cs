@@ -1368,7 +1368,7 @@ namespace Service
                 {
                     Lista.Add(new p_get_MitKalendar_ViewResult
                     {
-                        firstName = p.firstName.Trim(),
+                        firstName = p.firstName.Trim()+" ",
                         lastName = p.lastName.Trim(),
                         datum = p.datum,
                         datum1 = p.datum1,
