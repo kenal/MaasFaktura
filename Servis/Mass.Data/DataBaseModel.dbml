@@ -630,6 +630,7 @@
       <Column Name="datum1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="odobreno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pogledano" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -308,6 +308,18 @@
   <wsdl:message name="MassServis_getProduktIdByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:getProduktIdByNameResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijalIDName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijalIDName" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijalIDName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijalIDNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ListaMitKalendar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMitKalendar" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ListaMitKalendar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMitKalendarResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -508,6 +520,14 @@
     <wsdl:operation name="getProduktIdByName">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getProduktIdByName" message="tns:MassServis_getProduktIdByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getProduktIdByNameResponse" message="tns:MassServis_getProduktIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterijalIDName">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterijalIDName" message="tns:MassServis_getMaterijalIDName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterijalIDNameResponse" message="tns:MassServis_getMaterijalIDName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaMitKalendar">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaMitKalendar" message="tns:MassServis_ListaMitKalendar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ListaMitKalendarResponse" message="tns:MassServis_ListaMitKalendar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -955,6 +975,24 @@
     </wsdl:operation>
     <wsdl:operation name="getProduktIdByName">
       <soap:operation soapAction="http://tempuri.org/MassServis/getProduktIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterijalIDName">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getMaterijalIDName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaMitKalendar">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ListaMitKalendar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

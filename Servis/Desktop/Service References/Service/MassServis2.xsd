@@ -707,4 +707,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getMaterijalIDName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMaterijalIDNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterijalIDNameResult" nillable="true" type="q32:ArrayOfartikl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaMitKalendar">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaMitKalendarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaMitKalendarResult" nillable="true" type="q33:ArrayOfp_get_MitKalendar_ViewResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

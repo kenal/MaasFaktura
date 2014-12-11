@@ -1445,12 +1445,11 @@ namespace Desktop.ViewModel
 
         public void FillGridKupca(object parameter)
         {
-            ListaKupaca1 = client.ListaKupaca();            
+            ListaKupaca1 = client.ListaKupaca();
         }
         public void FillGridKupcaPage(object parameter)
         {
             Paginacija(BrojStranice);
-            
         }
 
         public void FillGridKupcaPage2(object parameter)

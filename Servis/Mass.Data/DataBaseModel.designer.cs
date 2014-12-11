@@ -12788,6 +12788,8 @@ namespace Mass.Data
 		
 		private System.Nullable<int> _odobreno;
 		
+		private System.Nullable<int> _pogledano;
+		
 		public p_get_MitKalendar_ViewResult()
 		{
 		}
@@ -12884,6 +12886,22 @@ namespace Mass.Data
 				if ((this._odobreno != value))
 				{
 					this._odobreno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pogledano", DbType="Int")]
+		public System.Nullable<int> pogledano
+		{
+			get
+			{
+				return this._pogledano;
+			}
+			set
+			{
+				if ((this._pogledano != value))
+				{
+					this._pogledano = value;
 				}
 			}
 		}
