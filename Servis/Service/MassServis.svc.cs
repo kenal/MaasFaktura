@@ -1330,12 +1330,12 @@ namespace Service
             ObservableCollection<p_get_price_ViewResult> List = new ObservableCollection<p_get_price_ViewResult>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
             {
-                /*var x = from a in context.p_get_price_ViewResults where a.active == 1 select new { a.idCijene, a.idArtikl, a.mat, a.art, a.debljina, a.opis, a.iznos };
+                var x = from a in context.p_get_price_ViewResults select new { a.idCijene, a.idArtikl, a.mat, a.art, a.debljina, a.opis, a.iznos };
                 List.Clear();
                 foreach (var p in x)
                 {
                     //List.Add(new artikl { id = p.id, naziv = p.naziv });
-                }*/
+                }
             }
             return List;
         }
