@@ -312,12 +312,12 @@ namespace Desktop.ViewModel
 
         public void PopuniEditUser(object parameter)
         {
-            NameEdit = SelektovaniUser.firstName;
-            LastNameEdit = SelektovaniUser.lastName;
-            EmailEdit = SelektovaniUser.mail;
-            TelefonEdit = SelektovaniUser.telefon;
-            UsernameEdit = SelektovaniUser.username;
-            PasswordEdit = SelektovaniUser.password;
+            NameEdit = SelektovaniUser.firstName.Trim();
+            LastNameEdit = SelektovaniUser.lastName.Trim();
+            EmailEdit = SelektovaniUser.mail.Trim();
+            TelefonEdit = SelektovaniUser.telefon.Trim();
+            UsernameEdit = SelektovaniUser.username.Trim();
+            PasswordEdit = SelektovaniUser.password.Trim();
             if(SelektovaniUser.userType == 0){RadAdminEdit = true;}
             else if (SelektovaniUser.userType == 1) { RadMitEdit = true; }
             else if (SelektovaniUser.userType == 2) { RadSekEdit = true; }

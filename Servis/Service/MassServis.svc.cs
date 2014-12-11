@@ -287,8 +287,8 @@ namespace Service
                     Lista.Add(new user
                     {
                         idUser = p.idUser,
-                        firstName = p.firstName,
-                        lastName = p.lastName,
+                        firstName = p.firstName.Trim(),
+                        lastName = p.lastName.Trim(),
                         mail = p.mail,
                         username = p.username,
                         password = p.password,
