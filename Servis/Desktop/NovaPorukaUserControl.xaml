@@ -28,8 +28,8 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
-                        <Run Text="{Binding ime}"/>
-                        <Run Text="{Binding prezime}"/>
+                        <Run Text="{Binding firstName}"/>
+                        <Run Text="{Binding lastName}"/>
                     </TextBlock>
                 </DataTemplate>
             </ComboBox.ItemTemplate>

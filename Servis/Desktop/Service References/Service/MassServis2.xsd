@@ -693,4 +693,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getArtiklNameByMatId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtiklNameByMatIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getArtiklNameByMatIdResult" nillable="true" type="q31:ArrayOfartikl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

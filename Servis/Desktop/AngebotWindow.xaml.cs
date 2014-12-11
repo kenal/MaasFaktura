@@ -401,6 +401,11 @@ namespace Desktop
             stark.SelectedIndex = 0;
             mat.Name = "mat_" + rowId;
             this.RegisterName("mat_" + rowId, mat);
+            var mType = client.getMatIdByName(matT.SelectedValue.ToString());
+            var mArt = client.getMaterijalByID(mType[0].id);
+            mat.Items.Clear();
+            foreach (var p in mArt) { mat.Items.Add(p.naziv); }
+            mat.SelectedIndex = 0;
             gehr.Name = "gehr_" + rowId;
             this.RegisterName("gehr_" + rowId, gehr);
             einh.Name = "einh_" + rowId;
@@ -441,6 +446,9 @@ namespace Desktop
                 if(grdHeaders.Margin.Left == 0)
                 grdHeaders.Margin = new Thickness(-14, grdHeaders.Margin.Top, 0, 0);
             }
+            
+
+            get_price(lastRowId, 1, mType[0].id, "0,8 cm", "poliert");
         }
         #endregion
 
@@ -1941,8 +1949,7 @@ namespace Desktop
             ComboBox Cell02 = (ComboBox)this.FindName("mat_" + rowId);
             Cell02.Items.Clear();
             foreach (var p in materijalList) { Cell02.Items.Add(p.naziv); }
-            Cell02.SelectedIndex = 0;
-            get_price(1, 1, 382, "2,0 cm", "poliert");
+            Cell02.SelectedIndex = 0;          
         }
         #endregion
 
@@ -1969,7 +1976,7 @@ namespace Desktop
             Service.MassServisClient client = new MassServisClient();
             var matResults = client.getMaterialPrice(idMat, idArtikl, valStark, valOber);
             TextBox Cell00 = (TextBox)this.FindName("gpreis_" + row);
-            if (matResults != null)
+            if (matResults.Count != 0)
             {
                 Cell00.Text = (matResults[0].iznos).ToString();
             }

@@ -287,8 +287,8 @@ namespace Service
                     Lista.Add(new user
                     {
                         idUser = p.idUser,
-                        firstName = p.firstName,
-                        lastName = p.lastName,
+                        firstName = p.firstName.Trim(),
+                        lastName = p.lastName.Trim(),
                         mail = p.mail,
                         username = p.username,
                         password = p.password,
@@ -1330,7 +1330,8 @@ namespace Service
             ObservableCollection<p_get_price_ViewResult> List = new ObservableCollection<p_get_price_ViewResult>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
             {
-                var x = from a in context.p_get_price_ViewResults where a.active == 1 && a.materijal == idMat && a.opis.Contains("/" + valOber + "/") && a.debljina.Contains("/" + valStark + "/")
+                var x = from a in context.p_get_price_ViewResults
+                where a.active == 1 && a.materijal == idMat && SqlMethods.Like(a.opis, "%" + valOber + "%") && SqlMethods.Like(a.debljina, "%" + valStark + "%")
                 && a.idArtikl == idArt select new { a.idCijene, a.idArtikl, a.mat, a.art, a.debljina, a.opis, a.iznos };
                 List.Clear();
                 foreach (var p in x)
