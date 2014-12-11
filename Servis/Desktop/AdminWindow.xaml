@@ -10,6 +10,7 @@
         Title="AdminWindow" Width="1024" MinWidth="900" MinHeight="600" Height="600" SizeToContent="WidthAndHeight" SizeChanged="Window_SizeChanged" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <local:BackgroundConverter x:Key="BackgroundConverter"/>
+        <local:BackgroundConverter2 x:Key="BackgroundConverter2"/>
     </Window.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -193,8 +194,17 @@
                     
                     <DataGridTextColumn Binding="{Binding datum}" Width="*" Header="Terminbeginn" x:Name="col2_2"/>
                     <DataGridTextColumn Binding="{Binding datum1}" Width="*" Header="Terminende" x:Name="col2_3"/>
-                    <DataGridTextColumn Binding="{Binding tip}" Width="*" Header="Termintype" x:Name="col2_4"/>
-                    <DataGridTextColumn Binding="{Binding val5}" Width="*" Header="Genehmigt" x:Name="col2_5"/>
+                    <DataGridTextColumn Binding="{Binding tip, Converter={StaticResource BackgroundConverter2}}" Width="*" Header="Termintype" x:Name="col2_4"/>
+                    <DataGridTemplateColumn  Header="Genehmight" x:Name="col2_5">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Ja" Width="30px" FontSize="10" Foreground="White"/>
+                                    <Button Content="Nein" Width="30px" FontSize="10" Foreground="White"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Binding="{Binding val6}" Width="*" Header="Aktionen" x:Name="col2_6"/>
                 </DataGrid.Columns>
             </DataGrid>
