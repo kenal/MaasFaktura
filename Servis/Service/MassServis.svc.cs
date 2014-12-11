@@ -1325,12 +1325,12 @@ namespace Service
             return ListP;
         }
         [OperationContract]
-        public ObservableCollection<p_get_price_ViewResult> getMaterialPrice(int idMat, int idArtikl, int idStarke, int Ober) 
+        public ObservableCollection<p_get_price_ViewResult> getMaterialPrice(int idMat, int idArt, string valStark, string valOber) 
         {
             ObservableCollection<p_get_price_ViewResult> List = new ObservableCollection<p_get_price_ViewResult>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext()) 
             {
-                /*var x = from a in context.p_get_price_ViewResults where a.active select new { a.idCijene, a.idArtikl, a.mat, a.art, a.debljina, a.opis, a.iznos };
+                /*var x = from a in context.p_get_price_ViewResults where a.active == 1 select new { a.idCijene, a.idArtikl, a.mat, a.art, a.debljina, a.opis, a.iznos };
                 List.Clear();
                 foreach (var p in x)
                 {
