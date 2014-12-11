@@ -1942,6 +1942,7 @@ namespace Desktop
             Cell02.Items.Clear();
             foreach (var p in materijalList) { Cell02.Items.Add(p.naziv); }
             Cell02.SelectedIndex = 0;
+            //var res = get_price(1, 1, 382, "2,0 cm", "poliert");
         }
         #endregion
 
@@ -1963,21 +1964,12 @@ namespace Desktop
         #endregion
         #endregion
 
-        private void get_price(int row, int idMat, int idArtikl, int idStark, int idOber) 
+        private void get_price(int row, int idMat, int idArtikl, string valStark, string valOber) 
         {
             Service.MassServisClient client = new MassServisClient();
-            var matResults = "dd";
-            //var matResults = client.getMaterialPrice(idMat, idArtikl, idStark, idOber);
-            TextBox Cell01 = (TextBox)this.FindName("gpreis_" + row);
-            if (matResults != null)
-            {
-                Cell01.Text = matResults;
-            }
-            else
-            {
-                Cell01.Text = "0,00";
-            }
-                
+            var matResults = client.getMaterialPrice(idMat, idArtikl, valStark, valOber);
+            TextBox Cell00 = (TextBox)this.FindName("gpreis_" + row);
+             
         }
     }
 }
