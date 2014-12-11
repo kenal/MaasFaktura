@@ -622,4 +622,14 @@
       <Column Name="materijal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.p_get_MitKalendar_ViewResult" Member="p_get_MitKalendar_ViewResults">
+    <Type Name="p_get_MitKalendar_ViewResult">
+      <Column Name="firstName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datum1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odobreno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
