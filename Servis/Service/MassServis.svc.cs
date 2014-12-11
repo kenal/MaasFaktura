@@ -629,10 +629,16 @@ namespace Service
             using(DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
                 user korisnik = new user();
-                //if (ProvjeriKorisnika(id)!=true)
-                //{
-
-                    var query = (from a in context.users where a.idUser == id select a).Single();
+                var query = (from a in context.users where a.idUser.Equals(id) select new { a.idUser, a.firstName, a.lastName, a.mail, a.username, a.password,
+                                                                                            a.userType,
+                                                                                            a.telefon,
+                                                                                            a.active,
+                                                                                            a.slika,
+                                                                                            a.startseit
+                }).Single();
+                if(query !=null)
+                {
+                    
                     korisnik.idUser = query.idUser;
                     korisnik.firstName = query.firstName;
                     korisnik.lastName = query.lastName;
@@ -644,38 +650,13 @@ namespace Service
                     korisnik.active = query.active;
                     korisnik.slika = query.slika;
                     korisnik.startseit = query.startseit;
-                //}
-                //else
-                //{
-                //    korisnik.idUser = 0;
-                //    korisnik.firstName = "-Leer";
-                //    korisnik.lastName = null;
-                //    korisnik.mail = null;
-                //    korisnik.username = null;
-                //    korisnik.password = null;
-                //    korisnik.userType = null;
-                //    korisnik.telefon = null;
-                //    korisnik.active = null;
-                //    korisnik.slika = null;
-                //    korisnik.startseit = null;
-                //}
-                
-                return korisnik;               
+                }
+                    
+                return korisnik;
             }
         }
 
-        //[OperationContract]
-        //public bool ProvjeriKorisnika(int id)
-        //{
-        //    using (DataBaseModelDataContext context = new DataBaseModelDataContext())
-        //    {
-        //        var query = (from a in context.users where a.idUser == id select a).Any();
-        //        if (query.Equals(null))
-        //            return true;
-        //        else
-        //            return false;
-        //    }
-        //}
+        
 
         [OperationContract]
         public void EditujUsera(int idUser, string Name, string LastName, string Email, string Telefon, bool Aktivan, string Slika, string Username, string Password, int UserType, bool Pocetna, string Licence)

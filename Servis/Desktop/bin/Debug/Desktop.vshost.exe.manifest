@@ -104,7 +104,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kQx+y2nHDackKvrVcz/8f5ZW8qRLuD7X/nSxRXueYrY=</dsig:DigestValue>
+        <dsig:DigestValue>ZfE4UAjq2H5FOM/bFdNEbwR7i/keX2LYQZV42ib1tU0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,14 +133,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="57344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="60928">
       <assemblyIdentity name="Service" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ctYp+WfWXnxydcJopVCIQQ9WaEHIMTc8Xlv5Z/Mym44=</dsig:DigestValue>
+        <dsig:DigestValue>/urUsGOP307p6TR6Fel5f2I6CPIAUqm595bhCmE9Plw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

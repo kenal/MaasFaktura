@@ -675,6 +675,7 @@ namespace Desktop.ViewModel
                {
                    RadioFrauEdit = true;
                }
+               
                NameEdit= SelektovaniRadnik.vorname;
                VornameEdit= SelektovaniRadnik.name;
                AdresseEdit= SelektovaniRadnik.adresse;
@@ -769,6 +770,10 @@ namespace Desktop.ViewModel
                    {
                        ComboKorisnik = ListaKorisnika[i];
                        break;
+                   }
+                   else
+                   {
+                       ComboKorisnik = null;
                    }
               
                }
