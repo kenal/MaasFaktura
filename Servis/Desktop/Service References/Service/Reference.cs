@@ -361,11 +361,11 @@ namespace Desktop.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterialPrice", ReplyAction="http://tempuri.org/MassServis/getMaterialPriceResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_price_ViewResult>> getMaterialPriceAsync(int idMat, int idArt, string valStark, string valOber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getArtiklNameByMatId", ReplyAction="http://tempuri.org/MassServis/getArtiklNameByMatIdResponse")]
-        System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl> getArtiklNameByMatId(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProduktIdByName", ReplyAction="http://tempuri.org/MassServis/getProduktIdByNameResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Mass.Data.produkt> getProduktIdByName(string value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getArtiklNameByMatId", ReplyAction="http://tempuri.org/MassServis/getArtiklNameByMatIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getArtiklNameByMatIdAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProduktIdByName", ReplyAction="http://tempuri.org/MassServis/getProduktIdByNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.produkt>> getProduktIdByNameAsync(string value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -839,12 +839,12 @@ namespace Desktop.Service {
             return base.Channel.getMaterialPriceAsync(idMat, idArt, valStark, valOber);
         }
         
-        public System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl> getArtiklNameByMatId(int value) {
-            return base.Channel.getArtiklNameByMatId(value);
+        public System.Collections.ObjectModel.ObservableCollection<Mass.Data.produkt> getProduktIdByName(string value) {
+            return base.Channel.getProduktIdByName(value);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getArtiklNameByMatIdAsync(int value) {
-            return base.Channel.getArtiklNameByMatIdAsync(value);
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.produkt>> getProduktIdByNameAsync(string value) {
+            return base.Channel.getProduktIdByNameAsync(value);
         }
     }
 }

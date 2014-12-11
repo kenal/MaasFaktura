@@ -1322,6 +1322,36 @@ namespace Service
             }
             return List;
         }
+        [OperationContract]
+        public ObservableCollection<produkt> getProduktIdByName(string value)
+        {
+            ObservableCollection<produkt> ListaP = new ObservableCollection<produkt>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.produkts where a.naziv == value select a;
+                ListaP.Clear();
+                foreach (var p in x)
+                {
+                    ListaP.Add(new produkt { idprodukt = p.idprodukt, naziv = p.naziv });
+                }
+            }
+            return ListaP;
+        }
+        public ObservableCollection<artikl> getMaterijalIDName(string value)
+        {
+            ObservableCollection<artikl> ListP = new ObservableCollection<artikl>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.artikls where a.naziv == value && a.aktivan == 1 orderby a.naziv ascending select a;
+
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new artikl { id = p.id, naziv = p.naziv });
+                }
+            }
+            return ListP;
+        }
     }
 }
    

@@ -693,17 +693,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getArtiklNameByMatId">
+  <xs:element name="getProduktIdByName">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="value" type="xs:int" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getArtiklNameByMatIdResponse">
+  <xs:element name="getProduktIdByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getArtiklNameByMatIdResult" nillable="true" type="q31:ArrayOfartikl" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getProduktIdByNameResult" nillable="true" type="q31:ArrayOfprodukt" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
