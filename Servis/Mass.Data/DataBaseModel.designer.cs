@@ -12611,6 +12611,10 @@ namespace Mass.Data
 		
 		private System.Nullable<decimal> _iznos;
 		
+		private System.Nullable<int> _active;
+		
+		private int _materijal;
+		
 		public p_get_price_ViewResult()
 		{
 		}
@@ -12723,6 +12727,38 @@ namespace Mass.Data
 				if ((this._iznos != value))
 				{
 					this._iznos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int")]
+		public System.Nullable<int> active
+		{
+			get
+			{
+				return this._active;
+			}
+			set
+			{
+				if ((this._active != value))
+				{
+					this._active = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_materijal", DbType="Int NOT NULL")]
+		public int materijal
+		{
+			get
+			{
+				return this._materijal;
+			}
+			set
+			{
+				if ((this._materijal != value))
+				{
+					this._materijal = value;
 				}
 			}
 		}
