@@ -134,7 +134,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
-                                    <Button x:Name="btnPocetna" Margin="5" Width="35" Background="{Binding pocetna, Converter={StaticResource BackgroundConverter}}"  Height="25" Command="{Binding Path=DataContext.PromjeniPocetna, ElementName=datagrid1}"></Button>
+                                    <Button x:Name="btnPocetna" Margin="5" Width="35" Background="{Binding startseit, Converter={StaticResource BackgroundConverter}}"  Height="25" Command="{Binding Path=DataContext.PromjeniPocetna, ElementName=datagrid1}" Cursor="Hand"></Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -144,7 +144,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
-                                    <Button Margin="5" Width="35" Height="25" Background="{Binding aktivan, Converter={StaticResource BackgroundConverter}}" Command="{Binding Path=DataContext.PromjeniAktivan, ElementName=datagrid1}"></Button>
+                                    <Button Margin="5" Width="35" Height="25" Background="{Binding active, Converter={StaticResource BackgroundConverter}}" Command="{Binding Path=DataContext.PromjeniAktivan, ElementName=datagrid1}" Cursor="Hand"></Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -153,14 +153,14 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
-                                    <Button Margin="5" Width="35" Height="25" Command="{Binding Path=DataContext.OtvoriEditUser, ElementName=datagrid1}">
+                                    <Button Margin="5" Width="35" Height="25" Command="{Binding Path=DataContext.OtvoriEditUser, ElementName=datagrid1}" Cursor="Hand">
                                         <Image Source="ikone/IkonaUredi.png"/>
                                     </Button>
-                                    <Button Margin="5" Width="35" Height="25" Command="{Binding Path=DataContext.ObrisiUsera, ElementName=datagrid1}">
+                                    <Button Margin="5" Width="35" Height="25" Command="{Binding Path=DataContext.ObrisiUsera, ElementName=datagrid1}" Cursor="Hand">
                                         <Image Source="ikone/IkonaObrisi.png" />
                                     </Button>
 
-                                    <Button Margin="5" Width="35" Height="25">
+                                    <Button Margin="5" Width="35" Height="25" Cursor="Hand">
                                         <Image Source="ikone/IkonaFileManager.png" />
                                     </Button>
                                 </StackPanel>
@@ -192,10 +192,10 @@
         <Grid Name="grdStat" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
             <Grid Background="#F0F0F0" Height="30" VerticalAlignment="Top" Margin="5,5,5,0">
                 <Label Content="Start:" FontSize="14" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <DatePicker Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,3,0,0" />
+                <DatePicker Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,3,0,0" Cursor="Hand"/>
                 <Label Content="Ende:" FontSize="14" Margin="220,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <DatePicker Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,3,0,0" />
-                <Button Content="Suche beginnen" Height="23" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="450,3.5,0,0" />
+                <DatePicker Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,3,0,0" Cursor="Hand"/>
+                <Button Content="Suche beginnen" Height="23" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="450,3.5,0,0" Cursor="Hand"/>
             </Grid>
             <DataGrid x:Name="datagrid3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,40,0,0" x:Uid="datagrid3" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" >
                 <DataGrid.AlternatingRowBackground>
