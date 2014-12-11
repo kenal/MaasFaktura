@@ -294,10 +294,10 @@
         <classShapeMoniker Id="31625046-9bbd-482f-9948-d4eab16b4537" />
       </nodes>
     </associationConnector>
-    <classShape Id="e691d877-478d-493c-bf36-cef9b4247921" absoluteBounds="19.5, 22.875, 2, 2.1554996744791666">
+    <classShape Id="51add636-e2cc-4d09-8479-a88af465a34d" absoluteBounds="20.125, 23.25, 2, 2.5401025390625">
       <DataClassMoniker Name="/DataBaseModelDataContext/p_get_price_ViewResult" />
       <nestedChildShapes>
-        <elementListCompartment Id="7adbd52b-b418-4d1a-b66d-7f512e357ee3" absoluteBounds="19.515, 23.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="22606f26-36c5-4789-97fa-64dd4c0160b1" absoluteBounds="20.14, 23.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
