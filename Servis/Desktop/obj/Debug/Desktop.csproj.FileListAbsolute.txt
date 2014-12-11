@@ -51,3 +51,4 @@ C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\App.g.cs
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop_MarkupCompile.cache
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop_MarkupCompile.lref
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\bin\Debug\Desktop.exe.config
