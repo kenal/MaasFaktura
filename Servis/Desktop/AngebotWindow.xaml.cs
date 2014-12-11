@@ -1962,5 +1962,22 @@ namespace Desktop
         }
         #endregion
         #endregion
+
+        private void get_price(int row, int idMat, int idArtikl, int idStark, int idOber) 
+        {
+            Service.MassServisClient client = new MassServisClient();
+            var matResults = "dd";
+            //var matResults = client.getMaterialPrice(idMat, idArtikl, idStark, idOber);
+            TextBox Cell01 = (TextBox)this.FindName("gpreis_" + row);
+            if (matResults != null)
+            {
+                Cell01.Text = matResults;
+            }
+            else
+            {
+                Cell01.Text = "0,00";
+            }
+                
+        }
     }
 }
