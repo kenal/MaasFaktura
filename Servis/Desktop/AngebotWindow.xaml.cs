@@ -447,7 +447,6 @@ namespace Desktop
                 grdHeaders.Margin = new Thickness(-14, grdHeaders.Margin.Top, 0, 0);
             }
             
-
             get_price(lastRowId, 1, mType[0].id, "0,8 cm", "poliert");
         }
         #endregion
@@ -1942,6 +1941,7 @@ namespace Desktop
             int matVal01 = Convert.ToInt32(matId[0].id);
             var oberflacheList = client.getPovrsinaByMaterijal(matVal01);
             ComboBox Cell01 = (ComboBox)this.FindName("ober_" + rowId);
+            ComboBox Cell03 = (ComboBox)this.FindName("stark_" + rowId);
             Cell01.Items.Clear();
             foreach (var p in oberflacheList) { Cell01.Items.Add(p.pov); }
             Cell01.SelectedIndex = 0;
@@ -1949,7 +1949,9 @@ namespace Desktop
             ComboBox Cell02 = (ComboBox)this.FindName("mat_" + rowId);
             Cell02.Items.Clear();
             foreach (var p in materijalList) { Cell02.Items.Add(p.naziv); }
-            Cell02.SelectedIndex = 0;          
+            Cell02.SelectedIndex = 0;
+            var MaId = client.getMaterijalIDName(Cell02.SelectedItem.ToString());
+            get_price(rowId, matVal01, MaId[0].id, Cell03.SelectedItem.ToString(), Cell01.SelectedItem.ToString());
         }
         #endregion
 

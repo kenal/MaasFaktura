@@ -302,11 +302,11 @@
   <wsdl:message name="MassServis_getMaterialPrice_OutputMessage">
     <wsdl:part name="parameters" element="tns:getMaterialPriceResponse" />
   </wsdl:message>
-  <wsdl:message name="MassServis_getArtiklNameByMatId_InputMessage">
-    <wsdl:part name="parameters" element="tns:getArtiklNameByMatId" />
+  <wsdl:message name="MassServis_getProduktIdByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProduktIdByName" />
   </wsdl:message>
-  <wsdl:message name="MassServis_getArtiklNameByMatId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:getArtiklNameByMatIdResponse" />
+  <wsdl:message name="MassServis_getProduktIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProduktIdByNameResponse" />
   </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
@@ -505,9 +505,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterialPrice" message="tns:MassServis_getMaterialPrice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterialPriceResponse" message="tns:MassServis_getMaterialPrice_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="getArtiklNameByMatId">
-      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getArtiklNameByMatId" message="tns:MassServis_getArtiklNameByMatId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getArtiklNameByMatIdResponse" message="tns:MassServis_getArtiklNameByMatId_OutputMessage" />
+    <wsdl:operation name="getProduktIdByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getProduktIdByName" message="tns:MassServis_getProduktIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getProduktIdByNameResponse" message="tns:MassServis_getProduktIdByName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -953,8 +953,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getArtiklNameByMatId">
-      <soap:operation soapAction="http://tempuri.org/MassServis/getArtiklNameByMatId" style="document" />
+    <wsdl:operation name="getProduktIdByName">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getProduktIdByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
