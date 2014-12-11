@@ -82,7 +82,7 @@
                     <ColumnDefinition Width="50" SharedSizeGroup="C"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Kunden Nr.:" FontSize="14" Grid.Column="0" Grid.Row="0"/>
-                <TextBox x:Name="txtKundenNr" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="0" Height="25" Margin="10,5,0,10" Text="{Binding Broj_kupacEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
+                <TextBox x:Name="txtKundenNr" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="0" Height="25" Margin="10,5,0,10" Text="{Binding KundeNrEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
                 <Label Content="Anredan/Titel:" FontSize="14" Grid.Column="0" Grid.Row="1"/>
                 <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Width="190">
                     <RadioButton x:Name="rbtnHerr" Content="Herr" VerticalAlignment="Center" IsChecked="{Binding RadioHerEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Cursor="Hand"/>
@@ -93,11 +93,11 @@
                 <Label Content="Titel:" FontSize="14" Grid.Column="0" Grid.Row="2"/>
                 <TextBox x:Name="txtTitel" Grid.Column="1" Grid.Row="2" Height="25" Margin="10,5,0,10" Text="{Binding TitelEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Vorname:" FontSize="14" Grid.Column="0" Grid.Row="3"/>
-                <TextBox x:Name="txtVorname" Grid.Column="1" Grid.Row="3" Height="25" Margin="10,5,0,10" Text="{Binding ImeEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="txtVorname" Grid.Column="1" Grid.Row="3" Height="25" Margin="10,5,0,10" Text="{Binding VornameEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Name:" FontSize="14" Grid.Column="0" Grid.Row="4"/>
-                <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="4" Height="25" Margin="10,5,0,10" Text="{Binding PrezimeEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="4" Height="25" Margin="10,5,0,10" Text="{Binding NameEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Name2/Firma:" FontSize="14" Grid.Column="0" Grid.Row="5"/>
-                <TextBox x:Name="txtName2" Grid.Column="1" Grid.Row="5" Height="25" Margin="10,5,0,10" Text="{Binding Ime2Edit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="txtName2" Grid.Column="1" Grid.Row="5" Height="25" Margin="10,5,0,10" Text="{Binding Name2Edit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Land:" FontSize="14" Grid.Column="0" Grid.Row="6"/>
                 <ComboBox Name="CountryCombo" 
     ItemsSource="{Binding ElementName=Window, Path=Countries}" SelectedValuePath="code"  SelectedValue="{Binding ElementName=Window, Path=DataContext.ZemljaEdit}" Grid.Column="1" Grid.Row="6" Margin="10,0,0,0" DropDownOpened="CountryCombo_DropDownOpened" Cursor="Hand">
@@ -111,13 +111,13 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
                 <Label Content="Stadt:" FontSize="14" Grid.Column="0" Grid.Row="7"/>
-                <TextBox x:Name="txtStadt" Grid.Column="1" Grid.Row="7" Height="25" Margin="10,5,0,10" Text="{Binding GradEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="txtStadt" Grid.Column="1" Grid.Row="7" Height="25" Margin="10,5,0,10" Text="{Binding StadtEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Lieferungsadresse:" FontSize="14" Grid.Column="0" Grid.Row="8"/>
-                <TextBox x:Name="txtLieferungsadresse" Grid.Column="1" Grid.Row="8" Height="25" Margin="10,5,0,10" Text="{Binding Adresa_dostavaEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="txtLieferungsadresse" Grid.Column="1" Grid.Row="8" Height="25" Margin="10,5,0,10" Text="{Binding LieferadresseEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Rechnungsadresse:" FontSize="14" Grid.Column="0" Grid.Row="9"/>
-                <TextBox x:Name="txtRechnungsadresse" Grid.Column="1" Grid.Row="9" Height="25" Margin="10,5,0,10" Text="{Binding Adresa_faktureEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="txtRechnungsadresse" Grid.Column="1" Grid.Row="9" Height="25" Margin="10,5,0,10" Text="{Binding RechnungsadresseEdit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Adresse 2:" FontSize="14" Grid.Column="0" Grid.Row="10"/>
-                <TextBox x:Name="txtAdresse2" Grid.Column="1" Grid.Row="10" Height="25" Margin="10,5,0,10" Text="{Binding Adresa2Edit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="txtAdresse2" Grid.Column="1" Grid.Row="10" Height="25" Margin="10,5,0,10" Text="{Binding Adresse2Edit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Telefon:" FontSize="14" Grid.Column="0" Grid.Row="11"/>
                 <TextBox x:Name="txtTelefon" Grid.Column="1" Grid.Row="11" Height="25" Margin="10,5,0,10" Text="{Binding Tel1Edit, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True,ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Handy:" FontSize="14" Grid.Column="0" Grid.Row="12"/>
@@ -174,13 +174,13 @@
                 <TextBox x:Name="txtInternet" Grid.Column="1" Grid.Row="1" Height="25" Margin="0,7.5,135,7.5"  Text="{Binding InternetEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Skonto:" FontSize="14" Grid.Column="0" Grid.Row="2"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
-                    <TextBox x:Name="txtSkonto" Height="25" Width="50" Text="{Binding Popust_gotovinaEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="txtSkonto" Height="25" Width="50" Text="{Binding SkontoEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content=" Tage: " FontSize="14" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtSkonto1" Height="25" Width="50" Text="{Binding Dnevni_popustEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="txtSkonto1" Height="25" Width="50" Text="{Binding SkontotageEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
                 <Label Content="Zahlbar in" FontSize="14" Grid.Column="0" Grid.Row="3"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3">
-                    <TextBox x:Name="txtZahlbar1" Height="25" Width="50" Text="{Binding PlacaEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox x:Name="txtZahlbar1" Height="25" Width="50" Text="{Binding ZahlbarEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content=" Tagen " FontSize="14" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Label Content="Rabatt" FontSize="14" Grid.Column="0" Grid.Row="4"/>
@@ -198,7 +198,7 @@
                 </StackPanel>
 
                 <Label Content="Zahlweise:" Grid.Column="0" Grid.Row="7"/>
-                <ComboBox Grid.Column="1" Grid.Row="7" Width="180" Height="25" SelectedIndex="0" ItemsSource="{Binding NacinPlacanjaEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Cursor="Hand"/>
+                <ComboBox Grid.Column="1" Grid.Row="7" Width="180" Height="25" SelectedIndex="0" ItemsSource="{Binding ZahlweiseEdit, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Cursor="Hand"/>
                 <Label Content="Zahlungs - bedingungen:" Grid.Column="0" Grid.Row="8"/>
                 <RichTextBox x:Name="txtZahlungs" Grid.Column="1" Grid.Row="8" Width="180" Height="85">
                     <FlowDocument>

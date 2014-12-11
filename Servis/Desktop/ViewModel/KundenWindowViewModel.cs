@@ -1318,7 +1318,7 @@ namespace Desktop.ViewModel
                     neUzimati = brojPrikaza - ostatak;
                 else
                     neUzimati = brojPrikaza - KolicinaKupaca;
-                var x= ListaKupaca1.Skip(neUzimati).Take(brojPrikaza);
+                var x = ListaKupaca1.Skip(neUzimati).Take(KolicinaKupaca);
                 ListaPage1.Clear();
                 ListaPage1 = new ObservableCollection<kunden>(x);
             }

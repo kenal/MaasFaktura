@@ -280,19 +280,25 @@
         <classShapeMoniker Id="c43557f0-84f4-49af-b8f6-d1f1ec315f54" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.43350341796875); (3.5 : 4.43350341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.43350341796875); (3.5 : 4.43350341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataBaseModelDataContext/user/user_tbl_poruka_primljene" />
       <nodes>
         <classShapeMoniker Id="dbd1aaa6-34fb-47f0-81da-c1554c4052a3" />
         <classShapeMoniker Id="31625046-9bbd-482f-9948-d4eab16b4537" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.02925170898438); (3.5 : 4.02925170898438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.02925170898438); (3.5 : 4.02925170898438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataBaseModelDataContext/user/user_tbl_poruka_primljene1" />
       <nodes>
         <classShapeMoniker Id="dbd1aaa6-34fb-47f0-81da-c1554c4052a3" />
         <classShapeMoniker Id="31625046-9bbd-482f-9948-d4eab16b4537" />
       </nodes>
     </associationConnector>
+    <classShape Id="e691d877-478d-493c-bf36-cef9b4247921" absoluteBounds="19.5, 22.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataBaseModelDataContext/p_get_price_ViewResult" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7adbd52b-b418-4d1a-b66d-7f512e357ee3" absoluteBounds="19.515, 23.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -542,6 +542,14 @@ namespace Mass.Data
 				return this.GetTable<p_get_User_ViewResult>();
 			}
 		}
+		
+		public System.Data.Linq.Table<p_get_price_ViewResult> p_get_price_ViewResults
+		{
+			get
+			{
+				return this.GetTable<p_get_price_ViewResult>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.akonto")]
@@ -12580,6 +12588,141 @@ namespace Mass.Data
 				if ((this._datum != value))
 				{
 					this._datum = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.p_get_price_ViewResult")]
+	public partial class p_get_price_ViewResult
+	{
+		
+		private int _idCijene;
+		
+		private int _idArtikl;
+		
+		private string _mat;
+		
+		private string _art;
+		
+		private string _debljina;
+		
+		private string _opis;
+		
+		private System.Nullable<decimal> _iznos;
+		
+		public p_get_price_ViewResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCijene", DbType="Int NOT NULL")]
+		public int idCijene
+		{
+			get
+			{
+				return this._idCijene;
+			}
+			set
+			{
+				if ((this._idCijene != value))
+				{
+					this._idCijene = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idArtikl", DbType="Int NOT NULL")]
+		public int idArtikl
+		{
+			get
+			{
+				return this._idArtikl;
+			}
+			set
+			{
+				if ((this._idArtikl != value))
+				{
+					this._idArtikl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mat", DbType="NChar(150)")]
+		public string mat
+		{
+			get
+			{
+				return this._mat;
+			}
+			set
+			{
+				if ((this._mat != value))
+				{
+					this._mat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_art", DbType="NChar(250)")]
+		public string art
+		{
+			get
+			{
+				return this._art;
+			}
+			set
+			{
+				if ((this._art != value))
+				{
+					this._art = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_debljina", DbType="NChar(45)")]
+		public string debljina
+		{
+			get
+			{
+				return this._debljina;
+			}
+			set
+			{
+				if ((this._debljina != value))
+				{
+					this._debljina = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opis", DbType="NChar(500)")]
+		public string opis
+		{
+			get
+			{
+				return this._opis;
+			}
+			set
+			{
+				if ((this._opis != value))
+				{
+					this._opis = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iznos", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> iznos
+		{
+			get
+			{
+				return this._iznos;
+			}
+			set
+			{
+				if ((this._iznos != value))
+				{
+					this._iznos = value;
 				}
 			}
 		}
