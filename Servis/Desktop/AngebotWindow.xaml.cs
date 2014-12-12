@@ -222,6 +222,8 @@ namespace Desktop
             TextBox einz = new TextBox();
             TextBox stk = new TextBox();
             TextBox gpreis = new TextBox();
+            TextBox rab = new TextBox();
+            CheckBox akonto = new CheckBox();
             Button myDinamicButton01 = new Button();
             Label myLabel01 = new Label();
             Button btnDown = new Button();
@@ -288,6 +290,8 @@ namespace Desktop
             stk.Height = 25;
             gpreis.Width = 60;
             gpreis.Height = 25;
+            rab.Width = 40;
+            rab.Height = 25;
             myDinamicButton01.Width = 70;
             myDinamicButton01.Height = 25;
             btnAddType01.Width = 80;
@@ -339,6 +343,10 @@ namespace Desktop
             stk.VerticalAlignment = VerticalAlignment.Top;
             gpreis.HorizontalAlignment = HorizontalAlignment.Left;
             gpreis.VerticalAlignment = VerticalAlignment.Top;
+            rab.HorizontalAlignment = HorizontalAlignment.Left;
+            rab.VerticalAlignment = VerticalAlignment.Top;
+            akonto.HorizontalAlignment = HorizontalAlignment.Left;
+            akonto.VerticalAlignment = VerticalAlignment.Top;
 
             var topW = vertRowPosition + 30;
             brei.Margin = new Thickness(730, vertRowPosition, 0, 0);
@@ -356,6 +364,8 @@ namespace Desktop
             einz.Margin = new Thickness(830, vertRowPosition, 0, 0);
             stk.Margin = new Thickness(900, vertRowPosition, 0, 0);
             gpreis.Margin = new Thickness(950, vertRowPosition, 0, 0);
+            rab.Margin = new Thickness(1020, vertRowPosition, 0, 0);
+            akonto.Margin = new Thickness(1075, vertRowPosition + 5, 0, 0);
             myDinamicButton01.Margin = new Thickness(1110, vertRowPosition, 0, 0);
             btnAddType01.Margin = new Thickness(140, topW, 0, 0);
             btnAddType02.Margin = new Thickness(240, topW, 0, 0);
@@ -429,6 +439,11 @@ namespace Desktop
             this.RegisterName("stk_" + rowId, stk);
             gpreis.Name = "gpreis_" + rowId;
             this.RegisterName("gpreis_" + rowId, gpreis);
+            rab.Name = "rab_" + rowId;
+            this.RegisterName("rab_" + rowId, rab);
+            akonto.Name = "akonto_" + rowId;
+            this.RegisterName("akonto_" + rowId, akonto);
+            akonto.Click += akonto_Click;
 
             lastRowId = lastRowId + 1;
             if (lastRowId != 0) { myLabel01.Content = lastRowId; } else { myLabel01.Content = rowId; }
@@ -449,6 +464,8 @@ namespace Desktop
             grid01.Children.Add(gpreis);
             grid01.Children.Add(btnDown);
             grid01.Children.Add(btnUp);
+            grid01.Children.Add(rab);
+            grid01.Children.Add(akonto);
 
             vertRowPosition = vertRowPosition + 30;
             scr01.ScrollToBottom();
@@ -461,6 +478,34 @@ namespace Desktop
             //get_price(lastRowId, 1, mType[0].id, "0,8 cm", "poliert");
         }
         #endregion
+
+        private void akonto_Click(object sender, RoutedEventArgs e) 
+        {
+            var obj = sender as CheckBox;
+            int rowID = Convert.ToInt32(obj.Name.Split('_').Last());
+            Label LabelBr = (Label)this.FindName("rd_" + rowID);
+            if(obj.IsChecked == true)
+            {
+                //crvena
+                LabelBr.Foreground = Brushes.Red;
+            }
+            else
+            {
+                TextBox Tipreda01 = (TextBox)this.FindName("txtBoxPrva_" + rowID);
+                TextBox Tipreda02 = (TextBox)this.FindName("row2txtBox_" + rowID);
+                TextBox Tipreda03 = (TextBox)this.FindName("r3First_" + rowID);
+                if (Tipreda01 != null || Tipreda02 != null)
+                {
+                    //zelena
+                    LabelBr.Foreground = Brushes.Green;
+                }
+                else if(Tipreda03 != null)
+                {
+                    //plava
+                    LabelBr.Foreground = Brushes.Blue;
+                }
+            }
+        }
 
         #region Add Row Type 02
         private void addRowType02()
@@ -481,6 +526,8 @@ namespace Desktop
             TextBox r2einz = new TextBox();
             TextBox r2stk = new TextBox();
             TextBox r2gpreis = new TextBox();
+            TextBox r2rab = new TextBox();
+            CheckBox r2akonto = new CheckBox();
             //Button with image arrow down
             Image imgDown = new Image();
             BitmapImage biDown = new BitmapImage();
@@ -544,6 +591,8 @@ namespace Desktop
             r2stk.Height = 25;
             r2gpreis.Width = 60;
             r2gpreis.Height = 25;
+            r2rab.Width = 40;
+            r2rab.Height = 25;
 
             Row2myDinamicTxtBox01.HorizontalAlignment = HorizontalAlignment.Left;
             Row2myDinamicTxtBox01.VerticalAlignment = VerticalAlignment.Top;
@@ -573,6 +622,10 @@ namespace Desktop
             r2stk.VerticalAlignment = VerticalAlignment.Top;
             r2gpreis.HorizontalAlignment = HorizontalAlignment.Left;
             r2gpreis.VerticalAlignment = VerticalAlignment.Top;
+            r2rab.HorizontalAlignment = HorizontalAlignment.Left;
+            r2rab.VerticalAlignment = VerticalAlignment.Top;
+            r2akonto.HorizontalAlignment = HorizontalAlignment.Left;
+            r2akonto.VerticalAlignment = VerticalAlignment.Top;
 
             Row2myDinamicTxtBox01.Margin = new Thickness(30, vertRowPosition, 0, 0);
             r2First.Margin = new Thickness(30, vertRowPosition, 0, 0);
@@ -588,6 +641,8 @@ namespace Desktop
             myLabel01.Margin = new Thickness(5, vertRowPosition, 0, 0);
             btnDown.Margin = new Thickness(1190, vertRowPosition, 0, 0);
             btnUp.Margin = new Thickness(1230, vertRowPosition, 0, 0);
+            r2rab.Margin = new Thickness(1020, vertRowPosition, 0, 0);
+            r2akonto.Margin = new Thickness(1075, vertRowPosition + 5, 0, 0);
 
             Row2myDinamicTxtBox01.Name = "row2txtBox_" + rowId;
             this.RegisterName("row2txtBox_" + rowId, Row2myDinamicTxtBox01);
@@ -622,6 +677,12 @@ namespace Desktop
             this.RegisterName("r2stk_" + rowId, r2stk);
             r2gpreis.Name = "r2gpreis_" + rowId;
             this.RegisterName("r2gpreis_" + rowId, r2gpreis);
+            r2rab.Name = "r2rab_" + rowId;
+            this.RegisterName("r2rab_" + rowId, r2rab);
+            r2akonto.Name = "r2akonto_" + rowId;
+            this.RegisterName("r2akonto_" + rowId, r2akonto);
+            r2akonto.Click += akonto_Click;
+
             myLabel01.Foreground = Brushes.Green;
             myLabel01.FontWeight = FontWeights.Bold;
             lastRowId = lastRowId + 1;
@@ -644,6 +705,8 @@ namespace Desktop
             grid01.Children.Add(r2einz);
             grid01.Children.Add(r2stk);
             grid01.Children.Add(r2gpreis);
+            grid01.Children.Add(r2rab);
+            grid01.Children.Add(r2akonto);
 
             vertRowPosition = vertRowPosition + 30;
             scr01.ScrollToBottom();
