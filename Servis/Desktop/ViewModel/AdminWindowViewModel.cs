@@ -697,14 +697,14 @@ namespace Desktop.ViewModel
 
         public ICommand Paging
         {
-            get { return _paging = new RelayCommand(param => FillGridPage(param)); }
+            get { return _paging = new RelayCommand(param =>  FillGridPage(param)); }
             set { _paging = value; }
         }
         private ICommand _paging2;
 
         public ICommand Paging2
         {
-            get { return _paging2 = new RelayCommand(param => FillGridPage2(param)); }
+            get { return _paging2 = new RelayCommand(param => FillGridPage2(param), param => this.CanNext); }
             set { _paging2 = value; }
         }
 
@@ -712,7 +712,7 @@ namespace Desktop.ViewModel
 
         public ICommand PagingRikverc
         {
-            get { return _pagingRikverc = new RelayCommand(param => FillGridBack(param)); }
+            get { return _pagingRikverc = new RelayCommand(param => FillGridBack(param), param => this.CanLast); }
             set { _pagingRikverc = value; }
         }
         private ICommand _prebaciNaPrvi;
@@ -757,6 +757,7 @@ namespace Desktop.ViewModel
 
         public void FillGridPage(object parameter)
         {
+            ListaKalendar = client.ListaMitKalendar();
             Paginacija(BrojStranice);
         }
 
@@ -1033,7 +1034,44 @@ namespace Desktop.ViewModel
             }
         }
 
-        
+        public bool IsMin
+        {
+            get
+            {
+                if (BrojStranice == 1)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
+        public bool IsMax
+        {
+            get
+            {
+                if (BrojStranice == MaxStranica1)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
+        protected bool CanNext
+        {
+            get
+            {
+                return IsMax;
+            }
+        }
+
+
+        protected bool CanLast
+        {
+            get
+            {
+                return IsMin;
+            }
+        }
 
         public string Error
         {
