@@ -370,6 +370,7 @@
       <xs:element minOccurs="0" name="datum" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="datum1" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="odobreno" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="pogledano" nillable="true" type="xs:int" />

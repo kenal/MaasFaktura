@@ -271,18 +271,6 @@
       <Column Name="naziv" Type="System.String" DbType="NChar(150)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.mit_kalendar" Member="mit_kalendars">
-    <Type Name="mit_kalendar">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="datum1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="odobreno" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="pogledano" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="notiz" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
   <Table Name="dbo.mitarbeiter" Member="mitarbeiters">
     <Type Name="mitarbeiter">
       <Column Name="idMit" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -622,6 +610,18 @@
       <Column Name="materijal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.mit_kalendar" Member="mit_kalendars">
+    <Type Name="mit_kalendar">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datum1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odobreno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pogledano" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="notiz" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Table Name="dbo.p_get_MitKalendar_ViewResult" Member="p_get_MitKalendar_ViewResults">
     <Type Name="p_get_MitKalendar_ViewResult">
       <Column Name="firstName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
@@ -631,6 +631,7 @@
       <Column Name="tip" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="odobreno" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="pogledano" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

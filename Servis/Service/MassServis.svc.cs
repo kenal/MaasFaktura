@@ -1362,12 +1362,13 @@ namespace Service
             {
                 var query = from t1 in context.users
                             join t2 in context.mit_kalendars on t1.idUser equals t2.idUser
-                            select new { t1.firstName, t1.lastName,t2.datum, t2.datum1, t2.odobreno, t2.pogledano, t2.tip };
+                            select new { t1.firstName, t1.lastName,t2.datum, t2.datum1, t2.odobreno, t2.pogledano, t2.tip, t2.id };
                 Lista.Clear();
                 foreach (var p in query)
                 {
                     Lista.Add(new p_get_MitKalendar_ViewResult
                     {
+                        id = p.id,
                         firstName = p.firstName.Trim()+" ",
                         lastName = p.lastName.Trim(),
                         datum = p.datum,
@@ -1396,6 +1397,29 @@ namespace Service
                 }
             }
             return List;
+        }
+
+        [OperationContract]
+        public void changeKalendarOdobreno(int tip, int idUser)
+        {
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                try
+                {
+                    mit_kalendar kalendar = context.mit_kalendars.Single(e => e.id == idUser);
+
+                    if (tip == 1)
+                    { kalendar.odobreno = 1; }
+                    else if (tip == 2)
+                    { kalendar.odobreno = 0; }
+
+                    context.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
         }
     }
 }

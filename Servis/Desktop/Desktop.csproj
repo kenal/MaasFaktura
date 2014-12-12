@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="HelperClass\BackgroundConverter.cs" />
     <Compile Include="HelperClass\BackgroundConverter2.cs" />
+    <Compile Include="HelperClass\BackgroundConverter31.cs" />
     <Compile Include="HelperClass\BackgroundConverter3.cs" />
     <Compile Include="HelperClass\CountryConverter.cs" />
     <Compile Include="HelperClass\DbOperations.cs" />
