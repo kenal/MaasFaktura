@@ -107,6 +107,7 @@
       <DependentUpon>BestellungWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="HelperClass\BackgroundConverter.cs" />
+    <Compile Include="HelperClass\BackgroundConverter2.cs" />
     <Compile Include="HelperClass\CountryConverter.cs" />
     <Compile Include="HelperClass\DbOperations.cs" />
     <Compile Include="HelperClass\RelayCommand.cs" />
@@ -356,6 +357,7 @@
     <None Include="Properties\DataSources\Mass.Data.mit_kalendar.datasource" />
     <None Include="Properties\DataSources\Mass.Data.oberflache.datasource" />
     <None Include="Properties\DataSources\Mass.Data.produkt.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.p_get_MitKalendar_ViewResult.datasource" />
     <None Include="Properties\DataSources\Mass.Data.p_get_price_ViewResult.datasource" />
     <None Include="Properties\DataSources\Mass.Data.p_get_User_ViewResult.datasource" />
     <None Include="Properties\DataSources\Mass.Data.starke.datasource" />

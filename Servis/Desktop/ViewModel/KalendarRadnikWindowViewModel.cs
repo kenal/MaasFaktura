@@ -202,7 +202,7 @@ namespace Desktop.ViewModel
             set
             {
                 radioTip2 = value;
-                Tip = 2;
+                Tip = 3;
                 OnPropertyChanged("RadioTip2");
             }
         }
@@ -213,7 +213,7 @@ namespace Desktop.ViewModel
             set
             {
                 radioTip3 = value;
-                Tip = 3;
+                Tip = 2;
                 OnPropertyChanged("RadioTip3");
             }
         }

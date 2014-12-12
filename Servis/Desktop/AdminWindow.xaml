@@ -10,6 +10,7 @@
         Title="AdminWindow" Width="1024" MinWidth="900" MinHeight="600" Height="600" SizeToContent="WidthAndHeight" SizeChanged="Window_SizeChanged" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <local:BackgroundConverter x:Key="BackgroundConverter"/>
+        <local:BackgroundConverter2 x:Key="BackgroundConverter2"/>
     </Window.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -48,7 +49,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Mit.Kalendar" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,5,0,0" Click="Button_Click_2" Cursor="Hand">
+            <Button Content="Mit.Kalendar" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,5,0,0" Click="Button_Click_2" Cursor="Hand" Command="{Binding Path=DataContext.PopuniGridMitKalendar, ElementName=Window}">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#5A5A5A" Offset="1"/>
@@ -171,7 +172,7 @@
             </DataGrid>
         </Grid>
         <Grid Name="grdMit" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
-            <DataGrid x:Name="datagrid2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" >
+            <DataGrid x:Name="datagrid2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding ListaKalendar}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" >
                 <DataGrid.AlternatingRowBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -180,11 +181,30 @@
                     </LinearGradientBrush>
                 </DataGrid.AlternatingRowBackground>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding val1}" Width="*"  Header="Benutzername" x:Name="col2_1" IsReadOnly="True"/>
-                    <DataGridTextColumn Binding="{Binding val2}" Width="*" Header="Terminbeginn" x:Name="col2_2"/>
-                    <DataGridTextColumn Binding="{Binding val3}" Width="*" Header="Terminende" x:Name="col2_3"/>
-                    <DataGridTextColumn Binding="{Binding val4}" Width="*" Header="Termintype" x:Name="col2_4"/>
-                    <DataGridTextColumn Binding="{Binding val5}" Width="*" Header="Genehmigt" x:Name="col2_5"/>
+                    <DataGridTemplateColumn Header="Benutzername" x:Name="col2_1">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding firstName}"></TextBlock>
+                                    <TextBlock Text="{Binding lastName}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                    <DataGridTextColumn Binding="{Binding datum}" Width="*" Header="Terminbeginn" x:Name="col2_2"/>
+                    <DataGridTextColumn Binding="{Binding datum1}" Width="*" Header="Terminende" x:Name="col2_3"/>
+                    <DataGridTextColumn Binding="{Binding tip, Converter={StaticResource BackgroundConverter2}}" Width="*" Header="Termintype" x:Name="col2_4"/>
+                    <DataGridTemplateColumn  Header="Genehmight" x:Name="col2_5">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Ja" Width="30px" FontSize="10" Foreground="White"/>
+                                    <Button Content="Nein" Width="30px" FontSize="10" Foreground="White"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Binding="{Binding val6}" Width="*" Header="Aktionen" x:Name="col2_6"/>
                 </DataGrid.Columns>
             </DataGrid>

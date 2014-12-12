@@ -59,6 +59,8 @@ namespace Desktop.ViewModel
         private bool _statusBug;
         private string _datumBug;
         bug _selektovaniBug = new bug();
+        
+
 
         public bug SelektovaniBug
         {
@@ -69,6 +71,8 @@ namespace Desktop.ViewModel
                 OnPropertyChanged("SelektovaniBug");
             }
         }
+
+        ObservableCollection<p_get_MitKalendar_ViewResult> _listaKalendar;        
         #endregion     
 
         #region Properties
@@ -260,6 +264,74 @@ namespace Desktop.ViewModel
             get { return _datumBug; }
             set { _datumBug = value; OnPropertyChanged("DatumBug"); }
         }
+
+        #region MitarbeiterKalendarProperties
+        string _benutzername;
+
+        public string Benutzername
+        {
+            get { return _benutzername; }
+            set 
+            { 
+                _benutzername = value;
+                OnPropertyChanged("Benutzername");
+            }
+        }
+        DateTime _terminBeginn;
+
+        public DateTime TerminBeginn
+        {
+            get { return _terminBeginn; }
+            set 
+            { 
+                _terminBeginn = value;
+                OnPropertyChanged("TerminBeginn");
+            }
+        }
+        DateTime _terminende;
+
+        public DateTime Terminende
+        {
+            get { return _terminende; }
+            set 
+            { 
+                _terminende = value;
+                OnPropertyChanged("Terminende");
+            }
+        }
+        int _termintype;
+
+        public int Termintype
+        {
+            get { return _termintype; }
+            set 
+            { 
+                _termintype = value;
+                OnPropertyChanged("Termintype");
+            }
+        }
+        int _genehmigt;
+
+        public int Genehmigt
+        {
+            get { return _genehmigt; }
+            set 
+            { 
+                _genehmigt = value;
+                OnPropertyChanged("Genehmigt");
+            }
+        }
+
+        public ObservableCollection<p_get_MitKalendar_ViewResult> ListaKalendar
+        {
+            get { return _listaKalendar; }
+            set 
+            { 
+                _listaKalendar = value;
+                OnPropertyChanged("ListaKalendar");
+            }
+        }
+        #endregion
         #endregion
 
         #region Methods
@@ -435,6 +507,12 @@ namespace Desktop.ViewModel
             Password = null;
 
         }
+
+        public void PopuniGridMKalendar(object parameter)
+        {
+            ListaKalendar = client.ListaMitKalendar();
+            
+        }
         #endregion
 
         #region ICommand User
@@ -540,6 +618,14 @@ namespace Desktop.ViewModel
         {
             get { return _odustani = new RelayCommand(param => OdustaniUnos(param)); }
             set { _odustani = value; }
+        }
+
+        private ICommand _PopuniGridMitKalendar;
+
+        public ICommand PopuniGridMitKalendar
+        {
+            get { return _PopuniGridMitKalendar = new RelayCommand(param => PopuniGridMKalendar(param)); }
+            set { _PopuniGridMitKalendar = value; }
         }
         #endregion
 

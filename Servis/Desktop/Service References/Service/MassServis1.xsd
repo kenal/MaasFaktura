@@ -359,4 +359,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="p_get_price_ViewResult" nillable="true" type="tns:p_get_price_ViewResult" />
+  <xs:complexType name="ArrayOfp_get_MitKalendar_ViewResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="p_get_MitKalendar_ViewResult" nillable="true" type="tns:p_get_MitKalendar_ViewResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfp_get_MitKalendar_ViewResult" nillable="true" type="tns:ArrayOfp_get_MitKalendar_ViewResult" />
+  <xs:complexType name="p_get_MitKalendar_ViewResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="datum" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="datum1" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="odobreno" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pogledano" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tip" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="p_get_MitKalendar_ViewResult" nillable="true" type="tns:p_get_MitKalendar_ViewResult" />
 </xs:schema>

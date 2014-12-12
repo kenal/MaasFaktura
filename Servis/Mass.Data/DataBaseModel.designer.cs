@@ -550,6 +550,14 @@ namespace Mass.Data
 				return this.GetTable<p_get_price_ViewResult>();
 			}
 		}
+		
+		public System.Data.Linq.Table<p_get_MitKalendar_ViewResult> p_get_MitKalendar_ViewResults
+		{
+			get
+			{
+				return this.GetTable<p_get_MitKalendar_ViewResult>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.akonto")]
@@ -12759,6 +12767,141 @@ namespace Mass.Data
 				if ((this._materijal != value))
 				{
 					this._materijal = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.p_get_MitKalendar_ViewResult")]
+	public partial class p_get_MitKalendar_ViewResult
+	{
+		
+		private string _firstName;
+		
+		private string _lastName;
+		
+		private System.Nullable<System.DateTime> _datum;
+		
+		private System.Nullable<System.DateTime> _datum1;
+		
+		private System.Nullable<int> _tip;
+		
+		private System.Nullable<int> _odobreno;
+		
+		private System.Nullable<int> _pogledano;
+		
+		public p_get_MitKalendar_ViewResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="NChar(50)")]
+		public string firstName
+		{
+			get
+			{
+				return this._firstName;
+			}
+			set
+			{
+				if ((this._firstName != value))
+				{
+					this._firstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="NChar(50)")]
+		public string lastName
+		{
+			get
+			{
+				return this._lastName;
+			}
+			set
+			{
+				if ((this._lastName != value))
+				{
+					this._lastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datum
+		{
+			get
+			{
+				return this._datum;
+			}
+			set
+			{
+				if ((this._datum != value))
+				{
+					this._datum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum1", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datum1
+		{
+			get
+			{
+				return this._datum1;
+			}
+			set
+			{
+				if ((this._datum1 != value))
+				{
+					this._datum1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip", DbType="Int")]
+		public System.Nullable<int> tip
+		{
+			get
+			{
+				return this._tip;
+			}
+			set
+			{
+				if ((this._tip != value))
+				{
+					this._tip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_odobreno", DbType="Int")]
+		public System.Nullable<int> odobreno
+		{
+			get
+			{
+				return this._odobreno;
+			}
+			set
+			{
+				if ((this._odobreno != value))
+				{
+					this._odobreno = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pogledano", DbType="Int")]
+		public System.Nullable<int> pogledano
+		{
+			get
+			{
+				return this._pogledano;
+			}
+			set
+			{
+				if ((this._pogledano != value))
+				{
+					this._pogledano = value;
 				}
 			}
 		}
