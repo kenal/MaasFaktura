@@ -351,6 +351,7 @@
     <None Include="Desktop_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\Mass.Data.artikl.datasource" />
     <None Include="Properties\DataSources\Mass.Data.bug.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.einheit.datasource" />
     <None Include="Properties\DataSources\Mass.Data.kunden.datasource" />
     <None Include="Properties\DataSources\Mass.Data.lieferant.datasource" />
     <None Include="Properties\DataSources\Mass.Data.materijal.datasource" />

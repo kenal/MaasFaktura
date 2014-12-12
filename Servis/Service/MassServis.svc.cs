@@ -1381,7 +1381,22 @@ namespace Service
             }
             return Lista;
         }
+        [OperationContract]
+        public ObservableCollection<einheit> getEinheit()
+        {
+            ObservableCollection<einheit> List = new ObservableCollection<einheit>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.einheits  select a;
 
+                List.Clear();
+                foreach (var p in x)
+                {
+                    List.Add(new einheit { id = p.id, jedinica = p.jedinica });
+                }
+            }
+            return List;
+        }
     }
 }
    

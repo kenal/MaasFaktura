@@ -733,4 +733,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getEinheit">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEinheitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getEinheitResult" nillable="true" type="q34:ArrayOfeinheit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
