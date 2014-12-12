@@ -456,7 +456,8 @@ namespace Desktop.ViewModel
                     client.changeUserPocetnaOrAktivan(1, Convert.ToInt32(SelektovaniUser.idUser), true);
 
                 }
-                PopuniGridKorisnika(parameter);
+                ListaKorisnika = client.ListaUserView();
+                PaginacijaUser(BrojStraniceUser);
             }
            
         }
@@ -492,7 +493,8 @@ namespace Desktop.ViewModel
                 {
                     client.changeUserPocetnaOrAktivan(2, Convert.ToInt32(SelektovaniUser.idUser), true);
                 }
-                PopuniGridKorisnika(parameter);
+                ListaKorisnika = client.ListaUserView();
+                PaginacijaUser(BrojStraniceUser);
             }
         }
 
@@ -728,7 +730,7 @@ namespace Desktop.ViewModel
             set
             {
                 _maxStranica = value;
-                OnPropertyChanged("MaxStranica");
+                OnPropertyChanged("MaxStranica1");
             }
         }
         #endregion
@@ -853,6 +855,187 @@ namespace Desktop.ViewModel
         }
         #endregion
 
+        #endregion
+
+        #region Paginacija korisnika
+        ObservableCollection<p_get_User_ViewResult> ListaPageUser = new ObservableCollection<p_get_User_ViewResult>();
+
+        public ObservableCollection<p_get_User_ViewResult> ListaPageUser1
+        {
+            get { return ListaPageUser; }
+            set
+            {
+                ListaPageUser = value;
+                OnPropertyChanged("ListaPageUser1");
+            }
+        }
+        int brojStraniceUser = 1;
+
+        public int BrojStraniceUser
+        {
+            get { return brojStraniceUser; }
+            set
+            {
+                brojStraniceUser = value;
+                OnPropertyChanged("BrojStraniceUser");
+            }
+        }
+
+        private int _kolicinaPrikazaUser = 10;
+
+        public int KolicinaPrikazaUser
+        {
+            get { return _kolicinaPrikazaUser; }
+            set
+            {
+                _kolicinaPrikazaUser = value;
+                OnPropertyChanged("KolicinaPrikazaUser");
+            }
+        }
+
+        private List<int> _brojPrikazanihPageUser = new List<int>() { 10, 20, 25 };
+
+        public List<int> BrojPrikazanihPageUser
+        {
+            get { return _brojPrikazanihPageUser; }
+            set
+            {
+                _brojPrikazanihPageUser = value;
+                OnPropertyChanged("BrojPrikazanihPageUser");
+            }
+        }
+
+        private int _maxStranicaUser;
+
+        public int MaxStranicaUser1
+        {
+            get { return _maxStranicaUser; }
+            set
+            {
+                _maxStranicaUser = value;
+                OnPropertyChanged("MaxStranicaUser1");
+            }
+        }
+        #endregion
+
+        #region ICommand Members
+        private ICommand _pagingUser;
+
+        public ICommand PagingUser
+        {
+            get { return _pagingUser = new RelayCommand(param => FillGridPageUser(param)); }
+            set { _pagingUser = value; }
+        }
+        private ICommand _pagingUser2;
+
+        public ICommand PagingUser2
+        {
+            get { return _pagingUser2 = new RelayCommand(param => FillGridPageUser2(param), param => this.CanNextUser); }
+            set { _pagingUser2 = value; }
+        }
+
+        private ICommand _pagingRikvercUser;
+
+        public ICommand PagingRikvercUser
+        {
+            get { return _pagingRikvercUser = new RelayCommand(param => FillGridBackUser(param), param => this.CanLastUser); }
+            set { _pagingRikvercUser = value; }
+        }
+        private ICommand _prebaciNaPrviUser;
+
+        public ICommand PrebaciNaPrviUser
+        {
+            get { return _prebaciNaPrviUser = new RelayCommand(param => FillGridFirstUser(param)); }
+            set { _prebaciNaPrviUser = value; }
+        }
+
+        private ICommand _prebaciNaZadnjiUser;
+
+        public ICommand PrebaciNaZadnjiUser
+        {
+            get { return _prebaciNaZadnjiUser = new RelayCommand(param => FillGridLastUser(param)); }
+            set { _prebaciNaZadnjiUser = value; }
+        }
+        #endregion
+
+        #region Methods
+        public void PaginacijaUser(int stranica)
+        {
+            int neUzimati = 10;
+
+            if (ListaKorisnika != null)
+            {
+                int brojPrikaza = stranica * KolicinaPrikazaUser;
+                if (brojPrikaza > ListaKorisnika.Count())
+                    brojPrikaza = ListaKorisnika.Count();
+                int ostatak = brojPrikaza % KolicinaPrikazaUser;
+                if (ostatak != 0)
+                    neUzimati = brojPrikaza - ostatak;
+                else
+                    neUzimati = brojPrikaza - KolicinaPrikazaUser;
+                var x = ListaKorisnika.Skip(neUzimati).Take(KolicinaPrikazaUser);
+                ListaPageUser1.Clear();
+                ListaPageUser1 = new ObservableCollection<p_get_User_ViewResult>(x);
+            }
+
+            MaxStranicaUser();
+        }
+
+        public void FillGridPageUser(object parameter)
+        {
+            ListaKorisnika = client.ListaUserView();
+            PaginacijaUser(BrojStraniceUser);
+        }
+
+        public void FillGridPageUser2(object parameter)
+        {
+            BrojStraniceUser++;
+            PaginacijaUser(BrojStraniceUser);
+
+        }
+
+        public void FillGridBackUser(object parameter)
+        {
+            BrojStraniceUser--;
+            PaginacijaUser(BrojStraniceUser);
+        }
+
+        public void FillGridFirstUser(object parameter)
+        {
+            BrojStraniceUser = 1;
+            PaginacijaUser(BrojStraniceUser);
+        }
+
+        public void FillGridLastUser(object parameter)
+        {
+            if (ListaKorisnika != null)
+            {
+                int a = ListaKorisnika.Count();
+                double pozicija = Convert.ToDouble(a) / KolicinaPrikazaUser;
+                if (pozicija % 1 == 0)
+                    BrojStraniceUser = Convert.ToInt32(pozicija);
+                else
+                    BrojStraniceUser = Convert.ToInt32(pozicija - ((pozicija * 10) % 10) / 10) + 1;
+                PaginacijaUser(BrojStraniceUser);
+            }
+
+        }
+
+        public void MaxStranicaUser()
+        {
+            if (ListaKorisnika != null)
+            {
+                int a = ListaKorisnika.Count();
+                double pozicija = Convert.ToDouble(a) / KolicinaPrikazaUser;
+                if (pozicija % 1 == 0)
+                    MaxStranicaUser1 = Convert.ToInt32(pozicija);
+                else
+                {
+                    MaxStranicaUser1 = Convert.ToInt32(pozicija - ((pozicija * 10) % 10) / 10) + 1;
+                }
+
+            }
+        }
         #endregion
 
         #region INotifyPropertyChanged Members
@@ -1111,6 +1294,45 @@ namespace Desktop.ViewModel
             get
             {
                 return IsMin;
+            }
+        }
+
+        public bool IsMinUser
+        {
+            get
+            {
+                if (BrojStraniceUser == 1)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
+        public bool IsMaxUser
+        {
+            get
+            {
+                if (BrojStraniceUser == MaxStranicaUser1)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
+        protected bool CanNextUser
+        {
+            get
+            {
+                return IsMaxUser;
+            }
+        }
+
+
+        protected bool CanLastUser
+        {
+            get
+            {
+                return IsMinUser;
             }
         }
 

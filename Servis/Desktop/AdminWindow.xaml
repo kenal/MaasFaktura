@@ -44,7 +44,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Benutzer" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,5,0,0" Click="Button_Click_1" Cursor="Hand">
+            <Button Content="Benutzer" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,5,0,0" Click="Button_Click_1" Command="{Binding Path=DataContext.PagingUser, ElementName=Window}" Cursor="Hand">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#5A5A5A" Offset="1"/>
@@ -102,7 +102,7 @@
             <Button Content="Abbrechen" Height="30" Width="130" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="165,350,0,0" Background="#414141" Foreground="White" FontWeight="Bold" FontSize="14" Command="{Binding Odustani}" Cursor="Hand"/>
         </Grid>
         <Grid Name="grdBen" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
-            <DataGrid x:Name="datagrid1" Grid.Column="1" SelectedItem="{Binding Path=DataContext.SelektovaniUser,ElementName=datagrid1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.RowSpan="4"  x:Uid="datagrid1" SelectionMode="Single" Background="#FFFFFF" RowHeight="40" IsReadOnly="True" ItemsSource="{Binding ListaKorisnika}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" >
+            <DataGrid x:Name="datagrid1" SelectedItem="{Binding Path=DataContext.SelektovaniUser,ElementName=datagrid1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  x:Uid="datagrid1" SelectionMode="Single" Background="#FFFFFF" RowHeight="40" IsReadOnly="True" ItemsSource="{Binding ListaPageUser1}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" Margin="0,77,0,0" >
                 <DataGrid.AlternatingRowBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -173,6 +173,49 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <Button BorderBrush="{x:Null}" Height="23" HorizontalAlignment="Left"  Margin="10,1,0,0" VerticalAlignment="Top"
+                    Width="40" x:Name="btnLastUser" Opacity="0.75" Content="&lt;&lt;" Cursor="Hand"  Command="{Binding PrebaciNaPrviUser}">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5A5A5A" Offset="0.188" />
+                        <GradientStop Color="#E1E1E1" Offset="0.543" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderBrush="{x:Null}" Height="23"  Margin="55,1,0,0" VerticalAlignment="Top" x:Name="btnPrevUser" Opacity="0.75" Content="&lt;" HorizontalAlignment="Left" Width="40" Cursor="Hand" Command="{Binding PagingRikvercUser}">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5A5A5A" Offset="0.188" />
+                        <GradientStop Color="#E1E1E1" Offset="0.543" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Height="23" HorizontalAlignment="Left" Margin="132,1,0,0" VerticalAlignment="Top" x:Name="btnNextUser" Width="40" Content="&gt;" BorderBrush="{x:Null}"  Opacity="0.75" RenderTransformOrigin="0.875,0.609" Cursor="Hand" Command="{Binding PagingUser2}">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5A5A5A" Offset="0.188" />
+                        <GradientStop Color="#E1E1E1" Offset="0.543" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Height="23" HorizontalAlignment="Left" Margin="177,1,0,0" VerticalAlignment="Top" x:Name="btnFirstUser" Width="40" Content="&gt;&gt;" BorderBrush="{x:Null}" Opacity="0.75" Cursor="Hand" Command="{Binding PrebaciNaZadnjiUser}">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5A5A5A" Offset="0.188" />
+                        <GradientStop Color="#E1E1E1" Offset="0.543" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label Height="23" HorizontalAlignment="Left" Margin="100,2,0,0" VerticalAlignment="Top" Width="27" x:Name="lblPageNumberUser" Content="{Binding BrojStraniceUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.222,-0.609"/>
+            <Label Content="Es werden" FontSize="14" HorizontalAlignment="Left" Margin="10,29,0,426" VerticalAlignment="Top" Width="76"/>
+            <ComboBox x:Name="BrojPrikazaUser" HorizontalAlignment="Left" Margin="91,32,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.906,0.231" ItemsSource="{Binding BrojPrikazanihPageUser}" SelectedItem="{Binding KolicinaPrikazaUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding Path=DataContext.PrebaciNaPrviUser, ElementName=BrojPrikazaUser}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+            <Label Content="Einträge per Seite angezeigt" FontSize="14" HorizontalAlignment="Left" Margin="145,29,0,0" VerticalAlignment="Top" Width="192"/>
         </Grid>
         <Grid Name="grdMit" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
 
@@ -206,9 +249,9 @@
                                     <Button Content="Ja" Width="30px" FontSize="10" Foreground="White" Command="{Binding Path=DataContext.PromjeniOdobreno1, ElementName=datagrid2}" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter3}}" FontWeight="Bold" Cursor="Hand"/>
                                     <Button Content="Nein" Width="30px" FontSize="10" Foreground="White" Command="{Binding Path=DataContext.PromjeniOdobreno2, ElementName=datagrid2}" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter31}}" FontWeight="Bold" Cursor="Hand"/>
                                     <StackPanel.Resources>
-                                    <Style TargetType="{x:Type Button}">
-                                        <Setter Property="Margin" Value="{StaticResource tbMargin}"/>
-                                    </Style>
+                                        <Style TargetType="{x:Type Button}">
+                                            <Setter Property="Margin" Value="{StaticResource tbMargin}"/>
+                                        </Style>
                                     </StackPanel.Resources>
                                 </StackPanel>
                             </DataTemplate>
