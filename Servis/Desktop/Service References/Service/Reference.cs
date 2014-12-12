@@ -366,6 +366,12 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getProduktIdByName", ReplyAction="http://tempuri.org/MassServis/getProduktIdByNameResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.produkt>> getProduktIdByNameAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterijalIDName", ReplyAction="http://tempuri.org/MassServis/getMaterijalIDNameResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl> getMaterijalIDName(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterijalIDName", ReplyAction="http://tempuri.org/MassServis/getMaterijalIDNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getMaterijalIDNameAsync(string value);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -845,6 +851,14 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.produkt>> getProduktIdByNameAsync(string value) {
             return base.Channel.getProduktIdByNameAsync(value);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl> getMaterijalIDName(string value) {
+            return base.Channel.getMaterijalIDName(value);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getMaterijalIDNameAsync(string value) {
+            return base.Channel.getMaterijalIDNameAsync(value);
         }
     }
 }

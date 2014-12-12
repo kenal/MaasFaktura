@@ -1337,6 +1337,7 @@ namespace Service
             }
             return ListaP;
         }
+        [OperationContract]
         public ObservableCollection<artikl> getMaterijalIDName(string value)
         {
             ObservableCollection<artikl> ListP = new ObservableCollection<artikl>();
