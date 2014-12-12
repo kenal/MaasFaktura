@@ -12,6 +12,7 @@
         <local:BackgroundConverter x:Key="BackgroundConverter"/>
         <local:BackgroundConverter2 x:Key="BackgroundConverter2"/>
         <local:BackgroundConverter3 x:Key="BackgroundConverter3"/>
+        <local:BackgroundConverter31 x:Key="BackgroundConverter31"/>
         <Thickness x:Key="tbMargin">30,0,0,0</Thickness>
     </Window.Resources>
     <i:Interaction.Triggers>
@@ -175,7 +176,7 @@
         </Grid>
         <Grid Name="grdMit" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
 
-            <DataGrid x:Name="datagrid2"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding ListaPage1}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" Margin="0,75,0,0" >
+            <DataGrid x:Name="datagrid2" SelectedItem="{Binding Path=DataContext.SelektovaniKalendar,ElementName=datagrid2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding ListaPage1}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" Margin="0,75,0,0" >
                 <DataGrid.AlternatingRowBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -202,8 +203,8 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Ja" Width="30px" FontSize="10" Foreground="White" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter3}}" FontWeight="Bold" Cursor="Hand"/>
-                                    <Button Content="Nein" Width="30px" FontSize="10" Foreground="White" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter3}}" FontWeight="Bold" Cursor="Hand"/>
+                                    <Button Content="Ja" Width="30px" FontSize="10" Foreground="White" Command="{Binding Path=DataContext.PromjeniOdobreno1, ElementName=datagrid2}" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter3}}" FontWeight="Bold" Cursor="Hand"/>
+                                    <Button Content="Nein" Width="30px" FontSize="10" Foreground="White" Command="{Binding Path=DataContext.PromjeniOdobreno2, ElementName=datagrid2}" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter31}}" FontWeight="Bold" Cursor="Hand"/>
                                     <StackPanel.Resources>
                                     <Style TargetType="{x:Type Button}">
                                         <Setter Property="Margin" Value="{StaticResource tbMargin}"/>

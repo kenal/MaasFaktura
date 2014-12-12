@@ -59,7 +59,17 @@ namespace Desktop.ViewModel
         private bool _statusBug;
         private string _datumBug;
         bug _selektovaniBug = new bug();
-        
+        private p_get_MitKalendar_ViewResult _selektovaniKalendar;
+
+        public p_get_MitKalendar_ViewResult SelektovaniKalendar
+        {
+            get { return _selektovaniKalendar; }
+            set 
+            { 
+                _selektovaniKalendar = value;
+                OnPropertyChanged("SelektovaniKalendar");
+            }
+        }
 
 
         public bug SelektovaniBug
@@ -508,6 +518,21 @@ namespace Desktop.ViewModel
 
         }
 
+        public void OdobrenoPromjeni1(object parameter)
+        {
+            client.changeKalendarOdobreno(1, SelektovaniKalendar.id);
+            ListaKalendar = client.ListaMitKalendar();
+            Paginacija(BrojStranice);
+            
+        }
+
+        public void OdobrenoPromjeni2(object parameter)
+        {
+            client.changeKalendarOdobreno(2, SelektovaniKalendar.id);
+            ListaKalendar = client.ListaMitKalendar();
+            Paginacija(BrojStranice);
+        }
+
         public void PopuniGridMKalendar(object parameter)
         {
             ListaKalendar = client.ListaMitKalendar();
@@ -626,6 +651,22 @@ namespace Desktop.ViewModel
         {
             get { return _PopuniGridMitKalendar = new RelayCommand(param => PopuniGridMKalendar(param)); }
             set { _PopuniGridMitKalendar = value; }
+        }
+
+        private ICommand _promjeniOdobreno1;
+
+        public ICommand PromjeniOdobreno1
+        {
+            get { return _promjeniOdobreno1 = new RelayCommand(param => OdobrenoPromjeni1(param)); }
+            set { _promjeniOdobreno1 = value; }
+        }
+
+        private ICommand _promjeniOdobreno2;
+
+        public ICommand PromjeniOdobreno2
+        {
+            get { return _promjeniOdobreno2 = new RelayCommand(param => OdobrenoPromjeni2(param)); }
+            set { _promjeniOdobreno2 = value; }
         }
         #endregion
 

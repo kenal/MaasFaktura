@@ -104,12 +104,6 @@
         <elementListCompartment Id="40f4ada4-6a7d-4b36-bd1a-08a43edee8af" absoluteBounds="15.765, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="38d31382-e3dd-4e2d-abf3-15905674b283" absoluteBounds="15.75, 8.75, 2, 2.3478011067708344">
-      <DataClassMoniker Name="/DataBaseModelDataContext/mit_kalendar" />
-      <nestedChildShapes>
-        <elementListCompartment Id="042bca5f-93ab-4fe8-af0d-98f1091b4e2d" absoluteBounds="15.765, 9.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="3cd3630b-dc62-48e7-b194-9ca243db5db0" absoluteBounds="15.75, 12.75, 2, 6.5784326171875005">
       <DataClassMoniker Name="/DataBaseModelDataContext/mitarbeiter" />
       <nestedChildShapes>
@@ -300,10 +294,16 @@
         <elementListCompartment Id="22606f26-36c5-4789-97fa-64dd4c0160b1" absoluteBounds="18.64, 23.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="87055ad0-1dbb-4de1-b195-f45156976aaf" absoluteBounds="21.75, 23, 2, 2.1554996744791666">
+    <classShape Id="f18e163a-6af3-4b90-bba3-6ce0778e506b" absoluteBounds="15.75, 9.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataBaseModelDataContext/mit_kalendar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fe72694-b5d7-4ca1-bc6c-e9fb2d6b7df0" absoluteBounds="15.765, 9.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="875a65c1-addb-481b-9b00-79943c527d99" absoluteBounds="21.625, 22.875, 2, 2.3478011067708335">
       <DataClassMoniker Name="/DataBaseModelDataContext/p_get_MitKalendar_ViewResult" />
       <nestedChildShapes>
-        <elementListCompartment Id="91d0fc6d-1868-445a-9efc-3a24ec48ac85" absoluteBounds="21.765, 23.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f6ae6fef-5e15-47df-8805-473a8a95b593" absoluteBounds="21.64, 23.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

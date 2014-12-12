@@ -81,9 +81,6 @@ namespace Mass.Data
     partial void Insertmaterijal(materijal instance);
     partial void Updatematerijal(materijal instance);
     partial void Deletematerijal(materijal instance);
-    partial void Insertmit_kalendar(mit_kalendar instance);
-    partial void Updatemit_kalendar(mit_kalendar instance);
-    partial void Deletemit_kalendar(mit_kalendar instance);
     partial void Insertmitarbeiter(mitarbeiter instance);
     partial void Updatemitarbeiter(mitarbeiter instance);
     partial void Deletemitarbeiter(mitarbeiter instance);
@@ -159,6 +156,9 @@ namespace Mass.Data
     partial void Insertweb_stranice_inv(web_stranice_inv instance);
     partial void Updateweb_stranice_inv(web_stranice_inv instance);
     partial void Deleteweb_stranice_inv(web_stranice_inv instance);
+    partial void Insertmit_kalendar(mit_kalendar instance);
+    partial void Updatemit_kalendar(mit_kalendar instance);
+    partial void Deletemit_kalendar(mit_kalendar instance);
     #endregion
 		
 		public DataBaseModelDataContext() : 
@@ -324,14 +324,6 @@ namespace Mass.Data
 			get
 			{
 				return this.GetTable<materijal>();
-			}
-		}
-		
-		public System.Data.Linq.Table<mit_kalendar> mit_kalendars
-		{
-			get
-			{
-				return this.GetTable<mit_kalendar>();
 			}
 		}
 		
@@ -548,6 +540,14 @@ namespace Mass.Data
 			get
 			{
 				return this.GetTable<p_get_price_ViewResult>();
+			}
+		}
+		
+		public System.Data.Linq.Table<mit_kalendar> mit_kalendars
+		{
+			get
+			{
+				return this.GetTable<mit_kalendar>();
 			}
 		}
 		
@@ -6053,236 +6053,6 @@ namespace Mass.Data
 					this._naziv = value;
 					this.SendPropertyChanged("naziv");
 					this.OnnazivChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mit_kalendar")]
-	public partial class mit_kalendar : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private int _idUser;
-		
-		private System.Nullable<System.DateTime> _datum;
-		
-		private System.Nullable<System.DateTime> _datum1;
-		
-		private System.Nullable<int> _tip;
-		
-		private System.Nullable<int> _odobreno;
-		
-		private System.Nullable<int> _pogledano;
-		
-		private string _notiz;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnidUserChanging(int value);
-    partial void OnidUserChanged();
-    partial void OndatumChanging(System.Nullable<System.DateTime> value);
-    partial void OndatumChanged();
-    partial void Ondatum1Changing(System.Nullable<System.DateTime> value);
-    partial void Ondatum1Changed();
-    partial void OntipChanging(System.Nullable<int> value);
-    partial void OntipChanged();
-    partial void OnodobrenoChanging(System.Nullable<int> value);
-    partial void OnodobrenoChanged();
-    partial void OnpogledanoChanging(System.Nullable<int> value);
-    partial void OnpogledanoChanged();
-    partial void OnnotizChanging(string value);
-    partial void OnnotizChanged();
-    #endregion
-		
-		public mit_kalendar()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int NOT NULL")]
-		public int idUser
-		{
-			get
-			{
-				return this._idUser;
-			}
-			set
-			{
-				if ((this._idUser != value))
-				{
-					this.OnidUserChanging(value);
-					this.SendPropertyChanging();
-					this._idUser = value;
-					this.SendPropertyChanged("idUser");
-					this.OnidUserChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
-		public System.Nullable<System.DateTime> datum
-		{
-			get
-			{
-				return this._datum;
-			}
-			set
-			{
-				if ((this._datum != value))
-				{
-					this.OndatumChanging(value);
-					this.SendPropertyChanging();
-					this._datum = value;
-					this.SendPropertyChanged("datum");
-					this.OndatumChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum1", DbType="DateTime")]
-		public System.Nullable<System.DateTime> datum1
-		{
-			get
-			{
-				return this._datum1;
-			}
-			set
-			{
-				if ((this._datum1 != value))
-				{
-					this.Ondatum1Changing(value);
-					this.SendPropertyChanging();
-					this._datum1 = value;
-					this.SendPropertyChanged("datum1");
-					this.Ondatum1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip", DbType="Int")]
-		public System.Nullable<int> tip
-		{
-			get
-			{
-				return this._tip;
-			}
-			set
-			{
-				if ((this._tip != value))
-				{
-					this.OntipChanging(value);
-					this.SendPropertyChanging();
-					this._tip = value;
-					this.SendPropertyChanged("tip");
-					this.OntipChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_odobreno", DbType="Int")]
-		public System.Nullable<int> odobreno
-		{
-			get
-			{
-				return this._odobreno;
-			}
-			set
-			{
-				if ((this._odobreno != value))
-				{
-					this.OnodobrenoChanging(value);
-					this.SendPropertyChanging();
-					this._odobreno = value;
-					this.SendPropertyChanged("odobreno");
-					this.OnodobrenoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pogledano", DbType="Int")]
-		public System.Nullable<int> pogledano
-		{
-			get
-			{
-				return this._pogledano;
-			}
-			set
-			{
-				if ((this._pogledano != value))
-				{
-					this.OnpogledanoChanging(value);
-					this.SendPropertyChanging();
-					this._pogledano = value;
-					this.SendPropertyChanged("pogledano");
-					this.OnpogledanoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_notiz", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string notiz
-		{
-			get
-			{
-				return this._notiz;
-			}
-			set
-			{
-				if ((this._notiz != value))
-				{
-					this.OnnotizChanging(value);
-					this.SendPropertyChanging();
-					this._notiz = value;
-					this.SendPropertyChanged("notiz");
-					this.OnnotizChanged();
 				}
 			}
 		}
@@ -12772,6 +12542,236 @@ namespace Mass.Data
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mit_kalendar")]
+	public partial class mit_kalendar : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _idUser;
+		
+		private System.Nullable<System.DateTime> _datum;
+		
+		private System.Nullable<System.DateTime> _datum1;
+		
+		private System.Nullable<int> _tip;
+		
+		private System.Nullable<int> _odobreno;
+		
+		private System.Nullable<int> _pogledano;
+		
+		private string _notiz;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnidUserChanging(int value);
+    partial void OnidUserChanged();
+    partial void OndatumChanging(System.Nullable<System.DateTime> value);
+    partial void OndatumChanged();
+    partial void Ondatum1Changing(System.Nullable<System.DateTime> value);
+    partial void Ondatum1Changed();
+    partial void OntipChanging(System.Nullable<int> value);
+    partial void OntipChanged();
+    partial void OnodobrenoChanging(System.Nullable<int> value);
+    partial void OnodobrenoChanged();
+    partial void OnpogledanoChanging(System.Nullable<int> value);
+    partial void OnpogledanoChanged();
+    partial void OnnotizChanging(string value);
+    partial void OnnotizChanged();
+    #endregion
+		
+		public mit_kalendar()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idUser", DbType="Int NOT NULL")]
+		public int idUser
+		{
+			get
+			{
+				return this._idUser;
+			}
+			set
+			{
+				if ((this._idUser != value))
+				{
+					this.OnidUserChanging(value);
+					this.SendPropertyChanging();
+					this._idUser = value;
+					this.SendPropertyChanged("idUser");
+					this.OnidUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datum
+		{
+			get
+			{
+				return this._datum;
+			}
+			set
+			{
+				if ((this._datum != value))
+				{
+					this.OndatumChanging(value);
+					this.SendPropertyChanging();
+					this._datum = value;
+					this.SendPropertyChanged("datum");
+					this.OndatumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datum1", DbType="DateTime")]
+		public System.Nullable<System.DateTime> datum1
+		{
+			get
+			{
+				return this._datum1;
+			}
+			set
+			{
+				if ((this._datum1 != value))
+				{
+					this.Ondatum1Changing(value);
+					this.SendPropertyChanging();
+					this._datum1 = value;
+					this.SendPropertyChanged("datum1");
+					this.Ondatum1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip", DbType="Int")]
+		public System.Nullable<int> tip
+		{
+			get
+			{
+				return this._tip;
+			}
+			set
+			{
+				if ((this._tip != value))
+				{
+					this.OntipChanging(value);
+					this.SendPropertyChanging();
+					this._tip = value;
+					this.SendPropertyChanged("tip");
+					this.OntipChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_odobreno", DbType="Int")]
+		public System.Nullable<int> odobreno
+		{
+			get
+			{
+				return this._odobreno;
+			}
+			set
+			{
+				if ((this._odobreno != value))
+				{
+					this.OnodobrenoChanging(value);
+					this.SendPropertyChanging();
+					this._odobreno = value;
+					this.SendPropertyChanged("odobreno");
+					this.OnodobrenoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pogledano", DbType="Int")]
+		public System.Nullable<int> pogledano
+		{
+			get
+			{
+				return this._pogledano;
+			}
+			set
+			{
+				if ((this._pogledano != value))
+				{
+					this.OnpogledanoChanging(value);
+					this.SendPropertyChanging();
+					this._pogledano = value;
+					this.SendPropertyChanged("pogledano");
+					this.OnpogledanoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_notiz", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string notiz
+		{
+			get
+			{
+				return this._notiz;
+			}
+			set
+			{
+				if ((this._notiz != value))
+				{
+					this.OnnotizChanging(value);
+					this.SendPropertyChanging();
+					this._notiz = value;
+					this.SendPropertyChanged("notiz");
+					this.OnnotizChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.p_get_MitKalendar_ViewResult")]
 	public partial class p_get_MitKalendar_ViewResult
 	{
@@ -12789,6 +12789,8 @@ namespace Mass.Data
 		private System.Nullable<int> _odobreno;
 		
 		private System.Nullable<int> _pogledano;
+		
+		private int _id;
 		
 		public p_get_MitKalendar_ViewResult()
 		{
@@ -12902,6 +12904,22 @@ namespace Mass.Data
 				if ((this._pogledano != value))
 				{
 					this._pogledano = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
 				}
 			}
 		}

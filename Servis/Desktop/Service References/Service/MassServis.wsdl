@@ -326,6 +326,12 @@
   <wsdl:message name="MassServis_getEinheit_OutputMessage">
     <wsdl:part name="parameters" element="tns:getEinheitResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_changeKalendarOdobreno_InputMessage">
+    <wsdl:part name="parameters" element="tns:changeKalendarOdobreno" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_changeKalendarOdobreno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:changeKalendarOdobrenoResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -538,6 +544,10 @@
     <wsdl:operation name="getEinheit">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getEinheit" message="tns:MassServis_getEinheit_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getEinheitResponse" message="tns:MassServis_getEinheit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="changeKalendarOdobreno">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/changeKalendarOdobreno" message="tns:MassServis_changeKalendarOdobreno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/changeKalendarOdobrenoResponse" message="tns:MassServis_changeKalendarOdobreno_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -1012,6 +1022,15 @@
     </wsdl:operation>
     <wsdl:operation name="getEinheit">
       <soap:operation soapAction="http://tempuri.org/MassServis/getEinheit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeKalendarOdobreno">
+      <soap:operation soapAction="http://tempuri.org/MassServis/changeKalendarOdobreno" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
