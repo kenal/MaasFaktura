@@ -136,5 +136,10 @@ namespace MassProject
             
         }
         #endregion
+
+        private void TabItem_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

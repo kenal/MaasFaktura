@@ -8,21 +8,22 @@ using System.Windows.Media;
 
 namespace Desktop.HelperClass
 {
-    public class BackgroundConverter : IValueConverter
+    public class BackgroundConverter3 : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             //return value != null && (int)value == 1 ;
-            if(value != null)
-            {
-                var intValue = System.Convert.ToBoolean(value);
-                if (intValue == true)
+            if (value != null)
+            {                
+                var intValue = System.Convert.ToInt32(value);
+                if (intValue == 1)
                     return "#468847";
-                else return "#B94A48";
+                else
+                    return "#999999";
             }
             else
                 return Brushes.White;
-            
+
 
         }
 

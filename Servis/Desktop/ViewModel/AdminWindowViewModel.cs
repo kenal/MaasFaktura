@@ -17,7 +17,7 @@ namespace Desktop.ViewModel
     public class AdminWindowViewModel : INotifyPropertyChanged, IDataErrorInfo
     {
 
-        #region private fields
+        #region Private Fields
         //Insert User
         private string _name;
         private string _lastName;

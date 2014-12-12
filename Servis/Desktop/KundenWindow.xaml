@@ -237,7 +237,7 @@
 
 
             </TabItem>
-            <TabItem  Background="#FFFFFF">
+            <TabItem  Background="#FFFFFF" >
                 <TabItem.Header>
                     <TextBlock Text="Liste" FontSize="16" />
                 </TabItem.Header>
