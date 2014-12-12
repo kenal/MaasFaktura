@@ -32,6 +32,7 @@ namespace Desktop
             InitializeComponent();
             this.DataContext = new AngebotViewModel();
             addRowType01();
+            
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -404,6 +405,7 @@ namespace Desktop
             var mType = client.getMatIdByName(matT.SelectedValue.ToString());
             var mArt = client.getMaterijalByID(mType[0].id);
             mat.Items.Clear();
+            mat.SelectionChanged += mat_SelectionChanged;
             foreach (var p in mArt) { mat.Items.Add(p.naziv); }
             mat.SelectedIndex = 0;
             gehr.Name = "gehr_" + rowId;
@@ -447,7 +449,7 @@ namespace Desktop
                 grdHeaders.Margin = new Thickness(-14, grdHeaders.Margin.Top, 0, 0);
             }
             
-            get_price(lastRowId, 1, mType[0].id, "0,8 cm", "poliert");
+            //get_price(lastRowId, 1, mType[0].id, "0,8 cm", "poliert");
         }
         #endregion
 
@@ -1933,27 +1935,60 @@ namespace Desktop
         #region Material Type Changed
         private void matT_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
+            Service.MassServisClient client = new MassServisClient();
+
             var obj = sender as ComboBox;
             int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
-            string value = obj.SelectedValue.ToString();
-            Service.MassServisClient client = new MassServisClient();
-            var matId = client.getMatIdByName(value);
-            int matVal01 = Convert.ToInt32(matId[0].id);
-            var oberflacheList = client.getPovrsinaByMaterijal(matVal01);
-            ComboBox Cell01 = (ComboBox)this.FindName("ober_" + rowId);
-            ComboBox Cell03 = (ComboBox)this.FindName("stark_" + rowId);
-            Cell01.Items.Clear();
-            foreach (var p in oberflacheList) { Cell01.Items.Add(p.pov); }
-            Cell01.SelectedIndex = 0;
-            var materijalList = client.getMaterijalByID(matVal01);
-            ComboBox Cell02 = (ComboBox)this.FindName("mat_" + rowId);
-            Cell02.Items.Clear();
-            foreach (var p in materijalList) { Cell02.Items.Add(p.naziv); }
-            Cell02.SelectedIndex = 0;
-            var MaId = client.getMaterijalIDName(Cell02.SelectedItem.ToString());
-            get_price(rowId, matVal01, MaId[0].id, Cell03.SelectedItem.ToString(), Cell01.SelectedItem.ToString());
+            string materialTypeValue = obj.SelectedValue.ToString().Replace("\"","").Trim();
+
+            var materialTypeId = client.getMatIdByName(materialTypeValue);
+            var oberflacheList = client.getPovrsinaByMaterijal(materialTypeId[0].id);
+
+            //Oberflache
+            ComboBox ComboOberflache = (ComboBox)this.FindName("ober_" + rowId);
+            ComboOberflache.Items.Clear();
+            foreach (var p in oberflacheList) { ComboOberflache.Items.Add(p.pov); }
+            ComboOberflache.SelectedIndex = 0;
+            //Starke
+            ComboBox ComboStarke = (ComboBox)this.FindName("stark_" + rowId);
+            ComboBox ComboProdukt = (ComboBox)this.FindName("prod_" + rowId);          
+            var starkeId = client.getDebljinaIdByName(ComboStarke.SelectedValue.ToString().Replace("\"", "").Trim());
+            var produktId = client.getProIdByName(ComboProdukt.SelectedValue.ToString().Replace("\"", "").Trim());
+            var starkeList = client.getDebljinaByProduktId(produktId[0].idprodukt);
+            ComboStarke.Items.Clear();
+            ComboStarke.Items.Clear();
+            foreach (var p in starkeList) { ComboStarke.Items.Add(p.starke1); };
+            ComboStarke.SelectedIndex = 0;
+            //Materijal
+            ComboBox ComboMaterijal = (ComboBox)this.FindName("mat_" + rowId);
+            var mArt = client.getMaterijalByID(materialTypeId[0].id);
+            ComboMaterijal.Items.Clear();
+            foreach (var p in mArt) { ComboMaterijal.Items.Add(p.naziv); }
+            ComboMaterijal.SelectedIndex = 0;
+            //Price
+            get_price(rowId, materialTypeId[0].id, 1, ComboStarke.SelectedValue.ToString().Replace("\"", "").Trim(), ComboOberflache.SelectedValue.ToString().Replace("\"", "").Trim());
         }
         #endregion
+        private void mat_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            /*Service.MassServisClient client = new MassServisClient();
+            //Materijal
+            var obj = sender as ComboBox;
+            int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
+            string materijalValue = obj.SelectedValue.ToString().Replace("\"", "").Trim();
+            var materijalId = client.getMaterijalIDName(materijalValue);
+            //Oberflache
+            ComboBox ComboOberflache = (ComboBox)this.FindName("ober_" + rowId);
+            string OberflacheValue = ComboOberflache.SelectedValue.ToString().Replace("\"", "").Trim();
+            //Starke
+            ComboBox ComboStarke = (ComboBox)this.FindName("stark_" + rowId);
+            string StarkeValue = ComboStarke.SelectedValue.ToString().Replace("\"", "").Trim();
+            //MaterialType
+            ComboBox ComboMaterialType = (ComboBox)this.FindName("matT_" + rowId);
+            var materialTypeId = client.getMatIdByName(ComboMaterialType.SelectedValue.ToString().Replace("\"", "").Trim());
+            //Price
+            get_price(rowId, materialTypeId[0].id, materijalId[0].id, ComboStarke.SelectedValue.ToString().Replace("\"", "").Trim(), ComboOberflache.SelectedValue.ToString().Replace("\"", "").Trim());*/
+        }
 
         #region Produkt Changed
         private void prod_SelectionChanged(object sender, SelectionChangedEventArgs arg)
@@ -1973,18 +2008,18 @@ namespace Desktop
         #endregion
         #endregion
 
-        private void get_price(int row, int idMat, int idArtikl, string valStark, string valOber) 
+        private void get_price(int row, int idMaterialType, int idMaterijal, string valStarke, string valOberflache) 
         {
             Service.MassServisClient client = new MassServisClient();
-            var matResults = client.getMaterialPrice(idMat, idArtikl, valStark, valOber);
-            TextBox Cell00 = (TextBox)this.FindName("gpreis_" + row);
-            if (matResults.Count != 0)
+            var Results = client.getMaterialPrice(idMaterialType, idMaterijal, valStarke, valOberflache);
+            TextBox TxtBoxGPreis = (TextBox)this.FindName("gpreis_" + row);
+            if (Results.Count != 0)
             {
-                Cell00.Text = (matResults[0].iznos).ToString();
+                TxtBoxGPreis.Text = (Results[0].iznos).ToString();
             }
             else
             {
-                Cell00.Text = "0,00";
+                TxtBoxGPreis.Text = "0,00";
             }
         }
     }
