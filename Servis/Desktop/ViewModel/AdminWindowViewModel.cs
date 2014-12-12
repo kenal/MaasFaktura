@@ -73,7 +73,7 @@ namespace Desktop.ViewModel
         }
 
         ObservableCollection<p_get_MitKalendar_ViewResult> _listaKalendar;        
-        #endregion     
+        #endregion
 
         #region Properties
 
@@ -629,6 +629,191 @@ namespace Desktop.ViewModel
         }
         #endregion
 
+        #region Paginacija
+
+        #region Fields and Properties
+        ObservableCollection<p_get_MitKalendar_ViewResult> ListaPage = new ObservableCollection<p_get_MitKalendar_ViewResult>();
+
+        public ObservableCollection<p_get_MitKalendar_ViewResult> ListaPage1
+        {
+            get { return ListaPage; }
+            set
+            {
+                ListaPage = value;
+                OnPropertyChanged("ListaPage1");
+            }
+        }
+        int brojStranice = 1;
+
+        public int BrojStranice
+        {
+            get { return brojStranice; }
+            set
+            {
+                brojStranice = value;
+                OnPropertyChanged("BrojStranice");
+            }
+        }
+
+        private int _kolicinaPrikaza = 10;
+
+        public int KolicinaPrikaza
+        {
+            get { return _kolicinaPrikaza; }
+            set
+            {
+                _kolicinaPrikaza = value;
+                OnPropertyChanged("KolicinaPrikaza");
+            }
+        }
+
+        private List<int> _brojPrikazanihPage = new List<int>() { 10, 20, 25 };
+
+        public List<int> BrojPrikazanihPage
+        {
+            get { return _brojPrikazanihPage; }
+            set
+            {
+                _brojPrikazanihPage = value;
+                OnPropertyChanged("BrojPrikazanihPage");
+            }
+        }
+
+        private int _maxStranica;
+
+        public int MaxStranica1
+        {
+            get { return _maxStranica; }
+            set
+            {
+                _maxStranica = value;
+                OnPropertyChanged("MaxStranica");
+            }
+        }
+        #endregion
+
+        #region ICommand Members
+        private ICommand _paging;
+
+        public ICommand Paging
+        {
+            get { return _paging = new RelayCommand(param =>  FillGridPage(param)); }
+            set { _paging = value; }
+        }
+        private ICommand _paging2;
+
+        public ICommand Paging2
+        {
+            get { return _paging2 = new RelayCommand(param => FillGridPage2(param), param => this.CanNext); }
+            set { _paging2 = value; }
+        }
+
+        private ICommand _pagingRikverc;
+
+        public ICommand PagingRikverc
+        {
+            get { return _pagingRikverc = new RelayCommand(param => FillGridBack(param), param => this.CanLast); }
+            set { _pagingRikverc = value; }
+        }
+        private ICommand _prebaciNaPrvi;
+
+        public ICommand PrebaciNaPrvi
+        {
+            get { return _prebaciNaPrvi = new RelayCommand(param => FillGridFirst(param)); }
+            set { _prebaciNaPrvi = value; }
+        }
+
+        private ICommand _prebaciNaZadnji;
+
+        public ICommand PrebaciNaZadnji
+        {
+            get { return _prebaciNaZadnji = new RelayCommand(param => FillGridLast(param)); }
+            set { _prebaciNaZadnji = value; }
+        }
+        #endregion
+
+        #region Methods
+        public void Paginacija(int stranica)
+        {
+            int neUzimati = 10;
+
+            if (ListaKalendar != null)
+            {
+                int brojPrikaza = stranica * KolicinaPrikaza;
+                if (brojPrikaza > ListaKalendar.Count())
+                    brojPrikaza = ListaKalendar.Count();
+                int ostatak = brojPrikaza % KolicinaPrikaza;
+                if (ostatak != 0)
+                    neUzimati = brojPrikaza - ostatak;
+                else
+                    neUzimati = brojPrikaza - KolicinaPrikaza;
+                var x = ListaKalendar.Skip(neUzimati).Take(KolicinaPrikaza);
+                ListaPage1.Clear();
+                ListaPage1 = new ObservableCollection<p_get_MitKalendar_ViewResult>(x);
+            }
+            
+            MaxStranica();
+        }
+
+        public void FillGridPage(object parameter)
+        {
+            ListaKalendar = client.ListaMitKalendar();
+            Paginacija(BrojStranice);
+        }
+
+        public void FillGridPage2(object parameter)
+        {
+            BrojStranice++;
+            Paginacija(BrojStranice);
+
+        }
+
+        public void FillGridBack(object parameter)
+        {
+            BrojStranice--;
+            Paginacija(BrojStranice);
+        }
+
+        public void FillGridFirst(object parameter)
+        {
+            BrojStranice = 1;
+            Paginacija(BrojStranice);
+        }
+
+        public void FillGridLast(object parameter)
+        {
+            if (ListaKalendar != null)
+            {
+                int a = ListaKalendar.Count();
+                double pozicija = Convert.ToDouble(a) / KolicinaPrikaza;
+                if (pozicija % 1 == 0)
+                    BrojStranice = Convert.ToInt32(pozicija);
+                else
+                    BrojStranice = Convert.ToInt32(pozicija - ((pozicija * 10) % 10) / 10) + 1;
+                Paginacija(BrojStranice);
+            }
+
+        }
+
+        public void MaxStranica()
+        {
+            if (ListaKalendar != null)
+            {
+                int a = ListaKalendar.Count();
+                double pozicija = Convert.ToDouble(a) / KolicinaPrikaza;
+                if (pozicija % 1 == 0)
+                    MaxStranica1 = Convert.ToInt32(pozicija);
+                else
+                {
+                    MaxStranica1 = Convert.ToInt32(pozicija - ((pozicija * 10) % 10) / 10) + 1;
+                }
+
+            }
+        }
+        #endregion
+
+        #endregion
+
         #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string propertyName)
@@ -849,7 +1034,44 @@ namespace Desktop.ViewModel
             }
         }
 
-        
+        public bool IsMin
+        {
+            get
+            {
+                if (BrojStranice == 1)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
+        public bool IsMax
+        {
+            get
+            {
+                if (BrojStranice == MaxStranica1)
+                    return false;
+                else
+                    return true;
+            }
+        }
+
+        protected bool CanNext
+        {
+            get
+            {
+                return IsMax;
+            }
+        }
+
+
+        protected bool CanLast
+        {
+            get
+            {
+                return IsMin;
+            }
+        }
 
         public string Error
         {
