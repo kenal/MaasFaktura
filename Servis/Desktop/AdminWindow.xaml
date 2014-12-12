@@ -173,7 +173,7 @@
         </Grid>
         <Grid Name="grdMit" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
 
-            <DataGrid x:Name="datagrid2"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding ListaKalendar}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" Margin="0,75,0,0" >
+            <DataGrid x:Name="datagrid2"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding ListaPage1}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" Margin="0,75,0,0" >
                 <DataGrid.AlternatingRowBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -244,7 +244,7 @@
             </Button>
             <Label Height="23" HorizontalAlignment="Left" Margin="100,2,0,0" VerticalAlignment="Top" Width="27" x:Name="lblPageNumber" Content="{Binding BrojStranice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.222,-0.609"/>
             <Label Content="Es werden" FontSize="14" HorizontalAlignment="Left" Margin="10,29,0,426" VerticalAlignment="Top" Width="76"/>
-            <ComboBox x:Name="BrojPrikaza" HorizontalAlignment="Left" Margin="91,32,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.906,0.231" ItemsSource="{Binding BrojPrikazanihKupaca}" SelectedItem="{Binding KolicinaKupaca, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBox x:Name="BrojPrikaza" HorizontalAlignment="Left" Margin="91,32,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.906,0.231" ItemsSource="{Binding BrojPrikazanihPage}" SelectedItem="{Binding KolicinaPrikaza, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
                         <i:InvokeCommandAction Command="{Binding Path=DataContext.PrebaciNaPrvi, ElementName=BrojPrikaza}"/>
