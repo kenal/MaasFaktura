@@ -372,6 +372,12 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getMaterijalIDName", ReplyAction="http://tempuri.org/MassServis/getMaterijalIDNameResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getMaterijalIDNameAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaMitKalendar", ReplyAction="http://tempuri.org/MassServis/ListaMitKalendarResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_MitKalendar_ViewResult> ListaMitKalendar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ListaMitKalendar", ReplyAction="http://tempuri.org/MassServis/ListaMitKalendarResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_MitKalendar_ViewResult>> ListaMitKalendarAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -859,6 +865,14 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.artikl>> getMaterijalIDNameAsync(string value) {
             return base.Channel.getMaterijalIDNameAsync(value);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_MitKalendar_ViewResult> ListaMitKalendar() {
+            return base.Channel.ListaMitKalendar();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.p_get_MitKalendar_ViewResult>> ListaMitKalendarAsync() {
+            return base.Channel.ListaMitKalendarAsync();
         }
     }
 }
