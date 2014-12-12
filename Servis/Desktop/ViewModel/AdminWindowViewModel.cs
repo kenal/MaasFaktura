@@ -762,7 +762,7 @@ namespace Desktop.ViewModel
 
         public ICommand PrebaciNaPrvi
         {
-            get { return _prebaciNaPrvi = new RelayCommand(param => FillGridFirst(param)); }
+            get { return _prebaciNaPrvi = new RelayCommand(param => FillGridFirst(param), param => this.CanLast); }
             set { _prebaciNaPrvi = value; }
         }
 
@@ -770,7 +770,7 @@ namespace Desktop.ViewModel
 
         public ICommand PrebaciNaZadnji
         {
-            get { return _prebaciNaZadnji = new RelayCommand(param => FillGridLast(param)); }
+            get { return _prebaciNaZadnji = new RelayCommand(param => FillGridLast(param), param => this.CanNext); }
             set { _prebaciNaZadnji = value; }
         }
         #endregion
@@ -945,7 +945,7 @@ namespace Desktop.ViewModel
 
         public ICommand PrebaciNaPrviUser
         {
-            get { return _prebaciNaPrviUser = new RelayCommand(param => FillGridFirstUser(param)); }
+            get { return _prebaciNaPrviUser = new RelayCommand(param => FillGridFirstUser(param), param => this.CanLastUser); }
             set { _prebaciNaPrviUser = value; }
         }
 
@@ -953,7 +953,7 @@ namespace Desktop.ViewModel
 
         public ICommand PrebaciNaZadnjiUser
         {
-            get { return _prebaciNaZadnjiUser = new RelayCommand(param => FillGridLastUser(param)); }
+            get { return _prebaciNaZadnjiUser = new RelayCommand(param => FillGridLastUser(param), param => this.CanNextUser); }
             set { _prebaciNaZadnjiUser = value; }
         }
         #endregion

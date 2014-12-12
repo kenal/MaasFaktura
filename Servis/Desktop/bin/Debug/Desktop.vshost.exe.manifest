@@ -97,14 +97,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="841640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="842664">
       <assemblyIdentity name="Desktop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rC8GoZOGW2AoIDTiHr1QxDjTrP7smO8LNINyjZ75ti0=</dsig:DigestValue>
+        <dsig:DigestValue>h2f1oRy76Bg7Gfjo0631L1flVKvCbQHCVIxG5wDxA0g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -116,7 +116,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5nEf47t9JJBw9R/mGDlrOVT16JaPYitBkKadPsZtXkc=</dsig:DigestValue>
+        <dsig:DigestValue>vW+JHj3EJlMKIGS8E7h3FhhgwZkN5u1xvv50MKGYm0I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -140,7 +140,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZqmWp/J3cNWXyBxFssxBFDYZIMy+Zoi7Nock4NYaHBo=</dsig:DigestValue>
+        <dsig:DigestValue>rcpIaxXl2qHTc0rY0sF5DGrX7sexQ+2n6J6nVeog8yI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

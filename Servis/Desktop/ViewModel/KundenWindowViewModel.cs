@@ -1290,7 +1290,7 @@ namespace Desktop.ViewModel
 
         public ICommand PrebaciNaPrvi
         {
-            get { return _prebaciNaPrvi = new RelayCommand(param => FillGridKupcaFirst(param)); }
+            get { return _prebaciNaPrvi = new RelayCommand(param => FillGridKupcaFirst(param), param => this.CanLast); }
             set { _prebaciNaPrvi = value; }
         }
 
@@ -1298,7 +1298,7 @@ namespace Desktop.ViewModel
 
         public ICommand PrebaciNaZadnji
         {
-            get { return _prebaciNaZadnji = new RelayCommand(param => FillGridKupcaLast(param)); }
+            get { return _prebaciNaZadnji = new RelayCommand(param => FillGridKupcaLast(param), param => this.CanNext); }
             set { _prebaciNaZadnji = value; }
         }
         #endregion

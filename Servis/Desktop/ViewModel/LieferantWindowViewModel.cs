@@ -744,7 +744,7 @@ namespace Desktop.ViewModel
 
        public ICommand PrebaciNaPrvi
        {
-           get { return _prebaciNaPrvi = new RelayCommand(param => FillGridLieferantFirst(param)); }
+           get { return _prebaciNaPrvi = new RelayCommand(param => FillGridLieferantFirst(param), param => this.CanLast); }
            set { _prebaciNaPrvi = value; }
        }
 
@@ -752,7 +752,7 @@ namespace Desktop.ViewModel
 
        public ICommand PrebaciNaZadnji
        {
-           get { return _prebaciNaZadnji = new RelayCommand(param => FillGridLieferantLast(param)); }
+           get { return _prebaciNaZadnji = new RelayCommand(param => FillGridLieferantLast(param), param => this.CanNext); }
            set { _prebaciNaZadnji = value; }
        }
      
