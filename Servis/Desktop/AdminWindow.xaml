@@ -12,7 +12,7 @@
         <local:BackgroundConverter x:Key="BackgroundConverter"/>
         <local:BackgroundConverter2 x:Key="BackgroundConverter2"/>
         <local:BackgroundConverter3 x:Key="BackgroundConverter3"/>
-        <Thickness x:Key="tbMargin">20,0,0,0</Thickness>
+        <Thickness x:Key="tbMargin">30,0,0,0</Thickness>
     </Window.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -202,8 +202,8 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Ja" Width="30px" FontSize="10" Foreground="White" Background="#468847"/>
-                                    <Button Content="Nein" Width="30px" FontSize="10" Foreground="White" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter3}}"/>
+                                    <Button Content="Ja" Width="30px" FontSize="10" Foreground="White" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter3}}" FontWeight="Bold" Cursor="Hand"/>
+                                    <Button Content="Nein" Width="30px" FontSize="10" Foreground="White" Background="{Binding odobreno, Converter={StaticResource BackgroundConverter3}}" FontWeight="Bold" Cursor="Hand"/>
                                     <StackPanel.Resources>
                                     <Style TargetType="{x:Type Button}">
                                         <Setter Property="Margin" Value="{StaticResource tbMargin}"/>

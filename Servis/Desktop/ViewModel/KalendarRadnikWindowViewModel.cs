@@ -260,16 +260,16 @@ namespace Desktop.ViewModel
 
         public void Unos(object parameter)
         {
-            
+            var converter = new System.Windows.Media.BrushConverter();
             CurrentEvent = new Event();
             if (RadioTip1 == true)
-                CurrentEvent.Color = Brushes.Turquoise;
+                CurrentEvent.Color = (Brush)converter.ConvertFromString("#33CCFF");
             else if (RadioTip2 == true)
-                CurrentEvent.Color = Brushes.Chocolate;
+                CurrentEvent.Color = (Brush)converter.ConvertFromString("#CC6633");
             else if (RadioTip3 == true)
-                CurrentEvent.Color = Brushes.Magenta;
+                CurrentEvent.Color = (Brush)converter.ConvertFromString("#CC00FF");
             else
-                CurrentEvent.Color = Brushes.Red;
+                CurrentEvent.Color = (Brush)converter.ConvertFromString("#B94A48");
             
             CurrentEvent.Start = Datum;
             CurrentEvent.End = Datum1;
@@ -347,6 +347,7 @@ namespace Desktop.ViewModel
         public ObservableCollection<Event> PuniListu()
         {
             ObservableCollection<Event> Lista = new ObservableCollection<Event>();
+            var converter = new System.Windows.Media.BrushConverter();
             foreach (var p in client.ListaEventaMitarbeiter())
             {
                 Event e = new Event();
@@ -355,11 +356,11 @@ namespace Desktop.ViewModel
                 e.Subject = p.notiz;
                 e.Description = p.id + " " + p.idUser;
                 if (p.tip == 1)
-                    e.Color = Brushes.Turquoise;
+                    e.Color = (Brush)converter.ConvertFromString("#33CCFF");
                 else if (p.tip == 2)
-                    e.Color = Brushes.Chocolate;
+                    e.Color = (Brush)converter.ConvertFromString("#CC6633");
                 else if(p.tip == 3)
-                    e.Color = Brushes.Magenta;
+                    e.Color = (Brush)converter.ConvertFromString("#CC00FF");
                 Lista.Add(e);
             }
             return Lista;
