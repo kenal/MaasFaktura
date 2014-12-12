@@ -292,8 +292,8 @@ namespace Desktop
             btnAddType01.Height = 25;
             btnAddType02.Width = 80;
             btnAddType02.Height = 25;
-            myLabel01.Width = 30;
-            myLabel01.Height = 25;
+            myLabel01.Width = 25;
+            myLabel01.Height = 30;
             btnDown.Width = 30;
             btnDown.Height = 25;
             btnUp.Width = 30;
@@ -374,6 +374,9 @@ namespace Desktop
             this.RegisterName("btnAddNew02Row_" + rowId, btnAddType02);
             myDinamicButton01.Click += myDinamicButton01_Click;
             myLabel01.Name = "rd_" + rowId;
+            myLabel01.Foreground = Brushes.Green;
+            myLabel01.FontWeight = FontWeights.Bold;
+
             this.RegisterName("rd_" + rowId, myLabel01);
             btnDown.Click += btnDown_Click;
             btnDown.Name = "btnDown_" + rowId;
@@ -587,6 +590,8 @@ namespace Desktop
             this.RegisterName("row2Btn_" + rowId, Row2myDinamicButton01);
             myLabel01.Name = "rd_" + rowId;
             this.RegisterName("rd_" + rowId, myLabel01);
+            myLabel01.Foreground = Brushes.Green;
+            myLabel01.FontWeight = FontWeights.Bold;
             btnDown.Click += btnDown_Click;
             btnDown.Name = "btnDown_" + rowId;
             this.RegisterName("btnDown_" + rowId, btnDown);
@@ -611,7 +616,8 @@ namespace Desktop
             this.RegisterName("r2stk_" + rowId, r2stk);
             r2gpreis.Name = "r2gpreis_" + rowId;
             this.RegisterName("r2gpreis_" + rowId, r2gpreis);
-
+            myLabel01.Foreground = Brushes.Green;
+            myLabel01.FontWeight = FontWeights.Bold;
             lastRowId = lastRowId + 1;
             if (lastRowId != 0) { myLabel01.Content = lastRowId; } else { myLabel01.Content = rowId; }
 
@@ -719,6 +725,8 @@ namespace Desktop
 
             myLabel01.Name = "rd_" + rowId;
             this.RegisterName("rd_" + rowId, myLabel01);
+            myLabel01.Foreground = Brushes.Blue;
+            myLabel01.FontWeight = FontWeights.Bold;
             r3First.Name = "r3First_" + rowId;
             this.RegisterName("r3First_" + rowId, r3First);
             Row3myDinamicButton01.Name = "row3Btn_" + rowId;
