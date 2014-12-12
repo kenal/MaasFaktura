@@ -320,6 +320,12 @@
   <wsdl:message name="MassServis_ListaMitKalendar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaMitKalendarResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getEinheit_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEinheit" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getEinheit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEinheitResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -528,6 +534,10 @@
     <wsdl:operation name="ListaMitKalendar">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ListaMitKalendar" message="tns:MassServis_ListaMitKalendar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ListaMitKalendarResponse" message="tns:MassServis_ListaMitKalendar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEinheit">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getEinheit" message="tns:MassServis_getEinheit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getEinheitResponse" message="tns:MassServis_getEinheit_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -993,6 +1003,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListaMitKalendar">
       <soap:operation soapAction="http://tempuri.org/MassServis/ListaMitKalendar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEinheit">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getEinheit" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

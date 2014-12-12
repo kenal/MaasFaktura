@@ -32,7 +32,6 @@ namespace Desktop
             InitializeComponent();
             this.DataContext = new AngebotViewModel();
             addRowType01();
-            
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -43,7 +42,6 @@ namespace Desktop
         #region Resolution
         public void gridsResolution()
         {
-            //int brKolona01 = datagrid1.Columns.Count - 1;
             #region resolution full
             if (this.WindowState == WindowState.Maximized)
             {
@@ -70,6 +68,7 @@ namespace Desktop
                 //col1_19.Width = windowWidth / brKolona01;
             }
             #endregion
+
             #region resolution normal
             else
             {
@@ -101,6 +100,7 @@ namespace Desktop
         public void gridsResolution2()
         {
             int brKolona02 = datagrid2.Columns.Count;
+
             #region resolution full
             if (this.WindowState == WindowState.Maximized)
             {
@@ -123,6 +123,7 @@ namespace Desktop
                 col2_14.Width = windowWidth / brKolona02;
             }
             #endregion
+
             #region resolution normal
             else
             {
@@ -205,6 +206,7 @@ namespace Desktop
             var produktList = client.getProdukt();
             var oberflacheList = client.getPovrsinaByMaterijal(3);
             var starkeList = client.getDebljinaByProduktId(1);
+            var einheitList = client.getEinheit();
 
             rowId = rowId + 1;
             TextBox brei = new TextBox();
@@ -280,11 +282,11 @@ namespace Desktop
             einh.Height = 25;
             men.Width = 40;
             men.Height = 25;
-            einz.Width = 40;
+            einz.Width = 60;
             einz.Height = 25;
             stk.Width = 40;
             stk.Height = 25;
-            gpreis.Width = 40;
+            gpreis.Width = 60;
             gpreis.Height = 25;
             myDinamicButton01.Width = 70;
             myDinamicButton01.Height = 25;
@@ -352,8 +354,8 @@ namespace Desktop
             einh.Margin = new Thickness(590, vertRowPosition, 0, 0);
             men.Margin = new Thickness(780, vertRowPosition, 0, 0);
             einz.Margin = new Thickness(830, vertRowPosition, 0, 0);
-            stk.Margin = new Thickness(880, vertRowPosition, 0, 0);
-            gpreis.Margin = new Thickness(930, vertRowPosition, 0, 0);
+            stk.Margin = new Thickness(900, vertRowPosition, 0, 0);
+            gpreis.Margin = new Thickness(950, vertRowPosition, 0, 0);
             myDinamicButton01.Margin = new Thickness(1110, vertRowPosition, 0, 0);
             btnAddType01.Margin = new Thickness(140, topW, 0, 0);
             btnAddType02.Margin = new Thickness(240, topW, 0, 0);
@@ -376,7 +378,6 @@ namespace Desktop
             myLabel01.Name = "rd_" + rowId;
             myLabel01.Foreground = Brushes.Green;
             myLabel01.FontWeight = FontWeights.Bold;
-
             this.RegisterName("rd_" + rowId, myLabel01);
             btnDown.Click += btnDown_Click;
             btnDown.Name = "btnDown_" + rowId;
@@ -388,7 +389,6 @@ namespace Desktop
             this.RegisterName("matT_" + rowId, matT);
             foreach (var p in materijalList) { matT.Items.Add(p.naziv); }
             matT.SelectedIndex = 0;
-            //Event OnSelectionChanged
             matT.SelectionChanged += matT_SelectionChanged;
             prod.Name = "prod_" + rowId;
             this.RegisterName("prod_" + rowId, prod);
@@ -413,12 +413,18 @@ namespace Desktop
             mat.SelectedIndex = 0;
             gehr.Name = "gehr_" + rowId;
             this.RegisterName("gehr_" + rowId, gehr);
+            gehr.Items.Add("Nein");
+            gehr.Items.Add("Ja");
+            gehr.Items.Add("Sonstige");
+            gehr.SelectedIndex = 0;
             einh.Name = "einh_" + rowId;
             this.RegisterName("einh_" + rowId, einh);
+            foreach (var p in einheitList) { einh.Items.Add(p.jedinica.Replace("\"","").Trim()); }
+            einh.SelectedIndex = 0;
             men.Name = "men_" + rowId;
             this.RegisterName("men_" + rowId, men);
             einz.Name = "einz_" + rowId;
-            this.RegisterName("einz_" + rowId, einz);
+            this.RegisterName("einz_" + rowId, einz);           
             stk.Name = "stk_" + rowId;
             this.RegisterName("stk_" + rowId, stk);
             gpreis.Name = "gpreis_" + rowId;
@@ -532,11 +538,11 @@ namespace Desktop
             r2einh.Height = 25;
             r2men.Width = 40;
             r2men.Height = 25;
-            r2einz.Width = 40;
+            r2einz.Width = 60;
             r2einz.Height = 25;
             r2stk.Width = 40;
             r2stk.Height = 25;
-            r2gpreis.Width = 40;
+            r2gpreis.Width = 60;
             r2gpreis.Height = 25;
 
             Row2myDinamicTxtBox01.HorizontalAlignment = HorizontalAlignment.Left;
@@ -576,8 +582,8 @@ namespace Desktop
             r2einh.Margin = new Thickness(590, vertRowPosition, 0, 0);
             r2men.Margin = new Thickness(780, vertRowPosition, 0, 0);
             r2einz.Margin = new Thickness(830, vertRowPosition, 0, 0);
-            r2stk.Margin = new Thickness(880, vertRowPosition, 0, 0);
-            r2gpreis.Margin = new Thickness(930, vertRowPosition, 0, 0);
+            r2stk.Margin = new Thickness(900, vertRowPosition, 0, 0);
+            r2gpreis.Margin = new Thickness(950, vertRowPosition, 0, 0);
             Row2myDinamicButton01.Margin = new Thickness(1110, vertRowPosition, 0, 0);
             myLabel01.Margin = new Thickness(5, vertRowPosition, 0, 0);
             btnDown.Margin = new Thickness(1190, vertRowPosition, 0, 0);
@@ -695,7 +701,7 @@ namespace Desktop
 
             myLabel01.Width = 30;
             myLabel01.Height = 25;
-            r3First.Width = 940;
+            r3First.Width = 980;
             r3First.Height = 28;
             Row3myDinamicButton01.Width = 70;
             Row3myDinamicButton01.Height = 25;
@@ -881,8 +887,8 @@ namespace Desktop
                             Type01Cell0013.Margin = new Thickness(590, newTopPosition, 0, 0);
                             Type01Cell0014.Margin = new Thickness(780, newTopPosition, 0, 0);
                             Type01Cell0015.Margin = new Thickness(830, newTopPosition, 0, 0);
-                            Type01Cell0016.Margin = new Thickness(880, newTopPosition, 0, 0);
-                            Type01Cell0017.Margin = new Thickness(930, newTopPosition, 0, 0);
+                            Type01Cell0016.Margin = new Thickness(900, newTopPosition, 0, 0);
+                            Type01Cell0017.Margin = new Thickness(950, newTopPosition, 0, 0);
                         }
                         else if (Type02Cell001 != null)
                         {
@@ -904,8 +910,8 @@ namespace Desktop
                             Type02Cell007.Margin = new Thickness(590, newTopPosition, 0, 0);
                             Type02Cell008.Margin = new Thickness(780, newTopPosition, 0, 0);
                             Type02Cell009.Margin = new Thickness(830, newTopPosition, 0, 0);
-                            Type02Cell010.Margin = new Thickness(880, newTopPosition, 0, 0);
-                            Type02Cell011.Margin = new Thickness(930, newTopPosition, 0, 0);
+                            Type02Cell010.Margin = new Thickness(900, newTopPosition, 0, 0);
+                            Type02Cell011.Margin = new Thickness(950, newTopPosition, 0, 0);
                         }
                         //For row type 03
                         else if (Type03Cell01 != null)
@@ -1044,8 +1050,8 @@ namespace Desktop
                             Type01Cell0013.Margin = new Thickness(590, newTopPosition, 0, 0);
                             Type01Cell0014.Margin = new Thickness(780, newTopPosition, 0, 0);
                             Type01Cell0015.Margin = new Thickness(830, newTopPosition, 0, 0);
-                            Type01Cell0016.Margin = new Thickness(880, newTopPosition, 0, 0);
-                            Type01Cell0017.Margin = new Thickness(930, newTopPosition, 0, 0);
+                            Type01Cell0016.Margin = new Thickness(900, newTopPosition, 0, 0);
+                            Type01Cell0017.Margin = new Thickness(950, newTopPosition, 0, 0);
                         }
                         else if (Type02Cell001 != null)
                         {
@@ -1066,8 +1072,8 @@ namespace Desktop
                             Type02Cell007.Margin = new Thickness(590, newTopPosition, 0, 0);
                             Type02Cell008.Margin = new Thickness(780, newTopPosition, 0, 0);
                             Type02Cell009.Margin = new Thickness(830, newTopPosition, 0, 0);
-                            Type02Cell010.Margin = new Thickness(880, newTopPosition, 0, 0);
-                            Type02Cell011.Margin = new Thickness(930, newTopPosition, 0, 0);
+                            Type02Cell010.Margin = new Thickness(900, newTopPosition, 0, 0);
+                            Type02Cell011.Margin = new Thickness(950, newTopPosition, 0, 0);
                         }
                         //For row type 03
                         else if (Type03Cell01 != null)
@@ -1181,8 +1187,8 @@ namespace Desktop
                             Type01Cell0013.Margin = new Thickness(590, newTopPosition, 0, 0);
                             Type01Cell0014.Margin = new Thickness(780, newTopPosition, 0, 0);
                             Type01Cell0015.Margin = new Thickness(830, newTopPosition, 0, 0);
-                            Type01Cell0016.Margin = new Thickness(880, newTopPosition, 0, 0);
-                            Type01Cell0017.Margin = new Thickness(930, newTopPosition, 0, 0);
+                            Type01Cell0016.Margin = new Thickness(900, newTopPosition, 0, 0);
+                            Type01Cell0017.Margin = new Thickness(950, newTopPosition, 0, 0);
                         }
                         else if (Type02Cell001 != null)
                         {
@@ -1203,8 +1209,8 @@ namespace Desktop
                             Type02Cell007.Margin = new Thickness(590, newTopPosition, 0, 0);
                             Type02Cell008.Margin = new Thickness(780, newTopPosition, 0, 0);
                             Type02Cell009.Margin = new Thickness(830, newTopPosition, 0, 0);
-                            Type02Cell010.Margin = new Thickness(880, newTopPosition, 0, 0);
-                            Type02Cell011.Margin = new Thickness(930, newTopPosition, 0, 0);
+                            Type02Cell010.Margin = new Thickness(900, newTopPosition, 0, 0);
+                            Type02Cell011.Margin = new Thickness(950, newTopPosition, 0, 0);
                         }
                         //For row type 03
                         else if (Type03Cell01 != null)
@@ -1392,8 +1398,8 @@ namespace Desktop
                 Type01Cell0013.Margin = new Thickness(590, newTopPositionDown, 0, 0);
                 Type01Cell0014.Margin = new Thickness(780, newTopPositionDown, 0, 0);
                 Type01Cell0015.Margin = new Thickness(830, newTopPositionDown, 0, 0);
-                Type01Cell0016.Margin = new Thickness(880, newTopPositionDown, 0, 0);
-                Type01Cell0017.Margin = new Thickness(930, newTopPositionDown, 0, 0);
+                Type01Cell0016.Margin = new Thickness(900, newTopPositionDown, 0, 0);
+                Type01Cell0017.Margin = new Thickness(950, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -1415,8 +1421,8 @@ namespace Desktop
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -1436,8 +1442,8 @@ namespace Desktop
                     Type02Cell007btnIndexBelow.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type02Cell008btnIndexBelow.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type02Cell009btnIndexBelow.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type02Cell0010btnIndexBelow.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type02Cell0011btnIndexBelow.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type02Cell0010btnIndexBelow.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type02Cell0011btnIndexBelow.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 3)
                 {
@@ -1470,8 +1476,8 @@ namespace Desktop
                 Type02Cell007.Margin = new Thickness(590, newTopPositionDown, 0, 0);
                 Type02Cell008.Margin = new Thickness(780, newTopPositionDown, 0, 0);
                 Type02Cell009.Margin = new Thickness(830, newTopPositionDown, 0, 0);
-                Type02Cell010.Margin = new Thickness(880, newTopPositionDown, 0, 0);
-                Type02Cell011.Margin = new Thickness(930, newTopPositionDown, 0, 0);
+                Type02Cell010.Margin = new Thickness(900, newTopPositionDown, 0, 0);
+                Type02Cell011.Margin = new Thickness(950, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -1493,8 +1499,8 @@ namespace Desktop
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -1514,8 +1520,8 @@ namespace Desktop
                     Type02Cell007btnIndexBelow.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type02Cell008btnIndexBelow.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type02Cell009btnIndexBelow.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type02Cell0010btnIndexBelow.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type02Cell0011btnIndexBelow.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type02Cell0010btnIndexBelow.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type02Cell0011btnIndexBelow.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 3)
                 {
@@ -1563,8 +1569,8 @@ namespace Desktop
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -1584,8 +1590,8 @@ namespace Desktop
                     Type02Cell007btnIndexBelow.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type02Cell008btnIndexBelow.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type02Cell009btnIndexBelow.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type02Cell0010btnIndexBelow.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type02Cell0011btnIndexBelow.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type02Cell0010btnIndexBelow.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type02Cell0011btnIndexBelow.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 3)
                 {
@@ -1729,8 +1735,8 @@ namespace Desktop
                 Type01Cell0013.Margin = new Thickness(590, newTopPositionDown, 0, 0);
                 Type01Cell0014.Margin = new Thickness(780, newTopPositionDown, 0, 0);
                 Type01Cell0015.Margin = new Thickness(830, newTopPositionDown, 0, 0);
-                Type01Cell0016.Margin = new Thickness(880, newTopPositionDown, 0, 0);
-                Type01Cell0017.Margin = new Thickness(930, newTopPositionDown, 0, 0);
+                Type01Cell0016.Margin = new Thickness(900, newTopPositionDown, 0, 0);
+                Type01Cell0017.Margin = new Thickness(950, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -1752,8 +1758,8 @@ namespace Desktop
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -1773,8 +1779,8 @@ namespace Desktop
                     Type02Cell007btnIndexBelow.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type02Cell008btnIndexBelow.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type02Cell009btnIndexBelow.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type02Cell0010btnIndexBelow.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type02Cell0011btnIndexBelow.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type02Cell0010btnIndexBelow.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type02Cell0011btnIndexBelow.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 3)
                 {
@@ -1808,8 +1814,8 @@ namespace Desktop
                 Type02Cell007.Margin = new Thickness(590, newTopPositionDown, 0, 0);
                 Type02Cell008.Margin = new Thickness(780, newTopPositionDown, 0, 0);
                 Type02Cell009.Margin = new Thickness(830, newTopPositionDown, 0, 0);
-                Type02Cell0010.Margin = new Thickness(880, newTopPositionDown, 0, 0);
-                Type02Cell0011.Margin = new Thickness(930, newTopPositionDown, 0, 0);
+                Type02Cell0010.Margin = new Thickness(900, newTopPositionDown, 0, 0);
+                Type02Cell0011.Margin = new Thickness(950, newTopPositionDown, 0, 0);
                 if (tipReda == 1)
                 {
                     var currentTopPositionBelow = Type01Cell001Below.Margin.Top;
@@ -1831,8 +1837,8 @@ namespace Desktop
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -1852,8 +1858,8 @@ namespace Desktop
                     Type02Cell007btnIndexBelow.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type02Cell008btnIndexBelow.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type02Cell009btnIndexBelow.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type02Cell0010btnIndexBelow.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type02Cell0011btnIndexBelow.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type02Cell0010btnIndexBelow.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type02Cell0011btnIndexBelow.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 3)
                 {
@@ -1900,8 +1906,8 @@ namespace Desktop
                     Type01Cell0013Below.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type01Cell0014Below.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type01Cell0015Below.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type01Cell0016Below.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type01Cell0017Below.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type01Cell0016Below.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type01Cell0017Below.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 2)
                 {
@@ -1921,8 +1927,8 @@ namespace Desktop
                     Type02Cell007btnIndexBelow.Margin = new Thickness(590, newTopPositionUp, 0, 0);
                     Type02Cell008btnIndexBelow.Margin = new Thickness(780, newTopPositionUp, 0, 0);
                     Type02Cell009btnIndexBelow.Margin = new Thickness(830, newTopPositionUp, 0, 0);
-                    Type02Cell0010btnIndexBelow.Margin = new Thickness(880, newTopPositionUp, 0, 0);
-                    Type02Cell0011btnIndexBelow.Margin = new Thickness(930, newTopPositionUp, 0, 0);
+                    Type02Cell0010btnIndexBelow.Margin = new Thickness(900, newTopPositionUp, 0, 0);
+                    Type02Cell0011btnIndexBelow.Margin = new Thickness(950, newTopPositionUp, 0, 0);
                 }
                 else if (tipReda == 3)
                 {
@@ -1977,6 +1983,8 @@ namespace Desktop
            // get_price(rowId, materialTypeId[0].id, 1, ComboStarke.SelectedValue.ToString().Replace("\"", "").Trim(), ComboOberflache.SelectedValue.ToString().Replace("\"", "").Trim());
         }
         #endregion
+
+        #region Materijal Changed
         private void mat_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
              var obj = sender as ComboBox;
@@ -2002,6 +2010,24 @@ namespace Desktop
                     get_price(rowId, materialTypeId[0].id, materijalId[0].id, ComboStarke.SelectedValue.ToString().Replace("\"", "").Trim(), ComboOberflache.SelectedValue.ToString().Replace("\"", "").Trim());
                 }
         }
+        #endregion
+
+        #region getPrice Method
+        private void get_price(int row, int idMaterialType, int idMaterijal, string valStarke, string valOberflache)
+        {
+            Service.MassServisClient client = new MassServisClient();
+            var Results = client.getMaterialPrice(idMaterialType, idMaterijal, valStarke, valOberflache);
+            TextBox TxtBoxGPreis = (TextBox)this.FindName("gpreis_" + row);
+            if (Results.Count != 0)
+            {
+                TxtBoxGPreis.Text = (Results[0].iznos).ToString();
+            }
+            else
+            {
+                TxtBoxGPreis.Text = "0,00";
+            }
+        }
+        #endregion
 
         #region Produkt Changed
         private void prod_SelectionChanged(object sender, SelectionChangedEventArgs arg)
@@ -2019,21 +2045,6 @@ namespace Desktop
             Cell01.SelectedIndex = 0;
         }
         #endregion
-        #endregion
-
-        private void get_price(int row, int idMaterialType, int idMaterijal, string valStarke, string valOberflache) 
-        {
-                Service.MassServisClient client = new MassServisClient();
-                var Results = client.getMaterialPrice(idMaterialType, idMaterijal, valStarke, valOberflache);
-                TextBox TxtBoxGPreis = (TextBox)this.FindName("gpreis_" + row);
-                if (Results.Count != 0)
-                {
-                    TxtBoxGPreis.Text = (Results[0].iznos).ToString();
-                }
-                else
-                {
-                    TxtBoxGPreis.Text = "0,00";
-                }
-        }
+        #endregion       
     }
 }
