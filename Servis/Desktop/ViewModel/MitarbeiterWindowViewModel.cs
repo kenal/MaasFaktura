@@ -757,10 +757,10 @@ namespace Desktop.ViewModel
        
            }
 
-           public void OdaberiSelektovanogKorisnika(object parameter)
-           {
-               SelektovaniKorisnikEdit = client.VratiKorisnika(Convert.ToInt32(SelektovaniRadnik.idUser));
-           }
+           //public void OdaberiSelektovanogKorisnika(object parameter)
+           //{
+           //    SelektovaniKorisnikEdit = client.VratiKorisnika(Convert.ToInt32(SelektovaniRadnik.idUser));
+           //}
            public void SelektovaniIndex(object parameter)
            {
       
@@ -818,13 +818,13 @@ namespace Desktop.ViewModel
                set { _selektuj = value; }
            }
 
-           private ICommand _comboSelektovan;
+           //private ICommand _comboSelektovan;
 
-           public ICommand ComboSelektovan
-           {
-               get { return _comboSelektovan = new RelayCommand(param => OdaberiSelektovanogKorisnika(param)); }
-               set { _comboSelektovan = value; }
-           }
+           //public ICommand ComboSelektovan
+           //{
+           //    get { return _comboSelektovan = new RelayCommand(param => OdaberiSelektovanogKorisnika(param)); }
+           //    set { _comboSelektovan = value; }
+           //}
 
            private ICommand _otvoriEditRadnik;
 
