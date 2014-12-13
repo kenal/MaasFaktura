@@ -8,6 +8,7 @@
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Path=DataContext.Loading, ElementName=Window}"/>
+            <i:InvokeCommandAction Command="{Binding Path=DataContext.Provjera, ElementName=Window}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
@@ -109,10 +110,11 @@
             <Button VerticalContentAlignment="Center" Width="50" Height="30" Margin="3" Cursor="Hand" Command="{Binding OpenMsg}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="images/icons/iconMessage.png" Height="23"/>
+                    <Label Content="{Binding Upozorenje}" Foreground="White" FontWeight="Bold" FontSize="12" Visibility="{Binding Vidljivost}"></Label>
                 </StackPanel>
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#5A5A5A" Offset="1"/>
+                        <GradientStop Color="{Binding Background}" Offset="1"/>
                         <GradientStop Color="White"/>
                     </LinearGradientBrush>
                 </Button.Background>

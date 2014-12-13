@@ -1421,6 +1421,44 @@ namespace Service
                 }
             }
         }
+
+        [OperationContract]
+        public int ProvjeriPoruke(int idUser)
+        {
+            var count = 0;
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                try
+                {
+                    count = context.tbl_poruka_primljenes.Where(p => p.primio == idUser && p.procitano == false).Count();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+                return count;
+            }
+        }
+
+        [OperationContract]
+        public void changePorukaProcitano(int id)
+        {
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                try
+                {
+                    tbl_poruka_primljene poruke = context.tbl_poruka_primljenes.Single(e => e.id_poruka_primljene == id);
+
+                    poruke.procitano = true;
+
+                    context.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        }
     }
 }
    

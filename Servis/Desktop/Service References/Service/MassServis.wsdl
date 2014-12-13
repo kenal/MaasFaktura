@@ -332,6 +332,18 @@
   <wsdl:message name="MassServis_changeKalendarOdobreno_OutputMessage">
     <wsdl:part name="parameters" element="tns:changeKalendarOdobrenoResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_ProvjeriPoruke_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriPoruke" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_ProvjeriPoruke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriPorukeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_changePorukaProcitano_InputMessage">
+    <wsdl:part name="parameters" element="tns:changePorukaProcitano" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_changePorukaProcitano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:changePorukaProcitanoResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -548,6 +560,14 @@
     <wsdl:operation name="changeKalendarOdobreno">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/changeKalendarOdobreno" message="tns:MassServis_changeKalendarOdobreno_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/changeKalendarOdobrenoResponse" message="tns:MassServis_changeKalendarOdobreno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriPoruke">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/ProvjeriPoruke" message="tns:MassServis_ProvjeriPoruke_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/ProvjeriPorukeResponse" message="tns:MassServis_ProvjeriPoruke_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="changePorukaProcitano">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/changePorukaProcitano" message="tns:MassServis_changePorukaProcitano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/changePorukaProcitanoResponse" message="tns:MassServis_changePorukaProcitano_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -1031,6 +1051,24 @@
     </wsdl:operation>
     <wsdl:operation name="changeKalendarOdobreno">
       <soap:operation soapAction="http://tempuri.org/MassServis/changeKalendarOdobreno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriPoruke">
+      <soap:operation soapAction="http://tempuri.org/MassServis/ProvjeriPoruke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePorukaProcitano">
+      <soap:operation soapAction="http://tempuri.org/MassServis/changePorukaProcitano" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

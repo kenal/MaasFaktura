@@ -390,6 +390,18 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/changeKalendarOdobreno", ReplyAction="http://tempuri.org/MassServis/changeKalendarOdobrenoResponse")]
         System.Threading.Tasks.Task changeKalendarOdobrenoAsync(int tip, int idUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ProvjeriPoruke", ReplyAction="http://tempuri.org/MassServis/ProvjeriPorukeResponse")]
+        int ProvjeriPoruke(int idUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/ProvjeriPoruke", ReplyAction="http://tempuri.org/MassServis/ProvjeriPorukeResponse")]
+        System.Threading.Tasks.Task<int> ProvjeriPorukeAsync(int idUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/changePorukaProcitano", ReplyAction="http://tempuri.org/MassServis/changePorukaProcitanoResponse")]
+        void changePorukaProcitano(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/changePorukaProcitano", ReplyAction="http://tempuri.org/MassServis/changePorukaProcitanoResponse")]
+        System.Threading.Tasks.Task changePorukaProcitanoAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -901,6 +913,22 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task changeKalendarOdobrenoAsync(int tip, int idUser) {
             return base.Channel.changeKalendarOdobrenoAsync(tip, idUser);
+        }
+        
+        public int ProvjeriPoruke(int idUser) {
+            return base.Channel.ProvjeriPoruke(idUser);
+        }
+        
+        public System.Threading.Tasks.Task<int> ProvjeriPorukeAsync(int idUser) {
+            return base.Channel.ProvjeriPorukeAsync(idUser);
+        }
+        
+        public void changePorukaProcitano(int id) {
+            base.Channel.changePorukaProcitano(id);
+        }
+        
+        public System.Threading.Tasks.Task changePorukaProcitanoAsync(int id) {
+            return base.Channel.changePorukaProcitanoAsync(id);
         }
     }
 }

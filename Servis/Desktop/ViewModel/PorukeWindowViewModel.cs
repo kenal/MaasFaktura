@@ -179,7 +179,12 @@ namespace Desktop.ViewModel
                 Message = "";
             }
             else
+            {
                 Message = SelektovanaPrimljenaPoruka.predmet;
+                client.changePorukaProcitano(SelektovanaPrimljenaPoruka.id_poruka_primljene);
+                
+            }
+            
         }
         #endregion
 
