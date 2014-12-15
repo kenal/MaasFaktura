@@ -140,18 +140,6 @@
         <elementListCompartment Id="7b4095ed-74d6-4146-b105-eb923f59246b" absoluteBounds="18.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1cb694fc-ee53-4122-b096-98db1aa4cc32" absoluteBounds="18.75, 9.75, 2, 1.9631982421874987">
-      <DataClassMoniker Name="/DataBaseModelDataContext/podpozicija" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7bb9722b-2b25-42af-a59e-9231fbd7605c" absoluteBounds="18.765, 10.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="412ef0ab-ae28-4be1-b755-3678f2eb782c" absoluteBounds="9.75, 18.75, 2, 1.1939925130208309">
-      <DataClassMoniker Name="/DataBaseModelDataContext/pozicija" />
-      <nestedChildShapes>
-        <elementListCompartment Id="92d4406b-68aa-4a89-a3cb-b576740c0692" absoluteBounds="9.765, 19.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="0fbc8447-0046-4ff4-bac3-ad5ad465dd07" absoluteBounds="18.75, 12.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/DataBaseModelDataContext/produkt" />
       <nestedChildShapes>
@@ -260,14 +248,14 @@
         <elementListCompartment Id="fecff441-89d5-43fa-b014-21ce73bce7b2" absoluteBounds="15.765, 23.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.54409912109375); (3.5 : 2.54409912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.54409912109375); (3.5 : 2.54409912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataBaseModelDataContext/user/user_tbl_poruka_poslane" />
       <nodes>
         <classShapeMoniker Id="dbd1aaa6-34fb-47f0-81da-c1554c4052a3" />
         <classShapeMoniker Id="c43557f0-84f4-49af-b8f6-d1f1ec315f54" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.20954956054688); (3.5 : 2.20954956054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.20954956054687); (3.5 : 2.20954956054687)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataBaseModelDataContext/user/user_tbl_poruka_poslane1" />
       <nodes>
         <classShapeMoniker Id="dbd1aaa6-34fb-47f0-81da-c1554c4052a3" />
@@ -304,6 +292,18 @@
       <DataClassMoniker Name="/DataBaseModelDataContext/p_get_MitKalendar_ViewResult" />
       <nestedChildShapes>
         <elementListCompartment Id="f6ae6fef-5e15-47df-8805-473a8a95b593" absoluteBounds="21.64, 23.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0331e960-a71f-4d84-b69c-b1a962b01053" absoluteBounds="19.25, 10.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataBaseModelDataContext/podpozicija" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1059959a-5475-478a-86f5-f468ed5e92b6" absoluteBounds="19.265, 10.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51705c35-f816-4a50-b183-33fb84be8b6d" absoluteBounds="10.125, 18.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataBaseModelDataContext/pozicija" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9631b99f-7f2d-4859-a04f-2c42d2785f42" absoluteBounds="10.14, 18.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

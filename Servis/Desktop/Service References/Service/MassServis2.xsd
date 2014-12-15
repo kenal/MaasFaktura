@@ -784,4 +784,72 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="getPozicija">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPozicijaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPozicijaResult" nillable="true" type="q35:ArrayOfpozicija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPodpozicijaFromPozicija">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPodpozicijaFromPozicijaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodpozicijaFromPozicijaResult" nillable="true" type="q36:ArrayOfpodpozicija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPozicijaNameById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPozicijaNameByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPozicijaNameByIdResult" nillable="true" type="q37:ArrayOfpozicija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPodpozicijaPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPodpozicijaPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodpozicijaPriceResult" nillable="true" type="q38:ArrayOfpodpozicija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPodPozicijaIdByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPodPozicijaIdByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodPozicijaIdByNameResult" nillable="true" type="q39:ArrayOfpodpozicija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

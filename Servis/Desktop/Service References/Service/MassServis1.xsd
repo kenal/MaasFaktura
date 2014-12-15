@@ -391,4 +391,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="einheit" nillable="true" type="tns:einheit" />
+  <xs:complexType name="ArrayOfpozicija">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pozicija" nillable="true" type="tns:pozicija" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfpozicija" nillable="true" type="tns:ArrayOfpozicija" />
+  <xs:complexType name="pozicija">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="pozicija" nillable="true" type="tns:pozicija" />
+  <xs:complexType name="ArrayOfpodpozicija">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="podpozicija" nillable="true" type="tns:podpozicija" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfpodpozicija" nillable="true" type="tns:ArrayOfpodpozicija" />
+  <xs:complexType name="podpozicija">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cijena" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_p" type="xs:int" />
+      <xs:element minOccurs="0" name="jedinica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="standard" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="podpozicija" nillable="true" type="tns:podpozicija" />
 </xs:schema>

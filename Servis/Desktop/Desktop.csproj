@@ -359,6 +359,8 @@
     <None Include="Properties\DataSources\Mass.Data.mitarbeiter.datasource" />
     <None Include="Properties\DataSources\Mass.Data.mit_kalendar.datasource" />
     <None Include="Properties\DataSources\Mass.Data.oberflache.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.podpozicija.datasource" />
+    <None Include="Properties\DataSources\Mass.Data.pozicija.datasource" />
     <None Include="Properties\DataSources\Mass.Data.produkt.datasource" />
     <None Include="Properties\DataSources\Mass.Data.p_get_MitKalendar_ViewResult.datasource" />
     <None Include="Properties\DataSources\Mass.Data.p_get_price_ViewResult.datasource" />
