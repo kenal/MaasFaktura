@@ -21,3 +21,4 @@ C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\Wpf
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\WpfScheduler.csproj.GenerateResource.Cache
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\WpfScheduler.dll
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\WpfScheduler.pdb
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\WpfScheduler.csprojResolveAssemblyReference.cache
