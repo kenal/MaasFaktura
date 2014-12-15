@@ -12,8 +12,13 @@ DEBUG;TRACE
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\App.xaml
 291312979604
 
+<<<<<<< HEAD
+58-1856396753
+31720686034
+=======
 58-984600734
 31-267378848
+>>>>>>> origin/develop
 AddBugWindows.xaml;AdminEditWindow.xaml;AdminWindow.xaml;AngebotWindow.xaml;AuftrageWindow.xaml;AuftragsSucheWindow.xaml;BestellungWindow.xaml;FertigWindow.xaml;KalendarRadnikDodajWindow.xaml;KalendarRadnikWindow.xaml;KundenWindow.xaml;KundenWindowEdit.xaml;LieferantWindow.xaml;LieferantWindowEdit.xaml;LoginWindow.xaml;MainWindow.xaml;MaterialbestandWindow.xaml;MaterialienWindow.xaml;MitarbeiterWindow.xaml;MitarbeiterWindowEdit.xaml;NovaPorukaUserControl.xaml;PorukeWindow.xaml;PoslanePorukeUserControl.xaml;PrimljenePorukeUserControl.xaml;ProfileWindow.xaml;RechBaustellen.xaml;RechNaturstein.xaml;showBugWindow.xaml;TechnikerWindow.xaml;
 
 True
