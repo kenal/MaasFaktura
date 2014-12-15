@@ -145,3 +145,5 @@ C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe.
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.application
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.pdb
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.pdb
