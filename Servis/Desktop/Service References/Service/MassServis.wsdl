@@ -344,6 +344,36 @@
   <wsdl:message name="MassServis_changePorukaProcitano_OutputMessage">
     <wsdl:part name="parameters" element="tns:changePorukaProcitanoResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getPozicija_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPozicija" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPozicija_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPozicijaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPodpozicijaFromPozicija_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPodpozicijaFromPozicija" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPodpozicijaFromPozicija_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPodpozicijaFromPozicijaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPozicijaNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPozicijaNameById" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPozicijaNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPozicijaNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPodpozicijaPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPodpozicijaPrice" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPodpozicijaPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPodpozicijaPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPodPozicijaIdByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPodPozicijaIdByName" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getPodPozicijaIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPodPozicijaIdByNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -568,6 +598,26 @@
     <wsdl:operation name="changePorukaProcitano">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/changePorukaProcitano" message="tns:MassServis_changePorukaProcitano_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/changePorukaProcitanoResponse" message="tns:MassServis_changePorukaProcitano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPozicija">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getPozicija" message="tns:MassServis_getPozicija_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getPozicijaResponse" message="tns:MassServis_getPozicija_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPodpozicijaFromPozicija">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getPodpozicijaFromPozicija" message="tns:MassServis_getPodpozicijaFromPozicija_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getPodpozicijaFromPozicijaResponse" message="tns:MassServis_getPodpozicijaFromPozicija_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPozicijaNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getPozicijaNameById" message="tns:MassServis_getPozicijaNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getPozicijaNameByIdResponse" message="tns:MassServis_getPozicijaNameById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPodpozicijaPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getPodpozicijaPrice" message="tns:MassServis_getPodpozicijaPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getPodpozicijaPriceResponse" message="tns:MassServis_getPodpozicijaPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPodPozicijaIdByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getPodPozicijaIdByName" message="tns:MassServis_getPodPozicijaIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getPodPozicijaIdByNameResponse" message="tns:MassServis_getPodPozicijaIdByName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -1069,6 +1119,51 @@
     </wsdl:operation>
     <wsdl:operation name="changePorukaProcitano">
       <soap:operation soapAction="http://tempuri.org/MassServis/changePorukaProcitano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPozicija">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getPozicija" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPodpozicijaFromPozicija">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getPodpozicijaFromPozicija" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPozicijaNameById">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getPozicijaNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPodpozicijaPrice">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getPodpozicijaPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPodPozicijaIdByName">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getPodPozicijaIdByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

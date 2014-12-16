@@ -349,22 +349,6 @@
       <Column Name="opis" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.podpozicija" Member="podpozicijas">
-    <Type Name="podpozicija">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="id_p" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="naziv" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="jedinica" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="cijena" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="standard" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.pozicija" Member="pozicijas">
-    <Type Name="pozicija">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="naziv" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
   <Table Name="dbo.produkt" Member="produkts">
     <Type Name="produkt">
       <Column Name="idprodukt" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -632,6 +616,22 @@
       <Column Name="odobreno" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="pogledano" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.podpozicija" Member="podpozicijas">
+    <Type Name="podpozicija">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_p" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="naziv" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="jedinica" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cijena" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="standard" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pozicija" Member="pozicijas">
+    <Type Name="pozicija">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="naziv" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

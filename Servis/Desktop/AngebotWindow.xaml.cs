@@ -1,5 +1,6 @@
 ﻿using Desktop.Service;
 using Desktop.ViewModel;
+using Mass.Data;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -263,7 +264,6 @@ namespace Desktop
             imgClose.Height = 13;
             imgClose.Stretch = Stretch.Fill;
             myDinamicButton01.Content = imgClose;
-
             brei.Width = 40;
             brei.Height = 25;
             lng.Width = 40;
@@ -374,8 +374,10 @@ namespace Desktop
 
             brei.Name = "txtBoxPrva_" + rowId;
             this.RegisterName("txtBoxPrva_" + rowId, brei);
+            brei.VerticalContentAlignment = VerticalAlignment.Center;
             lng.Name = "txtBoxDruga_" + rowId;
             this.RegisterName("txtBoxDruga_" + rowId, lng);
+            lng.VerticalContentAlignment = VerticalAlignment.Center;
             myDinamicButton01.Name = "btnPrvi_" + rowId;
             this.RegisterName("btnPrvi_" + rowId, myDinamicButton01);
             btnAddType01.Name = "btnAddNew01Row_" + rowId;
@@ -430,17 +432,25 @@ namespace Desktop
             einh.Name = "einh_" + rowId;
             this.RegisterName("einh_" + rowId, einh);
             foreach (var p in einheitList) { einh.Items.Add(p.jedinica.Replace("\"","").Trim()); }
-            einh.SelectedIndex = 0;
+            einh.SelectedIndex = 0;           
             men.Name = "men_" + rowId;
             this.RegisterName("men_" + rowId, men);
+            men.TextChanged += men1_TextChanged;
+            men.VerticalContentAlignment = VerticalAlignment.Center;
             einz.Name = "einz_" + rowId;
-            this.RegisterName("einz_" + rowId, einz);           
+            this.RegisterName("einz_" + rowId, einz);
+            einz.TextChanged += men1_TextChanged;
+            einz.VerticalContentAlignment = VerticalAlignment.Center;
             stk.Name = "stk_" + rowId;
             this.RegisterName("stk_" + rowId, stk);
+            stk.TextChanged += men1_TextChanged;
+            stk.VerticalContentAlignment = VerticalAlignment.Center;
             gpreis.Name = "gpreis_" + rowId;
             this.RegisterName("gpreis_" + rowId, gpreis);
+            gpreis.VerticalContentAlignment = VerticalAlignment.Center;
             rab.Name = "rab_" + rowId;
             this.RegisterName("rab_" + rowId, rab);
+            rab.VerticalContentAlignment = VerticalAlignment.Center;
             akonto.Name = "akonto_" + rowId;
             this.RegisterName("akonto_" + rowId, akonto);
             akonto.Click += akonto_Click;
@@ -482,6 +492,10 @@ namespace Desktop
         #region Add Row Type 02
         private void addRowType02()
         {
+            Service.MassServisClient client = new MassServisClient();
+            var PozicijaList = client.getPozicija();
+            var PodPozicija = client.getPodpozicijaFromPozicija(1);
+
             rowId = rowId + 1;
             TextBox Row2myDinamicTxtBox01 = new TextBox();
             Button Row2myDinamicButton01 = new Button();
@@ -532,8 +546,7 @@ namespace Desktop
             imgClose.Width = 13;
             imgClose.Height = 13;
             imgClose.Stretch = Stretch.Fill;
-            Row2myDinamicButton01.Content = imgClose;
-
+            Row2myDinamicButton01.Content = imgClose;            
             Row2myDinamicTxtBox01.Visibility = Visibility.Hidden;
             Row2myDinamicTxtBox01.Width = 210;
             Row2myDinamicTxtBox01.Height = 25;
@@ -632,25 +645,42 @@ namespace Desktop
             btnUp.Name = "btnUp_" + rowId;
             this.RegisterName("btnUp_" + rowId, btnUp);
             r2First.Name = "r2First_" + rowId;
+            foreach (var p in PozicijaList) { r2First.Items.Add(p.naziv); }
+            r2First.SelectedIndex = 0;
+            r2First.SelectionChanged += r2First_SelectionChanged;
             this.RegisterName("r2First_" + rowId, r2First);
             r2Second.Name = "r2Second_" + rowId;
             this.RegisterName("r2Second_" + rowId, r2Second);
+            r2Second.SelectionChanged += r2Second_SelectionChanged;
+            foreach (var p in PodPozicija) { r2Second.Items.Add(p.naziv); }
+            r2Second.SelectedIndex = 0;
             r2brei.Name = "r2brei_" + rowId;
             this.RegisterName("r2brei_" + rowId, r2brei);
+            r2brei.IsReadOnly = true;
+            r2brei.Background = Brushes.LightGray;
             r2lng.Name = "r2lng_" + rowId;
             this.RegisterName("r2lng_" + rowId, r2lng);
+            r2lng.IsReadOnly = true;
+            r2lng.Background = Brushes.LightGray;
             r2einh.Name = "r2einh_" + rowId;
             this.RegisterName("r2einh_" + rowId, r2einh);
+            r2einh.IsReadOnly = true;
+            r2einh.Background = Brushes.LightGray;
             r2men.Name = "r2men_" + rowId;
             this.RegisterName("r2men_" + rowId, r2men);
+            r2men.VerticalContentAlignment = VerticalAlignment.Center;
             r2einz.Name = "r2einz_" + rowId;
             this.RegisterName("r2einz_" + rowId, r2einz);
+            r2einz.VerticalContentAlignment = VerticalAlignment.Center;
             r2stk.Name = "r2stk_" + rowId;
             this.RegisterName("r2stk_" + rowId, r2stk);
+            r2stk.VerticalContentAlignment = VerticalAlignment.Center;
             r2gpreis.Name = "r2gpreis_" + rowId;
             this.RegisterName("r2gpreis_" + rowId, r2gpreis);
+            r2gpreis.VerticalContentAlignment = VerticalAlignment.Center;
             r2rab.Name = "r2rab_" + rowId;
             this.RegisterName("r2rab_" + rowId, r2rab);
+            r2rab.VerticalContentAlignment = VerticalAlignment.Center;
             r2akonto.Name = "r2akonto_" + rowId;
             this.RegisterName("r2akonto_" + rowId, r2akonto);
             r2akonto.Click += akonto_Click;
@@ -2134,19 +2164,66 @@ namespace Desktop
         }
         #endregion
 
+        #region podPozicija Changed
+        private void r2Second_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        {
+            var obj = sender as ComboBox;
+            if (obj.IsDropDownOpen)
+            {
+                Service.MassServisClient client = new MassServisClient();
+                int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
+                string podPozValue = obj.SelectedValue.ToString().Replace("\"", "").Trim();
+                ComboBox ComboPozicija = (ComboBox)this.FindName("r2First_" + rowId); 
+
+                var podPozicijaId = client.getPodPozicijaIdByName(podPozValue);
+                get_pozicija_price(rowId, podPozicijaId[0].id);
+            }
+        }
+        private void r2First_SelectionChanged(object sender, SelectionChangedEventArgs args)
+        { 
+            var obj = sender as ComboBox;
+            if (obj.IsDropDownOpen)
+            {
+                Service.MassServisClient client = new MassServisClient();
+                int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
+                string podPozValue = obj.SelectedValue.ToString().Replace("\"", "").Trim();
+                ComboBox ComboPodPozicija = (ComboBox)this.FindName("r2Second_" + rowId); 
+                var pozicijaId = client.getPozicijaNameById(podPozValue);
+                var podPozicijaList = client.getPodpozicijaFromPozicija(pozicijaId[0].id);
+                ComboPodPozicija.Items.Clear();
+                foreach (var p in podPozicijaList) { ComboPodPozicija.Items.Add(p.naziv.Replace("\"", "").Trim()); }
+                ComboPodPozicija.SelectedIndex = 0;
+            }
+        }
+        #endregion
+
         #region getPrice Method
         private void get_price(int row, int idMaterialType, int idMaterijal, string valStarke, string valOberflache)
         {
             Service.MassServisClient client = new MassServisClient();
             var Results = client.getMaterialPrice(idMaterialType, idMaterijal, valStarke, valOberflache);
-            TextBox TxtBoxGPreis = (TextBox)this.FindName("gpreis_" + row);
+            TextBox TxtBoxEinz = (TextBox)this.FindName("einz_" + row);
             if (Results.Count != 0)
             {
-                TxtBoxGPreis.Text = (Results[0].iznos).ToString();
+                TxtBoxEinz.Text = (Results[0].iznos).ToString();
             }
             else
             {
-                TxtBoxGPreis.Text = "0,00";
+                TxtBoxEinz.Text = "0,00";
+            }
+        }
+        private void get_pozicija_price(int row, int idPodPozicija)
+        {
+            Service.MassServisClient client = new MassServisClient();
+            var Results = client.getPodpozicijaPrice(idPodPozicija);
+            TextBox TxtBoxEinz = (TextBox)this.FindName("r2einz_" + row);
+            if (Results.Count != 0) 
+            {
+                TxtBoxEinz.Text = (Results[0].cijena).ToString();
+            }
+            else
+            {
+                TxtBoxEinz.Text = "0,00";
             }
         }
         #endregion
@@ -2197,6 +2274,36 @@ namespace Desktop
             }
         }
         #endregion
-        #endregion       
+
+        #region Racunanje
+        //Menge Pressed
+        private void men1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var obj = sender as TextBox;
+            int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
+            TextBox TxtBoxMen = (TextBox)this.FindName("men_" + rowId);
+            TextBox TxtBoxStk = (TextBox)this.FindName("stk_" + rowId);
+            TextBox TxtBoxEinz = (TextBox)this.FindName("einz_" + rowId);
+            TextBox TxtBoxGpreis = (TextBox)this.FindName("gpreis_" + rowId);
+            decimal menValue;
+            if (TxtBoxMen.Text == "") { menValue = 0; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }        
+            decimal stkValue;
+            if (TxtBoxStk.Text == "") { stkValue = 0; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
+            decimal einzValue;
+            if (TxtBoxEinz.Text == "") { einzValue = 0; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
+            decimal gPreisValue;
+
+            if (obj.Text != "") 
+            {
+                gPreisValue = menValue * stkValue * einzValue;
+                TxtBoxGpreis.Text = gPreisValue.ToString();
+            }
+            else
+            {
+                TxtBoxGpreis.Text = "0.00";
+            }
+        }
+        #endregion
+        #endregion
     }
 }

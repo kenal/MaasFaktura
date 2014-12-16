@@ -1459,6 +1459,86 @@ namespace Service
                 }
             }
         }
+        [OperationContract]
+        public ObservableCollection<pozicija> getPozicija()
+        {
+            ObservableCollection<pozicija> List = new ObservableCollection<pozicija>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.pozicijas select a;
+
+                List.Clear();
+                foreach (var p in x)
+                {
+                    List.Add(new pozicija { id = p.id, naziv = p.naziv });
+                }
+            }
+            return List;
+        }
+        [OperationContract]
+        public ObservableCollection<podpozicija> getPodpozicijaFromPozicija(int value)
+        {
+            ObservableCollection<podpozicija> ListP = new ObservableCollection<podpozicija>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.podpozicijas where a.id_p == value  select a;
+
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new podpozicija { id = p.id, id_p = p.id_p, naziv = p.naziv, cijena = p.cijena });
+                }
+            }
+            return ListP;
+        }
+        [OperationContract]
+        public ObservableCollection<pozicija> getPozicijaNameById(string value)
+        {
+            ObservableCollection<pozicija> ListP = new ObservableCollection<pozicija>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.pozicijas where a.naziv == value select a;
+
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new pozicija { id = p.id });
+                }
+            }
+            return ListP;
+        }
+        [OperationContract]
+        public ObservableCollection<podpozicija> getPodpozicijaPrice(int idValue)
+        {
+            ObservableCollection<podpozicija> ListP = new ObservableCollection<podpozicija>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.podpozicijas where a.id == idValue select a;
+
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new podpozicija { cijena = p.cijena });
+                }
+            }
+            return ListP;
+        }
+         [OperationContract]
+        public ObservableCollection<podpozicija> getPodPozicijaIdByName(string value)
+        {
+            ObservableCollection<podpozicija> ListP = new ObservableCollection<podpozicija>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.podpozicijas where a.naziv == value select a;
+
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new podpozicija { id = p.id });
+                }
+            }
+            return ListP;
+        }
     }
 }
    
