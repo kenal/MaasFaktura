@@ -205,7 +205,7 @@ namespace Desktop
             Service.MassServisClient client = new MassServisClient();
             var materijalList = client.getMaterijal();
             var produktList = client.getProdukt();
-            var oberflacheList = client.getPovrsinaByMaterijal(3);
+            var oberflacheList = client.getPovrsinaByMaterijal(1);
             var starkeList = client.getDebljinaByProduktId(1);
             var einheitList = client.getEinheit();
 
@@ -669,15 +669,19 @@ namespace Desktop
             r2men.Name = "r2men_" + rowId;
             this.RegisterName("r2men_" + rowId, r2men);
             r2men.VerticalContentAlignment = VerticalAlignment.Center;
+            r2men.TextChanged += men2_TextChanged;
             r2einz.Name = "r2einz_" + rowId;
             this.RegisterName("r2einz_" + rowId, r2einz);
             r2einz.VerticalContentAlignment = VerticalAlignment.Center;
+            r2einz.TextChanged += men2_TextChanged;
             r2stk.Name = "r2stk_" + rowId;
             this.RegisterName("r2stk_" + rowId, r2stk);
             r2stk.VerticalContentAlignment = VerticalAlignment.Center;
+            r2stk.TextChanged += men2_TextChanged;
             r2gpreis.Name = "r2gpreis_" + rowId;
             this.RegisterName("r2gpreis_" + rowId, r2gpreis);
             r2gpreis.VerticalContentAlignment = VerticalAlignment.Center;
+            r2gpreis.TextChanged += men2_TextChanged;
             r2rab.Name = "r2rab_" + rowId;
             this.RegisterName("r2rab_" + rowId, r2rab);
             r2rab.VerticalContentAlignment = VerticalAlignment.Center;
@@ -2286,22 +2290,33 @@ namespace Desktop
             TextBox TxtBoxEinz = (TextBox)this.FindName("einz_" + rowId);
             TextBox TxtBoxGpreis = (TextBox)this.FindName("gpreis_" + rowId);
             decimal menValue;
-            if (TxtBoxMen.Text == "") { menValue = 0; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }        
+            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 0; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }        
             decimal stkValue;
-            if (TxtBoxStk.Text == "") { stkValue = 0; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
+            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 0; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
             decimal einzValue;
-            if (TxtBoxEinz.Text == "") { einzValue = 0; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
+            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 0; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
             decimal gPreisValue;
-
-            if (obj.Text != "") 
-            {
-                gPreisValue = menValue * stkValue * einzValue;
-                TxtBoxGpreis.Text = gPreisValue.ToString();
-            }
-            else
-            {
-                TxtBoxGpreis.Text = "0.00";
-            }
+            if (obj.Text != "" || obj.Text.Any(c => char.IsLetter(c))) { gPreisValue = menValue * stkValue * einzValue; TxtBoxGpreis.Text = gPreisValue.ToString();}
+            else{ TxtBoxGpreis.Text = "0.00"; }
+        }
+        //Menge2 Pressed
+        private void men2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var obj = sender as TextBox;
+            int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
+            TextBox TxtBoxMen = (TextBox)this.FindName("r2men_" + rowId);
+            TextBox TxtBoxStk = (TextBox)this.FindName("r2stk_" + rowId);
+            TextBox TxtBoxEinz = (TextBox)this.FindName("r2einz_" + rowId);
+            TextBox TxtBoxGpreis = (TextBox)this.FindName("r2gpreis_" + rowId);
+            decimal menValue;
+            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 0; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }
+            decimal stkValue;
+            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 0; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
+            decimal einzValue;
+            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 0; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
+            decimal gPreisValue;
+            if (obj.Text != "" || obj.Text.Any(c => char.IsLetter(c))) { gPreisValue = menValue * stkValue * einzValue; TxtBoxGpreis.Text = gPreisValue.ToString(); }
+            else { TxtBoxGpreis.Text = "0.00"; }
         }
         #endregion
         #endregion

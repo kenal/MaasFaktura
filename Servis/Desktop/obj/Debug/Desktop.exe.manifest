@@ -97,26 +97,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="854440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="847784">
       <assemblyIdentity name="Desktop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZIFMon8foBUNU0SMdFLhyxrRuYe2c1PPnSEoJNU9WGA=</dsig:DigestValue>
+        <dsig:DigestValue>EDBuP5ghREZZeb/FoqLCWGAZ4SBO8BBh07z8lBcr4F0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mass.Data.dll" size="148992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mass.Data.dll" size="149504">
       <assemblyIdentity name="Mass.Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sutSIHUWAOLjTOOWZWTvC88VIzyIQnjnPGNz+cgdYKo=</dsig:DigestValue>
+        <dsig:DigestValue>9IowOd1eXNm2WIuGm00GHNzXsIPrvTRPslzkVA/cZ6A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,14 +133,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="70144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="67584">
       <assemblyIdentity name="Service" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MrgUj3f6+KieceUZIjwvBCjWB5iXMEZuCOnG4tVxCFI=</dsig:DigestValue>
+        <dsig:DigestValue>3j8DVXOusfjkz6ToGhdxgjbaSVUyN3Nek83J9hosHQs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -284,7 +284,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kLyu5/Ng8xxIoCOsRqSGDl4lPCDdKzUkfqine2TR0qA=</dsig:DigestValue>
+        <dsig:DigestValue>pPX1N1I5yNeBYlgzqkFX6FHZz9FBbu5wxpL2XQNvnVk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
