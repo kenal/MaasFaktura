@@ -919,6 +919,13 @@ namespace Desktop.ViewModel
                get { return _prebaciNaPrvi = new RelayCommand(param => FillGridRadnikFirst(param), param => this.CanLast); }
                set { _prebaciNaPrvi = value; }
            }
+           private ICommand _promjeniBrojPrikaza;
+
+           public ICommand PromjeniBrojPrikaza
+           {
+               get { return _promjeniBrojPrikaza = new RelayCommand(param => FillGridRadnikFirst(param)); }
+               set { _promjeniBrojPrikaza = value; }
+           }
 
            private ICommand _prebaciNaZadnji;
 

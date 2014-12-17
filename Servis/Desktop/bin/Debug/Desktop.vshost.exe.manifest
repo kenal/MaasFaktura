@@ -104,7 +104,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>y42eadsi4ur98exWVd/HbYmBVlyDyHrlh/5gEplosQo=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>Y/YwKoOvrUE09MXN+dxYyOBzzY2ENOiVltBs/7mM0yA=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -116,7 +120,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>dP52C6PwpSFiI9mJT2Kn3rAb7nIsO/AUi3/6QAQlDnI=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>M3tJRfbKES5BIhAI0Sne4o2r5JmQwB1fe64ipOckmbY=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,14 +141,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="70144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="71680">
       <assemblyIdentity name="Service" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>qDJOfgi3Fu3CSskmYbYPN7O6a3ebP6ktvrAP4OBbx1w=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>9sDvv/TYAnbZLIaEoKUC0HGGG0aN+qsBcl9mdumgebg=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -284,7 +296,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>m4gkd33J+z5aC6UdPGDM7L4/rqYAHUKdUXzbZH2w50M=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>1STh5tM7yB3LEOdYv+mWx0pxmw+s4RlPLiVjJrF4z5k=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>

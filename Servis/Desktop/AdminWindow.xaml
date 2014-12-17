@@ -211,7 +211,7 @@
             <ComboBox x:Name="BrojPrikazaUser" HorizontalAlignment="Left" Margin="91,32,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.906,0.231" ItemsSource="{Binding BrojPrikazanihPageUser}" SelectedItem="{Binding KolicinaPrikazaUser, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
-                        <i:InvokeCommandAction Command="{Binding Path=DataContext.PrebaciNaPrviUser, ElementName=BrojPrikazaUser}"/>
+                        <i:InvokeCommandAction Command="{Binding Path=DataContext.PromjeniBrojPrikazaUser, ElementName=BrojPrikazaUser}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ComboBox>
