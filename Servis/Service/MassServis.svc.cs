@@ -1361,7 +1361,7 @@ namespace Service
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
                 var query = from t1 in context.users
-                            join t2 in context.mit_kalendars on t1.idUser equals t2.idUser
+                            join t2 in context.mit_kalendars on t1.idUser equals t2.idUser orderby t2.datum descending
                             select new { t1.firstName, t1.lastName,t2.datum, t2.datum1, t2.odobreno, t2.pogledano, t2.tip, t2.id };
                 Lista.Clear();
                 foreach (var p in query)
