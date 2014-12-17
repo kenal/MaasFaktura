@@ -123,19 +123,7 @@
                 <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3"/>
                 <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3"/>
                 <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3"/>
-                <Label Content="Benutzer auswählen:" FontSize="14" Grid.Column="0" Grid.Row="0"/>
-                <ComboBox x:Name="cmbBenutzer" Grid.Row="0" Height="25" Width="180" Margin="0,5,20,10" Grid.Column="1" ItemsSource="{Binding ListaKorisnika}" 
-                          SelectedItem="{Binding Path=DataContext.ComboKorisnik, ElementName=Window, Mode=TwoWay}" Cursor="Hand">
-                         
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock>
-                                     <Run Text="{Binding firstName}" />
-                                     <Run Text="{Binding lastName}" />
-                            </TextBlock>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+                
                 <Label Content="Gehalt pro Monat:" FontSize="14" Grid.Column="0" Grid.Row="1"/>
                 <TextBox x:Name="txtGehalt" Grid.Column="1" Grid.Row="1" Height="25" Width="180" Margin="0,7.5,20,7.5"  Text="{Binding GehaltEdit}"/>
                 <Label Content="Stundenlohn:" FontSize="14" Grid.Column="0" Grid.Row="2"/>

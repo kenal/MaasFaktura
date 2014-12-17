@@ -8,7 +8,7 @@
          xmlns:local="clr-namespace:Desktop.HelperClass"
         x:Name="Window"
         Title="MainWindow" Height="952" MinWidth="1024" Width="1310.269" SizeToContent="WidthAndHeight" SizeChanged="Window_SizeChanged" WindowStartupLocation="CenterScreen">
-   
+
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Path=DataContext.PopuniGridListomRadnika, ElementName=Window}"/>
@@ -379,59 +379,70 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="150" SharedSizeGroup="A"/>
-                            <ColumnDefinition Width="102.716" SharedSizeGroup="B"/>
-                            <ColumnDefinition Width="97.284"/>
+                            <ColumnDefinition Width="200" SharedSizeGroup="B"/>
                             <ColumnDefinition Width="50" SharedSizeGroup="C"/>
                         </Grid.ColumnDefinitions>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4"/>
-                        
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Border BorderBrush="#FFFFFF" BorderThickness="1" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3"/>
+                        <Label Content="Benutzer auswählen:" FontSize="14" Grid.Column="0" Grid.Row="0"/>
+                        <ComboBox x:Name="cmbBenutzer" Grid.Row="0" Margin="0,5,43,10" Grid.Column="1" ItemsSource="{Binding ListaKorisnika}" 
+                          SelectedItem="{Binding Path=DataContext.ComboKorisnik, ElementName=Window, Mode=TwoWay}" Cursor="Hand">
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                     <Run Text="{Binding firstName}" />
+                                     <Run Text="{Binding lastName}" />
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                         <Label Content="Gehalt pro Monat:" FontSize="14" Grid.Column="0" Grid.Row="1"/>
-                        <TextBox x:Name="txtGehalt" Grid.Column="1" Grid.Row="1" Height="25" Width="180" Margin="0,8,20,8"  Text="{Binding Gehalt}" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtGehalt" Grid.Column="1" Grid.Row="1" Margin="0,8,43,7"  Text="{Binding Gehalt}"/>
                         <Label Content="Stundenlohn:" FontSize="14" Grid.Column="0" Grid.Row="2"/>
-                        <TextBox x:Name="txtStudenlohn" Grid.Column="1" Grid.Row="2" Height="25" Width="180" Margin="0,8,20,8"  Text="{Binding Stundenlohn}" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtStudenlohn" Grid.Column="1" Grid.Row="2" Margin="0,8,43,7"  Text="{Binding Stundenlohn}"/>
                         <Label Content="Urlaubstage ist:" FontSize="14" Grid.Column="0" Grid.Row="3"/>
-                        <TextBox x:Name="txtUrlaubstageIst" Grid.Column="1" Grid.Row="3" Height="25" Width="180" Margin="0,8,20,8" Text="{Binding Urlaubstage}" Grid.ColumnSpan="2" />
+                        <TextBox x:Name="txtUrlaubstageIst" Grid.Column="1" Grid.Row="3" Margin="0,8,43,7" Text="{Binding Urlaubstage}" />
                         <Label Content="Urlaubstage soll" FontSize="14" Grid.Column="0" Grid.Row="4"/>
-                        <TextBox x:Name="txtUrlaubstageSoll" Grid.Column="1" Grid.Row="4" Height="25" Width="180" Margin="0,8,20,8"  Text="{Binding UrlaubstageDuzan}" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtUrlaubstageSoll" Grid.Column="1" Grid.Row="4" Margin="0,8,43,7"  Text="{Binding UrlaubstageDuzan}"/>
                         <Label Content="Anzahl Gehälter:" Grid.Column="0" Grid.Row="5" FontSize="14"/>
-                        <TextBox x:Name="txtAnzahlmitarbeiter" Grid.Column="1" Grid.Row="5" Height="25" Width="180" Margin="0,8,20,8"  Text="{Binding AnzahlGehalter}" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtAnzahlmitarbeiter" Grid.Column="1" Grid.Row="5" Margin="0,8,43,7"  Text="{Binding AnzahlGehalter}"/>
                         <Label Content="Wochenstunden:" Grid.Column="0" Grid.Row="6" FontSize="14"/>
-                        <TextBox x:Name="txtWochenstunden" Grid.Column="1" Grid.Row="6" Height="25" Width="180" Margin="0,8,20,8" Text="{Binding Wochenstunden}" Grid.ColumnSpan="2" />
+                        <TextBox x:Name="txtWochenstunden" Grid.Column="1" Grid.Row="6" Margin="0,8,43,7" Text="{Binding Wochenstunden}" />
                         <Label Content="Krankenheitstage:" Grid.Column="0" Grid.Row="7" FontSize="14"/>
-                        <TextBox x:Name="txtKrankenheitstage" Grid.Column="1" Grid.Row="7" Height="25" Width="180" Margin="0,8,20,8"  Text="{Binding Krankenheitstage}" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtKrankenheitstage" Grid.Column="1" Grid.Row="7" Margin="0,8,43,7"  Text="{Binding Krankenheitstage}"/>
                         <Label Content="Bank:" Grid.Column="0" Grid.Row="8" FontSize="14"/>
-                        <TextBox x:Name="txtBank" Grid.Column="1" Grid.Row="8" Height="25" Width="180" Margin="0,8,20,8" Text="{Binding Bank}" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="txtBank" Grid.Column="1" Grid.Row="8" Margin="0,8,43,7" Text="{Binding Bank}"/>
                         <Label Content="BLZ:" Grid.Column="0" Grid.Row="9" FontSize="14" />
-                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="9" Margin="0,0,42,0">
                             <TextBox x:Name="txtBLZ" Width="50" Height="25" Text="{Binding Blz}"/>
                             <Label Content="KtoNr.:" VerticalAlignment="Center" FontSize="14"/>
                             <TextBox x:Name="txtKtoNr" Width="83.593" Height="25" Margin="0,7.5" Text="{Binding KtoNr}"/>
                         </StackPanel>
                         <Label Content="BIC/SWIFT:" Grid.Column="0" Grid.Row="10" FontSize="14"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="10" Margin="0,0,42,0">
                             <TextBox x:Name="txtBIC" Width="50" Height="25" Text="{Binding Bic}"/>
                             <Label Content="  IBAN:" VerticalAlignment="Center" FontSize="14"/>
                             <TextBox x:Name="txtIBAN" Width="84.037" Height="25" Margin="0,7.5" Text="{Binding Iban}"/>
                         </StackPanel>
                         <Label Content="Kontoinhaber:" Grid.Column="0" Grid.Row="11" FontSize="14"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="11" Margin="0,0,42,0">
                             <TextBox x:Name="txtKontoinhaber" Width="90" Height="25" Text="{Binding Kontoinhaber}"/>
                             <Label Content="(leer=wie Adresse)" FontSize="12" VerticalAlignment="Center"/>
                         </StackPanel>
                         <Label Content="Notiz:" Grid.Column="0" Grid.Row="12" FontSize="14" />
-                        <TextBox x:Name="rtbxNotiz" Grid.Column="1" Grid.Row="12" Width="180" Margin="0,10,20,10" Text="{Binding Notiz}" Grid.ColumnSpan="2"/>
-                        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="75,0,25,0">
+                        <TextBox x:Name="rtbxNotiz" Grid.Column="1" Grid.Row="12" Margin="0,10,43,10" Text="{Binding Notiz}"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="80,0,20,0" Width="250">
                             <Button VerticalContentAlignment="Center" Background="#FF51A351" HorizontalAlignment="Left" Width="120" Height="30" Margin="0,0,5,0" Command="{Binding DodajRadnika}" Cursor="Hand">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="ikone/IkonaButtonOk.png"/>
@@ -549,7 +560,7 @@
                     <ComboBox x:Name="BrojPrikaza" HorizontalAlignment="Left" Margin="91,61,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.906,0.231" ItemsSource="{Binding BrojPrikazanihRadnika}" SelectedItem="{Binding KolicinaRadnika, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
-                                <i:InvokeCommandAction Command="{Binding Path=DataContext.PrebaciNaPrvi, ElementName=BrojPrikaza}"/>
+                                <i:InvokeCommandAction Command="{Binding Path=DataContext.PromjeniBrojPrikaza, ElementName=BrojPrikaza}"/>
 
                             </i:EventTrigger>
                         </i:Interaction.Triggers>

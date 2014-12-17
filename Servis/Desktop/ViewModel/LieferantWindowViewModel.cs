@@ -748,6 +748,14 @@ namespace Desktop.ViewModel
            set { _prebaciNaPrvi = value; }
        }
 
+       private ICommand _promjeniBrojPrikaza;
+
+       public ICommand PromjeniBrojPrikaza
+       {
+           get { return _promjeniBrojPrikaza = new RelayCommand(param => FillGridLieferantFirst(param)); }
+           set { _promjeniBrojPrikaza = value; }
+       }
+
        private ICommand _prebaciNaZadnji;
 
        public ICommand PrebaciNaZadnji

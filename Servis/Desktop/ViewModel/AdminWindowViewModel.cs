@@ -949,6 +949,14 @@ namespace Desktop.ViewModel
             set { _prebaciNaPrviUser = value; }
         }
 
+        private ICommand _promjeniBrojPrikazaUser;
+
+        public ICommand PromjeniBrojPrikazaUser
+        {
+            get { return _promjeniBrojPrikazaUser = new RelayCommand(param => FillGridFirstUser(param)); }
+            set { _promjeniBrojPrikazaUser = value; }
+        }
+
         private ICommand _prebaciNaZadnjiUser;
 
         public ICommand PrebaciNaZadnjiUser
