@@ -1246,7 +1246,7 @@ namespace Service
             ObservableCollection<mit_kalendar> Lista = new ObservableCollection<mit_kalendar>();
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = from a in context.mit_kalendars select a;
+                var x = (from a in context.mit_kalendars select a);
                 Lista.Clear();
                 foreach (var p in x)
                 {
