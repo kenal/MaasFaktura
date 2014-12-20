@@ -12,3 +12,4 @@ C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Mass.Data\bin\Debug\Mass.D
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Mass.Data\obj\Debug\Mass.Data.dll
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Mass.Data\obj\Debug\Mass.Data.pdb
 >>>>>>> origin/develop
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Mass.Data\obj\Debug\Mass.Data.csprojResolveAssemblyReference.cache
