@@ -159,12 +159,12 @@
                 <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Margin="130,5,0,0" Width="60"></TextBox>
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="195,2,0,0" FontSize="16">€</Label>
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,30,0,0" FontSize="16">Nettobetrag:</Label>
-                <Label Name="lblNettobetrag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,30,0,0" FontSize="16" Content="0,00"></Label>
+                <Label Name="lblNettobetrag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,30,0,0" FontSize="15" Content="0,00"></Label>
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,55,0,0" FontSize="16">Mwst.:</Label>
-                <Label Name="lblMwst" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,55,0,0" FontSize="16" Content="0,00"></Label>
+                <Label Name="lblMwst" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,55,0,0" FontSize="15" Content="0,00"></Label>
                 <Grid Background="Black" Height="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" Margin="0,85,0,0"></Grid>
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,85,0,0" FontSize="16">Endbetrag:</Label>
-                <Label Name="lblEndbetrag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="175,85,0,0" FontSize="16" Content="0,00"></Label>
+                <Label Name="lblEndbetrag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,85,0,0" FontSize="15" Content="0,00"></Label>
             </Grid>
         </Grid>
         <!--Row 03-->
