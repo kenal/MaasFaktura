@@ -2328,9 +2328,14 @@ namespace Desktop
             decimal einzValue;
             if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 1; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
             decimal gPreisValue;
-            if (obj.Text != "" && TxtBoxMen.Text.ToString().Any(c => char.IsLetter(c)) && TxtBoxEinz.Text != "") 
-            { gPreisValue = menValue * stkValue * einzValue; TxtBoxGpreis.Text = gPreisValue.ToString(); }
-            else{ TxtBoxGpreis.Text = "0.00"; }
+            if (TxtBoxMen.Text != "" && TxtBoxEinz.Text != "" && TxtBoxStk.Text != "") 
+            { gPreisValue = menValue * stkValue * einzValue; 
+              TxtBoxGpreis.Text =  toCurrencyString(gPreisValue).ToString(); }
+            else { TxtBoxGpreis.Text = toCurrencyString(Convert.ToDecimal(0)); }
+        }
+        string toCurrencyString(decimal d)
+        {
+                return d.ToString("#,##0.00");
         }
         //Menge2 Pressed
         private void men2_TextChanged(object sender, TextChangedEventArgs e)
@@ -2342,14 +2347,18 @@ namespace Desktop
             TextBox TxtBoxEinz = (TextBox)this.FindName("r2einz_" + rowId);
             TextBox TxtBoxGpreis = (TextBox)this.FindName("r2gpreis_" + rowId);
             decimal menValue;
-            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 0; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }
+            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 1; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }
             decimal stkValue;
-            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 0; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
+            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 1; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
             decimal einzValue;
-            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 0; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
+            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 1; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
             decimal gPreisValue;
-            if (obj.Text != "" || obj.Text.Any(c => char.IsLetter(c))) { gPreisValue = menValue * stkValue * einzValue; TxtBoxGpreis.Text = gPreisValue.ToString(); }
-            else { TxtBoxGpreis.Text = "0"; }
+            if (TxtBoxMen.Text != "" && TxtBoxEinz.Text != "" && TxtBoxStk.Text != "")
+            {
+                gPreisValue = menValue * stkValue * einzValue;
+                TxtBoxGpreis.Text = toCurrencyString(gPreisValue).ToString();
+            }
+            else { TxtBoxGpreis.Text = toCurrencyString(Convert.ToDecimal(0)); }
         }
         private void gPreis_KeyDown(object sender, KeyEventArgs e)
         {
@@ -2359,20 +2368,20 @@ namespace Desktop
         private void preracunavanje() 
         {
             decimal value = 0;
-            for (int i = 1; i <= lastRowId + 1; i++)
+            for (int i = 1; i <= rowId + 1; i++)
             {
                 TextBox TxtBoxGpreis01 = (TextBox)this.FindName("gpreis_" + i);
                 TextBox TxtBoxGpreis02 = (TextBox)this.FindName("r2gpreis_" + i);
                 Label lbl = (Label)this.FindName("rd_" + i);
-                if (TxtBoxGpreis01 != null)
+                if (TxtBoxGpreis01 != null && TxtBoxGpreis01.Text != "")
                 {
-                    if (lbl.Foreground != Brushes.Red && TxtBoxGpreis01.Text != "")
+                    if (lbl.Foreground != Brushes.Red)
                     {
                         decimal net01 = Convert.ToDecimal(TxtBoxGpreis01.Text.ToString());
                         value = value + net01;
                     }
                 }
-                else if (TxtBoxGpreis02 != null)
+                else if (TxtBoxGpreis02 != null && TxtBoxGpreis02.Text != "")
                 {
                     if (lbl.Foreground != Brushes.Red)
                     {
@@ -2381,7 +2390,9 @@ namespace Desktop
                     }
                 }
             }
-            lblNettobetrag.Content = value.ToString();
+            lblNettobetrag.Content = toCurrencyString(Convert.ToDecimal(value.ToString()));
+            lblEndbetrag.Content = toCurrencyString(value * Convert.ToDecimal(1.19));
+            lblMwst.Content = toCurrencyString((value * Convert.ToDecimal(1.19)) - value);
         }
         #endregion
         #endregion
