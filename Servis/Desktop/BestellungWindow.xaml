@@ -98,7 +98,12 @@
             </StackPanel>
         </Grid>
         <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="3" SelectionMode="Single" ItemsSource="{Binding}"
-						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"   Margin="12,2,22,0"  >
+						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"   Margin="12,2,22,0" HorizontalGridLinesBrush="Gray" VerticalGridLinesBrush="Gray"  >
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="Control">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="AB" Width="*" x:Name="col1_1"/>
                 <DataGridTextColumn Header="Kunde Nr." Width="*" x:Name="col1_2"/>

@@ -22,7 +22,7 @@
             </StackPanel>
             <DataGrid HorizontalAlignment="Left" x:Name="datagrid1"  SelectionMode="Single" AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" 
                 	CanUserResizeColumns="True" Width="679" Height="131" Canvas.Left="20" Canvas.Top="46" HorizontalContentAlignment="Center" ItemsSource="{Binding ListaPoslanihPoruka}" 
-                      SelectedItem="{Binding SelektovanaPoslanaPoruka}" HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD">
+                      SelectedItem="{Binding SelektovanaPoslanaPoruka}" HorizontalGridLinesBrush="Gray" VerticalGridLinesBrush="Gray">
                 <DataGrid.ItemContainerStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Setter Property="Focusable" Value="false"/>
@@ -33,6 +33,11 @@
                         <Setter Property="Focusable" Value="false"/>
                     </Style>
                 </DataGrid.CellStyle>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="Control">
+                        <Setter Property="FontWeight" Value="Bold"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
                 <DataGrid.AlternatingRowBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFFF" Offset="0"/>
