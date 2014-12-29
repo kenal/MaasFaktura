@@ -22,7 +22,7 @@
             </StackPanel>
             <DataGrid HorizontalAlignment="Left" x:Name="datagrid1"  SelectionMode="Single" AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" 
                 	CanUserResizeColumns="True" Width="679" Height="131" Canvas.Left="20" Canvas.Top="46" HorizontalContentAlignment="Center" 
-                    ItemsSource="{Binding ListaPrimljenihPoruka}" SelectedItem="{Binding SelektovanaPrimljenaPoruka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    ItemsSource="{Binding ListaPrimljenihPoruka}" SelectedItem="{Binding SelektovanaPrimljenaPoruka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" >
                 <DataGrid.ItemContainerStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Setter Property="Focusable" Value="false"/>

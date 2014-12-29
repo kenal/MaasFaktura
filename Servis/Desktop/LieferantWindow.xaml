@@ -273,7 +273,7 @@
                         </TextBox>
                     </StackPanel>
                     <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0"  SelectionMode="Single" ItemsSource="{Binding ListaPage1 , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"  VerticalAlignment="Top" Margin="10,92,10,-366" SelectedItem="{Binding SelektovaniDobavljac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="366" >
+						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"  VerticalAlignment="Top" Margin="10,92,10,-366" SelectedItem="{Binding SelektovaniDobavljac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="366" HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" >
                         <DataGrid.ItemContainerStyle>
                             <Style TargetType="{x:Type DataGridRow}">
                                 <Setter Property="Focusable" Value="false"/>

@@ -229,7 +229,7 @@
         </Grid>
         <Grid Name="grdMit" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10">
 
-            <DataGrid x:Name="datagrid2" SelectedItem="{Binding Path=DataContext.SelektovaniKalendar,ElementName=datagrid2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding ListaPage1}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" Margin="0,75,0,0" >
+            <DataGrid x:Name="datagrid2" SelectedItem="{Binding Path=DataContext.SelektovaniKalendar,ElementName=datagrid2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  x:Uid="datagrid2" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding ListaPage1}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" Margin="0,75,0,0" HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" >
                 <DataGrid.ItemContainerStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Setter Property="Focusable" Value="false"/>
@@ -332,7 +332,7 @@
                 <DatePicker Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,3,0,0" Cursor="Hand"/>
                 <Button Content="Suche beginnen" Height="23" Width="120" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="450,3.5,0,0" Cursor="Hand"/>
             </Grid>
-            <DataGrid x:Name="datagrid3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,40,0,0" x:Uid="datagrid3" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" >
+            <DataGrid x:Name="datagrid3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,40,0,0" x:Uid="datagrid3" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" >
                 <DataGrid.ItemContainerStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Setter Property="Focusable" Value="false"/>
@@ -361,7 +361,7 @@
             </DataGrid>
         </Grid>
         <Grid Name="grdAngAuf" Background="#C0C0C0" Grid.Column="0" Grid.Row="2" Margin="10" >
-            <DataGrid x:Name="datagrid4" IsReadOnly="True" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,0,0,0" x:Uid="datagrid344" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" >
+            <DataGrid x:Name="datagrid4" IsReadOnly="True" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,0,0,0" x:Uid="datagrid344" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" >
                 <DataGrid.ItemContainerStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Setter Property="Focusable" Value="false"/>
