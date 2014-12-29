@@ -11,16 +11,10 @@ false
 DEBUG;TRACE
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\App.xaml
 291312979604
-<<<<<<< HEAD:Servis/Desktop/obj/Debug/Desktop_MarkupCompile.i.cache
 
-58-984600734
-31-267378848
-=======
-1-757971538
 54-1700756765
-31720686034
->>>>>>> origin/develop:Servis/Desktop/obj/Debug/Desktop_MarkupCompile.cache
+31-267378848
 AddBugWindows.xaml;AdminEditWindow.xaml;AdminWindow.xaml;AngebotWindow.xaml;AuftrageWindow.xaml;AuftragsSucheWindow.xaml;BestellungWindow.xaml;FertigWindow.xaml;KalendarRadnikDodajWindow.xaml;KalendarRadnikWindow.xaml;KundenWindow.xaml;KundenWindowEdit.xaml;LieferantWindow.xaml;LieferantWindowEdit.xaml;LoginWindow.xaml;MainWindow.xaml;MaterialbestandWindow.xaml;MaterialienWindow.xaml;MitarbeiterWindow.xaml;MitarbeiterWindowEdit.xaml;NovaPorukaUserControl.xaml;PorukeWindow.xaml;PoslanePorukeUserControl.xaml;PrimljenePorukeUserControl.xaml;ProfileWindow.xaml;RechBaustellen.xaml;RechNaturstein.xaml;showBugWindow.xaml;TechnikerWindow.xaml;
 
-True
+False
 

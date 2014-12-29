@@ -4,7 +4,11 @@
 library
 C#
 .cs
+<<<<<<< HEAD
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\
+=======
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\
+>>>>>>> origin/develop
 WpfScheduler
 none
 false

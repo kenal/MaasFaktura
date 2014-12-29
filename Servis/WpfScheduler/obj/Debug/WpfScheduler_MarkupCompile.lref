@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+﻿C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\GeneratedInternalTypeHelper.g.cs
+
+FC:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\DayScheduler.xaml;;
+FC:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\MonthScheduler.xaml;;
+FC:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\Themes\Generic.xaml;;
+FC:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\WeekScheduler.xaml;;
+FC:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\Scheduler.xaml;;
+=======
 ﻿C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
 FC:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\DayScheduler.xaml;;
@@ -5,4 +14,5 @@ FC:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\MonthScheduler.x
 FC:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\Themes\Generic.xaml;;
 FC:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\WeekScheduler.xaml;;
 FC:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\Scheduler.xaml;;
+>>>>>>> origin/develop
 

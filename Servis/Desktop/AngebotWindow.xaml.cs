@@ -375,9 +375,11 @@ namespace Desktop
             brei.Name = "txtBoxPrva_" + rowId;
             this.RegisterName("txtBoxPrva_" + rowId, brei);
             brei.VerticalContentAlignment = VerticalAlignment.Center;
+            brei.TextChanged += menPreracunavanje_TextChanged;
             lng.Name = "txtBoxDruga_" + rowId;
             this.RegisterName("txtBoxDruga_" + rowId, lng);
             lng.VerticalContentAlignment = VerticalAlignment.Center;
+            lng.TextChanged += menPreracunavanje_TextChanged;
             myDinamicButton01.Name = "btnPrvi_" + rowId;
             this.RegisterName("btnPrvi_" + rowId, myDinamicButton01);
             btnAddType01.Name = "btnAddNew01Row_" + rowId;
@@ -448,6 +450,7 @@ namespace Desktop
             gpreis.Name = "gpreis_" + rowId;
             this.RegisterName("gpreis_" + rowId, gpreis);
             gpreis.VerticalContentAlignment = VerticalAlignment.Center;
+            gpreis.KeyDown += gPreis_KeyDown;
             rab.Name = "rab_" + rowId;
             this.RegisterName("rab_" + rowId, rab);
             rab.VerticalContentAlignment = VerticalAlignment.Center;
@@ -682,6 +685,7 @@ namespace Desktop
             this.RegisterName("r2gpreis_" + rowId, r2gpreis);
             r2gpreis.VerticalContentAlignment = VerticalAlignment.Center;
             r2gpreis.TextChanged += men2_TextChanged;
+            r2gpreis.KeyUp += gPreis_KeyDown;
             r2rab.Name = "r2rab_" + rowId;
             this.RegisterName("r2rab_" + rowId, r2rab);
             r2rab.VerticalContentAlignment = VerticalAlignment.Center;
@@ -1021,6 +1025,7 @@ namespace Desktop
                 if (grdHeaders.Margin.Left == -14)
                     grdHeaders.Margin = new Thickness(0, grdHeaders.Margin.Top, 0, 0);
             }
+            preracunavanje();
         }
         #endregion
 
@@ -1198,6 +1203,7 @@ namespace Desktop
                 if (grdHeaders.Margin.Left == -14)
                     grdHeaders.Margin = new Thickness(0, grdHeaders.Margin.Top, 0, 0);
             }
+            preracunavanje();
         }
         #endregion
 
@@ -2207,6 +2213,7 @@ namespace Desktop
             Service.MassServisClient client = new MassServisClient();
             var Results = client.getMaterialPrice(idMaterialType, idMaterijal, valStarke, valOberflache);
             TextBox TxtBoxEinz = (TextBox)this.FindName("einz_" + row);
+            TxtBoxEinz.Text = "";
             if (Results.Count != 0)
             {
                 TxtBoxEinz.Text = (Results[0].iznos).ToString();
@@ -2249,6 +2256,30 @@ namespace Desktop
         }
         #endregion
 
+        #region Men Preracunavanje
+        private void menPreracunavanje_TextChanged(object sender, TextChangedEventArgs e)        
+        {
+            var obj = sender as TextBox;
+            int rowId = Convert.ToInt32(obj.Name.Split('_').Last());
+            TextBox tbLng01 = (TextBox)this.FindName("txtBoxDruga_"+rowId);
+            TextBox tbBrei01 = (TextBox)this.FindName("txtBoxPrva_" + rowId);
+            TextBox tbMen01 = (TextBox)this.FindName("men_" + rowId);
+            decimal dLng = 0; decimal dBrei = 0; decimal dMen = 0;
+            if (tbLng01.Text == "" || tbLng01.Text.Any(c => char.IsLetter(c))) { dLng = 0; } else { dLng = Convert.ToDecimal(tbLng01.Text); }
+            if (tbBrei01.Text == "" || tbBrei01.Text.Any(c => char.IsLetter(c))) { dBrei = 0; } else { dBrei = Convert.ToDecimal(tbBrei01.Text); }
+            if (dLng != 0 && dBrei != 0)
+            {
+                dMen = (dLng/100)*(dBrei/100);
+                tbMen01.Text = dMen.ToString();
+            }
+            else 
+            {
+                tbMen01.Text = "0.00";
+            }
+            
+        }
+        #endregion
+
         #region Akonto Changed
         private void akonto_Click(object sender, RoutedEventArgs e)
         {
@@ -2276,6 +2307,7 @@ namespace Desktop
                     LabelBr.Foreground = Brushes.Blue;
                 }
             }
+            preracunavanje();
         }
         #endregion
 
@@ -2290,14 +2322,20 @@ namespace Desktop
             TextBox TxtBoxEinz = (TextBox)this.FindName("einz_" + rowId);
             TextBox TxtBoxGpreis = (TextBox)this.FindName("gpreis_" + rowId);
             decimal menValue;
-            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 0; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }        
+            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 1; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }        
             decimal stkValue;
-            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 0; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
+            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 1; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
             decimal einzValue;
-            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 0; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
+            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 1; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
             decimal gPreisValue;
-            if (obj.Text != "" || obj.Text.Any(c => char.IsLetter(c))) { gPreisValue = menValue * stkValue * einzValue; TxtBoxGpreis.Text = gPreisValue.ToString();}
-            else{ TxtBoxGpreis.Text = "0.00"; }
+            if (TxtBoxMen.Text != "" && TxtBoxEinz.Text != "" && TxtBoxStk.Text != "") 
+            { gPreisValue = menValue * stkValue * einzValue; 
+              TxtBoxGpreis.Text =  toCurrencyString(gPreisValue).ToString(); }
+            else { TxtBoxGpreis.Text = toCurrencyString(Convert.ToDecimal(0)); }
+        }
+        string toCurrencyString(decimal d)
+        {
+                return d.ToString("#,##0.00");
         }
         //Menge2 Pressed
         private void men2_TextChanged(object sender, TextChangedEventArgs e)
@@ -2309,14 +2347,52 @@ namespace Desktop
             TextBox TxtBoxEinz = (TextBox)this.FindName("r2einz_" + rowId);
             TextBox TxtBoxGpreis = (TextBox)this.FindName("r2gpreis_" + rowId);
             decimal menValue;
-            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 0; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }
+            if (TxtBoxMen.Text == "" || TxtBoxMen.Text.Any(c => char.IsLetter(c))) { menValue = 1; } else { menValue = Convert.ToDecimal(TxtBoxMen.Text); }
             decimal stkValue;
-            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 0; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
+            if (TxtBoxStk.Text == "" || TxtBoxStk.Text.Any(c => char.IsLetter(c))) { stkValue = 1; } else { stkValue = Convert.ToDecimal(TxtBoxStk.Text); }
             decimal einzValue;
-            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 0; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
+            if (TxtBoxEinz.Text == "" || TxtBoxEinz.Text.Any(c => char.IsLetter(c))) { einzValue = 1; } else { einzValue = Convert.ToDecimal(TxtBoxEinz.Text); }
             decimal gPreisValue;
-            if (obj.Text != "" || obj.Text.Any(c => char.IsLetter(c))) { gPreisValue = menValue * stkValue * einzValue; TxtBoxGpreis.Text = gPreisValue.ToString(); }
-            else { TxtBoxGpreis.Text = "0.00"; }
+            if (TxtBoxMen.Text != "" && TxtBoxEinz.Text != "" && TxtBoxStk.Text != "")
+            {
+                gPreisValue = menValue * stkValue * einzValue;
+                TxtBoxGpreis.Text = toCurrencyString(gPreisValue).ToString();
+            }
+            else { TxtBoxGpreis.Text = toCurrencyString(Convert.ToDecimal(0)); }
+        }
+        private void gPreis_KeyDown(object sender, KeyEventArgs e)
+        {
+            preracunavanje();
+            
+        }
+        private void preracunavanje() 
+        {
+            decimal value = 0;
+            for (int i = 1; i <= rowId + 1; i++)
+            {
+                TextBox TxtBoxGpreis01 = (TextBox)this.FindName("gpreis_" + i);
+                TextBox TxtBoxGpreis02 = (TextBox)this.FindName("r2gpreis_" + i);
+                Label lbl = (Label)this.FindName("rd_" + i);
+                if (TxtBoxGpreis01 != null && TxtBoxGpreis01.Text != "")
+                {
+                    if (lbl.Foreground != Brushes.Red)
+                    {
+                        decimal net01 = Convert.ToDecimal(TxtBoxGpreis01.Text.ToString());
+                        value = value + net01;
+                    }
+                }
+                else if (TxtBoxGpreis02 != null && TxtBoxGpreis02.Text != "")
+                {
+                    if (lbl.Foreground != Brushes.Red)
+                    {
+                        decimal net02 = Convert.ToDecimal(TxtBoxGpreis02.Text);
+                        value = value + net02;
+                    }
+                }
+            }
+            lblNettobetrag.Content = toCurrencyString(Convert.ToDecimal(value.ToString()));
+            lblEndbetrag.Content = toCurrencyString(value * Convert.ToDecimal(1.19));
+            lblMwst.Content = toCurrencyString((value * Convert.ToDecimal(1.19)) - value);
         }
         #endregion
         #endregion
