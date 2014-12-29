@@ -188,3 +188,4 @@ C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.appl
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.pdb
 >>>>>>> origin/develop
+C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop_Content.g.cs
