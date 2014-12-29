@@ -97,18 +97,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="855976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="865192">
       <assemblyIdentity name="Desktop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>BAuRbBgvz8P51VQ2ng6rg8lrDaTLtkH60bAZqblUxQI=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>eahmw99dTg2YVrHF+Z9uiwwqSyd5sxFXYF5SkVjbihs=</dsig:DigestValue>
->>>>>>> origin/develop
+        <dsig:DigestValue>UydPbZbg1IpmlVk11aHE9Rh+I/wdkpCSWx+sHc3gPBk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -120,11 +116,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>Yz74UsSz2b9Airi1cw/GWDkCEYhEyRm4bH5rtO0neus=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>fumkbjRTgzgojud8Fx8tK9D84BkEdX6L3blfI1KYxHA=</dsig:DigestValue>
->>>>>>> origin/develop
+        <dsig:DigestValue>mbl0lxJ1P7Up6hPpeywO2tCAED2/iueHLiItyISd5J0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -141,18 +133,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="71680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="68608">
       <assemblyIdentity name="Service" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>rWnmz+WbLUKvdgdSDhjeZbVHdmPVvtLetWC+FbT0Ur4=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>L/cY6XKEAV4nzycQYQJ9o0z4OnQa2n3rPtX9xdT3cc4=</dsig:DigestValue>
->>>>>>> origin/develop
+        <dsig:DigestValue>JjvUTUc2aZd32UWvcFyyP7GTQtwAf2XHbqPP/Db9F3k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -296,11 +284,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>xdLdN8eYJEidCkbj4myFWPU24mxmlQuf2iFnLXhX0mU=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>4EJTPS6F4n+/kKvwV5F09Bjdk45clX3LY6SFin3vPVY=</dsig:DigestValue>
->>>>>>> origin/develop
+        <dsig:DigestValue>drwAQOgCJkbmJGup0tGWJg5xoVU8gXUxt765xZVRGo8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -313,8 +297,6 @@
       <dsig:DigestValue>zhzql83Wgyrb31JS0t6WW7mTS4jdp7qGg3A17ej0ioY=</dsig:DigestValue>
     </hash>
   </file>
-<<<<<<< HEAD
-=======
   <file name="Pages\map.html" size="171">
     <hash>
       <dsig:Transforms>
@@ -324,5 +306,4 @@
       <dsig:DigestValue>V/PAasxokDfWUiVO4mumgXvoBD6g9pG367cqsN1j7jE=</dsig:DigestValue>
     </hash>
   </file>
->>>>>>> origin/develop
 </asmv1:assembly>

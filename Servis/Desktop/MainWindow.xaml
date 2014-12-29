@@ -163,6 +163,16 @@
             
         </Button>
         <DataGrid x:Name="datagrid1" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,10,5,0" x:Uid="datagrid1" SelectionMode="Single" Background="#FFFFFF" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False" IsReadOnly="True" >
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.CellStyle>
             <DataGrid.AlternatingRowBackground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -208,6 +218,16 @@
             </Button.Background>
         </Button>
         <DataGrid x:Name="datagrid2" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" x:Uid="datagrid2" Margin="0,25,5,0" SelectionMode="Single" HeadersVisibility="Row" Background="#FFFFFF" Width="auto" Height="30" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.CellStyle>
             <DataGrid.RowBackground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -239,6 +259,16 @@
             </Button.Background>
         </Button>
         <DataGrid x:Name="datagrid3" Grid.Column="1" Grid.Row="5" Grid.RowSpan="2" x:Uid="datagrid3" Margin="0,3,5,0" SelectionMode="Single" HeadersVisibility="Row" Background="#FFFFFF" Width="auto" Height="30" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontStretch="Expanded" FontSize="14" CanUserAddRows="False">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.CellStyle>
             <DataGrid.RowBackground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFFF" Offset="0"/>
@@ -284,6 +314,16 @@
             </Button.Background>
         </Button>
         <DataGrid x:Name="datagrid4" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" Margin="0,0,5,0" x:Uid="datagrid4" SelectionMode="Single" Background="#FFFFFF" Width="auto" HorizontalAlignment="Stretch" RowHeight="30" ItemsSource="{Binding}" AutoGenerateColumns="False" FontWeight="Bold" FontStretch="Expanded" FontSize="12" Height="55" CanUserAddRows="False" >
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Focusable" Value="false"/>
+                </Style>
+            </DataGrid.CellStyle>
             <DataGrid.AlternatingRowBackground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFFFF" Offset="0"/>

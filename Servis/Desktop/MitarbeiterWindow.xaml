@@ -483,6 +483,23 @@
                     </StackPanel>
                     <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0" SelectionMode="Single" ItemsSource="{Binding ListaPage1,Mode=TwoWay,NotifyOnTargetUpdated=True}" Height="450"
 						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True" Margin="10,98,16,-422" SelectedItem="{Binding SelektovaniRadnik, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <DataGrid.ItemContainerStyle>
+                            <Style TargetType="{x:Type DataGridRow}">
+                                <Setter Property="Focusable" Value="false"/>
+                            </Style>
+                        </DataGrid.ItemContainerStyle>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Focusable" Value="false"/>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.AlternatingRowBackground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFFFF" Offset="0"/>
+                                <GradientStop Color="#D6D6D6" Offset="1"/>
+                                <GradientStop Color="#D6D6D6" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </DataGrid.AlternatingRowBackground>
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Mitarbeiter Nr." IsReadOnly="True" x:Name="col1_1" Binding="{Binding mitarbeiterNr}"/>
                             <DataGridTextColumn Header="Mitarbeiter" x:Name="col1_2" Binding="{Binding vorname}"/>
