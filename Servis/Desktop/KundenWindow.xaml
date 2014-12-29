@@ -253,7 +253,24 @@
                         <TextBox Width="180" Height="25"/>
                     </StackPanel>
                     <DataGrid Name="datagrid1" Grid.Column="0" Grid.Row="0"  SelectionMode="Single" ItemsSource="{Binding ListaPage1}"
-						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"  VerticalAlignment="Top" Margin="10,76,10,0" Height="513" SelectedItem="{Binding SelektovaniKupac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+						AutoGenerateColumns="False" FontSize="14" CanUserAddRows="false" IsReadOnly="True" CanUserResizeColumns="True"  VerticalAlignment="Top" Margin="10,76,10,0" Height="513" SelectedItem="{Binding SelektovaniKupac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" >
+                        <DataGrid.ItemContainerStyle>
+                            <Style TargetType="{x:Type DataGridRow}">
+                                <Setter Property="Focusable" Value="false"/>
+                            </Style>
+                        </DataGrid.ItemContainerStyle>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="Focusable" Value="false"/>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.AlternatingRowBackground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFFFF" Offset="0"/>
+                                <GradientStop Color="#D6D6D6" Offset="1"/>
+                                <GradientStop Color="#D6D6D6" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </DataGrid.AlternatingRowBackground>
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Kunde Nr." x:Name="col1_1" Binding="{Binding kundeNr}"/>
                             <DataGridTextColumn Header="Geschrieben" x:Name="col1_2" Binding="{Binding name2}"/>

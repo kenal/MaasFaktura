@@ -38,7 +38,7 @@ namespace Desktop.ViewModel
                 if (_selectedKunden != value)
                 {
                     _selectedKunden = value;
-                    RaisePropertyChanged("SelectedKunden");
+                    OnPropertyChanged("SelectedKunden");
                     // New item has been selected. Do something here
                 }
             }
@@ -70,14 +70,7 @@ namespace Desktop.ViewModel
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged2;
-        private void RaisePropertyChanged(string PropertyName)
-        {
-            if (PropertyChanged2 != null)
-                PropertyChanged2(this, new PropertyChangedEventArgs(PropertyName));
-        }
+        }        
         #endregion
     }
 }

@@ -97,14 +97,22 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="860584">
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="865192">
+>>>>>>> origin/develop
       <assemblyIdentity name="Desktop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>kp/4UX8jPT3lk9J/jBvZH2YIAxeHSutuUT+xjFV9dL8=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>vR2kXXnoM8gHB55X/RflgEzWU92xwGKirZ2RgfWT7aI=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -116,7 +124,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>Yz74UsSz2b9Airi1cw/GWDkCEYhEyRm4bH5rtO0neus=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>mbl0lxJ1P7Up6hPpeywO2tCAED2/iueHLiItyISd5J0=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,14 +145,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="71680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Service.dll" size="68608">
       <assemblyIdentity name="Service" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>PeOftWXGoCoIgom5dFw3xv+JWHjCoDzb3N2FukT+/Kc=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>JjvUTUc2aZd32UWvcFyyP7GTQtwAf2XHbqPP/Db9F3k=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -284,7 +300,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>xdLdN8eYJEidCkbj4myFWPU24mxmlQuf2iFnLXhX0mU=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>drwAQOgCJkbmJGup0tGWJg5xoVU8gXUxt765xZVRGo8=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>

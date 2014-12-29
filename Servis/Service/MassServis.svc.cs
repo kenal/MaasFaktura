@@ -951,11 +951,12 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.mitarbeiters select new { a.mitarbeiterNr }).ToList().LastOrDefault();
+                //var x = (from a in context.mitarbeiters select new { a.mitarbeiterNr }).ToList().Max();
+                var x = context.mitarbeiters.Max(a => a.mitarbeiterNr);
                 if (x == null)
                     return 1000;
                 else
-                    return Convert.ToInt32(x.mitarbeiterNr + 1);
+                    return Convert.ToInt32(x + 1);
             }
         }
 
@@ -964,11 +965,12 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.lieferants select new { a.lieferantNr }).ToList().LastOrDefault();
+                //var x = (from a in context.lieferants select new { a.lieferantNr }).ToList().Max();
+                var x = context.lieferants.Max(a => a.lieferantNr);
                 if (x == null)
                     return 1000;
                 else
-                    return x.lieferantNr + 1;
+                    return x + 1;
             }
         }
 
@@ -977,11 +979,12 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.kundens select new { a.kundeNr }).ToList().LastOrDefault();
+                //var x = (from a in context.kundens select new { a.kundeNr }).ToList().Max();
+                var x = context.kundens.Max(a => a.kundeNr);
                 if (x == null)
                     return 1000;
                 else
-                    return Convert.ToInt32(x.kundeNr) + 1;
+                    return Convert.ToInt32(x) + 1;
             }
         }
 
@@ -990,11 +993,12 @@ namespace Service
         {
             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
             {
-                var x = (from a in context.angebots select new { a.angebotnr }).ToList().LastOrDefault();
+                //var x = (from a in context.angebots select new { a.angebotnr }).ToList().Max();
+                var x = context.angebots.Max(a => a.angebotnr);
                 if (x == null)
                     return 1000;
                 else
-                    return x.angebotnr + 1;
+                    return x + 1;
             }
         }
 
