@@ -7,14 +7,18 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Desktop.exe.manifest" size="17804">
+    <dependentAssembly dependencyType="install" codebase="Desktop.exe.manifest" size="23197">
       <assemblyIdentity name="Desktop.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>qF0yvhTiSZcxTIQp16UCnNNVdlDJo4vRriVD2XNmGGE=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>wHUDT9SUXwqB/X75PEnJjR1sQq9iQvoyYKOb4aOWWIE=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>

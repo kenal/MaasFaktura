@@ -35,7 +35,6 @@ C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\MaterialienW
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\MitarbeiterWindowEdit.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\NovaPorukaUserControl.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\PoslanePorukeUserControl.baml
-C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\PrimljenePorukeUserControl.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\ProfileWindow.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\RechBaustellen.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\RechNaturstein.baml
@@ -84,6 +83,7 @@ C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\LieferantWin
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\LieferantWindowEdit.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\MitarbeiterWindow.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\PorukeWindow.baml
+C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\PrimljenePorukeUserControl.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\showBugWindow.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.g.resources
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.Properties.Resources.resources
@@ -92,6 +92,7 @@ C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe.
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.application
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.pdb
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> origin/develop
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop_Content.g.cs
@@ -189,3 +190,5 @@ C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe.manifest
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.application
+=======
+>>>>>>> origin/develop

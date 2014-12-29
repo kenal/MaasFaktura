@@ -1,6 +1,5 @@
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\bin\Debug\WpfScheduler.dll
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\bin\Debug\WpfScheduler.pdb
-C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\WpfScheduler.csprojResolveAssemblyReference.cache
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\MonthDay.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\EventUserControl.baml
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\WpfScheduler\obj\Debug\DayScheduler.g.cs
