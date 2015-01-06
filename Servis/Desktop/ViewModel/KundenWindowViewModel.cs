@@ -1314,7 +1314,7 @@ namespace Desktop.ViewModel
         #region Methods
         public void Paginacija(int stranica)
         {
-            int neUzimati=10;
+            int neUzimati=0;
             
             if (ListaKupaca1 != null)
             {

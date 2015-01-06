@@ -778,7 +778,7 @@ namespace Desktop.ViewModel
         #region Methods
         public void Paginacija(int stranica)
         {
-            int neUzimati = 10;
+            int neUzimati = 0;
 
             if (ListaKalendar != null)
             {
@@ -953,7 +953,7 @@ namespace Desktop.ViewModel
 
         public ICommand PromjeniBrojPrikazaUser
         {
-            get { return _promjeniBrojPrikazaUser = new RelayCommand(param => FillGridFirstUser(param)); }
+            get { return _promjeniBrojPrikazaUser = new RelayCommand(param => FillGridFirstUser(param), param => this.CanLastUser); }
             set { _promjeniBrojPrikazaUser = value; }
         }
 
@@ -969,7 +969,7 @@ namespace Desktop.ViewModel
         #region Methods
         public void PaginacijaUser(int stranica)
         {
-            int neUzimati = 10;
+            int neUzimati = 0;
 
             if (ListaKorisnika != null)
             {
