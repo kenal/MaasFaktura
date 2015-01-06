@@ -773,6 +773,14 @@ namespace Desktop.ViewModel
             get { return _prebaciNaZadnji = new RelayCommand(param => FillGridLast(param), param => this.CanNext); }
             set { _prebaciNaZadnji = value; }
         }
+
+        private ICommand _promjeniBrojPrikazaKalendar;
+
+        public ICommand PromjeniBrojPrikazaKalendar
+        {
+            get { return _promjeniBrojPrikazaKalendar = new RelayCommand(param => FillGridFirst(param)); }
+            set { _promjeniBrojPrikazaKalendar = value; }
+        }
         #endregion
 
         #region Methods
@@ -953,7 +961,7 @@ namespace Desktop.ViewModel
 
         public ICommand PromjeniBrojPrikazaUser
         {
-            get { return _promjeniBrojPrikazaUser = new RelayCommand(param => FillGridFirstUser(param), param => this.CanLastUser); }
+            get { return _promjeniBrojPrikazaUser = new RelayCommand(param => FillGridFirstUser(param)); }
             set { _promjeniBrojPrikazaUser = value; }
         }
 
@@ -963,7 +971,7 @@ namespace Desktop.ViewModel
         {
             get { return _prebaciNaZadnjiUser = new RelayCommand(param => FillGridLastUser(param), param => this.CanNextUser); }
             set { _prebaciNaZadnjiUser = value; }
-        }
+        }        
         #endregion
 
         #region Methods
