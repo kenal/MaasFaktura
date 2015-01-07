@@ -93,7 +93,6 @@ C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.appl
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe
 C:\Users\home\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.pdb
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> origin/develop
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop_Content.g.cs
 =======
@@ -190,5 +189,3 @@ C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.exe.manifest
 C:\Users\Maasgmbh\Documents\GitHub\MaasFaktura\Servis\Desktop\obj\Debug\Desktop.application
-=======
->>>>>>> origin/develop
