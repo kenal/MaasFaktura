@@ -773,12 +773,20 @@ namespace Desktop.ViewModel
             get { return _prebaciNaZadnji = new RelayCommand(param => FillGridLast(param), param => this.CanNext); }
             set { _prebaciNaZadnji = value; }
         }
+
+        private ICommand _promjeniBrojPrikazaKalendar;
+
+        public ICommand PromjeniBrojPrikazaKalendar
+        {
+            get { return _promjeniBrojPrikazaKalendar = new RelayCommand(param => FillGridFirst(param)); }
+            set { _promjeniBrojPrikazaKalendar = value; }
+        }
         #endregion
 
         #region Methods
         public void Paginacija(int stranica)
         {
-            int neUzimati = 10;
+            int neUzimati = 0;
 
             if (ListaKalendar != null)
             {
@@ -963,13 +971,13 @@ namespace Desktop.ViewModel
         {
             get { return _prebaciNaZadnjiUser = new RelayCommand(param => FillGridLastUser(param), param => this.CanNextUser); }
             set { _prebaciNaZadnjiUser = value; }
-        }
+        }        
         #endregion
 
         #region Methods
         public void PaginacijaUser(int stranica)
         {
-            int neUzimati = 10;
+            int neUzimati = 0;
 
             if (ListaKorisnika != null)
             {

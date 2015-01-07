@@ -97,14 +97,22 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="884136">
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Desktop.exe" size="883624">
+>>>>>>> origin/develop
       <assemblyIdentity name="Desktop" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>BvD5Oz8gUGWU+daDFxqfENZ4TyKx5pMbBaQN23GoQmo=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>xep/IIBveGwvysP6QXbFO0DwhrCIlYrmuSwVc33Hy7Y=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -116,7 +124,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>6DYM/OVA9+oINww+o2omwWilg3vniKCkeiUPXHD+yhw=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>OoEiEg0m+uUH9LlqhqWNI5Wga/9xwa3i5Ejsfku0SAI=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -140,7 +152,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>HZLPhzLM1qJh6PE3il/7tLEP8BKZNZ/5MczU+jZ9hh4=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>uB4g0h21RCgmRTLn15VXgYHY52BDBnJ8cUvmCWv2x0g=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>
@@ -284,7 +300,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>fcKyKuaGpmzhaQ0qGEDM64DhDwtm8+Pk2FPBLbgSElc=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>7F7vAi+N+vYRzBH9Hq3Q8INrMH+wDtSHSIiWsVKPxPw=</dsig:DigestValue>
+>>>>>>> origin/develop
       </hash>
     </dependentAssembly>
   </dependency>

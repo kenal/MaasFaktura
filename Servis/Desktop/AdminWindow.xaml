@@ -328,7 +328,7 @@
             <ComboBox x:Name="BrojPrikaza" HorizontalAlignment="Left" Margin="91,32,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.906,0.231" ItemsSource="{Binding BrojPrikazanihPage}" SelectedItem="{Binding KolicinaPrikaza, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
-                        <i:InvokeCommandAction Command="{Binding Path=DataContext.PrebaciNaPrvi, ElementName=BrojPrikaza}"/>
+                        <i:InvokeCommandAction Command="{Binding Path=DataContext.PromjeniBrojPrikazaKalendar, ElementName=BrojPrikaza}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </ComboBox>
