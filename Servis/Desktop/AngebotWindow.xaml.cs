@@ -434,7 +434,8 @@ namespace Desktop
             einh.Name = "einh_" + rowId;
             this.RegisterName("einh_" + rowId, einh);
             foreach (var p in einheitList) { einh.Items.Add(p.jedinica.Replace("\"","").Trim()); }
-            einh.SelectedIndex = 0;           
+            einh.SelectedIndex = 0;
+            einh.SelectionChanged += einh_SelectionChanged;
             men.Name = "men_" + rowId;
             this.RegisterName("men_" + rowId, men);
             men.TextChanged += men1_TextChanged;
@@ -2149,7 +2150,7 @@ namespace Desktop
         #region Materijal Changed
         private void mat_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-             var obj = sender as ComboBox;
+            var obj = sender as ComboBox;
             if (obj.IsDropDownOpen)
             {
                 Service.MassServisClient client = new MassServisClient();
@@ -2255,6 +2256,42 @@ namespace Desktop
             Cell01.SelectedIndex = 0;
         }
         #endregion
+
+        private void einh_SelectionChanged(object sender, SelectionChangedEventArgs arg) 
+        {           
+            var obj = sender as ComboBox;
+            int rowId = Convert.ToInt32(obj.Name.Split('_').Last());           
+            if (obj.IsDropDownOpen)
+            {
+                string value = obj.SelectedValue.ToString();
+                TextBox Breit = (TextBox)this.FindName("txtBoxPrva_" + rowId);
+                TextBox Lng = (TextBox)this.FindName("txtBoxDruga_" + rowId);
+                if (value == "Lfm")
+                {
+                    Lng.Text = "100";
+                    Lng.IsReadOnly = false;
+                    Breit.IsReadOnly = false;
+                }
+                else if (value == "Stk" || value == "Pau" || value == "Std.")
+                {
+                    Lng.IsReadOnly = true;
+                    Breit.IsReadOnly = true;
+                    Lng.Background = Brushes.LightGray;
+                    Breit.Background = Brushes.LightGray;
+                    Lng.Text = "";
+                    Breit.Text = "";
+                }
+                else 
+                {
+                    Lng.IsReadOnly = false;
+                    Breit.IsReadOnly = false;
+                    Lng.Text = "";
+                    Breit.Text = "";
+                    Lng.Background = Brushes.White;
+                    Breit.Background = Brushes.White;
+                }
+            }
+        }
 
         #region Men Preracunavanje
         private void menPreracunavanje_TextChanged(object sender, TextChangedEventArgs e)        
@@ -2368,6 +2405,15 @@ namespace Desktop
         private void preracunavanje() 
         {
             decimal value = 0;
+            decimal sonder = 0;
+            if (txtBoxSonder.Text.Length > 0) 
+            {
+                sonder = Convert.ToDecimal(txtBoxSonder.Text);
+            }
+            else 
+            {
+                sonder = 0;
+            }
             for (int i = 1; i <= rowId + 1; i++)
             {
                 TextBox TxtBoxGpreis01 = (TextBox)this.FindName("gpreis_" + i);
@@ -2378,7 +2424,7 @@ namespace Desktop
                     if (lbl.Foreground != Brushes.Red)
                     {
                         decimal net01 = Convert.ToDecimal(TxtBoxGpreis01.Text.ToString());
-                        value = value + net01;
+                        value = value + net01 - sonder;
                     }
                 }
                 else if (TxtBoxGpreis02 != null && TxtBoxGpreis02.Text != "")
@@ -2386,7 +2432,7 @@ namespace Desktop
                     if (lbl.Foreground != Brushes.Red)
                     {
                         decimal net02 = Convert.ToDecimal(TxtBoxGpreis02.Text);
-                        value = value + net02;
+                        value = value + net02 - sonder;
                     }
                 }
             }
@@ -2395,6 +2441,12 @@ namespace Desktop
             lblMwst.Content = toCurrencyString((value * Convert.ToDecimal(1.19)) - value);
         }
         #endregion
+
+        private void txtBoxSonder_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) 
+            preracunavanje();
+        }
         #endregion
     }
 }

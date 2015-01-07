@@ -171,7 +171,7 @@
 
             <Grid Height="112" Width="230" VerticalAlignment="top" HorizontalAlignment="Center" Margin="1035,530,0,0">
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,2,0,0" FontSize="16">Sondernachlass:</Label>
-                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Margin="130,5,0,0" Width="60"></TextBox>
+                <TextBox HorizontalAlignment="Left" Name="txtBoxSonder" VerticalAlignment="Top" Height="25" Margin="130,5,0,0" Width="60" KeyDown="txtBoxSonder_KeyDown"></TextBox>
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="195,2,0,0" FontSize="16">€</Label>
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,30,0,0" FontSize="16">Nettobetrag:</Label>
                 <Label Name="lblNettobetrag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,30,0,0" FontSize="15" Content="0,00"></Label>
