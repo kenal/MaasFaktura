@@ -354,6 +354,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Desktop_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\Mass.Data.angebot.datasource" />
     <None Include="Properties\DataSources\Mass.Data.artikl.datasource" />
     <None Include="Properties\DataSources\Mass.Data.bug.datasource" />
     <None Include="Properties\DataSources\Mass.Data.einheit.datasource" />

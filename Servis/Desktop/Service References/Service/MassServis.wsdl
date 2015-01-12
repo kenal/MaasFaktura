@@ -392,6 +392,12 @@
   <wsdl:message name="MassServis_getKundenByKundeNr_OutputMessage">
     <wsdl:part name="parameters" element="tns:getKundenByKundeNrResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getLastAngebotNr_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLastAngebotNr" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getLastAngebotNr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLastAngebotNrResponse" />
+  </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/LoginValidacija" message="tns:MassServis_LoginValidacija_InputMessage" />
@@ -648,6 +654,10 @@
     <wsdl:operation name="getKundenByKundeNr">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getKundenByKundeNr" message="tns:MassServis_getKundenByKundeNr_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getKundenByKundeNrResponse" message="tns:MassServis_getKundenByKundeNr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastAngebotNr">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getLastAngebotNr" message="tns:MassServis_getLastAngebotNr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getLastAngebotNrResponse" message="tns:MassServis_getLastAngebotNr_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -1221,6 +1231,15 @@
     </wsdl:operation>
     <wsdl:operation name="getKundenByKundeNr">
       <soap:operation soapAction="http://tempuri.org/MassServis/getKundenByKundeNr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLastAngebotNr">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getLastAngebotNr" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

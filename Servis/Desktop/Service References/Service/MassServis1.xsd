@@ -421,4 +421,36 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="podpozicija" nillable="true" type="tns:podpozicija" />
+  <xs:complexType name="ArrayOfangebot">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="angebot" nillable="true" type="tns:angebot" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfangebot" nillable="true" type="tns:ArrayOfangebot" />
+  <xs:complexType name="angebot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="anfragen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="angebotnr" type="xs:int" />
+      <xs:element minOccurs="0" name="angefragt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="folder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="geschrieben" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="handy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idangebot" type="xs:int" />
+      <xs:element minOccurs="0" name="iduser" type="xs:int" />
+      <xs:element minOccurs="0" name="kunde" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kundenr" type="xs:int" />
+      <xs:element minOccurs="0" name="nachgefragt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="porez" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="preisb" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="preisn" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="privat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resonanz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resonanz1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zeichnung" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="angebot" nillable="true" type="tns:angebot" />
 </xs:schema>

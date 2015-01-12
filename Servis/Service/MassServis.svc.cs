@@ -1637,6 +1637,23 @@ namespace Service
                  return Lista;
              }
          }
+         [OperationContract]
+         public ObservableCollection<angebot> getLastAngebotNr()
+         {
+             ObservableCollection<angebot> Lista = new ObservableCollection<angebot>();
+             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+             {
+                 var query = (from l in context.angebots
+                                  orderby l.idangebot descending
+                                  select l).First();
+                 Lista.Clear();
+                 Lista.Add(new angebot { 
+                 angebotnr = query.angebotnr
+                 });
+                
+             }
+             return Lista;
+         }
     }
 }
    

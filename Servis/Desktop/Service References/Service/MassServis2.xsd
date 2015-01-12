@@ -894,4 +894,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getLastAngebotNr">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getLastAngebotNrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getLastAngebotNrResult" nillable="true" type="q43:ArrayOfangebot" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
