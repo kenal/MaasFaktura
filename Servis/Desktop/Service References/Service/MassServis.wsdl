@@ -296,6 +296,12 @@
   <wsdl:message name="MassServis_getMaterijalByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:getMaterijalByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijalByID2_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijalByID2" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getMaterijalByID2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterijalByID2Response" />
+  </wsdl:message>
   <wsdl:message name="MassServis_getMaterialPrice_InputMessage">
     <wsdl:part name="parameters" element="tns:getMaterialPrice" />
   </wsdl:message>
@@ -373,6 +379,18 @@
   </wsdl:message>
   <wsdl:message name="MassServis_getPodPozicijaIdByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPodPozicijaIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_KundenLike_InputMessage">
+    <wsdl:part name="parameters" element="tns:KundenLike" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_KundenLike_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KundenLikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getKundenByKundeNr_InputMessage">
+    <wsdl:part name="parameters" element="tns:getKundenByKundeNr" />
+  </wsdl:message>
+  <wsdl:message name="MassServis_getKundenByKundeNr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getKundenByKundeNrResponse" />
   </wsdl:message>
   <wsdl:portType name="MassServis">
     <wsdl:operation name="LoginValidacija">
@@ -567,6 +585,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterijalByID" message="tns:MassServis_getMaterijalByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterijalByIDResponse" message="tns:MassServis_getMaterijalByID_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getMaterijalByID2">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterijalByID2" message="tns:MassServis_getMaterijalByID2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterijalByID2Response" message="tns:MassServis_getMaterijalByID2_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getMaterialPrice">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getMaterialPrice" message="tns:MassServis_getMaterialPrice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getMaterialPriceResponse" message="tns:MassServis_getMaterialPrice_OutputMessage" />
@@ -618,6 +640,14 @@
     <wsdl:operation name="getPodPozicijaIdByName">
       <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getPodPozicijaIdByName" message="tns:MassServis_getPodPozicijaIdByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getPodPozicijaIdByNameResponse" message="tns:MassServis_getPodPozicijaIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KundenLike">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/KundenLike" message="tns:MassServis_KundenLike_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/KundenLikeResponse" message="tns:MassServis_KundenLike_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getKundenByKundeNr">
+      <wsdl:input wsaw:Action="http://tempuri.org/MassServis/getKundenByKundeNr" message="tns:MassServis_getKundenByKundeNr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/MassServis/getKundenByKundeNrResponse" message="tns:MassServis_getKundenByKundeNr_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_MassServis" type="tns:MassServis">
@@ -1054,6 +1084,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getMaterijalByID2">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getMaterijalByID2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getMaterialPrice">
       <soap:operation soapAction="http://tempuri.org/MassServis/getMaterialPrice" style="document" />
       <wsdl:input>
@@ -1164,6 +1203,24 @@
     </wsdl:operation>
     <wsdl:operation name="getPodPozicijaIdByName">
       <soap:operation soapAction="http://tempuri.org/MassServis/getPodPozicijaIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KundenLike">
+      <soap:operation soapAction="http://tempuri.org/MassServis/KundenLike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKundenByKundeNr">
+      <soap:operation soapAction="http://tempuri.org/MassServis/getKundenByKundeNr" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

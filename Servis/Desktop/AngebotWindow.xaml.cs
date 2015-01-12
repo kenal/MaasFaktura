@@ -27,12 +27,15 @@ namespace Desktop
         public int rowId = 0;
         public int vertRowPosition = 10;
         public int lastRowId = 0;
+        List<string> nameList;
+        Service.MassServisClient client = new MassServisClient();
 
         public AngebotWindow()
         {
             InitializeComponent();
             this.DataContext = new AngebotViewModel();
             addRowType01();
+            bindMethod();
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -2257,6 +2260,7 @@ namespace Desktop
         }
         #endregion
 
+        #region Einh Selection Changed
         private void einh_SelectionChanged(object sender, SelectionChangedEventArgs arg) 
         {           
             var obj = sender as ComboBox;
@@ -2271,6 +2275,8 @@ namespace Desktop
                     Lng.Text = "100";
                     Lng.IsReadOnly = false;
                     Breit.IsReadOnly = false;
+                    Lng.Background = Brushes.White;
+                    Breit.Background = Brushes.White;
                 }
                 else if (value == "Stk" || value == "Pau" || value == "Std.")
                 {
@@ -2292,6 +2298,7 @@ namespace Desktop
                 }
             }
         }
+        #endregion
 
         #region Men Preracunavanje
         private void menPreracunavanje_TextChanged(object sender, TextChangedEventArgs e)        
@@ -2402,6 +2409,11 @@ namespace Desktop
             preracunavanje();
             
         }
+        private void txtBoxSonder_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                preracunavanje();
+        }
         private void preracunavanje() 
         {
             decimal value = 0;
@@ -2442,11 +2454,109 @@ namespace Desktop
         }
         #endregion
 
-        private void txtBoxSonder_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter) 
-            preracunavanje();
+        
+        #endregion
+
+        #region Bind KundeNr
+        private void bindMethod()
+        {                     
+            txtAuto.TextChanged += new TextChangedEventHandler(txtAuto_TextChanged);           
         }
+
+        private void bindSelectedKunden(string kundeNr) 
+        {
+            var lKunden = client.getKundenByKundeNr(kundeNr);
+            //txtBoxAnrTit.Text = lKunden.
+            foreach (var item in lKunden)
+            {
+                if (item.anreden == 0) { txtBoxAnrTit.Text = "Herr"; }
+                else if (item.anreden == 1) { txtBoxAnrTit.Text = "Frau"; }
+                else if (item.anreden == 2) { txtBoxAnrTit.Text = "Firma"; }
+                else if (item.anreden == 3) { txtBoxAnrTit.Text = "Fam."; }
+                txtBoxVorname1.Text = item.vorname;
+                txtBoxVorname2.Text = item.name;
+                txtBoxName2.Text = item.name2;
+                txtBoxLieferant.Text = item.lieferadresse;
+                txtBoxRechnung.Text = item.rechnungsadresse;
+                txtBoxPrivat.Text = item.tel1;
+                txtBoxHandy.Text = item.tel2;
+                txtBoxEmail.Text = item.mail;
+            }
+
+        }
+
+        #region TextBox-TextChanged-txtAuto
+        private void txtAuto_TextChanged(object sender, TextChangedEventArgs e)
+        {            
+            if (txtAuto.Text.Trim().Length > 2)
+            {
+                List<string> autoList = new List<string>();
+                Service.MassServisClient client = new MassServisClient();
+                //var res = client.ListaKupaca();
+                var res = client.KundenLike(txtAuto.Text.Trim());
+                string typedString = txtAuto.Text.Trim();               
+                autoList.Clear();
+
+                foreach (var item in res)
+                {
+                    if (!string.IsNullOrEmpty(txtAuto.Text))
+                    {
+                        if (item.kundeNr.StartsWith(typedString))
+                        {
+                            autoList.Add(item.kundeNr);
+                        }
+                    }
+                }
+
+                if (autoList.Count > 0)
+                {
+                    lbSuggestion.ItemsSource = autoList;
+                    lbSuggestion.Visibility = Visibility.Visible;
+                }
+                else if (txtAuto.Text.Equals(""))
+                {
+                    lbSuggestion.Visibility = Visibility.Collapsed;
+                    lbSuggestion.ItemsSource = null;
+                }
+                else
+                {
+                    lbSuggestion.Visibility = Visibility.Collapsed;
+                    lbSuggestion.ItemsSource = null;
+                }
+            }
+            else if (txtAuto.Text.Trim().Length == 0)
+            {
+                lbSuggestion.Visibility = Visibility.Collapsed;
+                lbSuggestion.ItemsSource = null;
+            }
+            if (txtAuto.Text.Trim().Length == 5)
+            {
+                bindSelectedKunden(txtAuto.Text.Trim().ToString());
+            }
+        }
+        #endregion
+
+        #region ListBox-SelectionChanged-lbSuggestion
+        private void lbSuggestion_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbSuggestion.ItemsSource != null)
+            {
+                lbSuggestion.Visibility = Visibility.Collapsed;
+                txtAuto.TextChanged -= new TextChangedEventHandler(txtAuto_TextChanged);
+                if (lbSuggestion.SelectedIndex != -1)
+                {
+                    txtAuto.Text = lbSuggestion.SelectedItem.ToString();
+                }
+                if (txtAuto.Text.Trim().Length == 5)
+                {
+                    bindSelectedKunden(txtAuto.Text.Trim().ToString());
+                }
+                txtAuto.TextChanged += new TextChangedEventHandler(txtAuto_TextChanged);
+            }
+        }
+        #endregion
+
+
         #endregion
     }
 }

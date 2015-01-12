@@ -676,6 +676,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getMaterijalByID2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMaterijalByID2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterijalByID2Result" nillable="true" type="q30:ArrayOfartikl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getMaterialPrice">
     <xs:complexType>
       <xs:sequence>
@@ -689,7 +703,7 @@
   <xs:element name="getMaterialPriceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterialPriceResult" nillable="true" type="q30:ArrayOfp_get_price_ViewResult" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterialPriceResult" nillable="true" type="q31:ArrayOfp_get_price_ViewResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -703,7 +717,7 @@
   <xs:element name="getProduktIdByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getProduktIdByNameResult" nillable="true" type="q31:ArrayOfprodukt" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getProduktIdByNameResult" nillable="true" type="q32:ArrayOfprodukt" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -717,7 +731,7 @@
   <xs:element name="getMaterijalIDNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterijalIDNameResult" nillable="true" type="q32:ArrayOfartikl" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getMaterijalIDNameResult" nillable="true" type="q33:ArrayOfartikl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -729,7 +743,7 @@
   <xs:element name="ListaMitKalendarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaMitKalendarResult" nillable="true" type="q33:ArrayOfp_get_MitKalendar_ViewResult" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="ListaMitKalendarResult" nillable="true" type="q34:ArrayOfp_get_MitKalendar_ViewResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -741,7 +755,7 @@
   <xs:element name="getEinheitResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getEinheitResult" nillable="true" type="q34:ArrayOfeinheit" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getEinheitResult" nillable="true" type="q35:ArrayOfeinheit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -792,7 +806,7 @@
   <xs:element name="getPozicijaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPozicijaResult" nillable="true" type="q35:ArrayOfpozicija" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPozicijaResult" nillable="true" type="q36:ArrayOfpozicija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -806,7 +820,7 @@
   <xs:element name="getPodpozicijaFromPozicijaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodpozicijaFromPozicijaResult" nillable="true" type="q36:ArrayOfpodpozicija" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodpozicijaFromPozicijaResult" nillable="true" type="q37:ArrayOfpodpozicija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -820,7 +834,7 @@
   <xs:element name="getPozicijaNameByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPozicijaNameByIdResult" nillable="true" type="q37:ArrayOfpozicija" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPozicijaNameByIdResult" nillable="true" type="q38:ArrayOfpozicija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -834,7 +848,7 @@
   <xs:element name="getPodpozicijaPriceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodpozicijaPriceResult" nillable="true" type="q38:ArrayOfpodpozicija" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodpozicijaPriceResult" nillable="true" type="q39:ArrayOfpodpozicija" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -848,7 +862,35 @@
   <xs:element name="getPodPozicijaIdByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodPozicijaIdByNameResult" nillable="true" type="q39:ArrayOfpodpozicija" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getPodPozicijaIdByNameResult" nillable="true" type="q40:ArrayOfpodpozicija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KundenLike">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KundenLikeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="KundenLikeResult" nillable="true" type="q41:ArrayOfkunden" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getKundenByKundeNr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getKundenByKundeNrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Mass.Data" minOccurs="0" name="getKundenByKundeNrResult" nillable="true" type="q42:ArrayOfkunden" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

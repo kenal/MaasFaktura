@@ -1310,6 +1310,22 @@ namespace Service
             return ListP;
         }
         [OperationContract]
+        public ObservableCollection<artikl> getMaterijalByID2(int value)
+        {
+            ObservableCollection<artikl> ListP = new ObservableCollection<artikl>();
+            using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+            {
+                var x = from a in context.artikls where a.materijal == value && a.aktivan == 1 orderby a.naziv ascending select a;
+
+                ListP.Clear();
+                foreach (var p in x)
+                {
+                    ListP.Add(new artikl { id = p.id, naziv = p.naziv });
+                }
+            }
+            return ListP;
+        }
+        [OperationContract]
         public ObservableCollection<p_get_price_ViewResult> getMaterialPrice(int idMat, int idArt, string valStark, string valOber) 
         {
             ObservableCollection<p_get_price_ViewResult> List = new ObservableCollection<p_get_price_ViewResult>();
@@ -1543,6 +1559,84 @@ namespace Service
             }
             return ListP;
         }
+         [OperationContract]
+         public ObservableCollection<kunden> KundenLike(string value)
+         {
+             ObservableCollection<kunden> Lista = new ObservableCollection<kunden>();
+             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+             {
+                 var query = from a in context.kundens where SqlMethods.Like(a.kundeNr, "" + value + "%") select a;
+                 Lista.Clear();
+                 foreach (var p in query)
+                 {
+                     Lista.Add(new kunden
+                     {
+                         kundeNr = p.kundeNr
+                     });
+                 }
+                 return Lista;
+             }
+         }
+         [OperationContract]
+         public ObservableCollection<kunden> getKundenByKundeNr(string value)
+         {
+             ObservableCollection<kunden> Lista = new ObservableCollection<kunden>();
+             using (DataBaseModelDataContext context = new DataBaseModelDataContext())
+             {
+                 var query = from a in context.kundens where a.kundeNr == value select a;
+                 Lista.Clear();
+                 foreach (var p in query)
+                 {
+                     Lista.Add(new kunden
+                     {
+                         idKunde = p.idKunde,
+                         suchbegriff = p.suchbegriff,
+                         vorname = p.vorname,
+                         name = p.name,
+                         l_plz_ort = p.l_plz_ort,
+                         gruppe = p.gruppe,
+                         freifeld1 = p.freifeld1,
+                         name2 = p.name2,
+                         strasse = p.strasse,
+                         tel1 = p.tel1,
+                         tel2 = p.tel2,
+                         fax = p.fax,
+                         mail = p.mail,
+                         lk = p.lk,
+                         vorlage_am = p.vorlage_am,
+                         vorlage_anlass = p.vorlage_anlass,
+                         VKPreisgr = p.VKPreisgr,
+                         zahlungin = p.zahlungin,
+                         skonto = p.skonto,
+                         skontotage = p.skontotage,
+                         vertreter = p.vertreter,
+                         ufragssperre = p.ufragssperre,
+                         anreden = p.anreden,
+                         lieferadresse = p.lieferadresse,
+                         rechnungsadresse = p.rechnungsadresse,
+                         email2 = p.email2,
+                         internet = p.internet,
+                         kundetype = p.kundetype,
+                         steuer = p.steuer,
+                         zahlweise = p.zahlweise,
+                         zahl_beding = p.zahl_beding,
+                         kundenbewertung = p.kundenbewertung,
+                         notiz = p.notiz,
+                         titel = p.titel,
+                         land = p.land,
+                         zahlbar = p.zahlbar,
+                         rabat = p.rabat,
+                         adresse2 = p.adresse2,
+                         stadt = p.stadt,
+                         anredeans = p.anredeans,
+                         anssprechepartner = p.anssprechepartner,
+                         notiz_route = p.notiz_route,
+                         kundeNr = p.kundeNr
+                     });
+                 }
+                 return Lista;
+             }
+         }
     }
 }
    
