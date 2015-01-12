@@ -27,7 +27,7 @@ namespace Desktop
         public int rowId = 0;
         public int vertRowPosition = 10;
         public int lastRowId = 0;
-        List<string> nameList;
+        List<string> nameList;       
         Service.MassServisClient client = new MassServisClient();
 
         public AngebotWindow()
@@ -36,6 +36,7 @@ namespace Desktop
             this.DataContext = new AngebotViewModel();
             addRowType01();
             bindMethod();
+            bindAngebotNr();
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -2481,8 +2482,17 @@ namespace Desktop
                 txtBoxPrivat.Text = item.tel1;
                 txtBoxHandy.Text = item.tel2;
                 txtBoxEmail.Text = item.mail;
-            }
-
+            }            
+        }
+        public void bindAngebotNr()
+        {
+            var listAngNr = client.getLastAngebotNr();
+            int anr = 0;
+            foreach (var i in listAngNr)
+            {
+            anr = i.angebotnr;
+            }            
+            txtBoxAngNr.Text = anr.ToString();
         }
 
         #region TextBox-TextChanged-txtAuto

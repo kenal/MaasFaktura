@@ -450,6 +450,12 @@ namespace Desktop.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getKundenByKundeNr", ReplyAction="http://tempuri.org/MassServis/getKundenByKundeNrResponse")]
         System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.kunden>> getKundenByKundeNrAsync(string value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getLastAngebotNr", ReplyAction="http://tempuri.org/MassServis/getLastAngebotNrResponse")]
+        System.Collections.ObjectModel.ObservableCollection<Mass.Data.angebot> getLastAngebotNr();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MassServis/getLastAngebotNr", ReplyAction="http://tempuri.org/MassServis/getLastAngebotNrResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.angebot>> getLastAngebotNrAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1041,6 +1047,14 @@ namespace Desktop.Service {
         
         public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.kunden>> getKundenByKundeNrAsync(string value) {
             return base.Channel.getKundenByKundeNrAsync(value);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<Mass.Data.angebot> getLastAngebotNr() {
+            return base.Channel.getLastAngebotNr();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Mass.Data.angebot>> getLastAngebotNrAsync() {
+            return base.Channel.getLastAngebotNrAsync();
         }
     }
 }
